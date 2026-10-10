@@ -7,6 +7,8 @@ Documento de referência para as próximas sessões. Complementa:
 
 ## 0. Princípios (decisões do autor)
 
+> **Escopo:** porta-se só o que está em `lista-do-autor.md`, da fonte (mod) indicada ali.
+
 - **O que o GTNA é:** um mod de multiblocos **e** mecânicas (wireless, módulos, EOH, Forge of Gods, hatches de paralelo/thread…). Tudo tem API para KubeJS, para outros criadores montarem receitas e linhas.
 - **Receitas:** o GTNA traz um *default* funcional. O balanço e as linhas são do modpack (GT:IA) e não precisam ser 1:1 com o GTNH.
 - **Máquinas "atalho" também são portadas.** No GT:IA elas são craftáveis, mas extremamente caras, na proporção da facilidade que dão.
@@ -69,57 +71,57 @@ Colunas: **Fonte** · **Faltam** (blocos do GTO que o GTNA não tem; "1.7" = exi
 | **Multiblocos BEC** (Condensate Assembler + geradores/contenção) | GTNH (GT5U `BECRecipes`, tectech) | 1.7 | Sistema de condensados (famílias de condensados "entangled") e tiers de nanite por receita. Destrava Shielding Casing, Graviton T2/T3, a **Transdimensional Alignment Matrix** e a **Convergence** do DTPF |
 | Convergence do DTPF | GTNH `MTEPlasmaForge` | — | Overclock perfeito pagando catalisador extra; precisa da TAM (sai do BEC) |
 | Nano Forge **tier 4** | GTNH `MTENanoForge` | 1.7 | Estrutura diferente (base tier 4 + render), 4 casings `NANO_FORGE_CASING_1..4` (Modernity), frames de MagMatter; paralelos drenando MagMatter, duração ×0,9999^paralelo, consumo de nanite; MagMatter Nanites |
-| Hyperdimensional Plasma Fusion Core ("DTPF MK2") | GTO | 3 | Reaproveita a classe do DTPF; DTPF + Stellar Forge |
+| ✅ Hyperdimensional Plasma Fusion Core ("DTPF MK2") (G-0244) | GTO | 3 | Reaproveita a classe do DTPF; DTPF + Stellar Forge |
 
 ### 3.2 Fase B: barato e de alto valor (GTO/GTL, poucos blocos faltando)
 
 | Máquina | Fonte | Faltam | Observação |
 |---|---|---|---|
-| Cracker Hub | GTO | 2 | Cracking + pirólise (cobre o Mega Oil Cracker do GTNH/TST e o Inferno Cleft do GTLAdditions) |
-| Mega Distillation | GTL `mega_distillery` | ~0–2 | |
-| Desulfurizer | GTO | 5 | Padrão inline (19 aisles) |
-| Supercomputing Center | GTO | 0 | Classe própria; CWU de endgame (cobre o Astral Computing Array do TST) |
-| Research / Analysis Center | GTO `analysis_and_research_center` | 0 | Classe própria; research padrão do GTCEu |
-| Data Center | GTO | 1 | `DataBankMachine` |
-| Giant Flotation Tank | GTO | 2 | Mesmo tipo de receita que a célula de flotação do GTNA já usa |
-| Dimensional Focus Engraving Array | GTO | 0 | Tem renderer próprio |
-| Phase Change Cube | GTO | 1 | Extractor + solidifier |
-| Large Incubator | GTO | 0 | `IncubatorMachine` (o GTNA já tem o Incubator) |
-| Mega Vacuum Drying | GTO | 0 | (cobre o Giant Vacuum Drying do TST) |
-| Mega Brewer | GTO | 0 | |
-| Engraving Laser Plant | GTO | 1 | |
-| Large Pyrolyse Oven | GTO/GTL | 0 | |
-| Infinity Fluid Drilling Rig | GTO | 0 | |
-| Star Ultimate Material Forge | GTO | 1 | |
+| ✅ Cracker Hub (G-0204) | GTO | 2 | Cracking + pirólise (cobre o Mega Oil Cracker do GTNH/TST e o Inferno Cleft do GTLAdditions) |
+| ✅ Mega Distillation (G-0205) | GTL `mega_distillery` | ~0–2 | |
+| ✅ Desulfurizer (G-0245) | GTO | 5 | Padrão inline (19 aisles) |
+| ✅ Supercomputing Center (G-0249) | GTO | 0 | Classe própria; CWU de endgame (cobre o Astral Computing Array do TST). **Lote próprio** com Data Center e Research Center: componentes NICH/GWCA, Thermal Conductor Hatch, MFPC, mainframes |
+| ✅ Research / Analysis Center (G-0250) | GTO `analysis_and_research_center` | 0 | Classe própria; research padrão do GTCEu |
+| ✅ Data Center (G-0250) | GTO | 1 | `DataBankMachine` |
+| ✅ Giant Flotation Tank (G-0204) | GTO | 2 | Mesmo tipo de receita que a célula de flotação do GTNA já usa |
+| ✅ Dimensional Focus Engraving Array (G-0245) | GTO | 0 | Tem renderer próprio |
+| ✅ Phase Change Cube (G-0205) | GTO | 1 | Extractor + solidifier |
+| Large Incubator | GTO | 0 | `IncubatorMachine`; **adiado em G-0204**: exige tier de vidro, Radiation Hatch e tier de filtro do GTO |
+| ✅ Mega Vacuum Drying (G-0204) | GTO | 0 | (cobre o Giant Vacuum Drying do TST) |
+| ✅ Mega Brewer (G-0204) | GTO | 0 | |
+| ✅ Engraving Laser Plant (G-0205) | GTO | 1 | |
+| ✅ Large Pyrolyse Oven (G-0204) | GTO/GTL | 0 | |
+| ✅ Infinity Fluid Drilling Rig (G-0205) | GTO | 0 | |
+| ✅ Star Ultimate Material Forge (G-0245) | GTO | 1 | |
 | Reaction Furnace | GTO | 0 | Inline |
-| PCB Factory | GTO | 0 | `PCBFactoryMachine` (classe própria) |
+| ✅ PCB Factory (G-0246) | GTO | 0 | `PCBFactoryMachine` (classe própria) |
 | Tiers da ISA Mill / Isa Factory | GTO `isa_mill` + 123Tech `OTEMegaIsaFactory` | 0 / 1.7 | O GTNA já tem Isa Mill; a fábrica integrada é "atalho" (cara no pack) |
 
 ### 3.3 Fase C: médio (GTO, 2–5 blocos faltando ou classe própria)
 
 | Máquina | Fonte | Faltam |
 |---|---|---|
-| Crystal Builder | GTO | 3 |
-| Holy Separator | GTO/GTL (também no TST) | 3 |
-| High Energy Laser Lathe | GTO | 3 |
-| Neutronium Wire Cutting | GTO | 3 |
-| Superconducting Magnetic Presser | GTO | 2 |
-| Giant Electrochemical Workstation | GTO | 3 |
-| Heavy Rolling | GTO | 3 |
-| Hand of Arachne (tear) | GTO | 2 |
-| Lightning Rod (gerador de arco) | GTO | 2 |
-| Fuel Cell Generator | GTO | 3 + classe |
+| ✅ Crystal Builder (G-0210) | GTO | 3 |
+| ✅ Holy Separator (G-0207) | GTO/GTL (também no TST) | 3 |
+| ✅ High Energy Laser Lathe (G-0243) | GTO | 3 |
+| ✅ Neutronium Wire Cutting (G-0207) | GTO | 3 |
+| ✅ Superconducting Magnetic Presser (G-0207) | GTO | 2 |
+| ✅ Giant Electrochemical Workstation (G-0244) | GTO | 3 |
+| ✅ Heavy Rolling (G-0245) | GTO | 3 |
+| ✅ Hand of Arachne (tear) (G-0245) | GTO | 2 |
+| ✅ Lightning Rod (gerador de arco) (G-0246) | GTO | 2 |
+| ✅ Fuel Cell Generator (G-0248) | GTO | 3 + classe |
 | Giant Sintering Array | GTO | 3 |
-| Particle Stream Matrix Filling | GTO | 3 |
-| Extreme Compressor | GTO | 4 |
-| Gemini Containment System | GTO | 4 |
-| Space Probe Surface Reception | GTO | 4 + classe |
+| ✅ Particle Stream Matrix Filling (G-0209) | GTO | 3 |
+| ✅ Extreme Compressor (G-0243) | GTO | 4 |
+| ✅ Gemini Containment System (G-0244) | GTO | 4 |
+| ✅ Space Probe Surface Reception (G-0246) | GTO | 4 + classe |
 | Integrated Vapor Deposition System | GTO | 5 |
-| Integrated Assembler / Integrated Assembly Facility | GTO (+ versões GTNL/TST) | 1 |
-| Compound Extreme Cooling Unit | GTO | 0 + classe (tipos de atomização e condensador de plasma) |
-| Hyper Naquadah Reactor / Advanced | GTO `hyper_reactor` / `advanced_hyper_reactor` | 1 / 4 |
-| Nanites Circuit Assembly Factory | GTO | 2 |
-| Rare Earth Centrifugal / Advanced | GTO/GTL | ~10 (GTL próprio) |
+| ✅ Integrated Assembler (G-0206) / Integrated Assembly Facility | GTO (+ versões GTNL/TST) | 1 |
+| ✅ Compound Extreme Cooling Unit (G-0246) | GTO | 0 + classe (tipos de atomização e condensador de plasma) |
+| ✅ Hyper Naquadah Reactor / Advanced (G-0247) | GTO `hyper_reactor` / `advanced_hyper_reactor` | 1 / 4 |
+| ✅ Nanites Circuit Assembly Factory (G-0210) | GTO | 2 |
+| ✅ Rare Earth Centrifugal (G-0245) / Advanced | GTO/GTL | ~10 (GTL próprio) |
 | Platinum Group Processing Hub | GTNL | 1.7 ("atalho") |
 
 ### 3.4 Fase D: caro / sistemas grandes (GTO)
@@ -185,6 +187,13 @@ Colunas: **Fonte** · **Faltam** (blocos do GTO que o GTNA não tem; "1.7" = exi
 
 ### 3.8 Ainda não auditado
 
+Custo de port de todos os multiblocos do GTO que faltam: `gto-port-cost-scan.md`. Já portados a partir dessa lista:
+✅ Super Blast Smelter, Large Cracker, Integrated Assembler (G-0206); ✅ Superconducting Electromagnetism (G-0207);
+✅ Magnetic Energy Reaction Furnace, Particle Stream Matrix Filling Machine (G-0209). Removidos a pedido do autor
+(G-0212): Molecular Oscillation Dehydrator, Gravity Bending Device, Extreme Electric Furnace. Fora por duplicata: Large Bender/Forming (GCYM Large
+Material Press), Compound Distillation Fractionator (Mega Distillery). ✅ Mega Wiremill (G-0210).
+
+
 O GTO tem 301 multiblocos e o GTL 158; só os citados pelo autor foram avaliados. Os demais addons 1.7.10 (GT Not Good, MessTech, ThinkTech, EasyTech, Futa) foram listados por classe em G-0199/auditoria, mas não avaliados:
 - GT Not Good: máquinas de abelha/cultivo/favo, transmutação, void miner;
 - ThinkTech: cadinhos, Czochralski, gases nobres;
@@ -198,7 +207,7 @@ O GTO tem 301 multiblocos e o GTL 158; só os citados pelo autor foram avaliados
 | KubeJS: módulos (`GTNASubPatterns.registerKubeJS`) | feito | Documentar em `examples/` |
 | Chaves de dado de receita (`tpm_eut`, `nano_forge_tier`, `ebf_temp`, `fog_plasma_tier`…) | espalhadas | Documentar em `examples/` para criadores de pack |
 | Relatório de alcançabilidade (GameTest) | feito (G-0199) | Virar gate: falhar quando conteúdo novo do gtna ficar inalcançável (lista de permissão para saídas de máquina) |
-| Blocos do GTO | 187 no GTNA | Lote compartilhado: `AMPROSIUM_*`, `HYPER_CORE`, `ENHANCE_HYPER_MECHANICAL_CASING`, `IRIDIUM_PIPE_CASING`, `HIGH_PRESSURE_RESISTANT_CASING`, `LAFIUM_MECHANICAL_CASING`, `QUANTUM_GLASS`, `PIKYONIUM_MACHINE_CASING` e `DIMENSIONAL_BRIDGE_CASING` aparecem em muitas máquinas das fases C/D. **Portar esse lote primeiro barateia dezenas de máquinas.** |
+| Blocos do GTO | 187 no GTNA (+9 em G-0204–G-0207: CaO, óleo/gás, naquadah estabilizada, amprosium ativo/caixa, alta pressão, nylon MC, lafium, vidro amprosium) | Lote compartilhado: `AMPROSIUM_*`, `HYPER_CORE`, `ENHANCE_HYPER_MECHANICAL_CASING`, `IRIDIUM_PIPE_CASING`, `HIGH_PRESSURE_RESISTANT_CASING`, `LAFIUM_MECHANICAL_CASING`, `QUANTUM_GLASS`, `PIKYONIUM_MACHINE_CASING` e `DIMENSIONAL_BRIDGE_CASING` aparecem em muitas máquinas das fases C/D. **Portar esse lote primeiro barateia dezenas de máquinas.** |
 
 ## 5. Ordem sugerida para as próximas sessões
 

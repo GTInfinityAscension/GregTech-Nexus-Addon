@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_spacetime/gem",
+    "layer1": "gtceu:item/material_sets/gtna_spacetime/gem_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_spacetime/gem_overlay"
+  },
+  "loader": "renderblender:eternal",
+  "eternal": {
+    "mask": "gtna:mask/cosmic"
+  }
+}

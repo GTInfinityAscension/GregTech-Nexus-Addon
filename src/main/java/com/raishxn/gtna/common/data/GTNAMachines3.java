@@ -101,9 +101,6 @@ public final class GTNAMachines3 {
                     .where('#', any()).build())
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_stable_titanium"),
                     GTCEu.id("block/multiblock/fluid_drilling_rig"))
-            .tooltips(Component.translatable("gtna.machine.void_fluid_drilling_rig.tooltip.0"),
-                    Component.translatable("gtna.machine.void_fluid_drilling_rig.tooltip.1"),
-                    Component.translatable("gtna.machine.void_fluid_drilling_rig.tooltip.2"))
             .register();
 
     /** GTL world scanner: independent 64-bucket tanks, LV through IV for the base worlds. */
@@ -145,9 +142,6 @@ public final class GTNAMachines3 {
                     .where(' ', air()).build())
             .workableCasingModel(GTCEu.id("block/casings/cleanroom/plascrete"),
                     GTCEu.id("block/multiblock/gcym/large_maceration_tower"))
-            .tooltips(Component.translatable("gtna.machine.incubator.tooltip.0"),
-                    Component.translatable("gtna.machine.incubator.tooltip.1"),
-                    Component.translatable("gtna.machine.incubator.tooltip.2"))
             .register();
 
     /** GTO's electric Dehydrator family (LV through UV). */
@@ -214,11 +208,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
                     GTCEu.id("block/multiblock/processing_array"))
-            .tooltips(Component.translatable("gtna.machine.generator_array.tooltip.0"),
-                    Component.translatable("gtna.machine.generator_array.tooltip.1"),
-                    Component.translatable("gtna.machine.generator_array.tooltip.2"),
-                    Component.translatable("gtna.machine.generator_array.tooltip.3"),
-                    Component.translatable("gtna.machine.generator_array.tooltip.4"))
             .register();
 
     public static final MultiblockMachineDefinition FISHING_GROUND = REGISTRATE
@@ -241,15 +230,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(com.raishxn.gtna.GTNACORE.id("block/casings/aluminium_bronze_casing"),
                     GTCEu.id("block/multiblock/gcym/large_assembler"))
-            .tooltips(Component.translatable("gtna.machine.fishing_ground.tooltip.0"),
-                    Component.translatable("gtna.machine.fishing_ground.tooltip.1"),
-                    Component.translatable("gtna.machine.fishing_ground.tooltip.2"),
-                    Component.translatable("gtna.machine.fishing_ground.tooltip.3"),
-                    Component.translatable("gtna.machine.fishing_ground.tooltip.4"),
-                    Component.translatable("gtna.machine.fishing_ground.tooltip.5"),
-                    Component.translatable("gtna.machine.fishing_ground.tooltip.6"),
-                    Component.translatable("gtna.machine.fishing_ground.tooltip.7"),
-                    Component.translatable("gtna.machine.fishing_ground.tooltip.8"))
             .register();
 
     public static final MultiblockMachineDefinition EVAPORATION_PLANT = REGISTRATE
@@ -276,9 +256,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(com.raishxn.gtna.GTNACORE.id("block/casings/stainless_evaporation_casing"),
                     GTCEu.id("block/multiblock/evaporation_plant"))
-            .tooltips(Component.translatable("gtna.machine.evaporation_plant.tooltip.0"),
-                    Component.translatable("gtna.machine.evaporation_plant.tooltip.1"),
-                    Component.translatable("gtna.machine.evaporation_plant.tooltip.2"))
             .register();
 
     public static final MultiblockMachineDefinition GREENHOUSE = REGISTRATE
@@ -303,9 +280,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(GTCEu.id("block/casings/voltage/ulv/side"),
                     GTCEu.id("block/multiblock/fusion_reactor"))
-            .tooltips(Component.translatable("gtna.machine.greenhouse.tooltip.0"),
-                    Component.translatable("gtna.machine.greenhouse.tooltip.1"),
-                    Component.translatable("gtna.machine.greenhouse.tooltip.2"))
             .register();
 
     /**
@@ -343,9 +317,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
                     GTCEu.id("block/multiblock/gcym/large_assembler"))
-            .tooltips(Component.translatable("gtna.machine.component_assembler.tooltip.0"),
-                    Component.translatable("gtna.machine.component_assembler.tooltip.1"),
-                    Component.translatable("gtna.machine.component_assembler.tooltip.2"))
             .register();
 
     static TraceabilityPredicate componentAssemblyTierCasings() {
@@ -397,9 +368,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_clean_stainless_steel"),
                     GTCEu.id("block/multiblock/fusion_reactor"))
-            .tooltips(Component.translatable("gtna.machine.large_greenhouse.tooltip.0"),
-                    Component.translatable("gtna.machine.large_greenhouse.tooltip.1"),
-                    Component.translatable("gtna.machine.large_greenhouse.tooltip.2"))
             .register();
 
     /** GTOCore blaze blast furnace: coiled EBF shell and continuously consumed molten Blaze. */
@@ -424,9 +392,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(com.raishxn.gtna.GTNACORE.id("block/casings/blaze_casing"),
                     GTCEu.id("block/multiblock/blast_furnace"))
-            .tooltips(Component.translatable("gtna.machine.blaze_blast_furnace.tooltip.0"),
-                    Component.translatable("gtna.machine.blaze_blast_furnace.tooltip.1"),
-                    Component.translatable("gtna.machine.blaze_blast_furnace.tooltip.2"))
             .register();
 
     /** GTOCore 9 × 5 × 5 Cold Ice Freezer base structure. */
@@ -461,9 +426,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(com.raishxn.gtna.GTNACORE.id("block/casings/cold_ice_casing"),
                     GTCEu.id("block/multiblock/vacuum_freezer"))
-            .tooltips(Component.translatable("gtna.machine.cold_ice_freezer.tooltip.0"),
-                    Component.translatable("gtna.machine.cold_ice_freezer.tooltip.1"),
-                    Component.translatable("gtna.machine.cold_ice_freezer.tooltip.2"))
             .register();
 
     /**
@@ -492,9 +454,6 @@ public final class GTNAMachines3 {
             .additionalDisplay(ChemicalPlantMachine::addCoilDisplay)
             .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_inert_ptfe"),
                     GTCEu.id("block/multiblock/large_chemical_reactor"))
-            .tooltips(Component.translatable("gtna.machine.chemical_plant.tooltip.0"),
-                    Component.translatable("gtna.machine.chemical_plant.tooltip.1"),
-                    Component.translatable("gtna.machine.chemical_plant.tooltip.2"))
             .register();
 
     /**
@@ -578,9 +537,6 @@ public final class GTNAMachines3 {
             })
             .workableCasingModel(GTCEu.id("block/casings/gcym/high_temperature_smelting_casing"),
                     GTCEu.id("block/multiblock/gcym/blast_alloy_smelter"))
-            .tooltips(Component.translatable("gtna.machine.mega_alloy_blast_smelter.tooltip.0"),
-                    Component.translatable("gtna.machine.mega_alloy_blast_smelter.tooltip.1"),
-                    Component.translatable("gtna.machine.mega_alloy_blast_smelter.tooltip.2"))
             .register();
 
     /**
@@ -614,9 +570,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(GTNACORE.id("block/casings/inconel_625_casing"),
                     GTCEu.id("block/multiblock/gcym/large_maceration_tower"))
-            .tooltips(Component.translatable("gtna.machine.isa_mill.tooltip.0"),
-                    Component.translatable("gtna.machine.isa_mill.tooltip.1"),
-                    Component.translatable("gtna.machine.isa_mill.tooltip.2"))
             .register();
 
     private GTNAMachines3() {}
@@ -625,7 +578,6 @@ public final class GTNAMachines3 {
     public static final MultiblockMachineDefinition FORGE_OF_GODS = REGISTRATE
             .multiblock("forge_of_gods", com.raishxn.gtna.common.machine.multiblock.godforge.ForgeOfGodsMachine::new)
             .langValue("Forge of the Gods")
-            .tooltips(godforgeTooltip("forge_of_gods", "stellar_forge", 15))
             .rotationState(RotationState.ALL)
             .allowExtendedFacing(false)
             .recipeType(GTRecipeTypes.DUMMY_RECIPES)
@@ -656,7 +608,6 @@ public final class GTNAMachines3 {
             .workableCasingModel(
                     GTNACORE.id("block/casings/godforge/singularity_reinforced_stellar_shielding_casing"),
                     GTNACORE.id("block/machines/godforge_module"))
-            .tooltips(godforgeTooltip("godforge_smelting_module", "blast_furnace", 8))
             .register();
 
     public static final MultiblockMachineDefinition GODFORGE_MOLTEN_MODULE = REGISTRATE
@@ -675,7 +626,6 @@ public final class GTNAMachines3 {
             .workableCasingModel(
                     GTNACORE.id("block/casings/godforge/singularity_reinforced_stellar_shielding_casing"),
                     GTNACORE.id("block/machines/godforge_module"))
-            .tooltips(godforgeTooltip("godforge_molten_module", "blast_smelter", 8))
             .register();
 
     public static final MultiblockMachineDefinition GODFORGE_PLASMA_MODULE = REGISTRATE
@@ -694,7 +644,6 @@ public final class GTNAMachines3 {
             .workableCasingModel(
                     GTNACORE.id("block/casings/godforge/singularity_reinforced_stellar_shielding_casing"),
                     GTNACORE.id("block/machines/godforge_module"))
-            .tooltips(godforgeTooltip("godforge_plasma_module", "plasma_fabricator", 8))
             .register();
 
     public static final MultiblockMachineDefinition GODFORGE_EXOTIC_MODULE = REGISTRATE
@@ -712,7 +661,6 @@ public final class GTNAMachines3 {
             .workableCasingModel(
                     GTNACORE.id("block/casings/godforge/singularity_reinforced_stellar_shielding_casing"),
                     GTNACORE.id("block/machines/godforge_module"))
-            .tooltips(godforgeTooltip("godforge_exotic_module", "exotic_matter_producer", 9))
             .register();
 
     public static void init() {}
@@ -751,9 +699,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(GTCEu.id("block/casings/mechanic/machine_casing_turbine_titanium"),
                     GTCEu.id("block/multiblock/generator/large_gas_turbine"))
-            .tooltips(Component.translatable("gtna.machine.rocket_large_turbine.tooltip.0"),
-                    Component.translatable("gtna.machine.rocket_large_turbine.tooltip.1"),
-                    Component.translatable("gtna.machine.rocket_large_turbine.tooltip.2"))
             .register();
 
     /**
@@ -791,9 +736,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(GTNACORE.id("block/casings/supercritical_turbine_casing"),
                     GTCEu.id("block/multiblock/generator/large_plasma_turbine"))
-            .tooltips(Component.translatable("gtna.machine.supercritical_steam_turbine.tooltip.0"),
-                    Component.translatable("gtna.machine.supercritical_steam_turbine.tooltip.1"),
-                    Component.translatable("gtna.machine.supercritical_steam_turbine.tooltip.2"))
             .register();
 
     /**
@@ -827,9 +769,6 @@ public final class GTNAMachines3 {
             .workableCasingModel(
                     com.raishxn.gtna.GTNACORE.id("block/casings/hastelloy_n_75_casing"),
                     GTCEu.id("block/multiblock/gcym/large_chemical_bath"))
-            .tooltips(Component.translatable("gtna.machine.industrial_flotation_cell.tooltip.0"),
-                    Component.translatable("gtna.machine.industrial_flotation_cell.tooltip.1"),
-                    Component.translatable("gtna.machine.industrial_flotation_cell.tooltip.2"))
             .register();
 
     /**
@@ -865,9 +804,6 @@ public final class GTNAMachines3 {
             .workableCasingModel(
                     com.raishxn.gtna.GTNACORE.id("block/casings/red_steel_casing"),
                     GTCEu.id("block/multiblock/fusion_reactor"))
-            .tooltips(Component.translatable("gtna.machine.vacuum_drying_furnace.tooltip.0"),
-                    Component.translatable("gtna.machine.vacuum_drying_furnace.tooltip.1"),
-                    Component.translatable("gtna.machine.vacuum_drying_furnace.tooltip.2"))
             .register();
 
     /**
@@ -929,9 +865,6 @@ public final class GTNAMachines3 {
                     .build())
             .workableCasingModel(GTNACORE.id("block/casings/iridium_casing"),
                     GTCEu.id("block/multiblock/assembly_line"))
-            .tooltips(Component.translatable("gtna.machine.component_assembly_line.tooltip.0"),
-                    Component.translatable("gtna.machine.component_assembly_line.tooltip.1"),
-                    Component.translatable("gtna.machine.component_assembly_line.tooltip.2"))
             .register();
 
     /**
@@ -1024,15 +957,5 @@ public final class GTNAMachines3 {
             }
         }
         return true;
-    }
-
-    /**
-     * GTNH {@code MultiblockTooltipBuilder} text of the Forge of Gods machines: machine type, then the markdown lines.
-     */
-    private static Component[] godforgeTooltip(String id, String machineType, int lines) {
-        // The machine type is the automatic gtna.machine.<id>.tooltip description line (GTNA convention).
-        Component[] tooltip = new Component[lines];
-        for (int i = 0; i < lines; i++) tooltip[i] = Component.translatable("gtna.machine." + id + ".tooltip." + i);
-        return tooltip;
     }
 }

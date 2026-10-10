@@ -1,0 +1,2172 @@
+{
+  "isa_mill": {
+    "type": "ISA Mill",
+    "flavor": "Despite its green paint, it is not eco-friendly at all.",
+    "desc": [
+      "Wet-grinds ores and raw ores into *Milled*",
+      "products with violent ball milling."
+    ],
+    "pro": [
+      "*Perfect overclock*: duration /4 per tier"
+    ],
+    "num": [
+      "Parallel: *2*",
+      "Soapstone: circuit *1*; Aluminium: circuit *10*"
+    ],
+    "con": [
+      "Needs a *Grinding Ball Hatch* of the recipe tier",
+      "Every recipe wears the grinding ball down"
+    ],
+    "pt": {
+      "type": "Moinho ISA",
+      "flavor": "Apesar da tinta verde, não tem nada de ecológico.",
+      "desc": [
+        "Mói a úmido minérios e minérios brutos em produtos",
+        "*Moídos* com uma moagem de bolas violenta."
+      ],
+      "pro": [
+        "*Overclock perfeito*: duração /4 por tier"
+      ],
+      "num": [
+        "Paralelos: *2*",
+        "Pedra-sabão: circuito *1*; Alumínio: circuito *10*"
+      ],
+      "con": [
+        "Precisa de um *Grinding Ball Hatch* do tier da receita",
+        "Toda receita desgasta a bola de moagem"
+      ]
+    }
+  },
+  "chemical_plant": {
+    "type": "Large Chemical Reactor",
+    "flavor": "The chairman poses with a microscope. Nobody is fooled.",
+    "desc": [
+      "Runs *Large Chemical Reactor* recipes in",
+      "bulk with heating coils and a Parallel Hatch."
+    ],
+    "pro": [
+      "*Perfect overclock*: duration /4 per tier",
+      "Each coil tier above Cupronickel: *-5%* EU and time"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Control Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Reator Químico Grande",
+      "flavor": "O presidente posa com um microscópio. Ninguém cai nessa.",
+      "desc": [
+        "Roda receitas do *Reator Químico Grande* em",
+        "massa com bobinas e um Parallel Hatch."
+      ],
+      "pro": [
+        "*Overclock perfeito*: duração /4 por tier",
+        "Cada tier de bobina acima de Cupronickel: *-5%* EU e tempo"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Control Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "generator_array": {
+    "type": "Generator Array",
+    "flavor": "Four generators walk into a bar. Only one bill.",
+    "desc": [
+      "Runs up to four matching GTCEu *generators*",
+      "with their normal fuel recipes."
+    ],
+    "pro": [
+      "Output *1.3x* per installed generator",
+      "Wireless output to the owner's Flux Matrix"
+    ],
+    "num": [
+      "Up to *4* generators of one type and tier",
+      "Steam Turbine, Gas Turbine, Combustion Gen."
+    ],
+    "con": [
+      "Fuel use scales with output",
+      "Wireless output loses *5%*"
+    ],
+    "pt": {
+      "type": "Matriz de Geradores",
+      "flavor": "Quatro geradores entram num bar. Uma conta só.",
+      "desc": [
+        "Roda até quatro *geradores* iguais do GTCEu",
+        "com as receitas normais de combustível."
+      ],
+      "pro": [
+        "Produção *1,3x* por gerador instalado",
+        "Saída wireless para a Flux Matrix do dono"
+      ],
+      "num": [
+        "Até *4* geradores do mesmo tipo e tier",
+        "Steam Turbine, Gas Turbine, Combustion Gen."
+      ],
+      "con": [
+        "O consumo de combustível cresce com a produção",
+        "A saída wireless perde *5%*"
+      ]
+    }
+  },
+  "cold_ice_freezer": {
+    "type": "Vacuum Freezer",
+    "flavor": "Born from a liquid ice leak. The intern is still missing.",
+    "desc": [
+      "Freezes *Vacuum Freezer* and Atomization",
+      "recipes in huge batches with Liquid Ice."
+    ],
+    "pro": [
+      "*0.5x* recipe duration"
+    ],
+    "num": [
+      "Parallel: *64*"
+    ],
+    "con": [
+      "Liquid Ice: *2^(tier-2) x 10* mB/s",
+      "Consumes Liquid Ice when each recipe starts"
+    ],
+    "pt": {
+      "type": "Congelador a Vácuo",
+      "flavor": "Nasceu de um vazamento de gelo líquido. O estagiário segue sumido.",
+      "desc": [
+        "Congela receitas de *Congelador a Vácuo* e",
+        "Atomização em lotes enormes com Gelo Líquido."
+      ],
+      "pro": [
+        "Duração da receita *0,5x*"
+      ],
+      "num": [
+        "Paralelos: *64*"
+      ],
+      "con": [
+        "Gelo Líquido: *2^(tier-2) x 10* mB/s",
+        "Consome Gelo Líquido quando cada receita começa"
+      ]
+    }
+  },
+  "blaze_blast_furnace": {
+    "type": "Electric Blast Furnace",
+    "flavor": "An intern kept a blaze spawner in here. It worked.",
+    "desc": [
+      "Runs *Electric Blast Furnace* recipes in huge",
+      "batches, accelerated by molten Blaze."
+    ],
+    "pro": [
+      "*0.5x* recipe duration"
+    ],
+    "num": [
+      "Parallel: *64*"
+    ],
+    "con": [
+      "Liquid Blaze: *2^(tier-2) x 10* mB/s",
+      "Consumes Liquid Blaze when each recipe starts"
+    ],
+    "pt": {
+      "type": "Alto-Forno Elétrico",
+      "flavor": "Um estagiário deixou um spawner de blaze aqui dentro. Funcionou.",
+      "desc": [
+        "Roda receitas do *Alto-Forno Elétrico* em lotes",
+        "enormes, acelerado por Blaze derretido."
+      ],
+      "pro": [
+        "Duração da receita *0,5x*"
+      ],
+      "num": [
+        "Paralelos: *64*"
+      ],
+      "con": [
+        "Blaze Líquido: *2^(tier-2) x 10* mB/s",
+        "Consome Blaze Líquido quando cada receita começa"
+      ]
+    }
+  },
+  "mega_alloy_blast_smelter": {
+    "type": "Alloy Blast Smelter",
+    "flavor": "The Alloy Blast Smelter, but it went to the gym.",
+    "desc": [
+      "Runs *Alloy Blast Smelter* recipes in a coiled",
+      "shell with a Parallel Hatch."
+    ],
+    "pro": [
+      "*0.8x* EU cost",
+      "*0.6x* recipe duration"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [
+      "Coils must meet the recipe temperature"
+    ],
+    "pt": {
+      "type": "Fundidora de Ligas a Alto-Forno",
+      "flavor": "A Alloy Blast Smelter, só que foi para a academia.",
+      "desc": [
+        "Roda receitas da *Alloy Blast Smelter* numa",
+        "carcaça com bobinas e um Parallel Hatch."
+      ],
+      "pro": [
+        "Custo de EU *0,8x*",
+        "Duração da receita *0,6x*"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": [
+        "As bobinas precisam da temperatura da receita"
+      ]
+    }
+  },
+  "fishing_ground": {
+    "type": "Fishing Ground",
+    "flavor": "Like eating fish? The whole office does now.",
+    "desc": [
+      "The AFFL-200 smart fishing farm: fishes",
+      "*automatically* with bait in a water-filled",
+      "structure."
+    ],
+    "pro": [
+      "Circuit picks the catch type"
+    ],
+    "num": [
+      "Circuit *1* random, *2* fish, *3* junk, *4* treasure"
+    ],
+    "con": [
+      "Needs bait to fish"
+    ],
+    "pt": {
+      "type": "Área de Pesca",
+      "flavor": "Gosta de peixe? O escritório inteiro gosta agora.",
+      "desc": [
+        "A fazenda de pesca inteligente AFFL-200: pesca",
+        "*sozinha* com isca numa estrutura cheia",
+        "de água."
+      ],
+      "pro": [
+        "O circuito escolhe o tipo de pesca"
+      ],
+      "num": [
+        "Circuito *1* aleatório, *2* peixe, *3* lixo, *4* tesouro"
+      ],
+      "con": [
+        "Precisa de isca para pescar"
+      ]
+    }
+  },
+  "evaporation_plant": {
+    "type": "Evaporation",
+    "flavor": "Patience, salt and a very tall tower.",
+    "desc": [
+      "Evaporates brine and other fluids in a",
+      "*tall tower* with up to five stages."
+    ],
+    "pro": [
+      "Accepts Parallel and Accelerate Hatches"
+    ],
+    "num": [
+      "Up to *5* tower stages, one fluid output each",
+      "An IV Parallel Hatch gives *4* parallel"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Evaporação",
+      "flavor": "Paciência, sal e uma torre bem alta.",
+      "desc": [
+        "Evapora salmoura e outros fluidos numa",
+        "*torre alta* com até cinco estágios."
+      ],
+      "pro": [
+        "Aceita Parallel e Accelerate Hatches"
+      ],
+      "num": [
+        "Até *5* estágios, uma saída de fluido cada",
+        "Um Parallel Hatch IV dá *4* paralelos"
+      ],
+      "con": []
+    }
+  },
+  "greenhouse": {
+    "type": "Greenhouse",
+    "flavor": "Photosynthesis as a service.",
+    "desc": [
+      "Grows crops from a kept *seed or plant*,",
+      "water and optional fertilizer."
+    ],
+    "pro": [
+      "The seed or plant is never consumed"
+    ],
+    "num": [],
+    "con": [
+      "Needs *sunlight*; slows down without it"
+    ],
+    "pt": {
+      "type": "Estufa",
+      "flavor": "Fotossíntese como serviço.",
+      "desc": [
+        "Cultiva plantas a partir de uma *semente ou muda*",
+        "guardada, água e fertilizante opcional."
+      ],
+      "pro": [
+        "A semente ou muda nunca é consumida"
+      ],
+      "num": [],
+      "con": [
+        "Precisa de *luz do sol*; fica lenta sem ela"
+      ]
+    }
+  },
+  "large_greenhouse": {
+    "type": "Greenhouse, Tree Growth",
+    "flavor": "Who needs the sun? We have lamps and ambition.",
+    "desc": [
+      "Grows *crops and trees* in two selectable",
+      "recipe modes."
+    ],
+    "pro": [
+      "Works *without sunlight*",
+      "Accepts a Parallel Hatch"
+    ],
+    "num": [
+      "Pick tree or crop mode at the controller"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Estufa, Crescimento de Árvores",
+      "flavor": "Quem precisa de sol? Temos lâmpadas e ambição.",
+      "desc": [
+        "Cultiva *plantas e árvores* em dois modos",
+        "de receita selecionáveis."
+      ],
+      "pro": [
+        "Funciona *sem luz do sol*",
+        "Aceita um Parallel Hatch"
+      ],
+      "num": [
+        "Escolha o modo árvore ou planta no controlador"
+      ],
+      "con": []
+    }
+  },
+  "component_assembler": {
+    "type": "Component Assembly",
+    "flavor": "Your first salary won't cover one of its parts.",
+    "desc": [
+      "Assembles batches of *16 electric components*",
+      "from materials and circuits."
+    ],
+    "pro": [
+      "Extension: recipe cap *IV* -> *UV* + Accelerate",
+      "Extension 2: Parallel Control and Laser Hatches"
+    ],
+    "num": [
+      "Recipe cap: *IV*, never above the casing tier"
+    ],
+    "con": [
+      "Each upgrade needs a bigger structure"
+    ],
+    "pt": {
+      "type": "Montagem de Componentes",
+      "flavor": "Seu primeiro salário não paga nem uma peça dela.",
+      "desc": [
+        "Monta lotes de *16 componentes elétricos* a partir",
+        "de materiais e circuitos."
+      ],
+      "pro": [
+        "Extensão: limite de receita *IV* -> *UV* + Accelerate",
+        "Extensão 2: Parallel Control e Laser Hatches"
+      ],
+      "num": [
+        "Limite de receita: *IV*, nunca acima do tier do casing"
+      ],
+      "con": [
+        "Cada upgrade precisa de uma estrutura maior"
+      ]
+    }
+  },
+  "component_assembly_line": {
+    "type": "Component Assembly",
+    "flavor": "Industry's closest approximation to divine creation.",
+    "desc": [
+      "Runs component assembly batches as a",
+      "*tier-cased line* with a Parallel Hatch."
+    ],
+    "pro": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "num": [
+      "Casing tier limits which recipes can start"
+    ],
+    "con": [
+      "All assembly casings must share one tier"
+    ],
+    "pt": {
+      "type": "Montagem de Componentes",
+      "flavor": "O mais perto que a indústria chegou da criação divina.",
+      "desc": [
+        "Roda lotes de montagem de componentes como uma",
+        "*linha por tier de casing* com um Parallel Hatch."
+      ],
+      "pro": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "num": [
+        "O tier do casing limita quais receitas começam"
+      ],
+      "con": [
+        "Todos os casings de montagem precisam do mesmo tier"
+      ]
+    }
+  },
+  "rocket_large_turbine": {
+    "type": "Rocket Engine",
+    "flavor": "Not rocket science. Okay, it is rocket science.",
+    "desc": [
+      "An EV turbine that burns *rocket fuel* and",
+      "turns rotor power into EU."
+    ],
+    "pro": [
+      "Each rotor tier above EV: *+10%* eff., *2x* EU/t",
+      "Engine module: *2x* output, *+20%* efficiency"
+    ],
+    "num": [
+      "Base output: *5,120* EU/t"
+    ],
+    "con": [
+      "High-Speed Mode: *3x* output, *10x* rotor wear"
+    ],
+    "pt": {
+      "type": "Motor de Foguete",
+      "flavor": "Não é ciência de foguete. Tá, é ciência de foguete.",
+      "desc": [
+        "Uma turbina EV que queima *combustível de foguete*",
+        "e transforma a força do rotor em EU."
+      ],
+      "pro": [
+        "Cada tier de rotor acima de EV: *+10%* efic., *2x* EU/t",
+        "Módulo do motor: produção *2x*, *+20%* de eficiência"
+      ],
+      "num": [
+        "Produção base: *5.120* EU/t"
+      ],
+      "con": [
+        "Modo Alta Velocidade: produção *3x*, desgaste *10x*"
+      ]
+    }
+  },
+  "supercritical_steam_turbine": {
+    "type": "Supercritical Steam Turbine",
+    "flavor": "Steam, but it has seen things.",
+    "desc": [
+      "An IV turbine that expands *supercritical*",
+      "*steam* through a rotor into EU."
+    ],
+    "pro": [
+      "Each rotor tier above IV: *+10%* eff., *2x* EU/t",
+      "Module: *2x* speed, *+20%* efficiency"
+    ],
+    "num": [
+      "Base output: *16,384* EU/t",
+      "High-Speed Mode stacks with the module"
+    ],
+    "con": [
+      "The module doubles rotor wear"
+    ],
+    "pt": {
+      "type": "Turbina a Vapor Supercrítico",
+      "flavor": "Vapor, só que já viu coisas.",
+      "desc": [
+        "Uma turbina IV que expande *vapor supercrítico*",
+        "por um rotor e gera EU."
+      ],
+      "pro": [
+        "Cada tier de rotor acima de IV: *+10%* efic., *2x* EU/t",
+        "Módulo: velocidade *2x*, *+20%* de eficiência"
+      ],
+      "num": [
+        "Produção base: *16.384* EU/t",
+        "O Modo Alta Velocidade soma com o módulo"
+      ],
+      "con": [
+        "O módulo dobra o desgaste do rotor"
+      ]
+    }
+  },
+  "industrial_flotation_cell": {
+    "type": "Flotating Beneficiation",
+    "flavor": "Smells like essential balm. Fewer mosquitoes, too.",
+    "desc": [
+      "Froth-floats *Milled* ore with ethylxanthate",
+      "and turpentine into a matching ore foam."
+    ],
+    "pro": [
+      "*Perfect overclock*: duration /4 per tier"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Control Hatch*"
+    ],
+    "con": [
+      "Needs Milled ore, ethylxanthate and turpentine"
+    ],
+    "pt": {
+      "type": "Beneficiamento por Flotação",
+      "flavor": "Cheira a pomada. E tem menos mosquito.",
+      "desc": [
+        "Faz flotação de minério *Moído* com etilxantato",
+        "e terebintina, gerando a espuma de minério."
+      ],
+      "pro": [
+        "*Overclock perfeito*: duração /4 por tier"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Control Hatch*"
+      ],
+      "con": [
+        "Precisa de minério Moído, etilxantato e terebintina"
+      ]
+    }
+  },
+  "vacuum_drying_furnace": {
+    "type": "Vacuum Drying, Dehydrator",
+    "flavor": "Turns foam back into dust. Magic, but with vacuum.",
+    "desc": [
+      "Dries flotation ore foams back into dusts,",
+      "Red Mud and Water, or runs the *Dehydrator*."
+    ],
+    "pro": [
+      "Dehydrator: parallel *2x* every *900K* of coils"
+    ],
+    "num": [
+      "Select Dehydrator mode at the controller"
+    ],
+    "con": [
+      "Coils must meet the recipe temperature",
+      "Vacuum Drying always runs serially"
+    ],
+    "pt": {
+      "type": "Secagem a Vácuo, Desidratador",
+      "flavor": "Transforma espuma de volta em pó. Mágica, só que com vácuo.",
+      "desc": [
+        "Seca espumas de flotação de volta em pós,",
+        "Lama Vermelha e Água, ou roda o *Desidratador*."
+      ],
+      "pro": [
+        "Desidratador: paralelos *2x* a cada *900K* de bobina"
+      ],
+      "num": [
+        "Escolha o modo Desidratador no controlador"
+      ],
+      "con": [
+        "As bobinas precisam da temperatura da receita",
+        "A Secagem a Vácuo sempre roda em série"
+      ]
+    }
+  },
+  "advanced_fusion_reactor": {
+    "type": "Fusion Reactor",
+    "flavor": "It simulates the eternal light.",
+    "desc": [
+      "A modular fusion reactor: *high-energy*",
+      "modules raise its heat capacity, an",
+      "*overclock* module unlocks special hatches."
+    ],
+    "pro": [
+      "Each high-energy module *doubles* heat capacity",
+      "Overclock module: Overclock and Thread Hatches"
+    ],
+    "num": [
+      "Energy storage: *160M* EU before modules",
+      "Up to *4* high-energy modules, in order"
+    ],
+    "con": [
+      "Only *one* overclock module",
+      "On conflict, install high-energy modules first"
+    ],
+    "pt": {
+      "type": "Reator de Fusão",
+      "flavor": "Ele simula a luz eterna.",
+      "desc": [
+        "Um reator de fusão modular: módulos de *alta*",
+        "*energia* aumentam a capacidade de calor e um",
+        "módulo de *overclock* libera hatches especiais."
+      ],
+      "pro": [
+        "Cada módulo de alta energia *dobra* o calor",
+        "Módulo de overclock: Overclock e Thread Hatches"
+      ],
+      "num": [
+        "Armazenamento: *160M* EU antes dos módulos",
+        "Até *4* módulos de alta energia, em ordem"
+      ],
+      "con": [
+        "Só *um* módulo de overclock",
+        "Em conflito, instale os de alta energia primeiro"
+      ]
+    }
+  },
+  "large_pyrolyse_oven": {
+    "type": "Pyrolyse Oven",
+    "flavor": "Wood goes in, chemistry comes out, smoke goes everywhere.",
+    "desc": [
+      "Runs *Pyrolyse Oven* recipes in bulk with",
+      "a Parallel Hatch."
+    ],
+    "pro": [
+      "Speed scales with the *heating coil* tier"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Forno de Pirólise",
+      "flavor": "Madeira entra, química sai, fumaça vai para todo lado.",
+      "desc": [
+        "Roda receitas do *Forno de Pirólise* em massa",
+        "com um Parallel Hatch."
+      ],
+      "pro": [
+        "A velocidade cresce com o tier da *bobina*"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "large_cracker": {
+    "type": "Cracker",
+    "flavor": "Cracking hydrocarbons like it's a Sunday crossword.",
+    "desc": [
+      "Runs *Cracker* recipes in bulk with heating",
+      "coils and a Parallel Hatch."
+    ],
+    "pro": [
+      "Each coil tier above Cupronickel: *-10%* EU"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [
+      "Down to *10%* EU with Eternal coils"
+    ],
+    "pt": {
+      "type": "Craqueador",
+      "flavor": "Craqueando hidrocarbonetos como palavras cruzadas de domingo.",
+      "desc": [
+        "Roda receitas do *Craqueador* em massa com bobinas",
+        "e um Parallel Hatch."
+      ],
+      "pro": [
+        "Cada tier de bobina acima de Cupronickel: *-10%* EU"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": [
+        "Até *10%* do EU com bobinas Eternal"
+      ]
+    }
+  },
+  "cracker_hub": {
+    "type": "Cracker, Pyrolyse Oven",
+    "flavor": "Make sure the safety valves work. Then check again.",
+    "desc": [
+      "Six reaction columns that crack and pyrolyse",
+      "*complex molecules* side by side."
+    ],
+    "pro": [
+      "Parallel *2x* every *900K* of coils",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Craqueador, Forno de Pirólise",
+      "flavor": "Confira se as válvulas de segurança funcionam. Depois confira de novo.",
+      "desc": [
+        "Seis colunas de reação que craqueiam e pirolisam",
+        "*moléculas complexas* lado a lado."
+      ],
+      "pro": [
+        "Paralelos *2x* a cada *900K* de bobina",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": []
+    }
+  },
+  "mega_brewer": {
+    "type": "Brewery, Fermenter",
+    "flavor": "Thousand-ton brewing. The whole workshop smells great.",
+    "desc": [
+      "Brews and ferments at *industrial scale* in",
+      "giant temperature-controlled tanks."
+    ],
+    "pro": [
+      "Parallel *2x* every *900K* of coils",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Cervejaria, Fermentador",
+      "flavor": "Cervejaria de mil toneladas. A oficina inteira cheira bem.",
+      "desc": [
+        "Fermenta e produz bebidas em *escala industrial*",
+        "em tanques gigantes com controle de temperatura."
+      ],
+      "pro": [
+        "Paralelos *2x* a cada *900K* de bobina",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": []
+    }
+  },
+  "mega_vacuum_drying_furnace": {
+    "type": "Vacuum Drying",
+    "flavor": "Zero oxidation, zero contamination, zero patience needed.",
+    "desc": [
+      "Dries ore foams into *pure dusts* in vacuum",
+      "at megafactory scale."
+    ],
+    "pro": [
+      "Parallel *2x* every *900K* of coils",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [
+      "Coils must meet the recipe temperature"
+    ],
+    "pt": {
+      "type": "Secagem a Vácuo",
+      "flavor": "Zero oxidação, zero contaminação, zero paciência necessária.",
+      "desc": [
+        "Seca espumas de minério em *pós puros* no vácuo",
+        "em escala de megafábrica."
+      ],
+      "pro": [
+        "Paralelos *2x* a cada *900K* de bobina",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": [
+        "As bobinas precisam da temperatura da receita"
+      ]
+    }
+  },
+  "giant_flotation_tank": {
+    "type": "Flotating Beneficiation",
+    "flavor": "Billions of bubbles, each one a tiny elevator for ore.",
+    "desc": [
+      "A mineral flotation sanctuary that sorts ore",
+      "particles with *bubbles* at megafactory scale."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Beneficiamento por Flotação",
+      "flavor": "Bilhões de bolhas, cada uma um elevadorzinho de minério.",
+      "desc": [
+        "Um santuário de flotação que separa partículas de",
+        "minério com *bolhas* em escala de megafábrica."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "phase_change_cube": {
+    "type": "Extractor, Fluid Solidifier",
+    "flavor": "Six faces, six phase changes. A Rubik's Cube for matter.",
+    "desc": [
+      "Melts solids into fluids and freezes them",
+      "back, *reshaping states* of matter."
+    ],
+    "pro": [
+      "Parallel *2x* every *900K* of coils",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Extrator, Solidificador de Fluidos",
+      "flavor": "Seis faces, seis mudanças de fase. Um cubo mágico da matéria.",
+      "desc": [
+        "Derrete sólidos em fluidos e congela de volta,",
+        "*remodelando os estados* da matéria."
+      ],
+      "pro": [
+        "Paralelos *2x* a cada *900K* de bobina",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": []
+    }
+  },
+  "engraving_laser_plant": {
+    "type": "Laser Engraver, Precision",
+    "flavor": "Precise enough to engrave QR codes on viruses. Why? Unknown.",
+    "desc": [
+      "A photon engraving plant that runs *Laser*",
+      "*Engraver* and Precision Laser recipes."
+    ],
+    "pro": [
+      "*Perfect overclock*: duration /4 per tier"
+    ],
+    "num": [
+      "Laser Engraver: Parallel Control Hatch"
+    ],
+    "con": [
+      "Precision Laser Engraving: parallel *1*"
+    ],
+    "pt": {
+      "type": "Gravador a Laser, Precisão",
+      "flavor": "Preciso o bastante para gravar QR code em vírus. Por quê? Ninguém sabe.",
+      "desc": [
+        "Uma planta de gravação por fótons que roda receitas",
+        "de *Gravador a Laser* e Laser de Precisão."
+      ],
+      "pro": [
+        "*Overclock perfeito*: duração /4 por tier"
+      ],
+      "num": [
+        "Gravador a Laser: Parallel Control Hatch"
+      ],
+      "con": [
+        "Gravação a Laser de Precisão: paralelo *1*"
+      ]
+    }
+  },
+  "infinity_fluid_drilling_rig": {
+    "type": "Fluid Drilling",
+    "flavor": "Better than Minecraft's infinite water. Barely legal.",
+    "desc": [
+      "Drills fluids from *self-regenerating* veins",
+      "under the bedrock."
+    ],
+    "pro": [
+      "Vein depletion rate: *0*"
+    ],
+    "num": [
+      "Output: *256x* at ZPM, *384x* at UV"
+    ],
+    "con": [
+      "Needs a ZPM or better energy supply"
+    ],
+    "pt": {
+      "type": "Perfuração de Fluidos",
+      "flavor": "Melhor que a água infinita do Minecraft. Quase ilegal.",
+      "desc": [
+        "Perfura fluidos de veios que *se regeneram*",
+        "sozinhos debaixo da bedrock."
+      ],
+      "pro": [
+        "Taxa de esgotamento do veio: *0*"
+      ],
+      "num": [
+        "Produção: *256x* em ZPM, *384x* em UV"
+      ],
+      "con": [
+        "Precisa de energia ZPM ou melhor"
+      ]
+    }
+  },
+  "mega_distillery": {
+    "type": "Distillery, Distillation",
+    "flavor": "Every fraction of the barrel, accounted for.",
+    "desc": [
+      "Runs Distillery, *Distillation Tower* and",
+      "Evaporation recipes at megafactory scale."
+    ],
+    "pro": [
+      "Distillation outputs go to any fluid hatch",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Destilaria, Destilação",
+      "flavor": "Cada fração do barril, contabilizada.",
+      "desc": [
+        "Roda receitas de Destilaria, *Torre de Destilação*",
+        "e Evaporação em escala de megafábrica."
+      ],
+      "pro": [
+        "Saídas da destilação vão para qualquer hatch",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "super_blast_smelter": {
+    "type": "Blast Furnace, Alloy Blast",
+    "flavor": "Smelting all things at artificial-sun temperatures.",
+    "desc": [
+      "Smelts and alloys at *star-core* heat:",
+      "Electric Blast Furnace and Alloy Blast",
+      "Smelter recipes."
+    ],
+    "pro": [
+      "*+100K* heat per voltage tier above MV",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [
+      "Coils must meet the recipe temperature"
+    ],
+    "pt": {
+      "type": "Alto-Forno, Alto-Forno de Ligas",
+      "flavor": "Fundindo tudo em temperaturas de sol artificial.",
+      "desc": [
+        "Funde e cria ligas no calor de *núcleo de estrela*:",
+        "receitas do Alto-Forno Elétrico e da Alloy",
+        "Blast Smelter."
+      ],
+      "pro": [
+        "*+100K* de calor por tier de voltagem acima de MV",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": [
+        "As bobinas precisam da temperatura da receita"
+      ]
+    }
+  },
+  "integrated_assembler": {
+    "type": "Assembler",
+    "flavor": "Make complexity simple, make impossible routine.",
+    "desc": [
+      "A hyperspatial assembly line that builds",
+      "*anything from chips to engines*."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Montadora",
+      "flavor": "Torne o complexo simples e o impossível rotina.",
+      "desc": [
+        "Uma linha de montagem hiperespacial que constrói",
+        "*de chips a motores*."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "neutronium_wire_cutting": {
+    "type": "Cutter",
+    "flavor": "Neutron star matter cuts like butter. Earth stuff? Air.",
+    "desc": [
+      "Cuts with *neutron-degenerate threads* at",
+      "atomic precision."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Cortadora",
+      "flavor": "Matéria de estrela de nêutrons corta como manteiga. Coisa da Terra? Ar.",
+      "desc": [
+        "Corta com *fios de matéria degenerada* com",
+        "precisão atômica."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "holy_separator": {
+    "type": "Centrifuge",
+    "flavor": "Centrifugation as a sacred purification ritual. Amen.",
+    "desc": [
+      "An altar-like centrifuge that separates",
+      "materials by *density* at megafactory scale."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Centrífuga",
+      "flavor": "Centrifugação como ritual sagrado de purificação. Amém.",
+      "desc": [
+        "Uma centrífuga em forma de altar que separa",
+        "materiais por *densidade* em escala de megafábrica."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "superconducting_electromagnetism": {
+    "type": "Polarizer, EM Separator",
+    "flavor": "Maxwell's equations, now in industrial size.",
+    "desc": [
+      "Polarizes and magnetically separates in a",
+      "*zero-resistance* superconducting field."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Polarizador, Separador EM",
+      "flavor": "As equações de Maxwell, agora em tamanho industrial.",
+      "desc": [
+        "Polariza e separa magneticamente num campo",
+        "supercondutor de *resistência zero*."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "superconducting_magnetic_presser": {
+    "type": "Forming Press",
+    "flavor": "Can easily accelerate coins to Mach 3!",
+    "desc": [
+      "Shapes metal with *railgun-grade*",
+      "electromagnetic force."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Prensa de Moldagem",
+      "flavor": "Acelera moedas a Mach 3 com facilidade!",
+      "desc": [
+        "Molda metal com força eletromagnética",
+        "*nível railgun*."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "magnetic_energy_reaction_furnace": {
+    "type": "Arc Furnace",
+    "flavor": "Smells like ozone. Fresh, but dangerous.",
+    "desc": [
+      "Plasma arcs held by strong magnetic fields",
+      "*create and recycle* matter at stellar heat."
+    ],
+    "pro": [
+      "Parallel *2x* every *900K* of coils",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Forno a Arco",
+      "flavor": "Cheira a ozônio. Fresco, mas perigoso.",
+      "desc": [
+        "Arcos de plasma presos por campos magnéticos",
+        "*criam e reciclam* matéria em calor estelar."
+      ],
+      "pro": [
+        "Paralelos *2x* a cada *900K* de bobina",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": []
+    }
+  },
+  "particle_stream_matrix_filling_machine": {
+    "type": "Canner",
+    "flavor": "Even photons and sound waves fit in a can now.",
+    "desc": [
+      "Injects particle streams into containers",
+      "with *zero loss* at megafactory scale."
+    ],
+    "pro": [
+      "Parallel *2x* every *900K* of coils",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Enlatadora",
+      "flavor": "Até fótons e ondas sonoras cabem numa lata agora.",
+      "desc": [
+        "Injeta fluxos de partículas em recipientes com",
+        "*perda zero* em escala de megafábrica."
+      ],
+      "pro": [
+        "Paralelos *2x* a cada *900K* de bobina",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": []
+    }
+  },
+  "nanites_circuit_assembly_factory": {
+    "type": "Circuit Assembler",
+    "flavor": "No furnace roar, no robot arms. Just nanites.",
+    "desc": [
+      "Runs *Circuit Assembler* recipes at",
+      "megafactory scale."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Montadora de Circuitos",
+      "flavor": "Sem rugido de fornalha, sem braço robótico. Só nanitas.",
+      "desc": [
+        "Roda receitas de *Montadora de Circuitos* em",
+        "escala de megafábrica."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "mega_wiremill": {
+    "type": "Wiremill",
+    "flavor": "From bulky ingots to hair-thin perfect wires.",
+    "desc": [
+      "Draws metal into *perfect wires* under",
+      "thousands of tons of pressure."
+    ],
+    "pro": [
+      "Parallel *2x* every *900K* of coils",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Trefiladora",
+      "flavor": "De lingotes pesados a fios perfeitos finos como cabelo.",
+      "desc": [
+        "Puxa metal em *fios perfeitos* sob milhares",
+        "de toneladas de pressão."
+      ],
+      "pro": [
+        "Paralelos *2x* a cada *900K* de bobina",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": []
+    }
+  },
+  "crystal_builder": {
+    "type": "Autoclave",
+    "flavor": "The Braggs' dream factory, one perfect lattice at a time.",
+    "desc": [
+      "Grows *defect-free crystals* under",
+      "ultra-high pressure."
+    ],
+    "pro": [
+      "Parallel *2x* every *900K* of coils",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Autoclave",
+      "flavor": "A fábrica dos sonhos dos Bragg, uma rede perfeita por vez.",
+      "desc": [
+        "Cultiva *cristais sem defeitos* sob",
+        "pressão altíssima."
+      ],
+      "pro": [
+        "Paralelos *2x* a cada *900K* de bobina",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": []
+    }
+  },
+  "liquefaction_furnace": {
+    "type": "Liquefaction",
+    "flavor": "Everything is a liquid if you heat it enough.",
+    "desc": [
+      "Melts items into *fluids* once the coils",
+      "reach the recipe temperature."
+    ],
+    "pro": [
+      "Extension tower: Parallel and Accelerate Hatches"
+    ],
+    "num": [],
+    "con": [
+      "Coils must meet the recipe temperature"
+    ],
+    "pt": {
+      "type": "Liquefação",
+      "flavor": "Tudo é líquido se você esquentar o suficiente.",
+      "desc": [
+        "Derrete itens em *fluidos* quando as bobinas",
+        "chegam à temperatura da receita."
+      ],
+      "pro": [
+        "Torre de extensão: Parallel e Accelerate Hatches"
+      ],
+      "num": [],
+      "con": [
+        "As bobinas precisam da temperatura da receita"
+      ]
+    }
+  },
+  "thermal_power_pump": {
+    "type": "Water Pump",
+    "flavor": "Turns steam back into water. Circle of life.",
+    "desc": [
+      "Condenses steam into *water* based on the",
+      "surrounding biome."
+    ],
+    "pro": [
+      "Rain boosts output by *50%*",
+      "Oceans and rivers produce the most"
+    ],
+    "num": [
+      "Output depends on the biome"
+    ],
+    "con": [
+      "Produces nothing in the Nether"
+    ],
+    "pt": {
+      "type": "Bomba de Água",
+      "flavor": "Transforma vapor de volta em água. O ciclo da vida.",
+      "desc": [
+        "Condensa vapor em *água* de acordo com o",
+        "bioma ao redor."
+      ],
+      "pro": [
+        "A chuva aumenta a produção em *50%*",
+        "Oceanos e rios produzem mais"
+      ],
+      "num": [
+        "A produção depende do bioma"
+      ],
+      "con": [
+        "Não produz nada no Nether"
+      ]
+    }
+  },
+  "brick_kiln": {
+    "type": "Brick Firing",
+    "flavor": "Bricks: the original building block.",
+    "desc": [
+      "Fires *bricks and ceramics* from compressed",
+      "clay and coal."
+    ],
+    "pro": [
+      "Runs without an energy hatch"
+    ],
+    "num": [],
+    "con": [],
+    "pt": {
+      "type": "Queima de Tijolos",
+      "flavor": "Tijolos: o bloco de construção original.",
+      "desc": [
+        "Queima *tijolos e cerâmicas* a partir de argila",
+        "compactada e carvão."
+      ],
+      "pro": [
+        "Funciona sem hatch de energia"
+      ],
+      "num": [],
+      "con": []
+    }
+  },
+  "annihilate_generator": {
+    "type": "Annihilation Generator",
+    "flavor": "Let there be light. Lots of it.",
+    "desc": [
+      "An *artificial star* that generates power",
+      "from annihilation recipes."
+    ],
+    "pro": [
+      "*Perfect overclock*: duration /4 per tier"
+    ],
+    "num": [
+      "Outputs through Laser or up to *16* Dynamo Hatches"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Gerador de Aniquilação",
+      "flavor": "Faça-se a luz. Muita luz.",
+      "desc": [
+        "Uma *estrela artificial* que gera energia com",
+        "receitas de aniquilação."
+      ],
+      "pro": [
+        "*Overclock perfeito*: duração /4 por tier"
+      ],
+      "num": [
+        "Saída por Laser ou até *16* Dynamo Hatches"
+      ],
+      "con": []
+    }
+  },
+  "high_energy_laser_lathe": {
+    "type": "Lathe",
+    "flavor": "Laser blades turn rods. Sawdust is now a hologram.",
+    "desc": [
+      "Reshapes matter with *photon blades*, visible",
+      "through its transparent casing."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Torno",
+      "flavor": "Lâminas de laser torneiam hastes. A serragem agora é holograma.",
+      "desc": [
+        "Remodela a matéria com *lâminas de fótons*, visíveis",
+        "pela carcaça transparente."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "extreme_compressor": {
+    "type": "Compressor",
+    "flavor": "Megaton press. Even the hardest metal learns manners.",
+    "desc": [
+      "A planetary-grade *hydraulic system* that squeezes",
+      "ingots, dust and plates into denser forms."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [
+      "Needs a *Muffler Hatch*"
+    ],
+    "pt": {
+      "type": "Compressor",
+      "flavor": "Prensa de megatons. Até o metal mais duro aprende modos.",
+      "desc": [
+        "Um *sistema hidráulico* de escala planetária que",
+        "comprime lingotes, pó e placas em formas densas."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": [
+        "Precisa de um *Muffler Hatch*"
+      ]
+    }
+  },
+  "hyperdimensional_plasma_fusion_core": {
+    "type": "Plasma Forge",
+    "flavor": "A Plasma Forge that learned to multitask. Badly for the universe.",
+    "desc": [
+      "Runs *Plasma Forge* recipes with the coil heat of",
+      "a DTPF, in parallel and side by side."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [
+      "Recipe heat must not exceed the *coil* temperature"
+    ],
+    "pt": {
+      "type": "Forja de Plasma",
+      "flavor": "Uma Forja de Plasma que aprendeu a multitarefa. Azar do universo.",
+      "desc": [
+        "Roda receitas da *Forja de Plasma* com o calor de",
+        "bobina de uma DTPF, em paralelo e lado a lado."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": [
+        "O calor da receita não pode passar o da *bobina*"
+      ]
+    }
+  },
+  "gemini_containment_system": {
+    "type": "Packer",
+    "flavor": "Packs and unpacks at once. Pauli would approve.",
+    "desc": [
+      "Twin *packaging lines* that seal and unseal",
+      "items like mirrored charges."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches",
+      "Parallel *2x* for each *900K* of coil temperature"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Empacotadora",
+      "flavor": "Empacota e desempacota de uma vez. Pauli aprovaria.",
+      "desc": [
+        "Duas *linhas de empacotamento* que lacram e",
+        "abrem itens como cargas espelhadas."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches",
+        "Paralelos *2x* a cada *900K* de temperatura da bobina"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": []
+    }
+  },
+  "giant_electrochemical_workstation": {
+    "type": "Electrolyzer",
+    "flavor": "Enough current to split water, salt and your patience.",
+    "desc": [
+      "A giant *electrolysis hall* with heated cells and",
+      "corrosion-proof piping."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches",
+      "Builds in any direction",
+      "Parallel *2x* for each *900K* of coil temperature"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Eletrolisador",
+      "flavor": "Corrente que separa água, sal e a sua paciência.",
+      "desc": [
+        "Um *salão de eletrólise* gigante com células",
+        "aquecidas e tubulação anticorrosão."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches",
+        "Monta em qualquer direção",
+        "Paralelos *2x* a cada *900K* de temperatura da bobina"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": []
+    }
+  },
+  "desulfurizer": {
+    "type": "Desulfurizer",
+    "flavor": "Sulfur out, clean fuel in. The air says thanks.",
+    "desc": [
+      "Strips *sulfur* from sulfuric fuels and gases,",
+      "leaving them ready for refining."
+    ],
+    "pro": [
+      "Optional *extension* unlocks Thread, Overclock,",
+      "Accelerate, Parallel and Laser Hatches",
+      "Parallel *2x* for each *900K* of coil temperature"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [
+      "The extension needs a *Muffler Hatch*"
+    ],
+    "pt": {
+      "type": "Dessulfurizador",
+      "flavor": "Sai o enxofre, fica o combustível limpo. O ar agradece.",
+      "desc": [
+        "Remove o *enxofre* de combustíveis e gases",
+        "sulfurosos, prontos para o refino."
+      ],
+      "pro": [
+        "*Extensão* opcional libera Thread, Overclock,",
+        "Accelerate, Parallel e Laser Hatches",
+        "Paralelos *2x* a cada *900K* de temperatura da bobina"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": [
+        "A extensão precisa de um *Muffler Hatch*"
+      ]
+    }
+  },
+  "dimensional_focus_engraving_array": {
+    "type": "Engraver",
+    "flavor": "Focuses a laser through a fold in space. Precision, now in 4D.",
+    "desc": [
+      "Engraves with *dimensionally focused* lasers for",
+      "endgame wafers and chips."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches",
+      "Parallel *2x* for each *900K* of coil temperature"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Gravadora",
+      "flavor": "Foca o laser por uma dobra no espaço. Precisão, agora em 4D.",
+      "desc": [
+        "Grava com lasers *focados dimensionalmente*",
+        "para wafers e chips do endgame."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches",
+        "Paralelos *2x* a cada *900K* de temperatura da bobina"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": []
+    }
+  },
+  "star_ultimate_material_forge_factory": {
+    "type": "Material Forge",
+    "flavor": "A star in a box, hammering out the last materials.",
+    "desc": [
+      "Forges *ultimate materials* inside a contained",
+      "star, with no limit on parallels."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches",
+      "Builds in any direction"
+    ],
+    "num": [
+      "*Unlimited* parallel"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Forja de Materiais",
+      "flavor": "Uma estrela numa caixa, forjando os últimos materiais.",
+      "desc": [
+        "Forja *materiais finais* dentro de uma estrela",
+        "contida, sem limite de paralelos."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches",
+        "Monta em qualquer direção"
+      ],
+      "num": [
+        "Paralelos *ilimitados*"
+      ],
+      "con": []
+    }
+  },
+  "hand_of_arachne": {
+    "type": "Loom",
+    "flavor": "Eight arms, zero tangles. Arachne would be jealous.",
+    "desc": [
+      "A giant *loom* that weaves fibres and cables",
+      "faster than any spider."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Tear",
+      "flavor": "Oito braços, nenhum nó. Aracne teria inveja.",
+      "desc": [
+        "Um *tear* gigante que tece fibras e cabos",
+        "mais rápido que qualquer aranha."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "rare_earth_centrifugal": {
+    "type": "Centrifuge",
+    "flavor": "Spins rare earths until every lanthanide finds its jar.",
+    "desc": [
+      "Splits *rare earth* concentrates into their",
+      "elements in one spin."
+    ],
+    "pro": [
+      "Builds in any direction"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Centrífuga",
+      "flavor": "Gira as terras raras até cada lantanídeo achar o seu pote.",
+      "desc": [
+        "Separa concentrados de *terras raras* nos seus",
+        "elementos de uma vez."
+      ],
+      "pro": [
+        "Monta em qualquer direção"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "heavy_rolling": {
+    "type": "Bender",
+    "flavor": "Rolls metal like dough. Very hot, very heavy dough.",
+    "desc": [
+      "Heated *rolling mills* that bend and press",
+      "plates at industrial scale."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches",
+      "Parallel *2x* for each *900K* of coil temperature"
+    ],
+    "num": [
+      "Uses the Parallel Hatch limit if higher"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Dobradeira",
+      "flavor": "Lamina metal como massa. Massa muito quente e pesada.",
+      "desc": [
+        "*Laminadores* aquecidos que dobram e prensam",
+        "placas em escala industrial."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches",
+        "Paralelos *2x* a cada *900K* de temperatura da bobina"
+      ],
+      "num": [
+        "Usa o limite do Parallel Hatch se for maior"
+      ],
+      "con": []
+    }
+  },
+  "lightning_rod": {
+    "type": "Arc Generator",
+    "flavor": "Calls lightning on purpose. The neighbours have questions.",
+    "desc": [
+      "Channels *arc discharges* to forge what heat alone",
+      "cannot, with lightning crackling at its tip."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Gerador de Arco",
+      "flavor": "Chama raios de propósito. Os vizinhos têm perguntas.",
+      "desc": [
+        "Canaliza *descargas de arco* para forjar o que",
+        "o calor sozinho não faz, com raios na ponta."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "pcb_factory": {
+    "type": "PCB Factory",
+    "flavor": "Prints boards by the thousand. The etchant smells like progress.",
+    "desc": [
+      "Etches *printed circuit boards* in bulk; bigger",
+      "structures unlock higher-tier boards."
+    ],
+    "pro": [
+      "Three structure tiers (screwdriver on the controller)",
+      "Accepts Laser Hatches"
+    ],
+    "num": [
+      "Tier 1: up to *30,719 EU/t*; tier 2: up to *491,519 EU/t*",
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Fábrica de PCB",
+      "flavor": "Imprime placas aos milhares. O corrosivo cheira a progresso.",
+      "desc": [
+        "Grava *placas de circuito* em massa; estruturas",
+        "maiores liberam placas de tier mais alto."
+      ],
+      "pro": [
+        "Três tiers de estrutura (chave de fenda no controlador)",
+        "Aceita Laser Hatches"
+      ],
+      "num": [
+        "Tier 1: até *30.719 EU/t*; tier 2: até *491.519 EU/t*",
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": []
+    }
+  },
+  "space_probe_surface_reception": {
+    "type": "Space Probe Receiver",
+    "flavor": "Listens to the cosmos and bottles what it hears.",
+    "desc": [
+      "Catches *cosmic particles* with a dish pointed at",
+      "the open sky, far above any planet."
+    ],
+    "pro": [
+      "Works in any *space* dimension of Ad Astra"
+    ],
+    "num": [
+      "*Perfect* overclock"
+    ],
+    "con": [
+      "Stops when the sky above the dish is covered",
+      "Needs a *Computation Data Hatch*"
+    ],
+    "pt": {
+      "type": "Receptor de Sonda Espacial",
+      "flavor": "Escuta o cosmos e engarrafa o que ouve.",
+      "desc": [
+        "Capta *partículas cósmicas* com uma antena",
+        "voltada para o céu aberto, longe de planetas."
+      ],
+      "pro": [
+        "Funciona em qualquer dimensão *espacial* do Ad Astra"
+      ],
+      "num": [
+        "Overclock *perfeito*"
+      ],
+      "con": [
+        "Para quando o céu acima da antena é coberto",
+        "Precisa de um *Computation Data Hatch*"
+      ]
+    }
+  },
+  "compound_extreme_cooling_unit": {
+    "type": "Vacuum Freezer",
+    "flavor": "Freezes, atomizes and condenses plasma. Bring a coat.",
+    "desc": [
+      "Three coolers in one: *vacuum freezing*, atomization",
+      "and plasma condensation."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Accepts Laser Hatches",
+      "Builds in any direction"
+    ],
+    "num": [
+      "Parallel set by the *Parallel Hatch*"
+    ],
+    "con": [
+      "Plasma Condenser needs the larger *plasma structure*"
+    ],
+    "pt": {
+      "type": "Congelador a Vácuo",
+      "flavor": "Congela, atomiza e condensa plasma. Leve um casaco.",
+      "desc": [
+        "Três resfriadores em um: *congelamento a vácuo*,",
+        "atomização e condensação de plasma."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Laser Hatches",
+        "Monta em qualquer direção"
+      ],
+      "num": [
+        "Paralelos definidos pelo *Parallel Hatch*"
+      ],
+      "con": [
+        "O Condensador de Plasma precisa da *estrutura de plasma*"
+      ]
+    }
+  },
+  "hyper_reactor": {
+    "type": "Generator",
+    "flavor": "Burns hyper fuel. Do not ask what is hyper about it.",
+    "desc": [
+      "Turns *hyper fuels* into huge amounts of EU;",
+      "a booster plasma multiplies each run."
+    ],
+    "pro": [
+      "Builds in any direction",
+      "Dynamo or Laser Source Hatch"
+    ],
+    "num": [
+      "Booster plasma: *16x* parallel by default",
+      "Booster plasma is consumed once before a boosted run"
+    ],
+    "con": [
+      "Booster and fuel are set per recipe (pack/KubeJS)"
+    ],
+    "pt": {
+      "type": "Gerador",
+      "flavor": "Queima combustível hyper. Não pergunte o que ele tem de hyper.",
+      "desc": [
+        "Transforma *combustíveis hyper* em montanhas de",
+        "EU; um plasma de reforço multiplica cada ciclo."
+      ],
+      "pro": [
+        "Monta em qualquer direção",
+        "Dynamo Hatch ou Laser Source Hatch"
+      ],
+      "num": [
+        "Plasma de reforço: *16x* paralelos por padrão",
+        "O plasma de reforço é consumido antes do ciclo reforçado"
+      ],
+      "con": [
+        "Reforço e combustível definidos por receita (pack/KubeJS)"
+      ]
+    }
+  },
+  "advanced_hyper_reactor": {
+    "type": "Generator",
+    "flavor": "The Hyper Reactor, after a long talk with an echo.",
+    "desc": [
+      "Burns *concentrated hyper fuels*; its boosters",
+      "can be set per recipe."
+    ],
+    "pro": [
+      "Dynamo or Laser Source Hatch"
+    ],
+    "num": [
+      "Booster plasma: *16x* parallel by default",
+      "Booster plasma is consumed once before a boosted run"
+    ],
+    "con": [
+      "Booster and fuel are set per recipe (pack/KubeJS)"
+    ],
+    "pt": {
+      "type": "Gerador",
+      "flavor": "O Hyper Reactor, depois de uma longa conversa com um eco.",
+      "desc": [
+        "Queima *combustíveis hyper concentrados*; os",
+        "reforços podem ser definidos por receita."
+      ],
+      "pro": [
+        "Dynamo Hatch ou Laser Source Hatch"
+      ],
+      "num": [
+        "Plasma de reforço: *16x* paralelos por padrão",
+        "O plasma de reforço é consumido antes do ciclo reforçado"
+      ],
+      "con": [
+        "Reforço e combustível definidos por receita (pack/KubeJS)"
+      ]
+    }
+  },
+  "fuel_cell_generator": {
+    "type": "Fuel Cell",
+    "flavor": "A battery that drinks fuel and remembers how tired it is.",
+    "desc": [
+      "Charges *redox-flow electrolytes* with fuel, moves",
+      "charge between them and discharges them as EU."
+    ],
+    "pro": [
+      "Three modes: absorption, transfer, release",
+      "Better *membrane electrodes* raise the efficiency"
+    ],
+    "num": [
+      "Release: up to *50* parallel",
+      "Idle recovery: *600 mB/t* Distilled Water",
+      "Recovers *15%* of lost efficiency per tick",
+      "Transfer swaps the inputs' *charge states*"
+    ],
+    "con": [
+      "Each release run has a *0.35%* chance to use up the membrane",
+      "Absorption needs equal *anolyte and catholyte* amounts",
+      "Energy transfer loses efficiency according to the recipe",
+      "Absorption efficiency decays per run, based on the membrane"
+    ],
+    "pt": {
+      "type": "Célula a Combustível",
+      "flavor": "Uma bateria que bebe combustível e lembra do próprio cansaço.",
+      "desc": [
+        "Carrega *eletrólitos redox* com combustível, move",
+        "carga entre eles e os descarrega em EU."
+      ],
+      "pro": [
+        "Três modos: absorção, transferência, liberação",
+        "*Eletrodos de membrana* melhores elevam a eficiência"
+      ],
+      "num": [
+        "Liberação: até *50* paralelos",
+        "Recuperação em repouso: *600 mB/t* de Água Destilada",
+        "Recupera *15%* da eficiência perdida por tick",
+        "Transferência inverte os *estados de carga* das entradas"
+      ],
+      "con": [
+        "Cada ciclo de liberação tem *0,35%* de chance de gastar a membrana",
+        "Absorção exige volumes iguais de *anólito e católito*",
+        "Transferir energia tem perdas definidas pela receita",
+        "A eficiência de absorção decai por ciclo, conforme a membrana"
+      ]
+    }
+  },
+  "supercomputing_center": {
+    "type": "Computation",
+    "flavor": "Three generations of computers under one roof. Mind the heat.",
+    "desc": [
+      "A tiered *HPCA*: HPCA, NICH or GWCA components",
+      "supply CWU/t to the research network."
+    ],
+    "pro": [
+      "Three tiers (screwdriver): HPCA, NICH, GWCA",
+      "MFPC coolant restores the CWU/t multiplier"
+    ],
+    "num": [
+      "Tier 1 pays a quarter of the components' upkeep",
+      "Tiers 2-3 need an Optical / Exotic Mainframe",
+      "CWU/t = sum of component power x correction factor"
+    ],
+    "con": [
+      "Low cooling damages computing components",
+      "Tier must match the casings, vents and glass",
+      "At higher tiers, the correction factor decays over time",
+      "Used MFPC turns into its *invalidated* form"
+    ],
+    "pt": {
+      "type": "Computação",
+      "flavor": "Três gerações de computadores sob o mesmo teto. Cuidado com o calor.",
+      "desc": [
+        "Um *HPCA* em tiers: componentes HPCA, NICH ou",
+        "GWCA fornecem CWU/t para a rede de pesquisa."
+      ],
+      "pro": [
+        "Três tiers (chave de fenda): HPCA, NICH, GWCA",
+        "O refrigerante MFPC restaura o multiplicador de CWU/t"
+      ],
+      "num": [
+        "O tier 1 paga um quarto da manutenção dos componentes",
+        "Tiers 2-3 precisam de Mainframe Óptico / Exótico",
+        "CWU/t = soma da computação dos componentes x fator"
+      ],
+      "con": [
+        "Pouco resfriamento danifica os componentes",
+        "O tier precisa bater com carcaças, ventilação e vidro",
+        "Nos tiers maiores, o fator de correção decai com o tempo",
+        "O MFPC utilizado vira sua forma *invalidada*"
+      ]
+    }
+  },
+  "data_center": {
+    "type": "Data Bank",
+    "flavor": "Every research note, cooled by NICH and served at the speed of light.",
+    "desc": [
+      "A large *Data Bank* that shares research data",
+      "with Assembly Lines over optical cables."
+    ],
+    "pro": [
+      "Many Optical Data Hatches",
+      "Chains with other Data Banks"
+    ],
+    "num": [
+      "Up to *16* transmission and *4* reception hatches",
+      "Data/Optical Hatches: *1,920* EU/t each normally"
+    ],
+    "con": [
+      "Needs NICH Cooling Components in its walls",
+      "With optical reception: *30,720* EU/t per data hatch"
+    ],
+    "pt": {
+      "type": "Banco de Dados",
+      "flavor": "Toda anotação de pesquisa, resfriada por NICH, à velocidade da luz.",
+      "desc": [
+        "Um *Banco de Dados* grande que compartilha dados",
+        "de pesquisa com Assembly Lines por cabo óptico."
+      ],
+      "pro": [
+        "Muitos Optical Data Hatches",
+        "Encadeia com outros Bancos de Dados"
+      ],
+      "num": [
+        "Até *16* hatches de transmissão e *4* de recepção",
+        "Data/Optical Hatches: *1.920* EU/t cada, normalmente"
+      ],
+      "con": [
+        "Precisa de Componentes de Resfriamento NICH nas paredes",
+        "Com recepção óptica: *30.720* EU/t por hatch de dados"
+      ]
+    }
+  },
+  "analysis_and_research_center": {
+    "type": "Research",
+    "flavor": "Feed it scans, get insight. Sometimes the insight you wanted.",
+    "desc": [
+      "Turns *scan data* into *research data* with",
+      "computation from the research network."
+    ],
+    "pro": [
+      "Two modes: data analysis and data integration"
+    ],
+    "num": [
+      "Each run yields *one* output, picked by its chance"
+    ],
+    "con": [
+      "Needs a *Computation Data Hatch* and CWU/t"
+    ],
+    "pt": {
+      "type": "Pesquisa",
+      "flavor": "Dê leituras, receba descobertas. Às vezes a que você queria.",
+      "desc": [
+        "Transforma *leituras* em *dados de pesquisa*",
+        "com computação da rede de pesquisa."
+      ],
+      "pro": [
+        "Dois modos: análise e integração de dados"
+      ],
+      "num": [
+        "Cada ciclo dá *uma* saída, sorteada pela chance"
+      ],
+      "con": [
+        "Precisa de *Computation Data Hatch* e CWU/t"
+      ]
+    }
+  }
+}

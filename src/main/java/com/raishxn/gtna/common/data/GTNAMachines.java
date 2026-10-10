@@ -291,11 +291,6 @@ public class GTNAMachines {
                             .where('E', SteamMultiMachineBase.machineCasing())
                             .where(' ', Predicates.any())
                             .build())
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_crusher.speed")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_crusher.parallel")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_FURNACE = registerMachine("largeSteamFurnace",
@@ -336,35 +331,6 @@ public class GTNAMachines {
                             .build())
                     .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/multiblock/steam_oven"))
-                    .tooltips(
-                            Component
-                                    .translatable("gtna.tooltip.large_steam_furnace.desc",
-                                            "An industrial-grade steam smelting facility.")
-                                    .withStyle(ChatFormatting.GRAY),
-
-                            Component
-                                    .translatable("gtna.tooltip.large_steam_furnace.speed",
-                                            "Speed: 900% faster than a standard Steam Furnace.")
-                                    .withStyle(ChatFormatting.GOLD),
-
-                            Component
-                                    .translatable("gtna.tooltip.large_steam_furnace.efficiency",
-                                            "Efficiency: Consumes only 50% of the required Steam.")
-                                    .withStyle(ChatFormatting.GREEN),
-
-                            Component
-                                    .translatable("gtna.tooltip.large_steam_furnace.parallel",
-                                            "Parallelism: Processes up to 128 items simultaneously.")
-                                    .withStyle(ChatFormatting.BLUE),
-
-                            Component
-                                    .translatable("gtna.tooltip.large_steam_furnace.structure",
-                                            "Structure: GTOCore large steam furnace shell. Check JEI for details.")
-                                    .withStyle(ChatFormatting.DARK_GRAY),
-
-                            Component
-                                    .translatable("gtna.tooltip.large_steam_furnace.warning")
-                                    .withStyle(ChatFormatting.DARK_RED, ChatFormatting.BOLD))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_ALLOY_SMELTER = registerMachine(
@@ -401,23 +367,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTNACORE.id("block/overlay/machine/largesteamalloysmelter"))
-                    .tooltips(
-                            Component
-                                    .translatable("gtna.tooltip.large_steam_alloy.desc",
-                                            "High-pressure steam alloying.")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component
-                                    .translatable("gtna.tooltip.large_steam_alloy.speed",
-                                            "Speed: 43% faster than Singleblock.")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component
-                                    .translatable("gtna.tooltip.large_steam_alloy.parallel",
-                                            "Parallel: Processes up to 64 items.")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component
-                                    .translatable("gtna.tooltip.large_steam_alloy.structure",
-                                            "Structure: 3x4x3 (WxHxD). Fireboxes at bottom.")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_HAMMER = registerMachine("largeSteamHammer",
@@ -463,20 +412,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/multiblock/gcym/large_material_press"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_hammer.desc",
-                                    "Heavy steam forge hammer based on the GTNH addon layout.")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component
-                                    .translatable("gtna.tooltip.large_steam_hammer.speed",
-                                            "Speed: 100% faster than singleblock.")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_hammer.parallel",
-                                    "Parallel: Processes up to 64 items.")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.large_steam_hammer.structure",
-                                    "Structure: 7x13x7 with iron core, bronze frames, and glass columns.")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_COMPRESSOR = registerMachine("largeSteamCompressor",
@@ -508,19 +443,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/multiblock/implosion_compressor"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_compressor.desc",
-                                    "High-throughput steam compressor using the GTNH reference shell.")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_compressor.speed",
-                                    "Speed: 150% faster than singleblock.")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_compressor.parallel",
-                                    "Parallel: Processes up to 48 items.")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.large_steam_compressor.structure",
-                                    "Structure: 7x7x7 with framed compression chamber and glass sides.")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_EXTRACTOR = registerMachine("largeSteamExtractor",
@@ -549,19 +471,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/multiblock/gcym/large_extractor"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_extractor.desc",
-                                    "Steam extractor with the same compact frame from the GTNH reference addon.")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_extractor.speed",
-                                    "Speed: 75% faster than singleblock.")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_extractor.parallel",
-                                    "Parallel: Processes up to 48 items.")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.large_steam_extractor.structure",
-                                    "Structure: 5x5x5 pressure cage with bronze pipes and glass vents.")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_ORE_WASHER = registerMachine("largeSteamOreWasher",
@@ -595,19 +504,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/machines/ore_washer"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_ore_washer.desc",
-                                    "Large steam ore washer using the reference washing basin layout.")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_ore_washer.speed",
-                                    "Speed: 400% faster than singleblock.")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_ore_washer.parallel",
-                                    "Parallel: Processes up to 96 items.")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.large_steam_ore_washer.structure",
-                                    "Structure: 9x5x9 basin with glass walls and bronze pipe agitators.")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_CIRCUIT_ASSEMBLER = registerMachine(
@@ -644,15 +540,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTNACORE.id("block/multiblock/steam_circuit_assembler"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_circuit_assembler.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_circuit_assembler.mode")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_circuit_assembler.parallel")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.large_steam_circuit_assembler.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_MIXER = registerMachine("largeSteamMixer",
@@ -690,15 +577,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTNACORE.id("block/multiblock/steam_mixer"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_mixer.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_mixer.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.large_steam_mixer.parallel")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.large_steam_mixer.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_CENTRIFUGE = registerMachine(
@@ -742,15 +620,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTNACORE.id("block/multiblock/steam_centrifuge"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_centrifuge.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_centrifuge.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.large_steam_centrifuge.parallel")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.large_steam_centrifuge.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_THERMAL_CENTRIFUGE = registerMachine(
@@ -784,15 +653,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTNACORE.id("block/multiblock/steam_thermal_centrifuge"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_thermal_centrifuge.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_thermal_centrifuge.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.large_steam_thermal_centrifuge.parallel")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.large_steam_thermal_centrifuge.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_BATH = registerMachine("largeSteamBath",
@@ -825,15 +685,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/machines/chemical_bath"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_bath.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_bath.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.large_steam_bath.parallel")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.large_steam_bath.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition PRIMITIVE_DISTILLATION_TOWER = registerMachine(
@@ -884,13 +735,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/steam/steel/side"),
                             GTCEu.id("block/multiblock/distillation_tower"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.primitive_distillation_tower.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.primitive_distillation_tower.parallel")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.primitive_distillation_tower.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_LATHE = registerMachine("largeSteamLathe",
@@ -926,15 +770,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/machines/lathe"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_lathe.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_lathe.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.large_steam_lathe.efficiency")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_lathe.parallel")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_CUTTING = registerMachine("largeSteamCutting",
@@ -971,15 +806,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/multiblock/gcym/large_cutter"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_cutting.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_cutting.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.large_steam_cutting.efficiency")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_cutting.parallel")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_BENDING = registerMachine("largeSteamBending",
@@ -994,15 +820,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/multiblock/gcym/large_material_press"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_bending.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_bending.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.large_steam_bending.efficiency")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_bending.parallel")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_EXTRUDER = registerMachine("largeSteamExtruder",
@@ -1017,15 +834,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/multiblock/gcym/large_material_press"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_extruder.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_extruder.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.large_steam_extruder.efficiency")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_extruder.parallel")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_WIREMILL = registerMachine("largeSteamWiremill",
@@ -1040,15 +848,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/multiblock/gcym/large_material_press"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_wiremill.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_wiremill.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.large_steam_wiremill.efficiency")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_wiremill.parallel")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_SIFTER = registerMachine("largeSteamSifter",
@@ -1063,15 +862,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/multiblock/gcym/large_material_press"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_sifter.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_sifter.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.large_steam_sifter.efficiency")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_sifter.parallel")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     public static final MultiblockMachineDefinition STEAM_LAVA_MAKER = registerMachine("steamLavaMaker",
@@ -1086,15 +876,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTNACORE.id("block/multiblock/steam_lava_maker"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.steam_lava_maker.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.steam_lava_maker.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.steam_lava_maker.efficiency")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.steam_lava_maker.parallel")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     public static final MultiblockMachineDefinition STEAM_ITEM_VAULT = registerMachine("steamItemVault",
@@ -1107,13 +888,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTNACORE.id("block/multiblock/steam_item_vault"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.steam_item_vault.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.steam_item_vault.capacity")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.steam_item_vault.access")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     // ------------------------------------------------------------------
@@ -1132,15 +906,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTNACORE.id("block/multiblock/steam_cactus_wonder"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.steam_cactus_wonder.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.steam_cactus_wonder.offer")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.steam_cactus_wonder.fuel")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.steam_cactus_wonder.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     // ------------------------------------------------------------------
@@ -1157,15 +922,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/multiblock/cracking_unit"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.steam_cracking.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.steam_cracking.cracking")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.steam_cracking.parallel")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.steam_cracking.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     // ------------------------------------------------------------------
@@ -1183,15 +939,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
                             GTNACORE.id("block/multiblock/steam_mega_compressor"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.mega_steam_compressor.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.mega_steam_compressor.parallel")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.mega_steam_compressor.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.mega_steam_compressor.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     // ------------------------------------------------------------------
@@ -1222,15 +969,6 @@ public class GTNAMachines {
                             // closest available is the same icon from the Modernity-GTNH pack the
                             // project already sources from; see THIRD_PARTY_NOTICES.md.
                             GTNACORE.id("block/multiblock/steam_elevator"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.steam_elevator.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.steam_elevator.modules")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.steam_elevator.teleport")
-                                    .withStyle(ChatFormatting.AQUA),
-                            Component.translatable("gtna.tooltip.steam_elevator.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     /** Structure decoded from GTNL's steam_elevator.mbs (35x43x35); H is the hatch shell and I the module slots. */
@@ -2111,15 +1849,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/machines/forming_press"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_forming_press.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_forming_press.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.large_steam_forming_press.efficiency")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_forming_press.parallel")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_STORAGE_TANK = registerMachine(
@@ -2146,13 +1875,6 @@ public class GTNAMachines {
                             .build())
                     .workableCasingModel(GTCEu.id("block/casings/gcym/industrial_steam_casing"),
                             GTCEu.id("block/multiblock/multiblock_tank"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_storage_tank.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_storage_tank.capacity")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.large_steam_storage_tank.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition LARGE_STEAM_SOLAR_BOILER = registerMachine(
@@ -2210,15 +1932,6 @@ public class GTNAMachines {
                     })
                     .workableCasingModel(GTCEu.id("block/casings/steam/steel/side"),
                             GTCEu.id("block/multiblock/multiblock_tank"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.large_steam_solar_boiler.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.large_steam_solar_boiler.expandable")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.large_steam_solar_boiler.production")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.large_steam_solar_boiler.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition DIMENSIONALLY_TRANSCENDENT_DIRT_FORGE = registerMachine(
@@ -2250,13 +1963,6 @@ public class GTNAMachines {
                     })
                     .workableCasingModel(GTCEu.id("block/casings/solid/machine_primitive_bricks"),
                             GTCEu.id("block/multiblock/primitive_blast_furnace"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.dimensionally_transcendent_dirt_forge.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.dimensionally_transcendent_dirt_forge.parallel")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.dimensionally_transcendent_dirt_forge.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition DIMENSIONALLY_TRANSCENDENT_STEAM_BOILER = registerMachine(
@@ -2283,13 +1989,6 @@ public class GTNAMachines {
                             .build())
                     .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
                             GTCEu.id("block/multiblock/generator/large_tungstensteel_boiler"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.dimensionally_transcendent_steam_boiler.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.dimensionally_transcendent_steam_boiler.output")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.dimensionally_transcendent_steam_boiler.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition DIMENSIONALLY_TRANSCENDENT_STEAM_OVEN = registerMachine(
@@ -2321,17 +2020,6 @@ public class GTNAMachines {
                     })
                     .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTCEu.id("block/multiblock/steam_oven"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.dimensionally_transcendent_steam_oven.desc")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.dimensionally_transcendent_steam_oven.speed")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.dimensionally_transcendent_steam_oven.threads")
-                                    .withStyle(ChatFormatting.AQUA),
-                            Component.translatable("gtna.tooltip.dimensionally_transcendent_steam_oven.parallel")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.dimensionally_transcendent_steam_oven.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition STEAM_COBBLER = registerMachine("steamCobbler", () -> REGISTRATE
@@ -2435,23 +2123,6 @@ public class GTNAMachines {
             .workableCasingModel(
                     GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                     GTNACORE.id("block/overlay/machine/steamcobbler"))
-            .tooltips(
-                    Component.translatable("gtna.tooltip.steam_cobbler.desc", "Advanced Steam Rock Generator.")
-                            .withStyle(ChatFormatting.GRAY),
-                    Component
-                            .translatable("gtna.tooltip.steam_cobbler.modes",
-                                    "Generates various stones based on Programmed Circuits.")
-                            .withStyle(ChatFormatting.GOLD),
-                    Component
-                            .translatable("gtna.tooltip.steam_cobbler.consumption",
-                                    "Steam Consumption: 1200 L/s (60 L/t)")
-                            .withStyle(ChatFormatting.RED),
-                    Component.translatable("gtna.tooltip.steam_cobbler.parallel", "Max Parallel: 16 operations.")
-                            .withStyle(ChatFormatting.BLUE),
-                    Component
-                            .translatable("gtna.tooltip.steam_cobbler.structure",
-                                    "Structure: 3x3x3 Cube with Bronze Pipe center.")
-                            .withStyle(ChatFormatting.DARK_GRAY))
             .register());
 
     // Em GTNAMachines.java
@@ -2493,13 +2164,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTNACORE.id("block/casings/stronze_wrapped_casing"),
                             GTNACORE.id("block/overlay/machine/stonesuperheater"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.stone_superheater.desc", "Extreme heat stone melting.")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.stone_superheater.parallel", "Max Parallel: 32")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.stone_superheater.steam",
-                                    "Steam Cost: 640 L/s per active recipe.").withStyle(ChatFormatting.RED))
                     .register());
     public static final MultiblockMachineDefinition STEAM_MANUFACTURER = registerMachine("steamManufacturer",
             () -> REGISTRATE
@@ -2578,15 +2242,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTNACORE.id("block/casings/breel_plated_casing"),
                             GTNACORE.id("block/overlay/machine/steammanufacturer"))
-                    .tooltips(
-                            Component
-                                    .translatable("gtna.tooltip.steam_manufacturer.desc",
-                                            "Advanced Hydraulic Assembly Line.")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.steam_manufacturer.parallel", "Max Parallel: 16")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.steam_manufacturer.type",
-                                    "Recipe Type: Hydraulic Manufacturing").withStyle(ChatFormatting.GOLD))
                     .register());
     public static final MultiblockMachineDefinition STEAM_WOODCUTTER = registerMachine("steamWoodcutter",
             () -> REGISTRATE
@@ -2666,17 +2321,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTNACORE.id("block/casings/bronze_reinforced_wood"),
                             GTNACORE.id("block/overlay/machine/steamwoodcutter"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.steam_woodcutter.desc", "Industrial Tree Processor.")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.steam_woodcutter.parallel", "Max Parallel: 64")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.steam_woodcutter.steam", "Base Steam: 1200 L/s")
-                                    .withStyle(ChatFormatting.RED),
-                            Component
-                                    .translatable("gtna.tooltip.steam_woodcutter.info",
-                                            "Processes saplings into huge amounts of resources without consuming them.")
-                                    .withStyle(ChatFormatting.GOLD))
                     .register());
 
     public static final MultiblockMachineDefinition LEAP_FORWARD_ONE_BLAST_FURNACE = registerMachine(
@@ -2751,21 +2395,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_primitive_bricks"),
                             GTCEu.id("block/multiblock/primitive_blast_furnace"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.leap_pbf.desc",
-                                    "A Leap Forward in Primitive Technology."),
-                            Component
-                                    .translatable("gtna.tooltip.leap_pbf.speed",
-                                            "Duration: Starts at 20s (+20s per layer).")
-                                    .withStyle(ChatFormatting.RED),
-                            Component.translatable("gtna.tooltip.leap_pbf.parallel",
-                                    "Parallel: Doubles every layer (Starts at 8x).").withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.leap_pbf.max", "Max Parallel: 32,000.")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component
-                                    .translatable("gtna.tooltip.leap_pbf.note",
-                                            "Trade-off: Taller structure = More items but slower cycle.")
-                                    .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC))
                     .register());
 
     public static final MultiblockMachineDefinition INFERNAL_COKE_OVEN = registerMachine("infernalCokeOven",
@@ -2820,18 +2449,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             new ResourceLocation("minecraft", "block/nether_bricks"),
                             GTNACORE.id("block/overlay/machine/steaminfernalcokeoven"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.infernal_coke.desc").withStyle(ChatFormatting.DARK_RED,
-                                    ChatFormatting.ITALIC),
-                            Component.translatable("gtna.tooltip.infernal_coke.speed_bonus")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.infernal_coke.max_speed")
-                                    .withStyle(ChatFormatting.RED),
-                            Component.translatable("gtna.tooltip.infernal_coke.parallel")
-                                    .withStyle(ChatFormatting.BLUE),
-                            Component.translatable("gtna.tooltip.infernal_coke.steam").withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.tooltip.infernal_coke.structure")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition HYPER_PRESSURE_REACTOR = registerMachine("hyperPressureReactor",
@@ -2915,17 +2532,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTNACORE.id("block/casings/hyper_pressure_breel_casing"),
                             GTCEu.id("block/multiblock/steam_grinder"))
-                    .tooltips(
-                            Component
-                                    .translatable("gtna.tooltip.hyper_pressure.desc",
-                                            "Pressure-based fluid reaction chamber.")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component
-                                    .translatable("gtna.tooltip.hyper_pressure.no_energy",
-                                            "Requires NO Energy or Steam to operate.")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.tooltip.hyper_pressure.parallel", "Max Parallel: 1")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     public static final MultiblockMachineDefinition COMPACT_HYPER_PRESSURE_REACTOR = registerMachine(
@@ -3326,21 +2932,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTNACORE.id("block/casings/vibration_safe_casing"),
                             GTCEu.id("block/multiblock/steam_grinder"))
-                    .tooltips(
-                            Component
-                                    .translatable("gtna.tooltip.compact_hyper_pressure.desc",
-                                            "Extreme density fluid processor.")
-                                    .withStyle(ChatFormatting.DARK_PURPLE),
-                            Component
-                                    .translatable("gtna.tooltip.hyper_pressure.no_energy",
-                                            "Requires NO Energy or Steam to operate.")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component
-                                    .translatable("gtna.tooltip.compact_hyper_pressure.special",
-                                            "Can process Dense Supercritical Steam from basic resources.")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.tooltip.compact_hyper_pressure.parallel", "Max Parallel: 512")
-                                    .withStyle(ChatFormatting.RED, ChatFormatting.BOLD))
                     .register());
 
     public static final MultiblockMachineDefinition VOID_MINER_STEAM_GATE_AGED = registerMachine(
@@ -3391,26 +2982,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                             GTNACORE.id("block/overlay/machine/voidminersteamgateaged"))
-                    .tooltips(
-                            Component.translatable("gtna.tooltip.void_miner.desc")
-                                    .withStyle(ChatFormatting.DARK_PURPLE, ChatFormatting.ITALIC),
-                            Component.translatable("gtna.tooltip.void_miner.fluid_req")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.empty(),
-                            Component.translatable("gtna.tooltip.void_miner.catalyst_info")
-                                    .withStyle(ChatFormatting.YELLOW),
-                            Component.literal("- ")
-                                    .append(Component.translatable("gtna.tooltip.void_miner.tier_dense"))
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.literal("- ")
-                                    .append(Component.translatable("gtna.tooltip.void_miner.tier_super"))
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.literal("- ")
-                                    .append(Component.translatable("gtna.tooltip.void_miner.tier_insane"))
-                                    .withStyle(ChatFormatting.WHITE, ChatFormatting.BOLD),
-                            Component.empty(),
-                            Component.translatable("gtna.tooltip.void_miner.outputs")
-                                    .withStyle(ChatFormatting.BLUE))
                     .register());
 
     /**
@@ -3444,14 +3015,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_stable_titanium"),
                             GTCEu.id("block/multiblock/large_miner"))
-                    .tooltips(
-                            Component.translatable("gtna.machine.electric_void_miner.tooltip.program")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.machine.electric_void_miner.tooltip.fluid")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.machine.electric_void_miner.tooltip.random"),
-                            Component.translatable("gtna.machine.electric_void_miner.tooltip.parallel")
-                                    .withStyle(ChatFormatting.GRAY))
                     .register()) :
             null;
 
@@ -3508,19 +3071,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
                             GTCEu.id("block/multiblock/implosion_compressor"))
-                    .tooltips(
-                            Component.translatable("gtna.machine.slaughterhouse.desc"),
-                            Component.translatable("gtna.machine.slaughterhouse.mechanics")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.machine.slaughterhouse.circuit1")
-                                    .withStyle(ChatFormatting.GREEN),
-                            Component.translatable("gtna.machine.slaughterhouse.circuit2")
-                                    .withStyle(ChatFormatting.RED),
-                            Component.translatable("gtna.machine.slaughterhouse.circuit3")
-                                    .withStyle(ChatFormatting.DARK_PURPLE),
-                            Component.translatable("gtna.machine.slaughterhouse.circuit4").withStyle(
-                                    ChatFormatting.DARK_RED,
-                                    ChatFormatting.BOLD))
                     .register());
 
     // ------------------------------------------------------------------
@@ -3573,19 +3123,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_clean_stainless_steel"),
                             GTCEu.id("block/multiblock/gcym/large_maceration_tower"))
-                    .tooltips(
-                            Component.translatable("gtna.machine.integrated_ore_processor.tooltip.0"),
-                            Component.translatable("gtna.machine.integrated_ore_processor.tooltip.1"),
-                            Component.translatable("gtna.machine.integrated_ore_processor.tooltip.2"),
-                            Component.translatable("gtna.machine.integrated_ore_processor.tooltip.3"),
-                            Component.translatable("gtna.machine.integrated_ore_processor.tooltip.4"),
-                            Component.translatable("gtna.machine.integrated_ore_processor.tooltip.5"),
-                            Component.translatable("gtna.machine.integrated_ore_processor.tooltip.6"),
-                            Component.translatable("gtna.machine.integrated_ore_processor.tooltip.7"),
-                            Component.translatable("gtna.machine.integrated_ore_processor.tooltip.8"),
-                            Component.translatable("gtceu.multiblock.parallelizable.tooltip"),
-                            Component.translatable("gtceu.machine.available_recipe_map_1.tooltip",
-                                    Component.translatable("gtna.ore_processing")))
                     .register());
 
     // ------------------------------------------------------------------
@@ -3720,13 +3257,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel"),
                             GTCEu.id("block/multiblock/gcym/large_maceration_tower"))
-                    .tooltips(
-                            Component.translatable("gtna.machine.integrated_ore_processor.tooltip.0"),
-                            Component.translatable("gtna.machine.advanced_integrated_ore_processor.tooltip.0"),
-                            Component.translatable("gtna.machine.advanced_integrated_ore_processor.laser"),
-                            Component.translatable("gtna.machine.advanced_integrated_ore_processor.multiple_recipes"),
-                            Component.translatable("gtceu.machine.available_recipe_map_1.tooltip",
-                                    Component.translatable("gtna.ore_processing")))
                     .register());
 
     public static final MultiblockMachineDefinition ARTIFICIAL_STAR = registerMachine("artificialStar", () -> REGISTRATE
@@ -3734,12 +3264,6 @@ public class GTNAMachines {
             .langValue("Artificial Star")
             .rotationState(RotationState.ALL)
             .recipeType(GTNARecipeType.ARTIFICIAL_STAR_RECIPES)
-            .tooltips(
-                    Component.translatable("gtceu.machine.perfect_oc"),
-                    Component.translatable("gtna.machine.artificial_star.output"),
-                    Component.translatable("gtceu.machine.available_recipe_map_1.tooltip",
-                            Component.translatable("gtceu.annihilate_generator")),
-                    Component.translatable("block.gtna.annihilate_generator"))
             .generator(true)
             .recipeModifier(ArtificialStarMachine::recipeModifier)
             .appearanceBlock(GTBlocks.HIGH_POWER_CASING)
@@ -3755,9 +3279,6 @@ public class GTNAMachines {
             .rotationState(RotationState.NON_Y_AXIS)
             .allowExtendedFacing(false)
             .recipeType(GTNARecipeType.COSMOS_SIMULATION_RECIPES)
-            .tooltips(
-                    Component.translatable("gtna.machine.eye_of_harmony.tooltip.0"),
-                    Component.translatable("gtna.machine.eye_of_harmony.tooltip.1"))
             .recipeModifier(EyeOfHarmonyMachine::recipeModifier)
             .appearanceBlock(GTNAEyeOfHarmonyContent.SPATIAL_CASING)
             .pattern(GTNAMachines::createEyeOfHarmonyPattern)
@@ -3779,15 +3300,6 @@ public class GTNAMachines {
                     GTCEu.id("block/casings/solid/machine_casing_bronze_plated_bricks"),
                     GTCEu.id("block/multiblock/fluid_drilling_rig"))
                     .andThen(builder -> builder.addDynamicRenderer(EyeOfWoodRenderer::new)))
-            .tooltips(
-                    Component.translatable("gtna.machine.eye_of_wood.tooltip.0").withStyle(ChatFormatting.GRAY),
-                    Component.translatable("gtna.machine.eye_of_wood.tooltip.1").withStyle(ChatFormatting.GOLD),
-                    Component.translatable("gtna.machine.eye_of_wood.tooltip.2").withStyle(ChatFormatting.GREEN),
-                    Component.translatable("gtna.machine.eye_of_wood.tooltip.3").withStyle(ChatFormatting.AQUA),
-                    Component.translatable("gtna.machine.eye_of_wood.tooltip.4").withStyle(ChatFormatting.AQUA),
-                    Component.translatable("gtna.machine.eye_of_wood.tooltip.5").withStyle(ChatFormatting.BLUE),
-                    Component.translatable("gtna.machine.eye_of_wood.tooltip.6").withStyle(ChatFormatting.RED),
-                    Component.translatable("gtna.machine.eye_of_wood.tooltip.7").withStyle(ChatFormatting.DARK_GRAY))
             .register());
 
     public static final MultiblockMachineDefinition NEXUS_MOLECULAR_FORGE = registerMachine("nexusMolecularForge",
@@ -3802,19 +3314,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTNACORE.id("block/casings/oxidation_resistant_hastelloy_n_mechanical_casing"),
                             GTCEu.id("block/multiblock/fusion_reactor"))
-                    .tooltips(
-                            Component.translatable("gtna.machine.nexus_molecular_forge.tooltip.0")
-                                    .withStyle(ChatFormatting.DARK_AQUA, ChatFormatting.BOLD),
-                            Component.translatable("gtna.machine.nexus_molecular_forge.tooltip.1")
-                                    .withStyle(ChatFormatting.AQUA),
-                            Component.translatable("gtna.machine.nexus_molecular_forge.tooltip.2")
-                                    .withStyle(ChatFormatting.LIGHT_PURPLE),
-                            Component.translatable("gtna.machine.nexus_molecular_forge.tooltip.3")
-                                    .withStyle(ChatFormatting.RED),
-                            Component.translatable("gtna.machine.nexus_molecular_forge.tooltip.4")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.machine.nexus_molecular_forge.tooltip.5")
-                                    .withStyle(ChatFormatting.GRAY))
                     .register());
 
     public static final MultiblockMachineDefinition NEXUS_ME_HYPERCORE = registerMachine("nexusMeHypercore",
@@ -3829,10 +3328,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/gcym/nonconducting_casing"),
                             GTCEu.id("block/multiblock/assembly_line"))
-                    .tooltips(
-                            Component.translatable("gtna.machine.nexus_me_hypercore.tooltip.0"),
-                            Component.translatable("gtna.machine.nexus_me_hypercore.tooltip.1"),
-                            Component.translatable("gtna.machine.nexus_me_hypercore.tooltip.2"))
                     .register());
 
     public static final MultiblockMachineDefinition ME_STORAGE = registerMachine("meStorage",
@@ -3847,10 +3342,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/hpca/computer_casing/back"),
                             GTCEu.id("block/multiblock/fusion_reactor"))
-                    .tooltips(
-                            Component.translatable("gtna.machine.me_storage.tooltip.0"),
-                            Component.translatable("gtna.machine.me_storage.tooltip.1"),
-                            Component.translatable("gtna.machine.me_storage.tooltip.2"))
                     .register());
 
     private static BlockPattern createArtificialStarPattern(MultiblockMachineDefinition definition) {
@@ -4110,15 +3601,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTNACORE.id("block/casings/universal_factory_casing"),
                             GTCEu.id("block/multiblock/assembly_line"))
-                    .tooltips(
-                            Component.translatable("gtna.machine.universal_factory.tooltip.0")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.machine.universal_factory.tooltip.1")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.machine.universal_factory.tooltip.2")
-                                    .withStyle(ChatFormatting.AQUA),
-                            Component.translatable("gtna.machine.universal_factory.tooltip.3")
-                                    .withStyle(ChatFormatting.DARK_GRAY))
                     .register());
 
     // ------------------------------------------------------------------
@@ -4150,11 +3632,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             new ResourceLocation("minecraft", "block/stone"),
                             GTCEu.id("block/multiblock/primitive_blast_furnace"))
-                    .tooltips(
-                            Component.translatable("gtna.machine.primitive_stone_furnace.tooltip.0")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.machine.primitive_stone_furnace.tooltip.1")
-                                    .withStyle(ChatFormatting.GRAY))
                     .register());
 
     // ------------------------------------------------------------------
@@ -4188,11 +3665,6 @@ public class GTNAMachines {
             .workableCasingModel(
                     GTCEu.id("block/casings/solid/machine_primitive_bricks"),
                     GTCEu.id("block/multiblock/primitive_blast_furnace"))
-            .tooltips(
-                    Component.translatable("gtna.machine.brick_kiln.tooltip.0")
-                            .withStyle(ChatFormatting.GOLD),
-                    Component.translatable("gtna.machine.brick_kiln.tooltip.1")
-                            .withStyle(ChatFormatting.GRAY))
             .register());
 
     // ------------------------------------------------------------------
@@ -4231,11 +3703,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTNACORE.id("block/casings/brass_reinforced_wooden_casing"),
                             GTCEu.id("block/multiblock/multiblock_tank"))
-                    .tooltips(
-                            Component.translatable("gtna.machine.thermal_power_pump.tooltip.0")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.machine.thermal_power_pump.tooltip.1")
-                                    .withStyle(ChatFormatting.GRAY))
                     .register());
 
     // ------------------------------------------------------------------
@@ -4274,13 +3741,6 @@ public class GTNAMachines {
                     .workableCasingModel(
                             GTCEu.id("block/casings/solid/machine_casing_heatproof"),
                             GTCEu.id("block/multiblock/multi_furnace"))
-                    .tooltips(
-                            Component.translatable("gtna.machine.liquefaction_furnace.tooltip.0")
-                                    .withStyle(ChatFormatting.GOLD),
-                            Component.translatable("gtna.machine.liquefaction_furnace.tooltip.1")
-                                    .withStyle(ChatFormatting.GRAY),
-                            Component.translatable("gtna.machine.liquefaction_furnace.tooltip.2")
-                                    .withStyle(ChatFormatting.AQUA))
                     .register());
 
     private static <T extends MachineDefinition> T registerHatch(String hatchId, Supplier<T> supplier) {

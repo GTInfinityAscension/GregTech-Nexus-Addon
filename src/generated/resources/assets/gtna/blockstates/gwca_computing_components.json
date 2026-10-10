@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "gtna:block/machine/gwca_computing_components",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "gtna:block/machine/gwca_computing_components",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gtna:block/machine/gwca_computing_components"
+    },
+    "facing=south": {
+      "model": "gtna:block/machine/gwca_computing_components",
+      "y": 180
+    },
+    "facing=up": {
+      "gtceu:z": 180,
+      "model": "gtna:block/machine/gwca_computing_components",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "gtna:block/machine/gwca_computing_components",
+      "y": 270
+    }
+  }
+}

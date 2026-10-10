@@ -158,7 +158,10 @@ public class ForgeOfGodsRenderer extends DynamicRender<ForgeOfGodsMachine, Forge
         ForgeOfGodsSound.ensurePlaying(machine);
         ClientState state = state(machine, level);
         state.updateColor(machine.starColor());
-        float timer = (level.getGameTime() % 1_000_000L) + partialTicks;
+        // Continuous client clock (ticks). The level game time is re-synced by the server and could step back, which
+        // made the rings stutter. The 432000-tick period keeps every ring spin (7/6, 5/4, 3 deg/tick) a whole number
+        // of turns, so the wrap is seamless.
+        float timer = (float) ((net.minecraft.Util.getMillis() % (432_000L * 50L)) / 50.0);
         Direction back = machine.getFrontFacing().getOpposite();
         Vector3f axis = new Vector3f(back.getStepX(), back.getStepY(), back.getStepZ());
         Quaternionf beamRotation = new Quaternionf().rotationTo(new Vector3f(0, 0, 1), axis);

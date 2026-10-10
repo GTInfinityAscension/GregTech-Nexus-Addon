@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:block/block",
+  "loader": "gtceu:machine",
+  "machine": "gtna:thermal_conductor_hatch",
+  "replaceable_textures": [
+    "bottom",
+    "top",
+    "side"
+  ],
+  "variants": {
+    "is_formed=false": {
+      "model": {
+        "parent": "gtna:block/machine/part/thermal_conductor_hatch",
+        "textures": {
+          "bottom": "gtceu:block/casings/voltage/luv/bottom",
+          "side": "gtceu:block/casings/voltage/luv/side",
+          "top": "gtceu:block/casings/voltage/luv/top"
+        }
+      }
+    },
+    "is_formed=true": {
+      "model": {
+        "parent": "gtna:block/machine/part/thermal_conductor_hatch",
+        "textures": {
+          "bottom": "gtceu:block/casings/voltage/luv/bottom",
+          "side": "gtceu:block/casings/voltage/luv/side",
+          "top": "gtceu:block/casings/voltage/luv/top"
+        }
+      }
+    }
+  }
+}

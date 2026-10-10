@@ -1,0 +1,16 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_mar_m_200_steel/plateDense",
+    "layer1": "gtceu:item/material_sets/gtna_mar_m_200_steel/plateDense_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_mar_m_200_steel/plateDense_overlay",
+    "halo": "renderblender:misc/halo_noise"
+  },
+  "loader": "renderblender:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -4208676,
+    "size": 2,
+    "pulse": false
+  }
+}

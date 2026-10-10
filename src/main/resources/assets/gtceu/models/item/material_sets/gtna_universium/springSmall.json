@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_universium/springSmall",
+    "layer1": "gtceu:item/material_sets/gtna_universium/springSmall_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_universium/springSmall_overlay"
+  },
+  "loader": "renderblender:cosmic",
+  "cosmic": {
+    "mask": "gtceu:item/material_sets/gtna_universium/springSmall_cosmic_mask"
+  }
+}

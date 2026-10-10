@@ -54,9 +54,8 @@ import javax.annotation.ParametersAreNonnullByDefault;
  * {@link Long#MAX_VALUE} per item or fluid type) that are flushed to the network on the AE2 update interval.
  *
  * <p>
- * Same role as the GTMThings {@code me_export_buffer}; written for GTNA on top of the GTCEu (LGPL) ME output
- * bus and hatch, because GTMThings is not part of GT:IA. Unlike the GTCEu ME output hatch, fluid amounts are
- * not capped at {@code Integer.MAX_VALUE} per fluid.
+ * Written for GTNA on top of the GTCEu (LGPL) ME output bus and hatch. Unlike the GTCEu ME output hatch, fluid
+ * amounts are not capped at {@code Integer.MAX_VALUE} per fluid.
  */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault

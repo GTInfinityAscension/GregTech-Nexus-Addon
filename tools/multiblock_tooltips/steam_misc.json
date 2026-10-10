@@ -1,0 +1,1494 @@
+{
+  "steam_cactus_wonder": {
+    "type": "Steam Generator",
+    "flavor": "Who needs a boiler when you have a desert?",
+    "desc": [
+      "Burns cactus-era carbon fuels and returns",
+      "their value as *steam*."
+    ],
+    "pro": [
+      "Coal / Charcoal: *8,000* mB steam each",
+      "Coal Block: *90,000* mB steam"
+    ],
+    "num": [
+      "One fuel item per *1 s* cycle"
+    ],
+    "con": [
+      "Needs fully grown *cacti* on the sand floor"
+    ],
+    "pt": {
+      "type": "Gerador de Vapor",
+      "flavor": "Quem precisa de caldeira quando se tem um deserto?",
+      "desc": [
+        "Queima combustíveis de carbono da era dos cactos",
+        "e devolve o valor deles em *vapor*."
+      ],
+      "pro": [
+        "Carvão / Carvão Vegetal: *8.000* mB de vapor",
+        "Bloco de Carvão: *90.000* mB de vapor"
+      ],
+      "num": [
+        "Um combustível por ciclo de *1 s*"
+      ],
+      "con": [
+        "Precisa de *cactos* adultos no chão de areia"
+      ]
+    }
+  },
+  "steam_cobbler": {
+    "type": "Rock Breaker",
+    "flavor": "Infinite cobblestone: the oldest trick in the book, now industrial.",
+    "desc": [
+      "An advanced steam rock generator that makes",
+      "*different stones* by programmed circuit."
+    ],
+    "pro": [
+      "Circuit selects the stone type"
+    ],
+    "num": [
+      "Parallel: *16* default, adjustable up to *16*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Quebrador de Rochas",
+      "flavor": "Pedregulho infinito: o truque mais velho do livro, agora industrial.",
+      "desc": [
+        "Um gerador de rochas a vapor avançado que faz",
+        "*pedras diferentes* pelo circuito programado."
+      ],
+      "pro": [
+        "O circuito escolhe o tipo de pedra"
+      ],
+      "num": [
+        "Paralelos: *16* padrão, ajustável até *16*"
+      ],
+      "con": []
+    }
+  },
+  "steam_cracking": {
+    "type": "Cracker",
+    "flavor": "Petrochemistry, Victorian edition.",
+    "desc": [
+      "A steam cracker that thermally cracks",
+      "*sulfuric hydrocarbons* with the regular",
+      "cracking recipes (circuits 1-3)."
+    ],
+    "pro": [
+      "High pressure doubles the parallel"
+    ],
+    "num": [
+      "Parallel: *8* bronze / *16* steel"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Craqueador",
+      "flavor": "Petroquímica, edição vitoriana.",
+      "desc": [
+        "Um craqueador a vapor que quebra termicamente",
+        "*hidrocarbonetos sulfurosos* com as receitas",
+        "normais de craqueamento (circuitos 1-3)."
+      ],
+      "pro": [
+        "Alta pressão dobra os paralelos"
+      ],
+      "num": [
+        "Paralelos: *8* bronze / *16* aço"
+      ],
+      "con": []
+    }
+  },
+  "steam_item_vault": {
+    "type": "Item Storage",
+    "flavor": "A Victorian warehouse. Dragons not included.",
+    "desc": [
+      "A very large item storage for the steam era,",
+      "accessed through the structure's *item buses*."
+    ],
+    "pro": [
+      "Holds up to *16,384,000* items"
+    ],
+    "num": [
+      "*256* item types, *64,000* each"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Armazenamento de Itens",
+      "flavor": "Um armazém vitoriano. Dragões não inclusos.",
+      "desc": [
+        "Um armazenamento enorme da era do vapor,",
+        "acessado pelos *barramentos de itens* da estrutura."
+      ],
+      "pro": [
+        "Guarda até *16.384.000* itens"
+      ],
+      "num": [
+        "*256* tipos de item, *64.000* de cada"
+      ],
+      "con": []
+    }
+  },
+  "steam_lava_maker": {
+    "type": "Lava Maker",
+    "flavor": "Turning the floor into lava, professionally.",
+    "desc": [
+      "Melts stone into *lava* using steam",
+      "instead of EU."
+    ],
+    "pro": [
+      "*1 s* per stone block",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: *16* default, adjustable up to *16*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Fabricante de Lava",
+      "flavor": "Transformando o chão em lava, profissionalmente.",
+      "desc": [
+        "Derrete pedra em *lava* usando vapor",
+        "no lugar de EU."
+      ],
+      "pro": [
+        "*1 s* por bloco de pedra",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: *16* padrão, ajustável até *16*"
+      ],
+      "con": []
+    }
+  },
+  "steam_manufacturer": {
+    "type": "Hydraulic Manufacturing",
+    "flavor": "The assembly line, but every worker is a piston.",
+    "desc": [
+      "An advanced *hydraulic assembly line* that",
+      "builds the steam era's biggest machines."
+    ],
+    "pro": [
+      "Crafts the Steam Supercompressor and more"
+    ],
+    "num": [
+      "Parallel: *16* default, adjustable up to *16*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Manufatura Hidráulica",
+      "flavor": "A linha de montagem, mas cada operário é um pistão.",
+      "desc": [
+        "Uma *linha de montagem hidráulica* avançada que",
+        "constrói as maiores máquinas da era do vapor."
+      ],
+      "pro": [
+        "Fabrica o Supercompressor a Vapor e mais"
+      ],
+      "num": [
+        "Paralelos: *16* padrão, ajustável até *16*"
+      ],
+      "con": []
+    }
+  },
+  "steam_mega_compressor": {
+    "type": "Compressor",
+    "flavor": "Diamonds are made under pressure. So is this machine.",
+    "desc": [
+      "A supercompressor where impossible jets of",
+      "steam crush material into shape."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock"
+    ],
+    "num": [
+      "Parallel: up to *256*"
+    ],
+    "con": [
+      "Crafted from *64* Large Steam Compressors"
+    ],
+    "pt": {
+      "type": "Compressor",
+      "flavor": "Diamantes nascem sob pressão. Esta máquina também.",
+      "desc": [
+        "Um supercompressor em que jatos impossíveis de",
+        "vapor esmagam o material até tomar forma."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock"
+      ],
+      "num": [
+        "Paralelos: até *256*"
+      ],
+      "con": [
+        "Fabricado com *64* Large Steam Compressors"
+      ]
+    }
+  },
+  "steam_woodcutter": {
+    "type": "Woodcutter",
+    "flavor": "I'm a lumberjack and I'm okay.",
+    "desc": [
+      "An industrial tree processor that turns",
+      "*saplings* into logs using only steam."
+    ],
+    "pro": [
+      "Sapling in, logs out, no trees planted"
+    ],
+    "num": [
+      "Parallel: *64* default, adjustable up to *64*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Lenhador",
+      "flavor": "Sou lenhador e tá tudo bem.",
+      "desc": [
+        "Um processador de árvores industrial que transforma",
+        "*mudas* em toras usando só vapor."
+      ],
+      "pro": [
+        "Muda entra, tora sai, sem plantar árvore"
+      ],
+      "num": [
+        "Paralelos: *64* padrão, ajustável até *64*"
+      ],
+      "con": []
+    }
+  },
+  "stone_superheater": {
+    "type": "Super Heating",
+    "flavor": "Rocks, but hotter. Much hotter.",
+    "desc": [
+      "Melts stone with *extreme heat* for",
+      "the steam era's hottest recipes."
+    ],
+    "pro": [
+      "Adjustable parallel in the controller"
+    ],
+    "num": [
+      "Parallel: *32* default, adjustable up to *32*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Superaquecimento",
+      "flavor": "Pedras, só que mais quentes. Muito mais quentes.",
+      "desc": [
+        "Derrete pedra com *calor extremo* para as",
+        "receitas mais quentes da era do vapor."
+      ],
+      "pro": [
+        "Paralelos ajustáveis no controlador"
+      ],
+      "num": [
+        "Paralelos: *32* padrão, ajustável até *32*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_solar_boiler": {
+    "type": "Solar Boiler",
+    "flavor": "Free steam, courtesy of a very large star.",
+    "desc": [
+      "An expandable solar steam field made of",
+      "*solar boiling cells*."
+    ],
+    "pro": [
+      "Steam output scales with *sunlit cells*"
+    ],
+    "num": [
+      "Grows up to *63* blocks sideways, *125* back"
+    ],
+    "con": [
+      "Cells must stay sunlit to count"
+    ],
+    "pt": {
+      "type": "Caldeira Solar",
+      "flavor": "Vapor grátis, cortesia de uma estrela bem grande.",
+      "desc": [
+        "Um campo solar de vapor expansível feito de",
+        "*células de ebulição solar*."
+      ],
+      "pro": [
+        "A produção de vapor cresce com as *células ao sol*"
+      ],
+      "num": [
+        "Cresce até *63* blocos para o lado, *125* para trás"
+      ],
+      "con": [
+        "As células precisam ficar ao sol para contar"
+      ]
+    }
+  },
+  "large_steam_storage_tank": {
+    "type": "Steam Storage",
+    "flavor": "Hot air, stored responsibly.",
+    "desc": [
+      "An industrial *steam reservoir* that buffers",
+      "your boilers for the whole factory."
+    ],
+    "pro": [
+      "Smooths out boiler output spikes"
+    ],
+    "num": [
+      "Capacity: *120,000,000* mB of Steam"
+    ],
+    "con": [
+      "Stores Steam only"
+    ],
+    "pt": {
+      "type": "Armazenamento de Vapor",
+      "flavor": "Ar quente, guardado com responsabilidade.",
+      "desc": [
+        "Um *reservatório de vapor* industrial que segura",
+        "o vapor das caldeiras para a fábrica toda."
+      ],
+      "pro": [
+        "Suaviza os picos de produção das caldeiras"
+      ],
+      "num": [
+        "Capacidade: *120.000.000* mB de Vapor"
+      ],
+      "con": [
+        "Guarda apenas Vapor"
+      ]
+    }
+  },
+  "infernal_coke_oven": {
+    "type": "Infernal Coke",
+    "flavor": "Hell's kitchen, but for coal.",
+    "desc": [
+      "A coke oven that *gets faster the longer* it",
+      "runs, and grows stronger every 10 minutes."
+    ],
+    "pro": [
+      "Speed ramps *+1%* every 5 s, up to *10x*",
+      "Every *10 min*: *+16* parallel"
+    ],
+    "num": [
+      "Parallel: starts at *8*, up to *256*"
+    ],
+    "con": [
+      "Steam: *6,400* L/s base, *+1,600* L/s per stage",
+      "Speed bonus decays while idle"
+    ],
+    "pt": {
+      "type": "Coque Infernal",
+      "flavor": "A cozinha do inferno, mas para carvão.",
+      "desc": [
+        "Um forno de coque que *acelera quanto mais tempo*",
+        "trabalha, e fica mais forte a cada 10 minutos."
+      ],
+      "pro": [
+        "Velocidade sobe *+1%* a cada 5 s, até *10x*",
+        "A cada *10 min*: *+16* paralelos"
+      ],
+      "num": [
+        "Paralelos: começa em *8*, até *256*"
+      ],
+      "con": [
+        "Vapor: *6.400* L/s base, *+1.600* L/s por estágio",
+        "O bônus de velocidade cai quando parada"
+      ]
+    }
+  },
+  "primitive_distillation_tower": {
+    "type": "Distillation Tower",
+    "flavor": "Moonshine technology, scaled up for oil.",
+    "desc": [
+      "A primitive steam distillation tower for",
+      "early *oil and fluid* separation."
+    ],
+    "pro": [
+      "Uses only *75%* of the normal steam"
+    ],
+    "num": [
+      "One fluid output per tower layer"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Torre de Destilação",
+      "flavor": "Tecnologia de alambique, aumentada para petróleo.",
+      "desc": [
+        "Uma torre de destilação primitiva a vapor para",
+        "separar *óleo e fluidos* no início do jogo."
+      ],
+      "pro": [
+        "Usa só *75%* do vapor normal"
+      ],
+      "num": [
+        "Uma saída de fluido por camada da torre"
+      ],
+      "con": []
+    }
+  },
+  "primitive_stone_furnace": {
+    "type": "Furnace",
+    "flavor": "Carved by hand, powered by nothing, judged by no one.",
+    "desc": [
+      "A primitive furnace carved from stone that",
+      "smelts like a furnace with *no energy*."
+    ],
+    "pro": [
+      "Every recipe finishes in *1 tick*",
+      "Runs every furnace recipe at once, unlimited"
+    ],
+    "num": [
+      "Parallel and threads: effectively *unlimited*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Fornalha",
+      "flavor": "Esculpida à mão, movida a nada, julgada por ninguém.",
+      "desc": [
+        "Uma fornalha primitiva esculpida em pedra que",
+        "funde como uma fornalha, *sem energia*."
+      ],
+      "pro": [
+        "Toda receita termina em *1 tick*",
+        "Roda todas as receitas de fornalha juntas, sem limite"
+      ],
+      "num": [
+        "Paralelos e threads: praticamente *ilimitados*"
+      ],
+      "con": []
+    }
+  },
+  "dimensionally_transcendent_dirt_forge": {
+    "type": "Primitive Blast Furnace",
+    "flavor": "Someone looked at the DTPF and thought: what if dirt?",
+    "desc": [
+      "An absurd primitive forge shell repurposed for",
+      "*massive* primitive blast throughput."
+    ],
+    "pro": [
+      "Every recipe finishes in *1 tick*"
+    ],
+    "num": [
+      "Parallel: up to *524,288*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Alto-Forno Primitivo",
+      "flavor": "Alguém olhou para a DTPF e pensou: e se fosse terra?",
+      "desc": [
+        "Uma carcaça de forja primitiva absurda reaproveitada",
+        "para produção *gigantesca* de alto-forno primitivo."
+      ],
+      "pro": [
+        "Toda receita termina em *1 tick*"
+      ],
+      "num": [
+        "Paralelos: até *524.288*"
+      ],
+      "con": []
+    }
+  },
+  "dimensionally_transcendent_steam_boiler": {
+    "type": "Large Boiler",
+    "flavor": "Bends spacetime to boil water. Priorities.",
+    "desc": [
+      "An absurd late-game boiler that bends",
+      "dimensional space into *steam throughput*."
+    ],
+    "pro": [
+      "Output: *4,096,000* L of steam per cycle"
+    ],
+    "num": [],
+    "con": [],
+    "pt": {
+      "type": "Caldeira Grande",
+      "flavor": "Dobra o espaço-tempo para ferver água. Prioridades.",
+      "desc": [
+        "Uma caldeira absurda de fim de jogo que dobra o",
+        "espaço dimensional em *produção de vapor*."
+      ],
+      "pro": [
+        "Produção: *4.096.000* L de vapor por ciclo"
+      ],
+      "num": [],
+      "con": []
+    }
+  },
+  "dimensionally_transcendent_steam_oven": {
+    "type": "Furnace",
+    "flavor": "Preheat to 350 degrees. Then add infinity.",
+    "desc": [
+      "A steam oven pushed far beyond sane",
+      "*thermal engineering* limits."
+    ],
+    "pro": [
+      "*100x* speed vs. a furnace",
+      "*2* threads: two furnace recipes at once"
+    ],
+    "num": [
+      "Parallel: up to *524,288*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Fornalha",
+      "flavor": "Preaqueça a 180 graus. Depois adicione infinito.",
+      "desc": [
+        "Um forno a vapor levado muito além dos limites",
+        "sensatos da *engenharia térmica*."
+      ],
+      "pro": [
+        "Velocidade *100x* maior que uma fornalha",
+        "*2* threads: duas receitas de fornalha ao mesmo tempo"
+      ],
+      "num": [
+        "Paralelos: até *524.288*"
+      ],
+      "con": []
+    }
+  },
+  "leap_forward_one_blast_furnace": {
+    "type": "Primitive Blast Furnace",
+    "flavor": "A great leap forward in primitive technology.",
+    "desc": [
+      "A primitive blast furnace that grows: every",
+      "extra layer *doubles* the parallel, but slows",
+      "the cycle down."
+    ],
+    "pro": [
+      "Parallel *doubles* with each extra layer"
+    ],
+    "num": [
+      "Max parallel: *32,000*",
+      "Cycle: *20 s* +*20 s* per extra layer"
+    ],
+    "con": [
+      "Taller structure = slower cycle"
+    ],
+    "pt": {
+      "type": "Alto-Forno Primitivo",
+      "flavor": "Um grande salto adiante na tecnologia primitiva.",
+      "desc": [
+        "Um alto-forno primitivo que cresce: cada camada",
+        "extra *dobra* os paralelos, mas deixa o",
+        "ciclo mais lento."
+      ],
+      "pro": [
+        "Os paralelos *dobram* a cada camada extra"
+      ],
+      "num": [
+        "Paralelos máx.: *32.000*",
+        "Ciclo: *20 s* +*20 s* por camada extra"
+      ],
+      "con": [
+        "Estrutura mais alta = ciclo mais lento"
+      ]
+    }
+  },
+  "hyper_pressure_reactor": {
+    "type": "High Pressure Reactor",
+    "flavor": "Pressure makes diamonds. It also makes this.",
+    "desc": [
+      "A pressure-based fluid reaction chamber",
+      "that runs on *pure logic*."
+    ],
+    "pro": [
+      "Needs no Energy or Steam"
+    ],
+    "num": [
+      "Parallel: *1*"
+    ],
+    "con": [
+      "The Compact version has *512* parallel"
+    ],
+    "pt": {
+      "type": "Reator de Alta Pressão",
+      "flavor": "Pressão faz diamantes. Também faz isto.",
+      "desc": [
+        "Uma câmara de reação de fluidos por pressão",
+        "que funciona com *pura lógica*."
+      ],
+      "pro": [
+        "Não precisa de Energia nem de Vapor"
+      ],
+      "num": [
+        "Paralelos: *1*"
+      ],
+      "con": [
+        "A versão Compacta tem *512* paralelos"
+      ]
+    }
+  },
+  "compact_hyper_pressure_reactor": {
+    "type": "High Pressure Reactor",
+    "flavor": "All the pressure, a fraction of the footprint.",
+    "desc": [
+      "An extreme-density fluid processor that",
+      "makes *Dense Supercritical Steam* from",
+      "basic resources."
+    ],
+    "pro": [
+      "Needs no Energy or Steam"
+    ],
+    "num": [
+      "Parallel: up to *512*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Reator de Alta Pressão",
+      "flavor": "Toda a pressão, numa fração do espaço.",
+      "desc": [
+        "Um processador de fluidos de densidade extrema",
+        "que faz *Vapor Supercrítico Denso* a partir",
+        "de recursos básicos."
+      ],
+      "pro": [
+        "Não precisa de Energia nem de Vapor"
+      ],
+      "num": [
+        "Paralelos: até *512*"
+      ],
+      "con": []
+    }
+  },
+  "void_miner_steam_gate_aged": {
+    "type": "Void Miner",
+    "flavor": "Mining a dimension made entirely of steam. Don't ask.",
+    "desc": [
+      "Harvests raw resources from the *Steam*",
+      "*Dimensions*: Raw Gold, Copper, Iron,",
+      "Cobalt and Coal."
+    ],
+    "pro": [
+      "Dense Steam: *2x* items, *2x* speed",
+      "SuperHeated: *3x* items, *3x* speed",
+      "Insanely: *5x* items, *5x* speed"
+    ],
+    "num": [
+      "Boosts are configurable in the GTNA config"
+    ],
+    "con": [
+      "EU cost: *1.5x* / *2x* / *4x* with each boost",
+      "Requires Drilling Fluid per operation"
+    ],
+    "pt": {
+      "type": "Minerador do Vazio",
+      "flavor": "Minerando uma dimensão feita só de vapor. Não pergunte.",
+      "desc": [
+        "Extrai recursos brutos das *Dimensões de*",
+        "*Vapor*: Ouro, Cobre, Ferro, Cobalto",
+        "e Carvão brutos."
+      ],
+      "pro": [
+        "Vapor Denso: itens *2x*, velocidade *2x*",
+        "SuperAquecido: itens *3x*, velocidade *3x*",
+        "Insanely: itens *5x*, velocidade *5x*"
+      ],
+      "num": [
+        "Os bônus são configuráveis na config do GTNA"
+      ],
+      "con": [
+        "Custo de EU: *1,5x* / *2x* / *4x* com cada bônus",
+        "Precisa de Fluido de Perfuração por operação"
+      ]
+    }
+  },
+  "steam_elevator": {
+    "type": "Modular Elevator",
+    "flavor": "Going up? Please hold on to your top hat.",
+    "desc": [
+      "A modular steam-powered elevator that",
+      "hosts *utility modules* and launches you to",
+      "other planets."
+    ],
+    "pro": [
+      "*Set out*: opens the Ad Astra planet selection"
+    ],
+    "num": [
+      "Up to *12* module slots"
+    ],
+    "con": [
+      "Modules only work while attached"
+    ],
+    "pt": {
+      "type": "Elevador Modular",
+      "flavor": "Subindo? Por favor, segure a cartola.",
+      "desc": [
+        "Um elevador modular a vapor que abriga",
+        "*módulos utilitários* e te lança para",
+        "outros planetas."
+      ],
+      "pro": [
+        "*Partir*: abre a seleção de planetas do Ad Astra"
+      ],
+      "num": [
+        "Até *12* encaixes de módulo"
+      ],
+      "con": [
+        "Os módulos só funcionam encaixados"
+      ]
+    }
+  },
+  "steam_elevator_flight_module_i": {
+    "type": "Elevator Module",
+    "flavor": "I believe I can fly. With enough steam.",
+    "desc": [
+      "Consumes steam to grant *creative flight* to",
+      "players inside its range."
+    ],
+    "pro": [
+      "Flight is removed when you leave the range"
+    ],
+    "num": [
+      "Range: *64* blocks"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Eu acredito que posso voar. Com vapor suficiente.",
+      "desc": [
+        "Consome vapor para dar *voo criativo* aos",
+        "jogadores dentro do alcance."
+      ],
+      "pro": [
+        "O voo é removido ao sair do alcance"
+      ],
+      "num": [
+        "Alcance: *64* blocos"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_flight_module_ii": {
+    "type": "Elevator Module",
+    "flavor": "Twice the range, twice the bragging rights.",
+    "desc": [
+      "Consumes steam to grant *creative flight* to",
+      "players inside its range."
+    ],
+    "pro": [
+      "Flight is removed when you leave the range"
+    ],
+    "num": [
+      "Range: *128* blocks"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "O dobro do alcance, o dobro da ostentação.",
+      "desc": [
+        "Consome vapor para dar *voo criativo* aos",
+        "jogadores dentro do alcance."
+      ],
+      "pro": [
+        "O voo é removido ao sair do alcance"
+      ],
+      "num": [
+        "Alcance: *128* blocos"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_flight_module_iii": {
+    "type": "Elevator Module",
+    "flavor": "Icarus would have loved this. Briefly.",
+    "desc": [
+      "Consumes steam to grant *creative flight* to",
+      "players inside its range."
+    ],
+    "pro": [
+      "Flight is removed when you leave the range"
+    ],
+    "num": [
+      "Range: *192* blocks"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Ícaro teria adorado. Por pouco tempo.",
+      "desc": [
+        "Consome vapor para dar *voo criativo* aos",
+        "jogadores dentro do alcance."
+      ],
+      "pro": [
+        "O voo é removido ao sair do alcance"
+      ],
+      "num": [
+        "Alcance: *192* blocos"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_weather_module_i": {
+    "type": "Elevator Module",
+    "flavor": "Rain dance, but with pipes.",
+    "desc": [
+      "Burns steam to switch the weather to *clear*,",
+      "*rain* or *thunder* by controller circuit."
+    ],
+    "pro": [
+      "Weather lasts *1 h*"
+    ],
+    "num": [
+      "Cost: *1,000,000* mB steam per change",
+      "Circuit *1*: clear, *2*: rain, *3*: thunder"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Dança da chuva, só que com canos.",
+      "desc": [
+        "Queima vapor para mudar o clima para *limpo*,",
+        "*chuva* ou *tempestade* pelo circuito do controlador."
+      ],
+      "pro": [
+        "O clima dura *1 h*"
+      ],
+      "num": [
+        "Custo: *1.000.000* mB de vapor por troca",
+        "Circuito *1*: limpo, *2*: chuva, *3*: tempestade"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_weather_module_ii": {
+    "type": "Elevator Module",
+    "flavor": "The forecast is whatever you want it to be.",
+    "desc": [
+      "Burns steam to switch the weather to *clear*,",
+      "*rain* or *thunder* by controller circuit."
+    ],
+    "pro": [
+      "Weather lasts *2 h*"
+    ],
+    "num": [
+      "Cost: *1,000,000* mB steam per change",
+      "Circuit *1*: clear, *2*: rain, *3*: thunder"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "A previsão do tempo é o que você quiser.",
+      "desc": [
+        "Queima vapor para mudar o clima para *limpo*,",
+        "*chuva* ou *tempestade* pelo circuito do controlador."
+      ],
+      "pro": [
+        "O clima dura *2 h*"
+      ],
+      "num": [
+        "Custo: *1.000.000* mB de vapor por troca",
+        "Circuito *1*: limpo, *2*: chuva, *3*: tempestade"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_weather_module_iii": {
+    "type": "Elevator Module",
+    "flavor": "Thor called. He wants his job back.",
+    "desc": [
+      "Burns steam to switch the weather to *clear*,",
+      "*rain* or *thunder* by controller circuit."
+    ],
+    "pro": [
+      "Weather lasts *3 h*"
+    ],
+    "num": [
+      "Cost: *1,000,000* mB steam per change",
+      "Circuit *1*: clear, *2*: rain, *3*: thunder"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "O Thor ligou. Ele quer o emprego de volta.",
+      "desc": [
+        "Queima vapor para mudar o clima para *limpo*,",
+        "*chuva* ou *tempestade* pelo circuito do controlador."
+      ],
+      "pro": [
+        "O clima dura *3 h*"
+      ],
+      "num": [
+        "Custo: *1.000.000* mB de vapor por troca",
+        "Circuito *1*: limpo, *2*: chuva, *3*: tempestade"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_greenhouse_module": {
+    "type": "Elevator Module",
+    "flavor": "The farmer's secret to fortune.",
+    "desc": [
+      "Grows the crops around the elevator with",
+      "steam and water, *no fertilizer* needed."
+    ],
+    "pro": [
+      "Grows up to *16* crops per cycle"
+    ],
+    "num": [
+      "*16,000* mB water per cycle, *60 s* each",
+      "Range: *16* blocks"
+    ],
+    "con": [
+      "Cannot be overclocked"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "O segredo do fazendeiro para a fortuna.",
+      "desc": [
+        "Faz crescer as plantações em volta do elevador com",
+        "vapor e água, *sem fertilizante*."
+      ],
+      "pro": [
+        "Faz crescer até *16* plantas por ciclo"
+      ],
+      "num": [
+        "*16.000* mB de água por ciclo, *60 s* cada",
+        "Alcance: *16* blocos"
+      ],
+      "con": [
+        "Não aceita overclock"
+      ]
+    }
+  },
+  "steam_elevator_oil_drill_module_i": {
+    "type": "Elevator Module",
+    "flavor": "Black gold, Texas tea, steam-pumped.",
+    "desc": [
+      "Pumps random *underground fluids* of the",
+      "current dimension with steam."
+    ],
+    "pro": [
+      "Up to *1* fluid type per cycle"
+    ],
+    "num": [
+      "Base yield: *250* L, cycle *1,200* ticks"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Ouro negro, chá do Texas, bombeado a vapor.",
+      "desc": [
+        "Bombeia *fluidos subterrâneos* aleatórios da",
+        "dimensão atual usando vapor."
+      ],
+      "pro": [
+        "Até *1* tipo de fluido por ciclo"
+      ],
+      "num": [
+        "Rendimento base: *250* L, ciclo de *1.200* ticks"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_oil_drill_module_ii": {
+    "type": "Elevator Module",
+    "flavor": "There will be oil. Twice as much.",
+    "desc": [
+      "Pumps random *underground fluids* of the",
+      "current dimension with steam."
+    ],
+    "pro": [
+      "Up to *2* fluid types per cycle"
+    ],
+    "num": [
+      "Base yield: *500* L, cycle *600* ticks"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Haverá petróleo. O dobro.",
+      "desc": [
+        "Bombeia *fluidos subterrâneos* aleatórios da",
+        "dimensão atual usando vapor."
+      ],
+      "pro": [
+        "Até *2* tipos de fluido por ciclo"
+      ],
+      "num": [
+        "Rendimento base: *500* L, ciclo de *600* ticks"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_oil_drill_module_iii": {
+    "type": "Elevator Module",
+    "flavor": "I drink your milkshake. All of it.",
+    "desc": [
+      "Pumps random *underground fluids* of the",
+      "current dimension with steam."
+    ],
+    "pro": [
+      "Up to *3* fluid types per cycle"
+    ],
+    "num": [
+      "Base yield: *1,000* L, cycle *400* ticks"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Eu bebo o seu milkshake. Inteirinho.",
+      "desc": [
+        "Bombeia *fluidos subterrâneos* aleatórios da",
+        "dimensão atual usando vapor."
+      ],
+      "pro": [
+        "Até *3* tipos de fluido por ciclo"
+      ],
+      "num": [
+        "Rendimento base: *1.000* L, ciclo de *400* ticks"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_entity_crusher_module_i": {
+    "type": "Elevator Module",
+    "flavor": "Smelting mobs with high-temperature steam. Grim.",
+    "desc": [
+      "Processes the mob from a *spawner* into its",
+      "drops with scalding steam."
+    ],
+    "pro": [
+      "*2%* double-output chance, *+0.5%* per spawner"
+    ],
+    "num": [
+      "Cycle: *400* ticks, chance capped at *34%*"
+    ],
+    "con": [
+      "Cannot be overclocked"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Derretendo mobs com vapor escaldante. Sinistro.",
+      "desc": [
+        "Processa o mob de um *spawner* nos seus",
+        "drops com vapor escaldante."
+      ],
+      "pro": [
+        "*2%* de chance de dobrar, *+0,5%* por spawner"
+      ],
+      "num": [
+        "Ciclo: *400* ticks, chance máxima de *34%*"
+      ],
+      "con": [
+        "Não aceita overclock"
+      ]
+    }
+  },
+  "steam_elevator_entity_crusher_module_ii": {
+    "type": "Elevator Module",
+    "flavor": "Faster crushing. The mobs did not vote for this.",
+    "desc": [
+      "Processes the mob from a *spawner* into its",
+      "drops with scalding steam."
+    ],
+    "pro": [
+      "*2%* double-output chance, *+0.5%* per spawner"
+    ],
+    "num": [
+      "Cycle: *200* ticks, chance capped at *34%*"
+    ],
+    "con": [
+      "Cannot be overclocked"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Moagem mais rápida. Os mobs não votaram nisso.",
+      "desc": [
+        "Processa o mob de um *spawner* nos seus",
+        "drops com vapor escaldante."
+      ],
+      "pro": [
+        "*2%* de chance de dobrar, *+0,5%* por spawner"
+      ],
+      "num": [
+        "Ciclo: *200* ticks, chance máxima de *34%*"
+      ],
+      "con": [
+        "Não aceita overclock"
+      ]
+    }
+  },
+  "steam_elevator_entity_crusher_module_iii": {
+    "type": "Elevator Module",
+    "flavor": "Industrial-grade mob disposal. Very efficient. Very sad.",
+    "desc": [
+      "Processes the mob from a *spawner* into its",
+      "drops with scalding steam."
+    ],
+    "pro": [
+      "*2%* double-output chance, *+0.5%* per spawner"
+    ],
+    "num": [
+      "Cycle: *100* ticks, chance capped at *34%*"
+    ],
+    "con": [
+      "Cannot be overclocked"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Descarte de mobs em escala industrial. Muito eficiente. Muito triste.",
+      "desc": [
+        "Processa o mob de um *spawner* nos seus",
+        "drops com vapor escaldante."
+      ],
+      "pro": [
+        "*2%* de chance de dobrar, *+0,5%* por spawner"
+      ],
+      "num": [
+        "Ciclo: *100* ticks, chance máxima de *34%*"
+      ],
+      "con": [
+        "Não aceita overclock"
+      ]
+    }
+  },
+  "steam_elevator_ore_processor_module": {
+    "type": "Integrated Ore Processing",
+    "flavor": "The whole ore line in one box. Steam-powered, of course.",
+    "desc": [
+      "Does *all ore processing* in one step;",
+      "the circuit picks the processing route."
+    ],
+    "pro": [
+      "Circuit doubles parallel and steam use",
+      "Screwdriver: switch mode; sneak: void stone"
+    ],
+    "num": [
+      "Parallel: *8* x circuit multiplier",
+      "Steam: *128* mB/t x circuit multiplier"
+    ],
+    "con": [
+      "Washing routes also need their fluid"
+    ],
+    "pt": {
+      "type": "Processamento Integrado de Minério",
+      "flavor": "A linha de minério inteira numa caixa. A vapor, claro.",
+      "desc": [
+        "Faz *todo o processamento de minério* num passo;",
+        "o circuito escolhe a rota de processamento."
+      ],
+      "pro": [
+        "O circuito dobra paralelos e consumo de vapor",
+        "Chave de fenda: troca o modo; agachado: descarta pedra"
+      ],
+      "num": [
+        "Paralelos: *8* x multiplicador do circuito",
+        "Vapor: *128* mB/t x multiplicador do circuito"
+      ],
+      "con": [
+        "Rotas de lavagem também precisam do fluido delas"
+      ]
+    }
+  },
+  "steam_elevator_monster_repellent_module_i": {
+    "type": "Elevator Module",
+    "flavor": "It drives away monsters with loud noise.",
+    "desc": [
+      "Projects a force field that *blocks monster*",
+      "*spawns* while the machine is running."
+    ],
+    "pro": [
+      "Safe base, zero torches required"
+    ],
+    "num": [
+      "Range: *64* blocks"
+    ],
+    "con": [
+      "Only prevents spawns while running"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Espanta os monstros com muito barulho.",
+      "desc": [
+        "Projeta um campo de força que *impede o spawn*",
+        "*de monstros* enquanto a máquina funciona."
+      ],
+      "pro": [
+        "Base segura, sem precisar de tocha"
+      ],
+      "num": [
+        "Alcance: *64* blocos"
+      ],
+      "con": [
+        "Só impede spawns enquanto funciona"
+      ]
+    }
+  },
+  "steam_elevator_monster_repellent_module_ii": {
+    "type": "Elevator Module",
+    "flavor": "You can't hear it, but the monsters hear it loud and clear.",
+    "desc": [
+      "Projects a force field that *blocks monster*",
+      "*spawns* while the machine is running."
+    ],
+    "pro": [
+      "Safe base, zero torches required"
+    ],
+    "num": [
+      "Range: *128* blocks"
+    ],
+    "con": [
+      "Only prevents spawns while running"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Você não escuta, mas os monstros escutam em alto e bom som.",
+      "desc": [
+        "Projeta um campo de força que *impede o spawn*",
+        "*de monstros* enquanto a máquina funciona."
+      ],
+      "pro": [
+        "Base segura, sem precisar de tocha"
+      ],
+      "num": [
+        "Alcance: *128* blocos"
+      ],
+      "con": [
+        "Só impede spawns enquanto funciona"
+      ]
+    }
+  },
+  "steam_elevator_monster_repellent_module_iii": {
+    "type": "Elevator Module",
+    "flavor": "Monsters get the hint and leave on their own.",
+    "desc": [
+      "Projects a force field that *blocks monster*",
+      "*spawns* while the machine is running."
+    ],
+    "pro": [
+      "Safe base, zero torches required"
+    ],
+    "num": [
+      "Range: *256* blocks"
+    ],
+    "con": [
+      "Only prevents spawns while running"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Os monstros entendem o recado e vão embora sozinhos.",
+      "desc": [
+        "Projeta um campo de força que *impede o spawn*",
+        "*de monstros* enquanto a máquina funciona."
+      ],
+      "pro": [
+        "Base segura, sem precisar de tocha"
+      ],
+      "num": [
+        "Alcance: *256* blocos"
+      ],
+      "con": [
+        "Só impede spawns enquanto funciona"
+      ]
+    }
+  },
+  "steam_elevator_beacon_module_i": {
+    "type": "Elevator Module",
+    "flavor": "A beacon, but it runs on tea-kettle energy.",
+    "desc": [
+      "Spreads *potion effects* over a large area;",
+      "pick the effects in the GUI."
+    ],
+    "pro": [
+      "Effect level: *I*",
+      "*10* selectable effects"
+    ],
+    "num": [
+      "Range: *64* blocks"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Um sinalizador, mas movido a energia de chaleira.",
+      "desc": [
+        "Espalha *efeitos de poção* numa área grande;",
+        "escolha os efeitos na GUI."
+      ],
+      "pro": [
+        "Nível do efeito: *I*",
+        "*10* efeitos para escolher"
+      ],
+      "num": [
+        "Alcance: *64* blocos"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_beacon_module_ii": {
+    "type": "Elevator Module",
+    "flavor": "Buffs for the whole neighborhood.",
+    "desc": [
+      "Spreads *potion effects* over a large area;",
+      "pick the effects in the GUI."
+    ],
+    "pro": [
+      "Effect level: *II*",
+      "*10* selectable effects"
+    ],
+    "num": [
+      "Range: *128* blocks"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Buffs para o bairro inteiro.",
+      "desc": [
+        "Espalha *efeitos de poção* numa área grande;",
+        "escolha os efeitos na GUI."
+      ],
+      "pro": [
+        "Nível do efeito: *II*",
+        "*10* efeitos para escolher"
+      ],
+      "num": [
+        "Alcance: *128* blocos"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_beacon_module_iii": {
+    "type": "Elevator Module",
+    "flavor": "Elite beacon. The Wither wishes it were this cool.",
+    "desc": [
+      "Spreads *potion effects* over a large area;",
+      "pick the effects in the GUI."
+    ],
+    "pro": [
+      "Effect level: *III*",
+      "*10* selectable effects"
+    ],
+    "num": [
+      "Range: *256* blocks"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Sinalizador de elite. O Wither queria ser legal assim.",
+      "desc": [
+        "Espalha *efeitos de poção* numa área grande;",
+        "escolha os efeitos na GUI."
+      ],
+      "pro": [
+        "Nível do efeito: *III*",
+        "*10* efeitos para escolher"
+      ],
+      "num": [
+        "Alcance: *256* blocos"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_apiary_module": {
+    "type": "Elevator Module",
+    "flavor": "High pressure makes the bees work harder. Union pending.",
+    "desc": [
+      "A steam-powered apiary where bees turn",
+      "*combs* into products and honey."
+    ],
+    "pro": [
+      "Turns brood into *comb and honey*"
+    ],
+    "num": [
+      "Base colony: *8*, fixed cycle *300 s*",
+      "Water: *1,000* mB per cycle"
+    ],
+    "con": [
+      "Only works attached to a Steam Elevator"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Alta pressão faz as abelhas trabalharem mais. Sindicato em formação.",
+      "desc": [
+        "Um apiário a vapor onde as abelhas transformam",
+        "*favos* em produtos e mel."
+      ],
+      "pro": [
+        "Transforma cria em *favo e mel*"
+      ],
+      "num": [
+        "Colônia base: *8*, ciclo fixo de *300 s*",
+        "Água: *1.000* mB por ciclo"
+      ],
+      "con": [
+        "Só funciona encaixado num Steam Elevator"
+      ]
+    }
+  },
+  "steam_elevator_bee_breeding_module": {
+    "type": "Elevator Module",
+    "flavor": "Let the bees feel the scorching love.",
+    "desc": [
+      "Place a *queen bee* in the controller and it",
+      "slowly produces princesses."
+    ],
+    "pro": [
+      "Breeds new princesses automatically"
+    ],
+    "num": [
+      "*128* honey treats per operation",
+      "Cycle: *10 min*"
+    ],
+    "con": [
+      "Requires Productive Bees"
+    ],
+    "pt": {
+      "type": "Módulo do Elevador",
+      "flavor": "Deixe as abelhas sentirem o amor escaldante.",
+      "desc": [
+        "Coloque uma *abelha rainha* no controlador e ela",
+        "produz princesas aos poucos."
+      ],
+      "pro": [
+        "Cria novas princesas automaticamente"
+      ],
+      "num": [
+        "*128* petiscos de mel por operação",
+        "Ciclo: *10 min*"
+      ],
+      "con": [
+        "Precisa do Productive Bees"
+      ]
+    }
+  }
+}

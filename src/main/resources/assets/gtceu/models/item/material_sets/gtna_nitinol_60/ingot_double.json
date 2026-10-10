@@ -1,0 +1,16 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_nitinol_60/ingot_double",
+    "layer1": "gtceu:item/material_sets/gtna_nitinol_60/ingot_double_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_nitinol_60/ingot_double_overlay",
+    "halo": "renderblender:misc/halo_noise"
+  },
+  "loader": "renderblender:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -3223076,
+    "size": 2,
+    "pulse": false
+  }
+}

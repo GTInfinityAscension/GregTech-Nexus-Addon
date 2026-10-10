@@ -1754,22 +1754,6 @@ public class GTNAMachineRecipes {
                     'G', GTMachines.STEAM_EXTRACTOR.right().asStack());
         }
 
-        // Personal Space portal: upstream has no recipe. GTNA makes it an LV craft (author, 2026-10-07): steel frame,
-        // plain obsidian and LV optics.
-        GTRecipeTypes.ASSEMBLER_RECIPES.recipeBuilder("personal_space_portal")
-                .inputItems(TagPrefix.frameGt, GTMaterials.Steel, 4)
-                .inputItems(Items.OBSIDIAN, 8)
-                .inputItems(GTItems.FIELD_GENERATOR_LV, 1)
-                .inputItems(GTItems.EMITTER_LV, 2)
-                .inputItems(GTItems.SENSOR_LV, 2)
-                .inputItems(Items.ENDER_EYE, 4)
-                .inputItems(CustomTags.LV_CIRCUITS, 4)
-                .inputFluids(GTMaterials.SolderingAlloy.getFluid(288))
-                .outputItems(new ItemStack(
-                        com.raishxn.gtna.common.world.personalspace.PersonalSpacePortalRegistry.PORTAL_ITEM.get()))
-                .duration(600).EUt(GTValues.VA[GTValues.LV])
-                .save(provider);
-
         // GTNA ME Pattern Buffer Proxy: the GTCEu proxy recipe, researched from the GTNA buffer it links to.
         if (GTNAMachines2.ME_PATTERN_BUFFER_PROXY != null && GTNAMachines2.ME_PATTERN_BUFFER != null) {
             GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder("gtna_me_pattern_buffer_proxy")

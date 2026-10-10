@@ -60,7 +60,7 @@ public final class GTOCompressedPatternReader {
 
     private static int readSize(DataInputStream input) throws IOException {
         int size = readVarInt(input);
-        if (size <= 0 || size > 64) throw new IOException("Invalid MBS dimension " + size);
+        if (size <= 0 || size > 256) throw new IOException("Invalid MBS dimension " + size);
         return size;
     }
 

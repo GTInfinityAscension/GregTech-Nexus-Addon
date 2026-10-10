@@ -32,10 +32,6 @@ import com.raishxn.gtna.client.renderer.machine.BallHatchRenderer;
 import com.raishxn.gtna.client.renderer.machine.EyeOfHarmonyRenderer;
 import com.raishxn.gtna.client.renderer.machine.EyeOfWoodRenderer;
 import com.raishxn.gtna.common.data.*;
-import com.raishxn.gtna.common.world.personalspace.PersonalSpaceChunkGenerators;
-import com.raishxn.gtna.common.world.personalspace.PersonalSpaceConfig;
-import com.raishxn.gtna.common.world.personalspace.PersonalSpaceEvents;
-import com.raishxn.gtna.common.world.personalspace.PersonalSpacePortalRegistry;
 import com.raishxn.gtna.data.GTNALangProvider;
 import com.raishxn.gtna.data.recipe.GTNARecipeConditions;
 import com.raishxn.gtna.gametest.GTNAGameTestReport;
@@ -53,8 +49,6 @@ public class CommonProxy {
     public CommonProxy() {
         CommonProxy.init();
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        PersonalSpaceChunkGenerators.register(eventBus);
-        PersonalSpacePortalRegistry.register(eventBus);
         REGISTRATE.registerEventListeners(eventBus);
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::registerAdditionalModels);
@@ -71,8 +65,6 @@ public class CommonProxy {
         eventBus.addListener(this::gatherData);
         MinecraftForge.EVENT_BUS.addListener(EyeOfHarmonyLegacyMappings::remap);
         MinecraftForge.EVENT_BUS.addListener(this::serverStarting);
-        PersonalSpaceConfig.load();
-        PersonalSpaceEvents.register();
         MinecraftForge.EVENT_BUS.addListener(this::playerLoggedIn);
         KnowledgeEvents.register(MinecraftForge.EVENT_BUS);
     }
@@ -179,16 +171,17 @@ public class CommonProxy {
         GTNAMachines2.init();
         GTNAMachines3.init();
         GTNAAdvancedFusion.init();
+        com.raishxn.gtna.common.data.GTNAResearchMachines.init();
+        com.raishxn.gtna.common.data.GTNAMegaMachines.init();
         com.raishxn.gtna.common.data.GTNAPlasmaForge.init();
         com.raishxn.gtna.common.data.GTNATranscendentPlasmaMixer.init();
         com.raishxn.gtna.common.data.GTNANanoForge.init();
         com.raishxn.gtna.common.data.GTNAGodforgeComponents.init();
         com.raishxn.gtna.common.data.GTNACircuits.init();
         GTNAEnergyHatches.init();
-        // Append the shared high-pressure line before the source attribution, so the tooltip reads
-        // stats -> high pressure -> Source.
-        GTNASteamTooltips.applyAll();
         // Append the ported-content attribution line once every GTNA machine is registered.
         GTNASources.applyAll();
+        // Standard multiblock tooltips replace every earlier pass for GTNA multiblocks.
+        com.raishxn.gtna.common.data.GTNAMultiblockTooltips.applyAll();
     }
 }

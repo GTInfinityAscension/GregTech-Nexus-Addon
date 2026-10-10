@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "gtna:block/insulation_tile_mechanical_block"
+    }
+  }
+}

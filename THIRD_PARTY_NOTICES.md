@@ -21,15 +21,11 @@ If you are a rightsholder and want an entry corrected or removed, please open an
 | GTO Extended Platform Presets (GTOEPP) | [GregTech-Odyssey/Gto-Extended-Platform-Presets](https://github.com/GregTech-Odyssey/Gto-Extended-Platform-Presets) | All Rights Reserved | Platform presets (`platforms/epp/sy_1/*`) | **Permission granted** by the GTO team (keep attribution intact) |
 | GT: Not Leisure (GTNL) | [ABKQPO/GT-Not-Leisure](https://github.com/ABKQPO/GT-Not-Leisure) | **GPL-3.0** | Multiblock structure files (`.mb`), large steam multiblock family, per-machine controller overlay textures (`textures/blocks/iconsets/*`) | **Permission granted** (credit the source). Structures that GTNL itself took from GTO are credited to GTO |
 | Twist Space Technology (TST) | [Nxer/Twist-Space-Technology-Mod](https://github.com/Nxer/Twist-Space-Technology-Mod) | **GPL-3.0** | `eye_of_wood` structure (overworld ore condenser) | **Permission granted** — free to use openly; the TST author asks that the part using a TST structure states **in game** that it is referenced from TST (the `gtna.source.tst` "Source: TST" tooltip line covers this) |
-| GTMThings | [liansishen/GTMThings](https://github.com/liansishen/GTMThings) | None declared (All Rights Reserved) | `AdvancedBlockPattern` (basis for `NexusBlockPattern`) | **Pending** — permission requested |
 | cmme-additions → Modernity-GTNH | [CristalGaming/cmme-additions](https://github.com/CristalGaming/cmme-additions) → [ModernityGTNH/Modernity-GTNH](https://github.com/ModernityGTNH/Modernity-GTNH) | ARR → **CC BY-NC-SA 4.0** | Plate/ingot textures (triple/quadruple/quintuple, etc.), the **Industrial / Advanced Industrial Steam Casing** textures (`MetaCasing02/1`, `2`) and the **`EM_COMPUTER`** elevator overlay (`gregtech/textures/blocks/iconsets/EM_COMPUTER{,_ACTIVE}`) | **Pending** — permission requested; same author as GTNL per the project owner |
 | GTLCore | [nutant233/GTLCore](https://github.com/nutant233/GTLCore) | Declared LGPLv3.0 (`gradle.properties`; no `LICENSE` file found) | Textures (including Pattern Buffer Copy/Cut Card icons), pattern-buffer parity code, **Integrated / Advanced Integrated Ore Processor** (structure + faithful recipe generation) | Attribution (license to confirm) |
 | GTLsupb | GTLsupb (LGPLv3) | LGPLv3 | Universal Factory, Primitive Stone Furnace | Attribution only |
-| GregTech CEu Modern | [GregTechCEu/GregTech-Modern](https://github.com/GregTechCEu/GregTech-Modern) | LGPL-3.0 | Base API / framework | Attribution only |
+| GregTech CEu Modern | [GregTechCEu/GregTech-Modern](https://github.com/GregTechCEu/GregTech-Modern) | LGPL-3.0 | Base API / framework; the pattern-to-world transform, hatch-limit order and facing pass of `BlockPattern#autoBuild`, kept identical in `NexusBlockPattern` | Attribution only |
 | GT5-Unofficial (GTNH TecTech) | [GTNewHorizons/GT5-Unofficial](https://github.com/GTNewHorizons/GT5-Unofficial/tree/a3e1e11241a814c9fa0dd0973d5699548428f689) | LGPL-3.0 | Forge of Gods: rules (`GodforgeMath`, upgrades, data, star colors), structure strings converted to `pattern/god_forge*.mbs`; star/beam GLSL (`shaders/core/godforge_*`), star and beam textures (`textures/render/godforge`), GUI textures (`textures/gui/godforge`), loop sound (`sounds/godforge`), GUI layout and en_US strings (`data/lang/GodforgeLang`, generated) | Licensed reuse with attribution; no individual permission claimed |
-| PersonalSpace (GTNH) | [GTNewHorizons/PersonalSpace](https://github.com/GTNewHorizons/PersonalSpace/tree/a292401e0a067e37e7e02abee8bd48b58a6e1571) | LGPL-3.0 | Personal dimension port for 1.20.1: `DimensionConfig` settings and preset strings, chunk provider (layers, lots, streets, boundaries, center marker, surface layers), portal/teleport/relink logic, `/pspace` commands, the editor GUI and its widget toolkit, and the GUI sheet `assets/gtna/textures/gui/personalspace/widgets.png` (copied unchanged from `assets/personalspace/textures/widgets.png`, SHA-256 `68db48c6826c3cb46df9d83eff1bc7d56ec73cb679281f21d609a352ab70a97d`) | Licensed reuse with attribution under LGPL-3.0; no individual permission claimed |
-| PersonalSpace Unofficial | [Crazerium/PersonalSpace-Unofficial](https://github.com/Crazerium/PersonalSpace-Unofficial/tree/dab12d35325aef2c65b79e9a79ef0025f1274fa4) | LGPL-3.0 | Forge 1.20.1 chunk generator API structure used as implementation reference; its ownership and simplified road rules are not adopted | Licensed reuse with attribution; no individual permission claimed |
-| Infiniverse | [Commoble/infiniverse](https://github.com/Commoble/infiniverse) | MIT | Forge 1.20.1 runtime dimension API dependency for Personal Space | Separate required mod; no source or assets copied |
 
 ## Notes
 
@@ -75,6 +71,62 @@ Hypercore multiblock itself is original to GTNA and has no source attribution in
   controller recipe is omitted because it needs the GTO-only Advanced Assembly Line chain. The ZPM/UV
   casing recipes substitute GTO's Pikyonium/ArtheriumTin/AbyssalAlloy solders with obtainable
   GTNA/GTCEu equivalents (ledger G-0114).
+- G-0204 mega multiblocks: the compressed `pattern/gto/{large_pyrolyse_oven,cracker_hub,mega_brewer,
+  mega_vacuum_drying_furnace,giant_flotation_tank}.mbs` structures, block mappings and controller recipes are
+  adapted from GTOCore at commit `dc4824d`; GTO-only recipe inputs are substituted (see
+  `GTNAMegaMachineRecipes`). The `oil_gas_transportation_pipe_casing`,
+  `calcium_oxide_ceramic_anti_metal_corrosion_mechanical_block` and `stabilized_naquadah_water_plant_casing`
+  textures (with connected sheets and `.png.mcmeta`) are from GTOCore and retain CC BY-NC-SA 4.0 attribution.
+- G-0205: `phase_change_cube`, `engraving_laser_plant` and `infinity_fluid_drilling_rig` (structures, behavior and
+  recipes) are adapted from GTOCore at commit `dc4824d`; `amprosium_active_casing` and `amprosium_gearbox` use GTOCore's
+  `neutronium_active_casing` / `neutronium_gearbox` textures (CC BY-NC-SA 4.0). The `mega_distillery` structure is
+  converted from GTLCore's `MultiBlockMachineAStructureC.MEGA_DISTILLERY`, and its recipe comes from the GregTech Leisure
+  1.4.5.1 KubeJS scripts.
+- G-0206: `super_blast_smelter`, `large_cracker` and `integrated_assembler`
+  (structures, behavior and recipes) are adapted from GTOCore at commit `dc4824d`.
+- G-0207: `neutronium_wire_cutting`, `holy_separator`, `superconducting_electromagnetism`
+  and `superconducting_magnetic_presser` (structures, behavior and recipes) are adapted from GTOCore at commit
+  `dc4824d`. The `high_pressure_resistant_casing`, `mc_nylon_tensile_mechanical_shell`, `lafium_mechanical_casing`
+  and `amprosium_borosilicate_glass` (GTO `neutronium_borosilicate_glass`) textures and the `multiblock/general0`
+  overlay are from GTOCore and retain CC BY-NC-SA 4.0 attribution.
+- G-0209: `magnetic_energy_reaction_furnace` and `particle_stream_matrix_filling_machine`
+  (structures, behavior and recipes) are adapted from GTOCore at commit `dc4824d`. The
+  `transcendentally_amplified_magnetic_confinement_casing` and `speeding_pipe` textures and the `multiblock/general1` overlay are from GTOCore (CC BY-NC-SA 4.0).
+- G-0210: `nanites_circuit_assembly_factory`, `mega_wiremill` and `crystal_builder` (structures, behavior and recipes)
+  are adapted from GTOCore at commit `dc4824d`; the `hyper_core` (with bloom), `pikyonium_machine_casing`,
+  `high_strength_support_spindle` and `quantum_glass` textures are from GTOCore (CC BY-NC-SA 4.0).
+- G-0243: `high_energy_laser_lathe` and `extreme_compressor` (structures, behavior and recipes) are adapted from
+  GTOCore at commit `dc4824d`; the `iridium_pipe_casing` (GTO `machine_casing_pipe_iridium`), `iridium_gearbox` (GTO
+  `machine_casing_gearbox_iridium`), `laser_cooling_casing` and `high_energy_laser_emitter` textures are from GTOCore
+  (CC BY-NC-SA 4.0).
+- G-0244: `hyperdimensional_plasma_fusion_core`, `gemini_containment_system` and `giant_electrochemical_workstation`
+  (structures, behavior and recipes) are adapted from GTOCore at commit `dc4824d`; the `sps_casing`,
+  `space_elevator_mechanical_casing`, `engineering_mechanical_casing`, `peek_wear_resistant_mechanical_housing` and
+  `industrial_frameless_glass` textures are from GTOCore (CC BY-NC-SA 4.0).
+- G-0245: `desulfurizer`, `dimensional_focus_engraving_array`, `star_ultimate_material_forge_factory`,
+  `hand_of_arachne`, `rare_earth_centrifugal` and `heavy_rolling` (structures, behavior, recipe types and recipes) are
+  adapted from GTOCore at commit `dc4824d`; the `smelting_control_casing`, `stable_base_casing`,
+  `insulation_tile_mechanical_block`, `hsss_borosilicate_glass`, `ultimate_stellar_containment_casing` (GTO
+  `stellar_containment_casing`) and `amprosium_casing` (GTO `neutronium_casing`) textures are from GTOCore
+  (CC BY-NC-SA 4.0).
+- G-0246: `lightning_rod`, `pcb_factory`, `space_probe_surface_reception` and `compound_extreme_cooling_unit`
+  (structures, behavior, recipe types and recipes) are adapted from GTOCore at commit `dc4824d`; `GTNAGTORecipes`
+  (generated by `tools/port_gto_recipes.py`) and `GTNAGTOPatterns` (`tools/extract_gto_inline_patterns.py`) copy
+  GTOCore recipes and inline patterns; the `gravity_stabilization_casing`, `pps_corrosion_resistant_mechanical_housing`,
+  `plasma_heater_casing` and `high_energy_ultraviolet_emitter_casing` textures are from GTOCore (CC BY-NC-SA 4.0).
+- G-0247: `hyper_reactor` and `advanced_hyper_reactor` (structures, behavior and recipe types) are adapted from
+  GTOCore at commit `dc4824d`; the `enhance_hyper_mechanical_casing` and `echo_casing` textures are from GTOCore
+  (CC BY-NC-SA 4.0).
+- G-0248: `fuel_cell_generator` (structure, behavior, recipe types and recipes), the four electrolyte fluid states,
+  the redox-flow electrolytes, the membrane materials and the membrane electrode prefix are adapted from GTOCore at
+  commit `dc4824d`; the `flocculation_casing` texture and the `membrane_electrode` material-set icons are from GTOCore
+  (CC BY-NC-SA 4.0).
+- G-0249: `supercomputing_center`, the NICH/GWCA HPCA components, the `thermal_conductor_hatch` and the MFPC
+  materials are adapted from GTOCore at commit `dc4824d`; the `about_computer` textures (computer casings, vents and
+  component overlays), the `tungsten_borosilicate_glass` / `taranium_borosilicate_glass` textures and the
+  `overlay_neutron_sensor` hatch overlay are from GTOCore (CC BY-NC-SA 4.0).
+- G-0250: `data_center` and `analysis_and_research_center` (structures, behavior and recipe types) are adapted from
+  GTOCore at commit `dc4824d`.
 - The Blaze and Cold Ice two-layer casings, including the emissive `_bloom` overlays and their
   connected sheets and animation metadata, and the MK2 control casings' `side_bloom` overlays are from GTOCore and retain
   CC BY-NC-SA 4.0 attribution. `naquadah_alloy_casing` reuses the GTO `hyper_mechanical_casing` sheet
@@ -327,7 +379,7 @@ and registration in `common/machine/GTLAddMachines.kt`. Adapted Java implementat
 GPL-3.0-only; bundled upstream license `META-INF/licenses/gtladditions/GPL-3.0.txt`.
 The upstream LICENSE is GPL-3.0 while gradle.properties declares LGPLv3.0: these
 adapted files retain the explicit LICENSE terms, without claiming special permission.
-GTLCore/GTMThings-specific code, machine families and assets were not imported.
+GTLCore-specific code, machine families and assets were not imported.
 Models use existing GTNA/GTO overlays and GTCEu voltage casing assets with existing
 attribution. Recipes use GTNA/GTCEu ingredients instead of unavailable GTL/KubeJS items.
 GTNA-specific changes include Nexus matrix capacity/dimension/loss, simulation quotes,
@@ -363,14 +415,16 @@ metadata LGPL discrepancy remains documented. No special permission is claimed.
 - The new EOH construction recipes are a GTNA adaptation using GTCEu components.
   They do not reproduce GTNH's BEC material, nanite or condensate requirements.
 
-### ME Export Buffer (GTMThings role, no GTMThings code)
+### ME Export Buffer and Nexus Structure Terminal (GTNA code on GTCEu)
 
-`GTNAMEExportBufferPartMachine` fills the role of the GTMThings `me_export_buffer` (one part that is item
-bus and fluid hatch, outputs flushed to ME) because GTMThings is not in GT:IA. GTMThings source was not
-copied: its upstream declares no license and the permission request is pending (see table above). The
-implementation is written on GTCEu's LGPL-3.0 `MEOutputBusPartMachine`/`MEOutputHatchPartMachine`,
-`DualHatchPartMachine` and `KeyStorage`, with long fluid amounts. The overlay is GTCEu's
-`block/overlay/appeng/me_output_bus`. Tooltip attribution: `GTNASources` → `gtmthings` (concept origin).
+`GTNAMEExportBufferPartMachine` (one part that is item bus and fluid hatch, outputs flushed to ME) is
+written on GTCEu's LGPL-3.0 `MEOutputBusPartMachine`/`MEOutputHatchPartMachine`, `DualHatchPartMachine`
+and `KeyStorage`, with long fluid amounts. The overlay is GTCEu's `block/overlay/appeng/me_output_bus`.
+
+`NexusBlockPattern` (the terminal's auto-builder) was rewritten on 2026-10-10 as GTNA code on top of
+GTCEu's `BlockPattern` (LGPL-3.0). It keeps GTCEu's pattern-to-world transform and hatch-limit order so
+built structures pass GTCEu's own check. The previous version, based on third-party code without a
+declared license, was removed, and GTNA no longer uses any code or assets from that project.
 
 ### Planet ore veins (GTOCore `GTOOres`, LGPL-3.0)
 
@@ -424,3 +478,25 @@ rewritten `GTNAGodforgeProgression` follow GT5-Unofficial `ResearchStationAssemb
 `RecipeLoader`. Textures: `gt.metaitem.01/{349,415,428}`, `gt.metaitem.03/{759,760}`, `gt.neutroniumHeatCapacitor`,
 `gt.1080k_Space_Coolantcell`, `gt.metaitem.01/{609,594,145,146}/8`, `qft/CosmicFabricManipulator`, `qft/ForceFieldGlass*` (Modernity-GTNH) and
 `gt.metaitem.03/303`, `MU-metaitem.01/110`, `FRF_Coils/3` (GT5-Unofficial); pixels unchanged.
+
+### Universium item visuals restored (2026-10-10)
+
+Universium item silhouettes and overlays are copied from the local Modernity-GTNH
+`assets/gregtech/textures/items/materialicons/CUSTOM/universium/` directory,
+under the Modernity-GTNH CC BY-NC-SA 4.0 attribution documented above. Existing GTCEu
+model aliases retain these original sprites; the extra singularity form uses the original
+gem silhouette. Per-form cosmic masks are derived from the silhouette alpha channel.
+The live star field uses the installed RenderBlender 1.1.1 cosmic renderer; it is not
+a claim of byte-identical GTNH/GTO/GTL shader behavior. No RenderBlender Java code
+was copied or bundled by this fix; GTNA adds compatibility mixins. Other permission
+requests recorded in this document remain pending.
+
+## Multiblock tooltip adaptation (2026-10-10)
+
+The multiblock tooltip facts are adapted from the original controller tooltips and translations
+of GTOCore (`dc4824d`), GTNL (`52345d2`), GTLCore (`18c7814`), TST (`ceaa462`), GTCEu
+(`v7.5.3-1.20.1`), GTLsupb (`2.6.4`), and the GTNH controllers/documentation pinned above
+(`a3e1e11241a814c9fa0dd0973d5699548428f689`). Wording and values are adapted to the GTNA
+tooltip format and implemented behavior. Each machine retains its in-game `GTNASources` credit.
+The existing source notices and license terms above continue to apply; this revision imports no
+controller implementation. See `docs/reports/multiblock-tooltips-technical-details.md`.

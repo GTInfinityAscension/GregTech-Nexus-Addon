@@ -1,8 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "gtceu:item/material_sets/infinity/foil",
-    "layer1": "gtceu:item/material_sets/infinity/foil_secondary",
-    "layer2": "gtceu:item/material_sets/infinity/foil_overlay"
-  }
-}

@@ -369,6 +369,116 @@ public class GTNARecipeType {
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.FURNACE);
 
+    /** GTO {@code precision_laser_engraver} (Engraving Laser Plant, serial); shipped empty for packs/KubeJS. */
+    public static final GTRecipeType PRECISION_LASER_ENGRAVER_RECIPES = register("precision_laser_engraver",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(9, 1, 1, 0).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
+
+    // G-0245: GTO recipe types approved by the author on 2026-10-09 (IO sizes as in GTORecipeTypes).
+    /** GTO {@code desulfurizer} (Desulfurizer): sulfuric fuels -> sulfur + clean fuel. */
+    public static final GTRecipeType DESULFURIZER_RECIPES = register("desulfurizer",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(0, 1, 1, 1).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.MIXER);
+
+    /** GTO {@code dimensional_focus_engraving_array}; shipped empty for packs/KubeJS. */
+    public static final GTRecipeType DIMENSIONAL_FOCUS_ENGRAVING_ARRAY_RECIPES = register(
+            "dimensional_focus_engraving_array", com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(2, 1, 2, 1).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
+
+    /** GTO {@code ultimate_material_forge} (Star Ultimate Material Forge); shipped empty for packs/KubeJS. */
+    public static final GTRecipeType ULTIMATE_MATERIAL_FORGE_RECIPES = register("ultimate_material_forge",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(2, 2, 2, 0).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.MACERATOR);
+
+    /** GTO {@code loom} (Hand of Arachne). */
+    public static final GTRecipeType LOOM_RECIPES = register("loom",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.ELECTRIC)
+            .setMaxIOSize(2, 1, 0, 0).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_WIREMILL, LEFT_TO_RIGHT).setSound(GTSoundEntries.MOTOR);
+
+    /** GTO {@code rare_earth_centrifugal} (Rare Earth Centrifugal); shipped empty for packs/KubeJS. */
+    public static final GTRecipeType RARE_EARTH_CENTRIFUGAL_RECIPES = register("rare_earth_centrifugal",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(1, 17, 1, 1).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_EXTRACT, LEFT_TO_RIGHT).setSound(GTSoundEntries.CENTRIFUGE);
+
+    // G-0246: GTO recipe types of the Lightning Rod, PCB Factory, Space Probe and Compound Extreme Cooling Unit.
+    /** GTO {@code arc_generator} (Lightning Rod): consumes EU, like GTO. */
+    public static final GTRecipeType ARC_GENERATOR_RECIPES = register("arc_generator",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.ELECTRIC)
+            .setMaxIOSize(6, 1, 6, 1).setEUIO(IO.IN)
+            .setSlotOverlay(true, false, false, GuiTextures.LIGHTNING_OVERLAY_1)
+            .setSlotOverlay(false, false, false, GuiTextures.LIGHTNING_OVERLAY_2)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
+
+    /** GTO {@code pcb_factory}; the factory tier a recipe needs is read from its EU/t (see PCBFactoryMachine). */
+    public static final GTRecipeType PCB_FACTORY_RECIPES = register("pcb_factory",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(2, 1, 2, 0).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.CHEMICAL);
+
+    /** GTO {@code space_probe_surface_reception} (Space Probe Receiver). */
+    public static final GTRecipeType SPACE_PROBE_SURFACE_RECEPTION_RECIPES = register("space_probe_surface_reception",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(2, 0, 0, 1).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
+
+    /** GTO {@code hyper_reactor}: fuel in, EU out; boosters in recipe data (HyperReactorMachine). Empty. */
+    public static final GTRecipeType HYPER_REACTOR_RECIPES = register("hyper_reactor",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(0, 0, 2, 0).setEUIO(IO.OUT)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
+
+    /** GTO {@code advanced_hyper_reactor}: fuel in, EU out; boosters in recipe data. Empty. */
+    public static final GTRecipeType ADVANCED_HYPER_REACTOR_RECIPES = register("advanced_hyper_reactor",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(0, 0, 1, 0).setEUIO(IO.OUT)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
+
+    // G-0248: GTO Fuel Cell Generator recipe types (data keys as in GTORecipeDataKeys).
+    /** Fuel + liquid oxygen charge an electrolyte; {@code converted_energy} = EU stored per run. */
+    public static final GTRecipeType FUEL_CELL_ENERGY_ABSORPTION_RECIPES = register("fuel_cell_energy_absorption",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(1, 0, 2, 0).setEUIO(IO.IN)
+            .addDataInfo(data -> LocalizationUtils.format("gtna.recipe.fuel_cell.converted_energy",
+                    FormattingUtil.formatNumbers(data.getLong("converted_energy"))))
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.CHEMICAL);
+
+    /** Moves charge between electrolytes; {@code efficiency} = conversion efficiency. */
+    public static final GTRecipeType FUEL_CELL_ENERGY_TRANSFER_RECIPES = register("fuel_cell_energy_transfer",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(1, 1, 4, 4).setEUIO(IO.IN)
+            .addDataInfo(data -> LocalizationUtils.format("gtna.recipe.fuel_cell.converted_efficiency",
+                    FormattingUtil.formatNumber2Places(data.getFloat("efficiency") * 100)))
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.CHEMICAL);
+
+    /** Discharges a charged electrolyte into EU. */
+    public static final GTRecipeType FUEL_CELL_ENERGY_RELEASE_RECIPES = register("fuel_cell_energy_release",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(1, 1, 2, 2).setEUIO(IO.OUT)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
+
+    // G-0250: GTO research types of the Analysis & Research Center (shipped empty, like GTO's dev-only content).
+    public static final GTRecipeType DATA_ANALYSIS_RECIPES = register("data_analysis",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.ELECTRIC)
+            .setMaxIOSize(3, 6, 0, 0).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.COMPUTATION);
+
+    public static final GTRecipeType DATA_INTEGRATION_RECIPES = register("data_integration",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.ELECTRIC)
+            .setMaxIOSize(13, 2, 0, 0).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.COMPUTATION);
+
+    /** GTO {@code plasma_condenser} (Compound Extreme Cooling Unit, plasma structure). */
+    public static final GTRecipeType PLASMA_CONDENSER_RECIPES = register("plasma_condenser",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(2, 2, 2, 2).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.COOLING);
+
     static {
         var blast = com.gregtechceu.gtceu.common.data.GTRecipeTypes.BLAST_RECIPES;
         var previous = blast.recipeBuilder("gtna_probe").onSave;

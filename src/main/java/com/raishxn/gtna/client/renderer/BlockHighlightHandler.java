@@ -31,7 +31,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Two highlight modes:
  * <ul>
  * <li><b>Static fields</b> ({@link #highlightTicks}, {@link #highlightPos}):
- * Used by the GUI locate buttons (GTMThings pattern). Set directly from
+ * Used by the GUI locate buttons. Set directly from
  * the client-side click handler — no network packets needed.</li>
  * <li><b>Map-based</b> ({@link #HIGHLIGHTS}): Used by server-sent highlight
  * packets (commands, etc.).</li>
@@ -41,7 +41,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Mod.EventBusSubscriber(modid = GTNACORE.MOD_ID, value = Dist.CLIENT)
 public class BlockHighlightHandler {
 
-    // ── GTMThings-style static fields (for GUI locate buttons) ──
+    // ── Static fields (for GUI locate buttons) ──
 
     /** Remaining ticks to display the highlight. Decremented every second (every 20 ticks). */
     public static int highlightTicks = 0;

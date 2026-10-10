@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_universium/stickLong",
+    "layer1": "gtceu:item/material_sets/gtna_universium/stickLong_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_universium/stickLong_overlay"
+  },
+  "loader": "renderblender:cosmic",
+  "cosmic": {
+    "mask": "gtceu:item/material_sets/gtna_universium/stickLong_cosmic_mask"
+  }
+}

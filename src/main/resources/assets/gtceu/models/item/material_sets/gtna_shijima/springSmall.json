@@ -1,0 +1,13 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_shijima/springSmall",
+    "layer1": "gtceu:item/material_sets/gtna_shijima/springSmall_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_shijima/springSmall_overlay"
+  },
+  "loader": "renderblender:glow_edge",
+  "glow_edge": {
+    "color": 12900082,
+    "width": 1.5
+  }
+}

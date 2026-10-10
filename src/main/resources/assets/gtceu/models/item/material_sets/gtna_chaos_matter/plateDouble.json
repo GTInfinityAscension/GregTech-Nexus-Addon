@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_chaos_matter/plateDouble",
+    "layer1": "gtceu:item/material_sets/gtna_chaos_matter/plateDouble_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_chaos_matter/plateDouble_overlay"
+  },
+  "loader": "renderblender:unstable",
+  "unstable": {
+    "mask": "gtna:mask/cosmic"
+  }
+}

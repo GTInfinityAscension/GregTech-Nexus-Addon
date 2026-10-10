@@ -1,0 +1,846 @@
+{
+  "forge_of_gods": {
+    "type": "Stellar Forge",
+    "flavor": "Also known as Godforge or Gorge for short.",
+    "desc": [
+      "A massive structure harnessing the heat,",
+      "gravity and spin of a *stabilized neutron*",
+      "*star* for material processing."
+    ],
+    "pro": [
+      "Extensive *upgrade tree*: modules, heat, speed",
+      "Click the controller logo for the full guide"
+    ],
+    "num": [
+      "*8* module slots, up to *16* with upgrades",
+      "Upgrades require *milestones and/or materials*"
+    ],
+    "con": [
+      "All module EU comes from *wireless energy*"
+    ],
+    "pt": {
+      "type": "Forja Estelar",
+      "flavor": "Também conhecida como Godforge, ou Gorge para os íntimos.",
+      "desc": [
+        "Uma estrutura colossal que aproveita o calor, a",
+        "gravidade e o giro de uma *estrela de nêutrons*",
+        "*estabilizada* para processar materiais."
+      ],
+      "pro": [
+        "Grande *árvore de upgrades*: módulos, calor, velocidade",
+        "Clique no logo do controlador para o guia completo"
+      ],
+      "num": [
+        "*8* encaixes de módulo, até *16* com upgrades",
+        "Upgrades exigem *marcos de progresso e/ou materiais*"
+      ],
+      "con": [
+        "Todo o EU dos módulos vem da *energia wireless*"
+      ]
+    }
+  },
+  "godforge_smelting_module": {
+    "type": "Blast Furnace, Furnace",
+    "flavor": "Smelting, but the furnace is a neutron star.",
+    "desc": [
+      "The first Godforge module: smelts like a",
+      "*furnace or blast furnace* at extreme heat."
+    ],
+    "pro": [
+      "Specialized in *speed* and high heat levels"
+    ],
+    "num": [
+      "Pick furnace or blast mode in the GUI"
+    ],
+    "con": [
+      "Must be part of a Godforge to work"
+    ],
+    "pt": {
+      "type": "Alto-Forno, Fornalha",
+      "flavor": "Fundição, só que a fornalha é uma estrela de nêutrons.",
+      "desc": [
+        "O primeiro módulo da Godforge: funde como uma",
+        "*fornalha ou alto-forno* em calor extremo."
+      ],
+      "pro": [
+        "Especializado em *velocidade* e calor alto"
+      ],
+      "num": [
+        "Escolha o modo fornalha ou alto-forno na GUI"
+      ],
+      "con": [
+        "Precisa fazer parte de uma Godforge"
+      ]
+    }
+  },
+  "godforge_molten_module": {
+    "type": "Blast Smelter",
+    "flavor": "Skip the ingot. Go straight to soup.",
+    "desc": [
+      "The second Godforge module: melts materials",
+      "straight into their *liquid* form."
+    ],
+    "pro": [
+      "Specialized in *parallel* processing"
+    ],
+    "num": [
+      "Outputs solids if no liquid form exists"
+    ],
+    "con": [
+      "Must be part of a Godforge to work"
+    ],
+    "pt": {
+      "type": "Fundidora a Alto-Forno",
+      "flavor": "Pule o lingote. Vá direto para a sopa.",
+      "desc": [
+        "O segundo módulo da Godforge: derrete materiais",
+        "direto na forma *líquida*."
+      ],
+      "pro": [
+        "Especializado em *paralelos*"
+      ],
+      "num": [
+        "Sai sólido se o material não tiver forma líquida"
+      ],
+      "con": [
+        "Precisa fazer parte de uma Godforge"
+      ]
+    }
+  },
+  "godforge_plasma_module": {
+    "type": "Plasma Fabricator",
+    "flavor": "Ionize first, ask questions never.",
+    "desc": [
+      "The third Godforge module: infuses materials",
+      "with heat until they become *plasma*."
+    ],
+    "pro": [
+      "Specialized in *energy and overclock* efficiency"
+    ],
+    "num": [
+      "Some plasmas need forge upgrades"
+    ],
+    "con": [
+      "Must be part of a Godforge to work"
+    ],
+    "pt": {
+      "type": "Fabricador de Plasma",
+      "flavor": "Ionize primeiro, pergunte nunca.",
+      "desc": [
+        "O terceiro módulo da Godforge: aquece materiais",
+        "até virarem *plasma*."
+      ],
+      "pro": [
+        "Especializado em eficiência de *energia e overclock*"
+      ],
+      "num": [
+        "Alguns plasmas precisam de upgrades da forja"
+      ],
+      "con": [
+        "Precisa fazer parte de uma Godforge"
+      ]
+    }
+  },
+  "godforge_exotic_module": {
+    "type": "Exotic Matter Producer",
+    "flavor": "Breaking the building blocks of reality, responsibly.",
+    "desc": [
+      "The final Godforge module: breaks matter",
+      "apart into *exotic mixtures* like Quark-Gluon",
+      "Plasma and Magmatter."
+    ],
+    "pro": [
+      "Specialized in *unique materials*"
+    ],
+    "num": [
+      "Quark-Gluon Plasma is available right away"
+    ],
+    "con": [
+      "Magmatter needs a fully upgraded Godforge",
+      "Must be part of a Godforge to work"
+    ],
+    "pt": {
+      "type": "Produtor de Matéria Exótica",
+      "flavor": "Quebrando os tijolos da realidade, com responsabilidade.",
+      "desc": [
+        "O último módulo da Godforge: quebra a matéria em",
+        "*misturas exóticas* como Plasma de Quarks e",
+        "Glúons e Magmatter."
+      ],
+      "pro": [
+        "Especializado em *materiais únicos*"
+      ],
+      "num": [
+        "Plasma de Quarks e Glúons já vem liberado"
+      ],
+      "con": [
+        "Magmatter precisa da Godforge totalmente melhorada",
+        "Precisa fazer parte de uma Godforge"
+      ]
+    }
+  },
+  "eye_of_harmony": {
+    "type": "Cosmos Simulation",
+    "flavor": "The universe is big. You built a bigger one.",
+    "desc": [
+      "Creates a *miniature universe* and extracts",
+      "its resources through regular item and",
+      "fluid ports."
+    ],
+    "pro": [
+      "Circuit *0-24*: each step halves the time",
+      "Startup EU comes from the wireless network",
+      "Compression above recipe tier: *-3%* time per tier",
+      "Acceleration: *50%* less time per field tier",
+      "Stabilisation: *+5* percentage points of success per tier"
+    ],
+    "num": [
+      "Startup EU = base x *4^circuit*",
+      "Overworld: *1,000,000* buckets of H and He each",
+      "Return EU does not scale with circuit overclocks",
+      "Repeated failures under unchanged conditions build *pity*"
+    ],
+    "con": [
+      "Uses all buffered gas at startup",
+      "No regular energy hatches",
+      "Acceleration: *-9.25* percentage points of success/tier",
+      "Stabilisation: *-5%* material yield per tier",
+      "Excess buffered H/He lowers *success chance and yield*"
+    ],
+    "pt": {
+      "type": "Simulação do Cosmos",
+      "flavor": "O universo é grande. Você construiu um maior.",
+      "desc": [
+        "Cria um *universo em miniatura* e extrai seus",
+        "recursos pelas portas normais de itens e",
+        "fluidos."
+      ],
+      "pro": [
+        "Circuito *0-24*: cada passo corta o tempo pela metade",
+        "O EU de partida vem da rede wireless",
+        "Compressão acima do tier da receita: *-3%* tempo por tier",
+        "Aceleração: *50%* menos tempo por tier do campo",
+        "Estabilização: *+5* pontos percentuais de sucesso por tier"
+      ],
+      "num": [
+        "EU de partida = base x *4^circuito*",
+        "Overworld: *1.000.000* baldes de H e de He",
+        "O EU devolvido não aumenta com o overclock do circuito",
+        "Falhas seguidas nas mesmas condições acumulam *pity*"
+      ],
+      "con": [
+        "Consome todo o gás armazenado na partida",
+        "Sem hatches de energia normais",
+        "Aceleração: *-9,25* pontos percentuais de sucesso/tier",
+        "Estabilização: *-5%* rendimento de materiais por tier",
+        "H/He em excesso reduz *chance de sucesso e rendimento*"
+      ]
+    }
+  },
+  "dimensionally_transcendent_plasma_forge": {
+    "type": "Plasma Forge, DTPF",
+    "flavor": "Transcending dimensional boundaries since 2015.",
+    "desc": [
+      "A forge that slowly *breaches dimensional*",
+      "*boundaries*, burning less fuel the longer",
+      "it runs."
+    ],
+    "pro": [
+      "Up to *50%* less fuel after *8 h* of runtime"
+    ],
+    "num": [
+      "At least *1,250* Dimensional Injection Casings",
+      "Up to *2* energy hatches or *1* laser"
+    ],
+    "con": [
+      "Idle: the discount decays *100x* faster"
+    ],
+    "pt": {
+      "type": "Forja de Plasma, DTPF",
+      "flavor": "Transcendendo fronteiras dimensionais desde 2015.",
+      "desc": [
+        "Uma forja que *rompe fronteiras dimensionais*",
+        "aos poucos e gasta menos combustível quanto",
+        "mais tempo funciona."
+      ],
+      "pro": [
+        "Até *50%* menos combustível após *8 h* funcionando"
+      ],
+      "num": [
+        "No mínimo *1.250* Dimensional Injection Casings",
+        "Até *2* hatches de energia ou *1* laser"
+      ],
+      "con": [
+        "Parada: o desconto cai *100x* mais rápido"
+      ]
+    }
+  },
+  "transcendent_plasma_mixer": {
+    "type": "Transcendent Mixer, TPM",
+    "flavor": "Assisting in all your DTPF needs!",
+    "desc": [
+      "Mixes the exotic plasmas that feed the",
+      "*Plasma Forge*, scaled with a Parallel Hatch."
+    ],
+    "pro": [
+      "All inputs scale with parallel, time does not"
+    ],
+    "num": [
+      "Cost per parallel: *10* x EU/t x duration"
+    ],
+    "con": [
+      "Power only from *wireless* networks",
+      "EU is paid when the recipe starts"
+    ],
+    "pt": {
+      "type": "Misturador Transcendente, TPM",
+      "flavor": "Atendendo todas as necessidades da sua DTPF!",
+      "desc": [
+        "Mistura os plasmas exóticos que alimentam a",
+        "*Forja de Plasma*, escalado por um Parallel Hatch."
+      ],
+      "pro": [
+        "Todas as entradas escalam com paralelos, o tempo não"
+      ],
+      "num": [
+        "Custo por paralelo: *10* x EU/t x duração"
+      ],
+      "con": [
+        "Energia só de redes *wireless*",
+        "O EU é pago quando a receita começa"
+      ]
+    }
+  },
+  "nano_forge": {
+    "type": "Nanite Fabricator",
+    "flavor": "Nanobots, son. Billions of them.",
+    "desc": [
+      "Builds *nanites* with insane amounts of power;",
+      "the nanite in any input bus sets the tier."
+    ],
+    "pro": [
+      "*Perfect overclock* on lower-tier recipes",
+      "The tier nanite is never consumed"
+    ],
+    "num": [
+      "Carbon *T1*, Neutronium *T2*, Transcendent *T3*",
+      "Keep the tier nanite in an *input bus*"
+    ],
+    "con": [
+      "Each tier needs structural changes"
+    ],
+    "pt": {
+      "type": "Fabricador de Nanitas",
+      "flavor": "Nanorrobôs, filho. Bilhões deles.",
+      "desc": [
+        "Constrói *nanitas* com quantidades insanas de energia;",
+        "a nanita em qualquer barramento define o tier."
+      ],
+      "pro": [
+        "*Overclock perfeito* em receitas de tier menor",
+        "A nanita do tier nunca é consumida"
+      ],
+      "num": [
+        "Carbono *T1*, Neutrônio *T2*, Transcendente *T3*",
+        "Mantenha a nanita do tier em um *barramento de entrada*"
+      ],
+      "con": [
+        "Cada tier precisa de mudanças na estrutura"
+      ]
+    }
+  },
+  "nexus_me_hypercore": {
+    "type": "ME Crafting Computer",
+    "flavor": "Can it run Crysis? It can craft it.",
+    "desc": [
+      "A *44x22x44* ME computer lattice around a",
+      "laminated-glass core; every module becomes",
+      "part of one *shared crafting CPU*."
+    ],
+    "pro": [
+      "Fill all slots with tier IV: *Transcendent Mode*",
+      "Transcendent: unlimited storage and CPUs"
+    ],
+    "num": [
+      "Core: up to *320* modules or AE2 Crafting Units",
+      "Threads per module: *4* / *16* / *128* / *1,024*"
+    ],
+    "con": [
+      "Needs exactly *one* Crafting CPU Interface"
+    ],
+    "pt": {
+      "type": "Computador de Crafting ME",
+      "flavor": "Roda Crysis? Ele fabrica o Crysis.",
+      "desc": [
+        "Uma rede de computadores ME de *44x22x44* em volta",
+        "de um núcleo de vidro laminado; cada módulo vira",
+        "parte de *uma CPU de crafting compartilhada*."
+      ],
+      "pro": [
+        "Encha tudo com tier IV: *Modo Transcendente*",
+        "Transcendente: armazenamento e CPUs ilimitados"
+      ],
+      "num": [
+        "Núcleo: até *320* módulos ou Crafting Units do AE2",
+        "Threads por módulo: *4* / *16* / *128* / *1.024*"
+      ],
+      "con": [
+        "Precisa de exatamente *uma* Crafting CPU Interface"
+      ]
+    }
+  },
+  "nexus_flux_matrix": {
+    "type": "Wireless Energy Storage",
+    "flavor": "Infinite power, if you can afford the batteries.",
+    "desc": [
+      "A massive *wireless energy* storage that",
+      "feeds a global network reachable from",
+      "anywhere."
+    ],
+    "pro": [
+      "*750* MAX capacitors: unlimited storage and",
+      "transfer"
+    ],
+    "num": [
+      "Efficiency and transfer scale with capacitor tier"
+    ],
+    "con": [
+      "Deposited energy stays as your balance"
+    ],
+    "pt": {
+      "type": "Armazenamento de Energia Wireless",
+      "flavor": "Energia infinita, se você puder pagar as baterias.",
+      "desc": [
+        "Um armazenamento enorme de *energia wireless* que",
+        "alimenta uma rede global acessível de",
+        "qualquer lugar."
+      ],
+      "pro": [
+        "*750* capacitores MAX: armazenamento e",
+        "transferência ilimitados"
+      ],
+      "num": [
+        "Eficiência e transferência crescem com o tier"
+      ],
+      "con": [
+        "A energia depositada fica como seu saldo"
+      ]
+    }
+  },
+  "nexus_molecular_forge": {
+    "type": "AE2 Mass Crafting",
+    "flavor": "Ingredients? Where we're going, we don't need ingredients.",
+    "desc": [
+      "An ultra-fast AE2 forge that queues jobs from",
+      "*Nexus Craft Pattern Hatches* and builds them",
+      "in giant batches."
+    ],
+    "pro": [
+      "Every queued output materializes at once",
+      "Queued crafts use *no physical ingredients*"
+    ],
+    "num": [
+      "Power: *1* EU per crafted item"
+    ],
+    "con": [
+      "Parallel follows the AE2 crafting CPU"
+    ],
+    "pt": {
+      "type": "Crafting em Massa do AE2",
+      "flavor": "Ingredientes? Para onde vamos, não precisamos de ingredientes.",
+      "desc": [
+        "Uma forja do AE2 ultrarrápida que enfileira pedidos",
+        "dos *Nexus Craft Pattern Hatches* e os fabrica",
+        "em lotes gigantes."
+      ],
+      "pro": [
+        "Toda saída na fila aparece de uma vez",
+        "Pedidos na fila não usam *ingredientes físicos*"
+      ],
+      "num": [
+        "Energia: *1* EU por item fabricado"
+      ],
+      "con": [
+        "Os paralelos seguem a CPU de crafting do AE2"
+      ]
+    }
+  },
+  "me_storage": {
+    "type": "ME Storage",
+    "flavor": "More bytes than you will ever need. Probably.",
+    "desc": [
+      "An expandable *ME storage* multiblock: repeat",
+      "the core slice to add storage sections."
+    ],
+    "pro": [
+      "Grows with the structure"
+    ],
+    "num": [
+      "Up to *128* storage sections"
+    ],
+    "con": [
+      "Needs exactly *one* ME Storage Access,",
+      "Big Storage Access or IO Port Hatch"
+    ],
+    "pt": {
+      "type": "Armazenamento ME",
+      "flavor": "Mais bytes do que você vai precisar. Provavelmente.",
+      "desc": [
+        "Um multibloco de *armazenamento ME* expansível: repita",
+        "a fatia do núcleo para adicionar seções."
+      ],
+      "pro": [
+        "Cresce junto com a estrutura"
+      ],
+      "num": [
+        "Até *128* seções de armazenamento"
+      ],
+      "con": [
+        "Precisa de exatamente *um* ME Storage Access,",
+        "Big Storage Access ou IO Port Hatch"
+      ]
+    }
+  },
+  "universal_factory": {
+    "type": "Universal Factory",
+    "flavor": "One factory to rule them all.",
+    "desc": [
+      "Processes *many different recipes* at once",
+      "with cross-recipe parallel and threads."
+    ],
+    "pro": [
+      "Runs *32* recipe types in one machine",
+      "Legacy mode: thermal warmup and batch"
+    ],
+    "num": [
+      "Threads and parallel follow balance mode and tier"
+    ],
+    "con": [
+      "Special hatches must be enabled in the config"
+    ],
+    "pt": {
+      "type": "Fábrica Universal",
+      "flavor": "Uma fábrica para a todos governar.",
+      "desc": [
+        "Processa *várias receitas diferentes* ao mesmo",
+        "tempo com paralelos e threads entre receitas."
+      ],
+      "pro": [
+        "Roda *32* tipos de receita numa máquina só",
+        "Modo legado: aquecimento térmico e batch"
+      ],
+      "num": [
+        "Threads e paralelos seguem o modo e o tier"
+      ],
+      "con": [
+        "Hatches especiais precisam ser ativados na config"
+      ]
+    }
+  },
+  "electric_void_miner": {
+    "type": "Void Mining",
+    "flavor": "Mining nothing and getting everything. Physics is optional.",
+    "desc": [
+      "Mines vein programs for *Raw Ores* using",
+      "energy and Drilling Fluid."
+    ],
+    "pro": [
+      "Precise mode: pick a vein with an *essence*",
+      "Random mode: no essence, full ZPM pool"
+    ],
+    "num": [
+      "Circuit *1* = EV basics, circuit *2* = LuV/ZPM veins",
+      "From IV, a Parallel Control Hatch adds parallel"
+    ],
+    "con": [
+      "Needs Drilling Fluid every operation",
+      "EV tier has no parallel"
+    ],
+    "pt": {
+      "type": "Mineração do Vazio",
+      "flavor": "Minerando o nada e recebendo tudo. A física é opcional.",
+      "desc": [
+        "Minera programas de veio de *Minérios Brutos*",
+        "usando energia e Fluido de Perfuração."
+      ],
+      "pro": [
+        "Modo preciso: escolha o veio com uma *essência*",
+        "Modo aleatório: sem essência, pool ZPM completo"
+      ],
+      "num": [
+        "Circuito *1* = básicos EV, circuito *2* = veios LuV/ZPM",
+        "A partir do IV, um Parallel Control Hatch dá paralelos"
+      ],
+      "con": [
+        "Precisa de Fluido de Perfuração em toda operação",
+        "O tier EV não tem paralelos"
+      ]
+    }
+  },
+  "incubator": {
+    "type": "Incubator",
+    "flavor": "Growing ore veins in a petri dish. Science!",
+    "desc": [
+      "Cultivates *vein essences* from seeds and",
+      "ore samples using scanned world data."
+    ],
+    "pro": [
+      "World and planet data is *reusable*",
+      "Overclock shortens the culture time"
+    ],
+    "num": [
+      "*10,000* mB Biomass and Milk per culture",
+      "Produces *64* essences per culture"
+    ],
+    "con": [
+      "Needs Biomass and Milk every culture"
+    ],
+    "pt": {
+      "type": "Incubadora",
+      "flavor": "Cultivando veios de minério numa placa de Petri. Ciência!",
+      "desc": [
+        "Cultiva *essências de veio* a partir de sementes e",
+        "amostras de minério usando dados do mundo."
+      ],
+      "pro": [
+        "Dados do mundo e do planeta são *reutilizáveis*",
+        "O overclock encurta o tempo de cultura"
+      ],
+      "num": [
+        "*10.000* mB de Biomassa e Leite por cultura",
+        "Produz *64* essências por cultura"
+      ],
+      "con": [
+        "Precisa de Biomassa e Leite em toda cultura"
+      ]
+    }
+  },
+  "void_fluid_drilling_rig": {
+    "type": "Void Fluid Drilling",
+    "flavor": "The well ran dry. The void did not.",
+    "desc": [
+      "Keeps producing a fluid after its natural",
+      "deposit was *extracted and recorded*."
+    ],
+    "pro": [
+      "Deposit Data is *reusable*",
+      "Parallel scales energy, reagents and output"
+    ],
+    "num": [
+      "Entry tier: *EV*"
+    ],
+    "con": [
+      "Origin dimension only, until upgraded",
+      "Needs Drilling Fluid; full output pauses it"
+    ],
+    "pt": {
+      "type": "Perfuração de Fluidos do Vazio",
+      "flavor": "O poço secou. O vazio não.",
+      "desc": [
+        "Continua produzindo um fluido depois que o depósito",
+        "natural foi *extraído e registrado*."
+      ],
+      "pro": [
+        "Os Dados de Depósito são *reutilizáveis*",
+        "Paralelos escalam energia, reagentes e produção"
+      ],
+      "num": [
+        "Tier de entrada: *EV*"
+      ],
+      "con": [
+        "Só na dimensão de origem, até o upgrade",
+        "Precisa de Fluido de Perfuração; saída cheia pausa"
+      ]
+    }
+  },
+  "industrial_slaughterhouse": {
+    "type": "Industrial Slaughter",
+    "flavor": "No mobs were harmed in this tooltip. Many were in the machine.",
+    "desc": [
+      "Virtual mob processing: drops *scale with*",
+      "*voltage tier*, picked by circuit."
+    ],
+    "pro": [
+      "Bosses *x3* drops/tier, Dragon *x5* drops/tier"
+    ],
+    "num": [
+      "Circuit *1* passive, *2* hostile, *3* boss, *4* dragon",
+      "Base tiers: *LV* / *MV* / *ZPM* / *UHV*"
+    ],
+    "con": [
+      "EU/t: *1,000* / *2,560* / *32k* / *120k* per circuit"
+    ],
+    "pt": {
+      "type": "Abate Industrial",
+      "flavor": "Nenhum mob se machucou nesta tooltip. Muitos na máquina.",
+      "desc": [
+        "Processamento virtual de mobs: os drops *crescem com*",
+        "*o tier de voltagem*, escolhidos por circuito."
+      ],
+      "pro": [
+        "Chefes *x3* drops/tier, Dragão *x5* drops/tier"
+      ],
+      "num": [
+        "Circuito *1* passivo, *2* hostil, *3* chefe, *4* dragão",
+        "Tiers base: *LV* / *MV* / *ZPM* / *UHV*"
+      ],
+      "con": [
+        "EU/t: *1.000* / *2.560* / *32k* / *120k* por circuito"
+      ]
+    }
+  },
+  "integrated_ore_processor": {
+    "type": "Integrated Ore Processing",
+    "flavor": "The entire ore processing line, in one box.",
+    "desc": [
+      "Complete *ore processing* in one step; the",
+      "circuit picks one of seven routes."
+    ],
+    "pro": [
+      "Grind, wash, bath, sift and spin in one go"
+    ],
+    "num": [
+      "Circuit *1*: Crush -> Crush -> Centrifuge",
+      "Circuit *2*: Crush -> Wash -> Thermal -> Crush",
+      "Circuit *3*: Crush -> Wash -> Crush -> Centrifuge",
+      "Circuit *4*: Crush -> Wash -> Sift -> Centrifuge",
+      "Circuit *5*: Crush -> Bath -> Thermal -> Crush",
+      "Circuit *6*: Crush -> Bath -> Crush -> Centrifuge",
+      "Circuit *7*: Crush -> Bath -> Sift -> Centrifuge"
+    ],
+    "con": [
+      "Parallel comes from Parallel Control Hatches"
+    ],
+    "pt": {
+      "type": "Processamento Integrado de Minério",
+      "flavor": "A linha inteira de processamento de minério, numa caixa.",
+      "desc": [
+        "*Processamento de minério* completo num passo; o",
+        "circuito escolhe uma de sete rotas."
+      ],
+      "pro": [
+        "Mói, lava, banha, peneira e centrifuga de uma vez"
+      ],
+      "num": [
+        "Circuito *1*: Triturar -> Triturar -> Centrifugar",
+        "Circuito *2*: Triturar -> Lavar -> Térmica -> Triturar",
+        "Circuito *3*: Triturar -> Lavar -> Triturar -> Centrifugar",
+        "Circuito *4*: Triturar -> Lavar -> Peneirar -> Centrifugar",
+        "Circuito *5*: Triturar -> Banho -> Térmica -> Triturar",
+        "Circuito *6*: Triturar -> Banho -> Triturar -> Centrifugar",
+        "Circuito *7*: Triturar -> Banho -> Peneirar -> Centrifugar"
+      ],
+      "con": [
+        "Paralelos vêm dos Parallel Control Hatches"
+      ]
+    }
+  },
+  "advanced_integrated_ore_processor": {
+    "type": "Integrated Ore Processing",
+    "flavor": "Why process one ore when you can process all of them?",
+    "desc": [
+      "Complete *ore processing* in one step,",
+      "running several different recipes at once."
+    ],
+    "pro": [
+      "Runs *multiple different recipes* at once"
+    ],
+    "num": [
+      "Max parallel: *2,147,483,647*"
+    ],
+    "con": [
+      "Only accepts *Laser* Energy Hatches"
+    ],
+    "pt": {
+      "type": "Processamento Integrado de Minério",
+      "flavor": "Por que processar um minério se dá para processar todos?",
+      "desc": [
+        "*Processamento de minério* completo num passo,",
+        "rodando várias receitas diferentes ao mesmo tempo."
+      ],
+      "pro": [
+        "Roda *várias receitas diferentes* ao mesmo tempo"
+      ],
+      "num": [
+        "Paralelos máx.: *2.147.483.647*"
+      ],
+      "con": [
+        "Só aceita Energy Hatches *Laser*"
+      ]
+    }
+  },
+  "eye_of_wood": {
+    "type": "Ore Condenser",
+    "flavor": "The Eye of Harmony's rustic cousin from the countryside.",
+    "desc": [
+      "An Overworld-only ore condenser that stores",
+      "*Water and Lava* and turns them into large",
+      "ore bundles."
+    ],
+    "pro": [
+      "Peak success: *75%* at *256,000* mB of each fluid"
+    ],
+    "num": [
+      "Each run takes a fixed *60 s*"
+    ],
+    "con": [
+      "Failure vents up to *270,000,000* mB Steam",
+      "Overworld only",
+      "Both shortage and excess of water/lava lower the chance"
+    ],
+    "pt": {
+      "type": "Condensador de Minério",
+      "flavor": "O primo caipira do Eye of Harmony.",
+      "desc": [
+        "Um condensador de minério só do Overworld que guarda",
+        "*Água e Lava* e as transforma em grandes",
+        "pacotes de minério."
+      ],
+      "pro": [
+        "Sucesso máximo: *75%* com *256.000* mB de cada fluido"
+      ],
+      "num": [
+        "Cada ciclo dura *60 s* fixos"
+      ],
+      "con": [
+        "Falha solta até *270.000.000* mB de Vapor",
+        "Só no Overworld",
+        "Falta ou excesso de água/lava reduz a chance de sucesso"
+      ]
+    }
+  },
+  "duration_tester": {
+    "type": "Developer Tool",
+    "flavor": "If you are reading this, you found the dev room.",
+    "desc": [
+      "A test machine for *Duration and Accelerate*",
+      "*Hatches*; not meant for survival."
+    ],
+    "pro": [
+      "Runs Assembler and Circuit Assembler recipes"
+    ],
+    "num": [
+      "Accepts Thread and Overclock Hatches"
+    ],
+    "con": [
+      "Development use only"
+    ],
+    "pt": {
+      "type": "Ferramenta de Desenvolvimento",
+      "flavor": "Se você está lendo isto, achou a sala dos devs.",
+      "desc": [
+        "Uma máquina de teste para *Duration e Accelerate*",
+        "*Hatches*; não é para o survival."
+      ],
+      "pro": [
+        "Roda receitas de Montadora e Montadora de Circuitos"
+      ],
+      "num": [
+        "Aceita Thread e Overclock Hatches"
+      ],
+      "con": [
+        "Uso apenas de desenvolvimento"
+      ]
+    }
+  }
+}

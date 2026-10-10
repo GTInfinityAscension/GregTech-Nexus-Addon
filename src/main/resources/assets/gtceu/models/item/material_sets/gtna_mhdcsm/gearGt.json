@@ -1,0 +1,16 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_mhdcsm/gearGt",
+    "layer1": "gtceu:item/material_sets/gtna_mhdcsm/gearGt_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_mhdcsm/gearGt_overlay",
+    "halo": "renderblender:misc/halo"
+  },
+  "loader": "renderblender:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -2331879,
+    "size": 5,
+    "pulse": true
+  }
+}

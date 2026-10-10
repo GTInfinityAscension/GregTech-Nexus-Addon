@@ -167,7 +167,6 @@ public class GTNAMachines2 {
             .workableCasingModel(
                     GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
                     GTCEu.id("block/multiblock/implosion_compressor"))
-            .tooltips(Component.translatable("gtna.machine.duration_tester.desc"))
             .register());
 
     private static void registerPatternBuffers() {
@@ -322,7 +321,7 @@ public class GTNAMachines2 {
                 .register();
     }
 
-    /** Item bus and fluid hatch in one part, with unbounded long buffers flushed to ME (GTMThings role). */
+    /** Item bus and fluid hatch in one part, with unbounded long buffers flushed to ME. */
     private static void registerMEExportBuffer() {
         if (!ConfigHolder.isHatchEnabled("meExportBuffer")) return;
         ME_EXPORT_BUFFER = REGISTRATE
@@ -501,96 +500,64 @@ public class GTNAMachines2 {
         // gtna.machine.<id>.tooltip automatically as the first description line, and the remaining
         // GTNL lines are passed here in order. Nothing is emitted twice.
         STEAM_ELEVATOR_FLIGHT_MODULE_I = registerElevatorModule("steam_elevator_flight_module_i",
-                "Steam Flight Module I", 1, holder -> new SteamFlightModule(holder, 1),
-                moduleLines("steam_elevator_flight_module_i", 1, 4));
+                "Steam Flight Module I", 1, holder -> new SteamFlightModule(holder, 1));
         STEAM_ELEVATOR_FLIGHT_MODULE_II = registerElevatorModule("steam_elevator_flight_module_ii",
-                "Steam Flight Module II", 2, holder -> new SteamFlightModule(holder, 2),
-                moduleLines("steam_elevator_flight_module_ii", 1, 4));
+                "Steam Flight Module II", 2, holder -> new SteamFlightModule(holder, 2));
         STEAM_ELEVATOR_FLIGHT_MODULE_III = registerElevatorModule("steam_elevator_flight_module_iii",
-                "Steam Flight Module III", 3, holder -> new SteamFlightModule(holder, 3),
-                moduleLines("steam_elevator_flight_module_iii", 1, 4));
+                "Steam Flight Module III", 3, holder -> new SteamFlightModule(holder, 3));
         STEAM_ELEVATOR_WEATHER_MODULE_I = registerElevatorModule("steam_elevator_weather_module_i",
-                "Steam Weather Module I", 1, holder -> new SteamWeatherModule(holder, 1),
-                moduleLines("steam_elevator_weather_module_i", 1, 2));
+                "Steam Weather Module I", 1, holder -> new SteamWeatherModule(holder, 1));
         STEAM_ELEVATOR_WEATHER_MODULE_II = registerElevatorModule("steam_elevator_weather_module_ii",
-                "Steam Weather Module II", 2, holder -> new SteamWeatherModule(holder, 2),
-                moduleLines("steam_elevator_weather_module_ii", 1, 2));
+                "Steam Weather Module II", 2, holder -> new SteamWeatherModule(holder, 2));
         STEAM_ELEVATOR_WEATHER_MODULE_III = registerElevatorModule("steam_elevator_weather_module_iii",
-                "Steam Weather Module III", 3, holder -> new SteamWeatherModule(holder, 3),
-                moduleLines("steam_elevator_weather_module_iii", 1, 2));
+                "Steam Weather Module III", 3, holder -> new SteamWeatherModule(holder, 3));
         STEAM_ELEVATOR_GREENHOUSE_MODULE = registerElevatorModule("steam_elevator_greenhouse_module",
-                "Steam Greenhouse Planting Module", 5, holder -> new SteamGreenhouseModule(holder, 5),
-                moduleLines("steam_elevator_greenhouse_module", 1, 5));
+                "Steam Greenhouse Planting Module", 5, holder -> new SteamGreenhouseModule(holder, 5));
         STEAM_ELEVATOR_OIL_DRILL_MODULE_I = registerElevatorModule("steam_elevator_oil_drill_module_i",
-                "Steam Oil Drill Module I", 2, holder -> new SteamOilDrillModule(holder, 2),
-                moduleLines("steam_elevator_oil_drill_module_i", 0, 4));
+                "Steam Oil Drill Module I", 2, holder -> new SteamOilDrillModule(holder, 2));
         STEAM_ELEVATOR_OIL_DRILL_MODULE_II = registerElevatorModule("steam_elevator_oil_drill_module_ii",
-                "Steam Oil Drill Module II", 3, holder -> new SteamOilDrillModule(holder, 3),
-                moduleLines("steam_elevator_oil_drill_module_ii", 0, 4));
+                "Steam Oil Drill Module II", 3, holder -> new SteamOilDrillModule(holder, 3));
         STEAM_ELEVATOR_OIL_DRILL_MODULE_III = registerElevatorModule("steam_elevator_oil_drill_module_iii",
-                "Steam Oil Drill Module III", 4, holder -> new SteamOilDrillModule(holder, 4),
-                moduleLines("steam_elevator_oil_drill_module_iii", 0, 4));
+                "Steam Oil Drill Module III", 4, holder -> new SteamOilDrillModule(holder, 4));
         STEAM_ELEVATOR_ENTITY_CRUSHER_MODULE_I = registerElevatorModule("steam_elevator_entity_crusher_module_i",
-                "Steam Entity Crusher Module I", 1, holder -> new SteamEntityCrusherModule(holder, 1),
-                moduleLines("steam_elevator_entity_crusher_module_i", 1, 6));
+                "Steam Entity Crusher Module I", 1, holder -> new SteamEntityCrusherModule(holder, 1));
         STEAM_ELEVATOR_ENTITY_CRUSHER_MODULE_II = registerElevatorModule("steam_elevator_entity_crusher_module_ii",
-                "Steam Entity Crusher Module II", 2, holder -> new SteamEntityCrusherModule(holder, 2),
-                moduleLines("steam_elevator_entity_crusher_module_ii", 1, 6));
+                "Steam Entity Crusher Module II", 2, holder -> new SteamEntityCrusherModule(holder, 2));
         STEAM_ELEVATOR_ENTITY_CRUSHER_MODULE_III = registerElevatorModule("steam_elevator_entity_crusher_module_iii",
-                "Steam Entity Crusher Module III", 3, holder -> new SteamEntityCrusherModule(holder, 3),
-                moduleLines("steam_elevator_entity_crusher_module_iii", 1, 6));
+                "Steam Entity Crusher Module III", 3, holder -> new SteamEntityCrusherModule(holder, 3));
         STEAM_ELEVATOR_ORE_PROCESSOR_MODULE = registerElevatorModule("steam_elevator_ore_processor_module",
                 "Steam Ore Processing Module", 8, GTNARecipeType.ORE_PROCESSING_RECIPES,
-                holder -> new SteamOreProcessorModule(holder, 8),
-                moduleLines("steam_elevator_ore_processor_module", 1, 8));
+                holder -> new SteamOreProcessorModule(holder, 8));
         STEAM_ELEVATOR_MONSTER_REPELLENT_MODULE_I = registerElevatorModule("steam_elevator_monster_repellent_module_i",
-                "Steam Monster Repellator Module I", 1, holder -> new SteamMonsterRepellentModule(holder, 1),
-                moduleLines("steam_elevator_monster_repellent_module_i", 0, 3));
+                "Steam Monster Repellator Module I", 1, holder -> new SteamMonsterRepellentModule(holder, 1));
         STEAM_ELEVATOR_MONSTER_REPELLENT_MODULE_II = registerElevatorModule(
                 "steam_elevator_monster_repellent_module_ii", "Steam Monster Repellator Module II", 2,
-                holder -> new SteamMonsterRepellentModule(holder, 2),
-                moduleLines("steam_elevator_monster_repellent_module_ii", 0, 3));
+                holder -> new SteamMonsterRepellentModule(holder, 2));
         STEAM_ELEVATOR_MONSTER_REPELLENT_MODULE_III = registerElevatorModule(
                 "steam_elevator_monster_repellent_module_iii", "Steam Monster Repellator Module III", 3,
-                holder -> new SteamMonsterRepellentModule(holder, 3),
-                moduleLines("steam_elevator_monster_repellent_module_iii", 0, 3));
+                holder -> new SteamMonsterRepellentModule(holder, 3));
         STEAM_ELEVATOR_BEACON_MODULE_I = registerElevatorModule("steam_elevator_beacon_module_i",
-                "Steam Elevator Beacon Module I", 1, holder -> new SteamBeaconModule(holder, 1),
-                moduleLines("steam_elevator_beacon_module_i", 0, 4));
+                "Steam Elevator Beacon Module I", 1, holder -> new SteamBeaconModule(holder, 1));
         STEAM_ELEVATOR_BEACON_MODULE_II = registerElevatorModule("steam_elevator_beacon_module_ii",
-                "Steam Elevator Beacon Module II", 2, holder -> new SteamBeaconModule(holder, 2),
-                moduleLines("steam_elevator_beacon_module_ii", 0, 4));
+                "Steam Elevator Beacon Module II", 2, holder -> new SteamBeaconModule(holder, 2));
         STEAM_ELEVATOR_BEACON_MODULE_III = registerElevatorModule("steam_elevator_beacon_module_iii",
-                "Steam Elevator Beacon Module III", 3, holder -> new SteamBeaconModule(holder, 3),
-                moduleLines("steam_elevator_beacon_module_iii", 0, 4));
+                "Steam Elevator Beacon Module III", 3, holder -> new SteamBeaconModule(holder, 3));
         if (ConfigHolder.isMachineEnabled("steamApiaryModule")) {
             STEAM_ELEVATOR_APIARY_MODULE = registerElevatorModule("steam_elevator_apiary_module",
-                    "Steam-Powered Apiary Module", 6, holder -> new SteamApiaryModule(holder, 6),
-                    moduleLines("steam_elevator_apiary_module", 1, 5));
+                    "Steam-Powered Apiary Module", 6, holder -> new SteamApiaryModule(holder, 6));
         }
         // The bee-breeding module is a Productive Bees integration, so it only exists when that mod is
         // loaded. SteamBeeBreedingModule references Productive Bees types directly; the class is only
         // touched from this guarded branch, so it is never loaded (and never fails) without the mod.
         if (ConfigHolder.isMachineEnabled("steamBeeBreedingModule") && ModList.get().isLoaded("productivebees")) {
             STEAM_ELEVATOR_BEE_BREEDING_MODULE = registerElevatorModule("steam_elevator_bee_breeding_module",
-                    "Steam Bee Breeding Module", 8, holder -> new SteamBeeBreedingModule(holder, 8),
-                    moduleLines("steam_elevator_bee_breeding_module", 1, 5));
+                    "Steam Bee Breeding Module", 8, holder -> new SteamBeeBreedingModule(holder, 8));
         }
-    }
-
-    /** The consecutive {@code gtna.machine.<id>.tooltip.<from..to>} lines, in order. */
-    private static Component[] moduleLines(String id, int from, int to) {
-        Component[] lines = new Component[to - from + 1];
-        for (int i = from; i <= to; i++) {
-            lines[i - from] = Component.translatable("gtna.machine." + id + ".tooltip." + i);
-        }
-        return lines;
     }
 
     private static MachineDefinition registerElevatorModule(String id, String name, int tier,
-                                                            Function<IMachineBlockEntity, ? extends MultiblockControllerMachine> factory,
-                                                            Component... extraTooltips) {
-        return registerElevatorModule(id, name, tier, GTRecipeTypes.DUMMY_RECIPES, factory, extraTooltips);
+                                                            Function<IMachineBlockEntity, ? extends MultiblockControllerMachine> factory) {
+        return registerElevatorModule(id, name, tier, GTRecipeTypes.DUMMY_RECIPES, factory);
     }
 
     /**
@@ -598,8 +565,7 @@ public class GTNAMachines2 {
      * {@code gtna:ore_processing} so JEI shows its real category instead of the dummy one).
      */
     private static MachineDefinition registerElevatorModule(String id, String name, int tier, GTRecipeType recipeType,
-                                                            Function<IMachineBlockEntity, ? extends MultiblockControllerMachine> factory,
-                                                            Component... extraTooltips) {
+                                                            Function<IMachineBlockEntity, ? extends MultiblockControllerMachine> factory) {
         return REGISTRATE.multiblock(id, factory)
                 .tier(Math.min(tier, GTValues.MAX))
                 .rotationState(RotationState.NON_Y_AXIS)
@@ -629,12 +595,6 @@ public class GTNAMachines2 {
                 .workableCasingModel(
                         GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
                         GTCEu.id("block/multiblock/steam_grinder"))
-                // GTCEu's MetaMachineBlock#appendHoverText automatically inserts the
-                // gtna.machine.<id>.tooltip line at index 1, so it must NOT be listed here or the
-                // description would be printed twice. Only the stats and the part-sharing notice
-                // are passed explicitly.
-                .tooltips(extraTooltips)
-                .tooltips(Component.translatable("gtceu.part_sharing.disabled"))
                 .register();
     }
 

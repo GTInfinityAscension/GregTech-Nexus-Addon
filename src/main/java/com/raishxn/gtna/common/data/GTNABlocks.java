@@ -467,6 +467,97 @@ public class GTNABlocks {
     public static final BlockEntry<Block> STRONTIUM_CARBONATE_CERAMIC_RAY_ABSORBING_MECHANICAL_CUBE = createCasingBlock(
             "strontium_carbonate_ceramic_ray_absorbing_mechanical_cube");
     public static final BlockEntry<Block> VACUUM_CHAMBER_BEAM_BLOCK = createCasingBlock("vacuum_chamber_beam_block");
+    // GTOCore blocks of the Cracker Hub and the Giant Flotation Tank (CC BY-NC-SA 4.0, original textures).
+    public static final BlockEntry<Block> OIL_GAS_TRANSPORTATION_PIPE_CASING = createCasingBlock(
+            "oil_gas_transportation_pipe_casing");
+    public static final BlockEntry<Block> CALCIUM_OXIDE_CERAMIC_ANTI_METAL_CORROSION_MECHANICAL_BLOCK = createCasingBlock(
+            "calcium_oxide_ceramic_anti_metal_corrosion_mechanical_block");
+    public static final BlockEntry<Block> STABILIZED_NAQUADAH_WATER_PLANT_CASING = createBottomTopCasingBlock(
+            "stabilized_naquadah_water_plant_casing");
+    // GTOCore Amprosium (= Neutronium) blocks of the Phase Change Cube and the Engraving Laser Plant.
+    public static final BlockEntry<Block> AMPROSIUM_ACTIVE_CASING = createCasingBlock("amprosium_active_casing");
+    public static final BlockEntry<Block> AMPROSIUM_GEARBOX = createCasingBlock("amprosium_gearbox");
+    // GTOCore shared casings of ROADMAP §4 (G-0207).
+    public static final BlockEntry<Block> HIGH_PRESSURE_RESISTANT_CASING = createCasingBlock(
+            "high_pressure_resistant_casing");
+    public static final BlockEntry<Block> MC_NYLON_TENSILE_MECHANICAL_SHELL = createCasingBlock(
+            "mc_nylon_tensile_mechanical_shell");
+    public static final BlockEntry<Block> LAFIUM_MECHANICAL_CASING = createCasingBlock("lafium_mechanical_casing");
+    public static final BlockEntry<Block> AMPROSIUM_BOROSILICATE_GLASS = createGlassCasingBlock(
+            "amprosium_borosilicate_glass", GTNACORE.id("block/casings/amprosium_borosilicate_glass"),
+            () -> RenderType::cutoutMipped);
+    // GTOCore blocks of G-0209.
+    public static final BlockEntry<Block> TRANSCENDENTALLY_AMPLIFIED_MAGNETIC_CONFINEMENT_CASING = createCasingBlock(
+            "transcendentally_amplified_magnetic_confinement_casing");
+    public static final BlockEntry<Block> SPEEDING_PIPE = createColumnCasingBlock("speeding_pipe");
+    // GTOCore shared blocks of G-0210. GTO's Hyper Core is an active block; GTNA keeps its glowing two-layer look.
+    public static final BlockEntry<Block> HYPER_CORE = createTwoLayerCasingBlock("hyper_core");
+    public static final BlockEntry<Block> PIKYONIUM_MACHINE_CASING = createCasingBlock("pikyonium_machine_casing");
+    public static final BlockEntry<Block> HIGH_STRENGTH_SUPPORT_SPINDLE = createCasingBlock(
+            "high_strength_support_spindle");
+    public static final BlockEntry<Block> QUANTUM_GLASS = createGlassCasingBlock("quantum_glass",
+            GTNACORE.id("block/casings/quantum_glass"), () -> RenderType::cutoutMipped);
+    // G-0243: GTO blocks for the High Energy Laser Lathe and the Extreme Compressor.
+    public static final BlockEntry<Block> IRIDIUM_PIPE_CASING = createCasingBlock("iridium_pipe_casing");
+    public static final BlockEntry<Block> IRIDIUM_GEARBOX = createCasingBlock("iridium_gearbox");
+    public static final BlockEntry<Block> LASER_COOLING_CASING = createCasingBlock("laser_cooling_casing");
+    public static final BlockEntry<Block> HIGH_ENERGY_LASER_EMITTER = createCasingBlock("high_energy_laser_emitter");
+    // G-0244: GTO blocks for the Hyperdimensional Plasma Fusion Core, Gemini Containment System and Giant
+    // Electrochemical Workstation.
+    public static final BlockEntry<Block> SPS_CASING = createCasingBlock("sps_casing");
+    public static final BlockEntry<Block> SPACE_ELEVATOR_MECHANICAL_CASING = createCasingBlock(
+            "space_elevator_mechanical_casing");
+    public static final BlockEntry<Block> ENGINEERING_MECHANICAL_CASING = createCasingBlock(
+            "engineering_mechanical_casing");
+    public static final BlockEntry<Block> PEEK_WEAR_RESISTANT_MECHANICAL_HOUSING = createCasingBlock(
+            "peek_wear_resistant_mechanical_housing");
+    public static final BlockEntry<Block> INDUSTRIAL_FRAMELESS_GLASS = createGlassCasingBlock(
+            "industrial_frameless_glass", GTNACORE.id("block/casings/industrial_frameless_glass"),
+            () -> RenderType::cutoutMipped);
+    // G-0245: GTO blocks for the Desulfurizer, Star Ultimate Material Forge and Heavy Rolling.
+    public static final BlockEntry<Block> SMELTING_CONTROL_CASING = createCasingBlock("smelting_control_casing");
+    public static final BlockEntry<Block> STABLE_BASE_CASING = createCasingBlock("stable_base_casing");
+    public static final BlockEntry<Block> INSULATION_TILE_MECHANICAL_BLOCK = createCasingBlock(
+            "insulation_tile_mechanical_block");
+    public static final BlockEntry<Block> HSSS_BOROSILICATE_GLASS = createGlassCasingBlock("hsss_borosilicate_glass",
+            GTNACORE.id("block/casings/hsss_borosilicate_glass"), () -> RenderType::cutoutMipped);
+    /** GTO tier-3 Stellar Containment Casing; GTO texture {@code stellar_containment_casing}. */
+    public static final BlockEntry<Block> ULTIMATE_STELLAR_CONTAINMENT_CASING = createCasingBlock(
+            "ultimate_stellar_containment_casing");
+    /** GTO Amprosium Casing; GTO texture {@code neutronium_casing}. */
+    public static final BlockEntry<Block> AMPROSIUM_CASING = createCasingBlock("amprosium_casing");
+    // G-0246: GTO blocks for the PCB Factory.
+    public static final BlockEntry<Block> GRAVITY_STABILIZATION_CASING = createCasingBlock(
+            "gravity_stabilization_casing");
+    public static final BlockEntry<Block> PPS_CORROSION_RESISTANT_MECHANICAL_HOUSING = createCasingBlock(
+            "pps_corrosion_resistant_mechanical_housing");
+    public static final BlockEntry<Block> PLASMA_HEATER_CASING = createCasingBlock("plasma_heater_casing");
+    public static final BlockEntry<Block> HIGH_ENERGY_ULTRAVIOLET_EMITTER_CASING = createCasingBlock(
+            "high_energy_ultraviolet_emitter_casing");
+    // G-0247: GTO blocks for the Hyper Reactors.
+    public static final BlockEntry<Block> ENHANCE_HYPER_MECHANICAL_CASING = createCasingBlock(
+            "enhance_hyper_mechanical_casing");
+    public static final BlockEntry<Block> ECHO_CASING = createCasingBlock("echo_casing");
+    // G-0248: GTO block of the Fuel Cell Generator.
+    public static final BlockEntry<Block> FLOCCULATION_CASING = createCasingBlock("flocculation_casing");
+    // G-0249: GTO computer casings (Supercomputing Center tiers) and tier glasses. The GTO active state of the
+    // biocomputer casing and vents is not ported (static base texture).
+    public static final BlockEntry<Block> BIOCOMPUTER_CASING = createCasingBlock("biocomputer_casing",
+            GTNACORE.id("block/casings/about_computer/biocomputer_shell"));
+    public static final BlockEntry<Block> PHASE_CHANGE_BIOCOMPUTER_COOLING_VENTS = createCasingBlock(
+            "phase_change_biocomputer_cooling_vents",
+            GTNACORE.id("block/casings/about_computer/phase_change_biocomputer_cooling_vents"));
+    public static final BlockEntry<Block> GRAVITON_COMPUTER_CASING = createCasingBlock("graviton_computer_casing",
+            GTNACORE.id("block/casings/about_computer/graviton_computer_casing"));
+    public static final BlockEntry<Block> ANTI_ENTROPY_COMPUTER_CONDENSATION_MATRIX = createCasingBlock(
+            "anti_entropy_computer_condensation_matrix",
+            GTNACORE.id("block/casings/about_computer/anti_entropy_computer_condensation_matrix"));
+    public static final BlockEntry<Block> TUNGSTEN_BOROSILICATE_GLASS = createGlassCasingBlock(
+            "tungsten_borosilicate_glass", GTNACORE.id("block/casings/tungsten_borosilicate_glass"),
+            () -> RenderType::cutoutMipped);
+    public static final BlockEntry<Block> TARANIUM_BOROSILICATE_GLASS = createGlassCasingBlock(
+            "taranium_borosilicate_glass", GTNACORE.id("block/casings/taranium_borosilicate_glass"),
+            () -> RenderType::cutoutMipped);
 
     public static BlockEntry<Block> createCasingBlock(String name) {
         return createCasingBlock(name, Block::new, GTNACORE.id("block/casings/" + name), () -> Blocks.IRON_BLOCK,
@@ -578,6 +669,23 @@ public class GTNABlocks {
                 .addLayer(() -> RenderType::solid)
                 .blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().cubeColumn(ctx.getName(),
                         GTNACORE.id("block/casings/" + name + "/side"), GTNACORE.id("block/casings/" + name + "/top"))))
+                .tag(GTToolType.WRENCH.harvestTags.get(0), BlockTags.MINEABLE_WITH_PICKAXE)
+                .item(GTNABlockItem::new)
+                .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/" + ctx.getName())))
+                .build()
+                .register();
+    }
+
+    /** GTOCore cube-bottom-top casing: {@code block/casings/<name>} on the sides, {@code <name>_top} on both caps. */
+    public static BlockEntry<Block> createBottomTopCasingBlock(String name) {
+        return REGISTRATE.block(name, Block::new)
+                .initialProperties(() -> Blocks.IRON_BLOCK)
+                .properties(p -> p.mapColor(MapColor.METAL).strength(5.0f, 6.0f).sound(SoundType.METAL)
+                        .requiresCorrectToolForDrops().isValidSpawn((state, level, pos, ent) -> false))
+                .addLayer(() -> RenderType::solid)
+                .blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().cubeBottomTop(ctx.getName(),
+                        GTNACORE.id("block/casings/" + name), GTNACORE.id("block/casings/" + name + "_top"),
+                        GTNACORE.id("block/casings/" + name + "_top"))))
                 .tag(GTToolType.WRENCH.harvestTags.get(0), BlockTags.MINEABLE_WITH_PICKAXE)
                 .item(GTNABlockItem::new)
                 .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/" + ctx.getName())))

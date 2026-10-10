@@ -31,6 +31,11 @@ foi feito nem repetir os erros já pagos.
 
 ## Estado atual
 
+> **Tooltips pela origem (G-0254):** revisão G-0253 substituída a pedido do autor. 108 das 148
+> tooltips ajustadas a partir das originais, sem requisitos óbvios ou repetição de recipe type.
+> Seções técnicas podem ficar vazias. Evidências e adaptações em
+> `docs/reports/multiblock-tooltips-technical-details.md`; revisão visual pelo autor pendente.
+
 > **Forge of Gods — etapa 4 (G-0192):** DTPF do GTNH (estrutura 33×24×33, desconto de catalisador, calor de bobina),
 > bobina Eternal, Dimensional Bridge Casing, Special Laser Lens; Six-Phased Copper, DTR, Celestial Tungsten, Astral
 > Titanium, Chromatic Glass, Advanced Nitinol. Gate PASS 212.
@@ -6789,3 +6794,822 @@ grep -q "GAME TESTS COMPLETE" run/logs/latest.log && echo OK || echo "NAO RODOU"
   EOH, carcaças, campos, planeta Overworld, Tesserato, base SC UIV e célula Sp usam metais pré-EOH.
 - Dimension markers do GTCEu para os planetas do Ad Astra (via `GTCEuAPI.RegisterEvent`).
 - Relatório de cobertura lista receitas ≥ UHV sem fluido. Gate PASS 217/217.
+
+## G-0204 — 2026-10-07 — Fase B, lote 1: mega multiblocos do GTO
+
+- Novos (`GTNAMegaMachines`, padrões `.mbs` originais do GTO): **Large Pyrolyse Oven** (Parallel Hatch + velocidade
+  por bobina do GTCEu), **Cracker Hub** (cracking + pirólise), **Mega Brewer** (brewing + fermenting), **Mega Vacuum
+  Drying Furnace** (exige `ebf_temp`) e **Giant Flotation Tank** (74 aisles; o leitor `.mbs` agora aceita até 256).
+  Os quatro "mega" usam as classes multi-recipe do GTNA: Thread Hatch, laser, Overclock Hatch e paralelo de bobina
+  `2^(K/900)`, mapeando o `autoThreadLaserAbilities` / `createCoilParallel` do GTO.
+- Blocos GTO novos, com textura original e CTM: `oil_gas_transportation_pipe_casing`,
+  `calcium_oxide_ceramic_anti_metal_corrosion_mechanical_block` e `stabilized_naquadah_water_plant_casing`
+  (cube-bottom-top, helper `createBottomTopCasingBlock`).
+- Receitas (`GTNAMegaMachineRecipes`, ids `gtna:mega/*`): as do GTO, com troca dos insumos que só existem no GTO
+  (Large Cracker → Cracker; Mendelevium/Abyssal → Europium/Neutronium; Ceruclase → Naquadria; flakes cerâmicos →
+  Quicklime / bloco de CaO; Brewery/Fermenter UHV → UV; HastelloyX78/Quantanium → HastelloyX/Osmiridium).
+- Tooltips no formato GTO (história original + requisitos), fonte GTO e PT-BR.
+- Large Incubator adiado: depende do tier de vidro, da Radiation Hatch e do tier de filtro do GTO (sistemas ausentes).
+- Template de GameTest `empty_80`. `GTNAMegaMachineGameTests`: os 5 formam pelo preview, o paralelo de bobina é
+  verificado e as receitas `mega/` não têm ingrediente vazio. Gate PASS 223/223. Sem commit.
+
+## G-0205 — 2026-10-07 — Fase B, lote 2
+
+- **Phase Change Cube** (GTO; extractor + solidifier, paralelo de bobina), **Engraving Laser Plant** (GTO; Laser
+  Engraver e Laser Welder com Parallel Hatch, o Welder a 1/5 da duração, Precision Laser Engraving serial; overclock
+  perfeito), **Infinity Fluid Drilling Rig** (GTO; `InfinityFluidDrillMachine` sobre o `FluidDrillMachine` do GTCEu:
+  ZPM, rendimento ×256, sem esgotar a veia, +50% com energia UV; o Drilling Control Center do GTO não foi portado) e
+  **Mega Distillery** (GTL; destilaria + torre de destilação + evaporação, Parallel Hatch e Thread Hatch).
+- Mega Distillery: o padrão Java do GTL foi convertido para `.mbs` por `tools/convert_gtl_pattern.py` (31×52×31).
+  A receita vem do KubeJS do GregTech Leisure 1.4.5.1.
+- Novos tipos de receita `gtna:precision_laser_engraver` e `gtna:laser_welder`, vazios para o pack/KubeJS.
+- Blocos GTO `amprosium_active_casing` (animado) e `amprosium_gearbox`, com textura original (`neutronium_*` no GTO).
+- Template `empty_80` agora com 80×64×80. Gate PASS 227/227. Sem commit.
+
+## G-0206 — 2026-10-07 — Fase B, lote 3 + varredura de custo do GTO
+
+- **Super Blast Smelter** (GTO; EBF + Alloy Blast, Parallel Hatch, trava de temperatura da bobina, Thread Hatch),
+  **Large Cracker** (GTO; Parallel Hatch + desconto de energia por bobina do Cracker do GTCEu), **Molecular
+  Oscillation Dehydrator** (GTO; desidratador com paralelo de bobina) e **Integrated Assembler** (GTO; assembler +
+  laminator, Parallel Hatch e Thread Hatch). Novo tipo vazio `gtna:laminator`.
+- `CoilWorkableElectricMultipleRecipesMachine.scalesParallelWithCoil()`: o GameTest só exige o paralelo de bobina
+  nas máquinas que o têm.
+- `docs/roadmap/gto-port-cost-scan.md` (+ `tools/scan_gto_port_cost.py`): os 216 multiblocos do GTO ainda fora do
+  GTNA, ordenados por blocos faltando, com classe e tipo de receita. 88 não têm nenhum bloco faltando.
+- Cluster de pesquisa do GTO (Supercomputing Center, Data Center, Analysis & Research Center) adiado para um lote
+  próprio: depende dos componentes NICH/GWCA, da Thermal Conductor Hatch, dos materiais MFPC e dos mainframes.
+- Gate PASS 231/231. Sem commit.
+
+## G-0207 — 2026-10-07 — Fase C, lote 4: blocos compartilhados do GTO
+
+- Blocos (ROADMAP §4), com textura original e CTM: `high_pressure_resistant_casing`,
+  `mc_nylon_tensile_mechanical_shell`, `lafium_mechanical_casing` e `amprosium_borosilicate_glass` (textura
+  `neutronium_borosilicate_glass` do GTO; receita do `GlassRecipe` do GTO: vidro borossilicato + 1152 mB de
+  Neutronium no solidificador). Overlay `block/multiblock/general0` do GTO portado.
+- Máquinas (GTO, `CrossRecipe` → `WorkableElectricMultipleRecipesMachine`: Parallel Hatch, laser e Thread Hatch):
+  **Gravity Bending Device** (bender), **Neutronium Wire Cutting** (cutter), **Holy Separator** (centrífuga),
+  **Superconducting Electromagnetism** (polarizer + separador eletromagnético) e **Superconducting Magnetic
+  Presser** (forming press). Amprosium do GTO = Neutronium (frame/bloco); o frame de Mithril vira Naquadah Alloy.
+- Receitas `gtna:mega/*` com as trocas documentadas no código. Gate PASS 236/236. Sem commit.
+
+## G-0208 — 2026-10-08 — Tooltips GTO em PT + GameTests de estresse + lookup dos testes
+
+- **Tooltips GTO traduzíveis:** `GTNAGTOTooltips` deixou de usar texto fixo. Cada linha é
+  `gtna.gto_tooltip.<máquina>.<n>`, via `translatableWithFallback` com o original do GTO em inglês. O datagen gera o
+  EN (`collectEnglish()`), 309 chaves. O PT-BR vem de `tools/gto_tooltip_pt_br.py` (dicionário EN→PT, 211 textos
+  únicos). `PortLangParityTest` falha se surgir chave GTO sem PT. Vale para todas as máquinas GTO curadas, antigas e
+  novas.
+- **Rig de estresse** (`gametest/GTNAMultiblockRig`), para usar em todo port:
+  - monta pelo preview, sobe os hatches para UV, troca bobinas por Tritanium, padroniza manutenção (Auto) e troca os
+    Huge Bus do GTMThings por bus do GTCEu;
+  - coloca IO, Parallel e Thread Hatch por tentativa (só onde a estrutura continua formando);
+  - roda uma receita real com até 300 conjuntos de insumos e confere paralelos = `min(limite, conjuntos)`, duração
+    com overclock e saídas escaladas.
+- `GTNAMegaMachineGameTests`: estresse das 17 máquinas de G-0204–G-0207; Thread Hatch (2 receitas diferentes ao mesmo
+  tempo) em 8 delas; trava de temperatura com bobina Cupronickel no Mega Vacuum Drying e no Super Blast Smelter.
+- **Achado nos testes antigos:** 6 GameTests injetavam receitas com `completeStaging()` só com a receita de teste.
+  Isso apagava o lookup do GTCEu inteiro daquele tipo (assembler, circuit assembler, bender, compressor, forge hammer,
+  lathe, cutter, forming press, void mining) para os testes seguintes. Agora usam
+  `GTNAGameTestUtils.stageWithRealRecipes`. O jogo real não era afetado. Guarda nova: `recipe_lookup_is_not_wiped`.
+- **Achado de compatibilidade:** um Huge Input Bus do GTMThings vazio na estrutura impediu a busca de receitas
+  (inclusive no Large Cracker, lógica padrão do GTCEu). Visto só no teste; precisa de confirmação no cliente.
+- Gate PASS 264/264, estável em 3 rodadas seguidas. Sem commit.
+
+## G-0209 — 2026-10-08 — Lote 5 (GTO) com testes de estresse
+
+- **Magnetic Energy Reaction Furnace** (arc furnace), **Particle Stream Matrix Filling Machine** (canner) e **Extreme
+  Electric Furnace** (alloy smelter + furnace), todas com paralelo de bobina, Thread Hatch e laser. Overlay
+  `multiblock/general1` do GTO.
+- Blocos GTO: `transcendentally_amplified_magnetic_confinement_casing`, `speeding_pipe` (coluna lado/topo),
+  `hsss_borosilicate_glass` (receita do `GlassRecipe` do GTO: vidro + 1152 mB de HSS-S) e
+  `engineering_mechanical_casing`.
+- Ficaram fora como duplicatas: Large Bender e Large Forming do GTO (= Large Material Press do GCYM) e Compound
+  Distillation Fractionator (= Mega Distillery, com a mesma receita).
+- Tooltips GTO com chaves de lang e PT (dicionário em `tools/gto_tooltip_pt_br.py`); nomes PT dos 7 itens novos.
+- Testes de cada máquina: forma, estresse (UV, Tritanium, até 300 conjuntos de insumos, paralelos e saídas) e Thread
+  Hatch.
+- Gate PASS 273/273. Sem commit.
+
+## G-0210 — 2026-10-08 — Lote 6: Hyper Core / Pikyonium
+
+- Blocos GTO compartilhados: `hyper_core` (duas camadas com brilho; o estado ativo/inativo do GTO não foi portado),
+  `pikyonium_machine_casing`, `high_strength_support_spindle` e `quantum_glass`.
+- **Nanites Circuit Assembly Factory** (circuit assembler; Parallel Hatch e Thread Hatch), **Mega Wiremill**
+  (wiremill + `gtna:fiber_extrusion`) e **Crystal Builder** (autoclave + `gtna:crystallization`), as duas últimas
+  com paralelo de bobina. Os tipos novos saem vazios, para o pack ou o KubeJS preencher.
+- Tooltips GTO com PT; nomes PT dos blocos e tipos. Testes de forma, estresse e Thread Hatch de cada máquina.
+- Gate PASS 282/282. Sem commit.
+
+## G-0211 — 2026-10-08 — Removidos os tipos de receita exclusivos do GTO
+
+- Decisão do autor: não criar tipos que só o GTO usa. Quando houver versão no GTNL, porta-se a do GTNL, que usa os
+  tipos padrão; do GTO vem só a estrutura. Removidos `gtna:precision_laser_engraver`, `laser_welder`, `laminator`,
+  `crystallization` e `fiber_extrusion`.
+- Ficaram só com os tipos do GTCEu: Engraving Laser Plant (laser engraver), Integrated Assembler (assembler), Crystal
+  Builder (autoclave) e Mega Wiremill (wiremill).
+- Tooltips GTO regenerados (os índices mudaram) e PT reaplicado. `run/world` (mundo de GameTest com máquinas antigas
+  salvas) foi apagado. Gate PASS 282/282.
+
+## G-0212 — 2026-10-08 — Sets Animados do Endgame e Transcendent Metal (Dobra Tesseract 4D + 3D)
+
+- Rework completo e geração de 13 material sets animados dedicados (28 itens + 2 blocos cada) substituindo os icon sets genéricos e tintas antigas de `GodforgeChainMaterials.java`:
+  1. `white_dwarf_matter` (Pulsar de Anã Branca)
+  2. `black_dwarf_matter` (Absorção de Anã Negra estilo Obsidiana)
+  3. `hypogen` (Bronze Hiperdenso com fluxo energético)
+  4. `dragon_metal` (Sangue de Dragão com pulso cardíaco dracônico)
+  5. `chromatic_glass` (Prisma Cromático iridescente)
+  6. `celestial_tungsten` (Constelações Celestes estelares)
+  7. `astral_titanium` (Pó de Estrelas Astral)
+  8. `six_phased_copper` (Alternância de Fase Quântica hexaédrica)
+  9. `rhugnor` (Matriz Dimensional Hiperbólica)
+  10. `shirabon` (Osciloscópio de Matéria Exótica rosa-avermelhado #ff3f76)
+  11. `quantum` (Densidade de Probabilidade quântica com colapso de função de onda)
+  12. `metastable_oganesson` (Camadas Relativísticas de Oganessônio Z=118)
+  13. `transcendent_metal` (Dobra Tesseract 4D com projeção hiperdimensional contínua e faceta de corte de fótons)
+- Implementado suporte nativo a **renderização 3D estereoscópica em tempo real** nos itens de `transcendent_metal` no GUI:
+  - `StereoscopicItemRenderer.java`: helper que identifica itens pertencentes ao set `TRANSCENDENT_METAL`.
+  - `StereoscopicItemRendererMixin.java`: mixin em `ItemRenderer.render` aplicando rotação de matriz PoseStack `(0.3, 0.5, 0.2)` nos itens no GUI com base no relógio do sistema, replicando fielmente o comportamento dinâmico do GTLCore, GTOCore e GT5u/GTNH.
+- Script mestre `tools/generate_material_set_textures.py` atualizado com todas as fórmulas matemáticas e geradores.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests runGameTestServer runData --offline` PASS (282/282 GameTests, 30/30 unit tests, spotless OK). Sem commit.
+
+- (G-0211, adendo) `gtna:precision_laser_engraver` voltou a pedido do autor (como o precision assembler): Engraving
+  Laser Plant com Laser Engraver (Parallel Hatch) + Precision Laser Engraving (serial, overclock perfeito). Teste
+  `engraving_laser_plant_precision_mode_is_serial`. Gate 283/283. Instável conhecido:
+  `eye_of_harmony_forms_with_independent_tiers_in_all_four_directions` (Index -1) falhou 1x e passou ao repetir.
+
+## G-0212 — 2026-10-08 — Escopo pela lista do autor; 3 máquinas removidas
+
+- Removidos a pedido do autor: Molecular Oscillation Dehydrator, Gravity Bending Device e Extreme Electric Furnace
+  (máquina, `.mbs`, receitas, tooltips, lang, testes e arquivos gerados), além dos blocos que só a EEF usava
+  (`hsss_borosilicate_glass`, `engineering_mechanical_casing`).
+- `docs/roadmap/lista-do-autor.md`: o que foi pedido, com a fonte (mod). Porta-se só o que estiver ali, da fonte
+  indicada. Versões GTNL usam tipos padrão; do GTO vem só a estrutura.
+- Instável conhecido (P4): testes do EOH com "Index … out of bounds" ocasional; passam ao repetir.
+- Gate PASS 275/275. Sem commit.
+
+## G-0213 — 2026-10-08 — Altura do JEI só na tela do EOH
+
+- Correção pedida pelo autor: o `JeiRecipeGuiHeightMixin` (G-0203) aumentava a altura máxima do JEI em **todas** as
+  telas. Agora só age com `EyeOfHarmonyJeiHeight.active`, ligado pelo novo `JeiRecipesGuiEohMixin`
+  (`@Pseudo`, alvo `mezz.jei.gui.recipes.RecipesGui.updateLayout`). Ao entrar ou sair da categoria do EOH, ele refaz o
+  `init()` via `Screen.resize`, para a janela crescer ou voltar ao tamanho do usuário. Não depende de nomes SRG.
+- Teste manual pendente no cliente: outras categorias com a altura normal; EOH com a altura cheia; trocar de abas
+  entre elas.
+
+## G-0214 — 2026-10-08 — Set Animado do Creon (Vórtice Abissal da Singularidade)
+
+- Rework do material **Creon** (`⸎`, UIV/UXV tier, cor oficial GTNH `#460046`):
+  - Criado conjunto de sprites animados dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Paleta: base vácuo profundo (`#220028` a `#460046`) com transições metálicas ricas e realces fotônicos magenta (`#d946ef` a `#fdf4ff`).
+    - Animação: onda gravitacional concêntrica em expansão e pulso respiratório da singularidade no núcleo de massa dos itens.
+  - Gerados todos os 28 itens e 2 blocos (com respectivos `.mcmeta` e modelos composite JSON) via `tools/generate_material_set_textures.py --material creon`.
+  - Registrado `GodforgeIconSets.CREON` em `GodforgeIconSets.java`.
+  - Atualizado `GodforgeChainMaterials.java`:
+    - `Creon` agora utiliza `GodforgeIconSets.CREON` com cor `0xffffff` (renderização untinted dos spritesheets animados).
+    - Adicionado mapeamento em `FLUID_COLORS`: `"creon", 0x460046`, garantindo que o Creon Líquido e o Creon Plasma mantenham seu roxo abissal característico.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests runGameTestServer runData --offline` PASS (282/282 GameTests, 30/30 unit tests, spotless OK). Sem commit.
+
+## G-0214 — 2026-10-08 — CTM, Hollow Casing, tooltips, anéis do FoG, corrida do EOH
+
+- **CTM quebrado:** 30 texturas portadas do GTO tinham o `.mcmeta` apontando para `gtocore:…_ctm`, sem a folha `_ctm`
+  (Naquadah Reinforced Plant, High Strength Support, Strengthen the Base, Improved Superconductor Coil, Neutronium
+  Stable, Fission Reactor, Optical Resonance Chamber, Antifreeze Heatproof, High Pressure Pipe, Laser Casing,
+  Containment Field Generator, aceleradores, fusão MK4/5, MK3 sided etc.). `tools/fix_gto_ctm.py` copiou os `_ctm`
+  originais e reescreveu as conexões para `gtna:`. Guarda nova `CtmConnectionContractTest` (unit): toda conexão
+  `ldlib` precisa existir no GTNA. Os `myctmlib` do EOH (vindos do GTNH) são ignorados pelo ldlib e não contam.
+- **Hollow Casing:** faltava o `.mcmeta` da animação (e o CTM); copiados do GTO.
+- **Tooltips no padrão:** Mega Distillery (GTL) e Artificial Star (`annihilate_generator`, GTO) usam agora o formato
+  curado (seções + tipo de receita + fonte), com PT. O `GTNAGTOTooltips` aceita qualquer fonte declarada.
+- **Anéis do Forge of Gods:** giravam pelo `level.getGameTime()`, que o servidor ressincroniza (os anéis travavam e
+  voltavam). Agora usam um relógio contínuo do cliente (`Util.getMillis`), com período de 432000 ticks, em que todos
+  os giros fecham voltas inteiras.
+- **Corrida no teste do EOH (P4):** o `setFrontFacing` do fixture rodava uma checagem síncrona ao mesmo tempo que a
+  thread assíncrona de montagem do GTCEu, ambas mexendo no mesmo `Long2ObjectOpenHashMap` ("Index N out of bounds").
+  O fixture agora define a direção pelo blockstate.
+- Gate PASS 275/275. Pendente: QA visual no cliente.
+
+## G-0215 — 2026-10-08 — Colisão de icon set com outros addons (crash relatado)
+
+- Crash relatado por jogador no 0.5.2 com GTNN: `MaterialIconSet infinity already registered!`. Os 22 icon sets do
+  `GodforgeIconSets` usavam nomes genéricos (infinity, eternity, spacetime, quantum, hypogen…), que outros addons
+  também registram no mapa global do GTCEu.
+- Todos renomeados para `gtna_<nome>`. Pastas `textures/{item,block}/material_sets/` e `models/.../material_sets/`
+  movidas e 631 referências nos JSONs reescritas. Os ids dos materiais (`gtna:infinity` etc.) não mudam.
+- Guarda nova `IconSetNamespaceTest` (unit): prefixo `gtna_` obrigatório e pasta de texturas presente.
+- Pedido (b) do jogador (registrar o Wireless Steam Output Hatch também em `EXPORT_FLUIDS`) recusado: desde G-0094 a
+  saída wireless de vapor é só `STEAM_EXPORT_FLUIDS`, de propósito, para não ser aceita em estruturas que não são de
+  vapor. O 0.5.2 já corrigiu o Large Steam Solar Boiler.
+- Gate PASS 275/275. Pendente: conferir no cliente as texturas dos materiais Godforge e a release de correção.
+
+## G-0216 — 2026-10-08 — Set Animado do Mellion (Fissuras de Magma Astral) e Fix de Mixin AE2
+
+- Rework do material **Mellion** (par harmônico UIV/UXV do Creon, cor oficial GTNH `#3c0505`):
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Paleta: base carmesim cósmico profundo (`#200202` a `#3c0505`) com veios de plasma e picos de arco carmesim (`#dc2626` a `#ffffff`).
+    - Animação: fluxo de magma por fissuras de tensão e descargas elétricas de alta intensidade nas facetas.
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material mellion`.
+  - Registrado `GodforgeIconSets.MELLION` (`gtna_mellion`) em `GodforgeIconSets.java`.
+  - Atualizado `GodforgeChainMaterials.java`: Mellion com icon set customizado (`0xffffff`) e `FLUID_COLORS: 0x3c0505`.
+- **Correção de Mixin AE2:**
+  - `ae2.CPUSelectionListMixin` movido do bloco comum `"mixins"` para `"client"` em `gtna.mixins.json`, pois alveja a classe puramente client-side `appeng.client.gui.widgets.CPUSelectionList` (que causava `ClassNotFoundException` no `runData`).
+  - Removido `session.lock` obsoleto do GameTestServer.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests runGameTestServer runData --offline` PASS (275/275 GameTests, 30/30 unit tests, spotless OK, runData OK). Sem commit.
+
+## G-0217 — 2026-10-08 — Port de Shaders e Materiais Lendários GTNH (Universium, Cosmic Neutronium, Eternity, Magmatter, Exo-Halkonite, Chaos Matter, Axonium)
+
+- Atendendo à exigência do autor ("EU QUERO USAR A ORIGINAL COM O SHADERS ORIGINAL. chaos matter ingot, axonium, exo-halkonite, magmatter, eternity, cosmic neutronium"), portadas as texturas e shaders dedicados do Modernity GTNH e RenderBlender:
+  - **Universium (`Σ§kX`):** 28 texturas oficiais do Modernity (`CUSTOM/universium/`) e `BLOCK_UNIVERSIUM.png`. Modelos composite com `"loader": "renderblender:cosmic"` e máscara de coordenadas cósmicas UV `gtna:mask/cosmic`.
+  - **Cosmic Neutronium (`gtna_cosmic_neutronium`):** texturas oficiais do Modernity (`CUSTOM/cosmicneutronium/`) com overlays animados (3 frames de glints estelares e `.mcmeta`). Modelos com `"loader": "renderblender:cosmic"`.
+  - **Eternity (`gtna_eternity`):** texturas do Modernity (`CUSTOM/eternity/`) com 20 frames de fluxo temporal contínuo e `BLOCK_ETERNITY.png`. Modelos com `"loader": "renderblender:eternal"`.
+  - **Magmatter (`gtna_magmatter`):** texturas do Modernity (`CUSTOM/magmatter/`) com 8 frames de pulso de vácuo magnético e `BLOCK_MAGMATTER.png`. Modelos com `"loader": "renderblender:halo"`.
+  - **Exo-Halkonite (`gtna_exo_halkonite`):** registrado `EXO_HALKONITE` em `GodforgeIconSets.java`, `GTNAMaterials.java` e `GodforgeChainMaterials.java`. Texturas do Modernity (`CUSTOM/exohalkonite/`) com 57 frames de plasma extraterrestre. Modelos com `"loader": "renderblender:cosmic"`.
+  - **Chaos Matter (`gtna_chaos_matter`):** registrado `CHAOS_MATTER` em `GodforgeIconSets`, `GTNAMaterials` e `GodforgeChainMaterials`. Spritesheets de fenda dimensional caótica violeta/carmesim. Modelos com `"loader": "renderblender:unstable"`.
+  - **Axonium (`gtna_axonium`):** registrado `AXONIUM` em `GodforgeIconSets`, `GTNAMaterials` e `GodforgeChainMaterials`. Texturas portadas de TST (ouro ressonante) e bloco `BlockAxonium`. Modelos com `"loader": "renderblender:glow_edge"`.
+  - **Máscaras Cósmicas:** `cosmic.png` e `cosmic_wire_fine.png` adicionadas em `src/main/resources/assets/gtna/textures/mask/`.
+  - **Localização:** entradas adicionadas em `GTNALangProvider.java` e `pt_br.json`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests runGameTestServer runData --offline` PASS (275/275 GameTests, 34/34 icon sets em `IconSetNamespaceTest`, spotless OK, runData OK). Sem commit.
+
+## G-0218 — 2026-10-08 — Awakened Draconium (Opção 1: Draconic Core Fusion + Original Halo Shader)
+
+- Rework completo do material **Awakened Draconium (`✵Dc✵`)** seguindo o protocolo de 3 opções visuais com shaders originais:
+  - Autor aprovou a **Opção 1 (Draconic Core Fusion)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Loops magnéticos coronais (solar flares) giratórios que curvam plasma superaquecido sobre as facetas do metal.
+    - Respiração térmica contínua no núcleo central e flares de transição para branco-quente (`#fffbeb` a `#ff6600` e base rubi `#5c0000`).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material awakened_draconium`.
+  - Modelos composite JSON de todos os itens configurados com o **Original Halo Shader**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo"`.
+  - Registrado em `GodforgeIconSets.AWAKENED_DRACONIUM` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xff7700`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (34/34 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0219 — 2026-10-08 — Draconium (Opção 3: Draconic Rune Pulse & Lattice + Dragon Glow Edge Shader)
+
+- Rework completo do material **Draconium (`Dc`)** seguindo o protocolo de 3 opções visuais com shaders originais:
+  - Autor aprovou a **Opção 3 (Draconic Rune Pulse & Lattice)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Malha hexagonal/rúnica microscópica na estrutura cristalina que canaliza a energia dracônica em batimentos duplos rápidos (sístole/diástole biológica: picos a $t=0.22$ e $t=0.38$).
+    - Choque nos nós de tensão e propagação com retardo por raio a partir do centro (`#16041e` base, `#8b00ff` veios, `#f0abfc` choque).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material draconium`.
+  - Modelos composite JSON de todos os itens configurados com o **Dragon Glow Edge Shader**:
+    `"loader": "renderblender:glow_edge"`, `"glow": { "color": 11546879, "width": 1.5 }` (`0xb02fff` violeta elétrico).
+  - Registrado em `GodforgeIconSets.DRACONIUM` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0x7a3099`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (34/34 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0220 — 2026-10-08 — Ichorium (Opção 3: Ichor Divine Crucible + Celestial Halo Shader)
+
+- Rework completo do material **Ichorium (`IcMa`)** seguindo o protocolo de 3 opções visuais com shaders originais:
+  - Autor aprovou a **Opção 3 (Ichor Divine Crucible)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Alquimia do "Sangue dos Deuses": micro-gotas de essência celestial ascendem contra a gravidade pelo metal líquido em levitação e dissolvem-se na borda superior com efervescência solar e brilho branco-sagrado (`#521800` base, `#fbbf24` gotas douradas, `#fef08a` cristas).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material ichorium`.
+  - Modelos composite JSON de todos os itens configurados com o **Celestial Halo Shader**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo"`.
+  - Registrado em `GodforgeIconSets.ICHORIUM` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xd37806`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (34/34 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0221 — 2026-10-08 — Tengam Purificado & Sintonizado (Opção 3: Superconducting Meissner Vortex + Magnetic Glow Edge Shader)
+
+- Rework completo dos materiais **Tengam Purificado (`tengam_purified`)** e **Tengam Sintonizado (`tengam_attuned`)** (`M`):
+  - Autor aprovou a **Opção 3 (Superconducting Meissner Vortex)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Supercondução tipo II: rede triangular de tubos de fluxo magnético quantizado (vórtices de Abrikosov) em rotação orbital e repulsão do fluxo das bordas pelo Efeito Meissner.
+    - Tengam Purificado: verde-oliva supercondutor elegante (`#162308` base, `#badf70` fluxo, `#ffffff` singularidades).
+    - Tengam Sintonizado: estado excitado de alta indução com frequência de rotação ampliada e verde-elétrico incandescente (`#142e0a` base, `#d5ff80` fluxo).
+  - Gerados todos os 28 itens e 2 blocos para ambos os sets via `tools/generate_material_set_textures.py`.
+  - Modelos composite JSON configurados com o **Magnetic Glow Edge Shader**:
+    `"loader": "renderblender:glow_edge"`, `"glow": { "color": 12513904 (purified) / 14024576 (attuned), "width": 1.5 }`.
+  - Registrados em `GodforgeIconSets.TENGAM_PURIFIED` e `TENGAM_ATTUNED` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xbadf70` e `0xd5ff80`.
+## G-0222 — 2026-10-08 — Fallking (Opção 2: Centrifugal Gyroscopic Resonance + Aerospace Glow Edge Shader)
+
+- Rework completo do material **Fallking (`fall_king`, `HeLiCoPtEr`)**:
+  - Autor aprovou a **Opção 2 (Centrifugal Gyroscopic Resonance)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Mecânica inercial centrífuga de alta precisão aeroespacial: dois anéis giroscópicos elípticos tridimensionais em contra-rotação e precessão perpendicular sobre o plano da peça, gerando pulsos de interferência luminosa e flashes supercríticos nos nós de gimbal lock (`#3c2a0e` sombras, `#ffcf6b` base aeroespacial ouro-champanhe, `#ffffff` flashes nos nós).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material fallking`.
+  - Modelos composite JSON configurados com o **Aerospace Glow Edge Shader**:
+    `"loader": "renderblender:glow_edge"`, `"glow": { "color": 16764779, "width": 1.5 }` (`0xffcf6b` ouro cinético).
+  - Registrado em `GodforgeIconSets.FALLKING` e `MaterialBuilder.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xffcf6b`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (34/34 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0223 — 2026-10-08 — Odyssey Nano Superalloy (Opção 2: Nanite Swarm Self-Assembly + Nanotech Glow Edge Shader)
+
+- Rework completo do material **Odyssey Nano Superalloy (`odyssey_nano_superalloy`, `Tr₁₄Nq₈Mo₁₇`, `#4c7a6a`)**:
+  - Autor aprovou a **Opção 2 (Nanite Swarm Self-Assembly)**.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - 4 núcleos de enxame de nanorrobôs em órbitas Lissajous acopladas fluindo pela superfície metálica com filamentos cinemáticos de polimerização e picos de sinterização/solda iônica instantânea em verde-menta elétrico e ciano incandescente (`#10221c` sombra de titânio, `#3d6b5e` matriz, `#2dd4bf` fluxo de nanites, `#ffffff` flashes de sinterização).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material odyssey`.
+  - Modelos composite JSON configurados com o **Nanotech Glow Edge Shader**:
+    `"loader": "renderblender:glow_edge"`, `"glow": { "color": 2999487, "width": 1.5 }` (`0x2dd4bf` ciano nanotecnológico).
+  - Registrado em `GodforgeIconSets.ODYSSEY` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0x4c7a6a`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (34/34 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0224 — 2026-10-08 — Shijima (Opção 2: Zen Silence Lotus Ripple + Celestial Glow Edge Shader)
+
+- Rework completo do material **Shijima (`shijima`, `静寂`, `#c4d6f2`)**:
+  - Autor aprovou a **Opção 2 (Zen Silence Lotus Ripple)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Quietude meditativa sagrada do vazio oriental (静寂): gota em espelho de metal líquido prateado gerando ondulações concêntricas harmônicas com simetria de lótus de 8 dobras ($\cos(8\theta)$) que interferem formando uma flor de lótus de luz celestial respirando em ritmo meditativo com nós de silêncio perfeito (`#283344` sombra acetinada, `#c4d6f2` véu celestial, `#60a5fa` pétalas de luz, `#f8fafc` cristas zen).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material shijima`.
+  - Modelos composite JSON configurados com o **Celestial Glow Edge Shader**:
+    `"loader": "renderblender:glow_edge"`, `"glow": { "color": 12900082, "width": 1.5 }` (`0xc4d6f2` azul-gelo celestial).
+  - Registrado em `GodforgeIconSets.SHIJIMA` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xc4d6f2` e fórmula `静寂`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (35/35 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0225 — 2026-10-08 — Churitsu (Opção 1: Neutral Dipole Yin-Yang Precession + Platinum Neutral Glow Edge Shader)
+
+- Rework completo do material **Churitsu (`churitsu`, `中立`, `#828282`)**:
+  - Autor aprovou a **Opção 1 (Neutral Dipole Yin-Yang Precession)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Conservação de dipolo neutro balanceado em contra-órbita contínua: dois lóbulos rotativos (grafite denso vs platina líquida) que trocam cargas continuamente por um ponto central de aniquilação neutra sem atrito térmico, divididos por uma linha nodal equipotencial $V=0$ (`#1c1c1c` sombras grafite, `#828282` matriz neutra, `#e0e0e0` lóbulo de platina, `#ffffff` flashes de aniquilação zero).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material churitsu`.
+  - Modelos composite JSON configurados com o **Platinum Neutral Glow Edge Shader**:
+    `"loader": "renderblender:glow_edge"`, `"glow": { "color": 15066597, "width": 1.5 }` (`0xe5e5e5` platina neutra).
+  - Registrado em `GodforgeIconSets.CHURITSU` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0x828282` e fórmula `中立`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (36/36 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0226 — 2026-10-08 — Advanced Nitinol (Opção 2: Shape-Memory Hysteresis Pulse + Thermal Coronal Halo Shader)
+
+- Rework completo do material **Advanced Nitinol (`advanced_nitinol`, `⚷⚙⚷ Ni4Ti6`, `#d2b48c`)**:
+  - Autor aprovou a **Opção 2 (Shape-Memory Hysteresis Pulse)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Ciclo mecânico assimétrico de histerese e relaxamento termoelástico: 70% do ciclo acumula estresse de compressão martensítica lenta em direção ao núcleo, seguido por disparo instantâneo (30%) de alívio elástico que propaga uma onda de choque de memória de forma austenítica em ouro champanhe acetinado com flashes de recristalização (`#302312` matriz base, `#d2b48c` liga neutra, `#fde68a` frentes de tensão, `#ffffff` flashes de recristalização).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material advanced_nitinol`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Thermal Coronal Halo**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com ruído turbulento de plasma em vez de simples glow sólido).
+  - Registrado em `GodforgeIconSets.ADVANCED_NITINOL` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xd2b48c` e fórmula `⚷⚙⚷ Ni4Ti6`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (37/37 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0227 — 2026-10-08 — Nitinol 60 (Opção 1: Martensitic Twin-Boundary Shear Slip + Polarized Stress Refraction Halo Shader)
+
+- Rework completo do material **Nitinol 60 (`nitinol_60`, `Ni4Ti6`, `#c8c8c8`)**:
+  - Autor aprovou a **Opção 1 (Martensitic Twin-Boundary Shear Slip)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Mecânica cristalográfica de escorregamento nano-atômico em planos de cisalhamento de $\pm 45^\circ$ ($u = (x+y)/\sqrt{2}$, $v = (x-y)/\sqrt{2}$): bandas de deformação elástica deslizam em direções opostas sem atrito; nos cruzamentos de geminação (*twinning*), formam-se nós de altíssima dureza que viajam pelas facetas com cintilação especular polarizada de titânio-platina (`#22252c` matriz titânica, `#c8c8c8` liga base polida, `#e2e8f0` bandas de escorregamento, `#ffffff` flashes de geminação diamantina).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material nitinol_60`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Polarized Stress Refraction Halo**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com difração e aberração reflexiva metálica polarizada).
+  - Registrado em `GodforgeIconSets.NITINOL_60` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xc8c8c8` e fórmula `Ni4Ti6`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (38/38 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0228 — 2026-10-08 — Superconductor Base UIV (Opção 1: Abrikosov Flux Vortex Pinning Lattice + Quantum Meissner Levitation Halo Shader)
+
+- Rework completo do material **Superconductor Base UIV (`superconductor_uiv_base`, `(C₁₄Os₁₁O₇Ag₃SpH₂O)₄?₁`, `#e558b1`)**:
+  - Autor aprovou a **Opção 1 (Abrikosov Flux Vortex Pinning Lattice)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Física quântica de supercondutores tipo II: rede periódica triangular de vórtices de fluxo magnético quantizado de Abrikosov ($\Phi_0 = h/2e$) precessando em ancoramento quântico (*flux pinning*), circundados por supercorrentes perpétuas de blindagem sem resistência térmica e picos brancos nos núcleos normais (`#26081e` matriz orquídea profunda, `#e558b1` rede de vórtices neon, `#f472b6` supercorrentes de blindagem, `#ffffff` flashes nos núcleos quânticos).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material superconductor_uiv_base`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Quantum Meissner Levitation Aura**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal magnética com ruído turbulento de plasma em magenta/violeta neon).
+  - Registrado em `GodforgeIconSets.SUPERCONDUCTOR_UIV_BASE` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xe558b1` e fórmula `(C₁₄Os₁₁O₇Ag₃SpH₂O)₄?₁`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (39/39 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0229 — 2026-10-08 — Superconductor Base UMV (Opção 1: Calabi-Yau Manifold Wormhole Tunneling + Dimensional Warp Corona Shader)
+
+- Rework completo do material **Superconductor Base UMV (`superconductor_umv_base`, `#b526cd`)**:
+  - Autor aprovou a **Opção 1 (Calabi-Yau Manifold Wormhole Tunneling)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Física quântica multiversal em micro-espaços compactados de Calabi-Yau com 5 lóbulos dimensionais: canais de tunelamento onde supercorrentes dobram a garganta métrica do vácuo, realizando saltos quânticos contínuos com flashes singulares nos nós de Poincaré (`#1a0422` matriz violeta abissal, `#b526cd` lóbulos dimensionais, `#e879f9` feixes de tunelamento, `#ffffff` flashes singulares).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material superconductor_umv_base`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Dimensional Warp Corona**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com plasma dimensional turbulento em violeta cósmico).
+  - Registrado em `GodforgeIconSets.SUPERCONDUCTOR_UMV_BASE` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xb526cd`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (40/40 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0230 — 2026-10-08 — Atomic Separation Catalyst (Opção 2: Quark-Gluon Plasma Deconfinement + Chromodynamic Nuclear Corona Shader)
+
+- Rework completo do material **Atomic Separation Catalyst (`atomic_separation_catalyst`, `#e85e0c`)**:
+  - Autor aprovou a **Opção 2 (Quark-Gluon Plasma Deconfinement)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Fogo cromodinâmico de plasma de quarks e glúons: vórtice elíptico relativístico SU(3) de viscosidade nula com 3 fluxos de carga de cor girando em contra-fase no QGP e núcleo de desconfinamento assintótico gerando picos e flashes brancos de liberdade assintótica (`#240a02` matriz nuclear profunda, `#e85e0c` fogo termonuclear, `#f97316` fluxos de cor de glúons, `#ffffff` flashes de liberdade assintótica).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material atomic_separation_catalyst`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Chromodynamic Nuclear Corona**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal turbulenta com radiação térmica de plasma de quarks e glúons).
+  - Registrado em `GodforgeIconSets.ATOMIC_SEPARATION_CATALYST` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xe85e0c`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (41/41 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0231 — 2026-10-08 — Platinum-Manganese-Antimony Heusler Alloy (Opção 2: Topological Chiral Skyrmion Lattice Drift + Spintronic Vortex Corona Shader)
+
+- Rework completo do material **Platinum-Manganese-Antimony Heusler Alloy (`platinum_manganese_antimony_heusler_alloy`, `PtMnSb`, `#b0bcc8` / `#e6e6e6`)**:
+  - Autor aprovou a **Opção 2 (Topological Chiral Skyrmion Lattice Drift & Hall Precession)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Mecânica spintrônica de rede hexagonal de Skyrmions magnéticos quirais ($Q = -1$ induzido por DMI na interface $Pt\text{-}Mn$): 3 vórtices helicoidais derivam angularmente sob precessão da força girotópica de Hall com estrias espiralantes de torção dextrogira em platina-antimônio brilhante e pulsos de condensação magnética nos núcleos topológicos (`#1c2430` matriz magnética profunda, `#b0bcc8` corpo spintrônico de platina-aço, `#cbd5e1` anéis de vórtice quiral, `#ffffff` picos de condensação nos núcleos).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material platinum_manganese_antimony_heusler_alloy`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Spintronic Vortex Corona**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com ruído turbulento de plasma simulando distorção de curvatura magnética topológica de spin).
+  - Registrado em `GodforgeIconSets.PLATINUM_MANGANESE_ANTIMONY_HEUSLER_ALLOY` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xb0bcc8` e fórmula `PtMnSb`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (42/42 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0232 — 2026-10-08 — Stellar Alloy (Opção 1: Photospheric Magnetoconvection & Solar Flares + Coronal Plasma Halo Shader)
+
+- Rework completo do material **Stellar Alloy (`stellar_alloy`, `✦Nt₄Nq₂Ke₂✦`, `#c5ced8` / `#ffe164`)**:
+  - Autor aprovou a **Opção 1 (Photospheric Magnetoconvection & Solar Flares)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Convecção magnetohidrodinâmica fotosférica de Bénard em ebulição térmica contínua: células de plasma ascendente em ouro-estelar quente (`#ffe164`) cercadas por fendas de resfriamento, com reconexões magnéticas estocásticas disparando micro-flares solares espiculares de alta velocidade com picos brancos-solares incandescentes (`#242938` matriz estelar profunda, `#c5ced8` platina estelar, `#ffe164` células fotosféricas, `#ffffff` flashes solares).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material stellar_alloy`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Stellar Coronal Plasma Halo**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com ruído turbulento de plasma em ouro estelar e platina ionizada).
+  - Registrado em `GodforgeIconSets.STELLAR_ALLOY` e `GodforgeChainMaterials.java` untinted (`0xffffff`), com mapeamento de fluidos em `0xc5ced8` e fórmula `✦Nt₄Nq₂Ke₂✦`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (43/43 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0233 — 2026-10-08 — Trinaquadalloy (Opção 2 Ajustada: Helical Fluxons com Paleta Ultra-Escura + Void Flux Corona Shader)
+
+- Rework completo do material **Trinaquadalloy (`trinaquadalloy`, `Nq₂WsHs`, `#281832` / `#10b981` / `#a855f7`)**:
+  - Autor aprovou a **Opção 2 (Helical Fluxon Supercurrent Vortices)** com ajuste solicitado: *"coloração bem bem mais escura, quase um preto puxado para o roxo"*.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Base obsidiana ultra-escura / preto-vácuo com matiz sutil de roxo profundo (`#08040c` a `#251034`, média de luminância `#1e112e`): dupla hélice de supercorrentes magnéticas quirais de Trinium e Naquadah deslizando em contrafase ao redor do baricentro com filamentos violetas profundos e esmeralda radioativa sutil, convergindo em pulso central de ancoramento quântico sem estourar os tons escuros.
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material trinaquadalloy`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Void Flux Corona**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com ruído turbulento de plasma em violeta-vácuo e esmeralda).
+  - Registrado em `GodforgeIconSets.TRINAQUADALLOY` e `MaterialBuilder.java` untinted (`0xffffff`), com fluido preservado em `0x281832` e fórmula `Nq₂WsHs`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (44/44 icon sets validados no `IconSetNamespaceTest`, spotless OK). Sem commit.
+
+## G-0234 — 2026-10-08 — Mar-M-200 Steel (Opção 3: Adiabatic Shear Banding & Dislocation Avalanches + Stress Burst Halo Shader)
+
+- Rework completo do material **Mar-M-200 Steel (`mar_m_200_steel`, `Nb₂Cr₉Al₅Ti₂Co₁₀W₁₃Ni₁₈`, `#515151`)**:
+  - Autor aprovou a **Opção 3 (Adiabatic Shear Banding & Dislocation Avalanches)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Mecânica de deformação plástica severa a altas taxas de cisalhamento: 3 famílias de planos de escorregamento adiabático (45°, -30°, 60°) disparam avalanches periódicas de discordâncias com aquecimento localizado instantâneo nos planos de cisalhamento e relaxamento térmico rápido (`#17181c` matriz profunda de aço/nióbio, `#515151` base aeroespacial, `#cbd5e1` brilho de fricção mecânica ultra-rápida em platina-aço, `#ffffff` picos térmicos de escorregamento).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material mar_m_200_steel`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Adiabatic Stress Burst Flare Halo**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com ruído turbulento de plasma simulando liberação instantânea de tensão adiabática).
+  - Registrado em `GodforgeIconSets.MAR_M_200_STEEL` e `MaterialBuilder.java` untinted (`0xffffff`), com fluido preservado em `0x515151` e fórmula `Nb₂Cr₉Al₅Ti₂Co₁₀W₁₃Ni₁₈`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (45/45 icon sets validados no `IconSetNamespaceTest`, 32/32 suites de teste unitário OK, spotless OK). Sem commit.
+
+## G-0235 — 2026-10-08 — Hastelloy-N75 (Opção 2: Intergranular M₂₃C₆ Carbide Pinning & Laves Phase Network + Stacking-Fault Refraction Corona Shader)
+
+- Rework completo do material **Hastelloy-N75 (`hastelloy_n_75`, `Ni₁₅Mo₉Cr₄Ti₂Er₂`, `#8b6914`)**:
+  - Autor aprovou a **Opção 2 (Intergranular M₂₃C₆ Carbide Pinning & Laves Phase Network)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Microestrutura celular intergranular de carbetos secundários de molibdênio $M_{23}C_6$ e fases intermetálicas hexagonais de Laves ($\text{Ni}_2\text{Er} / \text{Fe}_2\text{Mo}$) distribuídas ao longo de contornos de grão sob 4550K: relevo celular Voronoi em ouro-bronze polido sobre matriz austenítica profunda com nós de fase de Laves em platina-dourada intensa e flashes nos pontos de bloqueio de cisalhamento (`#1e1406` matriz de níquel profunda, `#8b6914` corpo de liga de molibdênio/âmbar, `#fde68a` nós intermetálicos de érbio, `#ffffff` flashes de relaxamento de tensão).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material hastelloy_n_75`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Intermetallic Stacking-Fault Refraction Corona**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com ruído turbulento de plasma simulando difração refratária de defeitos de empilhamento).
+  - Registrado em `GodforgeIconSets.HASTELLOY_N_75` e `MaterialBuilder.java` untinted (`0xffffff`), com fluido preservado em `0x8b6914` e fórmula `Ni15Mo9Cr4Ti2Er2`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (46/46 icon sets validados no `IconSetNamespaceTest`, 32/32 suites de teste unitário OK, spotless OK). Sem commit.
+
+## G-0236 — 2026-10-08 — Stellite (Opção 3: Self-Healing Vitreous Tribofilm & Haynes Stellar Gleam + Stellar Nova Halo Shader)
+
+- Rework completo do material **Stellite (`stellite`, `Co₉Cr₉Mn₅Ti₂`, `#888192`)**:
+  - Autor aprovou a **Opção 3 (High-Entropy Self-Healing Tribofilm & Haynes Stellar Gleam)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Mecânica tribológica extrema a 4310K: fluxo laminar vítreo contínuo de tribofilme auto-regenerativo de atrito quase-zero deslizando diagonalmente sobre a matriz acetinada de aço-cobalto, acompanhado por um foco itinerante de brilho estelar de difração óptica pura cruciforme (+) com cauda lilás-prateada e núcleo de diamante incandescente (`#1c1a22` matriz de cobalto profunda, `#888192` base acetinada, `#c4b5fd` reflexos de tribofilme lilás-platina, `#ffffff` foco de difração estelar cruciforme).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material stellite`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Haynes Stellar Nova Diffraction Halo**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com ruído turbulento de plasma simulando difração especular estelar e radiação térmica).
+  - Registrado em `GodforgeIconSets.STELLITE` e `MaterialBuilder.java` untinted (`0xffffff`), com fluido preservado em `0x888192` e fórmula `Co9Cr9Mn5Ti2`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (47/47 icon sets validados no `IconSetNamespaceTest`, 32/32 suites de teste unitário OK, spotless OK). Sem commit.
+
+## G-0237 — 2026-10-08 — Indalloy 140 (Opção 1: Eutectic Capillary Marangoni Convection & Wetting Fronts + Meniscus Corona Shader)
+
+- Rework completo do material **Indalloy 140 (`indalloy_140`, `In₂PbAg`, `#6a5acd`)**:
+  - Autor aprovou a **Opção 1 (Eutectic Capillary Marangoni Convection & Wetting Fronts)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Convecção de Marangoni eutética de alta velocidade por gradiente de tensão superficial com instabilidade de Saffman-Taylor (dedos de viscosidade capilar): fluxo radial com dedos capilares em ciano elétrico e prata-índio sobre matriz azul-ardósia Slate Blue, convergindo em brilhos de menisco ultra-refletivos nos pontos de contato molecular (`#14102a` matriz ardósia profunda, `#6a5acd` corpo da liga eutética, `#93c5fd` frentes de molhamento ciano, `#ffffff` flashes de menisco capilar).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material indalloy_140`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Capillary Surface-Tension Meniscus Corona**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com ruído turbulento de plasma simulando tensão superficial líquida e ondas de menisco capilar).
+  - Registrado em `GodforgeIconSets.INDALLOY_140` e `MaterialBuilder.java` untinted (`0xffffff`), com fluido preservado em `0x6a5acd` e fórmula `In2PbAg`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (48/48 icon sets validados no `IconSetNamespaceTest`, 32/32 suites de teste unitário OK, spotless OK). Sem commit.
+
+## G-0238 — 2026-10-08 — End Steel (Opção 2: Non-Euclidean Hyperbolic Poincaré Tessellation & Ender Resonances + Metric Corona Shader)
+
+- Rework completo do material **End Steel (`end_steel`, `St₄E`, `#d6d980`)**:
+  - Autor aprovou a **Opção 2 (Non-Euclidean Hyperbolic Poincaré Tessellation & Ender Resonances)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Curvatura cristalina de métrica hiperbólica de Poincaré com curvatura constante negativa ($\mathbb{H}^2$) sob 3250K: tesselação hiperbólica {7,3} deformada expandindo-se do baricentro para as bordas em anéis concêntricos com ondas de ouro-espectral de Endstone e vórtices profundos de obsidiana/violeta do End, culminando em flashes estelares nos nós de interferência não-euclidiana (`#282c12` matriz profunda de obsidiana/vácuo, `#d6d980` ouro-espectral do Endstone, `#a855f7` vórtices de ressonância do End, `#ffffff` flashes de Poincaré).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material end_steel`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Hyperbolic Poincaré Metric Corona**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com ruído turbulento de plasma simulando curvatura métrica de espaço-tempo não-euclidiano).
+  - Registrado em `GodforgeIconSets.END_STEEL` e `MaterialBuilder.java` untinted (`0xffffff`), com fórmula `St4E`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (49/49 icon sets validados no `IconSetNamespaceTest`, 32/32 suites de teste unitário OK, spotless OK). Sem commit.
+
+## G-0239 — 2026-10-08 — Dark Steel (Opção 3: Void-Absorbing Obsidian Acoustic Resonance + Cherenkov Corona Shader)
+
+- Rework completo do material **Dark Steel (`dark_steel`, `FeCOb`, `#414751`)**:
+  - Autor aprovou a **Opção 3 (Void-Absorbing Obsidian Acoustic Resonance & Gravitational Shadow)** após inspeção no showcase interativo com simulador de shader.
+  - Conjunto animado dedicado com 30 frames fluidos (`frametime 2`, `interpolate true`):
+    - Acoplamento fonônico de cavidade acústica de Casimir na rede vítrea de obsidiana-carbono sob 1450K: ondas de absorção óptica centrípetas atraindo luz em espiral para o interior do metal (sombra gravitacional microscópica de absorção de corpo negro quase absoluta), circundadas por anéis de horizonte de escape com luminescência Cherenkov ressonante em violeta-obsidiana profundo e micro-flashes estocásticos no horizonte de eventos (`#101217` grafite-vácuo profundo, `#414751` base de aço temperado, `#6b21a8` franjas Cherenkov violeta-obsidiana, `#ffffff` flashes nos limites do horizonte).
+  - Gerados todos os 28 itens e 2 blocos via `tools/generate_material_set_textures.py --material dark_steel`.
+  - Inovação em shader/halo: Modelos composite JSON configurados com o **Gravitational Acoustic Shadow & Obsidian Cherenkov Corona**:
+    `"loader": "renderblender:halo"`, `"halo": "renderblender:misc/halo_noise"` (aura coronal com ruído turbulento de plasma simulando horizonte de absorção e fluorescência Cherenkov).
+  - Registrado em `GodforgeIconSets.DARK_STEEL` e `MaterialBuilder.java` untinted (`0xffffff`), com fluido preservado em `0x414751` e fórmula `FeCOb`.
+- Gate completo validado: `./gradlew spotlessCheck compileJava runUnitTests --offline` PASS (50/50 icon sets validados no `IconSetNamespaceTest`, 32/32 suites de teste unitário OK, spotless OK). Sem commit.
+
+## G-0240 — 2026-10-09 — Tooltip padrão para todos os multiblocos
+
+- Pedido do autor: padronizar as tooltips de TODOS os multiblocos (127 registrados, incluindo os 25 módulos do
+  Steam Elevator e as máquinas a vapor) no padrão aprovado, sem seção de estrutura:
+  `Machine Type` → frase de efeito (lore/piada/referência) → separador → descrição (2–3 linhas, §6 destaque) →
+  separador → `§a▸` vantagens / `§b▸` números / `§c▸` restrições → `Source`.
+- Fonte única: `tools/multiblock_tooltips/*.json` (en + pt por máquina; `*texto*` = destaque).
+  `tools/apply_multiblock_tooltips.py` valida (campos, linha ≤72 caracteres, frase única, mesma contagem en/pt) e
+  gera `GTNAMultiblockTooltipText` (en_us, lido pelo `GTNALangProvider`) e as chaves do `pt_br.json`.
+- Runtime: `GTNAMultiblockTooltips.applyAll()` roda por último no `CommonProxy` e substitui o builder de cada
+  multibloco por `gtna.machine.<id>.tooltip.0..N-1` + linha de Source (`GTNASources.sourceOf`, padrão novo
+  `gtna` = "GregTech Nexus Addon (GTNA)" para conteúdo original). Removidos `GTNAGTOTooltips`, `GTNASteamTooltips`,
+  82 chamadas `.tooltips/.tooltipBuilder` das cadeias de registro, o plumbing `moduleLines` dos módulos do elevador,
+  o ramo de multibloco do `GTNASources.applyAll` e do `MetaMachineBlockMixin`.
+- Chaves órfãs removidas: 482 `add(...)` do `GTNALangProvider`, 56 linhas do `en_us.json` manual, 176 chaves do
+  `pt_br.json` (`gtna.gto_tooltip.*`, `gtna.tooltip.<máquina>.*`, `gtna.gto.blaze.*`, descrições automáticas
+  `gtna.machine.<id>.tooltip`). Chaves de recipe type preservadas.
+- Números conferidos no código; tooltips antigas estavam erradas em: Large Steam Circuit Assembler (64 → 4
+  paralelos), Large Steam Centrifuge/Thermal Centrifuge (250%/200% → 2x), Large Steam Alloy Smelter (43% → ~1,75x),
+  Steam Elevator Apiary (overclock não existe no código) e Beacon (nível vem do tier do módulo, não do overclock).
+- Testes: `MultiblockTooltipStandardTest` (unitário; todo `.multiblock("id")`/módulo tem entrada, estrutura do
+  padrão, pt_br com chaves contíguas sem buracos) substitui `MachineTooltipContractTest` e
+  `ModuleTooltipContractTest`; `PortLangParityTest` agora cobre as chaves padrão; gametest
+  `everyMultiblockUsesTheStandardTooltip` substitui `newGtoControllersDescribeTheirFunction`.
+- Obsoletos (não rodar, recriariam chaves antigas): `tools/gto_tooltip_pt_br.py`, a parte de multibloco de
+  `tools/godforge_tooltips.py`.
+- Gate: `./gradlew spotlessCheck compileJava runUnitTests runGameTestServer runData --offline` PASS (unitários OK,
+  275/275 gametests obrigatórios). Sem commit; falta o autor revisar no runClient.
+
+## G-0241 — 2026-10-09 — Correção Integral dos 50 Material Sets Animados (Dual Naming, Fine Wire Overlay, Multi-Ingots/Plates, Pipes, Wires e Tonalidade)
+
+- Resolução integral de todas as inconsistências reportadas pelo autor para os 50 material sets (`gtna_*`):
+  1. **Paridade Dual (camelCase + snake_case)**:
+     - Identificada a causa raiz de texturas não carregando in-game: o `MaterialIconType` do GTCEu e `TagPrefixItemRenderer` realizam lookup em camelCase (`ingotDouble.json`, `ingotTriple.json`, `plateTriple.json`, `wireFine.json`, etc.).
+     - Todos os scripts (`generate_material_set_textures.py`, `setup_endgame_materials_modernity.py`, `setup_chaos_and_axonium.py`) atualizados para gerar e salvar fisicamente arquivos PNG, MCMETA, secundários, overlays e modelos JSON em **ambas as convenções** (ex: `wireFine.png` e `wire_fine.png`, `ingotDouble.json` e `ingot_double.json`, `pipeSide.png` e `pipe_side.png`, etc.).
+  2. **Overlay Padrão nos Fine Wires**:
+     - O overlay clássico do carretel de madeira do Modernity/GTCEu (`wireFine_OVERLAY.png`, exatamente 115 pixels de madeira e flange) foi restaurado em **todos os 50 material sets** (`wireFine_overlay.png` e `wire_fine_overlay.png`), eliminando sobreposições vazias/transparentes em conjuntos como `hypogen`, `echoite`, `infinity`, `spacetime`, etc.
+  3. **Itens e Blocos Completos em Lote**:
+     - Gerados em todos os 50 sets: multi-ingots (1x..5x), multi-plates (1x..5x, densa e superdensa), singularidades animadas, engrenagens (normal e pequena), hastes (curta e longa), anéis, esferas, rotor, molas (normal e pequena), fluid pipes (todas as 8 variações), fios/cabos (`wire_side`/`wire_end` e overlays) e fluidos (`liquid`/`molten`).
+  4. **Calibração Tonal e Sincronização com Casings**:
+     - `shirabon`: Calibrado no magenta profundo canônico `#c61361` (`[198, 19, 97]`) com ondas osciloscópicas.
+     - `dragon_metal`: Calibrado no carmesim arterial GT++ `#dc2814` (`[220, 40, 20]`) com pulso radial.
+     - `hastelloy_n_75`: Calibrado no verde-oliva metálico `#5a5c44` (`[90, 92, 68]`), em perfeita harmonia com seu casing (`[88, 90, 66]`) e tubo (`[91, 88, 75]`).
+  5. **Variação Estrutural de Silhuetas de Ingots**:
+     - *Gordinhos* (Ultimet / `SHINY`, 136px): `hastelloy_n_75`, `mar_m_200_steel`, `stellite`, `trinaquadalloy`, `stellar_alloy`.
+     - *Pequenininhos* (Battery Alloy / `DULL`, 114px): `indalloy_140`, `advanced_nitinol`, `shijima`.
+     - *Padrão Moderno* (WhiteDwarfMatter / `METALLIC`, 135px): demais ligas cósmicas e transurânicas.
+- Ferramenta de auditoria e showcase:
+  - `tools/build_comprehensive_preview.py` gerou o showcase interativo standalone `material_preview.html` (1.05 MB) contendo GIFs animados de itens e blocos, comparador casing vs ingot, e tabela de auditoria dos 50 sets.
+- Gate validado: `./gradlew spotlessCheck compileJava runUnitTests runGameTestServer runData --offline` PASS (275/275 gametests obrigatórios OK, Registrate datagen OK, 50/50 sets com zero falhas). Sem commit.
+
+
+## G-0241 — 2026-10-09 — Personal Space removido do GTNA; importação automática no ModernSpace
+
+- Decisão do autor: o Personal Space agora é o mod ModernSpace (`/home/raishxn/MineProjects/PersonalSpace`). Manter
+  os dois crashava e remover sem migrar perdia as dimensões.
+- GTNA: removidos os pacotes `personalspace` (cliente, mundo, mixins), pacotes de rede, dimension type, modelos,
+  textura `gui/personalspace/widgets.png`, receita do portal, aba criativa, ~60 strings de lang (en/pt),
+  `PersonalSpaceGeneratorGameTests`, `PersonalSpaceLegacyNamesTest`, a fonte `personalspace` e as linhas
+  PersonalSpace/Infiniverse do `THIRD_PARTY_NOTICES.md`. Infiniverse saiu do `mods.toml`; no `build.gradle` virou
+  `modRuntimeOnly` só para o dev, junto com `libs/modernspace-0.2.0.jar` (local, se existir).
+- ModernSpace (`GtnaMigration` + `LevelStorageAccessMixin`): ao abrir a pasta do mundo, antes de ler o `level.dat`,
+  move `dimensions/gtna/personal_space/pdim_N`, importa/mescla `data/gtna_personal_space.dat` em
+  `personal_space.dat`, reescreve `gtna:personal_space[/...]` em `level.dat` (só `Data`, não o snapshot `fml`) e
+  `playerdata`, com backup `.modernspace_backup` e marcador `modernspace_gtna_migration.done`. IDs já ocupados são
+  pulados e logados. Portal: alias de registro + `MissingMappingsEvent`; `PersonalSpacePortalEntity.load` remapeia o
+  destino. Nada roda se um GTNA com Personal Space estiver instalado.
+- Teste real: cópia do mundo de dev (`run/world-extra`, 6 dimensões pdim_180–185) no servidor dedicado
+  GTNA novo + ModernSpace: importação sem pulos, dimensões movidas, `level.dat` e jogador (estava na pdim_181)
+  reescritos, portal remapeado mantendo os IDs numéricos, servidor subiu. Mundo `New World` original intacto.
+- Gate GTNA: `./gradlew spotlessCheck compileJava runUnitTests runGameTestServer runData --offline` PASS (270/270
+  gametests). ModernSpace: `./gradlew build --offline` PASS. Changelogs: seção `[Unreleased]` nos dois. Sem commit.
+- Pendente manual: entrar no runClient com o mundo migrado e atravessar um portal antigo; o erro
+  "Error while assembling multiblock GodforgeModuleMachine" visto no servidor é anterior e não tem relação.
+
+## G-0242 — 2026-10-09 — Conferência final dos números das tooltips no código
+
+- Todos os números das linhas ▸ dos 127 multiblocos foram conferidos no código; a evidência por máquina (classe,
+  constante ou receita) está em `docs/reports/multiblock-tooltips-verification.md`.
+- Corrigidos por divergirem do código: Industrial Slaughterhouse (passivo 1.000 EU/t, não 512), Eye of Harmony (EU de
+  partida = base x 4^circuito, não (circuito+1)^2), Artificial Star (não aceita Thread/Overclock/Accelerate; até 16
+  Dynamo Hatches ou Laser), Large Cracker (até 20% do EU com as melhores bobinas), Component Assembler (extensões sem
+  afirmar o tier UV), Forge of Gods (8 módulos, até 16 com upgrades), Primitive Distillation Tower (sem o "6
+  fluidos", não encontrado no código).
+- Gate: `./gradlew spotlessCheck compileJava runUnitTests runGameTestServer runData --offline` PASS
+  (`MultiblockTooltipStandardTest` 127 OK, 270/270 gametests). Sem commit.
+- G-0242 (adendo): Primitive Stone Furnace corrigida (receita em 1 tick, paralelos/threads ilimitados, sem energia;
+  a tooltip dizia "velocidade normal"); Component Assembler resolvido pelo código (teto IV, UV com extensão, sempre
+  limitado pelo tier do casing). `MultiblockTooltipStandardTest` agora também falha com linha >72 caracteres
+  visíveis (en e pt_br). Relatório com coluna "Unconfirmed numbers" (todas `none`). Gate PASS (270/270).
+- G-0242 (adendo 2): `tools/trace_multiblock_tooltip_numbers.py` rastreia cada número das linhas ▸ até o código da
+  máquina (bloco de registro, classe da fábrica, receitas do recipe type dela, balance/config). Números calculados
+  ficam em `tools/multiblock_tooltips/derived_numbers.json` com a expressão de origem (ex.: duração 0.57 → ~1,75x;
+  falha do Eye of Wood = 36.000 × 7.500 = 270M; fusão 16 × 10M = 160M; turbina +10%/2x por tier, GTCEu
+  `IRotorHolderMachine`). Resultado em `docs/reports/multiblock-tooltips-trace.md`: 127 máquinas, 0 números sem
+  confirmação. Limitação: um literal pequeno (ex.: 2) é aceito se aparecer na evidência da máquina, mesmo que seja
+  outra constante.
+- G-0242 (adendo 3): o rastreio passou a ser estrito. Cada número das linhas ▸ precisa de uma ou mais afirmações
+  explícitas (arquivo + regex ancorada na constante/expressão) em `tools/multiblock_tooltips/number_claims.json`,
+  geradas por `build_number_claims.py`; não há mais aceitação por "o literal aparece em algum lugar". Todas as
+  afirmações de um número precisam bater. Resultado: 127 máquinas, 254 números, 0 sem confirmação
+  (`docs/reports/multiblock-tooltips-trace.md`). Correções achadas nesse passo: Large Cracker chega a 10% do EU
+  (EternalCoil tier 9), não 20%; Primitive Stone Furnace (1 tick, ilimitada). Gate PASS (270/270), runData PASS.
+
+## G-0243 — 2026-10-09 — Lote GTO 1: High Energy Laser Lathe e Extreme Compressor
+
+- **High Energy Laser Lathe** (GTO; lathe, Parallel Hatch, Thread Hatch, laser) e **Extreme Compressor** (GTO;
+  compressor, Parallel Hatch, Thread Hatch, laser, Muffler Hatch). Os modos Gas Compressor e Thermo Pressing do GTO
+  são tipos exclusivos do GTO e não entraram. Frame de Depleted Uranium Alloy (GTO) -> Tungstensteel.
+- Blocos GTO novos com textura original: `iridium_pipe_casing`, `iridium_gearbox`, `laser_cooling_casing`,
+  `high_energy_laser_emitter` (nome en+pt, modelo, blockstate, mineable, aba criativa).
+- Receitas `gtna:mega/*` (blocos e controladores) com as trocas documentadas no código.
+- Tooltips no padrão novo (`tools/multiblock_tooltips/gto.json`, en+pt), sem números nas linhas ▸.
+- **Novo teste `AssetLangCoverageTest`** (no `runUnitTests`): todo recipe type do GTNA tem `gtna.<tipo>` em en e
+  pt_br; todo `block.gtna.*`/`item.gtna.*` nomeado pelo datagen tem pt_br e modelo de item, e todo bloco tem
+  blockstate (itens de material/ferramenta do GTCEu, modelados em runtime, ficam fora). Corrigidas as 533 lacunas
+  que ele achou: pt_br de hatches wireless/accelerate/infinite/output boost/overclock/thread, ME access/IO port,
+  módulos do Steam Elevator, componentes de célula e industriais, cartões do Pattern Buffer, terminais; removidas
+  chaves órfãs (`parallel_hatch_max`, que não existe, e três ids aposentados do EOH).
+- Gate PASS (276/276 gametests).
+
+## G-0244 — 2026-10-09 — Lote GTO 2: Hyperdimensional Plasma Fusion Core, Gemini, Giant Electrochemical
+
+- **Hyperdimensional Plasma Fusion Core** (GTO; receitas da DTPF `gtna:plasma_forge`, Parallel Hatch, Thread Hatch,
+  laser, trava de temperatura da bobina como o `DimensionallyTranscendentPlasmaForgeMachine` do GTO). Não entraram:
+  modo Stellar Forge (tipo exclusivo do GTO), bobina Uruium de 32000 K, renderer. Sem desconto de catalisador (nem o
+  GTO tem). Frame de Amprosium -> Neutronium; Dimensional Bridge Casing do GTO = `plasma_forge_bridge_casing`.
+- **Gemini Containment System** (GTO; packer do GTCEu, que já empacota e desempacota; paralelo por bobina). O
+  Unpacker separado é tipo exclusivo do GTO.
+- **Giant Electrochemical Workstation** (GTO; electrolyzer, paralelo por bobina, monta em qualquer direção). Não
+  entraram: Electroplating (tipo do GTO) e o modificador `UPGRADE_GCYM_OVERCLOCKING` do GTO.
+- Blocos GTO novos: `sps_casing`, `space_elevator_mechanical_casing`, `engineering_mechanical_casing` (volta; tinha
+  saído com a EEF), `peek_wear_resistant_mechanical_housing`, `industrial_frameless_glass`.
+- Testes: forma, estresse e Thread Hatch do Gemini e da Workstation; HPFC forma, roda 16 paralelos com Parallel Hatch
+  UV e não inicia receita mais quente que as bobinas.
+- Gate `./gradlew spotlessCheck compileJava runUnitTests runGameTestServer runData --offline` PASS (285/285);
+  `MultiblockTooltipStandardTest`, `PortLangParityTest` e `AssetLangCoverageTest` OK; rastreio de números: 132
+  máquinas, 0 sem confirmação. Sem commit.
+- Pendente manual (runClient): visual/CTM dos 9 blocos novos, preview das 5 estruturas, nomes em PT.
+
+## G-0245 — 2026-10-09 — Lote GTO 3: tipos próprios do GTO (pedido do autor)
+
+- Decisão do autor (2026-10-09): portar com os tipos de receita do GTO o Desulfurizer, a Dimensional Focus Engraving
+  Array, a Star Ultimate Material Forge, a PCB Factory, a Hand of Arachne, o Lightning Rod, a Fuel Cell, a Space Probe,
+  os Hyper Reactors, a Rare Earth Centrifugal e a Compound Extreme Cooling; Heavy Rolling com o bender do GTCEu; o
+  cluster de pesquisa inteiro. Registrado em `lista-do-autor.md`.
+- Tipos novos (IO do `GTORecipeTypes`, nome en+pt): `gtna:desulfurizer`, `gtna:dimensional_focus_engraving_array`,
+  `gtna:ultimate_material_forge`, `gtna:loom`, `gtna:rare_earth_centrifugal`.
+- **Desulfurizer** (paralelo por bobina; a extensão `addSubPattern` do GTO virou módulo `GTNASubPatterns` que libera
+  Thread/Overclock/Accelerate/Parallel/Laser + Muffler; frame Inconel-242 -> Inconel-792). Receitas: as 5 do GTO 1:1.
+- **Dimensional Focus Engraving Array** (paralelo por bobina; o Optical Data Hatch do GTO ficou opcional, porque o tipo
+  não tem research slot no GTNA; renderer não portado). Tipo vazio: as receitas do GTO usam wafers e fotorresinas do GTO.
+- **Star Ultimate Material Forge Factory** (paralelo ilimitado, qualquer rotação). Tipo vazio (receitas usam matérias
+  do GTO).
+- **Hand of Arachne** (loom, Parallel Hatch). Receitas: os cabos densos de fluix do AE2 (as de fibra usam itens do GTO).
+- **Rare Earth Centrifugal** (Parallel Hatch, qualquer rotação). Receita: Rare Earth do GTCEu -> 7 lantanídeos.
+- **Heavy Rolling** (bender do GTCEu, paralelo por bobina).
+- Blocos GTO: `smelting_control_casing`, `stable_base_casing`, `insulation_tile_mechanical_block`,
+  `hsss_borosilicate_glass` (volta), `ultimate_stellar_containment_casing`, `amprosium_casing`.
+- Testes: forma de todas; módulo do Desulfurizer forma no controlador; Desulfurizer 64 paralelos de bobina com a
+  receita real; estresse/threads do Heavy Rolling e da Hand of Arachne; receitas encenadas na DFEA, na Star Forge
+  (300 paralelos) e na Rare Earth Centrifugal.
+- Gate PASS (299/299); `AssetLangCoverageTest`, `PortLangParityTest`, `MultiblockTooltipStandardTest` OK; números das
+  tooltips 138 máquinas, 0 sem confirmação. Sem commit.
+- Observação de processo: o `AssetLangCoverageTest` lê o en_us gerado; depois de criar tipo/bloco novo, rodar
+  `./gradlew runData` antes do gate.
+
+## G-0246 — 2026-10-09 — Lote GTO 4: Lightning Rod, PCB Factory, Space Probe, Compound Extreme Cooling
+
+- Tipos novos: `gtna:arc_generator` (consome EU, como no GTO), `gtna:pcb_factory`,
+  `gtna:space_probe_surface_reception`, `gtna:plasma_condenser`. `gtna:atomization_condensation` já existia (Cold Ice
+  Freezer) e foi reaproveitado.
+- `tools/port_gto_recipes.py` gera `GTNAGTORecipes` com as receitas GTO desses tipos que só usam conteúdo do
+  GTCEu/GTNA (22: 15 PCB, 6 Arc Generator, 1 Plasma Condenser); as puladas estão em `docs/reports/gto-recipe-port.md`.
+  `tools/extract_gto_inline_patterns.py` gera `GTNAGTOPatterns` (aisles inline do GTO: PCB tiers 1–3, CECU,
+  Hyper Reactor).
+- **Lightning Rod** (`LightningRodMachine`): raio visual a cada 20–200 ticks enquanto trabalha. Paralelo pelo Parallel
+  Hatch: o paralelo por tier de vidro do GTO está na biblioteca selada (nativa) e não foi portado; o vidro aceita
+  qualquer vidro do GTCEu/GTNA.
+- **PCB Factory** (`PCBFactoryMachine`): 3 estruturas; o tier limita o EU/t da receita como no GTO (30.719 / 491.519 /
+  sem limite). No GTO o tier vem de nanites de Gold/Orichalcum/Enderium num slot; no GTNA (sem esses nanites) o tier é
+  escolhido com chave de fenda no controlador.
+- **Space Probe Receiver** (`SpaceProbeSurfaceReceptionMachine`): só no espaço (Ad Astra `PlanetApi.isSpace`), céu
+  livre 9x9 acima da antena, overclock perfeito, Computation Data Hatch. Bônus da Dyson Sphere não portado. Tipo
+  vazio (receitas do GTO usam matérias do GTO).
+- **Compound Extreme Cooling Unit** (`CompoundExtremeCoolingMachine`): vacuum + atomização numa estrutura; Plasma
+  Condenser exige a estrutura de plasma (troca ao mudar o modo).
+- Blocos GTO: `gravity_stabilization_casing`, `pps_corrosion_resistant_mechanical_housing`, `plasma_heater_casing`,
+  `high_energy_ultraviolet_emitter_casing`. O receptor da Space Probe reaproveita `dyson_receiver_casing`.
+- Testes: forma de todas; PCB tiers 1, 2 e 3 formam; tetos de EU/t; PCB roda receita real; Space Probe recusa
+  trabalhar fora do espaço; CECU forma a estrutura de plasma só no modo plasma; estresse/threads da CECU e do
+  Lightning Rod.
+- Gate PASS (313/313). Sem commit.
+
+## G-0247 — 2026-10-09 — Lote GTO 5: Hyper Reactor e Advanced Hyper Reactor
+
+- Tipos `gtna:hyper_reactor` e `gtna:advanced_hyper_reactor` (combustível in, EU out), vazios: os combustíveis hyper
+  do GTO não existem no GTNA.
+- `HyperReactorMachine`: o reforço do GTO (1 mB de um plasma do GTO por ciclo = 16 paralelos; no Advanced, Starmetal
+  8 / Dense Neutron 16) virou dado da receita `gtna_boosters` = lista de `{fluid, amount, parallel}` (padrão 1 mB, 16
+  paralelos), o melhor presente vence e é consumido uma vez por ciclo. Paralelo limitado pelo combustível, não pelo EU
+  (`getParallelAmountWithoutEU`, como o `accurateParallel` do GTO). Sem overclock de gerador do GTO.
+- Hyper Reactor: padrão inline do GTO (`GTNAGTOPatterns.HYPER_REACTOR`), qualquer rotação. Advanced: `.mbs` do GTO;
+  Dimensional Bridge = `plasma_forge_bridge_casing`. Control Hatch do GTO não existe no GTCEu 7.5.3: fora.
+- Blocos GTO: `enhance_hyper_mechanical_casing`, `echo_casing` (receita: Reinforced Echo Shard do Deeper Darker -> 4
+  Echo Shards vanilla).
+- Testes: forma dos dois; reforço presente dá 16 paralelos e ausente dá 1.
+- Gate PASS (316/316). Sem commit.
+
+## G-0248 — 2026-10-09 — Lote GTO 6: Fuel Cell Generator
+
+- Tipos `gtna:fuel_cell_energy_absorption` (dado `converted_energy`), `gtna:fuel_cell_energy_transfer` (dado
+  `efficiency`) e `gtna:fuel_cell_energy_release` (EU out).
+- `FuelCellMaterials` (copiado do GTO): 4 estados de fluido (`energy_storage/release_anode/cathode`, chaves
+  `gtna:*`), 6 eletrólitos redox (Ferro-Cromo ... Íon de Antimatéria) com EU/mB do GTO, 4 polímeros de membrana e o
+  prefixo `membrane_electrode` (flag `GENERATE_MEMBRANE_ELECTRODE`, também em PTFE e Grafeno; ícone do GTO em
+  `gtceu:item/material_sets/dull`).
+- `FuelCellGeneratorMachine` (dificuldade normal do GTO): absorção (melhor eletrodo de membrana define a eficiência,
+  queda por ciclo, recuperação com 600 mB/tick de Água Destilada parada), transferência (eficiência da receita) e
+  liberação (até 50 paralelos, 0,35% de chance de gastar a membrana). Sensor de Atividade Iônica do GTO não portado.
+- Receitas: liberação e transferência geradas como no GTO; absorção a partir dos combustíveis de combustão do GTCEu
+  (EU armazenado = duração x 32 EU/t, os valores do GTCEu) com oxigênio líquido na mesma quantidade (o GTO usa os
+  combustíveis de jetpack); eletrodos de membrana (catalisadores do GTO -> pó do mesmo elemento); controlador (Chemical
+  Energy Devourer do GTO -> Large Combustion Engine). A produção dos eletrólitos e dos polímeros de membrana do GTO usa
+  químicos do GTO: fica para o pack.
+- Bloco GTO `flocculation_casing`.
+- Testes: forma; liberação chega a 50 paralelos; absorção gera os dois eletrólitos carregados e reduz a eficiência.
+- Gate PASS (319/319; `wireless_steam_feeds_on_natural_server_tick` falhou uma vez por tempo e passou ao repetir).
+  Sem commit.
+
+## G-0249 — 2026-10-09 — Lote GTO 7a: Supercomputing Center
+
+- **Supercomputing Center** (`SupercomputingCenterMachine`, `IOpticalComputationProvider`): HPCA em 3 tiers (chave de
+  fenda). Tier 1 aceita componentes HPCA do GTCEu (paga 1/4 da manutenção), tier 2 NICH, tier 3 GWCA; cada tier tem a
+  sua carcaça de computador, ventilação e vidro mínimo (IV / UHV / UIV) no próprio padrão (aisles do GTO via
+  `GTNAGTOPatterns`). A cada 20 ticks paga EU + refrigerante (PCB Coolant no tier 1; Hélio líquido -> gasoso nos tiers
+  2-3) e então fornece CWU/t; resfriamento abaixo da demanda danifica componentes de computação. Nos tiers 2-3 o
+  multiplicador de CWU/t decai (fórmula do GTO) e é restaurado por MFPC/Ice Shard na Thermal Conductor Hatch.
+- Divergência: no GTO o tier vem de um Bioware / Supracausal Mainframe no slot do controlador; no GTNA (sem esses
+  mainframes) o tier é escolhido com chave de fenda e os tiers 2/3 exigem um Optical / Exotic Mainframe num input bus
+  (não consumido). Moldura de Babbitt Alloy -> Stainless Steel.
+- Peças (`GTNAResearchMachines`): NICH/GWCA Empty/Computing/Cooling (+ NICH Bridge), valores do GTO, overlays do GTO
+  no modelo de carcaça avançada do GTCEu; `thermal_conductor_hatch` (25 slots, overlay `neutron_sensor` do GTO).
+- Blocos: `biocomputer_casing`, `phase_change_biocomputer_cooling_vents`, `graviton_computer_casing`,
+  `anti_entropy_computer_condensation_matrix` (estado ativo do GTO não portado), `tungsten_borosilicate_glass`,
+  `taranium_borosilicate_glass`. Materiais `ResearchMaterials`: Basic/Cascade MFPC e as versões esgotadas.
+- Receitas: casings e componentes NICH do `NewResearchSystem` do GTO com trocas; GWCA (receita do GTO não achada)
+  espelha a NICH um tier acima; controlador e Thermal Conductor Hatch do GTO com trocas. A produção de MFPC do GTO usa
+  químicos do GTO: fica para o pack.
+- Testes: os 3 tiers formam só no tier certo; sem CWU antes do primeiro ciclo pago; valores NICH/GWCA do GTO.
+- Gate PASS (323/323). Sem commit.
+
+## G-0250 — 2026-10-09 — Lote GTO 7b: Data Center e Analysis & Research Center
+
+- **Data Center**: o `DataBankMachine` do GTCEu na estrutura do GTO (paredes com NICH Cooling Components). Os data
+  access hatches extras do GTO (Bio / Black Hole / Virtual Universe) só guardam mídias de dados do GTO: não portados.
+- **Analysis & Research Center** (`AnalysisAndResearchCenterMachine`): tipos `gtna:data_analysis` e
+  `gtna:data_integration` (vazios), Computation Data Hatch obrigatório; cada ciclo dá uma única saída sorteada pelas
+  chances (como o `getRealRecipe` do GTO). O sistema de pesquisa do GTO (Analyze/Research Holders, cristais de dados,
+  `AnalyzeData`) só roda em builds de dev do GTO (`ResearchRecipes.init` sob `GTCEu.isDev()`); no GTNA o slot do
+  holder é um input bus e as receitas ficam para o pack. Receita do controlador: própria do GTNA (o GTO não tem).
+- Testes: forma dos dois; sorteio ponderado da saída única.
+- Gate PASS (326/326); `AssetLangCoverageTest` (50+ recipe types, 1.020+ blocos/itens), `PortLangParityTest` e
+  `MultiblockTooltipStandardTest` OK; números das tooltips: 148 máquinas, 0 sem confirmação. CHANGELOG `[Unreleased]`
+  atualizado. Sem commit.
+- Pendente manual (runClient): visual/CTM dos blocos novos dos lotes G-0243–G-0250, previews (PCB e Supercomputing com
+  3 páginas, CECU com 2, Desulfurizer com o módulo), Fuel Cell e Supercomputing em operação real, nomes em PT.
+
+## G-0251 — 2026-10-10 — Correção dos modelos RenderBlender halo/glow
+
+- RenderBlender 1.1.1 presente em `libs` e carregado no runClient; causa confirmada no log e na API do jar: `halo` era uma string (ClassCastException), e glow usava `glow` em vez de `glow_edge`.
+- Corrigidos 990 modelos halo e 440 glow_edge em assets/gtceu. Halo usa referência `#halo` registrada em textures, objeto com texture/color/size/pulse, branco ARGB opaco (-1), size 4 e pulse false. Texturas animadas originais preservadas. Parâmetros glow existentes preservados.
+- `tools/generate_material_set_textures.py` corrigido para gerar ambos os formatos compatíveis. Verificação estática de todos os 1.430 modelos e existência das texturas halo no jar PASS.
+- `spotlessCheck compileJava runUnitTests runData --offline` PASS. Gate completo foi iniciado, mas runGameTestServer ficou no segundo lote; duas amostras de stack mostraram montagem de `dimensionalFocusEngravingArrayRunsRecipe` em BlockPattern.checkPatternAt. Execução encerrada após ausência de progresso; GameTests NÃO aprovados nesta sessão.
+- runClient reiniciado; nenhum erro de carregamento dos modelos material_sets/gtna ou exceção dos loaders halo/glow encontrada no log da nova inicialização. Confirmação visual dos efeitos pelo autor ainda pendente.
+- Sem commit/push; alterações locais.
+
+## G-0252 — 2026-10-10 — Efeitos nos modelos finais e Universium cósmico
+
+- Causa adicional verificada na implementação Forge 47.4.1: ItemModelGenerator copia customGeometry direto do modelo filho; o loader herdado do material_set fica perdido quando GTCEu cria DelegatedModel. MaterialItemGeometryMixin preserva getCustomGeometry() herdado apenas em texturas gtceu:item/material_sets/gtna_*. Compatível sem dependência de compilação do RenderBlender.
+- RenderBlenderGlowMixin opcional (@Pseudo, somente cliente) substitui renderGlowEdge apenas para itens gtna: usa atlas vanilla, cor configurada por vertex consumer e iluminação máxima; mantém width/offset, sem estado global de uniforms. Biblioteca 1.1.1 usa pipeline padrão e não aplica glowColor no método original.
+- Universium havia sido sobrescrito pelo gerador procedural: modelos atuais sem loader e animação roxa, em desacordo com G-0217. Restaurados 55 modelos/aliases de itens com sprites/overlays originais do Modernity e RenderBlender cosmic, máscaras por silhueta (canal vermelho = alpha, como exige o shader). Singularity usa silhueta gem original. Não se afirma identidade byte a byte com shader GTNH/GTO/GTL; blocos/fluidos não alterados neste checkpoint.
+- Script apply_modernity_universium_with_shaders refeito sem apagar diretórios; gerador genérico encaminha Universium a ele, impedindo nova sobrescrita procedural. Proveniência em GTNASources/THIRD_PARTY_NOTICES; nenhuma permissão pendente marcada concedida.
+- Verificação de referências/máscaras dos 55 modelos PASS. spotlessCheck compileJava runUnitTests runData --offline PASS (execução final sequencial). git diff --check PASS.
+- Gate completo tentado; GameTests travaram novamente no segundo lote em dimensionalFocusEngravingArrayRunsRecipe / BlockPattern.checkPatternAt (stack registrado); execução encerrada. GameTests NÃO aprovados.
+- Uma inicialização concorrente com processResources sofreu falta transitória de recursos e crash no preview de Godforge; arquivos existem em fonte/build, e cliente final foi iniciado após validação sequencial. Evitar tarefas que recopiariam build/resources enquanto o cliente usa esses recursos.
+- runClient final iniciou com 487 modelos finais gtna usando classes RenderBlender; nenhum erro de loader do Universium ou aplicação dos mixins encontrado. Confirmação visual de halo/glow e céu estelar pelo autor ainda pendente. Sem commit/push.
+
+## G-0253 — 2026-10-10 — Mais informações técnicas nas tooltips
+
+- Pedido do autor: preservar o padrão visual atual e ampliar informação técnica; originais podem servir de referência, adaptados ao port.
+- 67 tooltips ampliadas em EN/PT, dentro do catálogo atual de 148. Mantidos tipo, lore, descrição, cores, separadores e Source. Nenhuma mecânica alterada.
+- 19 large steam: menor tier dos casings determina pressão, aço em todos os blocos tierados para alta pressão, Steam Hatch obrigatório, ausência de Energy Hatches e ajuste de paralelos na GUI (exceto Circuit Assembler).
+- 22 módulos Steam Elevator: vapor do próprio módulo antes do host; I/O em buses/hatches próprios. 4 módulos Godforge: pagamento integral antes de processar e saldo na rede do dono da forja.
+- 13 máquinas de coil parallel: fórmula com temperatura base, maior limite entre bobina e hatch, entradas/EU limitam paralelos reais. Evidências da fórmula adicionadas ao gerador number_claims; rastreio atual: 148 máquinas, 278 números, zero sem confirmação.
+- Detalhados também EOH (programa, compressão, gases/saldo), Nano Forge (menor tier entre nanita/estrutura), TPM (saldo/entradas/hatch; sem OC), Component Assembler (tier uniforme), Hyper Reactors (melhor reforço, combustível/saída), PCB (limite pré-OC), Fuel Cell (membrana/entradas/energia por modo), Analysis & Research (bus no holder).
+- Fonte única JSON regenerada; en_us gerado e pt_br conferidos contra todas as 148 entradas. Nenhum override manual inglês nas 67 tooltips. Tipos, frases e descrições preservados em comparação com o início desta sessão. Linhas continuam até 72 caracteres visíveis.
+- Método atualizado em docs/roadmap/tooltip-standard.md; evidências, lista e exemplos em docs/reports/multiblock-tooltips-technical-details.md. Checkouts consultados: GTNL 52345d2, GTOCore dc4824d, GTCEu v7.5.3-1.20.1. Nenhum texto/código dos originais importado.
+- Validação: spotlessCheck compileJava runUnitTests runData --offline PASS; MultiblockTooltipStandardTest 148 OK; gerador/check e rastreio de números PASS; git diff --check PASS.
+- Gate completo executado antes e depois: runGameTestServer travou no segundo lote em dimensionalFocusEngravingArrayRunsRecipe / BlockPattern.checkPatternAt, como G-0251/G-0252. Duas amostras de stack da execução final confirmaram a mesma montagem sem progresso; processos encerrados. GameTests NÃO aprovados. runData concluído separadamente após encerrar o servidor.
+- Pendência: revisão visual pelo autor no cliente (tamanho, legibilidade, tooltips EN/PT). Sem commit/push; mudanças locais.
+
+## G-0254 — 2026-10-10 — Tooltips adaptadas das origens, sem preenchimento redundante
+
+- Autor rejeitou a revisão G-0253: requisitos óbvios (Steam Hatch) e repetição de recipe type (Packer no Gemini). Esta revisão substitui aquela abordagem mantendo o formato existente.
+- 148 entradas revisadas; 108 alteradas em EN/PT em relação a G-0253. Tipos, frases e descrições preservados por comparação automática. Acréscimos anteriores revistos; retiradas também 74 linhas anteriores de preenchimento/redundância. Pro/num/con agora podem ser vazios individualmente; continua obrigatório haver informação técnica em ao menos uma lista.
+- Fontes originais consultadas: GTOCore dc4824d (registros e GTOMachineTooltips/GTOMachineTooltipsA), GTNL 52345d2 (createTooltip/lang), GTLCore 18c7814 (lang/registros/IntegratedOreRecipes), GTCEu v7.5.3-1.20.1 (DataBank), TST ceaa462 (Eye of Wood), GTNH a3e1e11241a814c9fa0dd0973d5699548428f689 (controllers e documentos EOH/Godforge) e lang do jar local GTLsupb-2.6.4. Valores/condições conferidos no port; funções ausentes não anunciadas.
+- Gemini e família coil parallel: bônus por 900K, maior limite entre bobina e hatch, hooks de Thread/Laser conforme origem; sem restrição repetindo o recipe type. Steam: removidos requisitos triviais, paralelos expressos como máximo em vez de padrão e teto iguais.
+- EOH: efeitos dos campos, excesso de gases e acumulação da compensação sob condições constantes; Fuel Cell: água/recuperação, volumes iguais, perdas/desgaste e estados de carga; Ore Processor: sete rotas por circuito; Data Center: consumo por hatch; Supercomputing: CWU/fator/MFPC; Eye of Wood: falta ou excesso reduz chance. Nano Forge, Hyper e Weather adaptados ao comportamento do port.
+- Fonte única e Java/PT regenerados; runData inglês concluído antes do gate de paridade. 148 tooltips válidas, 290 números rastreados, zero sem confirmação. EN/PT conferidos contra a renderização das 148 specs, sem overrides manuais ingleses; linhas até 72 caracteres visíveis.
+- Convenção e relatório atualizados; referências adicionadas a THIRD_PARTY_NOTICES. GTNASources mantém os créditos existentes; nenhuma nova permissão individual alegada.
+- Validação final: spotlessCheck, compileJava, runUnitTests PASS (incluindo PortLangParityTest e MultiblockTooltipStandardTest 148); runData PASS em execução separada; git diff --check PASS. Gate completo solicitado executado, mas GameTests travaram novamente no segundo lote em dimensionalFocusEngravingArrayRunsRecipe / BlockPattern.checkPatternAt, como G-0251–G-0253; stacks registrados e processo encerrado. GameTests NÃO aprovados.
+- Pendente: autor revisar visual e conteúdo no cliente. Nenhum runClient solicitado/iniciado nesta revisão. Sem commit/push; mudanças locais.
+
+### 2026-10-10 — GTMThings removed; NexusBlockPattern rewritten
+
+The author chose to drop all GTMThings-derived code instead of waiting for a permission reply (GTMThings declares no license). `NexusBlockPattern` was rewritten as GTNA code on GTCEu's LGPL `BlockPattern`: it keeps GTCEu's pattern-to-world transform, hatch-limit order and facing pass, and adds the terminal features (repetitions, mirror, no-hatch, replace, demolition, AE2, modules) with per-run state. Behaviour changes: replace mode checks for free inventory room before taking a block, a block whose placement fails goes back to the player, and `MultiblockState.clean/update` are called directly (they're public, so no reflection). The GTMThings dev dependency (build.gradle), the `gtmthings` source id/lang key, the `me_export_buffer` "Source: GTMThings" tooltip and all code comments citing GTMThings were removed. THIRD_PARTY_NOTICES no longer lists GTMThings and now credits GTCEu for the auto-build transform.
+Validation: `spotlessCheck runUnitTests runGameTestServer runData --offline`, with 326/326 GameTests passing (including `nexusTerminalMirrorAndDemolitionUseBoundedPatternCells`). Manual check pending: build a large structure (e.g. Forge of Gods) with the terminal in survival with AE2, and test the replace mode.

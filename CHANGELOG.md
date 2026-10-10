@@ -1,5 +1,45 @@
 # Changelog
 
+## [Unreleased]
+
+### ⚠️ Personal Space moved to ModernSpace
+
+- **Personal Space is no longer part of GTNA.** It now lives in its own mod, **ModernSpace**. GTNA no longer depends
+  on **Infiniverse**.
+- **Keep your personal dimensions:** install ModernSpace together with this GTNA version. The first time an old world
+  opens, ModernSpace imports it automatically: dimensions, settings, portals, players inside a personal dimension and
+  portal items. The files it changes are backed up with a `.modernspace_backup` suffix.
+- Without ModernSpace, old portals disappear and the personal dimensions stop loading. Their folders stay in the save.
+
+### New multiblocks (ported from GTOCore)
+
+- **Processing:** High Energy Laser Lathe, Extreme Compressor, Gemini Containment System (packer), Giant
+  Electrochemical Workstation, Heavy Rolling (bender), Hand of Arachne (loom), Desulfurizer (with an optional extension
+  structure), Rare Earth Centrifugal, Lightning Rod (arc generator), PCB Factory (three structure tiers, chosen with a
+  screwdriver), Compound Extreme Cooling Unit (vacuum freezer, atomization and, on its larger structure, plasma
+  condensing), Dimensional Focus Engraving Array, Star Ultimate Material Forge Factory and Space Probe Receiver (works
+  only in space).
+- **Plasma and power:** Hyperdimensional Plasma Fusion Core (runs Plasma Forge recipes in parallel), Hyper Reactor and
+  Advanced Hyper Reactor (booster plasmas set per recipe), Fuel Cell Generator (absorption, transfer and release modes
+  with membrane electrodes and redox-flow electrolytes).
+- **Research:** Supercomputing Center (three tiers: HPCA, NICH and GWCA components, MFPC coolant in the new Thermal
+  Conductor Hatch), Data Center and Analysis & Research Center.
+- New recipe types, casings, glasses, materials and parts that come with them. Some GTOCore recipe types ship empty
+  (or with only the recipes whose ingredients exist outside GTOCore) so modpacks can fill them.
+- A new check makes sure every recipe type, block and item has an English and Portuguese name and a model.
+
+### Multiblock tooltips
+
+- Every GTNA multiblock now uses the same tooltip layout: machine type, a flavor line, a short description and
+  colored bullet lines for bonuses, numbers and restrictions, followed by the source addon.
+- Several tooltip numbers were wrong and now match the machines (Large Steam Circuit Assembler parallel, Large Steam
+  Centrifuge, Thermal Centrifuge and Alloy Smelter speed, Steam Elevator Apiary and Beacon modules).
+
+### Batteries
+
+- The Really, Extremely, Insanely and Mega Ultimate Batteries are now rechargeable batteries (UEV, UIV, UXV and OpV),
+  tagged `gtceu:batteries/<tier>`.
+
 ## [0.5.2] - 2026-10-07
 
 Big endgame update. Changes below are relative to 0.5.1.

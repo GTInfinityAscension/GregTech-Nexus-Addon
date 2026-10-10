@@ -10,12 +10,10 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import com.raishxn.gtna.GTNACORE;
 import com.raishxn.gtna.network.packet.CKnowledgePurchase;
 import com.raishxn.gtna.network.packet.CLocateConnectionPacket;
-import com.raishxn.gtna.network.packet.CPersonalSpaceChangeSettings;
 import com.raishxn.gtna.network.packet.CStructureRefreshPacket;
 import com.raishxn.gtna.network.packet.SKnowledgeSync;
 import com.raishxn.gtna.network.packet.SKubeModuleDescriptions;
 import com.raishxn.gtna.network.packet.SModuleCountPacket;
-import com.raishxn.gtna.network.packet.SPersonalSpaceWorldList;
 import com.raishxn.gtna.network.packet.SRegionHighlightPacket;
 import com.raishxn.gtna.network.packet.SStructureDetectHighlight;
 import com.raishxn.gtna.network.packet.SStructureGhostPreviewPacket;
@@ -108,18 +106,6 @@ public class GTNANetworkHandler {
                 .encoder(CKnowledgePurchase::encode)
                 .decoder(CKnowledgePurchase::decode)
                 .consumerMainThread(CKnowledgePurchase::handle)
-                .add();
-
-        // PersonalSpace: allow-lists and dimension settings (S2C), editor result (C2S)
-        CHANNEL.messageBuilder(SPersonalSpaceWorldList.class, packetId++, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder(SPersonalSpaceWorldList::encode)
-                .decoder(SPersonalSpaceWorldList::decode)
-                .consumerNetworkThread(SPersonalSpaceWorldList::handle)
-                .add();
-        CHANNEL.messageBuilder(CPersonalSpaceChangeSettings.class, packetId++, NetworkDirection.PLAY_TO_SERVER)
-                .encoder(CPersonalSpaceChangeSettings::encode)
-                .decoder(CPersonalSpaceChangeSettings::decode)
-                .consumerNetworkThread(CPersonalSpaceChangeSettings::handle)
                 .add();
     }
 

@@ -418,7 +418,7 @@ public class GodforgeModuleMachine extends WorkableMultiblockMachine
         probe.parallel = maxParallel;
         int subTickParallel = (int) Math.min(Integer.MAX_VALUE, (long) (maxParallel * probe.multiplierUnderOneTick()));
         int parallel = ParallelLogic.getParallelAmountWithoutEU(machine, recipe, Math.max(1, subTickParallel));
-        // Creative/infinite parts (GTMThings) only answer through the recipe handler path, which ParallelLogic's
+        // Creative/infinite parts only answer through the recipe handler path, which ParallelLogic's
         // inventory count does not see; probe the parallel amount through that path instead.
         if (parallel <= 0) parallel = parallelByMatching(module, recipe, Math.max(1, subTickParallel));
         if (parallel <= 0) return ModifierFunction.NULL;

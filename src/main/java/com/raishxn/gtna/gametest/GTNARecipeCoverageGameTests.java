@@ -236,7 +236,7 @@ public final class GTNARecipeCoverageGameTests {
             for (var options : node.inputs()) {
                 if (options.isEmpty() || options.stream().anyMatch(producedAny::contains)) continue;
                 String first = options.get(0);
-                if (first.contains(":gtceu:") || first.contains(":gtmthings:")) foreignDeadEnds.add(first);
+                if (first.contains(":gtceu:")) foreignDeadEnds.add(first);
             }
         }
         section(lines, "GTCEu inputs no recipe produces", foreignDeadEnds);

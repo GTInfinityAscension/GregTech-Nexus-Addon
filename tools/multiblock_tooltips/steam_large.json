@@ -1,0 +1,616 @@
+{
+  "large_steam_crusher": {
+    "type": "Macerator",
+    "flavor": "Rocks go in, gravel comes out. Nobody asks about the noise.",
+    "desc": [
+      "A steam-driven crushing hall that grinds ores",
+      "and stone in *bulk batches*."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *128*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Macerador",
+      "flavor": "Pedra entra, cascalho sai. Ninguém pergunta do barulho.",
+      "desc": [
+        "Um salão de trituração a vapor que mói minérios",
+        "e pedra em *lotes enormes*."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *128*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_furnace": {
+    "type": "Furnace",
+    "flavor": "Do not attempt to bake cookies inside. They will vaporize.",
+    "desc": [
+      "An industrial-grade steam smelting facility",
+      "that cooks entire stockpiles at once."
+    ],
+    "pro": [
+      "*10x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *128*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Fornalha",
+      "flavor": "Não tente assar biscoitos aqui dentro. Eles evaporam.",
+      "desc": [
+        "Uma instalação industrial de fundição a vapor",
+        "que cozinha estoques inteiros de uma vez."
+      ],
+      "pro": [
+        "Velocidade *10x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *128*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_alloy_smelter": {
+    "type": "Alloy Smelter",
+    "flavor": "Bronze Age metallurgy, now with industrial ambition.",
+    "desc": [
+      "A high-pressure steam chamber that fuses",
+      "metals into *alloys* by the stack."
+    ],
+    "pro": [
+      "*~1.75x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *64*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Fundidora de Ligas",
+      "flavor": "Metalurgia da Idade do Bronze, agora com ambição industrial.",
+      "desc": [
+        "Uma câmara de vapor de alta pressão que funde",
+        "metais em *ligas* aos montes."
+      ],
+      "pro": [
+        "Velocidade *~1,75x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *64*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_hammer": {
+    "type": "Forge Hammer",
+    "flavor": "Stop. Hammer time.",
+    "desc": [
+      "A heavy steam forge hammer for",
+      "*high-throughput* forging."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *64*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Martelo de Forja",
+      "flavor": "Para tudo. É hora do martelo.",
+      "desc": [
+        "Um martelo de forja a vapor pesado para",
+        "forjar em *alto volume*."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *64*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_compressor": {
+    "type": "Compressor",
+    "flavor": "Under pressure, everything becomes a plate eventually.",
+    "desc": [
+      "A high-throughput steam compressor for",
+      "*bulk* material processing."
+    ],
+    "pro": [
+      "*2.5x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *48*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Compressor",
+      "flavor": "Sob pressão, tudo vira placa uma hora.",
+      "desc": [
+        "Um compressor a vapor de alto volume para",
+        "processar material *em massa*."
+      ],
+      "pro": [
+        "Velocidade *2,5x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *48*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_extractor": {
+    "type": "Extractor",
+    "flavor": "Squeezes the juice out of things that never had juice.",
+    "desc": [
+      "A compact steam extractor with a shared",
+      "frame for *bulk* extraction."
+    ],
+    "pro": [
+      "*~1.75x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *48*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Extrator",
+      "flavor": "Espreme suco de coisas que nunca tiveram suco.",
+      "desc": [
+        "Um extrator a vapor compacto de estrutura",
+        "compartilhada para extração *em massa*."
+      ],
+      "pro": [
+        "Velocidade *~1,75x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *48*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_ore_washer": {
+    "type": "Ore Washer",
+    "flavor": "The cleanest ores in the Bronze Age. Mom would be proud.",
+    "desc": [
+      "A large steam washing basin that rinses",
+      "crushed ores *by the hundreds*."
+    ],
+    "pro": [
+      "*5x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *96*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Lavador de Minério",
+      "flavor": "Os minérios mais limpos da Idade do Bronze. A mãe ficaria orgulhosa.",
+      "desc": [
+        "Uma grande bacia de lavagem a vapor que enxágua",
+        "minérios triturados *às centenas*."
+      ],
+      "pro": [
+        "Velocidade *5x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *96*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_circuit_assembler": {
+    "type": "Circuit Assembler",
+    "flavor": "Hand-soldered circuits, minus the hands.",
+    "desc": [
+      "A steam-era circuit line that targets one",
+      "circuit: put *16 engraved circuits* in the",
+      "input bus to lock it to that output."
+    ],
+    "pro": [
+      "Multiply Mode: *2x* output",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *4*"
+    ],
+    "con": [
+      "Multiply Mode makes recipes *4x* slower"
+    ],
+    "pt": {
+      "type": "Montadora de Circuitos",
+      "flavor": "Circuitos soldados à mão, só que sem as mãos.",
+      "desc": [
+        "Uma linha de circuitos da era do vapor focada em",
+        "um circuito: coloque *16 circuitos gravados* no",
+        "barramento de entrada para travar nessa saída."
+      ],
+      "pro": [
+        "Modo Multiplicar: saída *2x*",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *4*"
+      ],
+      "con": [
+        "O Modo Multiplicar deixa as receitas *4x* mais lentas"
+      ]
+    }
+  },
+  "large_steam_mixer": {
+    "type": "Mixer",
+    "flavor": "Shaken, not stirred. Actually, both.",
+    "desc": [
+      "A bulk steam mixing chamber for",
+      "*dusts and fluids*."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *64*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Misturador",
+      "flavor": "Batido, não mexido. Na verdade, os dois.",
+      "desc": [
+        "Uma câmara de mistura a vapor em massa para",
+        "*pós e fluidos*."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *64*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_centrifuge": {
+    "type": "Centrifuge",
+    "flavor": "Round and round it goes, where it stops, everyone knows.",
+    "desc": [
+      "A reinforced high-throughput steam centrifuge",
+      "with *fluid* support."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *64*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Centrífuga",
+      "flavor": "Roda, roda, roda, e todo mundo sabe onde para.",
+      "desc": [
+        "Uma centrífuga a vapor reforçada de alto volume",
+        "com suporte a *fluidos*."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *64*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_thermal_centrifuge": {
+    "type": "Thermal Centrifuge",
+    "flavor": "Spinning and roasting: the ore's worst day.",
+    "desc": [
+      "A firebox-heated thermal centrifuge for",
+      "*heavy* steam ore processing."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *64*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Centrífuga Térmica",
+      "flavor": "Girando e assando: o pior dia da vida do minério.",
+      "desc": [
+        "Uma centrífuga térmica aquecida por fornalha para",
+        "processamento *pesado* de minério a vapor."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *64*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_bath": {
+    "type": "Chemical Bath",
+    "flavor": "A spa day for ores. No cucumbers provided.",
+    "desc": [
+      "A large steam chemical bath for early",
+      "*bulk* washing."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *64*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Banho Químico",
+      "flavor": "Um dia de spa para minérios. Pepino não incluso.",
+      "desc": [
+        "Um grande banho químico a vapor para lavagem",
+        "*em massa* no início do jogo."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *64*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_lathe": {
+    "type": "Lathe",
+    "flavor": "Turning rods since before electricity was cool.",
+    "desc": [
+      "A steam lathe for *bulk* turning of",
+      "rods and bolts."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *16*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Torno",
+      "flavor": "Torneando barras desde antes da eletricidade virar moda.",
+      "desc": [
+        "Um torno a vapor para tornear barras e",
+        "parafusos *em massa*."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *16*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_cutting": {
+    "type": "Cutter",
+    "flavor": "Measure twice, cut sixteen times.",
+    "desc": [
+      "A steam cutting machine for *bulk*",
+      "plates, bolts and slices."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *16*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Cortadora",
+      "flavor": "Meça duas vezes, corte dezesseis.",
+      "desc": [
+        "Uma cortadora a vapor para placas, parafusos",
+        "e fatias *em massa*."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *16*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_bending": {
+    "type": "Bender",
+    "flavor": "Bend it like Bessemer.",
+    "desc": [
+      "A steam bending machine that turns ingots",
+      "into *plates and foils* in bulk."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *16*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Dobradora",
+      "flavor": "Dobra que nem o Bessemer.",
+      "desc": [
+        "Uma dobradora a vapor que transforma lingotes",
+        "em *placas e folhas* em massa."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *16*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_extruder": {
+    "type": "Extruder",
+    "flavor": "Like a pasta maker, but for metal and regret.",
+    "desc": [
+      "A steam extruder that pushes metal through",
+      "*shaped dies* in bulk."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *16*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Extrusora",
+      "flavor": "Tipo máquina de macarrão, só que de metal e arrependimento.",
+      "desc": [
+        "Uma extrusora a vapor que empurra metal por",
+        "*moldes* em massa."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *16*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_wiremill": {
+    "type": "Wiremill",
+    "flavor": "Thin is in. Very, very thin.",
+    "desc": [
+      "A steam wiremill that draws ingots into",
+      "*wires* in bulk."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *16*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Trefiladora",
+      "flavor": "Fino está na moda. Muito, muito fino.",
+      "desc": [
+        "Uma trefiladora a vapor que puxa lingotes em",
+        "*fios* em massa."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *16*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_sifter": {
+    "type": "Sifter",
+    "flavor": "Panning for gems, minus the river and the tetanus.",
+    "desc": [
+      "A steam sifter that shakes crushed ores",
+      "for *gems and dusts* in bulk."
+    ],
+    "pro": [
+      "*2x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *16*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Peneira",
+      "flavor": "Garimpo de gemas, sem o rio e sem o tétano.",
+      "desc": [
+        "Uma peneira a vapor que sacode minérios triturados",
+        "atrás de *gemas e pós* em massa."
+      ],
+      "pro": [
+        "Velocidade *2x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *16*"
+      ],
+      "con": []
+    }
+  },
+  "large_steam_forming_press": {
+    "type": "Forming Press",
+    "flavor": "Pressing matters, one stamp at a time.",
+    "desc": [
+      "A steam forming press for molds, lenses",
+      "and *pressed parts* in bulk."
+    ],
+    "pro": [
+      "*2.5x* speed vs. singleblock",
+      "High pressure: *2x* speed, *2x* steam"
+    ],
+    "num": [
+      "Parallel: up to *32*"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Prensa de Moldagem",
+      "flavor": "Assuntos prementes, uma prensada de cada vez.",
+      "desc": [
+        "Uma prensa a vapor para moldes, lentes e",
+        "*peças prensadas* em massa."
+      ],
+      "pro": [
+        "Velocidade *2,5x* maior que a singleblock",
+        "Alta pressão: *2x* velocidade, *2x* vapor"
+      ],
+      "num": [
+        "Paralelos: até *32*"
+      ],
+      "con": []
+    }
+  }
+}

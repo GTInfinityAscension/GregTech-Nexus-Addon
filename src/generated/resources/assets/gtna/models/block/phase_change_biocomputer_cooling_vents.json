@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "gtna:block/casings/about_computer/phase_change_biocomputer_cooling_vents"
+  }
+}

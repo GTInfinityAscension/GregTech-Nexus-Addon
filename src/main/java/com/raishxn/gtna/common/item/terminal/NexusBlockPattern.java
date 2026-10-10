@@ -1,8 +1,11 @@
 package com.raishxn.gtna.common.item.terminal;
 
+import com.gregtechceu.gtceu.api.block.MetaMachineBlock;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiController;
+import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart;
+import com.gregtechceu.gtceu.api.machine.multiblock.part.MultiblockPartMachine;
 import com.gregtechceu.gtceu.api.pattern.BlockPattern;
 import com.gregtechceu.gtceu.api.pattern.MultiblockState;
 import com.gregtechceu.gtceu.api.pattern.TraceabilityPredicate;
@@ -13,625 +16,435 @@ import com.lowdragmc.lowdraglib.utils.BlockInfo;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.NonNullList;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
 
-import com.mojang.datafixers.util.Pair;
 import com.raishxn.gtna.api.machine.multiblock.GTNASubPatterns;
 import com.raishxn.gtna.api.machine.multiblock.ISubPatternMachine;
-import com.raishxn.gtna.common.item.terminal.ui.NexusTerminalUIFactory;
-import it.unimi.dsi.fastutil.ints.IntObjectPair;
+import com.raishxn.gtna.common.item.terminal.ui.BlockSelectionConfigWidget;
+import com.raishxn.gtna.common.item.terminal.ui.NexusTerminalUIFactory.AutoBuildSetting;
+import com.raishxn.gtna.integration.ae2.NexusAE2Link;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import org.apache.commons.lang3.ArrayUtils;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.*;
-import java.util.function.BiPredicate;
-import java.util.function.Consumer;
 
 /**
- * Extended BlockPattern that supports advanced auto-building features
- * for the Nexus Structure Terminal. Based on GTMThings AdvancedBlockPattern.
+ * Auto-builder of the Nexus Structure Terminal. It walks a GTCEu {@link BlockPattern} cell by cell and places the
+ * blocks the terminal settings ask for: chosen repetitions of stretchable aisles, mirrored build, no-hatch mode,
+ * replacement of structural blocks, demolition of cells that must be air, items from an AE2 network, and the first
+ * N registered modules (sub-patterns) of the machine.
+ * <p>
+ * The pattern-to-world transform ({@link #toWorldOffset}), the order in which hatch limits are honoured
+ * ({@link #pickCandidates}) and the final facing pass follow GTCEu Modern's own {@code BlockPattern#autoBuild}
+ * (LGPL-3.0), so a structure built here is the structure GTCEu checks.
  */
-public class NexusBlockPattern extends BlockPattern {
+public final class NexusBlockPattern {
 
-    static Direction[] FACINGS = { Direction.SOUTH, Direction.NORTH, Direction.WEST, Direction.EAST, Direction.UP,
-            Direction.DOWN };
-    static Direction[] FACINGS_H = { Direction.SOUTH, Direction.NORTH, Direction.WEST, Direction.EAST };
+    private static final Direction[] FACING_ORDER = { Direction.SOUTH, Direction.NORTH, Direction.WEST,
+            Direction.EAST, Direction.UP, Direction.DOWN };
 
-    public final int[][] aisleRepetitions;
-    public final RelativeDirection[] structureDir;
-    protected final TraceabilityPredicate[][][] blockMatches;
-    protected final int fingerLength;
-    protected final int thumbLength;
-    protected final int palmLength;
-    protected final int[] centerOffset;
+    private final TraceabilityPredicate[][][] cells; // [aisle][row][column]
+    private final RelativeDirection[] axes;
+    private final int[][] aisleRange;
+    private final int[] centerOffset; // x, y, z, minZ, maxZ
 
-    public NexusBlockPattern(TraceabilityPredicate[][][] predicatesIn, RelativeDirection[] structureDir,
-                             int[][] aisleRepetitions, int[] centerOffset) {
-        super(predicatesIn, structureDir, aisleRepetitions, centerOffset);
-        this.blockMatches = predicatesIn;
-        this.fingerLength = predicatesIn.length;
-        this.structureDir = structureDir;
-        this.aisleRepetitions = aisleRepetitions;
-
-        if (this.fingerLength > 0) {
-            this.thumbLength = predicatesIn[0].length;
-            if (this.thumbLength > 0) {
-                this.palmLength = predicatesIn[0][0].length;
-            } else {
-                this.palmLength = 0;
-            }
-        } else {
-            this.thumbLength = 0;
-            this.palmLength = 0;
-        }
-
+    private NexusBlockPattern(TraceabilityPredicate[][][] cells, RelativeDirection[] axes, int[][] aisleRange,
+                              int[] centerOffset) {
+        this.cells = cells;
+        this.axes = axes;
+        this.aisleRange = aisleRange;
         this.centerOffset = centerOffset;
     }
 
+    /** Reads a GTCEu pattern; returns null if its layout cannot be read. */
     @Nullable
-    public static NexusBlockPattern fromBlockPattern(BlockPattern blockPattern) {
+    public static NexusBlockPattern fromBlockPattern(@Nullable BlockPattern pattern) {
+        if (pattern == null) return null;
         try {
-            Class<?> clazz = BlockPattern.class;
-            Field blockMatchesField = clazz.getDeclaredField("blockMatches");
-            blockMatchesField.setAccessible(true);
-            TraceabilityPredicate[][][] blockMatches = (TraceabilityPredicate[][][]) blockMatchesField
-                    .get(blockPattern);
-
-            Field structureDirField = clazz.getDeclaredField("structureDir");
-            structureDirField.setAccessible(true);
-            RelativeDirection[] structureDir = (RelativeDirection[]) structureDirField.get(blockPattern);
-
-            Field aisleRepetitionsField = clazz.getDeclaredField("aisleRepetitions");
-            aisleRepetitionsField.setAccessible(true);
-            int[][] aisleRepetitions = (int[][]) aisleRepetitionsField.get(blockPattern);
-
-            Field centerOffsetField = clazz.getDeclaredField("centerOffset");
-            centerOffsetField.setAccessible(true);
-            int[] centerOffset = (int[]) centerOffsetField.get(blockPattern);
-
-            return new NexusBlockPattern(blockMatches, structureDir, aisleRepetitions, centerOffset);
-        } catch (Exception ignored) {}
-        return null;
-    }
-
-    public void autoBuild(Player player, MultiblockState worldState, NexusTerminalUIFactory.AutoBuildSetting setting,
-                          ItemStack terminalStack) {
-        buildThisPattern(player, worldState, setting, terminalStack);
-
-        // "Module Build" > 0: after the main structure, also build the first N modules (sub-patterns)
-        // registered for this machine — mirroring the GTMThings/GTO advanced terminal.
-        int moduleCount = setting.getModuleBuild();
-        if (moduleCount <= 0) {
-            return;
-        }
-        IMultiController controller = worldState.getController();
-        if (controller == null) {
-            return;
-        }
-        List<BlockPattern> modules = new ArrayList<>(GTNASubPatterns.get(controller.self().getDefinition()));
-        if (controller.self() instanceof ISubPatternMachine host) {
-            modules.addAll(host.gtna$getSubPatterns());
-        }
-        int limit = Math.min(moduleCount, modules.size());
-        for (int i = 0; i < limit; i++) {
-            NexusBlockPattern sub = NexusBlockPattern.fromBlockPattern(modules.get(i));
-            if (sub != null) {
-                sub.buildThisPattern(player, worldState, setting, terminalStack);
-            }
-        }
-    }
-
-    private void buildThisPattern(Player player, MultiblockState worldState,
-                                  NexusTerminalUIFactory.AutoBuildSetting setting,
-                                  ItemStack terminalStack) {
-        Level world = player.level();
-        int minZ = -centerOffset[4];
-        clearWorldState(worldState);
-        IMultiController controller = worldState.getController();
-        BlockPos centerPos = controller.self().getPos();
-        Direction facing = controller.self().getFrontFacing();
-        Direction upwardsFacing = controller.self().getUpwardsFacing();
-        boolean isFlipped = setting.isMirrorBuild() || controller.self().isFlipped();
-        Object2IntOpenHashMap<SimplePredicate> cacheGlobal = worldState.getGlobalCount();
-        Object2IntOpenHashMap<SimplePredicate> cacheLayer = worldState.getLayerCount();
-        Map<BlockPos, Object> blocks = new HashMap<>();
-        Set<BlockPos> placeBlockPos = new HashSet<>();
-        blocks.put(centerPos, controller);
-        Map<TraceabilityPredicate, List<ItemStack>> candidateCache = new IdentityHashMap<>();
-
-        int[] repeat = new int[this.fingerLength];
-        for (int h = 0; h < this.fingerLength; h++) {
-            var minH = aisleRepetitions[h][0];
-            var maxH = aisleRepetitions[h][1];
-            if (minH != maxH) {
-                repeat[h] = Math.max(minH, Math.min(maxH, setting.getRepetitions()));
-            } else {
-                repeat[h] = minH;
-            }
-        }
-
-        boolean noHatch = setting.isNoHatchMode();
-        boolean replaceMode = setting.isReplaceMode();
-        int useAE = setting.isUseAE() ? 1 : 0;
-
-        for (int c = 0, z = minZ++, r; c < this.fingerLength; c++) {
-            for (r = 0; r < repeat[c]; r++) {
-                cacheLayer.clear();
-                for (int b = 0, y = -centerOffset[1]; b < this.thumbLength; b++, y++) {
-                    for (int a = 0, x = -centerOffset[0]; a < this.palmLength; a++, x++) {
-                        TraceabilityPredicate predicate = this.blockMatches[c][b][a];
-                        // Ignored space dominates huge structures; no world access or reflection is needed.
-                        if (predicate.common.contains(SimplePredicate.ANY)) continue;
-                        BlockPos pos = setActualRelativeOffset(x, y, z, facing, upwardsFacing, isFlipped)
-                                .offset(centerPos.getX(), centerPos.getY(), centerPos.getZ());
-                        updateWorldState(worldState, pos, predicate);
-                        // Never replace the root controller or edit ignored cells.
-                        if (pos.equals(centerPos) || predicate.common.contains(SimplePredicate.ANY)) continue;
-                        // Replace upgrades structural blocks, never installed parts or their inventories/NBT.
-                        // Other multiblock controllers (e.g. Forge of Gods modules in their slots) are kept too.
-                        if (replaceMode && world.getBlockState(pos).hasBlockEntity() &&
-                                (MetaMachine.getMachine(world,
-                                        pos) instanceof com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart ||
-                                        MetaMachine.getMachine(world,
-                                                pos) instanceof com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiController)) {
-                            blocks.put(pos, world.getBlockState(pos));
-                            for (SimplePredicate limit : predicate.limited) limit.testLimited(worldState);
-                            continue;
-                        }
-                        if (setting.isDemolitionMode() && predicate.limited.isEmpty() &&
-                                predicate.common.size() == 1 && predicate.common.contains(SimplePredicate.AIR)) {
-                            var existing = world.getBlockState(pos);
-                            if (!existing.isAir() && existing.getDestroySpeed(world, pos) >= 0 &&
-                                    world.mayInteract(player, pos) && player.mayBuild() &&
-                                    !net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(
-                                            new net.minecraftforge.event.level.BlockEvent.BreakEvent(world, pos,
-                                                    existing, player))) {
-                                world.destroyBlock(pos, !player.isCreative(), player);
-                            }
-                            continue;
-                        }
-
-                        ItemStack replaceItemStack = null;
-                        if (!world.isEmptyBlock(pos)) {
-                            Block blockStateBlock = world.getBlockState(pos).getBlock();
-                            if (replaceMode && !(blockStateBlock instanceof net.minecraft.world.level.block.AirBlock)) {
-                                replaceItemStack = blockStateBlock.asItem().getDefaultInstance();
-                            } else {
-                                blocks.put(pos, world.getBlockState(pos));
-                                for (SimplePredicate limit : predicate.limited) {
-                                    limit.testLimited(worldState);
-                                }
-                                continue;
-                            }
-                        }
-
-                        boolean find = false;
-                        BlockInfo[] infos = new BlockInfo[0];
-                        for (SimplePredicate limit : predicate.limited) {
-                            if (limit.minLayerCount > 0 && isPlaceHatch(limit.candidates.get(), noHatch)) {
-                                int curr = cacheLayer.getInt(limit);
-                                if (curr < limit.minLayerCount &&
-                                        (limit.maxLayerCount == -1 || curr < limit.maxLayerCount)) {
-                                    cacheLayer.addTo(limit, 1);
-                                } else {
-                                    continue;
-                                }
-                            } else {
-                                continue;
-                            }
-                            infos = limit.candidates == null ? null : limit.candidates.get();
-                            find = true;
-                            break;
-                        }
-                        if (!find) {
-                            for (SimplePredicate limit : predicate.limited) {
-                                if (limit.minCount > 0 && isPlaceHatch(limit.candidates.get(), noHatch)) {
-                                    int curr = cacheGlobal.getInt(limit);
-                                    if (curr < limit.minCount && (limit.maxCount == -1 || curr < limit.maxCount)) {
-                                        cacheGlobal.addTo(limit, 1);
-                                    } else {
-                                        continue;
-                                    }
-                                } else {
-                                    continue;
-                                }
-                                infos = limit.candidates == null ? null : limit.candidates.get();
-                                find = true;
-                                break;
-                            }
-                        }
-                        if (!find) {
-                            for (SimplePredicate limit : predicate.limited) {
-                                if (!isPlaceHatch(limit.candidates.get(), noHatch)) {
-                                    continue;
-                                }
-                                if (limit.maxLayerCount != -1 &&
-                                        cacheLayer.getOrDefault(limit, Integer.MAX_VALUE) == limit.maxLayerCount) {
-                                    continue;
-                                }
-                                if (limit.maxCount != -1 &&
-                                        cacheGlobal.getOrDefault(limit, Integer.MAX_VALUE) == limit.maxCount) {
-                                    continue;
-                                }
-                                cacheLayer.addTo(limit, 1);
-                                cacheGlobal.addTo(limit, 1);
-                                infos = ArrayUtils.addAll(infos,
-                                        limit.candidates == null ? null : limit.candidates.get());
-                            }
-                            for (SimplePredicate common : predicate.common) {
-                                if (common.candidates != null && predicate.common.size() > 1 &&
-                                        !isPlaceHatch(common.candidates.get(), noHatch)) {
-                                    continue;
-                                }
-                                infos = ArrayUtils.addAll(infos,
-                                        common.candidates == null ? null : common.candidates.get());
-                            }
-                        }
-
-                        List<ItemStack> candidates;
-                        if (predicate.limited.isEmpty()) {
-                            BlockInfo[] selectedInfos = infos;
-                            candidates = candidateCache.computeIfAbsent(predicate,
-                                    key -> applySetting(selectedInfos, setting, terminalStack));
-                        } else {
-                            // Limited choices depend on global/layer counts and cannot share this cache.
-                            candidates = applySetting(infos, setting, terminalStack);
-                        }
-
-                        ItemStack existingItem = replaceItemStack;
-                        if (replaceMode && existingItem != null && candidates.stream()
-                                .anyMatch(candidate -> ItemStack.isSameItem(candidate, existingItem))) {
-                            continue;
-                        }
-
-                        // Check AE2 network first if enabled
-                        ItemStack found = null;
-                        IItemHandler handler = null;
-                        int foundSlot = -1;
-
-                        if (useAE == 1 && com.raishxn.gtna.integration.ae2.NexusAE2Link.isAE2Available()) {
-                            ItemStack extracted = com.raishxn.gtna.integration.ae2.NexusAE2Link
-                                    .extractItem(terminalStack, world, player, candidates);
-                            if (extracted != null) {
-                                found = extracted;
-                                handler = new ItemStackHandler(NonNullList.withSize(1, extracted));
-                                foundSlot = 0;
-                            }
-                        }
-
-                        // Fallback to check inventory for matching items
-                        if (found == null) {
-                            if (!player.isCreative()) {
-                                var foundHandler = getMatchStackWithHandler(candidates,
-                                        player.getCapability(ForgeCapabilities.ITEM_HANDLER), player);
-                                if (foundHandler != null) {
-                                    foundSlot = foundHandler.firstInt();
-                                    handler = foundHandler.second();
-                                    found = handler.getStackInSlot(foundSlot).copy();
-                                }
-                            } else {
-                                for (ItemStack candidate : candidates) {
-                                    found = candidate.copy();
-                                    if (!found.isEmpty() && found.getItem() instanceof BlockItem) {
-                                        break;
-                                    }
-                                    found = null;
-                                }
-                            }
-                        }
-
-                        if (found == null) continue;
-
-                        // Handle replace mode: remove old block and return to inventory
-                        IItemHandler holderHandler = null;
-                        int holderSlot = -1;
-                        if (replaceMode && replaceItemStack != null) {
-                            Pair<IItemHandler, Integer> holderResult = foundHolderSlot(player, replaceItemStack);
-                            holderHandler = holderResult.getFirst();
-                            holderSlot = holderResult.getSecond();
-                            if (holderHandler != null && holderSlot < 0) {
-                                continue;
-                            }
-                        }
-
-                        if (replaceMode && replaceItemStack != null) {
-                            world.removeBlock(pos, true);
-                            if (holderHandler != null) holderHandler.insertItem(holderSlot, replaceItemStack, false);
-                        }
-
-                        BlockItem itemBlock = (BlockItem) found.getItem();
-                        BlockPlaceContext context = new BlockPlaceContext(world, player, InteractionHand.MAIN_HAND,
-                                found, BlockHitResult.miss(player.getEyePosition(0), Direction.UP, pos));
-                        InteractionResult interactionResult = itemBlock.place(context);
-                        if (interactionResult != InteractionResult.FAIL) {
-                            placeBlockPos.add(pos);
-                            if (handler != null) {
-                                handler.extractItem(foundSlot, 1, false);
-                            }
-                        }
-                        if (world.getBlockEntity(pos) instanceof IMachineBlockEntity machineBlockEntity) {
-                            blocks.put(pos, machineBlockEntity.getMetaMachine());
-                        } else {
-                            blocks.put(pos, world.getBlockState(pos));
-                        }
-                    }
-                }
-                z++;
-            }
-        }
-        Direction frontFacing = controller.self().getFrontFacing();
-        blocks.forEach((pos, block) -> {
-            if (!(block instanceof IMultiController)) {
-                if (block instanceof BlockState && placeBlockPos.contains(pos)) {
-                    resetFacing(pos, (BlockState) block, frontFacing, (p, f) -> {
-                        Object object = blocks.get(p.relative(f));
-                        return object == null ||
-                                (object instanceof BlockState && ((BlockState) object).getBlock() == Blocks.AIR);
-                    }, state -> world.setBlock(pos, state, 3));
-                } else if (block instanceof MetaMachine machine) {
-                    resetFacing(pos, machine.getBlockState(), frontFacing, (p, f) -> {
-                        Object object = blocks.get(p.relative(f));
-                        if (object == null || (object instanceof BlockState blockState && blockState.isAir())) {
-                            return machine.isFacingValid(f);
-                        }
-                        return false;
-                    }, state -> world.setBlock(pos, state, 3));
-                }
-            }
-        });
-    }
-
-    /**
-     * Determine if a block position should place a hatch or not
-     * based on the noHatch setting.
-     */
-    private boolean isPlaceHatch(BlockInfo[] blockInfos, boolean noHatch) {
-        if (!noHatch || blockInfos == null || blockInfos.length == 0) return true;
-        return Arrays.stream(blockInfos)
-                .anyMatch(info -> !(info.getBlockState()
-                        .getBlock() instanceof com.gregtechceu.gtceu.api.block.MetaMachineBlock block) ||
-                        !isHatchBlock(block));
-    }
-
-    /**
-     * Check if a MetaMachineBlock is a hatch (multiblock part machine).
-     */
-    private final Map<com.gregtechceu.gtceu.api.block.MetaMachineBlock, Boolean> hatchKinds = new HashMap<>();
-
-    private boolean isHatchBlock(com.gregtechceu.gtceu.api.block.MetaMachineBlock machineBlock) {
-        return hatchKinds.computeIfAbsent(machineBlock, this::detectHatchBlock);
-    }
-
-    private boolean detectHatchBlock(com.gregtechceu.gtceu.api.block.MetaMachineBlock machineBlock) {
-        try {
-            var def = machineBlock.getDefinition();
-            var machine = def.createMetaMachine(
-                    (IMachineBlockEntity) def.getBlockEntityType().create(
-                            BlockPos.ZERO, machineBlock.defaultBlockState()));
-            return machine instanceof com.gregtechceu.gtceu.api.machine.multiblock.part.MultiblockPartMachine;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    /**
-     * Apply settings (coil tier selection, etc.) to candidate BlockInfos.
-     */
-    private List<ItemStack> applySetting(BlockInfo[] blockInfos, NexusTerminalUIFactory.AutoBuildSetting setting,
-                                         ItemStack terminalStack) {
-        if (setting.isNoHatchMode() && blockInfos != null) {
-            blockInfos = Arrays.stream(blockInfos)
-                    .filter(info -> !(info.getBlockState()
-                            .getBlock() instanceof com.gregtechceu.gtceu.api.block.MetaMachineBlock block) ||
-                            !isHatchBlock(block))
-                    .toArray(BlockInfo[]::new);
-        }
-        return com.raishxn.gtna.common.item.terminal.ui.BlockSelectionConfigWidget.applySelections(blockInfos,
-                terminalStack);
-    }
-
-    private boolean isHatchBlock(BlockInfo info) {
-        return info.getBlockState().getBlock() instanceof com.gregtechceu.gtceu.api.block.MetaMachineBlock;
-    }
-
-    private Pair<IItemHandler, Integer> foundHolderSlot(Player player, ItemStack targetStack) {
-        IItemHandler handler = null;
-        int foundSlot = -1;
-        if (!player.isCreative()) {
-            handler = player.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null);
-            if (handler != null) {
-                for (int i = 0; i < handler.getSlots(); i++) {
-                    @NotNull
-                    ItemStack stack = handler.getStackInSlot(i);
-                    if (stack.isEmpty()) {
-                        if (foundSlot < 0) {
-                            foundSlot = i;
-                        }
-                    } else if (ItemStack.isSameItemSameTags(targetStack, stack) &&
-                            (stack.getCount() + 1) <= stack.getMaxStackSize()) {
-                                foundSlot = i;
-                            }
-                }
-            }
-        }
-        return new Pair<>(handler, foundSlot);
-    }
-
-    private void clearWorldState(MultiblockState worldState) {
-        try {
-            Class<?> clazz = Class.forName("com.gregtechceu.gtceu.api.pattern.MultiblockState");
-            Method method = clazz.getDeclaredMethod("clean");
-            method.setAccessible(true);
-            method.invoke(worldState);
-        } catch (Exception ignored) {}
-    }
-
-    private void updateWorldState(MultiblockState worldState, BlockPos posIn, TraceabilityPredicate predicate) {
-        try {
-            Class<?> clazz = Class.forName("com.gregtechceu.gtceu.api.pattern.MultiblockState");
-            Method method = clazz.getDeclaredMethod("update", BlockPos.class, TraceabilityPredicate.class);
-            method.setAccessible(true);
-            method.invoke(worldState, posIn, predicate);
-        } catch (Exception ignored) {}
-    }
-
-    private BlockPos setActualRelativeOffset(int x, int y, int z, Direction facing, Direction upwardsFacing,
-                                             boolean isFlipped) {
-        int[] c0 = new int[] { x, y, z }, c1 = new int[3];
-        if (facing == Direction.UP || facing == Direction.DOWN) {
-            Direction of = facing == Direction.DOWN ? upwardsFacing : upwardsFacing.getOpposite();
-            for (int i = 0; i < 3; i++) {
-                switch (structureDir[i].getActualDirection(of)) {
-                    case UP -> c1[1] = c0[i];
-                    case DOWN -> c1[1] = -c0[i];
-                    case WEST -> c1[0] = -c0[i];
-                    case EAST -> c1[0] = c0[i];
-                    case NORTH -> c1[2] = -c0[i];
-                    case SOUTH -> c1[2] = c0[i];
-                }
-            }
-            int xOffset = upwardsFacing.getStepX();
-            int zOffset = upwardsFacing.getStepZ();
-            int tmp;
-            if (xOffset == 0) {
-                tmp = c1[2];
-                c1[2] = zOffset > 0 ? c1[1] : -c1[1];
-                c1[1] = zOffset > 0 ? -tmp : tmp;
-            } else {
-                tmp = c1[0];
-                c1[0] = xOffset > 0 ? c1[1] : -c1[1];
-                c1[1] = xOffset > 0 ? -tmp : tmp;
-            }
-            if (isFlipped) {
-                if (upwardsFacing == Direction.NORTH || upwardsFacing == Direction.SOUTH) {
-                    c1[0] = -c1[0];
-                } else {
-                    c1[2] = -c1[2];
-                }
-            }
-        } else {
-            for (int i = 0; i < 3; i++) {
-                switch (structureDir[i].getActualDirection(facing)) {
-                    case UP -> c1[1] = c0[i];
-                    case DOWN -> c1[1] = -c0[i];
-                    case WEST -> c1[0] = -c0[i];
-                    case EAST -> c1[0] = c0[i];
-                    case NORTH -> c1[2] = -c0[i];
-                    case SOUTH -> c1[2] = c0[i];
-                }
-            }
-            if (upwardsFacing == Direction.WEST || upwardsFacing == Direction.EAST) {
-                int xOffset = upwardsFacing == Direction.EAST ? facing.getClockWise().getStepX() :
-                        facing.getClockWise().getOpposite().getStepX();
-                int zOffset = upwardsFacing == Direction.EAST ? facing.getClockWise().getStepZ() :
-                        facing.getClockWise().getOpposite().getStepZ();
-                int tmp;
-                if (xOffset == 0) {
-                    tmp = c1[2];
-                    c1[2] = zOffset > 0 ? -c1[1] : c1[1];
-                    c1[1] = zOffset > 0 ? tmp : -tmp;
-                } else {
-                    tmp = c1[0];
-                    c1[0] = xOffset > 0 ? -c1[1] : c1[1];
-                    c1[1] = xOffset > 0 ? tmp : -tmp;
-                }
-            } else if (upwardsFacing == Direction.SOUTH) {
-                c1[1] = -c1[1];
-                if (facing.getStepX() == 0) {
-                    c1[0] = -c1[0];
-                } else {
-                    c1[2] = -c1[2];
-                }
-            }
-            if (isFlipped) {
-                if (upwardsFacing == Direction.NORTH || upwardsFacing == Direction.SOUTH) {
-                    if (facing == Direction.NORTH || facing == Direction.SOUTH) {
-                        c1[0] = -c1[0];
-                    } else {
-                        c1[2] = -c1[2];
-                    }
-                } else {
-                    c1[1] = -c1[1];
-                }
-            }
-        }
-        return new BlockPos(c1[0], c1[1], c1[2]);
-    }
-
-    @Nullable
-    private static IntObjectPair<IItemHandler> getMatchStackWithHandler(
-                                                                        List<ItemStack> candidates,
-                                                                        LazyOptional<IItemHandler> cap,
-                                                                        Player player) {
-        IItemHandler handler = cap.resolve().orElse(null);
-        if (handler == null) {
+            return new NexusBlockPattern(read(pattern, "blockMatches"), pattern.structureDir,
+                    pattern.aisleRepetitions, read(pattern, "centerOffset"));
+        } catch (ReflectiveOperationException | ClassCastException e) {
             return null;
         }
-        for (int i = 0; i < handler.getSlots(); i++) {
-            @NotNull
-            ItemStack stack = handler.getStackInSlot(i);
-            if (stack.isEmpty()) continue;
+    }
 
-            @NotNull
-            LazyOptional<IItemHandler> stackCap = stack.getCapability(ForgeCapabilities.ITEM_HANDLER);
-            if (stackCap.isPresent()) {
-                var rt = getMatchStackWithHandler(candidates, stackCap, player);
-                if (rt != null) {
-                    return rt;
-                }
-            } else if (candidates.stream().anyMatch(candidate -> ItemStack.isSameItemSameTags(candidate, stack)) &&
-                    !stack.isEmpty() && stack.getItem() instanceof BlockItem) {
-                        return IntObjectPair.of(i, handler);
+    @SuppressWarnings("unchecked")
+    private static <T> T read(BlockPattern pattern, String name) throws ReflectiveOperationException {
+        Field field = BlockPattern.class.getDeclaredField(name);
+        field.setAccessible(true);
+        return (T) field.get(pattern);
+    }
+
+    public void autoBuild(Player player, MultiblockState state, AutoBuildSetting setting, ItemStack terminal) {
+        new Build(player, state, setting, terminal).run(this);
+        int wanted = setting.getModuleBuild();
+        IMultiController controller = state.getController();
+        if (wanted <= 0 || controller == null) return;
+        List<BlockPattern> modules = new ArrayList<>(GTNASubPatterns.get(controller.self().getDefinition()));
+        if (controller.self() instanceof ISubPatternMachine host) modules.addAll(host.gtna$getSubPatterns());
+        for (BlockPattern module : modules.subList(0, Math.min(wanted, modules.size()))) {
+            NexusBlockPattern sub = fromBlockPattern(module);
+            if (sub != null) new Build(player, state, setting, terminal).run(sub);
+        }
+    }
+
+    /** How many times each aisle is laid: the setting, clamped to the aisle's allowed range. */
+    private int[] repetitions(AutoBuildSetting setting) {
+        int[] counts = new int[cells.length];
+        for (int i = 0; i < cells.length; i++) {
+            int min = aisleRange[i][0], max = aisleRange[i][1];
+            counts[i] = min == max ? min : Math.max(min, Math.min(max, setting.getRepetitions()));
+        }
+        return counts;
+    }
+
+    /** One auto-build run. Holds the per-run state so the pattern itself stays immutable. */
+    private static final class Build {
+
+        private final Player player;
+        private final Level level;
+        private final MultiblockState state;
+        private final AutoBuildSetting setting;
+        private final ItemStack terminal;
+        private final IMultiController controller;
+        private final BlockPos origin;
+        private final Direction front;
+        private final Direction up;
+        private final boolean mirrored;
+        /** Every cell the structure owns, with what ended up there (a block state or a machine). */
+        private final Map<BlockPos, Object> structure = new HashMap<>();
+        private final Set<BlockPos> placed = new HashSet<>();
+        private final Map<MetaMachineBlock, Boolean> partBlocks = new HashMap<>();
+        /** Candidates of cells without hatch limits never change during a run; huge structures reuse them. */
+        private final Map<TraceabilityPredicate, List<ItemStack>> plainCells = new IdentityHashMap<>();
+
+        Build(Player player, MultiblockState state, AutoBuildSetting setting, ItemStack terminal) {
+            this.player = player;
+            this.level = player.level();
+            this.state = state;
+            this.setting = setting;
+            this.terminal = terminal;
+            this.controller = state.getController();
+            this.origin = controller.self().getPos();
+            this.front = controller.self().getFrontFacing();
+            this.up = controller.self().getUpwardsFacing();
+            this.mirrored = setting.isMirrorBuild() || controller.self().isFlipped();
+        }
+
+        void run(NexusBlockPattern pattern) {
+            state.clean();
+            structure.put(origin, controller);
+            Object2IntOpenHashMap<SimplePredicate> perLayer = state.getLayerCount();
+            int[] repeat = pattern.repetitions(setting);
+            int z = -pattern.centerOffset[4];
+            for (int aisle = 0; aisle < pattern.cells.length; aisle++) {
+                for (int copy = 0; copy < repeat[aisle]; copy++, z++) {
+                    perLayer.clear();
+                    TraceabilityPredicate[][] rows = pattern.cells[aisle];
+                    for (int row = 0; row < rows.length; row++) {
+                        for (int col = 0; col < rows[row].length; col++) {
+                            TraceabilityPredicate cell = rows[row][col];
+                            if (cell.common.contains(SimplePredicate.ANY)) continue; // "don't care" space
+                            BlockPos pos = origin.offset(pattern.toWorldOffset(col - pattern.centerOffset[0],
+                                    row - pattern.centerOffset[1], z, front, up, mirrored));
+                            state.update(pos, cell);
+                            if (!pos.equals(origin)) fill(pos, cell);
+                        }
                     }
+                }
+            }
+            orientPlacedBlocks();
         }
-        return null;
-    }
 
-    private void resetFacing(BlockPos pos, BlockState blockState, Direction facing,
-                             BiPredicate<BlockPos, Direction> checker, Consumer<BlockState> consumer) {
-        if (blockState.hasProperty(BlockStateProperties.FACING)) {
-            tryFacings(blockState, pos, checker, consumer, BlockStateProperties.FACING,
-                    facing == null ? FACINGS : ArrayUtils.addAll(new Direction[] { facing }, FACINGS));
-        } else if (blockState.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {
-            tryFacings(blockState, pos, checker, consumer, BlockStateProperties.HORIZONTAL_FACING,
-                    facing == null || facing.getAxis() == Direction.Axis.Y ? FACINGS_H :
-                            ArrayUtils.addAll(new Direction[] { facing }, FACINGS_H));
+        private void fill(BlockPos pos, TraceabilityPredicate cell) {
+            BlockState existing = level.getBlockState(pos);
+            if (setting.isDemolitionMode() && mustBeAir(cell)) {
+                demolish(pos, existing);
+                return;
+            }
+            boolean replacing = false;
+            if (!existing.isAir()) {
+                if (!setting.isReplaceMode() || isMachinePartOrController(pos)) {
+                    keep(pos, existing, cell);
+                    return;
+                }
+                replacing = true;
+            }
+            List<ItemStack> wanted = candidates(cell);
+            if (replacing && wanted.stream().anyMatch(stack -> stack.is(existing.getBlock().asItem()))) return;
+            ItemStack old = replacing ? new ItemStack(existing.getBlock().asItem()) : ItemStack.EMPTY;
+            if (replacing && !player.isCreative() && !old.isEmpty() &&
+                    player.getInventory().getSlotWithRemainingSpace(old) < 0 &&
+                    player.getInventory().getFreeSlot() < 0) {
+                return; // nowhere to put the block being replaced
+            }
+            ItemStack block = takeBlock(wanted);
+            if (block == null) return;
+            if (replacing) {
+                level.removeBlock(pos, true);
+                if (!player.isCreative() && !old.isEmpty()) player.getInventory().add(old);
+            }
+            BlockPlaceContext context = new BlockPlaceContext(level, player, InteractionHand.MAIN_HAND, block,
+                    BlockHitResult.miss(player.getEyePosition(0), Direction.UP, pos));
+            if (((BlockItem) block.getItem()).place(context).consumesAction()) {
+                placed.add(pos);
+            } else if (!player.isCreative() && !player.getInventory().add(block)) {
+                player.drop(block, false); // the block was already taken from the inventory or the AE2 network
+            }
+            structure.put(pos, level.getBlockEntity(pos) instanceof IMachineBlockEntity machine ?
+                    machine.getMetaMachine() : level.getBlockState(pos));
         }
-    }
 
-    private void tryFacings(BlockState blockState, BlockPos pos, BiPredicate<BlockPos, Direction> checker,
-                            Consumer<BlockState> consumer, Property<Direction> property, Direction[] facings) {
-        Direction found = null;
-        for (Direction f : facings) {
-            if (checker.test(pos, f)) {
-                found = f;
-                break;
+        private void keep(BlockPos pos, BlockState existing, TraceabilityPredicate cell) {
+            structure.put(pos, existing);
+            cell.limited.forEach(limit -> limit.testLimited(state));
+        }
+
+        private static boolean mustBeAir(TraceabilityPredicate cell) {
+            return cell.limited.isEmpty() && cell.common.size() == 1 && cell.common.contains(SimplePredicate.AIR);
+        }
+
+        private void demolish(BlockPos pos, BlockState existing) {
+            if (existing.isAir() || existing.getDestroySpeed(level, pos) < 0) return;
+            if (!level.mayInteract(player, pos) || !player.mayBuild()) return;
+            if (MinecraftForge.EVENT_BUS.post(new BlockEvent.BreakEvent(level, pos, existing, player))) return;
+            level.destroyBlock(pos, !player.isCreative(), player);
+        }
+
+        private boolean isMachinePartOrController(BlockPos pos) {
+            MetaMachine machine = MetaMachine.getMachine(level, pos);
+            return machine instanceof IMultiPart || machine instanceof IMultiController;
+        }
+
+        /** The items that may go in this cell, after hatch limits, no-hatch mode and the terminal's block picks. */
+        private List<ItemStack> candidates(TraceabilityPredicate cell) {
+            if (cell.limited.isEmpty()) return plainCells.computeIfAbsent(cell, this::resolveCandidates);
+            return resolveCandidates(cell);
+        }
+
+        private List<ItemStack> resolveCandidates(TraceabilityPredicate cell) {
+            List<BlockInfo> options = pickCandidates(cell);
+            if (setting.isNoHatchMode()) options.removeIf(this::isPart);
+            return BlockSelectionConfigWidget.applySelections(options.toArray(BlockInfo[]::new), terminal);
+        }
+
+        /**
+         * Same priority as GTCEu: first a limited predicate still below its per-layer minimum, then one below its
+         * global minimum, otherwise every limited predicate that has room left plus the common ones.
+         */
+        private List<BlockInfo> pickCandidates(TraceabilityPredicate cell) {
+            Object2IntOpenHashMap<SimplePredicate> perLayer = state.getLayerCount();
+            Object2IntOpenHashMap<SimplePredicate> global = state.getGlobalCount();
+            for (SimplePredicate limit : cell.limited) {
+                if (limit.minLayerCount > 0 && allowed(limit) && below(perLayer, limit, limit.minLayerCount,
+                        limit.maxLayerCount)) {
+                    perLayer.addTo(limit, 1);
+                    return options(limit);
+                }
+            }
+            for (SimplePredicate limit : cell.limited) {
+                if (limit.minCount > 0 && allowed(limit) && below(global, limit, limit.minCount, limit.maxCount)) {
+                    global.addTo(limit, 1);
+                    return options(limit);
+                }
+            }
+            List<BlockInfo> all = new ArrayList<>();
+            for (SimplePredicate limit : cell.limited) {
+                if (!allowed(limit) || full(perLayer, limit, limit.maxLayerCount) ||
+                        full(global, limit, limit.maxCount)) {
+                    continue;
+                }
+                perLayer.addTo(limit, 1);
+                global.addTo(limit, 1);
+                all.addAll(options(limit));
+            }
+            for (SimplePredicate common : cell.common) {
+                // With several choices, no-hatch mode drops the ones that are only hatches.
+                if (cell.common.size() > 1 && !allowed(common)) continue;
+                all.addAll(options(common));
+            }
+            return all;
+        }
+
+        private static boolean below(Object2IntOpenHashMap<SimplePredicate> counts, SimplePredicate limit, int min,
+                                     int max) {
+            int count = counts.getInt(limit);
+            return count < min && (max == -1 || count < max);
+        }
+
+        private static boolean full(Object2IntOpenHashMap<SimplePredicate> counts, SimplePredicate limit, int max) {
+            return max != -1 && counts.containsKey(limit) && counts.getInt(limit) == max;
+        }
+
+        private static List<BlockInfo> options(SimplePredicate predicate) {
+            BlockInfo[] infos = predicate.candidates == null ? null : predicate.candidates.get();
+            return infos == null ? new ArrayList<>() : new ArrayList<>(Arrays.asList(infos));
+        }
+
+        /** In no-hatch mode a predicate counts only if it offers at least one block that is not a hatch. */
+        private boolean allowed(SimplePredicate predicate) {
+            if (!setting.isNoHatchMode()) return true;
+            List<BlockInfo> infos = options(predicate);
+            return infos.isEmpty() || infos.stream().anyMatch(info -> !isPart(info));
+        }
+
+        private boolean isPart(BlockInfo info) {
+            return info.getBlockState().getBlock() instanceof MetaMachineBlock block &&
+                    partBlocks.computeIfAbsent(block, Build::createsPart);
+        }
+
+        private static boolean createsPart(MetaMachineBlock block) {
+            try {
+                var definition = block.getDefinition();
+                var entity = (IMachineBlockEntity) definition.getBlockEntityType().create(BlockPos.ZERO,
+                        block.defaultBlockState());
+                return definition.createMetaMachine(entity) instanceof MultiblockPartMachine;
+            } catch (RuntimeException e) {
+                return false;
             }
         }
-        if (found == null) {
-            found = Direction.NORTH;
+
+        /** One block item for the cell: from the AE2 network, then the inventory (and containers in it). */
+        @Nullable
+        private ItemStack takeBlock(List<ItemStack> wanted) {
+            if (player.isCreative()) {
+                return wanted.stream().filter(s -> s.getItem() instanceof BlockItem).findFirst().map(ItemStack::copy)
+                        .orElse(null);
+            }
+            if (setting.isUseAE() && NexusAE2Link.isAE2Available()) {
+                ItemStack fromNetwork = NexusAE2Link.extractItem(terminal, level, player, wanted);
+                if (fromNetwork != null && fromNetwork.getItem() instanceof BlockItem) return fromNetwork;
+            }
+            IItemHandler inventory = player.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null);
+            return inventory == null ? null : takeFrom(inventory, wanted, 0);
         }
-        consumer.accept(blockState.setValue(property, found));
+
+        @Nullable
+        private static ItemStack takeFrom(IItemHandler handler, List<ItemStack> wanted, int depth) {
+            for (int slot = 0; slot < handler.getSlots(); slot++) {
+                ItemStack stack = handler.getStackInSlot(slot);
+                if (stack.isEmpty()) continue;
+                if (stack.getItem() instanceof BlockItem &&
+                        wanted.stream().anyMatch(w -> ItemStack.isSameItemSameTags(w, stack))) {
+                    ItemStack one = handler.extractItem(slot, 1, false);
+                    if (!one.isEmpty()) return one;
+                }
+                IItemHandler inner = depth < 2 ? stack.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null) :
+                        null;
+                if (inner != null) {
+                    ItemStack found = takeFrom(inner, wanted, depth + 1);
+                    if (found != null) return found;
+                }
+            }
+            return null;
+        }
+
+        /** Turns placed blocks and parts towards a side that is not part of the structure, as GTCEu does. */
+        private void orientPlacedBlocks() {
+            structure.forEach((pos, content) -> {
+                if (content instanceof IMultiController) return;
+                if (content instanceof MetaMachine machine) {
+                    orient(pos, machine.getBlockState(), side -> isOpen(pos, side) && machine.isFacingValid(side));
+                } else if (content instanceof BlockState blockState && placed.contains(pos)) {
+                    orient(pos, blockState, side -> isOpen(pos, side));
+                }
+            });
+        }
+
+        private boolean isOpen(BlockPos pos, Direction side) {
+            Object neighbour = structure.get(pos.relative(side));
+            return neighbour == null || neighbour instanceof BlockState s && s.isAir();
+        }
+
+        private void orient(BlockPos pos, BlockState blockState, java.util.function.Predicate<Direction> open) {
+            DirectionProperty property;
+            boolean horizontal;
+            if (blockState.hasProperty(BlockStateProperties.FACING)) {
+                property = BlockStateProperties.FACING;
+                horizontal = false;
+            } else if (blockState.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {
+                property = BlockStateProperties.HORIZONTAL_FACING;
+                horizontal = true;
+            } else {
+                return;
+            }
+            List<Direction> order = new ArrayList<>();
+            if (front != null && !(horizontal && front.getAxis() == Direction.Axis.Y)) order.add(front);
+            for (Direction side : FACING_ORDER) {
+                if (!(horizontal && side.getAxis() == Direction.Axis.Y)) order.add(side);
+            }
+            Direction chosen = order.stream().filter(open).findFirst().orElse(Direction.NORTH);
+            level.setBlock(pos, blockState.setValue(property, chosen), 3);
+        }
+    }
+
+    /**
+     * Pattern coordinates (column, row, aisle) relative to the controller, turned into a world offset for the
+     * controller's front/up facing and flip. This is the transform GTCEu's BlockPattern uses (LGPL-3.0), kept
+     * identical so built structures always pass GTCEu's own check.
+     */
+    private BlockPos toWorldOffset(int x, int y, int z, Direction facing, Direction upwardsFacing, boolean flipped) {
+        int[] local = { x, y, z };
+        int[] world = new int[3];
+        boolean vertical = facing == Direction.UP || facing == Direction.DOWN;
+        Direction reference = vertical ? (facing == Direction.DOWN ? upwardsFacing : upwardsFacing.getOpposite()) :
+                facing;
+        for (int i = 0; i < 3; i++) {
+            switch (axes[i].getActualDirection(reference)) {
+                case UP -> world[1] = local[i];
+                case DOWN -> world[1] = -local[i];
+                case WEST -> world[0] = -local[i];
+                case EAST -> world[0] = local[i];
+                case NORTH -> world[2] = -local[i];
+                case SOUTH -> world[2] = local[i];
+            }
+        }
+        if (vertical) {
+            int sx = upwardsFacing.getStepX(), sz = upwardsFacing.getStepZ();
+            if (sx == 0) rotate(world, 2, sz > 0);
+            else rotate(world, 0, sx > 0);
+            if (flipped) world[upwardsFacing.getAxis() == Direction.Axis.Z ? 0 : 2] *= -1;
+        } else {
+            if (upwardsFacing.getAxis() == Direction.Axis.X) {
+                Direction side = upwardsFacing == Direction.EAST ? facing.getClockWise() :
+                        facing.getCounterClockWise();
+                if (side.getStepX() == 0) rotate(world, 2, side.getStepZ() < 0);
+                else rotate(world, 0, side.getStepX() < 0);
+            } else if (upwardsFacing == Direction.SOUTH) {
+                world[1] = -world[1];
+                world[facing.getStepX() == 0 ? 0 : 2] *= -1;
+            }
+            if (flipped) {
+                if (upwardsFacing.getAxis() == Direction.Axis.Z) {
+                    world[facing.getAxis() == Direction.Axis.Z ? 0 : 2] *= -1;
+                } else {
+                    world[1] = -world[1];
+                }
+            }
+        }
+        return new BlockPos(world[0], world[1], world[2]);
+    }
+
+    /**
+     * Swaps the vertical axis with horizontal axis {@code h}: positive = (h, y) -> (y, -h); otherwise (-y, h).
+     */
+    private static void rotate(int[] v, int h, boolean positive) {
+        int horizontal = v[h];
+        v[h] = positive ? v[1] : -v[1];
+        v[1] = positive ? -horizontal : horizontal;
     }
 }

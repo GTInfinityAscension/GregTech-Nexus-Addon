@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_chaos_matter/foil",
+    "layer1": "gtceu:item/material_sets/gtna_chaos_matter/foil_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_chaos_matter/foil_overlay"
+  },
+  "loader": "renderblender:unstable",
+  "unstable": {
+    "mask": "gtna:mask/cosmic"
+  }
+}

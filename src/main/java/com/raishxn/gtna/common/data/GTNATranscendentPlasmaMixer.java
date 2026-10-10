@@ -6,8 +6,6 @@ import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 
-import net.minecraft.network.chat.Component;
-
 import com.raishxn.gtna.GTNACORE;
 import com.raishxn.gtna.common.machine.multiblock.electric.TranscendentPlasmaMixerMachine;
 
@@ -49,11 +47,6 @@ public final class GTNATranscendentPlasmaMixer {
                     .build())
             .workableCasingModel(GTNACORE.id("block/casings/dimension_injection_casing"),
                     GTCEu.id("block/multiblock/fusion_reactor"))
-            .tooltips(Component.translatable("gtna.machine.transcendent_plasma_mixer.tooltip.0"),
-                    Component.translatable("gtna.machine.transcendent_plasma_mixer.tooltip.1"),
-                    Component.translatable("gtna.machine.transcendent_plasma_mixer.tooltip.2"),
-                    Component.translatable("gtna.machine.transcendent_plasma_mixer.tooltip.3"),
-                    Component.translatable("gtna.machine.transcendent_plasma_mixer.tooltip.4"))
             .register();
 
     private GTNATranscendentPlasmaMixer() {}

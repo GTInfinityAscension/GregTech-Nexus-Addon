@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "gtna:calcium_oxide_ceramic_anti_metal_corrosion_mechanical_block"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "gtna:blocks/calcium_oxide_ceramic_anti_metal_corrosion_mechanical_block"
+}

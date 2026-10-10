@@ -4,6 +4,6 @@
     "frametime": 2
   },
   "ldlib": {
-    "connection": "gtocore:block/containment_field_generator_ctm"
+    "connection": "gtna:block/casings/containment_field_generator_ctm"
   }
 }

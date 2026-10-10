@@ -7,6 +7,7 @@ import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
 
 import com.raishxn.gtna.GTNACORE;
 import com.raishxn.gtna.api.data.info.GTNAMaterialFlags;
+import com.raishxn.gtna.common.data.GTNAMaterials;
 
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
 
@@ -77,6 +78,12 @@ public final class GodforgeChainMaterials {
     /** GTNH Stellar Alloy (Nano Forge frames). */
     public static Material StellarAlloy;
     public static Material DimensionallyShiftedSuperfluid;
+    public static Material Draconium;
+    public static Material AwakenedDraconium;
+    public static Material CosmicNeutronium;
+    public static Material ExoHalkonite;
+    public static Material ChaosMatter;
+    public static Material Axonium;
 
     private GodforgeChainMaterials() {}
 
@@ -85,8 +92,31 @@ public final class GodforgeChainMaterials {
             "chronomatic_glass", "rhugnor", "dragon_metal", "primordial_matter", "phonon_crystal_solution",
             "phonon_medium", "stable_baryonic_matter");
     /** Liquids with no texture anywhere get their own colour instead of a white material tint. */
-    private static final java.util.Map<String, Integer> FLUID_COLORS = java.util.Map.of(
-            "shijima", 0xc4d6f2, "platinum_manganese_antimony_heusler_alloy", 0xb0bcc8);
+    private static final java.util.Map<String, Integer> FLUID_COLORS = java.util.Map.ofEntries(
+            java.util.Map.entry("shijima", 0xc4d6f2),
+            java.util.Map.entry("platinum_manganese_antimony_heusler_alloy", 0xb0bcc8),
+            java.util.Map.entry("celestial_tungsten", 0x32384a),
+            java.util.Map.entry("astral_titanium", 0xdca0f0),
+            java.util.Map.entry("six_phased_copper", 0xff7814),
+            java.util.Map.entry("shirabon", 0xc61361),
+            java.util.Map.entry("quantum", 0x6ec8c8),
+            java.util.Map.entry("metastable_oganesson", 0x14397f),
+            java.util.Map.entry("creon", 0x460046),
+            java.util.Map.entry("mellion", 0x3c0505),
+            java.util.Map.entry("tengam_purified", 0xbadf70),
+            java.util.Map.entry("tengam_attuned", 0xd5ff80),
+            java.util.Map.entry("ichorium", 0xd37806),
+            java.util.Map.entry("odyssey_nano_superalloy", 0x4c7a6a),
+            java.util.Map.entry("draconium", 0x7a3099),
+            java.util.Map.entry("awakened_draconium", 0xff7700),
+            java.util.Map.entry("cosmic_neutronium", 0x000d1a),
+            java.util.Map.entry("churitsu", 0x828282),
+            java.util.Map.entry("advanced_nitinol", 0xd2b48c),
+            java.util.Map.entry("nitinol_60", 0xc8c8c8),
+            java.util.Map.entry("superconductor_uiv_base", 0xe558b1),
+            java.util.Map.entry("superconductor_umv_base", 0xb526cd),
+            java.util.Map.entry("atomic_separation_catalyst", 0xe85e0c),
+            java.util.Map.entry("stellar_alloy", 0xc5ced8));
 
     private static FluidBuilder liquid(String id, int temperature) {
         var builder = new FluidBuilder().temperature(temperature);
@@ -97,46 +127,47 @@ public final class GodforgeChainMaterials {
     }
 
     public static void init() {
-        Creon = metal("creon", "Creon", 0x460046, MaterialIconSet.SHINY, true, true).setFormula("⸎");
-        Mellion = metal("mellion", "Mellion", 0x3c0505, MaterialIconSet.SHINY, false, true);
-        TranscendentMetal = metal("transcendent_metal", "Transcendent Metal", 0x323232, MaterialIconSet.METALLIC, false,
-                true).setFormula("TsЖ");
-        SixPhasedCopper = metal("six_phased_copper", "Six-Phased Copper", 0xff7814, MaterialIconSet.SHINY, true, true)
-                .setFormula("✢");
-        TengamPurified = metal("tengam_purified", "Purified Tengam", 0xbadf70, MaterialIconSet.METALLIC, false, false)
-                .setFormula("M");
-        TengamAttuned = metal("tengam_attuned", "Attuned Tengam", 0xd5ff80, MaterialIconSet.MAGNETIC, false, false)
-                .setFormula("M");
+        Creon = metal("creon", "Creon", 0xffffff, GodforgeIconSets.CREON, true, true).setFormula("⸎");
+        Mellion = metal("mellion", "Mellion", 0xffffff, GodforgeIconSets.MELLION, false, true);
+        TranscendentMetal = metal("transcendent_metal", "Transcendent Metal", 0xffffff,
+                GodforgeIconSets.TRANSCENDENT_METAL, false, true).setFormula("TsЖ");
+        SixPhasedCopper = metal("six_phased_copper", "Six-Phased Copper", 0xffffff,
+                GodforgeIconSets.SIX_PHASED_COPPER, true, true).setFormula("✢");
+        TengamPurified = metal("tengam_purified", "Purified Tengam", 0xffffff, GodforgeIconSets.TENGAM_PURIFIED,
+                false, false).setFormula("M");
+        TengamAttuned = metal("tengam_attuned", "Attuned Tengam", 0xffffff, GodforgeIconSets.TENGAM_ATTUNED, false,
+                false).setFormula("M");
         Infinity = metal("infinity", "Infinity", 0xffffff, GodforgeIconSets.INFINITY, true, true).setFormula("If*");
         Eternity = metal("eternity", "Eternity", 0xffffff, GodforgeIconSets.ETERNITY, false, true).setFormula("En⦼");
-        Ichorium = metal("ichorium", "Ichorium", 0xd37806, MaterialIconSet.SHINY, true, false).setFormula("IcMa");
-        Shijima = metal("shijima", "Shijima", 0xf0f0f0, MaterialIconSet.SHINY, false, false);
-        Churitsu = metal("churitsu", "Churitsu", 0x828282, MaterialIconSet.SHINY, false, false);
-        SuperconductorUIVBase = metal("superconductor_uiv_base", "Superconductor Base UIV", 0xe558b1,
-                MaterialIconSet.SHINY, false, false).setFormula("(C₁₄Os₁₁O₇Ag₃SpH₂O)₄?₁");
-        SuperconductorUMVBase = metal("superconductor_umv_base", "Superconductor Base UMV", 0xb526cd,
-                MaterialIconSet.SHINY, false, false);
+        Ichorium = metal("ichorium", "Ichorium", 0xffffff, GodforgeIconSets.ICHORIUM, true, false).setFormula("IcMa");
+        Shijima = metal("shijima", "Shijima", 0xffffff, GodforgeIconSets.SHIJIMA, false, false).setFormula("静寂");
+        Churitsu = metal("churitsu", "Churitsu", 0xffffff, GodforgeIconSets.CHURITSU, false, false).setFormula("中立");
+        SuperconductorUIVBase = metal("superconductor_uiv_base", "Superconductor Base UIV", 0xffffff,
+                GodforgeIconSets.SUPERCONDUCTOR_UIV_BASE, false, false).setFormula("(C₁₄Os₁₁O₇Ag₃SpH₂O)₄?₁");
+        SuperconductorUMVBase = metal("superconductor_umv_base", "Superconductor Base UMV", 0xffffff,
+                GodforgeIconSets.SUPERCONDUCTOR_UMV_BASE, false, false);
         Hypogen = metal("hypogen", "Hypogen", 0xffffff, GodforgeIconSets.HYPOGEN, true, false).setFormula("Hy⚶");
-        Rhugnor = metal("rhugnor", "Rhugnor", 0xbe00ff, MaterialIconSet.SHINY, true, false).setFormula("Fs⚶");
-        CelestialTungsten = metal("celestial_tungsten", "Celestial Tungsten", 0x323232, MaterialIconSet.METALLIC, true,
-                false).setFormula("✦◆✦");
-        AstralTitanium = metal("astral_titanium", "Astral Titanium", 0xdca0f0, MaterialIconSet.SHINY, true, false)
-                .setFormula("✧◇✧");
+        Rhugnor = metal("rhugnor", "Rhugnor", 0xffffff, GodforgeIconSets.RHUGNOR, true, false).setFormula("Fs⚶");
+        CelestialTungsten = metal("celestial_tungsten", "Celestial Tungsten", 0xffffff,
+                GodforgeIconSets.CELESTIAL_TUNGSTEN, true, false).setFormula("✦◆✦");
+        AstralTitanium = metal("astral_titanium", "Astral Titanium", 0xffffff,
+                GodforgeIconSets.ASTRAL_TITANIUM, true, false).setFormula("✧◇✧");
         ChronomaticGlass = metal("chronomatic_glass", "Chromatic Glass", 0xffffff, GodforgeIconSets.CHROMATIC_GLASS,
                 false, false)
                 .setFormula("⌘☯☯⌘");
-        Nitinol60 = metal("nitinol_60", "Nitinol 60", 0xc8c8c8, MaterialIconSet.METALLIC, false, false)
+        Nitinol60 = metal("nitinol_60", "Nitinol 60", 0xffffff, GodforgeIconSets.NITINOL_60, false, false)
                 .setFormula("Ni4Ti6");
-        AdvancedNitinol = metal("advanced_nitinol", "Advanced Nitinol", 0xd2b48c, MaterialIconSet.SHINY, false, false)
+        AdvancedNitinol = metal("advanced_nitinol", "Advanced Nitinol", 0xffffff, GodforgeIconSets.ADVANCED_NITINOL,
+                false, false)
                 .setFormula("⚷⚙⚷ Ni4Ti6");
-        Quantum = metal("quantum", "Quantum", 0x6ec8c8, MaterialIconSet.SHINY, false, false);
-        DragonMetal = metal("dragon_metal", "Dragonblood", 0xdc2814, GodforgeIconSets.HYPOGEN, false, false)
+        Quantum = metal("quantum", "Quantum", 0xffffff, GodforgeIconSets.QUANTUM, false, false);
+        DragonMetal = metal("dragon_metal", "Dragonblood", 0xffffff, GodforgeIconSets.DRAGON_METAL, true, false)
                 .setFormula("۞");
-        MetastableOganesson = metal("metastable_oganesson", "Metastable Oganesson", 0x14397f, MaterialIconSet.SHINY,
-                false, false).setFormula("Og*");
-        Shirabon = metal("shirabon", "Shirabon", 0xe0156d, MaterialIconSet.SHINY, false, false).setFormula("Sh⏧");
-        AtomicSeparationCatalyst = metal("atomic_separation_catalyst", "Atomic Separation Catalyst", 0xe85e0c,
-                MaterialIconSet.METALLIC, false, false);
+        MetastableOganesson = metal("metastable_oganesson", "Metastable Oganesson", 0xffffff,
+                GodforgeIconSets.METASTABLE_OGANESSON, false, false).setFormula("Og*");
+        Shirabon = metal("shirabon", "Shirabon", 0xffffff, GodforgeIconSets.SHIRABON, false, false).setFormula("Sh⏧");
+        AtomicSeparationCatalyst = metal("atomic_separation_catalyst", "Atomic Separation Catalyst", 0xffffff,
+                GodforgeIconSets.ATOMIC_SEPARATION_CATALYST, false, false);
         Dilithium = gem("dilithium", "Dilithium", 0xfffafa, MaterialIconSet.DIAMOND, false).setFormula("∳Li∳Li∳");
         Orundum = gem("orundum", "Orundum", 0xcd2626, MaterialIconSet.DIAMOND, true).setFormula("Or");
         MagnetoResonatic = gem("magneto_resonatic", "Magneto Resonatic", 0xdd77ff, MaterialIconSet.MAGNETIC, false);
@@ -169,17 +200,32 @@ public final class GodforgeChainMaterials {
         // GTO composes Odyssey with Trinium, Naquadria, Molybdenum and nano-scale yttria/alumina; GTNA keeps the three
         // metals GTCEu has. Both keep GTO's blast temperatures, so the EBF recipes come from the composition.
         PlatinumManganeseAntimonyHeuslerAlloy = alloy("platinum_manganese_antimony_heusler_alloy",
-                "Platinum-Manganese-Antimony Heusler Alloy", 0xe6e6e6, 13_000,
+                "Platinum-Manganese-Antimony Heusler Alloy", 0xffffff,
+                GodforgeIconSets.PLATINUM_MANGANESE_ANTIMONY_HEUSLER_ALLOY, 13_000,
                 com.gregtechceu.gtceu.common.data.GTMaterials.Platinum, 1,
                 com.gregtechceu.gtceu.common.data.GTMaterials.Manganese, 1,
-                com.gregtechceu.gtceu.common.data.GTMaterials.Antimony, 1);
-        OdysseyNanoSuperalloy = alloy("odyssey_nano_superalloy", "Odyssey Nano Superalloy", 0x4c7a6a, 15_000,
+                com.gregtechceu.gtceu.common.data.GTMaterials.Antimony, 1).setFormula("PtMnSb");
+        OdysseyNanoSuperalloy = alloy("odyssey_nano_superalloy", "Odyssey Nano Superalloy", 0xffffff,
+                GodforgeIconSets.ODYSSEY, 15_000,
                 com.gregtechceu.gtceu.common.data.GTMaterials.Trinium, 14,
                 com.gregtechceu.gtceu.common.data.GTMaterials.Naquadria, 8,
                 com.gregtechceu.gtceu.common.data.GTMaterials.Molybdenum, 17);
+        Draconium = GTNAMaterials.Draconium = metal("draconium", "Draconium", 0xffffff,
+                GodforgeIconSets.DRACONIUM, false, false).setFormula("Dc");
+        AwakenedDraconium = GTNAMaterials.AwakenedDraconium = metal("awakened_draconium", "Awakened Draconium",
+                0xffffff, GodforgeIconSets.AWAKENED_DRACONIUM, true, true).setFormula("✵Dc✵");
+        CosmicNeutronium = GTNAMaterials.CosmicNeutronium = metal("cosmic_neutronium", "Cosmic Neutronium",
+                0xffffff, GodforgeIconSets.COSMIC_NEUTRONIUM, true, true).setFormula("SpNt");
+        ExoHalkonite = GTNAMaterials.ExoHalkonite = metal("exo_halkonite", "Exo-Halkonite",
+                0xffffff, GodforgeIconSets.EXO_HALKONITE, true, true).setFormula("Hk⚶");
+        ChaosMatter = GTNAMaterials.ChaosMatter = metal("chaos_matter", "Chaos Matter",
+                0xffffff, GodforgeIconSets.CHAOS_MATTER, true, true).setFormula("✦Ch✦");
+        Axonium = GTNAMaterials.Axonium = metal("axonium", "Axonium",
+                0xffffff, GodforgeIconSets.AXONIUM, true, true).setFormula("Ax⊛");
         DimensionallyShiftedSuperfluid = fluid("dimensionally_shifted_superfluid", "Dimensionally Shifted Superfluid",
                 0x2a1d4f);
-        StellarAlloy = metal("stellar_alloy", "Stellar Alloy", 0xc5ced8, MaterialIconSet.SHINY, false, false);
+        StellarAlloy = metal("stellar_alloy", "Stellar Alloy", 0xffffff, GodforgeIconSets.STELLAR_ALLOY, false, false)
+                .setFormula("✦Nt₄Nq₂Ke₂✦");
         SuperconductorUMV = superconductor("superconductor_umv", "Superconductor UMV", 0xb526cd, GTValues.UXV);
     }
 
@@ -214,12 +260,17 @@ public final class GodforgeChainMaterials {
                 .flags(DISABLE_DECOMPOSITION).buildAndRegister();
     }
 
-    private static Material alloy(String id, String lang, int color, int blast, Object... components) {
-        return builder(id, lang, color, MaterialIconSet.METALLIC).ingot().liquid(liquid(id, blast))
+    private static Material alloy(String id, String lang, int color, MaterialIconSet icon, int blast,
+                                  Object... components) {
+        return builder(id, lang, color, icon).ingot().liquid(liquid(id, blast))
                 .components(components).blastTemp(blast)
                 .flags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_GEAR,
                         GENERATE_SMALL_GEAR, DISABLE_DECOMPOSITION)
                 .buildAndRegister();
+    }
+
+    private static Material alloy(String id, String lang, int color, int blast, Object... components) {
+        return alloy(id, lang, color, MaterialIconSet.METALLIC, blast, components);
     }
 
     private static Material superconductor(String id, String lang, int color, int tier) {

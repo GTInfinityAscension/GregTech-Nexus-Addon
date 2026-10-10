@@ -5,6 +5,30 @@
     adaptada do estilo do GTOCore ao GTCEu 7.5.3. O estado corrente e as pendências ficam no
     `CONTINUITY_LEDGER.md`; aqui fica o *método*.
 
+## Multiblocos: convenção atual (G-0240 em diante)
+
+Os multiblocos usam a fonte única `tools/multiblock_tooltips/*.json`, gerada por
+`tools/apply_multiblock_tooltips.py`. O padrão abaixo substitui a convenção histórica de
+`Main Function` deste documento **para multiblocos**; as demais famílias mantêm suas regras.
+
+1. `Machine Type` / `Tipo de Máquina`.
+2. Frase de efeito em cinza e itálico.
+3. Separador, descrição com destaques dourados, separador.
+4. `§a▸` vantagens, `§b▸` números e informações de operação, `§c▸` restrições.
+5. Uma linha `Source` via `GTNASources`, incluindo GTNA para conteúdo original.
+
+O conteúdo técnico dos ports parte da tooltip da máquina na origem, adaptado às seções acima.
+Consultar também a implementação GTNA para ajustar valores e omitir funções ausentes no port.
+Não acrescentar requisitos óbvios da família nem repetir o tipo de receita já informado no cabeçalho
+ou na descrição. As listas de vantagens, números e restrições podem ficar vazias quando a origem
+não fornecer informação relevante para aquela categoria; não preencher com frases genéricas.
+Manter os detalhes específicos: condições de bônus, penalidades, seleção de modos e comportamento
+especial que a tooltip original explica.
+Manter EN/PT com as mesmas linhas, até 72 caracteres visíveis por linha. Todo novo número deve
+ter evidência em `number_claims.json` e no seu gerador `build_number_claims.py`. O rastreio de
+números verifica expressões; a revisão das condições sem números precisa também consultar o código.
+Detalhes da ampliação técnica: `docs/reports/multiblock-tooltips-technical-details.md`.
+
 ## Por que
 
 A auditoria de 2026-09-24 (G-0087) encontrou 84 chamadas `.tooltips(...)` sem convenção comum:

@@ -1,0 +1,13 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_draconium/ingot_quadruple",
+    "layer1": "gtceu:item/material_sets/gtna_draconium/ingot_quadruple_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_draconium/ingot_quadruple_overlay"
+  },
+  "loader": "renderblender:glow_edge",
+  "glow_edge": {
+    "color": 11546879,
+    "width": 1.5
+  }
+}

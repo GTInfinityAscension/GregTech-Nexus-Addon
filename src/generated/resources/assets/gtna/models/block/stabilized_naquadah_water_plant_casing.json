@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "gtna:block/casings/stabilized_naquadah_water_plant_casing_top",
+    "side": "gtna:block/casings/stabilized_naquadah_water_plant_casing",
+    "top": "gtna:block/casings/stabilized_naquadah_water_plant_casing_top"
+  }
+}

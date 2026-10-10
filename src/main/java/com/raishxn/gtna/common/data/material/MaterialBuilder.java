@@ -115,9 +115,10 @@ public class MaterialBuilder {
                 .flags(DISABLE_DECOMPOSITION).buildAndRegister();
 
         DarkSteel = new Material.Builder(GTNACORE.id("dark_steel"))
-                .ingot().fluid()
-                .color(0x414751)
-                .iconSet(METALLIC)
+                .ingot()
+                .liquid(new com.gregtechceu.gtceu.api.fluids.FluidBuilder().temperature(1450).color(0x414751))
+                .color(0xffffff)
+                .iconSet(GodforgeIconSets.DARK_STEEL)
                 .components(Iron, 1, Coal, 1, Obsidian, 1)
                 .blastTemp(1450, LOW, GTValues.VA[GTValues.MV], 600)
                 .flags(GENERATE_PLATE, GENERATE_GEAR, DISABLE_DECOMPOSITION)
@@ -125,8 +126,8 @@ public class MaterialBuilder {
 
         EndSteel = new Material.Builder(GTNACORE.id("end_steel"))
                 .ingot()
-                .color(0xD6D980)
-                .iconSet(METALLIC)
+                .color(0xffffff)
+                .iconSet(GodforgeIconSets.END_STEEL)
                 .components(Endstone, 1, DarkSteel, 1, Obsidian, 1)
                 .blastTemp(3250, LOW, GTValues.VA[GTValues.HV], 900)
                 .flags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_ROD, GENERATE_LONG_ROD,
@@ -136,18 +137,20 @@ public class MaterialBuilder {
                 .buildAndRegister().setFormula("St4E");
 
         Indalloy140 = new Material.Builder(GTNACORE.id("indalloy_140"))
-                .ingot().fluid().dust()
-                .color(0x6A5ACD)
-                .iconSet(METALLIC)
+                .ingot().dust()
+                .liquid(new com.gregtechceu.gtceu.api.fluids.FluidBuilder().temperature(2600).color(0x6A5ACD))
+                .color(0xffffff)
+                .iconSet(GodforgeIconSets.INDALLOY_140)
                 .components(Bismuth, 47, Lead, 25, Tin, 13, Cadmium, 10, Indium, 5)
                 .blastTemp(2600, LOW, GTValues.VA[GTValues.EV])
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_DOUBLE_PLATE, DISABLE_DECOMPOSITION)
                 .buildAndRegister().setFormula("In2PbAg");
 
         Trinaquadalloy = new Material.Builder(GTNACORE.id("trinaquadalloy"))
-                .ingot().fluid()
-                .color(0x281832)
-                .iconSet(METALLIC)
+                .ingot()
+                .liquid(new com.gregtechceu.gtceu.api.fluids.FluidBuilder().temperature(8747).color(0x281832))
+                .color(0xffffff)
+                .iconSet(GodforgeIconSets.TRINAQUADALLOY)
                 .components(Trinium, 6, Naquadah, 2, Carbon, 1)
                 .blastTemp(8747, BlastProperty.GasTier.HIGHER, GTValues.VA[GTValues.ZPM], 1200)
                 .flags(GENERATE_PLATE, GENERATE_DENSE, GENERATE_FRAME, GENERATE_ROD,
@@ -157,9 +160,10 @@ public class MaterialBuilder {
                 .buildAndRegister().setFormula("Nq2WsHs");
 
         MarM200Steel = new Material.Builder(GTNACORE.id("mar_m_200_steel"))
-                .ingot().fluid()
-                .color(0x515151)
-                .iconSet(METALLIC)
+                .ingot()
+                .liquid(new com.gregtechceu.gtceu.api.fluids.FluidBuilder().temperature(4600).color(0x515151))
+                .color(0xffffff)
+                .iconSet(GodforgeIconSets.MAR_M_200_STEEL)
                 .components(Niobium, 2, Chromium, 9, Aluminium, 5, Titanium, 2, Cobalt, 10,
                         Tungsten, 13, Nickel, 18)
                 .blastTemp(4600, BlastProperty.GasTier.HIGH, GTValues.VA[GTValues.IV], 300)
@@ -200,9 +204,10 @@ public class MaterialBuilder {
                 .buildAndRegister();
 
         FallKing = new Material.Builder(GTNACORE.id("fall_king"))
-                .ingot().fluid()
-                .color(0xFFCF6B)
-                .iconSet(BRIGHT)
+                .ingot()
+                .liquid(new com.gregtechceu.gtceu.api.fluids.FluidBuilder().temperature(5400).color(0xFFCF6B))
+                .color(0xffffff)
+                .iconSet(GodforgeIconSets.FALLKING)
                 .components(Helium, 1, Lithium, 1, Cobalt, 1, Platinum, 1, Erbium, 1)
                 .blastTemp(5400, BlastProperty.GasTier.HIGH)
                 .flags(DISABLE_DECOMPOSITION)
@@ -275,10 +280,13 @@ public class MaterialBuilder {
                 .buildAndRegister().setFormula("?(NA2LiAl2Si2O7(H2O)2)(SiO2)");
 
         Echoite = new Material.Builder(GTNACORE.id("echoite"))
-                .ingot().fluid().plasma().dust()
+                .ingot()
+                .liquid(new com.gregtechceu.gtceu.api.fluids.FluidBuilder().temperature(1730).color(0x26734d))
+                .plasma(new com.gregtechceu.gtceu.api.fluids.FluidBuilder().temperature(17300).color(0x19e0aa))
+                .dust()
                 .blastTemp(1730, LOW)
-                .color(0x26734d)
-                .iconSet(METALLIC)
+                .color(0xffffff)
+                .iconSet(GodforgeIconSets.ECHOITE)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_BOLT_SCREW,
                         GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_RING,
                         GENERATE_ROUND, GENERATE_ROTOR, GENERATE_SINGULARITY, GENERATE_DOUBLE_INGOT,
@@ -334,23 +342,25 @@ public class MaterialBuilder {
         // GTOCore alloy additions used by the Hastelloy-N75 casing family and the flotation
         // controller recipe (GTO MaterialA:693 and MaterialA:1060).
         HastelloyN75 = new Material.Builder(GTNACORE.id("hastelloy_n_75"))
-                .ingot().fluid()
-                .color(0x8b6914)
+                .ingot()
+                .liquid(new com.gregtechceu.gtceu.api.fluids.FluidBuilder().temperature(4550).color(0x5a5c44))
+                .color(0xffffff)
+                .iconSet(GodforgeIconSets.HASTELLOY_N_75)
                 .blastTemp(4550, BlastProperty.GasTier.HIGH, GTValues.VA[GTValues.EV])
                 .components(Nickel, 15, Molybdenum, 9, Chromium, 4, Titanium, 2, Erbium, 2)
-                .iconSet(METALLIC)
                 .flags(DISABLE_DECOMPOSITION, GENERATE_BOLT_SCREW, GENERATE_GEAR, GENERATE_SMALL_GEAR,
                         GENERATE_PLATE)
-                .buildAndRegister();
+                .buildAndRegister().setFormula("Ni15Mo9Cr4Ti2Er2");
 
         Stellite = new Material.Builder(GTNACORE.id("stellite"))
-                .ingot().fluid()
+                .ingot()
+                .liquid(new com.gregtechceu.gtceu.api.fluids.FluidBuilder().temperature(4310).color(0x888192))
+                .color(0xffffff)
+                .iconSet(GodforgeIconSets.STELLITE)
                 .blastTemp(4310, BlastProperty.GasTier.HIGH, 1920)
                 .components(Cobalt, 9, Chromium, 9, Manganese, 5, Titanium, 2)
-                .color(0x888192)
-                .iconSet(METALLIC)
                 .flags(GENERATE_GEAR, DISABLE_DECOMPOSITION, GENERATE_FOIL, GENERATE_PLATE)
-                .buildAndRegister();
+                .buildAndRegister().setFormula("Co9Cr9Mn5Ti2");
 
         // GTOCore flotation reagents (GTO MaterialB:2776, :2784, :2952).
         SodiumEthylxanthate = new Material.Builder(GTNACORE.id("sodium_ethylxanthate"))

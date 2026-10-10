@@ -70,13 +70,6 @@ public final class GTNANanoForge {
                     .build())
             .workableCasingModel(GTNACORE.id("block/casings/radiant_naquadah_alloy_casing"),
                     com.gregtechceu.gtceu.GTCEu.id("block/multiblock/assembly_line"))
-            .tooltips(Component.translatable("gtna.machine.nano_forge.tooltip.0"),
-                    Component.translatable("gtna.machine.nano_forge.tooltip.1"),
-                    Component.translatable("gtna.machine.nano_forge.tooltip.2"),
-                    Component.translatable("gtna.machine.nano_forge.tooltip.3"),
-                    Component.translatable("gtna.machine.nano_forge.tooltip.4"),
-                    Component.translatable("gtna.machine.nano_forge.tooltip.5"),
-                    Component.translatable("gtna.machine.nano_forge.tooltip.6"))
             .register();
 
     private GTNANanoForge() {}

@@ -51,18 +51,29 @@ public class ClientProxy extends CommonProxy {
                 .addListener((net.minecraftforge.client.event.RegisterShadersEvent event) -> {
                     try {
                         com.raishxn.gtna.client.renderer.machine.GodforgeShaders.register(event);
+                        com.raishxn.gtna.client.renderer.material.UniversiumRenderer.register(event);
                     } catch (java.io.IOException e) {
                         throw new java.io.UncheckedIOException(e);
                     }
                 });
+        net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get().getModEventBus()
+                .addListener((net.minecraftforge.client.event.ModelEvent.BakingCompleted event) -> {
+                    long effects = event.getModels().entrySet().stream()
+                            .filter(entry -> entry.getKey().getNamespace().equals("gtna"))
+                            .filter(entry -> entry.getValue().getClass().getName().startsWith(
+                                    "committee.nova.mods.renderblender."))
+                            .count();
+                    com.raishxn.gtna.GTNACORE.LOGGER.info("GTNA material item models with RenderBlender effects: {}",
+                            effects);
+                });
+        MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.renderer.material.UniversiumRenderer::tick);
+        MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.renderer.material.UniversiumRenderer::renderWorld);
         MinecraftForge.EVENT_BUS.register(ModuleCountClientHandler.class);
         MinecraftForge.EVENT_BUS.register(EyeOfHarmonyTooltips.class);
         MinecraftForge.EVENT_BUS.register(com.raishxn.gtna.client.research.KnowledgeClientHandler.class);
         MinecraftForge.EVENT_BUS.register(com.raishxn.gtna.client.research.ResearchKeys.class);
         net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get().getModEventBus()
                 .addListener(com.raishxn.gtna.client.research.ResearchKeys::register);
-        com.raishxn.gtna.client.personalspace.PersonalSpaceClient
-                .init(net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get().getModEventBus());
         init();
     }
 }

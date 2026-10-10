@@ -1,0 +1,16 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_stellar_alloy/stickLong",
+    "layer1": "gtceu:item/material_sets/gtna_stellar_alloy/stickLong_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_stellar_alloy/stickLong_overlay",
+    "halo": "renderblender:misc/halo_noise"
+  },
+  "loader": "renderblender:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -3945764,
+    "size": 5,
+    "pulse": true
+  }
+}

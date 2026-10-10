@@ -3135,21 +3135,20 @@ public final class GTNAMachineGameTests {
      * recipes. Music discs are used because GTCEu has no recipes for them, so the planner can only
      * satisfy the order through the six patterns in the buffer.
      */
-    private static void injectAutocraftFactoryRecipes() {
+    private static void injectAutocraftFactoryRecipes(GameTestHelper helper) {
         if (autocraftFactoryRecipesInjected) return;
         autocraftFactoryRecipesInjected = true;
         for (int stage = 0; stage < AUTOCRAFT_TYPES.length; stage++) {
             GTRecipeType type = AUTOCRAFT_TYPES[stage];
-            type.getAdditionHandler().beginStaging();
-            type.getAdditionHandler().addStaging(type.recipeBuilder(GTNACORE.id("gametest_autocraft_factory_" + stage))
-                    .inputItems(AUTOCRAFT_INPUTS[stage])
-                    .outputItems(AUTOCRAFT_OUTPUTS[stage])
-                    // LuV-tier EU so the LuV test hatch cannot overclock the recipe to one tick: the
-                    // GameTest must observe every recipe-type switch, not a blur.
-                    .EUt(GTValues.VA[GTValues.LuV])
-                    .duration(AUTOCRAFT_RECIPE_DURATION)
-                    .buildRawRecipe());
-            type.getAdditionHandler().completeStaging();
+            GTNAGameTestUtils.stageWithRealRecipes(helper, type,
+                    type.recipeBuilder(GTNACORE.id("gametest_autocraft_factory_" + stage))
+                            .inputItems(AUTOCRAFT_INPUTS[stage])
+                            .outputItems(AUTOCRAFT_OUTPUTS[stage])
+                            // LuV-tier EU so the LuV test hatch cannot overclock the recipe to one tick: the
+                            // GameTest must observe every recipe-type switch, not a blur.
+                            .EUt(GTValues.VA[GTValues.LuV])
+                            .duration(AUTOCRAFT_RECIPE_DURATION)
+                            .buildRawRecipe());
         }
     }
 
@@ -3166,7 +3165,7 @@ public final class GTNAMachineGameTests {
             helper.fail("universal_factory and advanced ME Pattern Buffer must be enabled");
             return;
         }
-        injectAutocraftFactoryRecipes();
+        injectAutocraftFactoryRecipes(helper);
 
         BlockPos controllerPos = new BlockPos(4, 4, 4);
         wipeBox(helper, new BlockPos(0, 0, 0), new BlockPos(15, 10, 10));
@@ -3833,41 +3832,42 @@ public final class GTNAMachineGameTests {
         helper.succeed();
     }
 
+    /**
+     * Every GTNA multiblock uses the standard tooltip: {@code gtna.machine.<id>.tooltip.0..N-1} in order (Machine
+     * Type, flavor, description, bullets) followed by exactly one Source line, and nothing else.
+     */
     @GameTest(template = TEMPLATE, timeoutTicks = 20)
-    public static void newGtoControllersDescribeTheirFunction(GameTestHelper helper) {
-        for (MultiblockMachineDefinition definition : new MultiblockMachineDefinition[] {
-                GTNAMachines3.GENERATOR_ARRAY, GTNAMachines3.FISHING_GROUND,
-                GTNAMachines3.EVAPORATION_PLANT, GTNAMachines3.GREENHOUSE,
-                GTNAMachines3.COMPONENT_ASSEMBLER, GTNAMachines3.LARGE_GREENHOUSE,
-                GTNAMachines3.BLAZE_BLAST_FURNACE, GTNAMachines3.COLD_ICE_FREEZER,
-                GTNAMachines3.CHEMICAL_PLANT, GTNAMachines3.MEGA_ALLOY_BLAST_SMELTER,
-                GTNAMachines3.ISA_MILL, GTNAMachines3.ROCKET_LARGE_TURBINE,
-                GTNAMachines3.SUPERCRITICAL_STEAM_TURBINE,
-                GTNAMachines3.INDUSTRIAL_FLOTATION_CELL, GTNAMachines3.VACUUM_DRYING_FURNACE,
-                GTNAMachines3.COMPONENT_ASSEMBLY_LINE }) {
+    public static void everyMultiblockUsesTheStandardTooltip(GameTestHelper helper) {
+        int checked = 0;
+        for (com.gregtechceu.gtceu.api.machine.MachineDefinition definition : com.gregtechceu.gtceu.api.registry.GTRegistries.MACHINES) {
+            if (!(definition instanceof MultiblockMachineDefinition) ||
+                    !GTNACORE.MOD_ID.equals(definition.getId().getNamespace())) {
+                continue;
+            }
+            String path = definition.getId().getPath();
+            String[] english = com.raishxn.gtna.common.data.GTNAMultiblockTooltipText.ENGLISH.get(path);
+            if (english == null) {
+                helper.fail(definition.getId() + " has no standard tooltip in tools/multiblock_tooltips");
+                return;
+            }
             java.util.List<Component> tooltip = new java.util.ArrayList<>();
             definition.getTooltipBuilder().accept(ItemStack.EMPTY, tooltip);
-            String prefix = "gtna.machine." + definition.getId().getPath() + ".tooltip";
-            long functionalLines = tooltip.stream().filter(component -> component
-                    .getContents() instanceof net.minecraft.network.chat.contents.TranslatableContents contents &&
-                    contents.getKey().startsWith(prefix + ".")).count();
-            helper.assertTrue(functionalLines == 0,
-                    definition.getId() + " still has the shortened GTNA tooltip: " + tooltip);
-            helper.assertTrue(tooltip.stream().noneMatch(component -> component
-                    .getContents() instanceof net.minecraft.network.chat.contents.TranslatableContents contents &&
-                    prefix.equals(contents.getKey())),
-                    definition.getId() + " explicitly repeats the automatic description: " + tooltip);
-            long sourceLines = tooltip.stream().filter(component -> component
-                    .getContents() instanceof net.minecraft.network.chat.contents.TranslatableContents contents &&
-                    "gtna.tooltip.source".equals(contents.getKey())).count();
-            helper.assertTrue(sourceLines == 1,
-                    definition.getId() + " must have the expected GTO source attribution: " + tooltip);
-            helper.assertTrue(
-                    tooltip.stream()
-                            .noneMatch(component -> "GTOCore".equals(component.getString()) ||
-                                    "GTO Core | Machine".equals(component.getString())),
-                    definition.getId() + " must use Source as its only attribution: " + tooltip);
+            java.util.List<String> keys = tooltip.stream()
+                    .map(component -> component
+                            .getContents() instanceof net.minecraft.network.chat.contents.TranslatableContents contents ?
+                                    contents.getKey() : component.getString())
+                    .toList();
+            java.util.List<String> expected = new java.util.ArrayList<>();
+            for (int i = 0; i < english.length; i++) expected.add("gtna.machine." + path + ".tooltip." + i);
+            expected.add("gtna.tooltip.source");
+            helper.assertTrue(keys.equals(expected), definition.getId() + " tooltip " + keys + " != " + expected);
+            helper.assertTrue(english[0].startsWith("Machine Type: ") && english[1].startsWith("§7§o"),
+                    definition.getId() + " must start with Machine Type and a flavor line");
+            helper.assertTrue(java.util.Arrays.stream(english).anyMatch(line -> line.contains("▸ ")),
+                    definition.getId() + " needs at least one bullet line");
+            checked++;
         }
+        helper.assertTrue(checked > 100, "expected every GTNA multiblock, checked " + checked);
         helper.succeed();
     }
 
@@ -5030,19 +5030,18 @@ public final class GTNAMachineGameTests {
     private static boolean voidMinerTestProgramInjected;
 
     /** Injects a short program so the runtime test does not wait for the 1200-tick defaults. */
-    private static void injectVoidMinerTestProgram() {
+    private static void injectVoidMinerTestProgram(GameTestHelper helper) {
         if (voidMinerTestProgramInjected) return;
         voidMinerTestProgramInjected = true;
         GTRecipeType type = GTNARecipeType.ELECTRIC_VOID_MINING_RECIPES;
-        type.getAdditionHandler().beginStaging();
-        type.getAdditionHandler().addStaging(type.recipeBuilder(GTNACORE.id("gametest_void_miner_program"))
-                .inputItems(GTNAItems.VEIN_ESSENCES.get("moon_vein_essence"))
-                .inputFluids(GTMaterials.DrillingFluid.getFluid(1000))
-                .outputItems(ChemicalHelper.get(TagPrefix.rawOre, GTMaterials.Nickel).getItem(), 3)
-                .duration(20)
-                .EUt(GTValues.VA[GTValues.EV])
-                .buildRawRecipe());
-        type.getAdditionHandler().completeStaging();
+        GTNAGameTestUtils.stageWithRealRecipes(helper, type,
+                type.recipeBuilder(GTNACORE.id("gametest_void_miner_program"))
+                        .inputItems(GTNAItems.VEIN_ESSENCES.get("moon_vein_essence"))
+                        .inputFluids(GTMaterials.DrillingFluid.getFluid(1000))
+                        .outputItems(ChemicalHelper.get(TagPrefix.rawOre, GTMaterials.Nickel).getItem(), 3)
+                        .duration(20)
+                        .EUt(GTValues.VA[GTValues.EV])
+                        .buildRawRecipe());
     }
 
     /** Builds the Electric Void Miner 3x3x3, controller facing NORTH, like {@code duration_tester}. */
@@ -5143,7 +5142,7 @@ public final class GTNAMachineGameTests {
             helper.fail("electric_void_miner is disabled by config; the program test cannot run");
             return;
         }
-        injectVoidMinerTestProgram();
+        injectVoidMinerTestProgram(helper);
         BlockPos controllerPos = new BlockPos(8, 4, 4);
         buildElectricVoidMiner(helper, controllerPos);
         BlockPos inputPos = controllerPos.offset(1, -1, 2);
@@ -5203,12 +5202,10 @@ public final class GTNAMachineGameTests {
     @GameTest(template = TEMPLATE, timeoutTicks = 80)
     public static void electricVoidMinerRandomModeConsumesFluidWithoutEssence(GameTestHelper helper) {
         GTRecipeType type = GTNARecipeType.RANDOM_VOID_MINING_RECIPES;
-        type.getAdditionHandler().beginStaging();
-        type.getAdditionHandler().addStaging(type.recipeBuilder(GTNACORE.id("gametest_void_miner_random"))
+        GTNAGameTestUtils.stageWithRealRecipes(type, type.recipeBuilder(GTNACORE.id("gametest_void_miner_random"))
                 .inputFluids(GTMaterials.DrillingFluid.getFluid(500))
                 .outputItems(ChemicalHelper.get(TagPrefix.rawOre, GTMaterials.Nickel).getItem(), 1)
                 .duration(20).EUt(GTValues.VA[GTValues.EV]).buildRawRecipe());
-        type.getAdditionHandler().completeStaging();
         BlockPos pos = new BlockPos(8, 4, 4);
         buildElectricVoidMiner(helper, pos);
         ElectricVoidMinerMachine miner = (ElectricVoidMinerMachine) metaMachineAt(helper, pos);
@@ -5403,8 +5400,7 @@ public final class GTNAMachineGameTests {
         ((com.gregtechceu.gtceu.common.machine.multiblock.part.MaintenanceHatchPartMachine) metaMachineAt(helper,
                 maintenancePos)).fixAllMaintenanceProblems();
         GTRecipeType type = GTNARecipeType.INCUBATOR_RECIPES;
-        type.getAdditionHandler().beginStaging();
-        type.getAdditionHandler().addStaging(type.recipeBuilder(GTNACORE.id("gametest_moon_essence_culture"))
+        GTNAGameTestUtils.stageWithRealRecipes(type, type.recipeBuilder(GTNACORE.id("gametest_moon_essence_culture"))
                 .notConsumable(GTNAItems.PLANET_DATA_CHIPS[0])
                 .inputItems(GTNAItems.ESSENCE_SEED)
                 .inputItems(TagPrefix.rawOre, GTMaterials.Bauxite, 2)
@@ -5413,7 +5409,6 @@ public final class GTNAMachineGameTests {
                 .inputFluids(GTMaterials.Milk.getFluid(100))
                 .outputItems(GTNAItems.VEIN_ESSENCES.get("moon_vein_essence"), 64)
                 .duration(20).EUt(GTValues.VA[GTValues.HV]).buildRawRecipe());
-        type.getAdditionHandler().completeStaging();
         var input = (ItemBusPartMachine) metaMachineAt(helper, inputPos);
         input.getInventory().setStackInSlot(0, GTNAItems.PLANET_DATA_CHIPS[0].asStack());
         input.getInventory().setStackInSlot(1, GTNAItems.ESSENCE_SEED.asStack());
@@ -7524,14 +7519,12 @@ public final class GTNAMachineGameTests {
         }
         furnaceRecipeInjected = true;
         GTRecipeType type = GTRecipeTypes.FURNACE_RECIPES;
-        type.getAdditionHandler().beginStaging();
-        type.getAdditionHandler().addStaging(type.recipeBuilder(GTNACORE.id("gametest_stone_furnace_recipe"))
+        GTNAGameTestUtils.stageWithRealRecipes(type, type.recipeBuilder(GTNACORE.id("gametest_stone_furnace_recipe"))
                 .inputItems(new ItemStack(Items.NETHER_STAR))
                 .outputItems(new ItemStack(Items.STONE))
                 .EUt(GTValues.VA[GTValues.LV])
                 .duration(200)
                 .buildRawRecipe());
-        type.getAdditionHandler().completeStaging();
     }
 
     private static boolean assemblerRecipeInjected;
@@ -7543,14 +7536,12 @@ public final class GTNAMachineGameTests {
         }
         assemblerRecipeInjected = true;
         GTRecipeType type = GTRecipeTypes.ASSEMBLER_RECIPES;
-        type.getAdditionHandler().beginStaging();
-        type.getAdditionHandler().addStaging(type.recipeBuilder(GTNACORE.id("gametest_output_boost_recipe"))
+        GTNAGameTestUtils.stageWithRealRecipes(type, type.recipeBuilder(GTNACORE.id("gametest_output_boost_recipe"))
                 .inputItems(new ItemStack(Items.NETHER_STAR))
                 .outputItems(new ItemStack(Items.STONE))
                 .EUt(GTValues.VA[GTValues.LV])
                 .duration(1)
                 .buildRawRecipe());
-        type.getAdditionHandler().completeStaging();
     }
 
     private static boolean circuitAssemblerRecipeInjected;
@@ -7563,14 +7554,13 @@ public final class GTNAMachineGameTests {
         layeredFactoryRecipesInjected = true;
         for (int stage = 0; stage < types.length; stage++) {
             GTRecipeType type = types[stage];
-            type.getAdditionHandler().beginStaging();
-            type.getAdditionHandler().addStaging(type.recipeBuilder(GTNACORE.id("gametest_layered_factory_" + stage))
-                    .inputItems(inputs[stage])
-                    .outputItems(outputs[stage])
-                    .EUt(GTValues.VA[GTValues.LV])
-                    .duration(3)
-                    .buildRawRecipe());
-            type.getAdditionHandler().completeStaging();
+            GTNAGameTestUtils.stageWithRealRecipes(type,
+                    type.recipeBuilder(GTNACORE.id("gametest_layered_factory_" + stage))
+                            .inputItems(inputs[stage])
+                            .outputItems(outputs[stage])
+                            .EUt(GTValues.VA[GTValues.LV])
+                            .duration(3)
+                            .buildRawRecipe());
         }
     }
 
@@ -7578,14 +7568,12 @@ public final class GTNAMachineGameTests {
         if (factoryBenderRecipeInjected) return;
         factoryBenderRecipeInjected = true;
         GTRecipeType type = GTRecipeTypes.BENDER_RECIPES;
-        type.getAdditionHandler().beginStaging();
-        type.getAdditionHandler().addStaging(type.recipeBuilder(GTNACORE.id("gametest_factory_bender_recipe"))
+        GTNAGameTestUtils.stageWithRealRecipes(type, type.recipeBuilder(GTNACORE.id("gametest_factory_bender_recipe"))
                 .inputItems(new ItemStack(Items.NETHER_STAR))
                 .outputItems(new ItemStack(Items.EMERALD))
                 .EUt(GTValues.VA[GTValues.LV])
                 .duration(3)
                 .buildRawRecipe());
-        type.getAdditionHandler().completeStaging();
     }
 
     /**
@@ -7598,14 +7586,12 @@ public final class GTNAMachineGameTests {
         }
         circuitAssemblerRecipeInjected = true;
         GTRecipeType type = GTRecipeTypes.CIRCUIT_ASSEMBLER_RECIPES;
-        type.getAdditionHandler().beginStaging();
-        type.getAdditionHandler().addStaging(type.recipeBuilder(GTNACORE.id("gametest_mode_mirror_recipe"))
+        GTNAGameTestUtils.stageWithRealRecipes(type, type.recipeBuilder(GTNACORE.id("gametest_mode_mirror_recipe"))
                 .inputItems(new ItemStack(Items.COBBLESTONE))
                 .outputItems(new ItemStack(Blocks.STONE))
                 .EUt(GTValues.VA[GTValues.LV])
                 .duration(1)
                 .buildRawRecipe());
-        type.getAdditionHandler().completeStaging();
     }
 
     /** Human-readable pattern error, including the failing cell and the area contents. */

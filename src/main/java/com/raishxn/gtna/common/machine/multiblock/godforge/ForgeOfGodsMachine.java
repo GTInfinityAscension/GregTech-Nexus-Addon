@@ -469,7 +469,7 @@ public class ForgeOfGodsMachine extends WorkableMultiblockMachine
             reduceBattery(factor);
             return;
         }
-        // Through the recipe handler path, so creative/infinite hatches (GTMThings) behave as in recipes.
+        // Through the recipe handler path, so creative/infinite hatches behave as in recipes.
         Fluid fuel = selectedFuel();
         var tanks = fluidHandlers(IO.IN);
         List<com.gregtechceu.gtceu.api.recipe.ingredient.FluidIngredient> want = List.of(

@@ -101,12 +101,20 @@ public class GTNAMaterials {
     public static Material MagMatter;
     public static Material QuarkGluonPlasma;
     public static Material GravitonShard;
+    public static Material Draconium;
+    public static Material AwakenedDraconium;
+    public static Material CosmicNeutronium;
+    public static Material ExoHalkonite;
+    public static Material ChaosMatter;
+    public static Material Axonium;
 
     public static void init() {
         MaterialBuilder.init();
         com.raishxn.gtna.common.data.material.EyeOfHarmonyMaterials.init();
         com.raishxn.gtna.common.data.material.GodforgeMaterials.init();
         com.raishxn.gtna.common.data.material.GodforgeChainMaterials.init();
+        com.raishxn.gtna.common.data.material.FuelCellMaterials.init();
+        com.raishxn.gtna.common.data.material.ResearchMaterials.init();
         MaterialAdd.init();
     }
 }

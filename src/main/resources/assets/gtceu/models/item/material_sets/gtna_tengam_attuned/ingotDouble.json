@@ -1,0 +1,13 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_tengam_attuned/ingotDouble",
+    "layer1": "gtceu:item/material_sets/gtna_tengam_attuned/ingotDouble_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_tengam_attuned/ingotDouble_overlay"
+  },
+  "loader": "renderblender:glow_edge",
+  "glow_edge": {
+    "color": 14024576,
+    "width": 1.5
+  }
+}

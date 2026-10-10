@@ -1,5 +1,5 @@
 {
   "ldlib": {
-    "connection": "gtocore:block/neutronium_stable_casing_ctm"
+    "connection": "gtna:block/casings/neutronium_stable_casing_ctm"
   }
 }

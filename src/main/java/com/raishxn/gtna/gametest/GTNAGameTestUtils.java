@@ -43,4 +43,30 @@ public final class GTNAGameTestUtils {
         assertEveryTickUntilTimeout(helper, observationTicks, name,
                 () -> helper.assertFalse(controller.isFormed(), "controller formed"));
     }
+
+    /**
+     * Adds test-only recipes to a recipe type's lookup without wiping it: GTCEu's {@code completeStaging()} replaces
+     * the whole lookup DB, so every real recipe of the type is staged again first. Staging only the test recipe made
+     * every later GameTest see an empty Assembler/Bender/Lathe/... lookup (G-0208).
+     */
+    public static void stageWithRealRecipes(GameTestHelper helper,
+                                            com.gregtechceu.gtceu.api.recipe.GTRecipeType type,
+                                            com.gregtechceu.gtceu.api.recipe.GTRecipe... extra) {
+        stageWithRealRecipes(type, extra);
+    }
+
+    /**
+     * {@link #stageWithRealRecipes(GameTestHelper, com.gregtechceu.gtceu.api.recipe.GTRecipeType,
+     * com.gregtechceu.gtceu.api.recipe.GTRecipe...)} using the running server's recipe manager.
+     */
+    public static void stageWithRealRecipes(com.gregtechceu.gtceu.api.recipe.GTRecipeType type,
+                                            com.gregtechceu.gtceu.api.recipe.GTRecipe... extra) {
+        var server = net.minecraftforge.server.ServerLifecycleHooks.getCurrentServer();
+        type.getAdditionHandler().beginStaging();
+        for (var recipe : server.getRecipeManager().getAllRecipesFor(type)) {
+            type.getAdditionHandler().addStaging(recipe);
+        }
+        for (var recipe : extra) type.getAdditionHandler().addStaging(recipe);
+        type.getAdditionHandler().completeStaging();
+    }
 }

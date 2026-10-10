@@ -1,0 +1,16 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_dark_steel/plate_quintuple",
+    "layer1": "gtceu:item/material_sets/gtna_dark_steel/plate_quintuple_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_dark_steel/plate_quintuple_overlay",
+    "halo": "renderblender:misc/halo_noise"
+  },
+  "loader": "renderblender:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -6586660,
+    "size": 2,
+    "pulse": false
+  }
+}

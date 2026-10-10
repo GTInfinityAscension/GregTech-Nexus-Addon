@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtna:item/material_sets/dull/membrane_electrode",
+    "layer1": "gtna:item/material_sets/dull/membrane_electrode_secondary",
+    "layer2": "gtna:item/material_sets/dull/membrane_electrode_overlay"
+  }
+}

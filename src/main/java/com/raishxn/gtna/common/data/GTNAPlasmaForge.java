@@ -6,8 +6,6 @@ import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 
-import net.minecraft.network.chat.Component;
-
 import com.raishxn.gtna.GTNACORE;
 import com.raishxn.gtna.common.data.multiblock.GTNAMultiBlockFileReader;
 import com.raishxn.gtna.common.machine.multiblock.electric.PlasmaForgeMachine;
@@ -49,19 +47,6 @@ public final class GTNAPlasmaForge {
                     .build())
             .workableCasingModel(GTNACORE.id("block/casings/plasma_forge_bridge_casing"),
                     GTCEu.id("block/multiblock/fusion_reactor"))
-            .tooltips(Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.0"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.1"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.2"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.3"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.4"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.5"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.6"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.7"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.8"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.9"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.10"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.11"),
-                    Component.translatable("gtna.machine.dimensionally_transcendent_plasma_forge.tooltip.12"))
             .register();
 
     private GTNAPlasmaForge() {}

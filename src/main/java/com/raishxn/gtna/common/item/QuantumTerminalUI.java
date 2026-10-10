@@ -62,7 +62,7 @@ public class QuantumTerminalUI {
 
     /**
      * Handle clicks on connection locate buttons.
-     * Uses GTMThings pattern: only the client-side execution sets highlight.
+     * Only the client-side execution sets the highlight.
      */
     private void handleLocateClick(String componentData, ClickData clickData) {
         if (componentData == null) return;

@@ -68,7 +68,7 @@ public class WirelessEnergyHatchPartMachine extends TieredIOPartMachine implemen
         return false;
     }
 
-    // ── Auto-bind on placement (GTMThings pattern) ──
+    // ── Auto-bind on placement ──
 
     @Override
     public void onMachinePlaced(@Nullable LivingEntity player, ItemStack stack) {

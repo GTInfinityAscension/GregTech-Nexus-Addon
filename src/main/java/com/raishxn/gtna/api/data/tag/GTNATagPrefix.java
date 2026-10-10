@@ -132,6 +132,18 @@ public class GTNATagPrefix {
             .generateItem(true)
             .generationCondition(mat -> mat.hasFlag(GTNAMaterialFlags.GENERATE_SINGULARITY));
 
+    /** GTOCore {@code MEMBRANE_ELECTRODE}: Fuel Cell membranes (texture from GTOCore's dull set). */
+    public static final TagPrefix membraneElectrode = new TagPrefix("membrane_electrode")
+            .idPattern("%s_membrane_electrode")
+            .defaultTagPath("membrane_electrodes/%s")
+            .unformattedTagPath("membrane_electrodes")
+            .langValue("%s Membrane Electrode")
+            .materialAmount(GTValues.M)
+            .materialIconType(new MaterialIconType("membrane_electrode"))
+            .unificationEnabled(true)
+            .generateItem(true)
+            .generationCondition(mat -> mat.hasFlag(GTNAMaterialFlags.GENERATE_MEMBRANE_ELECTRODE));
+
     public static final TagPrefix brick = new TagPrefix("brick")
             .idPattern("%s_brick")
             .defaultTagPath("bricks/%s")

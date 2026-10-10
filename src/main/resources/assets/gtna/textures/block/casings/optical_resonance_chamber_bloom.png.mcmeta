@@ -5,7 +5,7 @@
   },
   "ldlib": {
     "emissive": true,
-    "connection": "gtocore:block/casings/optical_resonance_chamber_bloom_ctm"
+    "connection": "gtna:block/casings/optical_resonance_chamber_bloom_ctm"
   },
   "shimmer": {
     "bloom": true

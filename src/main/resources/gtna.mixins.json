@@ -5,7 +5,6 @@
   "refmap": "mixins.gtna.refmap.json",
   "minVersion": "0.8",
   "mixins": [
-    "ae2.CPUSelectionListMixin",
     "ae2.CraftingCPUClusterMixin",
     "ae2.CraftingServiceMixin",
     "ae2.CoreCraftConfirmMenuMixin",
@@ -25,19 +24,24 @@
     "gtceu.WorkableElectricMultiblockMachineMixin",
     "gtceu.GTRecipeLogicMixin",
     "gtceu.RecipeHelperMixin",
-    "kubejs.DataGeneratorMixin",
-    "personalspace.LevelDataAccessor",
-    "personalspace.ServerLevelDataAccessor"
+    "kubejs.DataGeneratorMixin"
   ],
   "client": [
+    "ae2.CPUSelectionListMixin",
     "client.MultiblockInfoSlotGuardMixin",
     "client.GTRecipeWidgetMixin",
     "client.ModularEmiRecipeMixin",
     "client.EyeOfHarmonyEmiScreenMixin",
     "client.JeiRecipeGuiHeightMixin",
+    "client.JeiRecipesGuiEohMixin",
     "client.FancyMachineUIWidgetMixin",
     "client.CoreCraftConfirmScreenMixin",
-    "client.PersonalSpaceClientLevelMixin"
+    "client.StereoscopicItemRendererMixin",
+    "client.MaterialItemGeometryMixin",
+    "client.RenderBlenderGlowMixin",
+    "client.UniversiumItemRendererMixin",
+    "client.UniversiumFluidGuiMixin",
+    "client.UniversiumJeiFluidMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -25,8 +25,7 @@
       }
     ]
   },
-
   "ldlib": {
-    "connection": "gtocore:block/casings/plasma_field_glass_ctm"
+    "connection": "gtna:block/casings/plasma_field_glass_ctm"
   }
 }

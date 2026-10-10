@@ -41,6 +41,8 @@ public class GTNAGTAddon implements IGTAddon {
         GTNAItems.init();
         GTNAMachines.init();
         GTNAMachines3.init();
+        com.raishxn.gtna.common.data.GTNAResearchMachines.init();
+        com.raishxn.gtna.common.data.GTNAMegaMachines.init();
         GTNAModules.init();
     }
 
@@ -96,6 +98,8 @@ public class GTNAGTAddon implements IGTAddon {
         com.raishxn.gtna.data.recipe.GTNAGodforgeChainRecipes.register(provider);
         com.raishxn.gtna.data.recipe.GTNAHighTierComponentRecipes.register(provider);
         com.raishxn.gtna.data.recipe.GTNAAdvancedFusionRecipes.register(provider);
+        com.raishxn.gtna.data.recipe.GTNAMegaMachineRecipes.register(provider);
+        com.raishxn.gtna.data.recipe.GTNAGTORecipes.register(provider);
         com.raishxn.gtna.data.recipe.GTNAGodforgeProgression.register(provider);
         com.raishxn.gtna.data.recipe.GTNAGodforgeProgression.registerExtraCosts();
         com.raishxn.gtna.data.recipe.GTNAEyeOfHarmonyProgression.register(provider);

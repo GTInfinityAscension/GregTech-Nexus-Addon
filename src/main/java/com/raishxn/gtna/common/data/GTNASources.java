@@ -6,7 +6,6 @@ import com.gregtechceu.gtceu.api.registry.GTRegistries;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.loading.FMLEnvironment;
@@ -30,8 +29,8 @@ public final class GTNASources {
 
     public static final String GTO = "gto";
     public static final String GTNL = "gtnl";
+    /** Universium visual origin: GTNH, Modernity-GTNH CC BY-NC-SA 4.0 sprites, RenderBlender cosmic renderer. */
     public static final String GTNH = "gtnh";
-    public static final String PERSONALSPACE = "personalspace";
     public static final String GTNEIOREPLUGIN = "gtneioreplugin";
     public static final String TST = "tst";
     public static final String GTL = "gtl";
@@ -39,7 +38,8 @@ public final class GTNASources {
     public static final String GTLSUPB = "gtlsupb";
     public static final String GTOEPP = "gtoepp";
     public static final String GTLADDITIONS = "gtladditions";
-    public static final String GTMTHINGS = "gtmthings";
+    /** Original GTNA content; used for standard multiblock tooltips without a ported origin. */
+    public static final String GTNA = "gtna";
 
     /** Machine registry path → source id. Only machines with a confirmed origin are listed. */
     private static final Map<String, String> SOURCES = Map.ofEntries(
@@ -58,7 +58,6 @@ public final class GTNASources {
             Map.entry("large_steam_storage_tank", GTO),
             Map.entry("directed_tesseract_generator", GTO),
             Map.entry("me_storage_access_hatch", GTO),
-            Map.entry("me_export_buffer", GTMTHINGS),
             Map.entry("me_big_storage_access_hatch", GTO),
             Map.entry("me_io_port_hatch", GTO),
             Map.entry("nexus_molecular_forge", GTO),
@@ -109,6 +108,48 @@ public final class GTNASources {
             Map.entry("industrial_flotation_cell", GTO),
             Map.entry("vacuum_drying_furnace", GTO),
             Map.entry("iv_dehydrator", GTO),
+            Map.entry("large_pyrolyse_oven", GTO),
+            Map.entry("cracker_hub", GTO),
+            Map.entry("mega_brewer", GTO),
+            Map.entry("mega_vacuum_drying_furnace", GTO),
+            Map.entry("giant_flotation_tank", GTO),
+            Map.entry("phase_change_cube", GTO),
+            Map.entry("engraving_laser_plant", GTO),
+            Map.entry("infinity_fluid_drilling_rig", GTO),
+            Map.entry("mega_distillery", GTL),
+            Map.entry("super_blast_smelter", GTO),
+            Map.entry("large_cracker", GTO),
+            Map.entry("integrated_assembler", GTO),
+            Map.entry("neutronium_wire_cutting", GTO),
+            Map.entry("holy_separator", GTO),
+            Map.entry("superconducting_electromagnetism", GTO),
+            Map.entry("superconducting_magnetic_presser", GTO),
+            Map.entry("magnetic_energy_reaction_furnace", GTO),
+            Map.entry("particle_stream_matrix_filling_machine", GTO),
+            Map.entry("nanites_circuit_assembly_factory", GTO),
+            Map.entry("mega_wiremill", GTO),
+            Map.entry("crystal_builder", GTO),
+            Map.entry("high_energy_laser_lathe", GTO),
+            Map.entry("extreme_compressor", GTO),
+            Map.entry("hyperdimensional_plasma_fusion_core", GTO),
+            Map.entry("gemini_containment_system", GTO),
+            Map.entry("giant_electrochemical_workstation", GTO),
+            Map.entry("desulfurizer", GTO),
+            Map.entry("dimensional_focus_engraving_array", GTO),
+            Map.entry("star_ultimate_material_forge_factory", GTO),
+            Map.entry("hand_of_arachne", GTO),
+            Map.entry("rare_earth_centrifugal", GTO),
+            Map.entry("heavy_rolling", GTO),
+            Map.entry("lightning_rod", GTO),
+            Map.entry("pcb_factory", GTO),
+            Map.entry("space_probe_surface_reception", GTO),
+            Map.entry("compound_extreme_cooling_unit", GTO),
+            Map.entry("hyper_reactor", GTO),
+            Map.entry("advanced_hyper_reactor", GTO),
+            Map.entry("fuel_cell_generator", GTO),
+            Map.entry("supercomputing_center", GTO),
+            Map.entry("data_center", GTO),
+            Map.entry("analysis_and_research_center", GTO),
             // --- GT: Not Leisure ---
             Map.entry("large_steam_crusher", GTNL),
             Map.entry("large_steam_furnace", GTNL),
@@ -184,11 +225,9 @@ public final class GTNASources {
         return SOURCES.containsKey(path);
     }
 
-    /** These machines have a complete curated tooltip, so GTCEu's generic short line is redundant. */
-    public static boolean hasCuratedGtoTooltip(MultiblockMachineDefinition definition) {
-        String path = definition.getId().getPath();
-        return GTO.equals(SOURCES.get(path)) &&
-                ("blaze_blast_furnace".equals(path) || GTNAGTOTooltips.handles(path));
+    /** The source id declared for a GTNA machine registry path, or {@code null} when it has none. */
+    public static String sourceOf(String path) {
+        return SOURCES.get(path);
     }
 
     /** The "Source: <addon>" tooltip line for a source id. The addon name is animated on the client. */
@@ -222,44 +261,14 @@ public final class GTNASources {
                 continue;
             }
             BiConsumer<ItemStack, List<Component>> original = definition.getTooltipBuilder();
+            // Multiblocks get their source line from GTNAMultiblockTooltips.
+            if (definition instanceof MultiblockMachineDefinition &&
+                    GTNAMultiblockTooltips.has(id.getPath())) {
+                continue;
+            }
             definition.setTooltipBuilder((stack, components) -> {
-                if ("blaze_blast_furnace".equals(id.getPath())) {
-                    for (int i = 0; i < 4; i++) {
-                        components.add(Component.translatable("gtna.gto.blaze.story." + i)
-                                .withStyle(ChatFormatting.GRAY));
-                    }
-                    components.add(Component.translatable("gtna.gto.running_requirements")
-                            .withStyle(ChatFormatting.GOLD));
-                    components.add(Component.translatable("gtna.gto.blaze.requirement"));
-                    components.add(Component.translatable("gtna.gto.blaze.consumption")
-                            .withStyle(ChatFormatting.GRAY));
-                    components.add(Component.translatable("gtna.gto.blaze.time"));
-                    components.add(Component.translatable("gtna.gto.blaze.parallel"));
-                    components.add(Component.translatable("gtna.gto.blaze.recipe_type"));
-                    components.add(line(sourceId));
-                    return;
-                }
-                if (definition instanceof MultiblockMachineDefinition gtoMultiblock && GTO.equals(sourceId) &&
-                        GTNAGTOTooltips.append(gtoMultiblock, components)) {
-                    return;
-                }
                 if (original != null) {
                     original.accept(stack, components);
-                }
-                if (definition instanceof MultiblockMachineDefinition multiblock && GTO.equals(sourceId)) {
-                    var types = multiblock.getRecipeTypes();
-                    if (types.length > 0) {
-                        MutableComponent recipeTypes = Component.translatable("gtna.tooltip.recipe_types")
-                                .withStyle(ChatFormatting.GOLD);
-                        for (int i = 0; i < types.length; i++) {
-                            if (i > 0) recipeTypes.append(Component.literal(", ").withStyle(ChatFormatting.GRAY));
-                            ResourceLocation recipeId = types[i].registryName;
-                            recipeTypes.append(Component.translatable(
-                                    recipeId.getNamespace() + "." + recipeId.getPath())
-                                    .withStyle(ChatFormatting.GRAY));
-                        }
-                        components.add(recipeTypes);
-                    }
                 }
                 components.add(Component.literal(SEPARATOR).withStyle(ChatFormatting.DARK_GRAY));
                 components.add(line(sourceId));

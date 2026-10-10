@@ -1,0 +1,13 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_axonium/plateTriple",
+    "layer1": "gtceu:item/material_sets/gtna_axonium/plateTriple_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_axonium/plateTriple_overlay"
+  },
+  "loader": "renderblender:glow_edge",
+  "glow_edge": {
+    "color": 16766720,
+    "width": 1.5
+  }
+}

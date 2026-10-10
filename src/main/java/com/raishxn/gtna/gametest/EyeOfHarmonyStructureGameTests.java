@@ -258,7 +258,13 @@ public final class EyeOfHarmonyStructureGameTests {
         for (int i = 0; i < ports.length; i++) helper.setBlock(cells.get('B').get(i), ports[i].getBlock());
         var machine = (EyeOfHarmonyMachine) ((IMachineBlockEntity) helper.getBlockEntity(controllerPos))
                 .getMetaMachine();
-        machine.setFrontFacing(facing);
+        // Set the facing through the block state, not setFrontFacing: setFrontFacing runs a synchronous pattern
+        // check that raced GTCEu's async assembly thread on the shared match context (flaky "Index N out of bounds").
+        if (machine.getFrontFacing() != facing) {
+            var state = helper.getBlockState(controllerPos);
+            var property = com.gregtechceu.gtceu.api.data.RotationState.NON_Y_AXIS.property;
+            helper.getLevel().setBlock(helper.absolutePos(controllerPos), state.setValue(property, facing), 2);
+        }
         return new Assembly(machine, cells);
     }
 

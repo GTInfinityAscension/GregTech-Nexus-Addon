@@ -1,0 +1,16 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_indalloy_140/spring",
+    "layer1": "gtceu:item/material_sets/gtna_indalloy_140/spring_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_indalloy_140/spring_overlay",
+    "halo": "renderblender:misc/halo_noise"
+  },
+  "loader": "renderblender:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -8882980,
+    "size": 2,
+    "pulse": false
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_nitinol_60/round",
+    "layer1": "gtceu:item/material_sets/gtna_nitinol_60/round_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_nitinol_60/round_overlay",
+    "halo": "renderblender:misc/halo_noise"
+  },
+  "loader": "renderblender:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -3223076,
+    "size": 2,
+    "pulse": false
+  }
+}

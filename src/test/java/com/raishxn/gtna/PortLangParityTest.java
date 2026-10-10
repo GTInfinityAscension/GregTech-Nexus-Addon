@@ -37,6 +37,10 @@ public final class PortLangParityTest {
     /** JSON object keys in the manual en_us file. */
     private static final Pattern JSON_KEY = Pattern
             .compile("\"((?:block\\.gtna\\.|gtna\\.machine\\.)[^\"]*)\"\\s*:");
+    private static final Path GENERATED_EN_US = Path
+            .of("src/generated/resources/assets/gtna/lang/en_us.json");
+    private static final Pattern STANDARD_TOOLTIP_KEY = Pattern
+            .compile("\"(gtna\\.machine\\.[a-z0-9_]+\\.tooltip\\.\\d+)\"\\s*:");
     private static final Pattern TOOLTIP_KEY = Pattern.compile("^gtna\\.machine\\.[a-z0-9_]+\\.tooltip");
 
     private PortLangParityTest() {}
@@ -56,6 +60,19 @@ public final class PortLangParityTest {
         if (!missing.isEmpty()) {
             throw new AssertionError("pt_br.json is missing " + missing.size() + " block/tooltip key(s) exposed by " +
                     "GTNALangProvider: " + missing + " - add them to src/main/resources/assets/gtna/lang/pt_br.json");
+        }
+        // Standard multiblock tooltip lines exist only in the generated en_us: every one needs pt_br.
+        Set<String> standard = new LinkedHashSet<>();
+        collect(STANDARD_TOOLTIP_KEY, Files.readString(GENERATED_EN_US, StandardCharsets.UTF_8), standard);
+        List<String> missingStandard = standard.stream().filter(key -> !portuguese.contains('"' + key + '"'))
+                .sorted().toList();
+        if (!missingStandard.isEmpty()) {
+            throw new AssertionError("pt_br.json is missing " + missingStandard.size() + " multiblock tooltip " +
+                    "key(s): " + missingStandard + " - run tools/apply_multiblock_tooltips.py");
+        }
+        if (standard.size() < 1000) {
+            throw new AssertionError("expected at least 1000 multiblock tooltip keys in the generated en_us, " +
+                    "found " + standard.size() + "; run ./gradlew runData");
         }
         if (english.size() < 100) {
             throw new AssertionError("expected at least 100 block/tooltip keys, found " + english.size() +

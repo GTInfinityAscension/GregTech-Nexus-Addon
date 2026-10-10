@@ -1,5 +1,5 @@
 {
   "ldlib": {
-    "connection": "gtocore:block/magnesium_oxide_ceramic_high_temperature_insulation_mechanical_block_ctm"
+    "connection": "gtna:block/casings/magnesium_oxide_ceramic_high_temperature_insulation_mechanical_block_ctm"
   }
 }

@@ -55,6 +55,10 @@ public class GTNAMaterialFlags {
             .requireProps(PropertyKey.DUST)
             .build();
 
+    /** GTOCore {@code GENERATE_MEMBRANE_ELECTRODE}: Fuel Cell membrane electrodes (G-0248). */
+    public static final MaterialFlag GENERATE_MEMBRANE_ELECTRODE = new MaterialFlag.Builder(
+            "generate_membrane_electrode").build();
+
     /** GTOCore {@code MILLED} products from the ISA Mill; no property requirement upstream. */
     public static final MaterialFlag GENERATE_MILLED = new MaterialFlag.Builder("generate_milled")
             .build();

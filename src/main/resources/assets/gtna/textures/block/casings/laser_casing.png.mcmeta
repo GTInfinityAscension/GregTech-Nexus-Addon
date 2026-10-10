@@ -1,5 +1,5 @@
 {
   "ldlib": {
-    "connection": "gtocore:block/laser_casing_ctm"
+    "connection": "gtna:block/casings/laser_casing_ctm"
   }
 }

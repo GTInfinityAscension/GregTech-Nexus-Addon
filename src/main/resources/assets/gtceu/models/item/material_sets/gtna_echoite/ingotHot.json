@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_echoite/ingotHot",
+    "layer1": "gtceu:item/material_sets/gtna_echoite/ingotHot_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_echoite/ingotHot_overlay"
+  }
+}

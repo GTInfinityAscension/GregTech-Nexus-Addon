@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_graviton_shard/plateTriple",
+    "layer1": "gtceu:item/material_sets/gtna_graviton_shard/plateTriple_secondary",
+    "layer2": "gtceu:item/material_sets/gtna_graviton_shard/plateTriple_overlay"
+  },
+  "loader": "renderblender:cosmic",
+  "cosmic": {
+    "mask": "gtna:mask/cosmic"
+  }
+}

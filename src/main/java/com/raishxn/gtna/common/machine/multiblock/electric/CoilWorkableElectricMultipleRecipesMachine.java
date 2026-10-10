@@ -56,6 +56,10 @@ public class CoilWorkableElectricMultipleRecipesMachine extends WorkableElectric
         return Math.max(hatchParallel, coilParallel);
     }
 
+    public boolean scalesParallelWithCoil() {
+        return scaleParallelWithCoil;
+    }
+
     public ICoilType getCoilType() {
         return coilType;
     }

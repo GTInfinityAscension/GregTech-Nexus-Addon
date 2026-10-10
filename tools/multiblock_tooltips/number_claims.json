@@ -1,0 +1,2492 @@
+{
+ "large_steam_crusher": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamCrusher.java",
+    "pattern": "durationMultiplier\\s*(?:=\\s*|\\()0\\.5",
+    "expr": "durationMultiplier 0.5 -> 2x"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ],
+  "8": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamCrusher.java",
+    "pattern": "targetParallel = 8;",
+    "expr": "default targetParallel 8"
+   }
+  ],
+  "128": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamCrusher.java",
+    "pattern": "Math\\.min\\(128, this\\.targetParallel \\* 2\\)",
+    "expr": "max parallel 128"
+   }
+  ]
+ },
+ "large_steam_furnace": {
+  "10": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamFurnace.java",
+    "pattern": "durationMultiplier\\s*(?:=\\s*|\\()0\\.1",
+    "expr": "durationMultiplier 0.1 -> 10x"
+   }
+  ],
+  "8": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamFurnace.java",
+    "pattern": "targetParallel = 8;",
+    "expr": "default targetParallel 8"
+   }
+  ],
+  "128": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamFurnace.java",
+    "pattern": "Math\\.min\\(128, this\\.targetParallel \\* 2\\)",
+    "expr": "max parallel 128"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_alloy_smelter": {
+  "1.75": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamAlloySmelter.java",
+    "pattern": "durationMultiplier\\s*(?:=\\s*|\\()0\\.57",
+    "expr": "durationMultiplier 0.57 -> 1.75x"
+   }
+  ],
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamAlloySmelter.java",
+    "pattern": "targetParallel = 64;",
+    "expr": "default targetParallel 64"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamAlloySmelter.java",
+    "pattern": "Math\\.min\\(64, this\\.targetParallel \\* 2\\)",
+    "expr": "max parallel 64"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_hammer": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamHammer.java",
+    "pattern": "durationMultiplier\\s*(?:=\\s*|\\()0\\.5",
+    "expr": "durationMultiplier 0.5 -> 2x"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ],
+  "32": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamHammer.java",
+    "pattern": "targetParallel = 32;",
+    "expr": "default targetParallel 32"
+   }
+  ],
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamHammer.java",
+    "pattern": "Math\\.min\\(64, this\\.targetParallel \\* 2\\)",
+    "expr": "max parallel 64"
+   }
+  ]
+ },
+ "large_steam_compressor": {
+  "2.5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamCompressor.java",
+    "pattern": "durationMultiplier\\s*(?:=\\s*|\\()0\\.4",
+    "expr": "durationMultiplier 0.4 -> 2.5x"
+   }
+  ],
+  "24": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamCompressor.java",
+    "pattern": "targetParallel = 24;",
+    "expr": "default targetParallel 24"
+   }
+  ],
+  "48": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamCompressor.java",
+    "pattern": "Math\\.min\\(48, this\\.targetParallel \\* 2\\)",
+    "expr": "max parallel 48"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_extractor": {
+  "1.75": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamExtractor.java",
+    "pattern": "durationMultiplier\\s*(?:=\\s*|\\()0\\.57",
+    "expr": "durationMultiplier 0.57 -> 1.75x"
+   }
+  ],
+  "24": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamExtractor.java",
+    "pattern": "targetParallel = 24;",
+    "expr": "default targetParallel 24"
+   }
+  ],
+  "48": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamExtractor.java",
+    "pattern": "Math\\.min\\(48, this\\.targetParallel \\* 2\\)",
+    "expr": "max parallel 48"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_ore_washer": {
+  "5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamOreWasher.java",
+    "pattern": "durationMultiplier\\s*(?:=\\s*|\\()0\\.2",
+    "expr": "durationMultiplier 0.2 -> 5x"
+   }
+  ],
+  "48": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamOreWasher.java",
+    "pattern": "targetParallel = 48;",
+    "expr": "default targetParallel 48"
+   }
+  ],
+  "96": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamOreWasher.java",
+    "pattern": "Math\\.min\\(96, this\\.targetParallel \\* 2\\)",
+    "expr": "max parallel 96"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_mixer": {
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "MIXER_RECIPES,\\s*64,\\s*64,\\s*0\\.5",
+    "expr": "AdjustableSteamParallelMachine(MIXER, 64, 64, 0.5)"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_centrifuge": {
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "CENTRIFUGE_RECIPES,\\s*64,\\s*64,\\s*0\\.5",
+    "expr": "AdjustableSteamParallelMachine(CENTRIFUGE, 64, 64, 0.5)"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_thermal_centrifuge": {
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "THERMAL_CENTRIFUGE_RECIPES,\\s*64,\\s*64,\\s*0\\.5",
+    "expr": "AdjustableSteamParallelMachine(THERMAL_CENTRIFUGE, 64, 64, 0.5)"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_bath": {
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "CHEMICAL_BATH_RECIPES,\\s*64,\\s*64,\\s*0\\.5",
+    "expr": "AdjustableSteamParallelMachine(CHEMICAL_BATH, 64, 64, 0.5)"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_lathe": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "LATHE_RECIPES,\\s*16,\\s*16,\\s*0\\.5",
+    "expr": "AdjustableSteamParallelMachine(LATHE, 16, 16, 0.5)"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_cutting": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "CUTTER_RECIPES,\\s*16,\\s*16,\\s*0\\.5",
+    "expr": "AdjustableSteamParallelMachine(CUTTER, 16, 16, 0.5)"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_bending": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "BENDER_RECIPES,\\s*16,\\s*16,\\s*0\\.5",
+    "expr": "AdjustableSteamParallelMachine(BENDER, 16, 16, 0.5)"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_extruder": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "EXTRUDER_RECIPES,\\s*16,\\s*16,\\s*0\\.5",
+    "expr": "AdjustableSteamParallelMachine(EXTRUDER, 16, 16, 0.5)"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_wiremill": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "WIREMILL_RECIPES,\\s*16,\\s*16,\\s*0\\.5",
+    "expr": "AdjustableSteamParallelMachine(WIREMILL, 16, 16, 0.5)"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_sifter": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "SIFTER_RECIPES,\\s*16,\\s*16,\\s*0\\.5",
+    "expr": "AdjustableSteamParallelMachine(SIFTER, 16, 16, 0.5)"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_forming_press": {
+  "32": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "FORMING_PRESS_RECIPES,\\s*32,\\s*32,\\s*0\\.4",
+    "expr": "AdjustableSteamParallelMachine(FORMING_PRESS, 32, 32, 0.4)"
+   }
+  ],
+  "2.5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "FORMING_PRESS_RECIPES,\\s*32,\\s*32,\\s*0\\.4",
+    "expr": "durationMultiplier 0.4 -> 2.5x"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "large_steam_circuit_assembler": {
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamCircuitAssembler.java",
+    "pattern": "MAX_PARALLELS = 4;.*\\n.*\\n.*OUTPUT_MULTIPLIER = 2;\\n.*DURATION_MULTIPLIER = 4",
+    "expr": "MAX_PARALLELS 4, DURATION_MULTIPLIER 4"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamCircuitAssembler.java",
+    "pattern": "OUTPUT_MULTIPLIER = 2",
+    "expr": "OUTPUT_MULTIPLIER 2 (+ high pressure 2x)"
+   }
+  ],
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamCircuitAssembler.java",
+    "pattern": "ENGRAVING_NEEDED = 16",
+    "expr": "ENGRAVING_NEEDED 16"
+   }
+  ]
+ },
+ "steam_cactus_wonder": {
+  "8000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/GTNAMachineRecipes.java",
+    "pattern": "Items\\.COAL\\), 8_000",
+    "expr": "cactusWonder coal 8,000"
+   }
+  ],
+  "90000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/GTNAMachineRecipes.java",
+    "pattern": "Items\\.COAL_BLOCK\\), 90_000",
+    "expr": "cactusWonder coal block 90,000"
+   }
+  ],
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/GTNAMachineRecipes.java",
+    "pattern": "outputFluids\\(GTMaterials\\.Steam\\.getFluid\\(steam\\)\\)\\s*\\.duration\\(20\\)",
+    "expr": "duration 20 ticks = 1 s"
+   }
+  ]
+ },
+ "steam_cobbler": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/SteamCobbler.java",
+    "pattern": "targetParallel = 16;[\\s\\S]*Math\\.min\\(16,",
+    "expr": "parallel 16 / max 16"
+   }
+  ]
+ },
+ "steam_cracking": {
+  "8": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/SteamCracking.java",
+    "pattern": "isHighPressure\\(\\) \\? 16 : 8",
+    "expr": "8 bronze / 16 steel"
+   }
+  ],
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/SteamCracking.java",
+    "pattern": "isHighPressure\\(\\) \\? 16 : 8",
+    "expr": "8 bronze / 16 steel"
+   }
+  ]
+ },
+ "steam_item_vault": {
+  "16384000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/SteamItemVaultMachine.java",
+    "pattern": "SLOTS = 256;\\s*private static final int SLOT_LIMIT = 64_000",
+    "expr": "256 slots x 64,000"
+   }
+  ],
+  "256": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/SteamItemVaultMachine.java",
+    "pattern": "SLOTS = 256",
+    "expr": "256 slots x 64,000"
+   }
+  ],
+  "64000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/SteamItemVaultMachine.java",
+    "pattern": "SLOT_LIMIT = 64_000",
+    "expr": "256 slots x 64,000"
+   }
+  ]
+ },
+ "steam_lava_maker": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/GTNALavaMakerRecipes.java",
+    "pattern": "\\.duration\\(20\\)",
+    "expr": "lava recipe duration 20 ticks = 1 s"
+   }
+  ],
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/SteamLavaMakerMachine.java",
+    "pattern": "targetParallel = 16;[\\s\\S]*Math\\.min\\(16,",
+    "expr": "parallel 16 / max 16"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiMachineBase/SteamMultiMachineBase.java",
+    "pattern": "HIGH_PRESSURE_DURATION_MULTIPLIER",
+    "expr": "high pressure halves duration (2x speed, steam per tick unchanged -> 2x rate)"
+   }
+  ]
+ },
+ "steam_manufacturer": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/SteamManufacturer.java",
+    "pattern": "targetParallel = 16;[\\s\\S]*Math\\.min\\(16,",
+    "expr": "parallel 16 / max 16"
+   }
+  ]
+ },
+ "steam_mega_compressor": {
+  "256": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/MegaSteamCompressor.java",
+    "pattern": "getParallelAmount\\(machine, recipe, 256\\)",
+    "expr": "parallel 256"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/MegaSteamCompressor.java",
+    "pattern": "durationMultiplier\\(0\\.5\\)",
+    "expr": "durationMultiplier 0.5 -> 2x"
+   }
+  ],
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/GTNAMachineRecipes.java",
+    "pattern": "LARGE_STEAM_COMPRESSOR\\.asStack\\(\\)\\.getItem\\(\\), 64\\)",
+    "expr": "manufacturer recipe uses 64 Large Steam Compressors"
+   }
+  ]
+ },
+ "steam_woodcutter": {
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/SteamWoodcutter.java",
+    "pattern": "targetParallel = 64;[\\s\\S]*Math\\.min\\(64,",
+    "expr": "parallel 64 / max 64"
+   }
+  ]
+ },
+ "stone_superheater": {
+  "32": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/StoneSuperHeater.java",
+    "pattern": "targetParallel = 32;[\\s\\S]*Math\\.min\\(32,",
+    "expr": "parallel 32 / max 32"
+   }
+  ]
+ },
+ "large_steam_solar_boiler": {
+  "63": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamSolarBoilerMachine.java",
+    "pattern": "MAX_SIDE = 63",
+    "expr": "MAX_SIDE 63"
+   }
+  ],
+  "125": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamSolarBoilerMachine.java",
+    "pattern": "MAX_BACK = 125",
+    "expr": "MAX_BACK 125"
+   }
+  ]
+ },
+ "large_steam_storage_tank": {
+  "120000000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/LargeSteamStorageTank.java",
+    "pattern": "CAPACITY = 120_000_000",
+    "expr": "CAPACITY"
+   }
+  ]
+ },
+ "infernal_coke_oven": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/InfernalCokeOven.java",
+    "pattern": "continuousWorkingTicks / 100\\.0\\) \\* 0\\.01",
+    "expr": "+1% per 100 ticks (5 s)"
+   }
+  ],
+  "5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/InfernalCokeOven.java",
+    "pattern": "continuousWorkingTicks / 100\\.0\\) \\* 0\\.01",
+    "expr": "100 ticks = 5 s"
+   }
+  ],
+  "10": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/InfernalCokeOven.java",
+    "pattern": "Math\\.min\\(10\\.0, bonus\\)[\\s\\S]*|TICKS_PER_STAGE = 10 \\* 60 \\* 20",
+    "expr": "bonus cap 10x; stage every 10 min"
+   }
+  ],
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/InfernalCokeOven.java",
+    "pattern": "PARALLEL_INCREASE = 16",
+    "expr": "PARALLEL_INCREASE"
+   }
+  ],
+  "8": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/InfernalCokeOven.java",
+    "pattern": "BASE_PARALLEL = 8",
+    "expr": "BASE_PARALLEL"
+   }
+  ],
+  "256": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/InfernalCokeOven.java",
+    "pattern": "MAX_PARALLEL_CAP = 256",
+    "expr": "MAX_PARALLEL_CAP"
+   }
+  ],
+  "6400": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/InfernalCokeOven.java",
+    "pattern": "BASE_STEAM_PER_TICK = 320",
+    "expr": "320/t x 20 = 6,400 L/s"
+   }
+  ],
+  "1600": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/InfernalCokeOven.java",
+    "pattern": "STEAM_INCREASE_PER_STAGE = 80",
+    "expr": "80/t x 20 = 1,600 L/s"
+   }
+  ]
+ },
+ "primitive_distillation_tower": {
+  "75": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/PrimitiveSteamDistillationTowerMachine.java",
+    "pattern": "return 0\\.75",
+    "expr": "steam multiplier 0.75"
+   }
+  ]
+ },
+ "primitive_stone_furnace": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/PrimitiveStoneFurnaceMachine.java",
+    "pattern": "RECIPE_DURATION = 1",
+    "expr": "RECIPE_DURATION 1 tick"
+   }
+  ]
+ },
+ "dimensionally_transcendent_dirt_forge": {
+  "524288": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/DimensionallyTranscendentDirtForgeMachine.java",
+    "pattern": "MAX_PARALLEL = 524288",
+    "expr": "MAX_PARALLEL"
+   }
+  ],
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/DimensionallyTranscendentDirtForgeMachine.java",
+    "pattern": "1\\.0 / Math\\.max\\(1, recipe\\.duration\\)",
+    "expr": "duration -> 1 tick"
+   }
+  ]
+ },
+ "dimensionally_transcendent_steam_boiler": {
+  "4096000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "LargeBoilerMachine\\(\\s*holder, 4_096_000",
+    "expr": "LargeBoilerMachine(4,096,000)"
+   }
+  ]
+ },
+ "dimensionally_transcendent_steam_oven": {
+  "100": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/DimensionallyTranscendentSteamOvenMachine.java",
+    "pattern": "524288, 524288, 0\\.01, 2",
+    "expr": "0.01 duration -> 100x"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/DimensionallyTranscendentSteamOvenMachine.java",
+    "pattern": "524288, 524288, 0\\.01, 2",
+    "expr": "2 threads"
+   }
+  ],
+  "524288": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/steam/DimensionallyTranscendentSteamOvenMachine.java",
+    "pattern": "524288, 524288",
+    "expr": "parallel 524,288"
+   }
+  ]
+ },
+ "leap_forward_one_blast_furnace": {
+  "32000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/LeapForwardBlastFurnace.java",
+    "pattern": "MAX_PARALLEL_CAP = 32000",
+    "expr": "cap 32,000"
+   }
+  ],
+  "20": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/LeapForwardBlastFurnace.java",
+    "pattern": "TICKS_PER_LAYER = 400",
+    "expr": "400 ticks = 20 s per layer (base 400)"
+   }
+  ]
+ },
+ "hyper_pressure_reactor": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/HyperPressureReactor.java",
+    "pattern": "isCompact \\? 512 : 1",
+    "expr": "parallel 1 (compact 512)"
+   }
+  ],
+  "512": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/HyperPressureReactor.java",
+    "pattern": "isCompact \\? 512 : 1",
+    "expr": "compact 512"
+   }
+  ]
+ },
+ "compact_hyper_pressure_reactor": {
+  "512": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/HyperPressureReactor.java",
+    "pattern": "isCompact \\? 512 : 1",
+    "expr": "compact 512"
+   }
+  ]
+ },
+ "void_miner_steam_gate_aged": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/config/GTNABalance.java",
+    "pattern": "denseSteam = new VoidMinerSteamTierBalance\\(2, 2\\.0, 1\\.5\\)",
+    "expr": "dense 2x/2x/1.5x"
+   }
+  ],
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/config/GTNABalance.java",
+    "pattern": "superHeatedSteam = new VoidMinerSteamTierBalance\\(3, 3\\.0, 2\\.0\\)",
+    "expr": "superheated 3x/3x/2x"
+   }
+  ],
+  "5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/config/GTNABalance.java",
+    "pattern": "insanelySupercriticalSteam = new VoidMinerSteamTierBalance\\(5, 5\\.0, 4\\.0\\)",
+    "expr": "insanely 5x/5x/4x"
+   }
+  ],
+  "1.5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/config/GTNABalance.java",
+    "pattern": "VoidMinerSteamTierBalance\\(2, 2\\.0, 1\\.5\\)",
+    "expr": "dense EU 1.5x"
+   }
+  ],
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/config/GTNABalance.java",
+    "pattern": "VoidMinerSteamTierBalance\\(5, 5\\.0, 4\\.0\\)",
+    "expr": "insanely EU 4x"
+   }
+  ]
+ },
+ "steam_elevator": {
+  "12": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamElevator.java",
+    "pattern": "MODULE_OFFSETS = \\{\\s*\\{ 0, -8, -5 \\}, \\{ 0, -8, -3 \\}, \\{ 0, -8, -1 \\},\\s*\\{ 0, -2, -11 \\}, \\{ 0, -2, 5 \\},\\s*\\{ 0, 0, -11 \\}, \\{ 0, 0, 5 \\},\\s*\\{ 0, 2, -11 \\}, \\{ 0, 2, 5 \\},\\s*\\{ 0, 8, -5 \\}, \\{ 0, 8, -3 \\}, \\{ 0, 8, -1 \\},",
+    "expr": "12 module offsets"
+   }
+  ]
+ },
+ "steam_elevator_flight_module_i": {
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamFlightModule.java",
+    "pattern": "RANGE \\* Math\\.max\\(1, getModuleTier\\(\\)\\)",
+    "expr": "RANGE 64 x tier 1"
+   }
+  ]
+ },
+ "steam_elevator_weather_module_i": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "WEATHER_TIME \\* Math\\.max\\(1, getModuleTier\\(\\)\\)",
+    "expr": "72,000 ticks (1 h) x tier 1"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "case 1 -> MODE_CLEAR;",
+    "expr": "circuit 1 selects clear"
+   }
+  ],
+  "1000000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "WEATHER_STEAM_COST = 1_000_000L",
+    "expr": "1,000,000 mB"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "case 2 -> MODE_RAIN;",
+    "expr": "circuit 2 selects rain"
+   }
+  ],
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "case 3 -> MODE_THUNDER;",
+    "expr": "circuit 3 selects thunder"
+   }
+  ]
+ },
+ "steam_elevator_flight_module_ii": {
+  "128": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamFlightModule.java",
+    "pattern": "RANGE \\* Math\\.max\\(1, getModuleTier\\(\\)\\)",
+    "expr": "RANGE 64 x tier 2"
+   }
+  ]
+ },
+ "steam_elevator_weather_module_ii": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "WEATHER_TIME \\* Math\\.max\\(1, getModuleTier\\(\\)\\)",
+    "expr": "72,000 ticks (1 h) x tier 2"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "case 2 -> MODE_RAIN;",
+    "expr": "circuit 2 selects rain"
+   }
+  ],
+  "1000000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "WEATHER_STEAM_COST = 1_000_000L",
+    "expr": "1,000,000 mB"
+   }
+  ],
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "case 1 -> MODE_CLEAR;",
+    "expr": "circuit 1 selects clear"
+   }
+  ],
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "case 3 -> MODE_THUNDER;",
+    "expr": "circuit 3 selects thunder"
+   }
+  ]
+ },
+ "steam_elevator_flight_module_iii": {
+  "192": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamFlightModule.java",
+    "pattern": "RANGE \\* Math\\.max\\(1, getModuleTier\\(\\)\\)",
+    "expr": "RANGE 64 x tier 3"
+   }
+  ]
+ },
+ "steam_elevator_weather_module_iii": {
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "WEATHER_TIME \\* Math\\.max\\(1, getModuleTier\\(\\)\\)",
+    "expr": "72,000 ticks (1 h) x tier 3"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "case 3 -> MODE_THUNDER;",
+    "expr": "circuit 3 selects thunder"
+   }
+  ],
+  "1000000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "WEATHER_STEAM_COST = 1_000_000L",
+    "expr": "1,000,000 mB"
+   }
+  ],
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "case 1 -> MODE_CLEAR;",
+    "expr": "circuit 1 selects clear"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamWeatherModule.java",
+    "pattern": "case 2 -> MODE_RAIN;",
+    "expr": "circuit 2 selects rain"
+   }
+  ]
+ },
+ "steam_elevator_oil_drill_module_i": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamOilDrillModule.java",
+    "pattern": "for \\(int i = 0; i < getModuleTier\\(\\) - 1; i\\+\\+\\)",
+    "expr": "fluid types = tier - 1"
+   }
+  ],
+  "250": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamOilDrillModule.java",
+    "pattern": "250 \\* \\(1 << Math\\.max\\(0, getModuleTier\\(\\) - 2\\)\\)",
+    "expr": "250 * 2^(tier-2)"
+   }
+  ],
+  "1200": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamOilDrillModule.java",
+    "pattern": "1200 / \\(getModuleTier\\(\\) - 1\\)",
+    "expr": "1200 / (tier-1)"
+   }
+  ]
+ },
+ "steam_elevator_oil_drill_module_ii": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamOilDrillModule.java",
+    "pattern": "for \\(int i = 0; i < getModuleTier\\(\\) - 1; i\\+\\+\\)",
+    "expr": "fluid types = tier - 1"
+   }
+  ],
+  "500": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamOilDrillModule.java",
+    "pattern": "250 \\* \\(1 << Math\\.max\\(0, getModuleTier\\(\\) - 2\\)\\)",
+    "expr": "250 * 2^(tier-2)"
+   }
+  ],
+  "600": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamOilDrillModule.java",
+    "pattern": "1200 / \\(getModuleTier\\(\\) - 1\\)",
+    "expr": "1200 / (tier-1)"
+   }
+  ]
+ },
+ "steam_elevator_oil_drill_module_iii": {
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamOilDrillModule.java",
+    "pattern": "for \\(int i = 0; i < getModuleTier\\(\\) - 1; i\\+\\+\\)",
+    "expr": "fluid types = tier - 1"
+   }
+  ],
+  "1000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamOilDrillModule.java",
+    "pattern": "250 \\* \\(1 << Math\\.max\\(0, getModuleTier\\(\\) - 2\\)\\)",
+    "expr": "250 * 2^(tier-2)"
+   }
+  ],
+  "400": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamOilDrillModule.java",
+    "pattern": "1200 / \\(getModuleTier\\(\\) - 1\\)",
+    "expr": "1200 / (tier-1)"
+   }
+  ]
+ },
+ "steam_elevator_entity_crusher_module_i": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "BASE_DOUBLING_CHANCE = 2\\.0",
+    "expr": "2%"
+   }
+  ],
+  "0.5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "CHANCE_PER_SPAWNER = 0\\.5",
+    "expr": "0.5% per spawner"
+   }
+  ],
+  "34": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "MAX_DOUBLING_CHANCE = 34\\.0",
+    "expr": "cap 34%"
+   }
+  ],
+  "400": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "tier I/II/III = 400/200/100 ticks",
+    "expr": "400/200/100 ticks"
+   }
+  ]
+ },
+ "steam_elevator_entity_crusher_module_ii": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "BASE_DOUBLING_CHANCE = 2\\.0",
+    "expr": "2%"
+   }
+  ],
+  "0.5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "CHANCE_PER_SPAWNER = 0\\.5",
+    "expr": "0.5% per spawner"
+   }
+  ],
+  "34": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "MAX_DOUBLING_CHANCE = 34\\.0",
+    "expr": "cap 34%"
+   }
+  ],
+  "200": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "tier I/II/III = 400/200/100 ticks",
+    "expr": "400/200/100 ticks"
+   }
+  ]
+ },
+ "steam_elevator_entity_crusher_module_iii": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "BASE_DOUBLING_CHANCE = 2\\.0",
+    "expr": "2%"
+   }
+  ],
+  "0.5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "CHANCE_PER_SPAWNER = 0\\.5",
+    "expr": "0.5% per spawner"
+   }
+  ],
+  "34": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "MAX_DOUBLING_CHANCE = 34\\.0",
+    "expr": "cap 34%"
+   }
+  ],
+  "100": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamEntityCrusherModule.java",
+    "pattern": "tier I/II/III = 400/200/100 ticks",
+    "expr": "400/200/100 ticks"
+   }
+  ]
+ },
+ "steam_elevator_greenhouse_module": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamGreenhouseModule.java",
+    "pattern": "RANGE = 16;[\\s\\S]*\\+\\+grown >= 16",
+    "expr": "range 16, 16 crops"
+   }
+  ],
+  "16000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamGreenhouseModule.java",
+    "pattern": "WATER_PER_OPERATION = 16_000",
+    "expr": "16,000 mB"
+   }
+  ],
+  "60": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamGreenhouseModule.java",
+    "pattern": "CYCLE_TICKS = 1200",
+    "expr": "1200 ticks = 60 s"
+   }
+  ]
+ },
+ "steam_elevator_ore_processor_module": {
+  "8": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamOreProcessorModule.java",
+    "pattern": "return 8 << clampMode\\(mode\\)",
+    "expr": "8 x circuit multiplier"
+   }
+  ],
+  "128": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamOreProcessorModule.java",
+    "pattern": "STEAM_UPKEEP = 128",
+    "expr": "128 mB/t x multiplier"
+   }
+  ]
+ },
+ "steam_elevator_monster_repellent_module_i": {
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamMonsterRepellentModule.java",
+    "pattern": "return 1 << \\(5 \\+ getModuleTier\\(\\)\\)",
+    "expr": "1 << (5 + tier)"
+   }
+  ]
+ },
+ "steam_elevator_beacon_module_i": {
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamBeaconModule.java",
+    "pattern": "case 1 -> 64;",
+    "expr": "range 64"
+   }
+  ],
+  "10": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamBeaconModule.java",
+    "pattern": "GTNL's 12 effects minus the three",
+    "expr": "10 effects in ALL_EFFECTS"
+   }
+  ]
+ },
+ "steam_elevator_monster_repellent_module_ii": {
+  "128": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamMonsterRepellentModule.java",
+    "pattern": "return 1 << \\(5 \\+ getModuleTier\\(\\)\\)",
+    "expr": "1 << (5 + tier)"
+   }
+  ]
+ },
+ "steam_elevator_beacon_module_ii": {
+  "128": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamBeaconModule.java",
+    "pattern": "case 2 -> 128;",
+    "expr": "range 128"
+   }
+  ],
+  "10": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamBeaconModule.java",
+    "pattern": "GTNL's 12 effects minus the three",
+    "expr": "10 effects in ALL_EFFECTS"
+   }
+  ]
+ },
+ "steam_elevator_monster_repellent_module_iii": {
+  "256": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamMonsterRepellentModule.java",
+    "pattern": "return 1 << \\(5 \\+ getModuleTier\\(\\)\\)",
+    "expr": "1 << (5 + tier)"
+   }
+  ]
+ },
+ "steam_elevator_beacon_module_iii": {
+  "256": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamBeaconModule.java",
+    "pattern": "case 3 -> 256;",
+    "expr": "range 256"
+   }
+  ],
+  "10": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamBeaconModule.java",
+    "pattern": "GTNL's 12 effects minus the three",
+    "expr": "10 effects in ALL_EFFECTS"
+   }
+  ]
+ },
+ "steam_elevator_apiary_module": {
+  "8": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamApiaryModule.java",
+    "pattern": "base 8-bee colony",
+    "expr": "base colony 8"
+   }
+  ],
+  "300": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamApiaryModule.java",
+    "pattern": "CYCLE_TICKS = 6000",
+    "expr": "6000 ticks = 300 s"
+   }
+  ],
+  "1000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamApiaryModule.java",
+    "pattern": "WATER_PER_CYCLE = 1000",
+    "expr": "1000 mB"
+   }
+  ]
+ },
+ "steam_elevator_bee_breeding_module": {
+  "128": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamBeeBreedingModule.java",
+    "pattern": "FEED_CONSUMED = 128",
+    "expr": "128 per operation"
+   }
+  ],
+  "10": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/module/steamElevator/SteamBeeBreedingModule.java",
+    "pattern": "CYCLE_TICKS = 12000",
+    "expr": "12000 ticks = 10 min"
+   }
+  ]
+ },
+ "isa_mill": {
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines3.java",
+    "pattern": "multiblock\\(\"isa_mill\"[\\s\\S]{0,200}OC_PERFECT",
+    "expr": "perfect overclock: duration / 4"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/IsaMillParallel.java",
+    "pattern": "getParallelAmount\\(machine, recipe, 2\\)",
+    "expr": "parallel 2"
+   }
+  ],
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/GTNAIsaMillRecipes.java",
+    "pattern": "circuitMeta\\(ballTier == 2 \\? 10 : 1\\)",
+    "expr": "circuit 1 / 10"
+   }
+  ],
+  "10": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/GTNAIsaMillRecipes.java",
+    "pattern": "circuitMeta\\(ballTier == 2 \\? 10 : 1\\)",
+    "expr": "circuit 1 / 10"
+   }
+  ]
+ },
+ "chemical_plant": {
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/ChemicalPlantMachine.java",
+    "pattern": "perfect overclock",
+    "expr": "perfect overclock / 4"
+   }
+  ],
+  "5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/ChemicalPlantMachine.java",
+    "pattern": "1 - plant\\.getCoilTier\\(\\) \\* 0\\.05",
+    "expr": "-5% per coil tier"
+   }
+  ]
+ },
+ "generator_array": {
+  "1.3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/GeneratorArrayMachine.java",
+    "pattern": "OUTPUT_MULTIPLIER = 1\\.3",
+    "expr": "1.3x"
+   }
+  ],
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/GeneratorArrayMachine.java",
+    "pattern": "MAX_GENERATORS = 4",
+    "expr": "4 generators"
+   }
+  ],
+  "5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/GeneratorArrayMachine.java",
+    "pattern": "WIRELESS_LOSS_PERCENT = 5",
+    "expr": "5% loss"
+   }
+  ]
+ },
+ "cold_ice_freezer": {
+  "0.5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/ColdIceFreezerMachine.java",
+    "pattern": "\\.durationMultiplier\\(0\\.5\\)",
+    "expr": "0.5 duration"
+   }
+  ],
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/ColdIceFreezerMachine.java",
+    "pattern": "getParallelAmount\\(machine, recipe, 64\\)",
+    "expr": "parallel 64"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/ColdIceFreezerMachine.java",
+    "pattern": "\\(1 << Math\\.max\\(0, Math\\.min\\(20, getTier\\(\\) - 2\\)\\)\\) \\* 10",
+    "expr": "2^(tier-2) x 10"
+   }
+  ],
+  "10": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/ColdIceFreezerMachine.java",
+    "pattern": "\\(1 << Math\\.max\\(0, Math\\.min\\(20, getTier\\(\\) - 2\\)\\)\\) \\* 10",
+    "expr": "2^(tier-2) x 10"
+   }
+  ]
+ },
+ "blaze_blast_furnace": {
+  "0.5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/BlazeBlastFurnaceMachine.java",
+    "pattern": "\\.durationMultiplier\\(0\\.5\\)",
+    "expr": "0.5 duration"
+   }
+  ],
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/BlazeBlastFurnaceMachine.java",
+    "pattern": "getParallelAmount\\(machine, recipe, 64\\)",
+    "expr": "parallel 64"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/BlazeBlastFurnaceMachine.java",
+    "pattern": "\\(1 << Math\\.max\\(0, Math\\.min\\(20, getTier\\(\\) - 2\\)\\)\\) \\* 10",
+    "expr": "2^(tier-2) x 10"
+   }
+  ],
+  "10": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/BlazeBlastFurnaceMachine.java",
+    "pattern": "\\(1 << Math\\.max\\(0, Math\\.min\\(20, getTier\\(\\) - 2\\)\\)\\) \\* 10",
+    "expr": "2^(tier-2) x 10"
+   }
+  ]
+ },
+ "mega_alloy_blast_smelter": {
+  "0.8": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/MegaAlloyBlastSmelterMachine.java",
+    "pattern": "\\.eutMultiplier\\(0\\.8\\)",
+    "expr": "0.8 EU"
+   }
+  ],
+  "0.6": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/MegaAlloyBlastSmelterMachine.java",
+    "pattern": "\\.durationMultiplier\\(0\\.6\\)",
+    "expr": "0.6 duration"
+   }
+  ]
+ },
+ "fishing_ground": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/FishingGroundMachine.java",
+    "pattern": "if \\(circuit < 1 \\|\\| circuit > 4\\) return null;",
+    "expr": "circuits 1-4"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/FishingGroundMachine.java",
+    "pattern": "if \\(circuit < 1 \\|\\| circuit > 4\\) return null;",
+    "expr": "circuits 1-4"
+   }
+  ],
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/FishingGroundMachine.java",
+    "pattern": "if \\(circuit < 1 \\|\\| circuit > 4\\) return null;",
+    "expr": "circuits 1-4"
+   }
+  ],
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/FishingGroundMachine.java",
+    "pattern": "if \\(circuit < 1 \\|\\| circuit > 4\\) return null;",
+    "expr": "circuits 1-4"
+   }
+  ]
+ },
+ "evaporation_plant": {
+  "5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines3.java",
+    "pattern": "\"X#X\", \"XXX\"\\)\\.setRepeatable\\(5\\)",
+    "expr": "5 tower stages"
+   }
+  ],
+  "4": [
+   {
+    "file": "gtceu:com/gregtechceu/gtceu/common/machine/multiblock/part/ParallelHatchPartMachine.java",
+    "pattern": "Math\\.pow\\(4, tier - GTValues\\.EV\\)",
+    "expr": "IV parallel hatch = 4^(IV-EV) = 4"
+   }
+  ]
+ },
+ "component_assembler": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAModules.java",
+    "pattern": "registerComponentAssemblerExtensionWide|buildComponentAssemblerExtensionWide",
+    "expr": "second extension pattern"
+   }
+  ]
+ },
+ "rocket_large_turbine": {
+  "10": [
+   {
+    "file": "gtceu:com/gregtechceu/gtceu/api/machine/feature/multiblock/IRotorHolderMachine.java",
+    "pattern": "return 100 \\+ 10 \\* tierDifference;",
+    "expr": "+10% efficiency per rotor tier"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/GTNALargeTurbineMachine.java",
+    "pattern": "HIGH_SPEED_ROTOR_DAMAGE = 10",
+    "expr": "10x rotor damage"
+   }
+  ],
+  "2": [
+   {
+    "file": "gtceu:com/gregtechceu/gtceu/api/machine/feature/multiblock/IRotorHolderMachine.java",
+    "pattern": "Math\\.pow\\(2, getTierDifference\\(\\)\\)",
+    "expr": "2x power per rotor tier (module 2x per GTNAModules)"
+   }
+  ],
+  "20": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAModules.java",
+    "pattern": "2\u00d7 output, \\+20% efficiency",
+    "expr": "module +20% efficiency"
+   }
+  ],
+  "5120": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines3.java",
+    "pattern": "RocketLargeTurbineMachine\\(holder, GTValues\\.EV",
+    "expr": "V[EV] * 2.5 = 5,120"
+   }
+  ],
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/GTNALargeTurbineMachine.java",
+    "pattern": "HIGH_SPEED_OUTPUT_MULTIPLIER = 3\\.0F",
+    "expr": "high speed 3x"
+   }
+  ]
+ },
+ "supercritical_steam_turbine": {
+  "10": [
+   {
+    "file": "gtceu:com/gregtechceu/gtceu/api/machine/feature/multiblock/IRotorHolderMachine.java",
+    "pattern": "return 100 \\+ 10 \\* tierDifference;",
+    "expr": "+10% efficiency per rotor tier"
+   }
+  ],
+  "2": [
+   {
+    "file": "gtceu:com/gregtechceu/gtceu/api/machine/feature/multiblock/IRotorHolderMachine.java",
+    "pattern": "Math\\.pow\\(2, getTierDifference\\(\\)\\)",
+    "expr": "2x power per rotor tier (module 2x per GTNAModules)"
+   }
+  ],
+  "20": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAModules.java",
+    "pattern": "2\u00d7 output, \\+20% efficiency",
+    "expr": "module +20% efficiency"
+   }
+  ],
+  "16384": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/SupercriticalSteamTurbineMachine.java",
+    "pattern": "V\\[IV\\] \\* 2 = 16384",
+    "expr": "V[IV] * 2"
+   }
+  ]
+ },
+ "industrial_flotation_cell": {
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/IndustrialFlotationCellMachine.java",
+    "pattern": "divides the duration by 4",
+    "expr": "perfect overclock / 4"
+   }
+  ]
+ },
+ "vacuum_drying_furnace": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/VacuumDryingFurnaceMachine.java",
+    "pattern": "parallel \\{@code 2\\^floor\\(coilTemp / 900\\)\\}",
+    "expr": "2^floor(coil/900)"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/VacuumDryingFurnaceMachine.java",
+    "pattern": "parallel \\{@code 2\\^floor\\(coilTemp / 900\\)\\}",
+    "expr": "every 900K"
+   }
+  ]
+ },
+ "advanced_fusion_reactor": {
+  "160": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/AdvancedFusionReactorMachine.java",
+    "pattern": "energyInputs \\* \\(1L << \\(tier - GTValues\\.LuV\\)\\) \\* 10_000_000L",
+    "expr": "16 inputs x 10M at LuV = 160M"
+   }
+  ],
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/AdvancedFusionReactorMachine.java",
+    "pattern": "TIER_EXTENSIONS = 4",
+    "expr": "4 extensions"
+   }
+  ]
+ },
+ "large_cracker": {
+  "10": [
+   {
+    "file": "gtceu:com/gregtechceu/gtceu/common/data/GTRecipeModifiers.java",
+    "pattern": "1\\.0 - coilMachine\\.getCoilTier\\(\\) \\* 0\\.1",
+    "expr": "-10% EU per coil tier; EternalCoil tier 9 -> 10%"
+   }
+  ]
+ },
+ "cracker_hub": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "coilType\\.getCoilTemperature\\(\\) / 900\\);\\s*int coilParallel = exponent >= 30 \\? Integer\\.MAX_VALUE : 1 << exponent",
+    "expr": "2^(coil/900)"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "getCoilTemperature\\(\\) / 900",
+    "expr": "every 900K"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "mega_brewer": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "coilType\\.getCoilTemperature\\(\\) / 900\\);\\s*int coilParallel = exponent >= 30 \\? Integer\\.MAX_VALUE : 1 << exponent",
+    "expr": "2^(coil/900)"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "getCoilTemperature\\(\\) / 900",
+    "expr": "every 900K"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "mega_vacuum_drying_furnace": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "coilType\\.getCoilTemperature\\(\\) / 900\\);\\s*int coilParallel = exponent >= 30 \\? Integer\\.MAX_VALUE : 1 << exponent",
+    "expr": "2^(coil/900)"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "getCoilTemperature\\(\\) / 900",
+    "expr": "every 900K"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "phase_change_cube": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "coilType\\.getCoilTemperature\\(\\) / 900\\);\\s*int coilParallel = exponent >= 30 \\? Integer\\.MAX_VALUE : 1 << exponent",
+    "expr": "2^(coil/900)"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "getCoilTemperature\\(\\) / 900",
+    "expr": "every 900K"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "magnetic_energy_reaction_furnace": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "coilType\\.getCoilTemperature\\(\\) / 900\\);\\s*int coilParallel = exponent >= 30 \\? Integer\\.MAX_VALUE : 1 << exponent",
+    "expr": "2^(coil/900)"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "getCoilTemperature\\(\\) / 900",
+    "expr": "every 900K"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "particle_stream_matrix_filling_machine": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "coilType\\.getCoilTemperature\\(\\) / 900\\);\\s*int coilParallel = exponent >= 30 \\? Integer\\.MAX_VALUE : 1 << exponent",
+    "expr": "2^(coil/900)"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "getCoilTemperature\\(\\) / 900",
+    "expr": "every 900K"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "mega_wiremill": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "coilType\\.getCoilTemperature\\(\\) / 900\\);\\s*int coilParallel = exponent >= 30 \\? Integer\\.MAX_VALUE : 1 << exponent",
+    "expr": "2^(coil/900)"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "getCoilTemperature\\(\\) / 900",
+    "expr": "every 900K"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "crystal_builder": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "coilType\\.getCoilTemperature\\(\\) / 900\\);\\s*int coilParallel = exponent >= 30 \\? Integer\\.MAX_VALUE : 1 << exponent",
+    "expr": "2^(coil/900)"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "getCoilTemperature\\(\\) / 900",
+    "expr": "every 900K"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "super_blast_smelter": {
+  "100": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "\\+ 100 \\* Math\\.max\\(0, getTier\\(\\) - 2\\)",
+    "expr": "+100K per tier above MV"
+   }
+  ]
+ },
+ "engraving_laser_plant": {
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMegaMachines.java",
+    "pattern": "GTRecipeModifiers\\.OC_PERFECT",
+    "expr": "perfect overclock / 4"
+   }
+  ],
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMegaMachines.java",
+    "pattern": "PRECISION_LASER_ENGRAVER_RECIPES \\?\\s*com\\.gregtechceu\\.gtceu\\.api\\.recipe\\.modifier\\.ModifierFunction\\.IDENTITY",
+    "expr": "precision runs unmodified (parallel 1)"
+   }
+  ]
+ },
+ "infinity_fluid_drilling_rig": {
+  "256": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMegaMachines.java",
+    "pattern": "InfinityFluidDrillMachine\\(holder, GTValues\\.ZPM, 256\\)",
+    "expr": "basis 256"
+   }
+  ],
+  "384": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMegaMachines.java",
+    "pattern": "InfinityFluidDrillMachine\\(holder, GTValues\\.ZPM, 256\\)",
+    "expr": "256 x 1.5 above rig tier (class doc)"
+   }
+  ],
+  "0": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/InfinityFluidDrillMachine.java",
+    "pattern": "without depletion",
+    "expr": "no depletion"
+   }
+  ]
+ },
+ "thermal_power_pump": {
+  "50": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/ThermalPowerPumpMachine.java",
+    "pattern": "\\* 3 / 2\\} in rain",
+    "expr": "x3/2 in rain"
+   }
+  ]
+ },
+ "annihilate_generator": {
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/ArtificialStarMachine.java",
+    "pattern": "resultVoltage \\* 4;[\\s\\S]{0,200}resultDuration / 4",
+    "expr": "x4 voltage, /4 duration"
+   }
+  ],
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "abilities\\(OUTPUT_ENERGY\\)\\.setMaxGlobalLimited\\(16\\)",
+    "expr": "16 dynamo hatches"
+   }
+  ]
+ },
+ "forge_of_gods": {
+  "8": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/api/machine/feature/godforge/GodforgeMath.java",
+    "pattern": "int max = 8;",
+    "expr": "8 base"
+   }
+  ],
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/api/machine/feature/godforge/GodforgeMath.java",
+    "pattern": "max \\+= 4;\\s*if \\(data\\.isUpgradeActive\\(END\\)\\) max \\+= 4;",
+    "expr": "8 + 4 + 4"
+   }
+  ]
+ },
+ "eye_of_harmony": {
+  "0": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/api/machine/feature/eyeofharmony/EyeOfHarmonyMath.java",
+    "pattern": "Math\\.min\\(24, circuitSetting\\)",
+    "expr": "circuit 0-24"
+   }
+  ],
+  "24": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/api/machine/feature/eyeofharmony/EyeOfHarmonyMath.java",
+    "pattern": "Math\\.min\\(24, circuitSetting\\)",
+    "expr": "circuit 0-24"
+   }
+  ],
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/api/machine/feature/eyeofharmony/EyeOfHarmonyMath.java",
+    "pattern": "shiftLeft\\(2 \\* circuit\\)",
+    "expr": "x4 per circuit level"
+   }
+  ],
+  "1000000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/api/machine/feature/eyeofharmony/EyeOfHarmonyMath.java",
+    "pattern": "1_000_000_000L, blockRocketTier \\+ 1L",
+    "expr": "10^9 mB x (tier+1); Overworld = 1,000,000 buckets"
+   }
+  ],
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/api/machine/feature/eyeofharmony/EyeOfHarmonyMath.java",
+    "pattern": "double base = 0\\.97;",
+    "expr": "compression time multiplier 0.97 per excess tier"
+   }
+  ],
+  "50": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/api/machine/feature/eyeofharmony/EyeOfHarmonyMath.java",
+    "pattern": "Math\\.pow\\(2, -fields\\.acceleration\\)",
+    "expr": "time halved per acceleration tier"
+   }
+  ],
+  "5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/api/machine/feature/eyeofharmony/EyeOfHarmonyMath.java",
+    "pattern": "fields\\.stabilisation \\* 0\\.05",
+    "expr": "stabilisation adds 5 percentage points of chance and removes 5% yield per tier"
+   }
+  ],
+  "9.25": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/api/machine/feature/eyeofharmony/EyeOfHarmonyMath.java",
+    "pattern": "fields\\.acceleration \\* 0\\.0925",
+    "expr": "acceleration removes 9.25 percentage points of chance per tier"
+   }
+  ]
+ },
+ "dimensionally_transcendent_plasma_forge": {
+  "50": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/PlasmaForgeMachine.java",
+    "pattern": "MAXIMUM_DISCOUNT = 0\\.5d",
+    "expr": "up to 50%"
+   }
+  ],
+  "8": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/PlasmaForgeMachine.java",
+    "pattern": "after 8",
+    "expr": "8 hours"
+   }
+  ],
+  "100": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/PlasmaForgeMachine.java",
+    "pattern": "DECAY_PER_TICK = 100",
+    "expr": "decay 100x"
+   }
+  ],
+  "1250": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAPlasmaForge.java",
+    "pattern": "setMinGlobalLimited\\(1250\\)",
+    "expr": "1250 casings"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAPlasmaForge.java",
+    "pattern": "INPUT_ENERGY\\)\\.setMaxGlobalLimited\\(2\\)",
+    "expr": "2 energy hatches"
+   }
+  ],
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAPlasmaForge.java",
+    "pattern": "INPUT_LASER\\)\\.setMaxGlobalLimited\\(1\\)",
+    "expr": "1 laser"
+   }
+  ]
+ },
+ "transcendent_plasma_mixer": {
+  "10": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/TranscendentPlasmaMixerMachine.java",
+    "pattern": "getLong\\(EU_MULTIPLIER\\) : 10",
+    "expr": "default multiplier 10"
+   }
+  ]
+ },
+ "nano_forge": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNANanoForge.java",
+    "pattern": "CARBON_NANITES\\.get\\(\\), NEUTRONIUM_NANITES\\.get\\(\\), TRANSCENDENT_METAL_NANITES\\.get\\(\\)",
+    "expr": "nanite tiers 1-3"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNANanoForge.java",
+    "pattern": "CARBON_NANITES\\.get\\(\\), NEUTRONIUM_NANITES\\.get\\(\\), TRANSCENDENT_METAL_NANITES\\.get\\(\\)",
+    "expr": "nanite tiers 1-3"
+   }
+  ],
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNANanoForge.java",
+    "pattern": "CARBON_NANITES\\.get\\(\\), NEUTRONIUM_NANITES\\.get\\(\\), TRANSCENDENT_METAL_NANITES\\.get\\(\\)",
+    "expr": "nanite tiers 1-3"
+   }
+  ]
+ },
+ "nexus_me_hypercore": {
+  "320": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/NexusMEHyperCoreMachine.java",
+    "pattern": "TOTAL_MODULE_SLOTS = 320",
+    "expr": "320 slots"
+   }
+  ],
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/NexusMEHyperCoreMachine.java",
+    "pattern": "MODULE_I_THREADS = 4L",
+    "expr": "threads per module tier"
+   }
+  ],
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/NexusMEHyperCoreMachine.java",
+    "pattern": "MODULE_II_THREADS = 16L",
+    "expr": "threads per module tier"
+   }
+  ],
+  "128": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/NexusMEHyperCoreMachine.java",
+    "pattern": "MODULE_III_THREADS = 128L",
+    "expr": "threads per module tier"
+   }
+  ],
+  "1024": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/NexusMEHyperCoreMachine.java",
+    "pattern": "MODULE_IV_THREADS = 1024L",
+    "expr": "threads per module tier"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/NexusMEHyperCoreMachine.java",
+    "pattern": "transcendentMode = matrixIV == TOTAL_MODULE_SLOTS",
+    "expr": "44x22x44 is the structure size; 'tier IV' from matrixIV"
+   }
+  ]
+ },
+ "nexus_flux_matrix": {
+  "750": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/NexusFluxMatrixMachine.java",
+    "pattern": "totalCapacitors == 750 && sumTiers == 750 \\* GTValues\\.MAX",
+    "expr": "750 MAX capacitors"
+   }
+  ]
+ },
+ "nexus_molecular_forge": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/NexusMolecularForgeMachine.java",
+    "pattern": "Math\\.max\\(1L, Math\\.min\\(maxEUt, totalItems\\)\\)",
+    "expr": "1 EU per item"
+   }
+  ]
+ },
+ "me_storage": {
+  "128": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "\"CBC\", \"cHc\", \"cHc\", \"cHc\", \"CBC\"\\)\\.setRepeatable\\(1, 128\\)",
+    "expr": "up to 128 sections"
+   }
+  ]
+ },
+ "universal_factory": {
+  "32": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMachines.java",
+    "pattern": "multiblock\\(\"universal_factory\", UniversalFactoryMachine::new\\)\\s*\\.\\w+\\([^)]*\\)\\s*(?:\\.recipeType\\(GTRecipeTypes\\.\\w+\\)\\s*){32}(?!\\.recipeType)",
+    "expr": "exactly 32 consecutive .recipeType(...) calls in the registration"
+   }
+  ]
+ },
+ "electric_void_miner": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/VoidMinerEssenceRecipes.java",
+    "pattern": "circuitMeta\\(1\\)",
+    "expr": "circuit 1 programs"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/VoidMinerEssenceRecipes.java",
+    "pattern": "circuitMeta\\(2\\)",
+    "expr": "circuit 2 programs"
+   }
+  ]
+ },
+ "incubator": {
+  "10000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/VoidMinerEssenceRecipes.java",
+    "pattern": "Biomass\\.getFluid\\(10000\\)\\)\\s*\\.inputFluids\\(GTMaterials\\.Milk\\.getFluid\\(10000\\)\\)",
+    "expr": "10,000 mB each"
+   }
+  ],
+  "64": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/VoidMinerEssenceRecipes.java",
+    "pattern": "outputItems\\(essence, 64\\)",
+    "expr": "64 essences"
+   }
+  ]
+ },
+ "industrial_slaughterhouse": {
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/IndustrialSlaughterhouse.java",
+    "pattern": "multiplierBase = 3",
+    "expr": "boss x3"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/IndustrialSlaughterhouse.java",
+    "pattern": "case 2 ->[\\s\\S]*case 3 ->[\\s\\S]*case 4 ->",
+    "expr": "circuits 1-4 (default = 1)"
+   }
+  ],
+  "5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/IndustrialSlaughterhouse.java",
+    "pattern": "multiplierBase = 5",
+    "expr": "dragon x5"
+   }
+  ],
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/IndustrialSlaughterhouse.java",
+    "pattern": "case 2 ->[\\s\\S]*case 3 ->[\\s\\S]*case 4 ->",
+    "expr": "circuits 1-4 (default = 1)"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/IndustrialSlaughterhouse.java",
+    "pattern": "case 2 ->[\\s\\S]*case 3 ->[\\s\\S]*case 4 ->",
+    "expr": "circuits 1-4 (default = 1)"
+   }
+  ],
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/energy/IndustrialSlaughterhouse.java",
+    "pattern": "case 2 ->[\\s\\S]*case 3 ->[\\s\\S]*case 4 ->",
+    "expr": "circuits 1-4 (default = 1)"
+   }
+  ],
+  "1000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/GTNAMachineRecipes.java",
+    "pattern": "slaughterhouse_passive\"\\)[\\s\\S]{0,300}\\.EUt\\(1000\\)",
+    "expr": "slaughterhouse recipe EU/t"
+   }
+  ],
+  "2560": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/GTNAMachineRecipes.java",
+    "pattern": "slaughterhouse_hostile\"\\)[\\s\\S]{0,300}\\.EUt\\(2560\\)",
+    "expr": "slaughterhouse recipe EU/t"
+   }
+  ],
+  "32": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/GTNAMachineRecipes.java",
+    "pattern": "slaughterhouse_boss\"\\)[\\s\\S]{0,300}\\.EUt\\(32000\\)",
+    "expr": "slaughterhouse recipe EU/t"
+   }
+  ],
+  "120": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/GTNAMachineRecipes.java",
+    "pattern": "slaughterhouse_ender_dragon\"\\)[\\s\\S]{0,300}\\.EUt\\(120000\\)",
+    "expr": "slaughterhouse recipe EU/t"
+   }
+  ]
+ },
+ "integrated_ore_processor": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/IntegratedOreRecipes.java",
+    "pattern": "circuitMeta\\(1\\)",
+    "expr": "circuit 1"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/IntegratedOreRecipes.java",
+    "pattern": "\\.circuitMeta\\(1\\)",
+    "expr": "processing route 1"
+   }
+  ],
+  "7": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/IntegratedOreRecipes.java",
+    "pattern": "circuitMeta\\(7\\)",
+    "expr": "circuit 7"
+   },
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/IntegratedOreRecipes.java",
+    "pattern": "\\.circuitMeta\\(7\\)",
+    "expr": "processing route 7"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/IntegratedOreRecipes.java",
+    "pattern": "\\.circuitMeta\\(2\\)",
+    "expr": "processing route 2"
+   }
+  ],
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/IntegratedOreRecipes.java",
+    "pattern": "\\.circuitMeta\\(3\\)",
+    "expr": "processing route 3"
+   }
+  ],
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/IntegratedOreRecipes.java",
+    "pattern": "\\.circuitMeta\\(4\\)",
+    "expr": "processing route 4"
+   }
+  ],
+  "5": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/IntegratedOreRecipes.java",
+    "pattern": "\\.circuitMeta\\(5\\)",
+    "expr": "processing route 5"
+   }
+  ],
+  "6": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/data/recipe/IntegratedOreRecipes.java",
+    "pattern": "\\.circuitMeta\\(6\\)",
+    "expr": "processing route 6"
+   }
+  ]
+ },
+ "advanced_integrated_ore_processor": {
+  "2147483647": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/AdvancedIntegratedOreProcessorMachine.java",
+    "pattern": "return Integer\\.MAX_VALUE;",
+    "expr": "Integer.MAX_VALUE"
+   }
+  ]
+ },
+ "eye_of_wood": {
+  "75": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/EyeOfWoodMachine.java",
+    "pattern": "SUCCESS_BASE = 7500",
+    "expr": "7500 / 10,000"
+   }
+  ],
+  "256000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/EyeOfWoodMachine.java",
+    "pattern": "STANDARD_WATER = 256_000;\\s*private static final int STANDARD_LAVA = 256_000",
+    "expr": "256,000 each"
+   }
+  ],
+  "60": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/EyeOfWoodMachine.java",
+    "pattern": "DURATION = 1200",
+    "expr": "1200 ticks = 60 s"
+   }
+  ],
+  "270000000": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/noenergy/EyeOfWoodMachine.java",
+    "pattern": "return 36_000 \\* Math\\.max\\(1, successChance\\)",
+    "expr": "36,000 x 7,500"
+   }
+  ]
+ },
+ "pcb_factory": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/PCBFactoryMachine.java",
+    "pattern": "return tier < 2 \\? TIER_1_MAX_EUT",
+    "expr": "tier 1 uses TIER_1_MAX_EUT"
+   }
+  ],
+  "30719": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/PCBFactoryMachine.java",
+    "pattern": "TIER_1_MAX_EUT = 30719",
+    "expr": "tier 1 cap"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/PCBFactoryMachine.java",
+    "pattern": "tier < 3 \\? TIER_2_MAX_EUT",
+    "expr": "tier 2 uses TIER_2_MAX_EUT"
+   }
+  ],
+  "491519": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/PCBFactoryMachine.java",
+    "pattern": "TIER_2_MAX_EUT = 491519",
+    "expr": "tier 2 cap"
+   }
+  ]
+ },
+ "hyper_reactor": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/HyperReactorMachine.java",
+    "pattern": "DEFAULT_BOOST = 16",
+    "expr": "default booster parallel"
+   }
+  ]
+ },
+ "advanced_hyper_reactor": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/HyperReactorMachine.java",
+    "pattern": "DEFAULT_BOOST = 16",
+    "expr": "default booster parallel"
+   }
+  ]
+ },
+ "fuel_cell_generator": {
+  "50": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/FuelCellGeneratorMachine.java",
+    "pattern": "MAX_RELEASE_PARALLEL = 50",
+    "expr": "release parallel cap"
+   }
+  ],
+  "600": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/FuelCellGeneratorMachine.java",
+    "pattern": "RECOVERY_WATER = 600",
+    "expr": "distilled water per idle tick"
+   }
+  ],
+  "0.35": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/FuelCellGeneratorMachine.java",
+    "pattern": "MEMBRANE_DAMAGE_CHANCE = 0\\.0035d",
+    "expr": "0.0035 = 0.35%"
+   }
+  ],
+  "15": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/FuelCellGeneratorMachine.java",
+    "pattern": "DECAY_RECOVERY = 0\\.15d",
+    "expr": "idle water recovers 15% of lost efficiency per tick"
+   }
+  ]
+ },
+ "supercomputing_center": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/SupercomputingCenterMachine.java",
+    "pattern": "if \\(machineTier == 1\\) upkeepEUt /= 4",
+    "expr": "tier 1"
+   }
+  ],
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/SupercomputingCenterMachine.java",
+    "pattern": "tier == 2 \\? GTNACircuits\\.OPTICAL_MAINFRAME",
+    "expr": "tier 2 mainframe"
+   }
+  ],
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/SupercomputingCenterMachine.java",
+    "pattern": "tier == 3 \\? GTNACircuits\\.EXOTIC_MAINFRAME",
+    "expr": "tier 3 mainframe"
+   }
+  ]
+ },
+ "data_center": {
+  "16": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMegaMachines.java",
+    "pattern": "OPTICAL_DATA_TRANSMISSION\\)\\.setMaxGlobalLimited\\(16, 1\\)",
+    "expr": "transmission hatches"
+   }
+  ],
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNAMegaMachines.java",
+    "pattern": "OPTICAL_DATA_RECEPTION\\)\\.setMaxGlobalLimited\\(4, 1\\)",
+    "expr": "reception hatches"
+   }
+  ],
+  "1920": [
+   {
+    "file": "gtceu:com/gregtechceu/gtceu/common/machine/multiblock/electric/research/DataBankMachine.java",
+    "pattern": "GTValues\\.VA\\[GTValues\\.EV\\]",
+    "expr": "Data Bank hatch upkeep VA[EV]"
+   },
+   {
+    "file": "gtceu:com/gregtechceu/gtceu/api/GTValues.java",
+    "pattern": "int\\[\\] VA = \\{ 7, 30, 120, 480, 1920, 7680, 30720,",
+    "expr": "VA table: EV=1920, LuV=30720"
+   }
+  ],
+  "30720": [
+   {
+    "file": "gtceu:com/gregtechceu/gtceu/common/machine/multiblock/electric/research/DataBankMachine.java",
+    "pattern": "GTValues\\.VA\\[GTValues\\.LuV\\]",
+    "expr": "Data Bank hatch upkeep VA[LuV]"
+   },
+   {
+    "file": "gtceu:com/gregtechceu/gtceu/api/GTValues.java",
+    "pattern": "int\\[\\] VA = \\{ 7, 30, 120, 480, 1920, 7680, 30720,",
+    "expr": "VA table: EV=1920, LuV=30720"
+   }
+  ]
+ },
+ "gemini_containment_system": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "giant_electrochemical_workstation": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "desulfurizer": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "dimensional_focus_engraving_array": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ },
+ "heavy_rolling": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int coilParallel = exponent >= 30 \\? Integer.MAX_VALUE : 1 << exponent;",
+    "expr": "coil parallel = 2^exponent, saturated at Integer.MAX_VALUE"
+   }
+  ],
+  "900": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/CoilWorkableElectricMultipleRecipesMachine.java",
+    "pattern": "int exponent = Math.max\\(0, coilType.getCoilTemperature\\(\\) / 900\\);",
+    "expr": "exponent = floor(base coil temperature / 900)"
+   }
+  ]
+ }
+}
