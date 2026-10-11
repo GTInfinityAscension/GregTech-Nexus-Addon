@@ -313,37 +313,54 @@ def render_chaos_c2(template, n_frames=30):
     t_base = gray / 255.0
     y, x = np.ogrid[:h, :w]
     
-    np.random.seed(1337)
-    
     frames = []
     for f in range(n_frames):
         tau = 2 * math.pi * (f / n_frames)
         
         # Ônix negro facetado estilo Chaos Shard (#100b16 a #2a1b38)
         r = 14.0 + t_base * 36.0
-        g = 10.0 + t_base * 26.0
-        b = 22.0 + t_base * 54.0
+        g = 10.0 + t_base * 24.0
+        b = 22.0 + t_base * 52.0
         
-        # Arcos elétricos caóticos oscilantes
-        arc1 = np.sin(x * 1.7 + y * 1.3 - tau * 3.0)
-        arc2 = np.cos(x * 1.1 - y * 1.9 + tau * 2.5)
-        arc_comb = np.abs(arc1 * arc2)
-        arc_mask = (arc_comb > 0.80) * (t_base > 0.28)
+        # Arcos elétricos caóticos orgânicos
+        arc_grid = np.zeros((h, w), dtype=np.float32)
+        arc_seed = (f // 3) * 19 + 7
+        rng = np.random.RandomState(arc_seed)
         
-        # Centelhas estocásticas
-        spark_noise = np.sin((x * 8.3 + y * 14.7 + f * 6.1)) > 0.89
-        spark_mask = spark_noise * (t_base > 0.4)
+        # 2 arcos elétricos ramificados
+        for arc_i in range(2):
+            y_pts = rng.randint(2, h-2, size=3)
+            x_pts = rng.randint(2, w-2, size=3)
+            for i in range(len(y_pts)-1):
+                y0, y1 = y_pts[i], y_pts[i+1]
+                x0, x1 = x_pts[i], x_pts[i+1]
+                steps = max(abs(y1 - y0), abs(x1 - x0), 1) * 2
+                for s in range(steps + 1):
+                    t = s / steps
+                    yy = int(round(y0 + t * (y1 - y0)))
+                    xx = int(round(x0 + t * (x1 - x0)))
+                    if 0 <= yy < h and 0 <= xx < w and alpha[yy, xx]:
+                        arc_grid[yy, xx] = 1.0
+                        for dy, dx in [(-1,0),(1,0),(0,-1),(0,1)]:
+                            ny, nx = yy + dy, xx + dx
+                            if 0 <= ny < h and 0 <= nx < w and alpha[ny, nx]:
+                                arc_grid[ny, nx] = max(arc_grid[ny, nx], 0.4)
+                                
+        # Centelhas elétricas estocásticas piscantes
+        spark_rng = np.random.RandomState(f * 37 + 11)
+        sparks = np.zeros((h, w), dtype=np.float32)
+        for _ in range(4):
+            sy, sx = spark_rng.randint(2, h-2), spark_rng.randint(2, w-2)
+            if alpha[sy, sx] and t_base[sy, sx] > 0.3:
+                sparks[sy, sx] = 1.0
+                
+        # Mistura de ciano elétrico (#00f0ff) e violeta dracônico (#a018ff)
+        cyan_weight = np.sin(x * 0.7 + tau) * 0.5 + 0.5
+        arc_mask = arc_grid * (t_base > 0.15)
         
-        # Coloração híbrida: arcos ciano elétrico (#00f0ff) e violeta dracônico (#a018ff)
-        cyan_weight = np.sin(x * 0.6 + tau) * 0.5 + 0.5
-        r += arc_mask * (cyan_weight * 10.0 + (1 - cyan_weight) * 190.0)
-        g += arc_mask * (cyan_weight * 230.0 + (1 - cyan_weight) * 35.0)
-        b += arc_mask * (cyan_weight * 255.0 + (1 - cyan_weight) * 245.0)
-        
-        # Centelhas em branco estático
-        r += spark_mask * 235.0
-        g += spark_mask * 245.0
-        b += spark_mask * 255.0
+        r += arc_mask * (cyan_weight * 10.0 + (1 - cyan_weight) * 185.0) + sparks * 230.0
+        g += arc_mask * (cyan_weight * 235.0 + (1 - cyan_weight) * 30.0) + sparks * 240.0
+        b += arc_mask * (cyan_weight * 255.0 + (1 - cyan_weight) * 245.0) + sparks * 255.0
         
         frame = np.zeros((h, w, 4), dtype=np.uint8)
         frame[:, :, 0] = np.where(alpha, np.clip(r, 0, 255), 0)
@@ -509,37 +526,37 @@ old_cm_b = extract_old_frames("src/main/resources/assets/gtceu/textures/block/ma
 
 # Dragonmetal
 dm_i_c1 = render_dragonmetal_c1(T_MOD_INGOT)
-dm_i_c2 = render_dragonmetal_c2(T_SHINY_INGOT)
+dm_i_c2 = render_dragonmetal_c2(T_MOD_INGOT)
 dm_i_c3 = render_dragonmetal_c3(T_MOD_INGOT)
 
 dm_b_c1 = render_dragonmetal_c1(T_MOD_BLOCK)
-dm_b_c2 = render_dragonmetal_c2(T_SHINY_BLOCK)
+dm_b_c2 = render_dragonmetal_c2(T_MOD_BLOCK)
 dm_b_c3 = render_dragonmetal_c3(T_MOD_BLOCK)
 
 dm_p_c1 = render_dragonmetal_c1(T_MOD_PLATE)
-dm_p_c2 = render_dragonmetal_c2(T_SHINY_PLATE)
+dm_p_c2 = render_dragonmetal_c2(T_MOD_PLATE)
 dm_p_c3 = render_dragonmetal_c3(T_MOD_PLATE)
 
 dm_g_c1 = render_dragonmetal_c1(T_MOD_GEAR)
-dm_g_c2 = render_dragonmetal_c2(T_SHINY_GEAR)
+dm_g_c2 = render_dragonmetal_c2(T_MOD_GEAR)
 dm_g_c3 = render_dragonmetal_c3(T_MOD_GEAR)
 
 # Chaos Matter
 cm_i_c1 = render_chaos_c1(T_MOD_INGOT)
 cm_i_c2 = render_chaos_c2(T_MOD_INGOT)
-cm_i_c3 = render_chaos_c3(T_SHINY_INGOT)
+cm_i_c3 = render_chaos_c3(T_MOD_INGOT)
 
 cm_b_c1 = render_chaos_c1(T_MOD_BLOCK)
 cm_b_c2 = render_chaos_c2(T_MOD_BLOCK)
-cm_b_c3 = render_chaos_c3(T_SHINY_BLOCK)
+cm_b_c3 = render_chaos_c3(T_MOD_BLOCK)
 
 cm_p_c1 = render_chaos_c1(T_MOD_PLATE)
 cm_p_c2 = render_chaos_c2(T_MOD_PLATE)
-cm_p_c3 = render_chaos_c3(T_SHINY_PLATE)
+cm_p_c3 = render_chaos_c3(T_MOD_PLATE)
 
 cm_g_c1 = render_chaos_c1(T_MOD_GEAR)
 cm_g_c2 = render_chaos_c2(T_MOD_GEAR)
-cm_g_c3 = render_chaos_c3(T_SHINY_GEAR)
+cm_g_c3 = render_chaos_c3(T_MOD_GEAR)
 
 # Salva GIFs individuais
 assets_to_save = [
