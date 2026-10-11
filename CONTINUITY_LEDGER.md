@@ -7632,3 +7632,10 @@ Validation: `spotlessCheck runUnitTests runGameTestServer runData --offline`, wi
 - **Checks:** no model reference broken by the cleanup (compared against HEAD), 327/327 GameTests, unit tests, spotless.
 - **Already broken before the cleanup:** 4 references in the `rough` set (`ingot_triple_secondary`, `plate_quadruple_secondary`, `plate_quintuple_secondary`…).
 - **Pending decision (author):** oversized textures cost a lot of VRAM: `item/tesseract.png` 400×40000, `block/obj/space_layer.png` 8192×4096, `block/obj/star_layer.png` 4096×2048.
+
+### 2026-10-11: debug parts for testing; ME Export Buffer GUI shows 9 + 9 rows
+
+- **Debug parts (creative only, no recipes; `debugParts` hatch toggle):** Debug Energy Hatch and Debug Laser Target Hatch (always full; GUI like the GTCEu creative energy container, the same layout GTMThings' creative hatches use: tier selector, free voltage, amperage with -/+, on/off; any change calls `onPartUnload` on the controllers so they re-form with the new voltage; laser starts at 4096 A), Debug Input Bus and Debug Input Hatch (3x3 ghost slots/tanks, endless and never consumed, circuit slot kept), Debug Energy Cover (fills the machine's energy trait every tick). Behaviour modelled on GT5U/GTMThings; code written on GTCEu's LGPL parts, nothing copied from GTMThings.
+- **ME Export Buffer:** GUI lists 9 item rows and 9 fluid rows side by side (was 3 + 3). The buffer already held any number of types.
+- **Tests:** `GTNADebugPartGameTests` (5). The cover test calls `update()` directly: natural block-entity ticks are not reliable in the GameTest level (`wireless_steam_feeds_on_natural_server_tick` failed once in this session and passed on the next run; `fuel_cell_absorption_charges_electrolyte` also failed once, the known `level.random` flake).
+- **Validation:** `runData`, `spotlessCheck runUnitTests runGameTestServer --offline`: 332/332 GameTests. Manual check pending: the debug GUIs in the client.

@@ -1277,6 +1277,18 @@ public class GTNALangProvider extends LanguageProvider {
                 "Nano Forge tier: %s");
         add("gtna.machine.me_export_buffer.tooltip",
                 "Output bus and output hatch in one block: sends items and fluids straight to the ME network.");
+        add("gtna.machine.debug_energy_hatch.tooltip",
+                "§6Test part:§r §7always full; set its tier, voltage, amperage and on/off in the GUI, like a creative energy hatch.");
+        add("gtna.machine.debug_energy_hatch.rate", "Supplying up to %s EU/t");
+        add("gtna.machine.debug_input_bus.tooltip",
+                "§6Test part:§r §7mark items in its 3x3 ghost slots; recipes get endless amounts and nothing is consumed.");
+        add("gtna.machine.debug_input_hatch.tooltip",
+                "§6Test part:§r §7mark fluids in its 3x3 ghost tanks; recipes get endless amounts and nothing is consumed.");
+        add("gtna.machine.debug_laser_hatch.tooltip",
+                "§6Test part:§r §7always-full laser input (4096 A by default); set its tier, voltage, amperage and on/off in the GUI.");
+        add("item.gtna.debug_energy_cover.tooltip",
+                "§6Test cover:§r §7keeps the energy buffer of any GregTech machine full. §cCreative only.");
+        add("gtna.machine.debug_part.creative_only", "§cCreative only, for testing multiblocks. Has no recipe.");
         add("gtna.machine.me_export_buffer.capacity",
                 "Internal buffer with no practical limit (up to 9.2 quintillion per item or fluid); recipes never stall on full output.");
         add("gtna.machine.me_big_storage_access_hatch.tooltip",

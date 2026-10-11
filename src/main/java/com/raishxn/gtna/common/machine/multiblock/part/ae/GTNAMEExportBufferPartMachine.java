@@ -65,6 +65,9 @@ public class GTNAMEExportBufferPartMachine extends DualHatchPartMachine
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(
             GTNAMEExportBufferPartMachine.class, DualHatchPartMachine.MANAGED_FIELD_HOLDER);
 
+    /** Item and fluid rows shown at once in the GUI. */
+    public static final int VISIBLE_ROWS = 9;
+
     @Persisted
     protected final GridNodeHolder nodeHolder;
     @DescSynced
@@ -187,13 +190,15 @@ public class GTNAMEExportBufferPartMachine extends DualHatchPartMachine
 
     @Override
     public Widget createUIWidget() {
-        WidgetGroup group = new WidgetGroup(0, 0, 170, 140);
+        // Items and fluids side by side, VISIBLE_ROWS each; the lists scroll and the buffers hold any number of types.
+        int listHeight = VISIBLE_ROWS * 18;
+        WidgetGroup group = new WidgetGroup(0, 0, 5 + 158 + 6 + 158 + 5, 20 + listHeight + 4);
         group.addWidget(new LabelWidget(5, 0, () -> isOnline ?
                 "gtceu.gui.me_network.online" :
                 "gtceu.gui.me_network.offline"));
         group.addWidget(new LabelWidget(5, 10, "gtceu.gui.waiting_list"));
-        group.addWidget(new AEListGridWidget.Item(5, 20, 3, itemBuffer));
-        group.addWidget(new AEListGridWidget.Fluid(5, 80, 3, fluidBuffer));
+        group.addWidget(new AEListGridWidget.Item(5, 20, VISIBLE_ROWS, itemBuffer));
+        group.addWidget(new AEListGridWidget.Fluid(5 + 158 + 6, 20, VISIBLE_ROWS, fluidBuffer));
         return group;
     }
 

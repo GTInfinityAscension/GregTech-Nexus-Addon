@@ -1,5 +1,6 @@
 package com.raishxn.gtna.common.data;
 
+import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.item.ComponentItem;
 import com.gregtechceu.gtceu.common.item.CoverPlaceBehavior;
 import com.gregtechceu.gtceu.common.item.TooltipBehavior;
@@ -85,6 +86,7 @@ public class GTNAItems {
     public static ItemEntry<RealityRipperSwordItem> REALITY_RIPPER_SWORD;
     public static ItemEntry<ComponentItem> INFINITE_STEAM_SINGLEBLOCK_COVER;
     public static ItemEntry<ComponentItem> INFINITE_ELECTRIC_SINGLEBLOCK_COVER;
+    public static ItemEntry<ComponentItem> DEBUG_ENERGY_COVER;
     /** GTOCore grind balls: durability 50 / tier 1 and durability 100 / tier 2. */
     public static ItemEntry<ComponentItem> GRINDBALL_SOAPSTONE;
     public static ItemEntry<ComponentItem> GRINDBALL_ALUMINIUM;
@@ -406,6 +408,15 @@ public class GTNAItems {
                 .onRegister(attach(new CoverPlaceBehavior(GTNACovers.INFINITE_STEAM_SINGLEBLOCK_COVER)))
                 .model((ctx, provider) -> provider.generated(ctx,
                         GTNACORE.id("item/734")))
+                .register();
+
+        DEBUG_ENERGY_COVER = REGISTRATE.item("debug_energy_cover", ComponentItem::create)
+                .lang("Debug Energy Cover")
+                .properties(stack -> stack.stacksTo(64))
+                .onRegister(attach(new CoverPlaceBehavior(GTNACovers.DEBUG_ENERGY_COVER),
+                        new TooltipBehavior(lines -> lines.add(
+                                Component.translatable("item.gtna.debug_energy_cover.tooltip")))))
+                .model((ctx, provider) -> provider.generated(ctx, GTCEu.id("item/energy_detector_cover")))
                 .register();
 
         INFINITE_ELECTRIC_SINGLEBLOCK_COVER = REGISTRATE.item("infinite_electric_singleblock_cover",

@@ -40,6 +40,9 @@ import com.raishxn.gtna.common.machine.multiblock.module.steamElevator.SteamWeat
 import com.raishxn.gtna.common.machine.multiblock.part.AccelerateHatchPartMachine;
 import com.raishxn.gtna.common.machine.multiblock.part.AdvancedParallelHatchPartMachine;
 import com.raishxn.gtna.common.machine.multiblock.part.BallHatchPartMachine;
+import com.raishxn.gtna.common.machine.multiblock.part.DebugEnergyHatchPartMachine;
+import com.raishxn.gtna.common.machine.multiblock.part.DebugInputBusPartMachine;
+import com.raishxn.gtna.common.machine.multiblock.part.DebugInputHatchPartMachine;
 import com.raishxn.gtna.common.machine.multiblock.part.InfiniteInputBusPartMachine;
 import com.raishxn.gtna.common.machine.multiblock.part.InfiniteInputHatchPartMachine;
 import com.raishxn.gtna.common.machine.multiblock.part.OutputBoostFluidHatchPartMachine;
@@ -87,6 +90,10 @@ public class GTNAMachines2 {
     public static MachineDefinition ME_BIG_STORAGE_ACCESS_HATCH;
     public static MachineDefinition ME_IO_PORT_HATCH;
     public static MachineDefinition ME_EXPORT_BUFFER;
+    public static MachineDefinition DEBUG_ENERGY_HATCH;
+    public static MachineDefinition DEBUG_INPUT_BUS;
+    public static MachineDefinition DEBUG_INPUT_HATCH;
+    public static MachineDefinition DEBUG_LASER_HATCH;
     public static MachineDefinition DIRECTED_TESSERACT_GENERATOR;
     /** GTOCore {@code GRIND_BALL_HATCH}: single-slot grinding-ball part for the ISA Mill. */
     public static MachineDefinition GRIND_BALL_HATCH;
@@ -120,6 +127,7 @@ public class GTNAMachines2 {
         registerCraftingCpuInterface();
         registerMEStorageAccessHatches();
         registerMEExportBuffer();
+        registerDebugParts();
         registerGrindBallHatch();
         registerDirectedTesseract();
         registerParallelHatch(GTValues.UHV, 1024);
@@ -333,6 +341,81 @@ public class GTNAMachines2 {
                         Component.translatable("gtceu.machine.me.export.tooltip"),
                         Component.translatable("gtceu.part_sharing.enabled"))
                 .register();
+    }
+
+    /**
+     * Creative-only test parts: always-full energy and laser hatches, and input bus/hatch with endless ghost contents.
+     */
+    private static void registerDebugParts() {
+        if (!ConfigHolder.isHatchEnabled("debugParts")) return;
+        DEBUG_ENERGY_HATCH = REGISTRATE
+                .machine("debug_energy_hatch", holder -> new DebugEnergyHatchPartMachine(holder, 2))
+                .langValue("Debug Energy Hatch")
+                .tier(GTValues.MAX)
+                .rotationState(RotationState.ALL)
+                .abilities(PartAbility.INPUT_ENERGY)
+                .modelProperty(IS_FORMED, false)
+                .model((ctx, prov, builder) -> builder.partialState()
+                        .setModel(debugPartModel(ctx.getName(), prov.models(),
+                                GTCEu.id("block/overlay/machine/overlay_creativecontainer"))))
+                .tooltips(
+                        Component.translatable("gtna.machine.debug_energy_hatch.tooltip"),
+                        Component.translatable("gtna.machine.debug_part.creative_only"))
+                .register();
+        DEBUG_INPUT_BUS = REGISTRATE
+                .machine("debug_input_bus", holder -> new DebugInputBusPartMachine(holder, GTValues.MAX))
+                .langValue("Debug Input Bus")
+                .tier(GTValues.MAX)
+                .rotationState(RotationState.ALL)
+                .abilities(PartAbility.IMPORT_ITEMS)
+                .modelProperty(IS_FORMED, false)
+                .model((ctx, prov, builder) -> builder.partialState()
+                        .setModel(debugPartModel(ctx.getName(), prov.models(),
+                                GTCEu.id("block/overlay/machine/overlay_item_hatch_input"))))
+                .tooltips(
+                        Component.translatable("gtna.machine.debug_input_bus.tooltip"),
+                        Component.translatable("gtna.machine.debug_part.creative_only"),
+                        Component.translatable("gtceu.part_sharing.enabled"))
+                .register();
+        DEBUG_INPUT_HATCH = REGISTRATE
+                .machine("debug_input_hatch", DebugInputHatchPartMachine::new)
+                .langValue("Debug Input Hatch")
+                .tier(GTValues.MAX)
+                .rotationState(RotationState.ALL)
+                .abilities(PartAbility.IMPORT_FLUIDS)
+                .modelProperty(IS_FORMED, false)
+                .model((ctx, prov, builder) -> builder.partialState().setModel(debugPartModel(ctx.getName(),
+                        prov.models(), GTCEu.id("block/overlay/machine/overlay_fluid_hatch_input"))))
+                .tooltips(
+                        Component.translatable("gtna.machine.debug_input_hatch.tooltip"),
+                        Component.translatable("gtna.machine.debug_part.creative_only"),
+                        Component.translatable("gtceu.part_sharing.enabled"))
+                .register();
+        DEBUG_LASER_HATCH = REGISTRATE
+                .machine("debug_laser_hatch", holder -> new DebugEnergyHatchPartMachine(holder, 4096))
+                .langValue("Debug Laser Target Hatch")
+                .tier(GTValues.MAX)
+                .rotationState(RotationState.ALL)
+                .abilities(PartAbility.INPUT_LASER)
+                .modelProperty(IS_FORMED, false)
+                .model((ctx, prov, builder) -> builder.partialState().setModel(debugPartModel(ctx.getName(),
+                        prov.models(), GTCEu.id("block/overlay/machine/overlay_laser_target"))))
+                .tooltips(
+                        Component.translatable("gtna.machine.debug_laser_hatch.tooltip"),
+                        Component.translatable("gtna.machine.debug_part.creative_only"))
+                .register();
+    }
+
+    private static net.minecraftforge.client.model.generators.ModelFile debugPartModel(
+                                                                                       String name,
+                                                                                       net.minecraftforge.client.model.generators.BlockModelProvider models,
+                                                                                       ResourceLocation overlay) {
+        return models.withExistingParent(name, GTCEu.id("block/machine/template/part/hatch_machine"))
+                .texture("overlay", overlay)
+                .texture("side", GTCEu.id("block/casings/voltage/max/side"))
+                .texture("top", GTCEu.id("block/casings/voltage/max/top"))
+                .texture("bottom", GTCEu.id("block/casings/voltage/max/bottom"))
+                .texture("particle", GTCEu.id("block/casings/voltage/max/side"));
     }
 
     /**

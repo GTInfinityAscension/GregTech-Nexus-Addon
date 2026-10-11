@@ -2,6 +2,21 @@
 
 ## [Unreleased]
 
+### Debug parts for testing (creative only, no recipes)
+
+- **Debug Energy Hatch** and **Debug Laser Target Hatch**: always full. Their GUI works like the GTCEu creative energy
+  container (and the GTMThings creative hatches): tier selector, free voltage field, amperage with -/+ buttons and an
+  on/off switch. The laser hatch starts at 4096 A. Any change re-forms the multiblock at once.
+- **Debug Input Bus** and **Debug Input Hatch**: mark items or fluids in their 3x3 ghost slots; recipes get endless
+  amounts and nothing is consumed. Both keep the circuit slot.
+- **Debug Energy Cover**: keeps the energy buffer of any GregTech machine full.
+- All of them can be turned off with the `debugParts` hatch toggle in the config.
+
+### ME Export Buffer
+
+- The GUI now shows 9 item rows and 9 fluid rows side by side (it showed 3 of each). The buffer itself already held
+  any number of item and fluid types.
+
 ### ⚠️ Personal Space moved to ModernSpace
 
 - **Personal Space is no longer part of GTNA.** It now lives in its own mod, **ModernSpace**. GTNA no longer depends

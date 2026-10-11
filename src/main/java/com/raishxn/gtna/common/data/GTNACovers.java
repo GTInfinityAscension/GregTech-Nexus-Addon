@@ -4,6 +4,7 @@ import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.cover.CoverDefinition;
 import com.gregtechceu.gtceu.client.renderer.cover.IOCoverRenderer;
+import com.gregtechceu.gtceu.client.renderer.cover.SimpleCoverRenderer;
 import com.gregtechceu.gtceu.common.cover.ConveyorCover;
 import com.gregtechceu.gtceu.common.cover.FluidRegulatorCover;
 import com.gregtechceu.gtceu.common.cover.PumpCover;
@@ -11,6 +12,7 @@ import com.gregtechceu.gtceu.common.cover.RobotArmCover;
 import com.gregtechceu.gtceu.common.data.GTCovers;
 
 import com.raishxn.gtna.GTNACORE;
+import com.raishxn.gtna.common.cover.DebugEnergyCover;
 import com.raishxn.gtna.common.cover.InfiniteElectricSingleblockCover;
 import com.raishxn.gtna.common.cover.InfiniteSteamSingleblockCover;
 
@@ -69,6 +71,12 @@ public class GTNACovers {
                     null,
                     GTCEu.id("block/cover/arm_emissive"),
                     GTCEu.id("block/cover/arm_inverted_emissive")));
+
+    /** Creative-only test cover: keeps the machine's energy buffer full. */
+    public static final CoverDefinition DEBUG_ENERGY_COVER = GTCovers.register(
+            GTNACORE.id("debug_energy_cover"),
+            DebugEnergyCover::new,
+            () -> () -> new SimpleCoverRenderer(GTCEu.id("block/cover/cover_interface_energy")));
 
     public static void init() {}
 }
