@@ -18,7 +18,11 @@ import java.util.List;
        remap = false)
 public abstract class MultiblockInfoSlotGuardMixin {
 
-    @Inject(method = "lambda$getSlotUnderMouse$0", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "lambda$getSlotUnderMouse$0(Ljava/util/List;DDLmezz/jei/api/gui/ingredient/IRecipeSlotDrawable;)Z",
+            at = @At("HEAD"),
+            cancellable = true,
+            require = 0,
+            expect = 0)
     private static void gtna$skipStalePreviewSlot(List<Widget> widgets, double mouseX, double mouseY,
                                                   IRecipeSlotDrawable slot, CallbackInfoReturnable<Boolean> cir) {
         var name = slot.getSlotName();

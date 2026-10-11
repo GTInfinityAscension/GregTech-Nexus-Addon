@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.5] - 2026-10-11
+
+### Fixed
+- Crash on launch with JEI 15.32 and newer: `client.UniversiumJeiFluidMixin` targeted the old `FluidTankRenderer.drawTiledSprite` signature (JEI 15.32 added a `TilingDirection` parameter). There is now one injection per signature, each with its exact descriptor and optional, so the Universium fluid overlay works with any JEI 15.x. GTNA now builds against JEI 15.62.0.219.
+- The same safeguard for the other viewer-dependent injections: the Eye of Harmony tab sizing in EMI (`setPage`) and the stale-slot guard of GTCEu's JEI multiblock pages.
+
 ## [0.5.4] - 2026-10-11
 
 ### Changed

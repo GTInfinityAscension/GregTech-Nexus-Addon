@@ -33,10 +33,12 @@ public abstract class EyeOfHarmonyEmiScreenMixin extends Screen {
         super(title);
     }
 
-    @Inject(method = "setPage",
+    @Inject(method = "setPage(III)V",
             at = @At(value = "INVOKE",
                      target = "Ldev/emi/emi/screen/RecipeTab;getPageCount()I",
-                     ordinal = 0))
+                     ordinal = 0),
+            require = 0,
+            expect = 0)
     private void gtna$sizeSelectedPlanetaryTab(int tabPage, int selectedTab, int page, CallbackInfo ci) {
         var selected = tabs.get(tab);
         int available = height - 52 - EmiConfig.verticalMargin;
