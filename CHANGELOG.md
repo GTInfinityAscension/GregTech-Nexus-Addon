@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [0.5.3] - 2026-10-11
 
 ### Faster previews of huge multiblocks
 
@@ -30,7 +30,7 @@
 
 - **Personal Space is no longer part of GTNA.** It now lives in its own mod, **ModernSpace**. GTNA no longer depends
   on **Infiniverse**.
-- **Keep your personal dimensions:** install ModernSpace together with this GTNA version. The first time an old world
+- **Keep your personal dimensions:** install ModernSpace (0.3.1 or later) together with this GTNA version. The first time an old world
   opens, ModernSpace imports it automatically: dimensions, settings, portals, players inside a personal dimension and
   portal items. The files it changes are backed up with a `.modernspace_backup` suffix.
 - Without ModernSpace, old portals disappear and the personal dimensions stop loading. Their folders stay in the save.
