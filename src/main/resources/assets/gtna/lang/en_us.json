@@ -225,6 +225,7 @@
   "config.gtna.option.meIOPortHatch": "ME IO Port Hatch",
   "config.gtna.option.meExportBuffer": "ME Export Buffer",
   "config.gtna.option.debugParts": "Debug Parts",
+  "config.gtna.option.researchTree": "Research Tree",
   "config.gtna.option.steamCobbler": "Steam Cobbler",
   "config.gtna.option.stoneSuperheater": "Stone Superheater",
   "config.gtna.option.steamManufacturer": "Steam Manufacturer",

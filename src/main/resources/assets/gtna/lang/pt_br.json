@@ -3676,5 +3676,6 @@
   "gtna.machine.debug_input_hatch.tooltip": "§6Peça de teste:§r §7marque fluidos nos tanques fantasmas 3x3; as receitas recebem quantidades infinitas e nada é consumido.",
   "gtna.machine.debug_laser_hatch.tooltip": "§6Peça de teste:§r §7entrada de laser sempre cheia (4096 A por padrão); ajuste tier, voltagem, amperagem e liga/desliga na GUI.",
   "item.gtna.debug_energy_cover.tooltip": "§6Cobertura de teste:§r §7mantém cheio o buffer de energia de qualquer máquina GregTech. §cSó no criativo.",
-  "gtna.machine.debug_energy_hatch.rate": "Fornecendo até %s EU/t"
+  "gtna.machine.debug_energy_hatch.rate": "Fornecendo até %s EU/t",
+  "config.gtna.option.researchTree": "Árvore de pesquisa"
 }

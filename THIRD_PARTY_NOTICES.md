@@ -500,3 +500,9 @@ of GTOCore (`dc4824d`), GTNL (`52345d2`), GTLCore (`18c7814`), TST (`ceaa462`), 
 tooltip format and implemented behavior. Each machine retains its in-game `GTNASources` credit.
 The existing source notices and license terms above continue to apply; this revision imports no
 controller implementation. See `docs/reports/multiblock-tooltips-technical-details.md`.
+
+## Simplified Chinese translation (zh_cn)
+
+`assets/gtna/lang/zh_cn.json` was written for GTNA. Where an English string is identical to one in the official Simplified
+Chinese translations of GregTech CEu Modern (LGPL-3.0), GTOCore (GTO, with permission), GTLCore (LGPL-3.0) or GregTech:
+New Horizons (GT5-Unofficial, LGPL-3.0), that translation is reused so players see the terms they already know.

@@ -7639,3 +7639,10 @@ Validation: `spotlessCheck runUnitTests runGameTestServer runData --offline`, wi
 - **ME Export Buffer:** GUI lists 9 item rows and 9 fluid rows side by side (was 3 + 3). The buffer already held any number of types.
 - **Tests:** `GTNADebugPartGameTests` (5). The cover test calls `update()` directly: natural block-entity ticks are not reliable in the GameTest level (`wireless_steam_feeds_on_natural_server_tick` failed once in this session and passed on the next run; `fuel_cell_absorption_charges_electrolyte` also failed once, the known `level.random` flake).
 - **Validation:** `runData`, `spotlessCheck runUnitTests runGameTestServer --offline`: 332/332 GameTests. Manual check pending: the debug GUIs in the client.
+
+### 2026-10-11: batched scene compile, researchTree option, zh_cn
+
+- `mixin/client/WorldSceneRendererBatchMixin` (LDLib `WorldSceneRenderer`, remap=false): replaces `renderCacheBuffer` with an off-thread compile in batches of 4,096 blocks per layer into separate VBOs, uploaded and drawn as they arrive (technique from GTLCore's WorldSceneRendererMixin, LGPL). `CacheState` is package-private, so it is read/set by constant name. `ClientProxy` logs at client setup whether the mixin applied; the dev client (LDLib 1.0.50) logged "active". Not yet looked at visually.
+- `gameplay.researchTree` (default true): off skips the K key mapping, `KnowledgeTreeScreen.open` and the research commands. GTIA turns it off.
+- `assets/gtna/lang/zh_cn.json`: 3,977 keys; terms reused from the official zh_cn of GTCEu, GTOCore, GTLCore and GTNH where the English matches (noted in THIRD_PARTY_NOTICES).
+- Validation: runData; spotlessCheck runUnitTests runGameTestServer: 332/332.

@@ -36,6 +36,7 @@ public final class KnowledgeEvents {
     }
 
     private static void registerCommands(RegisterCommandsEvent event) {
+        if (!com.raishxn.gtna.config.ConfigHolder.researchTreeEnabled()) return;
         KnowledgeCommands.register(event.getDispatcher());
     }
 }

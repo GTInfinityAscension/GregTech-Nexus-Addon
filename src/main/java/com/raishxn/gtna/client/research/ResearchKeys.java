@@ -21,12 +21,13 @@ public final class ResearchKeys {
     private ResearchKeys() {}
 
     public static void register(RegisterKeyMappingsEvent event) {
+        if (!com.raishxn.gtna.config.ConfigHolder.researchTreeEnabled()) return;
         event.register(OPEN_TREE);
     }
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
-        if (event.phase != TickEvent.Phase.END) return;
+        if (event.phase != TickEvent.Phase.END || !com.raishxn.gtna.config.ConfigHolder.researchTreeEnabled()) return;
         while (OPEN_TREE.consumeClick()) KnowledgeTreeScreen.open();
     }
 }

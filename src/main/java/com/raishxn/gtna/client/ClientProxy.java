@@ -66,6 +66,15 @@ public class ClientProxy extends CommonProxy {
                     com.raishxn.gtna.GTNACORE.LOGGER.info("GTNA material item models with RenderBlender effects: {}",
                             effects);
                 });
+        // Load LDLib's scene renderer at startup so a failed preview mixin shows up here, not when a GUI opens.
+        net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get().getModEventBus()
+                .addListener((net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent event) -> {
+                    boolean batched = java.util.Arrays.stream(
+                            com.lowdragmc.lowdraglib.client.scene.WorldSceneRenderer.class.getDeclaredMethods())
+                            .anyMatch(method -> method.getName().contains("gtna$compileBatch"));
+                    com.raishxn.gtna.GTNACORE.LOGGER.info("GTNA batched multiblock preview compile: {}",
+                            batched ? "active" : "NOT applied");
+                });
         MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.renderer.material.UniversiumRenderer::tick);
         MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.renderer.material.UniversiumRenderer::renderWorld);
         MinecraftForge.EVENT_BUS.register(ModuleCountClientHandler.class);

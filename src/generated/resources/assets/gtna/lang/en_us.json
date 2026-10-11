@@ -975,6 +975,7 @@
   "config.gtna.option.outputBoostSteamOutputBus": "Output Boost Steam Output Bus",
   "config.gtna.option.overclockHatches": "Overclock Hatches",
   "config.gtna.option.primitiveDistillationTower": "Primitive Distillation Tower",
+  "config.gtna.option.researchTree": "Research Tree",
   "config.gtna.option.restrictedItems": "Restricted Items",
   "config.gtna.option.selfRestraint": "Self Restraint",
   "config.gtna.option.solarBoilerSteamPerCell": "Solar Boiler Steam Per Cell",

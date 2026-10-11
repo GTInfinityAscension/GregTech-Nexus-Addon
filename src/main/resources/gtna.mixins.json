@@ -41,7 +41,8 @@
     "client.RenderBlenderGlowMixin",
     "client.UniversiumItemRendererMixin",
     "client.UniversiumFluidGuiMixin",
-    "client.UniversiumJeiFluidMixin"
+    "client.UniversiumJeiFluidMixin",
+    "client.WorldSceneRendererBatchMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -180,6 +180,12 @@ public class ConfigHolder {
         @Comment({ "En: Self restraint mode disables restricted cheat-like GTNA items.",
                 "Pt: Self restraint desabilita itens restritos e com cara de cheat do GTNA." })
         public boolean selfRestraint = false;
+
+        @Configurable
+        @Comment({
+                "En: Research tree (K key, tree screen and research commands). Packs without research nodes can turn it off.",
+                "Pt: Arvore de pesquisa (tecla K, tela e comandos). Packs sem nos de pesquisa podem desligar." })
+        public boolean researchTree = true;
     }
 
     public static class Client {
@@ -561,5 +567,9 @@ public class ConfigHolder {
                         .getConfigInstance();
             }
         }
+    }
+
+    public static boolean researchTreeEnabled() {
+        return INSTANCE == null || INSTANCE.gameplay.researchTree;
     }
 }

@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### Faster previews of huge multiblocks
+
+- The cached scene of LDLib (EMI/JEI multiblock previews and structure GUIs) is now compiled off-thread in batches of 4,096 blocks, each in its own vertex buffer, and drawn as batches finish. Very large structures no longer overflow a single buffer or stall until the whole structure is built. Technique from GTLCore (LGPL-3.0).
+
+### Other
+
+- New `researchTree` gameplay option (default on): turning it off removes the research tree key, screen and commands, for packs without research nodes.
+- Simplified Chinese (zh_cn) translation.
+
 ### Debug parts for testing (creative only, no recipes)
 
 - **Debug Energy Hatch** and **Debug Laser Target Hatch**: always full. Their GUI works like the GTCEu creative energy

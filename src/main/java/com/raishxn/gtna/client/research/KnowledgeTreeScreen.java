@@ -545,6 +545,7 @@ public class KnowledgeTreeScreen extends Screen {
 
     /** Opens the screen if the player is in a world and nothing else is open. */
     public static void open() {
+        if (!com.raishxn.gtna.config.ConfigHolder.researchTreeEnabled()) return;
         var minecraft = Minecraft.getInstance();
         if (minecraft.player != null && minecraft.screen == null) minecraft.setScreen(new KnowledgeTreeScreen());
     }
