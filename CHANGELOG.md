@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.5.4] - 2026-10-11
+
+### Changed
+- Brazilian Portuguese (pt_br) translation completed: the 313 keys that were still missing (pattern buffer, structure checks, overclock and accelerate hatches, terminal, research, materials, multi-plates and creative tabs) are now translated.
+
 ## [0.5.3] - 2026-10-11
 
 ### Faster previews of huge multiblocks
