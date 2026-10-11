@@ -26,6 +26,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 
+import com.raishxn.gtna.api.steam.GTNASteamBalance;
 import com.raishxn.gtna.common.data.GTNAMaterials;
 import com.raishxn.gtna.common.machine.multiMachineBase.SteamMultiMachineBase;
 import com.raishxn.gtna.config.GTNABalance;
@@ -98,7 +99,7 @@ public class VoidMinerSteamGateAged extends SteamMultiMachineBase implements IDi
         double finalEnergyFactor = energyFactor;
         return r -> ModifierFunction.builder()
                 .outputModifier(ContentModifier.multiplier(finalOutputMult))
-                .durationMultiplier(finalTimeFactor)
+                .durationMultiplier(GTNASteamBalance.duration(finalTimeFactor))
                 .eutMultiplier(finalEnergyFactor)
                 .build()
                 .apply(r);

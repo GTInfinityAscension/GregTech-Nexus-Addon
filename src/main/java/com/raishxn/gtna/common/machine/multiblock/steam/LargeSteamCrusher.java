@@ -16,6 +16,7 @@ import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 
+import com.raishxn.gtna.api.steam.GTNASteamBalance;
 import com.raishxn.gtna.common.machine.multiMachineBase.SteamMultiMachineBase;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,12 +49,12 @@ public class LargeSteamCrusher extends SteamMultiMachineBase {
             return ModifierFunction.NULL;
         }
         int maxParallel = steamMachine.targetParallel;
-        int parallels = ParallelLogic.getParallelAmount(machine, recipe, maxParallel);
+        int parallels = ParallelLogic.getParallelAmount(machine, recipe, GTNASteamBalance.parallels(maxParallel));
         if (parallels == 0) return ModifierFunction.NULL;
         double durationMultiplier = 0.5;
         return ModifierFunction.builder()
                 .modifyAllContents(ContentModifier.multiplier(parallels))
-                .durationMultiplier(durationMultiplier)
+                .durationMultiplier(GTNASteamBalance.duration(durationMultiplier))
                 .parallels(parallels)
                 .build();
     }

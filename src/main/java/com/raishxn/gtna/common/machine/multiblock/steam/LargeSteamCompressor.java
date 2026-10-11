@@ -16,6 +16,7 @@ import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 
+import com.raishxn.gtna.api.steam.GTNASteamBalance;
 import com.raishxn.gtna.common.machine.multiMachineBase.SteamMultiMachineBase;
 import org.jetbrains.annotations.Nullable;
 
@@ -49,12 +50,13 @@ public class LargeSteamCompressor extends SteamMultiMachineBase {
             return ModifierFunction.NULL;
         }
 
-        int parallels = ParallelLogic.getParallelAmount(machine, recipe, steamMachine.targetParallel);
+        int parallels = ParallelLogic.getParallelAmount(machine, recipe,
+                GTNASteamBalance.parallels(steamMachine.targetParallel));
         if (parallels == 0) return ModifierFunction.NULL;
 
         return ModifierFunction.builder()
                 .modifyAllContents(ContentModifier.multiplier(parallels))
-                .durationMultiplier(0.4)
+                .durationMultiplier(GTNASteamBalance.duration(0.4))
                 .parallels(parallels)
                 .build();
     }

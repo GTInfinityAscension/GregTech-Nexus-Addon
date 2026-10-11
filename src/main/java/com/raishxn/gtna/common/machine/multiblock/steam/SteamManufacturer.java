@@ -27,6 +27,7 @@ import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 
+import com.raishxn.gtna.api.steam.GTNASteamBalance;
 import com.raishxn.gtna.common.data.GTNARecipeType;
 import com.raishxn.gtna.common.machine.multiMachineBase.SteamMultiMachineBase;
 import org.jetbrains.annotations.Nullable;
@@ -63,7 +64,8 @@ public class SteamManufacturer extends SteamMultiMachineBase implements IDisplay
             return ModifierFunction.NULL;
         }
         int maxParallel = manufacturer.targetParallel;
-        int parallels = ParallelLogic.getParallelAmountWithoutEU(machine, recipe, maxParallel);
+        int parallels = ParallelLogic.getParallelAmountWithoutEU(machine, recipe,
+                GTNASteamBalance.parallels(maxParallel));
         if (parallels == 0) return ModifierFunction.NULL;
         long steamPerTick = 16L * parallels;
 
@@ -71,6 +73,7 @@ public class SteamManufacturer extends SteamMultiMachineBase implements IDisplay
             GTRecipe modified = ModifierFunction.builder()
                     .modifyAllContents(ContentModifier.multiplier(parallels))
                     .parallels(parallels)
+                    .durationMultiplier(GTNASteamBalance.duration(1))
                     .build().apply(r);
             if (modified != null) {
                 long totalSteam = steamPerTick * modified.duration;

@@ -28,6 +28,19 @@ import java.util.List;
 @PrefixGameTestTemplate(false)
 public final class NexusTerminalGameTests {
 
+    @GameTest(template = "empty_16", timeoutTicks = 20)
+    public static void directedTesseractIsNeverOfferedAsABusOrHatch(GameTestHelper helper) {
+        var tesseract = com.raishxn.gtna.common.data.GTNAMachines2.DIRECTED_TESSERACT_GENERATOR.getBlock();
+        for (var ability : List.of(com.gregtechceu.gtceu.api.machine.multiblock.PartAbility.IMPORT_ITEMS,
+                com.gregtechceu.gtceu.api.machine.multiblock.PartAbility.IMPORT_FLUIDS,
+                com.gregtechceu.gtceu.api.machine.multiblock.PartAbility.EXPORT_ITEMS,
+                com.gregtechceu.gtceu.api.machine.multiblock.PartAbility.EXPORT_FLUIDS)) {
+            helper.assertTrue(!ability.isApplicable(tesseract),
+                    "the Directed Tesseract is a standalone router, not a " + ability.getName() + " part");
+        }
+        helper.succeed();
+    }
+
     @GameTest(template = "empty_16", timeoutTicks = 40)
     public static void nexusTerminalSelectionsKeepLegacyAndRejectIncompatibleCells(GameTestHelper helper) {
         ItemStack terminal = GTNAItems.NEXUS_STRUCTURE_TERMINAL.asStack();

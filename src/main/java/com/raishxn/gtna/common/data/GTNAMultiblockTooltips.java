@@ -7,6 +7,7 @@ import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import net.minecraft.network.chat.Component;
 
 import com.raishxn.gtna.GTNACORE;
+import com.raishxn.gtna.api.steam.GTNASteamBalance;
 
 /**
  * Standard tooltip of every GTNA multiblock, in a fixed order:
@@ -45,13 +46,32 @@ public final class GTNAMultiblockTooltips {
             int lines = english.length;
             String source = GTNASources.sourceOf(path);
             String sourceId = source != null ? source : GTNASources.GTNA;
+            boolean[] parallelLine = new boolean[lines];
+            boolean[] speedLine = new boolean[lines];
+            if (usesSteamBalance(path)) {
+                for (int i = 0; i < lines; i++) {
+                    parallelLine[i] = english[i].contains("Parallel:") && english[i].contains("§e");
+                    speedLine[i] = english[i].contains("speed vs. singleblock");
+                }
+            }
             definition.setTooltipBuilder((stack, components) -> {
                 for (int i = 0; i < lines; i++) {
-                    components.add(Component.translatable("gtna.machine." + path + ".tooltip." + i));
+                    Component line = Component.translatable("gtna.machine." + path + ".tooltip." + i);
+                    if ((parallelLine[i] || speedLine[i]) && GTNASteamBalance.isActive()) {
+                        line = Component
+                                .literal(GTNASteamBalance.scaleTooltipNumbers(line.getString(), parallelLine[i]));
+                    }
+                    components.add(line);
                 }
                 components.add(GTNASources.line(sourceId));
             });
         }
+    }
+
+    /** Steam multiblocks whose parallels and duration go through {@link GTNASteamBalance}. */
+    private static boolean usesSteamBalance(String path) {
+        return (path.startsWith("large_steam_") || path.startsWith("steam_") || path.equals("stone_super_heater")) &&
+                !path.startsWith("steam_elevator") && !path.equals("steam_cracking");
     }
 
     /** Whether a GTNA multiblock registry path has a standard tooltip. */

@@ -16,6 +16,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 
 import com.raishxn.gtna.api.machine.multiblock.ParallelMachine;
+import com.raishxn.gtna.api.steam.GTNASteamBalance;
 import com.raishxn.gtna.common.machine.multiMachineBase.SteamMultiMachineBase;
 import org.jetbrains.annotations.Nullable;
 
@@ -63,13 +64,13 @@ public class AdjustableSteamParallelMachine extends SteamMultiMachineBase implem
         if (recipe.getType() != recipeType) {
             return null;
         }
-        int parallels = ParallelLogic.getParallelAmount(this, recipe, targetParallel);
+        int parallels = ParallelLogic.getParallelAmount(this, recipe, GTNASteamBalance.parallels(targetParallel));
         if (parallels == 0) {
             return null;
         }
         GTRecipe threaded = ModifierFunction.builder()
                 .modifyAllContents(ContentModifier.multiplier(parallels))
-                .durationMultiplier(durationMultiplier)
+                .durationMultiplier(GTNASteamBalance.duration(durationMultiplier))
                 .parallels(parallels)
                 .build()
                 .apply(recipe.copy());

@@ -24,6 +24,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
+import com.raishxn.gtna.api.steam.GTNASteamBalance;
 import com.raishxn.gtna.common.machine.multiMachineBase.SteamMultiMachineBase;
 import org.jetbrains.annotations.Nullable;
 
@@ -80,7 +81,7 @@ public class LargeSteamCircuitAssembler extends SteamMultiMachineBase {
             return null;
         }
 
-        int parallels = ParallelLogic.getParallelAmount(this, recipe, MAX_PARALLELS);
+        int parallels = ParallelLogic.getParallelAmount(this, recipe, GTNASteamBalance.parallels(MAX_PARALLELS));
         if (parallels == 0) {
             return null;
         }
@@ -94,7 +95,7 @@ public class LargeSteamCircuitAssembler extends SteamMultiMachineBase {
         modified = ModifierFunction.builder()
                 .modifyAllContents(ContentModifier.multiplier(parallels))
                 .parallels(parallels)
-                .durationMultiplier(multiplyMode ? DURATION_MULTIPLIER : 1)
+                .durationMultiplier(GTNASteamBalance.duration(multiplyMode ? DURATION_MULTIPLIER : 1))
                 .build()
                 .apply(modified);
         return modified;

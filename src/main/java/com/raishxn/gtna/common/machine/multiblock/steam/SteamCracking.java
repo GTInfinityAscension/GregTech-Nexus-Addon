@@ -10,6 +10,7 @@ import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 
+import com.raishxn.gtna.api.steam.GTNASteamBalance;
 import com.raishxn.gtna.common.machine.multiMachineBase.SteamMultiMachineBase;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,13 +49,14 @@ public class SteamCracking extends SteamMultiMachineBase {
             return ModifierFunction.NULL;
         }
         int maxParallel = steamMachine.isHighPressure() ? 16 : 8;
-        int parallels = ParallelLogic.getParallelAmount(machine, recipe, maxParallel);
+        int parallels = ParallelLogic.getParallelAmount(machine, recipe, GTNASteamBalance.parallels(maxParallel));
         if (parallels == 0) {
             return ModifierFunction.NULL;
         }
         return ModifierFunction.builder()
                 .modifyAllContents(ContentModifier.multiplier(parallels))
                 .parallels(parallels)
+                .durationMultiplier(GTNASteamBalance.duration(1))
                 .build();
     }
 }

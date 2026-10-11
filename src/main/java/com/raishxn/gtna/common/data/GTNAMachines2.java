@@ -210,11 +210,8 @@ public class GTNAMachines2 {
                 .machine("directed_tesseract_generator", DirectedTesseractMachine::new)
                 .tier(GTValues.IV)
                 .rotationState(RotationState.ALL)
-                .abilities(
-                        PartAbility.IMPORT_ITEMS,
-                        PartAbility.IMPORT_FLUIDS,
-                        PartAbility.EXPORT_ITEMS,
-                        PartAbility.EXPORT_FLUIDS)
+                // Standalone router next to a Pattern Provider, never part of a structure: no bus/hatch abilities,
+                // or every multiblock pattern (and the Nexus terminal's auto-build) would offer it as a bus.
                 .modelProperty(IS_FORMED, false)
                 .model((ctx, prov, builder) -> {
                     var model = prov.models()

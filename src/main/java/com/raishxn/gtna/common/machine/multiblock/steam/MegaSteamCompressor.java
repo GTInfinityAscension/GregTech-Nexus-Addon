@@ -10,6 +10,7 @@ import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 
+import com.raishxn.gtna.api.steam.GTNASteamBalance;
 import com.raishxn.gtna.common.machine.multiMachineBase.SteamMultiMachineBase;
 import org.jetbrains.annotations.Nullable;
 
@@ -47,13 +48,13 @@ public class MegaSteamCompressor extends SteamMultiMachineBase {
         if (recipe.getType() != GTRecipeTypes.COMPRESSOR_RECIPES) {
             return ModifierFunction.NULL;
         }
-        int parallels = ParallelLogic.getParallelAmount(machine, recipe, 256);
+        int parallels = ParallelLogic.getParallelAmount(machine, recipe, GTNASteamBalance.parallels(256));
         if (parallels == 0) {
             return ModifierFunction.NULL;
         }
         return ModifierFunction.builder()
                 .modifyAllContents(ContentModifier.multiplier(parallels))
-                .durationMultiplier(0.5)
+                .durationMultiplier(GTNASteamBalance.duration(0.5))
                 .parallels(parallels)
                 .build();
     }
