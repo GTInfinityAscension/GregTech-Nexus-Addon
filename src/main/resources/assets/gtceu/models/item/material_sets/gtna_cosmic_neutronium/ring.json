@@ -2,7 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_cosmic_neutronium/ring",
-    "layer1": "gtceu:item/material_sets/gtna_cosmic_neutronium/ring_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_cosmic_neutronium/ring_overlay"
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_cosmic_neutronium/rod_overlay"
   }
 }

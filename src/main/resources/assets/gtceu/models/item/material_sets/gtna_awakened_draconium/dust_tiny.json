@@ -2,8 +2,8 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_awakened_draconium/dust_tiny",
-    "layer1": "gtceu:item/material_sets/gtna_awakened_draconium/dust_tiny_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_awakened_draconium/dust_tiny_overlay",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "halo": "renderblender:misc/halo"
   },
   "loader": "renderblender:halo",

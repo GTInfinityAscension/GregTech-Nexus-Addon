@@ -1,9 +1,9 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gtceu:item/material_sets/gtna_trinaquadalloy/ingot_hot",
-    "layer1": "gtceu:item/material_sets/gtna_trinaquadalloy/ingot_hot_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_trinaquadalloy/ingot_hot_overlay",
+    "layer0": "gtceu:item/material_sets/gtna_trinaquadalloy/ingot",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_stellite/ingot_hot_overlay",
     "halo": "renderblender:misc/halo_noise"
   },
   "loader": "renderblender:halo",

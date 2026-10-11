@@ -7623,3 +7623,12 @@ Validation: `spotlessCheck runUnitTests runGameTestServer runData --offline`, wi
 - `mod_version` is now 0.5.3 (not released).
 - **Flaky test, not caused by this change:** `fuel_cell_absorption_charges_electrolyte` failed once and passed on the next run. `FuelCellGeneratorMachine.beforeWorking` uses `level.random` for membrane damage during the release run that the test feeds first. Make the test deterministic.
 - GTCEu's own steam multis (Steam Grinder/Oven, 8 parallels) are not covered yet.
+
+### 2026-10-10: material set and texture cleanup (jar 57.7 → 37.8 MB, no visual change)
+
+- **camelCase:** GTCEu 1.20 looks material textures and models up only by snake_case names (`MaterialIconType` converts `gearSmall` to `gear_small`). The ported sets also carried the GTNH camelCase copies. Removed 1,100 dead camelCase models and 3,871 camelCase textures (most identical to their snake_case pair, the rest names like `gearGt` that GTCEu never requests). No live model referenced them.
+- **Identical copies:** 3,304 identical item textures across sets were folded into one copy. The static item models now point to the canonical file. Block textures were left alone, because GTCEu finds them by name.
+- **Lossless PNG recompression:** oxipng `-o 4 --strip safe` on every PNG. All 3,853 PNGs were checked pixel by pixel against a backup.
+- **Checks:** no model reference broken by the cleanup (compared against HEAD), 327/327 GameTests, unit tests, spotless.
+- **Already broken before the cleanup:** 4 references in the `rough` set (`ingot_triple_secondary`, `plate_quadruple_secondary`, `plate_quintuple_secondary`…).
+- **Pending decision (author):** oversized textures cost a lot of VRAM: `item/tesseract.png` 400×40000, `block/obj/space_layer.png` 8192×4096, `block/obj/star_layer.png` 4096×2048.

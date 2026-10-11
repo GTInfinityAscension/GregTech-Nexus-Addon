@@ -2,8 +2,8 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_magmatter/gem",
-    "layer1": "gtceu:item/material_sets/gtna_magmatter/gem_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_magmatter/gem_overlay",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_infinity/gem_overlay",
     "halo": "renderblender:misc/halo"
   },
   "loader": "renderblender:halo",

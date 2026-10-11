@@ -2,7 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_chaos_matter/rotor",
-    "layer1": "gtceu:item/material_sets/gtna_chaos_matter/rotor_secondary",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_chaos_matter/rotor_overlay"
   },
   "loader": "renderblender:unstable",

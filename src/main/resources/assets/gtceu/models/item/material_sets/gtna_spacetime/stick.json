@@ -1,9 +1,9 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gtceu:item/material_sets/gtna_spacetime/stick",
-    "layer1": "gtceu:item/material_sets/gtna_spacetime/stick_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_spacetime/stick_overlay"
+    "layer0": "gtceu:item/material_sets/gtna_spacetime/rod",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_eternity/rod_overlay"
   },
   "loader": "renderblender:eternal",
   "eternal": {

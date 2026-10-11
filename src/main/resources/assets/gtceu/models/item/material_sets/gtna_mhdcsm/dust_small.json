@@ -2,7 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_mhdcsm/dust_small",
-    "layer1": "gtceu:item/material_sets/gtna_mhdcsm/dust_small_secondary",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_mhdcsm/dust_small_overlay",
     "halo": "renderblender:misc/halo"
   },

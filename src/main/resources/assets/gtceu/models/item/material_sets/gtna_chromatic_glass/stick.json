@@ -1,8 +1,8 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gtceu:item/material_sets/gtna_chromatic_glass/stick",
-    "layer1": "gtceu:item/material_sets/gtna_chromatic_glass/stick_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_chromatic_glass/stick_overlay"
+    "layer0": "gtceu:item/material_sets/gtna_chromatic_glass/rod",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay"
   }
 }

@@ -1,8 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "gtceu:item/material_sets/gtna_black_dwarf_matter/springSmall",
-    "layer1": "gtceu:item/material_sets/gtna_black_dwarf_matter/springSmall_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_black_dwarf_matter/springSmall_overlay"
-  }
-}

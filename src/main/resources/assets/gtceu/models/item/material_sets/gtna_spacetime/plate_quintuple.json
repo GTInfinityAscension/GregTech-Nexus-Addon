@@ -2,8 +2,8 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_spacetime/plate_quintuple",
-    "layer1": "gtceu:item/material_sets/gtna_spacetime/plate_quintuple_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_spacetime/plate_quintuple_overlay"
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_eternity/plate_triple_overlay"
   },
   "loader": "renderblender:eternal",
   "eternal": {

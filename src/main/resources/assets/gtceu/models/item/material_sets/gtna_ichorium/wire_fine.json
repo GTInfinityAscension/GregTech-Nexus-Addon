@@ -2,8 +2,8 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_ichorium/wire_fine",
-    "layer1": "gtceu:item/material_sets/gtna_ichorium/wire_fine_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_ichorium/wire_fine_overlay",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_creon/wire_fine_overlay",
     "halo": "renderblender:misc/halo"
   },
   "loader": "renderblender:halo",

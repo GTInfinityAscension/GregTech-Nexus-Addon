@@ -2,11 +2,11 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_universium/ingot_hot",
-    "layer1": "gtceu:item/material_sets/gtna_universium/ingot_hot_secondary",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_universium/ingot_hot_overlay"
   },
   "loader": "renderblender:cosmic",
   "cosmic": {
-    "mask": "gtceu:item/material_sets/gtna_universium/ingot_hot_cosmic_mask"
+    "mask": "gtceu:item/material_sets/gtna_universium/ingot_cosmic_mask"
   }
 }

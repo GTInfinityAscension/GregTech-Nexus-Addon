@@ -1,9 +1,9 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gtceu:item/material_sets/gtna_magmatter/singularity",
-    "layer1": "gtceu:item/material_sets/gtna_magmatter/singularity_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_magmatter/singularity_overlay",
+    "layer0": "gtceu:item/material_sets/gtna_mhdcsm/singularity",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "halo": "renderblender:misc/halo"
   },
   "loader": "renderblender:halo",

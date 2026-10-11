@@ -2,8 +2,8 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_indalloy_140/wire_fine",
-    "layer1": "gtceu:item/material_sets/gtna_indalloy_140/wire_fine_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_indalloy_140/wire_fine_overlay",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_creon/wire_fine_overlay",
     "halo": "renderblender:misc/halo_noise"
   },
   "loader": "renderblender:halo",

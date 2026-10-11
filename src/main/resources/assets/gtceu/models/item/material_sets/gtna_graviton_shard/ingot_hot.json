@@ -2,8 +2,8 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_graviton_shard/ingot_hot",
-    "layer1": "gtceu:item/material_sets/gtna_graviton_shard/ingot_hot_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_graviton_shard/ingot_hot_overlay"
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay"
   },
   "loader": "renderblender:cosmic",
   "cosmic": {

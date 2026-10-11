@@ -2,7 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_chromatic_glass/singularity",
-    "layer1": "gtceu:item/material_sets/gtna_chromatic_glass/singularity_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_chromatic_glass/singularity_overlay"
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay"
   }
 }

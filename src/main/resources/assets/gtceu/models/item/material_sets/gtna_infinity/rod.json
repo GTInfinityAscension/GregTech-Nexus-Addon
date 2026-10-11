@@ -2,7 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_infinity/rod",
-    "layer1": "gtceu:item/material_sets/gtna_infinity/rod_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_infinity/rod_overlay"
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_eternity/rod_overlay"
   }
 }

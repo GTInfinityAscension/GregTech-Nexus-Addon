@@ -2,8 +2,8 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_atomic_separation_catalyst/foil",
-    "layer1": "gtceu:item/material_sets/gtna_atomic_separation_catalyst/foil_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_atomic_separation_catalyst/foil_overlay",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "halo": "renderblender:misc/halo_noise"
   },
   "loader": "renderblender:halo",

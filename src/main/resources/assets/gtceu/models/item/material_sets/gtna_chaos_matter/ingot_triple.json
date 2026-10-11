@@ -2,7 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_chaos_matter/ingot_triple",
-    "layer1": "gtceu:item/material_sets/gtna_chaos_matter/ingot_triple_secondary",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_chaos_matter/ingot_triple_overlay"
   },
   "loader": "renderblender:unstable",

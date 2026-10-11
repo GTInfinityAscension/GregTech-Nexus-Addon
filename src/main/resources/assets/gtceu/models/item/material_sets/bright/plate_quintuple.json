@@ -3,6 +3,6 @@
   "textures": {
     "layer0": "gtceu:item/material_sets/bright/plate_quintuple",
     "layer1": "gtceu:item/material_sets/bright/plate_quintuple_secondary",
-    "layer2": "gtceu:item/material_sets/bright/plate_quintuple_overlay"
+    "layer2": "gtceu:item/material_sets/bright/plate_triple_overlay"
   }
 }

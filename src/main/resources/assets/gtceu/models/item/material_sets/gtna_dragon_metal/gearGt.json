@@ -1,8 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "gtceu:item/material_sets/gtna_dragon_metal/gearGt",
-    "layer1": "gtceu:item/material_sets/gtna_dragon_metal/gearGt_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_dragon_metal/gearGt_overlay"
-  }
-}

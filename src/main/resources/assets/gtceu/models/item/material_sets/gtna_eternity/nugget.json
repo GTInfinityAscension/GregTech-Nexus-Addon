@@ -2,7 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_eternity/nugget",
-    "layer1": "gtceu:item/material_sets/gtna_eternity/nugget_secondary",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_eternity/nugget_overlay"
   },
   "loader": "renderblender:eternal",

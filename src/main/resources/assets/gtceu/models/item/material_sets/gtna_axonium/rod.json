@@ -2,7 +2,7 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_axonium/rod",
-    "layer1": "gtceu:item/material_sets/gtna_axonium/rod_secondary",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_axonium/rod_overlay"
   },
   "loader": "renderblender:glow_edge",

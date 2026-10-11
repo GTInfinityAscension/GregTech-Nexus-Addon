@@ -1,8 +1,8 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gtceu:item/material_sets/gtna_six_phased_copper/stick",
-    "layer1": "gtceu:item/material_sets/gtna_six_phased_copper/stick_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_six_phased_copper/stick_overlay"
+    "layer0": "gtceu:item/material_sets/gtna_six_phased_copper/rod",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay"
   }
 }

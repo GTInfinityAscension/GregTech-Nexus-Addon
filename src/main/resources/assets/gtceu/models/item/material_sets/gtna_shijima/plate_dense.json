@@ -2,8 +2,8 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "gtceu:item/material_sets/gtna_shijima/plate_dense",
-    "layer1": "gtceu:item/material_sets/gtna_shijima/plate_dense_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_shijima/plate_dense_overlay"
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay"
   },
   "loader": "renderblender:glow_edge",
   "glow_edge": {

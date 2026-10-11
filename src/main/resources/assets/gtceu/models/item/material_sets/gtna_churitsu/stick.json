@@ -1,9 +1,9 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gtceu:item/material_sets/gtna_churitsu/stick",
-    "layer1": "gtceu:item/material_sets/gtna_churitsu/stick_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_churitsu/stick_overlay"
+    "layer0": "gtceu:item/material_sets/gtna_churitsu/rod",
+    "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
+    "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay"
   },
   "loader": "renderblender:glow_edge",
   "glow_edge": {

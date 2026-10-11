@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gtceu:item/material_sets/shiny/plate_quadruple",
+    "layer0": "gtceu:item/material_sets/rough/plate_quadruple",
     "layer1": "gtceu:item/material_sets/shiny/plate_quadruple_secondary",
     "layer2": "gtceu:item/material_sets/shiny/plate_quadruple_overlay"
   }

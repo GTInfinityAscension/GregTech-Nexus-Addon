@@ -1,8 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "gtceu:item/material_sets/gtna_astral_titanium/plateQuintuple",
-    "layer1": "gtceu:item/material_sets/gtna_astral_titanium/plateQuintuple_secondary",
-    "layer2": "gtceu:item/material_sets/gtna_astral_titanium/plateQuintuple_overlay"
-  }
-}
