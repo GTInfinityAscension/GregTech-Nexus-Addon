@@ -1,5 +1,13 @@
 {
   "values": [
+    "gtna:space_elevator_support",
+    "gtna:space_elevator_power_module_1",
+    "gtna:space_elevator_power_module_2",
+    "gtna:space_elevator_power_module_3",
+    "gtna:space_elevator_power_module_4",
+    "gtna:space_elevator_power_module_5",
+    "gtna:advanced_fusion_coil",
+    "gtna:accelerator_electromagnetic_coil_constraint_casing_uhv",
     "gtna:hypogen_coil",
     "gtna:eternal_coil"
   ]

@@ -1,0 +1,14 @@
+{
+  "parent": "gtceu:block/cube_2_layer/all",
+  "textures": {
+    "bot_all": "gtna:block/power_module/a2",
+    "bot_up": "gtna:block/module",
+    "bot_down": "gtna:block/module",
+    "top_up": "gtceu:block/casings/fusion/fusion_casing_bloom",
+    "top_down": "gtceu:block/casings/fusion/fusion_casing_bloom",
+    "top_north": "gtna:block/power_module/glow",
+    "top_east": "gtna:block/power_module/glow",
+    "top_south": "gtna:block/power_module/glow",
+    "top_west": "gtna:block/power_module/glow"
+  }
+}

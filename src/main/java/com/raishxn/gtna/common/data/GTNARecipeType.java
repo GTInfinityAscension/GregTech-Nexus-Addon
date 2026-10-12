@@ -395,6 +395,40 @@ public class GTNARecipeType {
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.MACERATOR);
 
     /** GTO {@code loom} (Hand of Arachne). */
+    /** GTO {@code chemical_vapor_deposition} (Integrated Vapor Deposition System). */
+    public static final GTRecipeType CHEMICAL_VAPOR_DEPOSITION_RECIPES = register("chemical_vapor_deposition",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(3, 1, 3, 1).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.CHEMICAL);
+
+    /** GTO {@code physical_vapor_deposition} (Integrated Vapor Deposition System). */
+    public static final GTRecipeType PHYSICAL_VAPOR_DEPOSITION_RECIPES = register("physical_vapor_deposition",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(3, 1, 3, 1).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
+
+    /** GTO {@code reaction_furnace}: high-temperature reactions; needs the coil temperature in {@code ebf_temp}. */
+    public static final GTRecipeType REACTION_FURNACE_RECIPES = register("reaction_furnace",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(3, 3, 3, 3).setEUIO(IO.IN)
+            .addDataInfo(data -> com.lowdragmc.lowdraglib.utils.LocalizationUtils.format("gtceu.recipe.temperature",
+                    com.gregtechceu.gtceu.utils.FormattingUtil.formatTemperature(data.getInt("ebf_temp"))))
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
+
+    /** GTO {@code dyson_sphere} (Dyson Sphere Launch Silo): launches swarm modules. */
+    public static final GTRecipeType DYSON_SPHERE_RECIPES = register("dyson_sphere",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(1, 0, 0, 0).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
+
+    /** GTO {@code sintering_furnace} (Giant Sintering Array): needs the coil temperature in {@code ebf_temp}. */
+    public static final GTRecipeType SINTERING_FURNACE_RECIPES = register("sintering_furnace",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(4, 1, 3, 0).setEUIO(IO.IN)
+            .addDataInfo(data -> com.lowdragmc.lowdraglib.utils.LocalizationUtils.format("gtceu.recipe.temperature",
+                    com.gregtechceu.gtceu.utils.FormattingUtil.formatTemperature(data.getInt("ebf_temp"))))
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, LEFT_TO_RIGHT).setSound(GTSoundEntries.FURNACE);
+
     public static final GTRecipeType LOOM_RECIPES = register("loom",
             com.gregtechceu.gtceu.common.data.GTRecipeTypes.ELECTRIC)
             .setMaxIOSize(2, 1, 0, 0).setEUIO(IO.IN)

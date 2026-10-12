@@ -190,14 +190,14 @@ def render_dragonmetal_c2(template, n_frames=30):
         
         # Núcleo radial vivo em fusão
         core_weight = np.clip(1.0 - norm_dist, 0, 1) ** 1.3
-        heat = pulse * core_weight * (t_base > 0.2)
+        heat = pulse * (core_weight ** 1.1) * (t_base > 0.18)
         
         r += heat * 110.0
         g += heat * 75.0
         b += heat * 20.0
         
         # Picos incandescentes ouro/branco no clímax da sístole
-        hot_peak = np.clip(heat - 0.65, 0, 1) * 165.0
+        hot_peak = np.clip(heat - 0.55, 0, 1) * 190.0
         r += hot_peak * 0.95
         g += hot_peak * 0.90
         b += hot_peak * 0.60
@@ -230,7 +230,7 @@ def render_dragonmetal_c3(template, n_frames=30):
         # Glint de navalha deslizante
         glint_pos = (phase * (w + h)) - 2.0
         diag = (x + y) * 0.5
-        glint = np.exp(-((diag - glint_pos * 0.5) / 1.0)**2) * (t_base > 0.6)
+        glint = np.exp(-((diag - glint_pos * 0.5) / 0.85)**2) * (t_base > 0.5)
         
         # Cintilação estelar no vértice noroeste
         sparkle = 0.0

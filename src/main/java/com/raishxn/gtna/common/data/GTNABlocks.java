@@ -555,8 +555,69 @@ public class GTNABlocks {
     public static final BlockEntry<Block> TUNGSTEN_BOROSILICATE_GLASS = createGlassCasingBlock(
             "tungsten_borosilicate_glass", GTNACORE.id("block/casings/tungsten_borosilicate_glass"),
             () -> RenderType::cutoutMipped);
+    // GTO tiered borosilicate glasses (GTOBlocks.createTierGlassCasings); the tiers live in GTNAGlassTiers.
+    // GTO blocks of the Dyson Sphere and the Space Elevator.
+    public static final BlockEntry<Block> SPACE_ELEVATOR_INTERNAL_SUPPORT = createPlainSidedCasingBlock(
+            "space_elevator_internal_support");
+    public static final BlockEntry<Block> DYSON_DEPLOYMENT_MAGNET = createPlainSidedCasingBlock(
+            "dyson_deployment_magnet");
+    public static final BlockEntry<Block> DYSON_DEPLOYMENT_CORE = createCasingBlock("dyson_deployment_core",
+            GTNACORE.id("block/casings/dyson_deployment_core"));
+    public static final BlockEntry<Block> DYSON_DEPLOYMENT_CASING = createCasingBlock("dyson_deployment_casing",
+            GTNACORE.id("block/casings/dyson_deployment_casing"));
+    public static final BlockEntry<com.gregtechceu.gtceu.api.block.ActiveBlock> SPACE_ELEVATOR_SUPPORT = createActiveCasing(
+            "space_elevator_support", "block/variant/space_elevator_support");
+    /** GTO Space Elevator Power Modules MK I-V; their tier is {@link #spaceElevatorPowerModuleTier}. */
+    public static final java.util.List<BlockEntry<com.gregtechceu.gtceu.api.block.ActiveBlock>> SPACE_ELEVATOR_POWER_MODULES = java.util.stream.IntStream
+            .rangeClosed(1, 5)
+            .mapToObj(tier -> createActiveCasing("space_elevator_power_module_" + tier,
+                    "block/variant/space_elevator_power_module_" + tier))
+            .toList();
+
+    /** MK tier (1-5) of a Space Elevator Power Module block, or 0. */
+    public static int spaceElevatorPowerModuleTier(Block block) {
+        for (int i = 0; i < SPACE_ELEVATOR_POWER_MODULES.size(); i++) {
+            if (SPACE_ELEVATOR_POWER_MODULES.get(i).get() == block) return i + 1;
+        }
+        return 0;
+    }
+
+    // GTO blocks of the Kerr-Newman Homogenizer.
+    public static final BlockEntry<Block> SHIELDED_ACCELERATOR = createCasingBlock("shielded_accelerator",
+            GTNACORE.id("block/shielded_accelerator"));
+    public static final BlockEntry<Block> BIOACTIVE_MECHANICAL_CASING = createCasingBlock(
+            "bioactive_mechanical_casing", GTNACORE.id("block/casings/bioactive_mechanical_casing"));
+    public static final BlockEntry<com.gregtechceu.gtceu.api.block.ActiveBlock> ADVANCED_FUSION_COIL = createActiveCasing(
+            "advanced_fusion_coil", "block/variant/advanced_fusion_coil");
+    public static final BlockEntry<com.gregtechceu.gtceu.api.block.ActiveBlock> ACCELERATOR_ELECTROMAGNETIC_COIL_CONSTRAINT_CASING_UHV = createActiveCasing(
+            "accelerator_electromagnetic_coil_constraint_casing_uhv",
+            "block/casings/accelerator/accelerator_electromagnetic_coil_constraint_casing_uhv");
+    // GTO blocks of Nyarlathotep's Tentacle. The Uruium coil is a plain casing here (GTNA has no GTO coil types).
+    public static final BlockEntry<Block> URUIUM_COIL_BLOCK = createCasingBlock("uruium_coil_block",
+            GTNACORE.id("block/coil/uruium_coil_block"));
+    public static final BlockEntry<Block> SPACETIME_ASSEMBLY_LINE_CASING = createCasingBlock(
+            "spacetime_assembly_line_casing", GTNACORE.id("block/spacetime_assembly_line_casing"));
+    public static final BlockEntry<Block> QUARK_PIPE = createCasingBlock("quark_pipe", GTNACORE.id("block/quark_pipe"));
     public static final BlockEntry<Block> TARANIUM_BOROSILICATE_GLASS = createGlassCasingBlock(
             "taranium_borosilicate_glass", GTNACORE.id("block/casings/taranium_borosilicate_glass"),
+            () -> RenderType::cutoutMipped);
+    public static final BlockEntry<Block> TITANIUM_BOROSILICATE_GLASS = createGlassCasingBlock(
+            "titanium_borosilicate_glass", GTNACORE.id("block/casings/titanium_borosilicate_glass"),
+            () -> RenderType::cutoutMipped);
+    public static final BlockEntry<Block> TRITANIUM_BOROSILICATE_GLASS = createGlassCasingBlock(
+            "tritanium_borosilicate_glass", GTNACORE.id("block/casings/tritanium_borosilicate_glass"),
+            () -> RenderType::cutoutMipped);
+    public static final BlockEntry<Block> ENDERIUM_BOROSILICATE_GLASS = createGlassCasingBlock(
+            "enderium_borosilicate_glass", GTNACORE.id("block/casings/enderium_borosilicate_glass"),
+            () -> RenderType::cutoutMipped);
+    public static final BlockEntry<Block> QUARKS_BOROSILICATE_GLASS = createGlassCasingBlock(
+            "quarks_borosilicate_glass", GTNACORE.id("block/casings/quarks_borosilicate_glass"),
+            () -> RenderType::cutoutMipped);
+    public static final BlockEntry<Block> DRACONIUM_BOROSILICATE_GLASS = createGlassCasingBlock(
+            "draconium_borosilicate_glass", GTNACORE.id("block/casings/draconium_borosilicate_glass"),
+            () -> RenderType::cutoutMipped);
+    public static final BlockEntry<Block> COSMIC_NEUTRONIUM_BOROSILICATE_GLASS = createGlassCasingBlock(
+            "cosmic_neutronium_borosilicate_glass", GTNACORE.id("block/casings/cosmic_neutronium_borosilicate_glass"),
             () -> RenderType::cutoutMipped);
 
     public static BlockEntry<Block> createCasingBlock(String name) {
@@ -733,6 +794,39 @@ public class GTNABlocks {
                 .tag(GTToolType.WRENCH.harvestTags.get(0), BlockTags.MINEABLE_WITH_PICKAXE)
                 .item(GTNABlockItem::new)
 
+                .build()
+                .register();
+    }
+
+    /** Plain sided casing ({@code block/casings/<name>/side|top}, no bloom layer), like GTO's sided casings. */
+    private static BlockEntry<Block> createPlainSidedCasingBlock(String name) {
+        ResourceLocation side = GTNACORE.id("block/casings/" + name + "/side");
+        ResourceLocation top = GTNACORE.id("block/casings/" + name + "/top");
+        return REGISTRATE.block(name, Block::new)
+                .initialProperties(() -> Blocks.IRON_BLOCK)
+                .properties(p -> p.mapColor(MapColor.METAL).strength(5.0f, 6.0f).sound(SoundType.METAL)
+                        .requiresCorrectToolForDrops().isValidSpawn((state, level, pos, ent) -> false))
+                .addLayer(() -> RenderType::cutoutMipped)
+                .blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(),
+                        prov.models().cubeBottomTop(ctx.getName(), side, top, top)))
+                .tag(GTToolType.WRENCH.harvestTags.get(0), BlockTags.MINEABLE_WITH_PICKAXE)
+                .item(GTNABlockItem::new)
+                .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), prov.modLoc("block/" + ctx.getName())))
+                .build()
+                .register();
+    }
+
+    /** GTCEu {@code GTBlocks.createActiveCasing}: models {@code <path>.json} and {@code <path>_active.json}. */
+    private static BlockEntry<com.gregtechceu.gtceu.api.block.ActiveBlock> createActiveCasing(String name,
+                                                                                              String modelPath) {
+        return REGISTRATE.block(name, com.gregtechceu.gtceu.api.block.ActiveBlock::new)
+                .initialProperties(() -> Blocks.IRON_BLOCK)
+                .addLayer(() -> RenderType::cutoutMipped)
+                .blockstate(com.gregtechceu.gtceu.common.data.models.GTModels
+                        .createActiveModel(GTNACORE.id(modelPath)))
+                .tag(com.gregtechceu.gtceu.data.recipe.CustomTags.MINEABLE_WITH_CONFIG_VALID_PICKAXE_WRENCH)
+                .item(net.minecraft.world.item.BlockItem::new)
+                .model((ctx, prov) -> prov.withExistingParent(prov.name(ctx), GTNACORE.id(modelPath)))
                 .build()
                 .register();
     }

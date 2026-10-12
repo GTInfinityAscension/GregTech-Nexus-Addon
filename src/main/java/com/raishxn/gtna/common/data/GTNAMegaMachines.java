@@ -49,6 +49,7 @@ public final class GTNAMegaMachines {
         if (modulesRegistered) return;
         modulesRegistered = true;
         registerDesulfurizerModule();
+        registerReactionFurnaceModule();
     }
 
     /** GTO {@code autoThreadLaserAbilities}: IO + energy/laser + Thread, Parallel and Overclock hatches. */
@@ -253,6 +254,36 @@ public final class GTNAMegaMachines {
                     .build())
             .workableCasingModel(GTCEu.id("block/casings/hpca/high_power_casing"),
                     GTCEu.id("block/multiblock/fusion_reactor"))
+            .register();
+
+    /**
+     * GTO {@code large_incubator}: Incubator with Parallel Hatch; the glass tier caps the voltage tier and the
+     * cleanroom filters set the filter tier recipes can ask for. GTO's Radiation Hatch is not ported.
+     */
+    public static final MultiblockMachineDefinition LARGE_INCUBATOR = REGISTRATE
+            .multiblock("large_incubator",
+                    com.raishxn.gtna.common.machine.multiblock.electric.LargeIncubatorMachine::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTNARecipeType.INCUBATOR_RECIPES)
+            .recipeModifiers(com.raishxn.gtna.common.machine.multiblock.electric.LargeIncubatorMachine::filterCheck,
+                    GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.OC_NON_PERFECT_SUBTICK)
+            .appearanceBlock(GTBlocks.PLASTCRETE)
+            .pattern(definition -> GTOCompressedPatternReader.start("large_incubator")
+                    .where('A', blocks(GTNABlocks.OXIDATION_RESISTANT_HASTELLOY_N_MECHANICAL_CASING.get()))
+                    .where('B', blocks(GTBlocks.PLASTCRETE.get())
+                            .or(autoAbilities(definition.getRecipeTypes()))
+                            .or(abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
+                            .or(abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
+                    .where('C', controller(blocks(definition.get())))
+                    .where('D', com.raishxn.gtna.common.data.multiblock.GTNAGlassTiers.glass())
+                    .where('E', com.gregtechceu.gtceu.api.pattern.Predicates.cleanroomFilters())
+                    .where('F', blocks(net.minecraft.world.level.block.Blocks.SPONGE))
+                    .where('G', blocks(GTBlocks.PLASTCRETE.get()))
+                    .where('H', blocks(GTBlocks.CASING_POLYTETRAFLUOROETHYLENE_PIPE.get()))
+                    .where(' ', any())
+                    .build())
+            .workableCasingModel(GTCEu.id("block/casings/cleanroom/plascrete"),
+                    GTCEu.id("block/multiblock/gcym/large_maceration_tower"))
             .register();
 
     /**
@@ -1016,6 +1047,323 @@ public final class GTNAMegaMachines {
                     GTCEu.id("block/multiblock/fusion_reactor"))
             .register();
 
+    /**
+     * GTO {@code kerr_newman_homogenizer}: Mixer running several recipes at once (GTO cross-recipe -> Thread Hatch)
+     * with Parallel Hatch and lasers. GTO's black-hole effect comes from the closed GTOLib FX library and is not
+     * ported (GTO's own ring renderer is switched off).
+     */
+    public static final MultiblockMachineDefinition KERR_NEWMAN_HOMOGENIZER = REGISTRATE
+            .multiblock("kerr_newman_homogenizer", WorkableElectricMultipleRecipesMachine::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTRecipeTypes.MIXER_RECIPES)
+            .appearanceBlock(GTNABlocks.DIMENSION_INJECTION_CASING)
+            .pattern(definition -> GTOCompressedPatternReader.start("kerr_newman_homogenizer")
+                    .where('A', blocks(GTNABlocks.ENHANCE_HYPER_MECHANICAL_CASING.get()))
+                    .where('B', blocks(GTNABlocks.IRIDIUM_CASING.get()))
+                    .where('C', blocks(GTNABlocks.HYPER_MECHANICAL_CASING.get()))
+                    .where('D',
+                            blocks(GTNABlocks.ZIRCONIA_CERAMIC_HIGH_STRENGTH_BENDING_RESISTANCE_MECHANICAL_BLOCK.get()))
+                    .where('E', blocks(GTNABlocks.PRESSURE_CONTAINMENT_CASING.get()))
+                    .where('F', frames(GTMaterials.NaquadahAlloy))
+                    .where('G', blocks(GTNABlocks.AMPROSIUM_GEARBOX.get()))
+                    .where('H', blocks(GTNABlocks.AMPROSIUM_PIPE_CASING.get()))
+                    .where('I', blocks(GTNABlocks.OIL_GAS_TRANSPORTATION_PIPE_CASING.get()))
+                    .where('J', blocks(GTNABlocks.HIGH_PRESSURE_PIPE_CASING.get()))
+                    .where('K', blocks(GTNABlocks.DIMENSION_INJECTION_CASING.get())
+                            .or(threadLaserAbilities(definition.getRecipeTypes()))
+                            .or(abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
+                    .where('L', blocks(GTNABlocks.GRAVITY_STABILIZATION_CASING.get()))
+                    .where('M', blocks(GTNABlocks.INDUSTRIAL_FRAMELESS_GLASS.get()))
+                    .where('N', blocks(GTNABlocks.SHIELDED_ACCELERATOR.get()))
+                    .where('O', blocks(GTNABlocks.DIMENSION_INJECTION_CASING.get()))
+                    .where('P', frames(GTNAMaterials.HastelloyN))
+                    .where('Q', blocks(GTNABlocks.BIOACTIVE_MECHANICAL_CASING.get()))
+                    .where('R', blocks(GTNABlocks.AMPROSIUM_ACTIVE_CASING.get()))
+                    .where('S', blocks(GTNABlocks.HIGH_STRENGTH_SUPPORT_SPINDLE.get()))
+                    .where('T', blocks(GTNABlocks.ACCELERATOR_ELECTROMAGNETIC_COIL_CONSTRAINT_CASING_UHV.get()))
+                    .where('U', blocks(GTNABlocks.EXTREME_DENSITY_CASING.get()))
+                    .where('V', blocks(GTNAEyeOfHarmonyContent.SPATIAL_CASING.get()))
+                    .where('W', frames(GTMaterials.TungstenCarbide))
+                    .where('X', blocks(GTNABlocks.PPS_CORROSION_RESISTANT_MECHANICAL_HOUSING.get()))
+                    .where('Y', blocks(GTNABlocks.QUANTUM_GLASS.get()))
+                    .where('Z', blocks(GTNABlocks.PLASMA_HEATER_CASING.get()))
+                    .where('[', blocks(com.gregtechceu.gtceu.common.data.GCYMBlocks.CASING_ATOMIC.get()))
+                    .where('\\', blocks(GTNABlocks.RADIATION_ABSORBENT_CASING.get()))
+                    .where(']', blocks(GTNABlocks.FUSION_CASING_MK4.get()))
+                    .where('^', blocks(GTNABlocks.ADVANCED_FUSION_COIL.get()))
+                    .where('_', blocks(GTNABlocks.HOLLOW_CASING.get()))
+                    .where('`', frames(GTMaterials.Trinium))
+                    .where('a', blocks(GTNABlocks.CONTAINMENT_FIELD_GENERATOR.get()))
+                    .where('b', controller(blocks(definition.get())))
+                    .where(' ', any())
+                    .build())
+            .workableCasingModel(GTNACORE.id("block/casings/dimension_injection_casing"),
+                    GTCEu.id("block/multiblock/fusion_reactor"))
+            .register();
+
+    /**
+     * GTO {@code nyarlathoteps_tentacle}: Assembly Line running several recipes at once with coil parallel (GTO
+     * cross-recipe + coil parallel), lasers and an Optical Data Reception Hatch. GTO's Suprachronal Assembly Line
+     * and Circuit Assembly Line modes are not ported (GTO-only recipe types). Amprosium frame -> Neutronium,
+     * Mithril -> Trinium; GTO's Dimensional Bridge Casing is GTNA's Spatial Casing (the old id migrates to it).
+     */
+    public static final MultiblockMachineDefinition NYARLATHOTEPS_TENTACLE = REGISTRATE
+            .multiblock("nyarlathoteps_tentacle",
+                    holder -> new CoilWorkableElectricMultipleRecipesMachine(holder, true, new Object[0]))
+            .rotationState(RotationState.ALL)
+            .recipeType(GTRecipeTypes.ASSEMBLY_LINE_RECIPES)
+            .appearanceBlock(GTNABlocks.MOLECULAR_CASING)
+            .pattern(definition -> GTOCompressedPatternReader.start("nyarlathoteps_tentacle")
+                    .where('A', blocks(GTNABlocks.MOLECULAR_CASING.get())
+                            .or(threadLaserAbilities(definition.getRecipeTypes()))
+                            .or(abilities(PartAbility.OPTICAL_DATA_RECEPTION).setExactLimit(1)))
+                    .where('B', blocks(GTNABlocks.ADVANCED_FUSION_COIL.get()))
+                    .where('C', blocks(GTNABlocks.LASER_CASING.get()))
+                    .where('D', blocks(GTNABlocks.URUIUM_COIL_BLOCK.get()))
+                    .where('E', blocks(GTNABlocks.HYPER_CORE.get()))
+                    .where('F', frames(GTMaterials.Neutronium))
+                    .where('G', blocks(GTNABlocks.SPACETIME_ASSEMBLY_LINE_CASING.get()))
+                    .where('H', blocks(GTNABlocks.EXTREME_DENSITY_CASING.get()))
+                    .where('I', blocks(GTBlocks.FUSION_GLASS.get()))
+                    .where('J', blocks(GTNABlocks.LASER_COOLING_CASING.get()))
+                    .where('K', blocks(GTNABlocks.QUANTUM_GLASS.get()))
+                    .where('L', blocks(GTNABlocks.NAQUADAH_ALLOY_CASING.get()))
+                    .where('M', blocks(GTNABlocks.SPS_CASING.get()))
+                    .where('N', blocks(GTNABlocks.SPACETIME_ASSEMBLY_LINE_UNIT.get()))
+                    .where('O', blocks(GTNABlocks.MOLECULAR_CASING.get()))
+                    .where('P', blocks(GTNABlocks.CONTAINMENT_FIELD_GENERATOR.get()))
+                    .where('Q', heatingCoils())
+                    .where('R', blocks(GTBlocks.FILTER_CASING_STERILE.get()))
+                    .where('S', blocks(GTNABlocks.ELECTRON_PERMEABLE_AMPROSIUM_COATED_GLASS.get()))
+                    .where('T', blocks(GTNABlocks.HOLLOW_CASING.get()))
+                    .where('U', blocks(GTNABlocks.AMPROSIUM_ACTIVE_CASING.get()))
+                    .where('V', frames(GTMaterials.Trinium))
+                    .where('W',
+                            blocks(com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper
+                                    .getBlock(com.gregtechceu.gtceu.api.data.tag.TagPrefix.block, GTMaterials.Ruby)))
+                    .where('X', blocks(com.gregtechceu.gtceu.common.data.GCYMBlocks.ELECTROLYTIC_CELL.get()))
+                    .where('Y', frames(GTMaterials.Trinium))
+                    .where('Z', blocks(GTBlocks.HIGH_POWER_CASING.get()))
+                    .where('[', blocks(GTNAEyeOfHarmonyContent.SPATIAL_CASING.get()))
+                    .where('~', blocks(GTNABlocks.RESTRAINT_DEVICE.get()))
+                    .where(']', blocks(GTNABlocks.QUARK_PIPE.get()))
+                    .where('^', blocks(GTNABlocks.MOLECULAR_COIL.get()))
+                    .where('_', blocks(GTNABlocks.DEGENERATE_RHENIUM_CONSTRAINED_CASING.get()))
+                    .where('`', blocks(GTNABlocks.DIMENSIONALLY_TRANSCENDENT_CASING.get()))
+                    .where('a', controller(blocks(definition.get())))
+                    .where(' ', any())
+                    .build())
+            .workableCasingModel(GTNACORE.id("block/casings/molecular_casing"),
+                    GTCEu.id("block/multiblock/fusion_reactor"))
+            .register();
+
+    /**
+     * GTO {@code giant_sintering_array}: own {@code gtna:sintering_furnace} type; coil temperature gate, parallel
+     * {@code 4^glass tier}, lasers and Thread Hatch. Recipe type left empty: GTO's sintering recipes use GTO-only
+     * materials and rough blanks.
+     */
+    public static final MultiblockMachineDefinition GIANT_SINTERING_ARRAY = REGISTRATE
+            .multiblock("giant_sintering_array",
+                    com.raishxn.gtna.common.machine.multiblock.electric.GiantSinteringArrayMachine::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTNARecipeType.SINTERING_FURNACE_RECIPES)
+            .appearanceBlock(GTNABlocks.NAQUADAH_ALLOY_CASING)
+            .pattern(definition -> GTOCompressedPatternReader.start("giant_sintering_array")
+                    .where('A', blocks(GTNABlocks.NAQUADAH_ALLOY_CASING.get()))
+                    .where('B',
+                            blocks(GTNABlocks.COBALT_OXIDE_CERAMIC_STRONG_THERMALLY_CONDUCTIVE_MECHANICAL_BLOCK.get()))
+                    .where('C', blocks(GTBlocks.CASING_GRATE.get()))
+                    .where('D', blocks(GTNABlocks.PLASMA_HEATER_CASING.get()))
+                    .where('E', blocks(GTNABlocks.BLAZE_CASING.get()))
+                    .where('F',
+                            blocks(com.gregtechceu.gtceu.common.data.GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING.get()))
+                    .where('G', com.raishxn.gtna.common.data.multiblock.GTNAGlassTiers.glass())
+                    .where('H', heatingCoils())
+                    .where('I', blocks(GTNABlocks.NAQUADAH_ALLOY_CASING.get())
+                            .or(threadLaserAbilities(definition.getRecipeTypes()))
+                            .or(abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
+                    .where('J', blocks(GTNABlocks.PRESSURE_CONTAINMENT_CASING.get()))
+                    .where('K', blocks(GTNABlocks.IRIDIUM_GEARBOX.get()))
+                    .where('L', frames(GTMaterials.NaquadahEnriched))
+                    .where('M', controller(blocks(definition.get())))
+                    .where('N', blocks(GTNABlocks.IRIDIUM_PIPE_CASING.get()))
+                    .where('O', abilities(PartAbility.MUFFLER))
+                    .where(' ', any())
+                    .build())
+            .workableCasingModel(GTNACORE.id("block/casings/hyper_mechanical_casing"),
+                    GTCEu.id("block/multiblock/fusion_reactor"))
+            .register();
+
+    /**
+     * GTO {@code integrated_vapor_deposition_system}: CVD + PVD (own types, left empty: GTO's recipes use GTO-only
+     * materials), several recipes at once, parallel {@code 4^glass tier}. Babbitt Alloy frame -> Stainless Steel,
+     * Laurenium frame -> Duranium.
+     */
+    public static final MultiblockMachineDefinition INTEGRATED_VAPOR_DEPOSITION_SYSTEM = REGISTRATE
+            .multiblock("integrated_vapor_deposition_system",
+                    com.raishxn.gtna.common.machine.multiblock.electric.GlassParallelMultipleRecipesMachine::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTNARecipeType.CHEMICAL_VAPOR_DEPOSITION_RECIPES)
+            .recipeType(GTNARecipeType.PHYSICAL_VAPOR_DEPOSITION_RECIPES)
+            .appearanceBlock(GTNABlocks.IRIDIUM_CASING)
+            .pattern(definition -> GTOCompressedPatternReader.start("integrated_vapor_deposition_system")
+                    .where('A', blocks(GTNABlocks.ANTIFREEZE_HEATPROOF_MACHINE_CASING.get()))
+                    .where('B', frames(GTMaterials.StainlessSteel))
+                    .where('C', blocks(GTNABlocks.SPS_CASING.get()))
+                    .where('D', com.raishxn.gtna.common.data.multiblock.GTNAGlassTiers.glass())
+                    .where('E', frames(GTMaterials.NaquadahAlloy))
+                    .where('F', blocks(GTNABlocks.STABILIZED_NAQUADAH_WATER_PLANT_CASING.get()))
+                    .where('G', blocks(GTBlocks.CASING_POLYTETRAFLUOROETHYLENE_PIPE.get()))
+                    .where('H', blocks(GTNABlocks.LAFIUM_MECHANICAL_CASING.get()))
+                    .where('I', blocks(GTNABlocks.HOLLOW_CASING.get()))
+                    .where('J', blocks(GTNABlocks.HERMETIC_CASING_UEV.get()))
+                    .where('K', blocks(com.gregtechceu.gtceu.common.data.GCYMBlocks.CASING_ATOMIC.get()))
+                    .where('L', blocks(GTNABlocks.IRIDIUM_CASING.get()))
+                    .where('M', frames(GTMaterials.Duranium))
+                    .where('N', blocks(GTNABlocks.AMPROSIUM_ACTIVE_CASING.get()))
+                    .where('O', blocks(GTNABlocks.IRIDIUM_CASING.get())
+                            .or(threadLaserAbilities(definition.getRecipeTypes()))
+                            .or(abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
+                    .where('P', controller(blocks(definition.get())))
+                    .where('Q', blocks(GTBlocks.CASING_PALLADIUM_SUBSTATION.get()))
+                    .where('R', blocks(GTNABlocks.PRESSURE_CONTAINMENT_CASING.get()))
+                    .where('S', blocks(GTNABlocks.STRONTIUM_CARBONATE_CERAMIC_RAY_ABSORBING_MECHANICAL_CUBE.get()))
+                    .where('T', blocks(GTNABlocks.NEUTRONIUM_STABLE_CASING.get()))
+                    .where('U', blocks(GTNABlocks.AMPROSIUM_PIPE_CASING.get()))
+                    .where('V', frames(GTMaterials.Polytetrafluoroethylene))
+                    .where('W', blocks(GTNABlocks.ADVANCED_ASSEMBLY_LINE_UNIT.get()))
+                    .where('X', blocks(com.gregtechceu.gtceu.common.data.GCYMBlocks.CASING_CORROSION_PROOF.get()))
+                    .where('Y', blocks(GTNABlocks.CONTAINMENT_FIELD_GENERATOR.get()))
+                    .where('Z', blocks(GTNABlocks.NAQUADAH_REINFORCED_PLANT_CASING.get()))
+                    .where('[', blocks(GTNABlocks.QUANTUM_GLASS.get()))
+                    .where(' ', any())
+                    .build())
+            .workableCasingModel(GTNACORE.id("block/casings/iridium_casing"),
+                    GTCEu.id("block/multiblock/fusion_reactor"))
+            .register();
+
+    /**
+     * GTO {@code reaction_furnace}: coil furnace like the Electric Blast Furnace (temperature gate and coil
+     * overclock) on its own {@code gtna:reaction_furnace} type, left empty (GTO's recipes use GTO-only materials).
+     * The upgrade module (GTO {@code addSubPattern}) unlocks the Parallel and Accelerate hatches. GTO's Machine
+     * Access Link is not ported.
+     */
+    public static final MultiblockMachineDefinition REACTION_FURNACE = REGISTRATE
+            .multiblock("reaction_furnace", CoilWorkableElectricMultiblockMachine::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTNARecipeType.REACTION_FURNACE_RECIPES)
+            .recipeModifiers(GTRecipeModifiers::hatchParallel, GTRecipeModifiers::ebfOverclock)
+            .appearanceBlock(GTBlocks.CASING_STEEL_SOLID)
+            .pattern(definition -> com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern.start(
+                    com.gregtechceu.gtceu.api.pattern.util.RelativeDirection.BACK,
+                    com.gregtechceu.gtceu.api.pattern.util.RelativeDirection.UP,
+                    com.gregtechceu.gtceu.api.pattern.util.RelativeDirection.LEFT)
+                    .aisle("A   A", "ABBBA", "BBCBB", "BBBBB", " BBB ")
+                    .aisle("     ", "BBBBB", "BDCDB", "BDCDB", "BAAAB")
+                    .aisle("     ", "~BBBB", "CCCCC", "BCCCB", "BAFAB")
+                    .aisle("     ", "BBBBB", "BDCDB", "BDCDB", "BAAAB")
+                    .aisle("A   A", "ABBBA", "BBCBB", "BBBBB", " BBB ")
+                    .where('~', controller(blocks(definition.get())))
+                    .where('A', frames(GTMaterials.Steel))
+                    .where('C', heatingCoils())
+                    .where('D', blocks(GTBlocks.CASING_STEEL_PIPE.get()))
+                    .where('B', blocks(GTBlocks.CASING_STEEL_SOLID.get()).setMinGlobalLimited(20)
+                            .or(autoAbilities(definition.getRecipeTypes()))
+                            .or(abilities(PartAbility.MAINTENANCE).setExactLimit(1)))
+                    .where('F', abilities(PartAbility.MUFFLER))
+                    .where(' ', any())
+                    .build())
+            .workableCasingModel(GTCEu.id("block/casings/solid/machine_casing_solid_steel"),
+                    GTCEu.id("block/multiblock/electric_blast_furnace"))
+            .register();
+
+    /**
+     * GTO {@code dyson_sphere_launch_silo}: launches Dyson swarm modules into orbit of the planet it stands on
+     * ({@link com.raishxn.gtna.common.machine.multiblock.electric.DysonSphereMachines}). Quantanium frame ->
+     * Neutronium, Mithril frame -> Trinium.
+     */
+    public static final MultiblockMachineDefinition DYSON_SPHERE_LAUNCH_SILO = REGISTRATE
+            .multiblock("dyson_sphere_launch_silo",
+                    com.raishxn.gtna.common.machine.multiblock.electric.DysonSphereMachines.LaunchSilo::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTNARecipeType.DYSON_SPHERE_RECIPES)
+            .recipeModifiers(
+                    com.raishxn.gtna.common.machine.multiblock.electric.DysonSphereMachines.LaunchSilo::launchModifier,
+                    GTRecipeModifiers.OC_NON_PERFECT)
+            .appearanceBlock(GTNABlocks.SPACE_ELEVATOR_MECHANICAL_CASING)
+            .pattern(definition -> GTOCompressedPatternReader.start("dyson_sphere_launch_silo")
+                    .where('~', controller(blocks(definition.get())))
+                    .where('A', blocks(GTNABlocks.HIGH_STRENGTH_CONCRETE.get()))
+                    .where('B', blocks(GTNABlocks.SPACE_ELEVATOR_INTERNAL_SUPPORT.get()))
+                    .where('C', blocks(GTNABlocks.MOLECULAR_CASING.get()))
+                    .where('D', blocks(GTNABlocks.SPACE_ELEVATOR_SUPPORT.get()))
+                    .where('E', blocks(GTNABlocks.DIMENSIONALLY_TRANSCENDENT_CASING.get()))
+                    .where('F', blocks(GTNABlocks.DYSON_DEPLOYMENT_MAGNET.get()))
+                    .where('G', blocks(GTNABlocks.GRAVITON_FIELD_CONSTRAINT_CASING.get()))
+                    .where('H', blocks(GTNAEyeOfHarmonyContent.SPATIAL_CASING.get()))
+                    .where('I', blocks(GTNABlocks.SPACE_ELEVATOR_POWER_MODULES.get(4).get()))
+                    .where('J', blocks(GTNABlocks.ENHANCE_HYPER_MECHANICAL_CASING.get()))
+                    .where('K', blocks(GTNABlocks.DIMENSION_INJECTION_CASING.get()))
+                    .where('L', blocks(GTNABlocks.DYSON_DEPLOYMENT_CASING.get()))
+                    .where('M', frames(GTMaterials.Neutronium))
+                    .where('N', blocks(GTNABlocks.HOLLOW_CASING.get()))
+                    .where('O', frames(GTMaterials.Trinium))
+                    .where('P', frames(GTMaterials.NaquadahAlloy))
+                    .where('Q', blocks(GTNABlocks.CONTAINMENT_FIELD_GENERATOR.get()))
+                    .where('R', blocks(GTNABlocks.FUSION_CASING_MK5.get()))
+                    .where('S', blocks(GTNABlocks.DYSON_CONTROL_CASING.get()))
+                    .where('T', blocks(GTNABlocks.DEGENERATE_RHENIUM_CONSTRAINED_CASING.get()))
+                    .where('U', blocks(GTNABlocks.ACCELERATED_PIPELINE.get()))
+                    .where('V', blocks(GTNABlocks.DYSON_CONTROL_TOROID.get()))
+                    .where('W', blocks(GTNABlocks.DYSON_DEPLOYMENT_CORE.get()))
+                    .where('X', blocks(GTNABlocks.SPACETIME_ASSEMBLY_LINE_UNIT.get()))
+                    .where('Y', blocks(GTBlocks.CASING_PALLADIUM_SUBSTATION.get()))
+                    .where('[', blocks(GTNABlocks.HIGH_ENERGY_ULTRAVIOLET_EMITTER_CASING.get()))
+                    .where('a', blocks(GTNABlocks.DYSON_CONTROL_CASING.get())
+                            .or(abilities(PartAbility.COMPUTATION_DATA_RECEPTION).setExactLimit(1))
+                            .or(autoAbilities(definition.getRecipeTypes())))
+                    .where(' ', any())
+                    .build())
+            .workableCasingModel(GTNACORE.id("block/casings/space_elevator_mechanical_casing"),
+                    GTCEu.id("block/multiblock/fusion_reactor"))
+            .register();
+
+    /**
+     * GTO {@code dyson_sphere_receiving_station}: generator fed by the swarm of its planet; laser output, needs
+     * computation and liquid helium.
+     */
+    public static final MultiblockMachineDefinition DYSON_SPHERE_RECEIVING_STATION = REGISTRATE
+            .multiblock("dyson_sphere_receiving_station",
+                    com.raishxn.gtna.common.machine.multiblock.electric.DysonSphereMachines.ReceivingStation::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTRecipeTypes.DUMMY_RECIPES)
+            .generator(true)
+            .appearanceBlock(GTBlocks.HIGH_POWER_CASING)
+            .pattern(definition -> GTOCompressedPatternReader.start("dyson_sphere_receiving_station")
+                    .where('~', controller(blocks(definition.get())))
+                    .where('A', blocks(GTNABlocks.ENHANCE_HYPER_MECHANICAL_CASING.get()))
+                    .where('B', blocks(GTNABlocks.DYSON_CONTROL_TOROID.get()))
+                    .where('C', blocks(GTNABlocks.RADIATION_ABSORBENT_CASING.get()))
+                    .where('D', blocks(GTNABlocks.HIGH_STRENGTH_CONCRETE.get()))
+                    .where('E', blocks(GTNABlocks.SPACE_ELEVATOR_INTERNAL_SUPPORT.get()))
+                    .where('F', frames(GTMaterials.NaquadahAlloy))
+                    .where('G', blocks(GTNABlocks.HYPER_CORE.get()))
+                    .where('H', blocks(GTNABlocks.MOLECULAR_CASING.get()))
+                    .where('I', blocks(GTBlocks.HIGH_POWER_CASING.get()))
+                    .where('a', blocks(GTBlocks.HIGH_POWER_CASING.get())
+                            .or(abilities(PartAbility.IMPORT_FLUIDS).setExactLimit(1))
+                            .or(abilities(PartAbility.COMPUTATION_DATA_RECEPTION).setExactLimit(1))
+                            .or(abilities(PartAbility.OUTPUT_LASER).setExactLimit(1)))
+                    .where('K', blocks(GTNABlocks.SPACE_ELEVATOR_SUPPORT.get()))
+                    .where('L', blocks(GTNABlocks.MOLECULAR_COIL.get()))
+                    .where('M', blocks(GTNABlocks.DYSON_RECEIVER_CASING.get()))
+                    .where('N', blocks(GTNABlocks.DIMENSIONALLY_TRANSCENDENT_CASING.get()))
+                    .where(' ', any())
+                    .build())
+            .workableCasingModel(GTCEu.id("block/casings/hpca/high_power_casing"),
+                    GTCEu.id("block/multiblock/fusion_reactor"))
+            .register();
+
     /** GTO {@code hand_of_arachne}: Loom with Parallel Hatch and Thread Hatch; GTO Pikyonium casing ported. */
     public static final MultiblockMachineDefinition HAND_OF_ARACHNE = REGISTRATE
             .multiblock("hand_of_arachne", WorkableElectricMultipleRecipesMachine::new)
@@ -1659,6 +2007,30 @@ public final class GTNAMegaMachines {
             .register();
 
     /** GTO's Desulfurizer extension (GTO {@code addSubPattern}); called from {@link #init()}. */
+    /** GTO {@code reaction_furnace} sub-pattern: the module that unlocks the Parallel and Accelerate hatches. */
+    private static void registerReactionFurnaceModule() {
+        com.raishxn.gtna.api.machine.multiblock.GTNASubPatterns.register(REACTION_FURNACE.getId(),
+                definition -> com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern.start()
+                        .aisle("EEEEE AAA ", "       A  ", "          ", "          ", "          ")
+                        .aisle("EFFFEDBBBA", "      BBB ", "      BBB ", "      BBB ", "       B  ")
+                        .aisle("EFFFEDBBBA", "     DBCBA", "      BCB ", "      BCB ", "     CCCB ")
+                        .aisle("EFFFEDBBBA", "      BBB ", "      BBB ", "      BBB ", "       B  ")
+                        .aisle("EEEEE AAA ", "  G    A  ", "          ", "          ", "          ")
+                        .where('A', blocks(GTBlocks.CASING_STEEL_SOLID.get())
+                                .or(autoAbilities(definition.getRecipeTypes()))
+                                .or(abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
+                                .or(abilities(GTNAPartAbility.ACCELERATE_HATCH).setMaxGlobalLimited(1)))
+                        .where('B', blocks(GTBlocks.CASING_PTFE_INERT.get()))
+                        .where('C', blocks(GTBlocks.CASING_POLYTETRAFLUOROETHYLENE_PIPE.get()))
+                        .where('D', blocks(GTBlocks.CASING_STEEL_SOLID.get()))
+                        .where('E', frames(GTMaterials.Steel))
+                        .where('F', blocks(GTBlocks.STEEL_HULL.get()))
+                        .where('G', controller(blocks(definition.get())))
+                        .where(' ', any())
+                        .build(),
+                net.minecraft.network.chat.Component.translatable("gtna.machine.reaction_furnace.module"));
+    }
+
     private static void registerDesulfurizerModule() {
         com.raishxn.gtna.api.machine.multiblock.GTNASubPatterns.register(DESULFURIZER.getId(),
                 definition -> com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern.start()

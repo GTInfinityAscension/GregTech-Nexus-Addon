@@ -1,5 +1,23 @@
 # Changelog
 
+## [Unreleased]
+
+### New multiblocks (GTO)
+- **Large Incubator**: Incubator with Parallel Hatch; the glass tier caps the voltage tier, and the cleanroom filters set the filter tier a recipe may ask for (`filter_casing` recipe data: 1 plain, 2 sterile).
+- **Kerr-Newman Homogenizer**: Mixer running several recipes at once (Thread Hatch), Parallel and laser hatches.
+- **Nyarlathotep's Tentacle**: Assembly Line running several recipes at once with coil parallel and an Optical Data Reception Hatch.
+- **Giant Sintering Array** (new `gtna:sintering_furnace` type): coil temperature gate, parallel `4^glass tier`.
+- **Integrated Vapor Deposition System** (new `gtna:chemical_vapor_deposition` and `gtna:physical_vapor_deposition` types): several recipes at once, parallel `4^glass tier`.
+- **Reaction Furnace** (new `gtna:reaction_furnace` type): coil furnace like the Electric Blast Furnace, with an upgrade module that unlocks the Parallel and Accelerate hatches.
+- **Dyson Sphere Launch Silo** and **Receiving Station** (new `gtna:dyson_sphere` type, Dyson Swarm Module item): the silo puts swarm modules in orbit of its planet, the station turns them into laser power, needing computation and liquid helium; the swarm takes damage over time.
+
+### Other
+- **Tiered glass**: any of 13 glasses (Tempered, MV, through Cosmic Neutronium Borosilicate, MAX) in structures that read a glass tier; all glass of one structure must match. Six GTO borosilicate glasses added (Titanium, Tritanium, Enderium, Quarks, Draconium, Cosmic Neutronium).
+- New GTO casings: Shielded Accelerator, Bioactive Mechanical Casing, Advanced Fusion Coil, UHV Accelerator Electromagnetic Coil, Uruium Coil Block, Spacetime Assembly Line Casing, Quark Pipe, Space Elevator Internal Support and Support, Space Elevator Power Modules MK I–V, Dyson Deployment Magnet, Core and Casing.
+- Recipe types left empty where GTO's recipes need GTO-only materials (sintering, vapor deposition, reaction furnace); packs add their own through KubeJS.
+- GTO's Dimensional Bridge Casing is GTNA's Spatial Casing (the old `dimensional_bridge_casing` id already migrates to it).
+- Not ported: GTO's Radiation Hatch (Large Incubator), Suprachronal and Circuit Assembly Line modes (Nyarlathotep), the Kerr-Newman black-hole effect (closed GTOLib), the Machine Access Link.
+
 ## [0.5.5] - 2026-10-11
 
 ### Fixed

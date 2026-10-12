@@ -49,6 +49,13 @@ Ao receber um pedido novo, acrescente uma linha com a data e a fonte que o autor
 | Supercomputing Center | GTO (lote de pesquisa) | G-0249 |
 | Data Center | GTO (lote de pesquisa) | G-0250 |
 | Analysis & Research Center | GTO (lote de pesquisa) | G-0250 |
+| Large Incubator | GTO (sem a Radiation Hatch) | G-0255 |
+| Kerr-Newman Homogenizer | GTO (mixer do GTCEu) | G-0255 |
+| Nyarlathotep's Tentacle | GTO (só Assembly Line) | G-0255 |
+| Giant Sintering Array | GTO (tipo próprio) | G-0255 |
+| Integrated Vapor Deposition System | GTO (tipos próprios) | G-0255 |
+| Reaction Furnace | GTO (tipo próprio + módulo) | G-0255 |
+| Dyson Sphere Launch Silo / Receiving Station | GTO (tipo próprio) | G-0255 |
 
 ## Portados fora da lista, mantidos até o autor decidir
 
@@ -66,3 +73,11 @@ Forge, PCB Factory, Hand of Arachne, Lightning Rod, Fuel Cell Generator, Space P
 (Hyper e Advanced), Rare Earth Centrifugal, Compound Extreme Cooling Unit. **Heavy Rolling** vem com o tipo bending
 (bender do GTCEu), sem o rolling/cluster do GTO. O lote de pesquisa (Supercomputing Center, Data Center, Analysis &
 Research Center) entra inteiro.
+
+## Pedido de 2026-10-12 (quatro lotes aprovados)
+
+Todos da fonte já indicada (GTO, exceto o último lote):
+1. **Sem tipo novo:** Large Incubator (tipo incubator do GTNA), Kerr-Newman Homogenizer (mixer do GTCEu), Nyarlathotep's Tentacle (Assembly Line + Circuit Assembly Line, sem o modo Suprachronal).
+2. **Space Elevator + módulos** (GTO), base para o Road of Heaven.
+3. **Com tipos próprios do GTO (aprovados):** Giant Sintering Array (sintering), Integrated Vapor Deposition System (CVD/PVD), Reaction Furnace (reaction_furnace), Dyson Sphere Launch Silo + Receiving Station (dyson_sphere).
+4. **Endgame do GTNH:** multiblocos BEC e Nano Forge tier 4.

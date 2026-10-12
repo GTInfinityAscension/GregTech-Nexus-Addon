@@ -331,5 +331,11 @@ for mid in ("cracker_hub", "mega_brewer", "mega_vacuum_drying_furnace", "phase_c
     c(mid, 900, COIL, r"int exponent = Math.max\(0, coilType.getCoilTemperature\(\) / 900\);",
       "exponent = floor(base coil temperature / 900)")
 
+c("giant_sintering_array", 4, EC + "GiantSinteringArrayMachine.java", r"1 << \(2 \* glassTier\)",
+  "glass parallel = 2^(2*tier) = 4^glass tier")
+
+c("integrated_vapor_deposition_system", 4, EC + "GiantSinteringArrayMachine.java", r"1 << \(2 \* glassTier\)",
+  "glass parallel = 4^glass tier (shared with GlassParallelMultipleRecipesMachine)")
+
 Path(__file__).with_name("number_claims.json").write_text(json.dumps(C, indent=1) + "\n")
 print(sum(len(v) for v in C.values()), "claims")

@@ -277,6 +277,29 @@ public final class GTNAMultiblockTooltipText {
                 "§b▸ Accepts Thread and Overclock Hatches",
                 "§c▸ Development use only",
         });
+        ENGLISH.put("dyson_sphere_launch_silo", new String[] {
+                "Machine Type: §eDyson Sphere",
+                "§7§oOne module at a time, until the sun is wearing a coat.",
+                "§b§m                                                        ",
+                "§7Launches §6swarm modules§7 into orbit of the",
+                "§7planet it stands on.",
+                "§b§m                                                        ",
+                "§a▸ Each launch adds a module, or repairs a damaged swarm",
+                "§b▸ Launch time grows with the planet's distance",
+                "§c▸ Only on a planet's surface, not in orbit",
+        });
+        ENGLISH.put("dyson_sphere_receiving_station", new String[] {
+                "Machine Type: §eGenerator",
+                "§7§oAll that sunlight was going to waste anyway.",
+                "§b§m                                                        ",
+                "§7Collects the power of the planet's §6Dyson swarm§7",
+                "§7and sends it out as a laser.",
+                "§b§m                                                        ",
+                "§a▸ Output grows with the modules in orbit",
+                "§b▸ Needs computation and liquid helium",
+                "§b▸ A heavily damaged swarm gives less power",
+                "§c▸ Each run may damage the swarm",
+        });
         ENGLISH.put("electric_void_miner", new String[] {
                 "Machine Type: §eVoid Mining",
                 "§7§oMining nothing and getting everything. Physics is optional.",
@@ -455,6 +478,19 @@ public final class GTNAMultiblockTooltipText {
                 "§a▸ Thread Hatch: several recipes at once",
                 "§a▸ Accepts Laser Hatches",
                 "§b▸ Parallel set by the §eParallel Hatch§b",
+        });
+        ENGLISH.put("giant_sintering_array", new String[] {
+                "Machine Type: §eSintering Furnace",
+                "§7§oPowder in, solid out. No melting allowed, only patience.",
+                "§b§m                                                        ",
+                "§7Fuses powders into §6dense blocks§7 below",
+                "§7their melting point, like real sintering.",
+                "§b§m                                                        ",
+                "§a▸ Parallel: the higher of §e4^glass tier§a",
+                "§a▸ and the Parallel Hatch limit",
+                "§a▸ Thread Hatch: several recipes at once",
+                "§b▸ Coil temperature must reach the recipe's",
+                "§c▸ All glass blocks must be the same tier",
         });
         ENGLISH.put("godforge_exotic_module", new String[] {
                 "Machine Type: §eExotic Matter Producer",
@@ -681,6 +717,18 @@ public final class GTNAMultiblockTooltipText {
                 "§b▸ Circuit §e7§b: Crush -> Bath -> Sift -> Centrifuge",
                 "§c▸ Parallel comes from Parallel Control Hatches",
         });
+        ENGLISH.put("integrated_vapor_deposition_system", new String[] {
+                "Machine Type: §eChemical Vapor Deposition, Physical Vapor Deposition",
+                "§7§oGrows films one atom at a time. Fabs pay billions for less.",
+                "§b§m                                                        ",
+                "§7Deposits thin films from §6gas and vapor§7",
+                "§7for chips and coatings.",
+                "§b§m                                                        ",
+                "§a▸ Parallel: the higher of §e4^glass tier§a",
+                "§a▸ and the Parallel Hatch limit",
+                "§a▸ Thread Hatch: several recipes at once",
+                "§c▸ All glass blocks must be the same tier",
+        });
         ENGLISH.put("isa_mill", new String[] {
                 "Machine Type: §eISA Mill",
                 "§7§oDespite its green paint, it is not eco-friendly at all.",
@@ -693,6 +741,16 @@ public final class GTNAMultiblockTooltipText {
                 "§b▸ Soapstone: circuit §e1§b; Aluminium: circuit §e10§b",
                 "§c▸ Needs a §eGrinding Ball Hatch§c of the recipe tier",
                 "§c▸ Every recipe wears the grinding ball down",
+        });
+        ENGLISH.put("kerr_newman_homogenizer", new String[] {
+                "Machine Type: §eMixer",
+                "§7§oA charged, spinning black hole. Stirs better than any spoon.",
+                "§b§m                                                        ",
+                "§7Mixes at the edge of a §6rotating singularity§7,",
+                "§7several recipes at the same time.",
+                "§b§m                                                        ",
+                "§a▸ Thread Hatch: several recipes at once",
+                "§a▸ Parallel Hatch and laser hatches supported",
         });
         ENGLISH.put("large_cracker", new String[] {
                 "Machine Type: §eCracker",
@@ -715,6 +773,18 @@ public final class GTNAMultiblockTooltipText {
                 "§a▸ Works §ewithout sunlight§a",
                 "§a▸ Accepts a Parallel Hatch",
                 "§b▸ Pick tree or crop mode at the controller",
+        });
+        ENGLISH.put("large_incubator", new String[] {
+                "Machine Type: §eIncubator",
+                "§7§oA greenhouse for things that are better left in the glass.",
+                "§b§m                                                        ",
+                "§7Grows cultures in a sealed, §6filtered chamber§7;",
+                "§7the glass decides how hot it may run.",
+                "§b§m                                                        ",
+                "§a▸ Parallel Hatch supported",
+                "§b▸ Voltage tier capped by the §eglass tier§b",
+                "§b▸ Recipes may ask for a §esterile filter§b",
+                "§c▸ All glass blocks must be the same tier",
         });
         ENGLISH.put("large_pyrolyse_oven", new String[] {
                 "Machine Type: §ePyrolyse Oven",
@@ -1148,6 +1218,17 @@ public final class GTNAMultiblockTooltipText {
                 "§b▸ Power: §e1§b EU per crafted item",
                 "§c▸ Parallel follows the AE2 crafting CPU",
         });
+        ENGLISH.put("nyarlathoteps_tentacle", new String[] {
+                "Machine Type: §eAssembly Line",
+                "§7§oThe Crawling Chaos builds your circuits. Don't ask its price.",
+                "§b§m                                                        ",
+                "§7An Assembly Line with §6many arms§7: runs",
+                "§7several recipes side by side.",
+                "§b§m                                                        ",
+                "§a▸ Thread Hatch: several recipes at once",
+                "§a▸ Parallel grows with the coil temperature",
+                "§b▸ Needs an Optical Data Reception Hatch",
+        });
         ENGLISH.put("particle_stream_matrix_filling_machine", new String[] {
                 "Machine Type: §eCanner",
                 "§7§oEven photons and sound waves fit in a can now.",
@@ -1212,6 +1293,16 @@ public final class GTNAMultiblockTooltipText {
                 "§b§m                                                        ",
                 "§a▸ Builds in any direction",
                 "§b▸ Parallel set by the §eParallel Hatch§b",
+        });
+        ENGLISH.put("reaction_furnace", new String[] {
+                "Machine Type: §eReaction Furnace",
+                "§7§oHot enough to make chemistry happen whether it wants to or not.",
+                "§b§m                                                        ",
+                "§7Runs §6high-temperature reactions§7; the coils",
+                "§7set how hot it gets, like a blast furnace.",
+                "§b§m                                                        ",
+                "§a▸ The module unlocks Parallel and Accelerate Hatches",
+                "§b▸ Coil temperature must reach the recipe's",
         });
         ENGLISH.put("rocket_large_turbine", new String[] {
                 "Machine Type: §eRocket Engine",

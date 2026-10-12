@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "gtna:block/casings/dyson_deployment_magnet/top",
+    "side": "gtna:block/casings/dyson_deployment_magnet/side",
+    "top": "gtna:block/casings/dyson_deployment_magnet/top"
+  }
+}

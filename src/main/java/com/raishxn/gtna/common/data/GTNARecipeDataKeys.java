@@ -13,5 +13,11 @@ public final class GTNARecipeDataKeys {
      */
     public static final String GRINDBALL = "grindball";
 
+    /**
+     * GTOCore minimum cleanroom filter of the Large Incubator: {@code 1} = cleanroom filter, {@code 2} = sterile
+     * filter. GTO's third level (law cleanroom) has no GTCEu filter block.
+     */
+    public static final String FILTER_CASING = "filter_casing";
+
     private GTNARecipeDataKeys() {}
 }

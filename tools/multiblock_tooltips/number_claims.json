@@ -2488,5 +2488,23 @@
     "expr": "exponent = floor(base coil temperature / 900)"
    }
   ]
+ },
+ "giant_sintering_array": {
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/GiantSinteringArrayMachine.java",
+    "pattern": "1 << \\(2 \\* glassTier\\)",
+    "expr": "glass parallel = 2^(2*tier) = 4^glass tier"
+   }
+  ]
+ },
+ "integrated_vapor_deposition_system": {
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/GiantSinteringArrayMachine.java",
+    "pattern": "1 << \\(2 \\* glassTier\\)",
+    "expr": "glass parallel = 4^glass tier (shared with GlassParallelMultipleRecipesMachine)"
+   }
+  ]
  }
 }

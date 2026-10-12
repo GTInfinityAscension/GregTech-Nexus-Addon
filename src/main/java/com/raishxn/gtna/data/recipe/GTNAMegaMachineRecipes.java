@@ -170,6 +170,197 @@ public final class GTNAMegaMachineRecipes {
                 .outputItems(GTNABlocks.AMPROSIUM_GEARBOX.asStack())
                 .EUt(16).duration(50).save(provider);
 
+        // GTO Assembler recipe of the Large Incubator, unchanged.
+        GTRecipeTypes.ASSEMBLER_RECIPES.recipeBuilder(GTNACORE.id("mega/large_incubator"))
+                .inputItems(com.raishxn.gtna.common.data.GTNAMachines3.INCUBATOR.asStack())
+                .inputItems(GTItems.FIELD_GENERATOR_LuV.asStack(4))
+                .inputItems(GTItems.SENSOR_LuV.asStack(4))
+                .inputItems(GTItems.FLUID_REGULATOR_LuV.asStack(4))
+                .inputItems(TagPrefix.wireGtOctal, GTMaterials.IndiumTinBariumTitaniumCuprate, 4)
+                .inputItems(GTBlocks.CASING_LAMINATED_GLASS.asStack(16))
+                .inputFluids(GTMaterials.Polytetrafluoroethylene.getFluid(1440))
+                .outputItems(GTNAMegaMachines.LARGE_INCUBATOR.asStack())
+                .EUt(122880).duration(800).save(provider);
+        // GTO GlassRecipe for the tiered glasses GTNA lacked; GTO-only metals replaced (Enderium -> Darmstadtium,
+        // Heavy Quark Degenerate Matter -> Quark-Gluon Plasma).
+        tieredGlass(provider, GTValues.EV, GTMaterials.Titanium, GTNABlocks.TITANIUM_BOROSILICATE_GLASS);
+        tieredGlass(provider, GTValues.UV, GTMaterials.Tritanium, GTNABlocks.TRITANIUM_BOROSILICATE_GLASS);
+        tieredGlass(provider, GTValues.UEV, GTMaterials.Darmstadtium, GTNABlocks.ENDERIUM_BOROSILICATE_GLASS);
+        tieredGlass(provider, GTValues.UXV, com.raishxn.gtna.common.data.GTNAMaterials.QuarkGluonPlasma,
+                GTNABlocks.QUARKS_BOROSILICATE_GLASS);
+        tieredGlass(provider, GTValues.OpV, com.raishxn.gtna.common.data.GTNAMaterials.Draconium,
+                GTNABlocks.DRACONIUM_BOROSILICATE_GLASS);
+        tieredGlass(provider, GTValues.MAX, com.raishxn.gtna.common.data.GTNAMaterials.CosmicNeutronium,
+                GTNABlocks.COSMIC_NEUTRONIUM_BOROSILICATE_GLASS);
+
+        // GTO suprachronal_assembly_line -> Nyarlathotep's Tentacle. GTO-only inputs replaced: Infinite Cell
+        // Component -> Quantum Chest ZPM, Advanced/Circuit Assembly Line -> Assembly Line / UV Circuit Assembler,
+        // Precision Circuit Assembly Robot MK3 -> UEV Robot Arm, Dalisenite -> Neutronium; research on the Assembly
+        // Line (GTO's Assembler Module is not ported).
+        GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("mega/nyarlathoteps_tentacle"))
+                .inputItems(GTMachines.QUANTUM_CHEST[GTValues.ZPM].asStack(64))
+                .inputItems(GTMultiMachines.ASSEMBLY_LINE.asStack(64))
+                .inputItems(GTMachines.CIRCUIT_ASSEMBLER[GTValues.UV].asStack(64))
+                .inputItems(GTNABlocks.SPACETIME_ASSEMBLY_LINE_CASING.asStack(16))
+                .inputItems(GTNABlocks.SPACETIME_ASSEMBLY_LINE_UNIT.asStack(16))
+                .inputItems(GTNABlocks.MOLECULAR_COIL.asStack(32))
+                .inputItems(GTItems.EMITTER_UEV.asStack(32))
+                .inputItems(GTItems.SENSOR_UEV.asStack(32))
+                .inputItems(GTItems.ROBOT_ARM_UEV.asStack(64))
+                .inputItems(CustomTags.UIV_CIRCUITS, 64)
+                .inputItems(GTItems.ULTIMATE_BATTERY.asStack())
+                .inputItems(TagPrefix.plateDouble, GTMaterials.Neutronium, 32)
+                .inputFluids(GTMaterials.BorosilicateGlass.getFluid(3204))
+                .inputFluids(GTMaterials.SiliconeRubber.getFluid(5760))
+                .inputFluids(GTMaterials.UraniumTriplatinum.getFluid(1296))
+                .inputFluids(GTMaterials.Stellite100.getFluid(5184))
+                .outputItems(GTNAMegaMachines.NYARLATHOTEPS_TENTACLE.asStack())
+                .EUt(7864320).duration(3200)
+                .stationResearch(r -> r.researchStack(GTMultiMachines.ASSEMBLY_LINE.asStack()).CWUt(256)
+                        .EUt(7864320))
+                .save(provider);
+
+        // GTO sintering_furnace AL recipe -> Giant Sintering Array. GTO-only inputs: High Durability Compound Steel
+        // rod -> HSS-S; NM chips -> UHV circuits; GTO Sintering Furnace -> 64 Electric Blast Furnaces; Titan Steel /
+        // Trinium-Titanium foil -> Tritanium / Trinium. Research on the Electric Blast Furnace.
+        GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("mega/giant_sintering_array"))
+                .inputItems(CustomTags.UEV_CIRCUITS, 16)
+                .inputItems(GTItems.FIELD_GENERATOR_UHV.asStack(16))
+                .inputItems(GTItems.SENSOR_UHV.asStack(8))
+                .inputItems(GTItems.EMITTER_UHV.asStack(8))
+                .inputItems(TagPrefix.gear, GTMaterials.TitaniumTungstenCarbide, 32)
+                .inputItems(TagPrefix.rod, GTMaterials.HSSS, 64)
+                .inputItems(CustomTags.UHV_CIRCUITS, 64)
+                .inputItems(GTMultiMachines.ELECTRIC_BLAST_FURNACE.asStack(64))
+                .inputItems(TagPrefix.foil, GTMaterials.Aluminium, 64)
+                .inputItems(TagPrefix.foil, GTMaterials.Ruridit, 64)
+                .inputItems(TagPrefix.foil, GTMaterials.Tritanium, 64)
+                .inputItems(TagPrefix.foil, GTMaterials.Trinium, 64)
+                .inputFluids(GTMaterials.Nichrome.getFluid(10000))
+                .inputFluids(GTMaterials.RTMAlloy.getFluid(10000))
+                .inputFluids(GTMaterials.HSSG.getFluid(10000))
+                .inputFluids(GTMaterials.Neutronium.getFluid(7288))
+                .outputItems(GTNAMegaMachines.GIANT_SINTERING_ARRAY.asStack())
+                .EUt(GTValues.VA[GTValues.UHV]).duration(800)
+                .stationResearch(r -> r.researchStack(GTMultiMachines.ELECTRIC_BLAST_FURNACE.asStack()).CWUt(256)
+                        .EUt(GTValues.VA[GTValues.UHV]))
+                .save(provider);
+        // GTO integrated_vapor_deposition_system AL recipe. GTO's CVD/PVD single blocks -> UV Chemical Reactors and
+        // UV Laser Engravers; Enderium pipe -> Naquadah; Ignatius plate -> Neutronium; Quantanium -> Naquadria.
+        GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("mega/integrated_vapor_deposition_system"))
+                .inputItems(GTMachines.CHEMICAL_REACTOR[GTValues.UV].asStack(16))
+                .inputItems(GTMachines.LASER_ENGRAVER[GTValues.UV].asStack(16))
+                .inputItems(GTItems.FLUID_REGULATOR_UEV.asStack(32))
+                .inputItems(GTItems.ROBOT_ARM_UEV.asStack(8))
+                .inputItems(GTItems.FIELD_GENERATOR_UEV.asStack(8))
+                .inputItems(GTItems.SENSOR_UEV.asStack(16))
+                .inputItems(TagPrefix.pipeNormalFluid, GTMaterials.Naquadah, 32)
+                .inputItems(CustomTags.UIV_CIRCUITS, 8)
+                .inputItems(TagPrefix.plateDouble, GTMaterials.Neutronium, 32)
+                .inputFluids(com.raishxn.gtna.common.data.material.GodforgeChainMaterials.MutatedLivingSolder
+                        .getFluid(2304))
+                .inputFluids(GTMaterials.Naquadria.getFluid(2304))
+                .outputItems(GTNAMegaMachines.INTEGRATED_VAPOR_DEPOSITION_SYSTEM.asStack())
+                .EUt(2097152).duration(800)
+                .stationResearch(r -> r.researchStack(GTBlocks.CLEANROOM_GLASS.asStack()).CWUt(256).EUt(2097152))
+                .save(provider);
+
+        // GTO Dyson Sphere. GTO-only inputs replaced: Precision Assembler -> Assembly Line, Vibrant Photovoltaic
+        // Block -> UV Solar panels are absent in GTCEu, so UEV Field Generators; Gelid Cryotheum -> liquid helium;
+        // Orichalcum -> Trinium; Atomic Archives -> UXV circuits; Echoite hex wire -> Europium; Vibranium ->
+        // Neutronium; MFPC / Hexaphase Copper / coolant cells / batteries -> UIV parts.
+        GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("mega/dyson_swarm_module"))
+                .inputItems(TagPrefix.frameGt, GTMaterials.NaquadahEnriched, 16)
+                .inputItems(GTItems.FIELD_GENERATOR_UEV.asStack(4))
+                .inputItems(GTItems.SENSOR_UEV.asStack())
+                .inputItems(GTItems.EMITTER_UEV.asStack())
+                .inputFluids(com.raishxn.gtna.common.data.material.GodforgeChainMaterials.MutatedLivingSolder
+                        .getFluid(20000))
+                .inputFluids(GTMaterials.Helium.getFluid(com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys.LIQUID,
+                        20000))
+                .inputFluids(GTMaterials.Neutronium.getFluid(18432))
+                .inputFluids(GTMaterials.Trinium.getFluid(18432))
+                .outputItems(com.raishxn.gtna.common.data.GTNAItems.DYSON_SWARM_MODULE.asStack(64))
+                .EUt(31457280).duration(800)
+                .stationResearch(r -> r.researchStack(GTItems.FIELD_GENERATOR_UEV.asStack()).CWUt(512)
+                        .EUt(31457280))
+                .save(provider);
+        com.raishxn.gtna.common.data.GTNARecipeType.DYSON_SPHERE_RECIPES
+                .recipeBuilder(GTNACORE.id("dyson_sphere/launch"))
+                .inputItems(com.raishxn.gtna.common.data.GTNAItems.DYSON_SWARM_MODULE.asStack(64))
+                .CWUt(512).duration(200).EUt(GTValues.VA[GTValues.UIV])
+                .save(provider);
+        GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("mega/dyson_sphere_launch_silo"))
+                .inputItems(CustomTags.UXV_CIRCUITS, 64)
+                .inputItems(GTNABlocks.DYSON_CONTROL_TOROID.asStack(4))
+                .inputItems(GTNABlocks.DYSON_DEPLOYMENT_CORE.asStack(4))
+                .inputItems(GTNABlocks.DYSON_DEPLOYMENT_MAGNET.asStack(4))
+                .inputItems(CustomTags.UXV_CIRCUITS, 32)
+                .inputItems(GTItems.EMITTER_UIV.asStack(64))
+                .inputItems(TagPrefix.wireGtHex, GTMaterials.Europium, 32)
+                .inputItems(TagPrefix.plateDouble, GTMaterials.Neutronium, 16)
+                .inputItems(GTItems.FIELD_GENERATOR_UIV.asStack(16))
+                .inputItems(GTItems.EMITTER_UIV.asStack(64))
+                .inputFluids(GTMaterials.Helium.getFluid(com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys.LIQUID,
+                        12800))
+                .inputFluids(GTMaterials.RutheniumTriniumAmericiumNeutronate.getFluid(30576))
+                .inputFluids(com.raishxn.gtna.common.data.material.GodforgeChainMaterials.MutatedLivingSolder
+                        .getFluid(8000))
+                .outputItems(GTNAMegaMachines.DYSON_SPHERE_LAUNCH_SILO.asStack())
+                .EUt(33554431).duration(1600)
+                .stationResearch(r -> r.researchStack(GTNABlocks.DYSON_DEPLOYMENT_CORE.asStack()).CWUt(512)
+                        .EUt(31457280))
+                .save(provider);
+        GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("mega/dyson_sphere_receiving_station"))
+                .inputItems(GTMachines.DIODE[GTValues.UIV].asStack(4))
+                .inputItems(GTItems.SENSOR_UIV.asStack(16))
+                .inputItems(GTNABlocks.DYSON_CONTROL_TOROID.asStack(4))
+                .inputItems(GTBlocks.SUPERCONDUCTING_COIL.asStack(64))
+                .inputItems(CustomTags.UXV_CIRCUITS, 16)
+                .inputItems(TagPrefix.wireGtHex, GTMaterials.Europium, 32)
+                .inputItems(TagPrefix.plateDouble, GTMaterials.Neutronium, 16)
+                .inputFluids(com.raishxn.gtna.common.data.material.GodforgeChainMaterials.MutatedLivingSolder
+                        .getFluid(12000))
+                .inputFluids(GTMaterials.Helium.getFluid(com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys.LIQUID,
+                        12800))
+                .inputFluids(GTMaterials.Europium.getFluid(576000))
+                .inputFluids(GTMaterials.MercuryBariumCalciumCuprate.getFluid(576000))
+                .outputItems(GTNAMegaMachines.DYSON_SPHERE_RECEIVING_STATION.asStack())
+                .EUt(31457280).duration(1600)
+                .stationResearch(r -> r.researchStack(GTNABlocks.DYSON_RECEIVER_CASING.asStack()).CWUt(512)
+                        .EUt(31457280))
+                .save(provider);
+
+        // GTO Vanilla.java shaped recipe of the Reaction Furnace, unchanged.
+        com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper.addShapedRecipe(provider, true,
+                GTNACORE.id("mega/reaction_furnace"), GTNAMegaMachines.REACTION_FURNACE.asStack(),
+                "ABA", "CDC", "BAB",
+                'A', GTMachines.ELECTRIC_FURNACE[GTValues.MV].asStack(), 'B', GTMachines.GOLD_DRUM.asStack(),
+                'C', new com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry(TagPrefix.cableGtOctal,
+                        GTMaterials.Iron),
+                'D', GTMachines.CHEMICAL_REACTOR[GTValues.LV].asStack());
+
+        // GTO mega_mixer -> Kerr-Newman Homogenizer. Quantanium curved plate -> double Naquadah plate; High
+        // Durability Compound Steel -> HSS-S; Orichalcum -> Trinium (GTO-only materials).
+        GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("mega/kerr_newman_homogenizer"))
+                .inputItems(GTMachines.MIXER[GTValues.UHV].asStack(16))
+                .inputItems(GTItems.ELECTRIC_PUMP_UEV.asStack(16))
+                .inputItems(GTItems.ELECTRIC_MOTOR_UEV.asStack(16))
+                .inputItems(GTItems.ROBOT_ARM_UEV.asStack(16))
+                .inputItems(GTItems.SENSOR_UEV.asStack(8))
+                .inputItems(CustomTags.UIV_CIRCUITS, 8)
+                .inputItems(TagPrefix.rodLong, GTMaterials.Osmium, 32)
+                .inputItems(TagPrefix.rodLong, GTMaterials.Europium, 32)
+                .inputItems(TagPrefix.plateDouble, GTMaterials.Naquadah, 32)
+                .inputFluids(com.raishxn.gtna.common.data.material.GodforgeChainMaterials.MutatedLivingSolder
+                        .getFluid(1000))
+                .inputFluids(GTMaterials.HSSS.getFluid(1000))
+                .inputFluids(GTMaterials.Trinium.getFluid(1000))
+                .outputItems(GTNAMegaMachines.KERR_NEWMAN_HOMOGENIZER.asStack())
+                .EUt(2097152).duration(800)
+                .stationResearch(r -> r.researchStack(GCYMMachines.LARGE_MIXER.asStack()).CWUt(256).EUt(2097152))
+                .save(provider);
+
         // GTO UHV single blocks -> UV; Titan Steel wire -> Europium; Quantum Metal -> Naquadah; Mithril -> Trinium.
         GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("mega/phase_change_cube"))
                 .inputItems(GTMachines.EXTRACTOR[GTValues.UV].asStack(16))
@@ -1418,5 +1609,16 @@ public final class GTNAMegaMachineRecipes {
                     .outputItems(com.raishxn.gtna.common.data.GTNAResearchMachines.NICH_BRIDGE_COMPONENT.asStack())
                     .cleanroom(cleanroom).EUt(GTValues.VA[voltage]).duration(200).save(provider);
         }
+    }
+
+    private static void tieredGlass(java.util.function.Consumer<net.minecraft.data.recipes.FinishedRecipe> provider,
+                                    int tier, com.gregtechceu.gtceu.api.data.chemical.material.Material material,
+                                    com.tterrag.registrate.util.entry.BlockEntry<?> glass) {
+        GTRecipeTypes.FLUID_SOLIDFICATION_RECIPES
+                .recipeBuilder(GTNACORE.id("mega/" + glass.getId().getPath()))
+                .inputItems(GTNABlocks.BOROSILICATE_GLASS_BLOCK.asStack())
+                .inputFluids(material.getFluid(1152))
+                .outputItems(glass.asStack())
+                .EUt(GTValues.VA[tier]).duration(200).save(provider);
     }
 }

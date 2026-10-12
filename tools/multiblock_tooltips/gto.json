@@ -2168,5 +2168,273 @@
         "Precisa de *Computation Data Hatch* e CWU/t"
       ]
     }
+  },
+  "large_incubator": {
+    "type": "Incubator",
+    "flavor": "A greenhouse for things that are better left in the glass.",
+    "desc": [
+      "Grows cultures in a sealed, *filtered chamber*;",
+      "the glass decides how hot it may run."
+    ],
+    "pro": [
+      "Parallel Hatch supported"
+    ],
+    "num": [
+      "Voltage tier capped by the *glass tier*",
+      "Recipes may ask for a *sterile filter*"
+    ],
+    "con": [
+      "All glass blocks must be the same tier"
+    ],
+    "pt": {
+      "type": "Incubadora",
+      "flavor": "Uma estufa para o que é melhor deixar atrás do vidro.",
+      "desc": [
+        "Cultiva culturas numa *câmara selada e filtrada*;",
+        "o vidro decide até onde ela pode ir."
+      ],
+      "pro": [
+        "Aceita Parallel Hatch"
+      ],
+      "num": [
+        "Tier de voltagem limitado pelo *tier do vidro*",
+        "Receitas podem pedir *filtro estéril*"
+      ],
+      "con": [
+        "Todos os vidros precisam ser do mesmo tier"
+      ]
+    }
+  },
+  "kerr_newman_homogenizer": {
+    "type": "Mixer",
+    "flavor": "A charged, spinning black hole. Stirs better than any spoon.",
+    "desc": [
+      "Mixes at the edge of a *rotating singularity*,",
+      "several recipes at the same time."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Parallel Hatch and laser hatches supported"
+    ],
+    "num": [],
+    "con": [],
+    "pt": {
+      "type": "Misturador",
+      "flavor": "Um buraco negro carregado e girando. Mexe melhor que qualquer colher.",
+      "desc": [
+        "Mistura na borda de uma *singularidade em rotação*,",
+        "várias receitas ao mesmo tempo."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Aceita Parallel Hatch e hatches de laser"
+      ],
+      "num": [],
+      "con": []
+    }
+  },
+  "nyarlathoteps_tentacle": {
+    "type": "Assembly Line",
+    "flavor": "The Crawling Chaos builds your circuits. Don't ask its price.",
+    "desc": [
+      "An Assembly Line with *many arms*: runs",
+      "several recipes side by side."
+    ],
+    "pro": [
+      "Thread Hatch: several recipes at once",
+      "Parallel grows with the coil temperature"
+    ],
+    "num": [
+      "Needs an Optical Data Reception Hatch"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Linha de Montagem",
+      "flavor": "O Caos Rastejante monta seus circuitos. Não pergunte o preço.",
+      "desc": [
+        "Uma Linha de Montagem com *muitos braços*:",
+        "roda várias receitas lado a lado."
+      ],
+      "pro": [
+        "Thread Hatch: várias receitas ao mesmo tempo",
+        "Paralelos crescem com a temperatura da bobina"
+      ],
+      "num": [
+        "Precisa de um Optical Data Reception Hatch"
+      ],
+      "con": []
+    }
+  },
+  "giant_sintering_array": {
+    "type": "Sintering Furnace",
+    "flavor": "Powder in, solid out. No melting allowed, only patience.",
+    "desc": [
+      "Fuses powders into *dense blocks* below",
+      "their melting point, like real sintering."
+    ],
+    "pro": [
+      "Parallel: the higher of *4^glass tier*",
+      "and the Parallel Hatch limit",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [
+      "Coil temperature must reach the recipe's"
+    ],
+    "con": [
+      "All glass blocks must be the same tier"
+    ],
+    "pt": {
+      "type": "Forno de Sinterização",
+      "flavor": "Pó entra, sólido sai. Nada de derreter, só paciência.",
+      "desc": [
+        "Funde pós em *blocos densos* abaixo do",
+        "ponto de fusão, como na sinterização real."
+      ],
+      "pro": [
+        "Paralelos: o maior entre *4^tier do vidro*",
+        "e o limite do Parallel Hatch",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [
+        "A bobina precisa atingir a temperatura da receita"
+      ],
+      "con": [
+        "Todos os vidros precisam ser do mesmo tier"
+      ]
+    }
+  },
+  "integrated_vapor_deposition_system": {
+    "type": "Chemical Vapor Deposition, Physical Vapor Deposition",
+    "flavor": "Grows films one atom at a time. Fabs pay billions for less.",
+    "desc": [
+      "Deposits thin films from *gas and vapor*",
+      "for chips and coatings."
+    ],
+    "pro": [
+      "Parallel: the higher of *4^glass tier*",
+      "and the Parallel Hatch limit",
+      "Thread Hatch: several recipes at once"
+    ],
+    "num": [],
+    "con": [
+      "All glass blocks must be the same tier"
+    ],
+    "pt": {
+      "type": "Deposição Química de Vapor, Deposição Física de Vapor",
+      "flavor": "Cresce filmes um átomo por vez. Fábricas pagam bilhões por menos.",
+      "desc": [
+        "Deposita filmes finos a partir de *gás e vapor*",
+        "para chips e revestimentos."
+      ],
+      "pro": [
+        "Paralelos: o maior entre *4^tier do vidro*",
+        "e o limite do Parallel Hatch",
+        "Thread Hatch: várias receitas ao mesmo tempo"
+      ],
+      "num": [],
+      "con": [
+        "Todos os vidros precisam ser do mesmo tier"
+      ]
+    }
+  },
+  "reaction_furnace": {
+    "type": "Reaction Furnace",
+    "flavor": "Hot enough to make chemistry happen whether it wants to or not.",
+    "desc": [
+      "Runs *high-temperature reactions*; the coils",
+      "set how hot it gets, like a blast furnace."
+    ],
+    "pro": [
+      "The module unlocks Parallel and Accelerate Hatches"
+    ],
+    "num": [
+      "Coil temperature must reach the recipe's"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Forno de Reação",
+      "flavor": "Quente o bastante para a química acontecer, queira ou não.",
+      "desc": [
+        "Faz *reações de alta temperatura*; as bobinas",
+        "definem o calor, como num alto-forno."
+      ],
+      "pro": [
+        "O módulo libera Parallel e Accelerate Hatches"
+      ],
+      "num": [
+        "A bobina precisa atingir a temperatura da receita"
+      ],
+      "con": []
+    }
+  },
+  "dyson_sphere_launch_silo": {
+    "type": "Dyson Sphere",
+    "flavor": "One module at a time, until the sun is wearing a coat.",
+    "desc": [
+      "Launches *swarm modules* into orbit of the",
+      "planet it stands on."
+    ],
+    "pro": [
+      "Each launch adds a module, or repairs a damaged swarm"
+    ],
+    "num": [
+      "Launch time grows with the planet's distance"
+    ],
+    "con": [
+      "Only on a planet's surface, not in orbit"
+    ],
+    "pt": {
+      "type": "Esfera de Dyson",
+      "flavor": "Um módulo por vez, até o sol estar de casaco.",
+      "desc": [
+        "Lança *módulos do enxame* na órbita do",
+        "planeta onde está."
+      ],
+      "pro": [
+        "Cada lançamento soma um módulo ou repara o enxame"
+      ],
+      "num": [
+        "O tempo cresce com a distância do planeta"
+      ],
+      "con": [
+        "Só na superfície de um planeta, não em órbita"
+      ]
+    }
+  },
+  "dyson_sphere_receiving_station": {
+    "type": "Generator",
+    "flavor": "All that sunlight was going to waste anyway.",
+    "desc": [
+      "Collects the power of the planet's *Dyson swarm*",
+      "and sends it out as a laser."
+    ],
+    "pro": [
+      "Output grows with the modules in orbit"
+    ],
+    "num": [
+      "Needs computation and liquid helium",
+      "A heavily damaged swarm gives less power"
+    ],
+    "con": [
+      "Each run may damage the swarm"
+    ],
+    "pt": {
+      "type": "Gerador",
+      "flavor": "Toda essa luz do sol ia ser desperdiçada mesmo.",
+      "desc": [
+        "Coleta a energia do *enxame de Dyson* do planeta",
+        "e a envia como laser."
+      ],
+      "pro": [
+        "A saída cresce com os módulos em órbita"
+      ],
+      "num": [
+        "Precisa de computação e hélio líquido",
+        "Um enxame muito danificado rende menos"
+      ],
+      "con": [
+        "Cada ciclo pode danificar o enxame"
+      ]
+    }
   }
 }

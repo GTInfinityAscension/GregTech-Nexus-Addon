@@ -102,6 +102,110 @@ public final class GTNAMegaMachineGameTests {
         assertForms(helper, GTNAMegaMachines.PHASE_CHANGE_CUBE);
     }
 
+    /**
+     * The preview uses the lowest glass (Tempered, MV): the machine caps itself to MV and rejects a recipe that asks
+     * for a better filter than the one in the structure.
+     */
+    @GameTest(template = "empty_48", timeoutTicks = 400)
+    public static void largeIncubatorFormsWithGlassAndFilterTiers(GameTestHelper helper) {
+        IMultiController controller = buildPreview(helper, GTNAMegaMachines.LARGE_INCUBATOR);
+        helper.assertTrue(controller != null, "the Large Incubator preview has no controller");
+        helper.assertTrue(controller.checkPatternWithLock(),
+                "the Large Incubator must form from its preview: " + controller.getMultiblockState().error);
+        controller.onStructureFormed();
+        var incubator = (com.raishxn.gtna.common.machine.multiblock.electric.LargeIncubatorMachine) controller;
+        helper.assertTrue(incubator.getGlassTier() == com.gregtechceu.gtceu.api.GTValues.MV,
+                "Tempered glass is MV, got " + incubator.getGlassTier());
+        helper.assertTrue(
+                incubator.getMaxVoltage() <=
+                        com.gregtechceu.gtceu.api.GTValues.V[com.gregtechceu.gtceu.api.GTValues.MV],
+                "the glass caps the voltage: " + incubator.getMaxVoltage());
+        int filter = incubator.getFilterTier();
+        helper.assertTrue(filter == 1 || filter == 2, "filter tier is 1 (cleanroom) or 2 (sterile), got " + filter);
+        var sterile = com.raishxn.gtna.common.data.GTNARecipeType.INCUBATOR_RECIPES
+                .recipeBuilder(com.raishxn.gtna.GTNACORE.id("test_sterile"))
+                .inputItems(net.minecraft.world.item.Items.BONE_MEAL)
+                .outputItems(net.minecraft.world.item.Items.MOSS_BLOCK)
+                .addData(com.raishxn.gtna.common.data.GTNARecipeDataKeys.FILTER_CASING, filter + 1)
+                .EUt(30).duration(20).buildRawRecipe();
+        helper.assertTrue(com.raishxn.gtna.common.machine.multiblock.electric.LargeIncubatorMachine
+                .filterCheck(incubator.self(), sterile) ==
+                com.gregtechceu.gtceu.api.recipe.modifier.ModifierFunction.NULL,
+                "a recipe asking for a better filter than the structure's must not start");
+        helper.succeed();
+    }
+
+    /** The preview's glass is Tempered (MV = tier 2): 4^2 = 16 parallels without a Parallel Hatch. */
+    @GameTest(template = "empty_48", timeoutTicks = 400)
+    public static void giantSinteringArrayFormsWithGlassParallel(GameTestHelper helper) {
+        IMultiController controller = buildPreview(helper, GTNAMegaMachines.GIANT_SINTERING_ARRAY);
+        helper.assertTrue(controller != null, "the Giant Sintering Array preview has no controller");
+        helper.assertTrue(controller.checkPatternWithLock(),
+                "the Giant Sintering Array must form from its preview: " + controller.getMultiblockState().error);
+        controller.onStructureFormed();
+        var sintering = (com.raishxn.gtna.common.machine.multiblock.electric.GiantSinteringArrayMachine) controller;
+        helper.assertTrue(sintering.getGlassTier() == com.gregtechceu.gtceu.api.GTValues.MV,
+                "Tempered glass is MV, got " + sintering.getGlassTier());
+        helper.assertTrue(sintering.getMaxParallel() == 16, "4^2 parallels, got " + sintering.getMaxParallel());
+        helper.succeed();
+    }
+
+    @GameTest(template = "empty_80", timeoutTicks = 1200)
+    public static void integratedVaporDepositionSystemForms(GameTestHelper helper) {
+        IMultiController controller = buildPreview(helper, GTNAMegaMachines.INTEGRATED_VAPOR_DEPOSITION_SYSTEM);
+        helper.assertTrue(controller != null && controller.checkPatternWithLock(),
+                "the Integrated Vapor Deposition System must form from its preview");
+        controller.onStructureFormed();
+        var ivds = (com.raishxn.gtna.common.machine.multiblock.electric.GlassParallelMultipleRecipesMachine) controller;
+        helper.assertTrue(ivds.getMaxParallel() == 16, "Tempered glass: 4^2 parallels, got " + ivds.getMaxParallel());
+        helper.succeed();
+    }
+
+    @GameTest(template = "empty_16", timeoutTicks = 200)
+    public static void reactionFurnaceForms(GameTestHelper helper) {
+        assertForms(helper, GTNAMegaMachines.REACTION_FURNACE);
+    }
+
+    @GameTest(template = "empty_80", timeoutTicks = 1200)
+    public static void dysonSphereLaunchSiloForms(GameTestHelper helper) {
+        assertForms(helper, GTNAMegaMachines.DYSON_SPHERE_LAUNCH_SILO);
+    }
+
+    @GameTest(template = "empty_80", timeoutTicks = 1200)
+    public static void dysonSphereReceivingStationForms(GameTestHelper helper) {
+        assertForms(helper, GTNAMegaMachines.DYSON_SPHERE_RECEIVING_STATION);
+    }
+
+    /** The swarm is kept per planet; the overworld is a planet at distance 1 or more. */
+    @GameTest(template = "empty_12", timeoutTicks = 40)
+    public static void dysonSwarmIsKeptPerPlanet(GameTestHelper helper) {
+        var level = helper.getLevel();
+        var machines = com.raishxn.gtna.common.machine.multiblock.electric.DysonSphereMachines.class;
+        var planet = com.raishxn.gtna.common.machine.multiblock.electric.DysonSphereMachines.planetOf(level);
+        helper.assertTrue(planet != null, "the overworld counts as a planet for " + machines.getSimpleName());
+        helper.assertTrue(com.raishxn.gtna.common.machine.multiblock.electric.DysonSphereMachines.distance(planet) >= 1,
+                "the overworld has a distance");
+        var data = com.raishxn.gtna.common.data.DysonSphereData.get(level.getServer());
+        int modules = data.modules(planet), damage = data.damage(planet);
+        try {
+            data.set(planet, 7, 61);
+            helper.assertTrue(data.modules(planet) == 7 && data.damage(planet) == 61, "modules and damage are kept");
+        } finally {
+            data.set(planet, modules, damage);
+        }
+        helper.succeed();
+    }
+
+    @GameTest(template = "empty_80", timeoutTicks = 1200)
+    public static void nyarlathotepsTentacleForms(GameTestHelper helper) {
+        assertForms(helper, GTNAMegaMachines.NYARLATHOTEPS_TENTACLE);
+    }
+
+    @GameTest(template = "empty_80", timeoutTicks = 1200)
+    public static void kerrNewmanHomogenizerForms(GameTestHelper helper) {
+        assertForms(helper, GTNAMegaMachines.KERR_NEWMAN_HOMOGENIZER);
+    }
+
     @GameTest(template = "empty_48", timeoutTicks = 400)
     public static void engravingLaserPlantForms(GameTestHelper helper) {
         assertForms(helper, GTNAMegaMachines.ENGRAVING_LASER_PLANT);

@@ -579,6 +579,9 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.machine.auxiliary_module.kubejs.item_import", "Unlocks an additional Item Import Bus.");
         add("gtna.multiblock.max_eut", "Max EU/t: %s (%s)");
         add("gtna.multiblock.parallels", "Parallels: %s");
+        add("gtna.multiblock.pattern.error.glass", "All glass must be the same tier");
+        add("gtna.multiblock.large_incubator.glass_tier", "Glass tier: %s");
+        add("gtna.multiblock.large_incubator.filter_tier", "Filter tier: %s");
         add("gtna.multiblock.overclock_hatch", "Overclock Hatch: %s");
         add("gtna.multiblock.overclock_hatch.value", "%.2fx duration per 4x EU");
         add("gtna.multiblock.accelerate_hatch", "Accelerate Hatch: %s");
@@ -1405,6 +1408,15 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.dimensional_focus_engraving_array", "Dimensional Focus Engraving Array");
         add("gtna.ultimate_material_forge", "Ultimate Material Forge");
         add("gtna.loom", "Loom");
+        add("gtna.sintering_furnace", "Sintering Furnace");
+        add("gtna.dyson_sphere", "Dyson Sphere");
+        add("gtna.machine.dyson_sphere.amount", "Swarm modules in orbit: %s");
+        add("gtna.machine.dyson_sphere.damage", "Swarm damage: %s%%");
+        add("gtna.reaction_furnace", "Reaction Furnace");
+        add("gtna.machine.reaction_furnace.module",
+                "§6Extension:§r §7unlocks the Parallel and Accelerate Hatches");
+        add("gtna.chemical_vapor_deposition", "Chemical Vapor Deposition");
+        add("gtna.physical_vapor_deposition", "Physical Vapor Deposition");
         add("gtna.rare_earth_centrifugal", "Rare Earth Centrifugal");
         add("gtna.arc_generator", "Arc Generator");
         add("gtna.pcb_factory", "PCB Factory");

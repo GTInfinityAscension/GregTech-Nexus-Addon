@@ -7646,3 +7646,17 @@ Validation: `spotlessCheck runUnitTests runGameTestServer runData --offline`, wi
 - `gameplay.researchTree` (default true): off skips the K key mapping, `KnowledgeTreeScreen.open` and the research commands. GTIA turns it off.
 - `assets/gtna/lang/zh_cn.json`: 3,977 keys; terms reused from the official zh_cn of GTCEu, GTOCore, GTLCore and GTNH where the English matches (noted in THIRD_PARTY_NOTICES).
 - Validation: runData; spotlessCheck runUnitTests runGameTestServer: 332/332.
+
+## G-0255 — 2026-10-12 — Lotes do autor: sem tipo novo + tipos do GTO (pedido de 2026-10-12)
+
+- Pedido do autor (2026-10-12, registrado em `lista-do-autor.md`): quatro lotes aprovados; o autor pediu commit e push por lote, blocos/texturas copiados do GTO quando faltarem, sistemas ausentes deixados de fora e anotados, e seguir a ordem pulando o que travar.
+- **Tier de vidro** (`GTNAGlassTiers`): predicado que aceita 13 vidros (Tempered MV ... Cosmic Neutronium Borosilicate MAX), exige o mesmo vidro na estrutura e guarda o tier em `gtna_glass_tier`. Seis vidros borossilicato do GTO adicionados (titânio, tritânio, endério, quarks, dracônio, neutrônio cósmico) com receitas do `GlassRecipe` do GTO (Enderium -> Darmstadtium, Heavy Quark Degenerate Matter -> Quark-Gluon Plasma).
+- **Large Incubator**: tier de vidro limita a voltagem; filtros do GTCEu dão o tier 1/2, e o dado de receita `filter_casing` exige filtro. Radiation Hatch não portada (nenhuma receita do GTNA usa radioatividade).
+- **Kerr-Newman Homogenizer**: mixer com várias receitas (Thread Hatch), Parallel e laser. Efeito do buraco negro (GTOLib fechada) não portado; o renderer do GTO tem `RENDER_RINGS = false`.
+- **Nyarlathotep's Tentacle**: Assembly Line com várias receitas, paralelo por bobina e Optical Data Reception. Modos Suprachronal e Circuit Assembly Line não portados (tipos exclusivos do GTO). No `.mbs`, `a` é o controlador e `~` é o Restraint Device (o código do GTO o chama de `+`).
+- **Giant Sintering Array** (`gtna:sintering_furnace`) e **Integrated Vapor Deposition System** (`gtna:chemical_vapor_deposition`, `gtna:physical_vapor_deposition`): paralelo `4^tier do vidro` (fórmula da tooltip do GTO; o código fica na GTOLib nativa). Tipos vazios (receitas do GTO usam materiais exclusivos).
+- **Reaction Furnace** (`gtna:reaction_furnace`, vazio): forno de bobina como a EBF; módulo (`GTNASubPatterns`) libera Parallel e Accelerate. Machine Access Link não portado.
+- **Dyson Sphere** (`gtna:dyson_sphere`, item Dyson Swarm Module, `DysonSphereData`): silo lança módulos na órbita do planeta; estação gera laser `V[MAX] x módulos`, pede CWU e hélio líquido (GTO: Gelid Cryotheum); dano do enxame como no GTO. Distância do planeta = tier do Ad Astra + 1 (a tabela do GTO está na GTOLib fechada).
+- Blocos GTO novos (Kerr-Newman, Nyarlathotep, Dyson e Space Elevator), helper `createActiveCasing` e `createPlainSidedCasingBlock`. O `dimensional_bridge_casing` do GTO é o Spatial Casing (o id antigo já migra para ele).
+- Correções vindas do gate: CTM com `gtocore:`; End Steel e Scandium sem fluido nas receitas.
+- Validação: `runData`, `spotlessCheck runUnitTests runGameTestServer --offline`: **341/341**. Pendente: ver as máquinas no cliente.

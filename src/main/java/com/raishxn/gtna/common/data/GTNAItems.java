@@ -99,6 +99,8 @@ public class GTNAItems {
     public static ItemEntry<ComponentItem> DEPOSIT_RECORDER;
     public static ItemEntry<ComponentItem> DEPOSIT_DATA;
     public static ItemEntry<ComponentItem> FLUID_SEPARATION_FILTER;
+    /** GTO {@code dyson_swarm_module}: what the Dyson Sphere Launch Silo puts in orbit. */
+    public static ItemEntry<ComponentItem> DYSON_SWARM_MODULE;
     public static final java.util.Map<String, ItemEntry<ComponentItem>> FLUID_REMOTE_UPGRADES = new java.util.LinkedHashMap<>();
     public static ItemEntry<ComponentItem> ESSENCE;
     public static ItemEntry<ComponentItem> ESSENCE_SEED;
@@ -129,6 +131,10 @@ public class GTNAItems {
         DEPOSIT_DATA = REGISTRATE.item("deposit_data", ComponentItem::create)
                 .lang("Deposit Data").properties(p -> p.stacksTo(1))
                 .onRegister(attach(new com.raishxn.gtna.common.item.DepositDataBehavior()))
+                .model((ctx, provider) -> provider.generated(ctx, GTNACORE.id("item/" + ctx.getName())))
+                .register();
+        DYSON_SWARM_MODULE = REGISTRATE.item("dyson_swarm_module", ComponentItem::create)
+                .lang("Dyson Swarm Module")
                 .model((ctx, provider) -> provider.generated(ctx, GTNACORE.id("item/" + ctx.getName())))
                 .register();
         FLUID_SEPARATION_FILTER = REGISTRATE.item("fluid_separation_filter", ComponentItem::create)

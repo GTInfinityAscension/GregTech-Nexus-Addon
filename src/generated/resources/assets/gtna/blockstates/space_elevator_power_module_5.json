@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "gtna:block/variant/space_elevator_power_module_5"
+    },
+    "active=true": {
+      "model": "gtna:block/variant/space_elevator_power_module_5_active"
+    }
+  }
+}
