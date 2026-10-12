@@ -139,6 +139,7 @@ public class CommonProxy {
         var ignoredEyeOfHarmony = EyeOfHarmonyRenderer.TYPE;
         var ignoredEyeOfWood = EyeOfWoodRenderer.TYPE;
         var ignoredBallHatch = BallHatchRenderer.TYPE;
+        var ignoredLineOfSight = com.raishxn.gtna.client.renderer.machine.LineOfSightBeamRenderer.TYPE;
         var ignoredForgeOfGods = com.raishxn.gtna.client.renderer.machine.ForgeOfGodsRenderer.TYPE;
     }
 
@@ -176,6 +177,7 @@ public class CommonProxy {
         com.raishxn.gtna.common.data.GTNAPlasmaForge.init();
         com.raishxn.gtna.common.data.GTNATranscendentPlasmaMixer.init();
         com.raishxn.gtna.common.data.GTNANanoForge.init();
+        com.raishxn.gtna.common.data.GTNABEC.init();
         com.raishxn.gtna.common.data.GTNAGodforgeComponents.init();
         com.raishxn.gtna.common.data.GTNACircuits.init();
         GTNAEnergyHatches.init();

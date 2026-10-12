@@ -100,6 +100,7 @@ public class GTNAGTAddon implements IGTAddon {
         com.raishxn.gtna.data.recipe.GTNAAdvancedFusionRecipes.register(provider);
         com.raishxn.gtna.data.recipe.GTNAMegaMachineRecipes.register(provider);
         com.raishxn.gtna.data.recipe.GTNASpaceElevatorRecipes.register(provider);
+        com.raishxn.gtna.data.recipe.GTNABECRecipes.register(provider);
         com.raishxn.gtna.data.recipe.GTNAGTORecipes.register(provider);
         com.raishxn.gtna.data.recipe.GTNAGodforgeProgression.register(provider);
         com.raishxn.gtna.data.recipe.GTNAGodforgeProgression.registerExtraCosts();

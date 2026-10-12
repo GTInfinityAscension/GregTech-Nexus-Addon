@@ -844,5 +844,191 @@
         "Uso apenas de desenvolvimento"
       ]
     }
+  },
+  "bec_generator": {
+    "type": "BEC Generator",
+    "flavor": "One fluid in, one ghost out.",
+    "desc": [
+      "Turns molten metals and fluids into *entangled condensate*;",
+      "the condensate goes straight into the network."
+    ],
+    "pro": [
+      "Runs *every* fluid in its hatches at once"
+    ],
+    "num": [
+      "Parallels fill up to the *EU/t* available",
+      "The cycle lasts as long as the *slowest* recipe"
+    ],
+    "con": [
+      "Condensate is *voided* without room in the network"
+    ],
+    "pt": {
+      "type": "Gerador BEC",
+      "flavor": "Entra fluido, sai um fantasma.",
+      "desc": [
+        "Transforma metais fundidos e fluidos em *condensado emaranhado*;",
+        "o condensado vai direto para a rede."
+      ],
+      "pro": [
+        "Processa *todos* os fluidos dos hatches de uma vez"
+      ],
+      "num": [
+        "Os paralelos sobem até o *EU/t* disponível",
+        "O ciclo dura o da receita *mais lenta*"
+      ],
+      "con": [
+        "Sem espaço na rede, o condensado é *destruído*"
+      ]
+    }
+  },
+  "bec_storage": {
+    "type": "BEC Storage",
+    "flavor": "Hold still. Very still.",
+    "desc": [
+      "Stores condensate for the network;",
+      "set the *field strength* in the parameters."
+    ],
+    "pro": [
+      "Injected condensate splits by *capacity* between fields"
+    ],
+    "num": [
+      "*1* field strength holds *1 mB* and costs *1 EU/t*",
+      "Overfilled: keeps *9/10* of each condensate per second"
+    ],
+    "con": [
+      "*Voids* everything if it loses power or is switched off"
+    ],
+    "pt": {
+      "type": "Armazenamento BEC",
+      "flavor": "Fique parado. Bem parado.",
+      "desc": [
+        "Guarda condensado para a rede;",
+        "ajuste a *força do campo* nos parâmetros."
+      ],
+      "pro": [
+        "O condensado injetado se divide pela *capacidade* dos campos"
+      ],
+      "num": [
+        "*1* de força guarda *1 mB* e custa *1 EU/t*",
+        "Cheio demais: mantém *9/10* de cada condensado por segundo"
+      ],
+      "con": [
+        "*Destrói* tudo se ficar sem energia ou for desligado"
+      ]
+    }
+  },
+  "bec_assembler": {
+    "type": "BEC Observation Array",
+    "flavor": "It only crafts what it can see.",
+    "desc": [
+      "Feeds *Teleportation Nodes* linked by Line-of-Sight connectors",
+      "with nanites, EU and network condensate."
+    ],
+    "pro": [
+      "One array powers *many* nodes"
+    ],
+    "num": [
+      "Nanite tier: the *lowest* among its buses",
+      "At most *30720* nanites count"
+    ],
+    "con": [
+      "Nodes stall when the array lacks *EU*",
+      "More than *3* unrequested condensates fail the craft"
+    ],
+    "pt": {
+      "type": "Matriz de Observação BEC",
+      "flavor": "Só fabrica o que consegue ver.",
+      "desc": [
+        "Alimenta os *Teleportation Nodes* ligados por conectores de linha de visão",
+        "com nanites, EU e condensado da rede."
+      ],
+      "pro": [
+        "Uma matriz alimenta *vários* nós"
+      ],
+      "num": [
+        "Tier de nanite: o *menor* entre os barramentos",
+        "Contam no máximo *30720* nanites"
+      ],
+      "con": [
+        "Os nós param quando falta *EU* na matriz",
+        "Mais de *3* condensados não pedidos fazem a receita falhar"
+      ]
+    }
+  },
+  "bec_io_node": {
+    "type": "BEC Teleportation Node",
+    "flavor": "Items in, items out, physics optional.",
+    "desc": [
+      "Crafts *Condensate Assembly* recipes with its buses;",
+      "each item slot needs a *nanite tier* in turn."
+    ],
+    "pro": [
+      "Extra nanites speed crafting *linearly*",
+      "Min/max parallels and a speed divisor in the parameters"
+    ],
+    "num": [
+      "Higher-tier nanites slow it by *2^(provided - required)*",
+      "Condensate may arrive at *any time* before the end"
+    ],
+    "con": [
+      "No overclock",
+      "Missing condensate at the end *fails* the recipe"
+    ],
+    "pt": {
+      "type": "Nó de Teleporte BEC",
+      "flavor": "Entram itens, saem itens, física opcional.",
+      "desc": [
+        "Fabrica receitas de *Montagem com Condensado* com seus barramentos;",
+        "cada slot de item pede um *tier de nanite* por vez."
+      ],
+      "pro": [
+        "Nanites extras aceleram *linearmente*",
+        "Paralelos mínimo/máximo e divisor de velocidade nos parâmetros"
+      ],
+      "num": [
+        "Nanites de tier maior atrasam em *2^(fornecido - exigido)*",
+        "O condensado pode chegar a *qualquer momento* antes do fim"
+      ],
+      "con": [
+        "Sem overclock",
+        "Faltando condensado no fim, a receita *falha*"
+      ]
+    }
+  },
+  "bec_diode": {
+    "type": "BEC Maxwell Gate",
+    "flavor": "Maxwell's Demon's big brother.",
+    "desc": [
+      "Lets condensate flow *one way*:",
+      "the input side's condensate reaches the output side."
+    ],
+    "pro": [
+      "Filters per condensate type in the parameters",
+      "Fluid input hatches set the filters"
+    ],
+    "num": [
+      "Uses *1A UIV* while active"
+    ],
+    "con": [
+      "Blocks the network while switched off"
+    ],
+    "pt": {
+      "type": "Portão de Maxwell BEC",
+      "flavor": "O irmão mais velho do Demônio de Maxwell.",
+      "desc": [
+        "Deixa o condensado passar em *um sentido*:",
+        "o condensado do lado de entrada chega ao lado de saída."
+      ],
+      "pro": [
+        "Filtros por tipo de condensado nos parâmetros",
+        "Hatches de fluido definem os filtros"
+      ],
+      "num": [
+        "Gasta *1A UIV* enquanto ativo"
+      ],
+      "con": [
+        "Bloqueia a rede enquanto desligado"
+      ]
+    }
   }
 }

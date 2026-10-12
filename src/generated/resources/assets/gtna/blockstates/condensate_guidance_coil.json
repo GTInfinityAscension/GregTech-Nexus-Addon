@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "gtna:block/condensate_guidance_coil"
+    }
+  }
+}

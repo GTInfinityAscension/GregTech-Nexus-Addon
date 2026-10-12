@@ -251,6 +251,14 @@
     "gtna:nanite_framework",
     "gtna:advanced_iridium_casing",
     "gtna:nanite_shielding_glass",
+    "gtna:coherence_preserving_plasma_conduit",
+    "gtna:electromagnetically_isolated_casing",
+    "gtna:fine_structure_constant_manipulator",
+    "gtna:conflict_inducement_casing",
+    "gtna:peace_enforcement_casing",
+    "gtna:condensate_transformative_coil",
+    "gtna:condensate_guidance_coil",
+    "gtna:electromagnetic_waveguide",
     "gtna:space_elevator_internal_support",
     "gtna:dyson_deployment_magnet",
     "gtna:dyson_deployment_core",
@@ -278,6 +286,8 @@
     "gtna:medial_graviton_flow_modulator",
     "gtna:central_graviton_flow_modulator",
     "gtna:harmonic_phonon_transmission_conduit",
-    "gtna:spatially_transcendent_gravitational_lens"
+    "gtna:spatially_transcendent_gravitational_lens",
+    "gtna:bec_conduit",
+    "gtna:bec_conduit_casing"
   ]
 }

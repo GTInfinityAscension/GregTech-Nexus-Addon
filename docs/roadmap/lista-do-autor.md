@@ -81,3 +81,8 @@ Todos da fonte já indicada (GTO, exceto o último lote):
 2. **Space Elevator + módulos** (GTO), base para o Road of Heaven.
 3. **Com tipos próprios do GTO (aprovados):** Giant Sintering Array (sintering), Integrated Vapor Deposition System (CVD/PVD), Reaction Furnace (reaction_furnace), Dyson Sphere Launch Silo + Receiving Station (dyson_sphere).
 4. **Endgame do GTNH:** multiblocos BEC e Nano Forge tier 4.
+
+## Decisão do BEC (2026-10-12)
+
+Port fiel ao GTNH: rede física de condensado (hatches, canos, IO Node e Diode), **todas** as receitas do
+`BECRecipes`/`BECMetaMaterialRecipes`, **um condensado por material** e as **GUIs da rede** portadas.

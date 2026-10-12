@@ -1422,6 +1422,98 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.machine.space_elevator_module.not_connected", "Not connected to a running Space Elevator");
         add("gtna.machine.dyson_sphere.amount", "Swarm modules in orbit: %s");
         add("gtna.machine.dyson_sphere.damage", "Swarm damage: %s%%");
+        // GTNH Bose-Einstein Condensate
+        add("gtna.bec.condensate.neutronium", "Neutronium");
+        add("gtna.bec.condensate.cosmicneutronium", "Cosmic Neutronium");
+        add("gtna.bec.condensate.bedrockium", "Bedrockium");
+        add("gtna.bec.condensate.chromaticglass", "Chromatic Glass");
+        add("gtna.bec.condensate.celestialtungsten", "Celestial Tungsten");
+        add("gtna.bec.condensate.infinity", "Infinity");
+        add("gtna.bec.condensate.hypogen", "Hypogen");
+        add("gtna.bec.condensate.transcendentmetal", "Transcendent Metal");
+        add("gtna.bec.condensate.dimshiftedsuperfluid", "Dim. Shifted Superfluid");
+        add("gtna.bec.condensate.phononmedium", "Lossless Phonon Transfer Medium");
+        add("gtna.bec.condensate.quarkgluonplasma", "Degenerate Quark Gluon Plasma");
+        add("gtna.bec.condensate.spacetime", "SpaceTime");
+        add("gtna.bec.condensate.time", "Tachyon Rich");
+        add("gtna.bec.condensate.space", "Spatially Enlarged");
+        add("gtna.bec.condensate.cosmicsolder", "Cosmic Solder");
+        add("gtna.bec.condensate.mhdcsm", "MHDCSM");
+        add("gtna.bec.condensate.magmatter", "MagMatter");
+        add("gtna.bec.condensate.universium", "Universium");
+        add("gtna.bec.condensate.eternity", "Eternity");
+        add("gtna.condensate_generator", "Condensate Entanglement");
+        add("gtna.condensate_assembler", "Condensate Assembly");
+        add("gtna.recipe.bec_nanite_tiers", "Nanite tier per item slot: %s");
+        add("gtna.bec.gui.none", "None");
+        add("gtna.bec.gui.operation", "Operation");
+        add("gtna.bec.gui.analog", "Analog");
+        add("gtna.bec.gui.threshold", "Threshold");
+        add("gtna.bec.gui.current", "Current: %s");
+        add("gtna.bec.gui.nanite_tier", "Tier %s");
+        add("gtna.bec.gui.filter", "Condensate filter");
+        add("gtna.bec.gui.mode", "Mode");
+        add("gtna.bec.gui.pause_next_step", "Pause Next Step");
+        add("gtna.bec.gui.pause_immediately", "Pause Immediately");
+        add("gtna.bec.gui.nanite_count", "%s x %s");
+        add("gtna.bec.gui.producing", "Condensate this cycle:");
+        add("gtna.bec.gui.field_strength", "Field strength: %s");
+        add("gtna.bec.gui.stored", "Stored: %s mB");
+        add("gtna.bec.gui.stored_condensate", "Stored Condensate:");
+        add("gtna.bec.gui.parameters", "Parameters");
+        add("gtna.bec.gui.field_strength_param", "Field strength (mB, EU/t)");
+        add("gtna.bec.gui.filters", "Condensate filters");
+        add("gtna.bec.gui.available_condensate", "Available Condensate:");
+        add("gtna.bec.gui.providing_nanites", "Providing Nanites:");
+        add("gtna.bec.gui.ionode_status", "Status: %s");
+        add("gtna.bec.gui.provided_nanite", "Provided Nanite: %s");
+        add("gtna.bec.gui.required_nanite", "Required Nanite: %s");
+        add("gtna.bec.gui.next_nanite_none", "Next Nanite: None");
+        add("gtna.bec.gui.next_nanite", "Next Nanite: %s at progress %s");
+        add("gtna.bec.gui.slowdowns", "Unrequested condensates: %s");
+        add("gtna.bec.gui.required_condensate", "Required Condensate:");
+        add("gtna.bec.gui.remaining_condensate", "  %s %s / %s");
+        add("gtna.bec.gui.min_parallel", "Min parallels");
+        add("gtna.bec.gui.max_parallel", "Max parallels");
+        add("gtna.bec.gui.speed_divisor", "Speed divisor");
+        add("gtna.bec.gui.nanite_desc", "%s (Tier %s)");
+        add("gtna.bec.node_state.Idle", "Idle");
+        add("gtna.bec.node_state.Unpowered", "§cUnpowered");
+        add("gtna.bec.node_state.AssemblerOffline", "§cObservation Array Offline");
+        add("gtna.bec.node_state.NaniteTierTooLow", "§eInsufficient Nanite Tier");
+        add("gtna.bec.node_state.PausedStep", "Paused (Step)");
+        add("gtna.bec.node_state.PausedImmediate", "Paused (Immediate)");
+        add("gtna.bec.node_state.Crafting", "Crafting");
+        add("gtna.bec.node_state.InternalError", "§cInternal Error: break and replace the node");
+        add("gtna.bec.recipe.not_enough_parallels", "Insufficient Parallels (Min Parallels Too High)");
+        add("gtna.bec.recipe.no_bec_assembler", "Condensate Observation Array Offline");
+        add("gtna.bec.recipe.missing_condensate", "Missing condensate: %s x %s mB");
+        add("gtna.bec.recipe.power_failure", "The Observation Array lost power");
+        add("gtna.bec.recipe.bec_clogged", "More than 3 unrequested condensates in the network");
+        add("gtna.machine.bec_hatch.tooltip.0",
+                "Connects a BEC multiblock to Bose-Einstein Condensate Conduits through its front face");
+        add("gtna.machine.bec_hatch.tooltip.1", "Conduits only join conduits of the same colour (dye them)");
+        add("gtna.machine.nanite_containment_bus.tooltip.0",
+                "Holds nanites for use in multiblocks; they are never consumed");
+        add("gtna.machine.nanite_containment_bus.tooltip.1", "Keeps its contents when broken");
+        add("gtna.machine.line_of_sight_connector_hatch.tooltip.0",
+                "Connects to another Line-Of-Sight Connector Hatch");
+        add("gtna.machine.line_of_sight_connector_hatch.tooltip.1", "Connectors must face each other");
+        add("gtna.machine.line_of_sight_connector_hatch.tooltip.2", "Opaque blocks prevent connections");
+        add("gtna.machine.line_of_sight_connector_hatch.tooltip.3",
+                "The maximum distance between two connectors is %s blocks");
+        add("gtna.machine.nanite_detector_hatch.tooltip.0", "Checks the nanite tier requested by a Teleportation Node");
+        add("gtna.machine.nanite_detector_hatch.tooltip.1",
+                "Emits a redstone signal when the condition in its UI is true");
+        add("gtna.machine.nanite_detector_hatch.tooltip.2", "Analog mode ignores the threshold and emits the tier");
+        add("gtna.machine.condensate_detector_hatch.tooltip.0", "Checks the condensate stored in a Containment Field");
+        add("gtna.machine.condensate_detector_hatch.tooltip.1",
+                "Emits a redstone signal when the condition in its UI is true");
+        add("gtna.machine.condensate_detector_hatch.tooltip.2", "An empty filter sums all stored condensate");
+        add("gtna.machine.io_node_controller_hatch.tooltip.0", "A redstone signal pauses its Teleportation Node");
+        add("gtna.machine.io_node_controller_hatch.tooltip.1", "Pause immediately, or when the next step begins");
+        add("gtna.machine.io_node_controller_hatch.tooltip.2",
+                "Paused nodes use no condensate and do not fail from contaminants");
         add("gtna.reaction_furnace", "Reaction Furnace");
         add("gtna.machine.reaction_furnace.module",
                 "§6Extension:§r §7unlocks the Parallel and Accelerate Hatches");

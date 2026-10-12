@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "gtna:block/coherence_preserving_plasma_conduit"
+    }
+  }
+}

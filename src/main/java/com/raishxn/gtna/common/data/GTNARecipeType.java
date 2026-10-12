@@ -423,6 +423,32 @@ public class GTNARecipeType {
                     "gtna.recipe.power_module_tier", data.getInt("power_module_tier")))
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ASSEMBLER);
 
+    /** GTNH {@code condensateGeneratorRecipes}: source fluid → entangled condensate (BEC Entanglement Apparatus). */
+    public static final GTRecipeType CONDENSATE_GENERATOR_RECIPES = register("condensate_generator",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(0, 0, 1, 1).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
+
+    /**
+     * GTNH {@code condensateAssemblingRecipes} (BEC Teleportation Node). The fluid inputs are the entangled
+     * condensates the network supplies; the data holds the nanite tier of each item slot.
+     */
+    public static final GTRecipeType CONDENSATE_ASSEMBLER_RECIPES = register("condensate_assembler",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(16, 1, 6, 0).setEUIO(IO.IN)
+            .addDataInfo(data -> {
+                int[] tiers = com.raishxn.gtna.common.machine.multiblock.electric.bec.BECIONodeMachine.nanitesOf(data);
+                if (tiers.length == 0) return "";
+                StringBuilder text = new StringBuilder();
+                for (int t : tiers) {
+                    var tier = com.raishxn.gtna.api.bec.NaniteTier.byOrdinal(t);
+                    if (!text.isEmpty()) text.append(' ');
+                    text.append(tier == null ? "?" : tier.tier);
+                }
+                return LocalizationUtils.format("gtna.recipe.bec_nanite_tiers", text.toString());
+            })
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ASSEMBLER);
+
     /** GTO {@code miner_module} (Space Elevator): drones mine asteroid ores. */
     public static final GTRecipeType MINER_MODULE_RECIPES = register("miner_module",
             com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)

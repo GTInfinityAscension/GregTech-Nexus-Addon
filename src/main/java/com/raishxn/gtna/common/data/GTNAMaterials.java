@@ -113,6 +113,8 @@ public class GTNAMaterials {
         com.raishxn.gtna.common.data.material.EyeOfHarmonyMaterials.init();
         com.raishxn.gtna.common.data.material.GodforgeMaterials.init();
         com.raishxn.gtna.common.data.material.GodforgeChainMaterials.init();
+        com.raishxn.gtna.common.data.material.GodforgeChainMaterials.initBEC();
+        com.raishxn.gtna.common.data.material.BECMaterials.init();
         com.raishxn.gtna.common.data.material.FuelCellMaterials.init();
         com.raishxn.gtna.common.data.material.ResearchMaterials.init();
         MaterialAdd.init();

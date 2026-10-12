@@ -1,0 +1,24 @@
+{
+  "parent": "minecraft:block/block",
+  "loader": "gtceu:machine",
+  "machine": "gtna:nanite_detector_hatch",
+  "replaceable_textures": [
+    "bottom",
+    "top",
+    "side"
+  ],
+  "variants": {
+    "": {
+      "model": {
+        "parent": "gtceu:block/machine/template/part/hatch_machine_emissive",
+        "textures": {
+          "bottom": "gtceu:block/casings/voltage/uiv/bottom",
+          "overlay": "gtna:block/bec/nanite_detector",
+          "overlay_emissive": "gtna:block/bec/nanite_detector_emissive",
+          "side": "gtceu:block/casings/voltage/uiv/side",
+          "top": "gtceu:block/casings/voltage/uiv/top"
+        }
+      }
+    }
+  }
+}

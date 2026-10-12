@@ -33,3 +33,36 @@ No GTNA, hoje, Shielding Casing e Graviton T2/T3 usam receitas provisórias de A
 
 Recomendação do assistente: **B + receitas que destravam o endgame existente + só os condensados usados + painel**.
 Custo estimado: um lote do tamanho do Space Elevator. A opção A é várias vezes maior.
+
+## Decisão do autor (2026-10-12)
+
+1. Rede **física** igual ao GTNH (hatches, canos, IO Node, Diode).
+2. **Todas** as receitas.
+3. **Um condensado por material**.
+4. **GUIs da rede portadas**.
+
+A recomendação acima foi rejeitada; vale esta seção.
+
+## Plano do port (fontes: GT5U `9b4c2a7` e NewHorizonsCoreMod `master`, ambos LGPL-3.0)
+
+Fontes lidas: `tectech/mechanics/boseEinsteinCondensate/*`, `multi/bec/*`, `hatch/bec/*`, `pipe/MTEPipeBEC`,
+`gui/bec/*`, `BECStructureDefinitions`, `CondensateType`, `NaniteTier`, `MTEHatchNanite`, `BECRecipes`,
+`BECMetaMaterialRecipes`, as receitas de Assembly Line das carcaças (`ResearchStationAssemblyLine`), as de prensa
+(Peace/Conflict), a do cano (`AssemblerRecipes.withBEC`) e, no coremod, as dos controladores e hatches
+(`AssemblingLineRecipes`) e o `BECRecipes` do coremod.
+
+1. **Dados**: 19 condensados emaranhados (`entangled_*`, gás, um por `CondensateType`); `NaniteTier` (12 nanites,
+   tiers 1–10); tipos `gtna:condensate_generator` e `gtna:condensate_assembler` (condensados e a sequência de nanites
+   ficam nos dados da receita, como os metadados `CONDENSATE_INPUT`/`NANITE_TIERS` do GTNH).
+2. **Blocos e itens**: 6 carcaças do `BlockCasingsBEC`, o Electromagnetic Waveguide (vidro), o cano BEC (conecta por
+   cor como no GTNH) e os itens MetaMaterial.
+3. **Rede**: grafo de canos e BEC Hatches; nós notáveis são os multiblocos formados; busca em largura por distância,
+   igual ao `GraphRouteTracker` (o Diode só deixa passar o que o filtro permite e só sai pelo hatch de entrada).
+4. **Hatches**: BEC Hatch, Nanite Containment Bus, Line-of-Sight Connector (com feixe), Nanite Detector,
+   Condensate Detector e IO Node Controller.
+5. **Multiblocos**: Generator, Storage, Diode, Assembler (Observation Array) e IO Node (Teleportation Node), com as
+   estruturas convertidas de `BECStructureDefinitions`.
+6. **Telas**: o texto de estado e os parâmetros de cada tela do GTNH (field strength, min/max parallel, speed
+   divisor, filtros do Diode, configuração dos detectores).
+7. **Receitas**: todas as que têm destino no GTNA. Receitas cujo produto não existe no GTNA (Stargate, Exo-Foundry,
+   Computation Singularity, circuit arrays do coremod) ficam listadas como não portadas.

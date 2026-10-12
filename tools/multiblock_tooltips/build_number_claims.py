@@ -251,6 +251,13 @@ c("transcendent_plasma_mixer", 10, EC + "TranscendentPlasmaMixerMachine.java", r
 for n in (1, 2, 3):
     c("nano_forge", n, D + "common/data/GTNANanoForge.java", r"CARBON_NANITES\.get\(\), NEUTRONIUM_NANITES\.get\(\), TRANSCENDENT_METAL_NANITES\.get\(\)", "nanite tiers 1-3")
 c("nano_forge", 4, D + "common/data/GTNANanoForge.java", r"MAGMATTER_NANITES\.get\(\) \}", "MagMatter nanites unlock tier 4")
+c("bec_storage", 1, D + "common/machine/multiblock/electric/bec/BECStorageMachine.java", r"fieldStrength = 1;", "1 field strength = 1 mB = 1 EU/t")
+c("bec_storage", 9, D + "common/machine/multiblock/electric/bec/BECStorageMachine.java", r"amount \* 9 / 10", "decay 9/10")
+c("bec_storage", 10, D + "common/machine/multiblock/electric/bec/BECStorageMachine.java", r"amount \* 9 / 10", "decay 9/10")
+c("bec_assembler", 30720, D + "common/machine/multiblock/electric/bec/BECAssemblerMachine.java", r"MAX_NANITES = 2048 \* 15", "max nanites")
+c("bec_assembler", 3, D + "common/machine/multiblock/electric/bec/BECIONodeMachine.java", r"slowdowns > 3", "clog at more than 3")
+c("bec_io_node", 2, D + "common/machine/multiblock/electric/bec/BECIONodeMachine.java", r"1 << Math.abs", "2^(provided - required)")
+c("bec_diode", 1, D + "common/machine/multiblock/electric/bec/BECDiodeMachine.java", r"VA\[UIV\], 1, 1", "1A UIV")
 HC = EN + "NexusMEHyperCoreMachine.java"
 c("nexus_me_hypercore", 320, HC, r"TOTAL_MODULE_SLOTS = 320", "320 slots")
 for n, pat in ((4, r"MODULE_I_THREADS = 4L"), (16, r"MODULE_II_THREADS = 16L"), (128, r"MODULE_III_THREADS = 128L"), (1024, r"MODULE_IV_THREADS = 1024L")):

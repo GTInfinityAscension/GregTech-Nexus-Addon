@@ -47,12 +47,9 @@ public final class GTNAGodforgeChainRecipes {
     }
 
     /**
-     * Gaps found by the reachability report (G-0199). GTNH 2.9 makes the Singularity Shielding Casing and the
-     * Medial/Central Graviton Flow Modulators in the BEC Condensate Assembler (not ported): until it is, they use the
-     * Assembly Line with the same items and the condensates as molten metals (Bedrockium / Cosmic Neutronium /
-     * Netherite → Neutronium, Titansteel / Abyssal → Tritanium / Naquadria, Proto-Halkonite → Six-Phased Copper,
-     * combined singularities → Gravi Stars, Field Restriction Coil T4 → T3, metamaterials and the Space-Time Continuum
-     * Ripper left out, Boundless Cosmic Solder → Mutated Living Solder). Restraint Device follows GTO (Laser Cooling
+     * Gaps found by the reachability report (G-0199). The provisional Singularity Shielding Casing and Medial/Central
+     * Graviton Flow Modulator assembly lines were replaced by the BEC recipes (GTNABECRecipes). Restraint Device
+     * follows GTO (Laser Cooling
      * Unit → UV emitters, Titan Steel → Tritanium, Quantanium → Quantum, High-Durability Compound Steel → Tritanium),
      * CF-PPS composite follows GTO's chemical bath (T600 fibre mesh → GTCEu carbon fibres) and the EOH matters are
      * solidified like any metal.
@@ -65,57 +62,8 @@ public final class GTNAGodforgeChainRecipes {
         var lens = com.raishxn.gtna.common.data.GTNAItems.LASER_LENS_SPECIAL;
         var superdense = com.raishxn.gtna.api.data.tag.GTNATagPrefix.superdensePlate;
         long uxv = GTValues.VA[GTValues.UXV];
-        GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("godforge_chain/singularity_shielding_casing"))
-                .inputItems(TagPrefix.frameGt, SixPhasedCopper, 4)
-                .inputItems(TagPrefix.plateDense, GTMaterials.Neutronium, 64)
-                .inputItems(TagPrefix.plate, Quantum, 16).inputItems(TagPrefix.frameGt, Infinity, 4)
-                .inputItems(com.gregtechceu.gtceu.common.data.GTItems.GRAVI_STAR, 8)
-                .inputItems(TagPrefix.rodLong, SuperconductorUIVBase, 16).inputItems(TagPrefix.plate, Creon, 16)
-                .inputItems(TagPrefix.plate, Mellion, 16).inputItems(superdense, TranscendentMetal, 2)
-                .inputItems(TagPrefix.frameGt, GTMaterials.Tritanium, 4)
-                .inputItems(TagPrefix.plate, SixPhasedCopper, 16)
-                .inputItems(TagPrefix.frameGt, GTMaterials.Naquadria, 4)
-                .inputFluids(Hypogen.getFluid(4 * 144)).inputFluids(Infinity.getFluid(stacks(2)))
-                .inputFluids(CelestialTungsten.getFluid(stacks(32)))
-                .inputFluids(GTMaterials.Neutronium.getFluid(stacks(32)))
-                .outputItems(shielding.asStack(6)).duration(6000).EUt(uxv)
-                .stationResearch(b -> b.researchStack(confinement.asStack()).CWUt(512).EUt(uxv)).save(provider);
-        GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("godforge_chain/medial_graviton_flow_modulator"))
-                .inputItems(confinement.asStack()).inputItems(coil.asStack(2))
-                .inputItems(TagPrefix.plateDense, Creon, 8)
-                .inputItems(TagPrefix.gear, Mellion, 4).inputItems(TagPrefix.frameGt, SuperconductorUIVBase, 32)
-                .inputItems(anomaly.asStack(4)).inputItems(lens.asStack(8))
-                .inputItems(com.gregtechceu.gtceu.common.data.GTItems.EMITTER_UXV, 4)
-                .inputItems(com.gregtechceu.gtceu.data.recipe.CustomTags.UXV_CIRCUITS, 8)
-                .inputItems(com.raishxn.gtna.common.data.GTNANanoForge.SILVER_NANITES.asStack(2))
-                .inputItems(com.raishxn.gtna.common.data.GTNANanoForge.GOLD_NANITES.asStack(2))
-                .inputFluids(ChronomaticGlass.getFluid(64 * 144)).inputFluids(Infinity.getFluid(32 * 144))
-                .inputFluids(TranscendentMetal.getFluid(32 * 144))
-                .outputItems(com.raishxn.gtna.common.data.GTNAGodforgeContent.MEDIAL_GRAVITON_FLOW_MODULATOR.asStack())
-                .duration(6000).EUt(uxv)
-                .stationResearch(b -> b.researchStack(
-                        com.raishxn.gtna.common.data.GTNAGodforgeContent.REMOTE_GRAVITON_FLOW_MODULATOR.asStack())
-                        .CWUt(512).EUt(uxv))
-                .save(provider);
-        long opv = GTValues.VA[GTValues.OpV];
-        GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("godforge_chain/central_graviton_flow_modulator"))
-                .inputItems(confinement.asStack()).inputItems(coil.asStack(8)).inputItems(superdense, Creon, 8)
-                .inputItems(TagPrefix.gear, Mellion, 64).inputItems(anomaly.asStack(8)).inputItems(lens.asStack(8))
-                .inputItems(com.gregtechceu.gtceu.data.recipe.CustomTags.MAX_CIRCUITS, 4)
-                .inputItems(com.gregtechceu.gtceu.common.data.GTItems.EMITTER_OpV, 4)
-                .inputItems(com.raishxn.gtna.common.data.GTNANanoForge.SILVER_NANITES.asStack(8))
-                .inputItems(com.raishxn.gtna.common.data.GTNANanoForge.GOLD_NANITES.asStack(8))
-                .inputItems(com.raishxn.gtna.common.data.GTNANanoForge.SIX_PHASED_COPPER_NANITES.asStack(8))
-                .inputItems(com.raishxn.gtna.common.data.GTNANanoForge.UNIVERSIUM_NANITES.asStack(8))
-                .inputFluids(ChronomaticGlass.getFluid(256 * 144)).inputFluids(Infinity.getFluid(32 * 144))
-                .inputFluids(MutatedLivingSolder.getFluid(20_000)).inputFluids(Eternity.getFluid(128 * 144))
-                .outputItems(com.raishxn.gtna.common.data.GTNAGodforgeContent.CENTRAL_GRAVITON_FLOW_MODULATOR.asStack())
-                .duration(6000).EUt(opv)
-                .stationResearch(b -> b.researchStack(
-                        com.raishxn.gtna.common.data.GTNAGodforgeContent.MEDIAL_GRAVITON_FLOW_MODULATOR.asStack())
-                        .CWUt(1024).EUt(opv))
-                .save(provider);
-
+        // Singularity Shielding Casing and the Medial / Central Graviton Flow Modulators come from the BEC
+        // Condensate Assembler now (GTNABECRecipes), as in GTNH; the provisional assembly lines are gone.
         GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("godforge_chain/restraint_device"))
                 .inputItems(com.raishxn.gtna.common.data.GTNABlocks.HOLLOW_CASING.asStack(2))
                 .inputItems(com.raishxn.gtna.common.data.GTNABlocks.FORCE_FIELD_GLASS.asStack(2))

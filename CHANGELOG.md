@@ -13,6 +13,12 @@
 
 - **Space Elevator** with the **Assembler Module** and **Resource Collection Module** (new `gtna:assembler_module`, `gtna:miner_module` and `gtna:drilling_module` types; Nanotube Spool and Space Drones MK I–VI): above ZPM, with computation and 256 Nanotube Spools, the elevator powers up to twelve modules; the Power Module MK (I–V) sets their parallel `4^(MK - 1)` and which Assembler Module recipes they may run. The Resource Collection Module mines 20 asteroid ore mixes and collects 11 gases with drones and rocket fuel.
 
+### Bose-Einstein Condensate (GTNH)
+- **Five multiblocks** on a physical condensate network: the **Entanglement Apparatus** turns molten metals and fluids into 19 kinds of **entangled condensate**; the **Containment Field** stores it (field strength = capacity and EU/t, voided on power loss); the **Maxwell Gate** lets it flow one way, with filters; the **Observation Array** feeds nanites, EU and condensate to its **Teleportation Nodes**, which craft the **Condensate Assembly** recipes step by step, one nanite tier per item slot.
+- **Bose-Einstein Condensate Conduit** (dye it to split networks) and its casing; **BEC Hatch**, **Nanite Containment Bus**, **Line-Of-Sight Connector Hatch** (with the beam), **Nanite Tier Detector**, **Condensate Detector** and **Teleportation Node Controller** hatches; the BEC casings; 28 **metamaterials** and the **Transdimensional Alignment Matrix**.
+- Every GTNH BEC recipe whose output exists in GTNA, including the BEC casings and the Godforge and Eye of Harmony parts. The Singularity Shielding Casing and the Medial and Central Graviton Flow Modulators now come only from the BEC, as in GTNH; their temporary assembly-line recipes are gone.
+- New materials: **Bedrockium**, **Tairitsu**, **Inactive** and **Boundless Cosmic Solder**.
+
 ### Nano Forge
 - **Tier 4**: the MagMatter extension (GTNH structure with its own casings) and MagMatter Nanites. With a nanite equal to the recipe's output in an input bus, the forge drains all molten MagMatter from its hatches for extra parallel and a shorter duration, as in GTNH.
 

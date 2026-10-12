@@ -572,6 +572,28 @@ public class GTNABlocks {
     public static final BlockEntry<Block> NANITE_SHIELDING_GLASS = createGlassCasingBlock("nanite_shielding_glass",
             GTNACORE.id("block/casings/nano_forge/nanite_shielding_glass"), () -> RenderType::cutoutMipped);
 
+    // GTNH BEC casings (BlockCasingsBEC metas 0-6 and the Electromagnetic Waveguide glass), GT5U art.
+    public static final BlockEntry<Block> COHERENCE_PRESERVING_PLASMA_CONDUIT = createCasingBlock(
+            "coherence_preserving_plasma_conduit",
+            GTNACORE.id("block/casings/bec/coherence_preserving_plasma_conduit"));
+    public static final BlockEntry<Block> ELECTROMAGNETICALLY_ISOLATED_CASING = createCasingBlock(
+            "electromagnetically_isolated_casing",
+            GTNACORE.id("block/casings/bec/electromagnetically_isolated_casing"));
+    public static final BlockEntry<Block> FINE_STRUCTURE_CONSTANT_MANIPULATOR = createCasingBlock(
+            "fine_structure_constant_manipulator",
+            GTNACORE.id("block/casings/bec/fine_structure_constant_manipulator"));
+    public static final BlockEntry<Block> CONFLICT_INDUCEMENT_CASING = createCasingBlock("conflict_inducement_casing",
+            GTNACORE.id("block/casings/bec/conflict_inducement_casing"));
+    public static final BlockEntry<Block> PEACE_ENFORCEMENT_CASING = createCasingBlock("peace_enforcement_casing",
+            GTNACORE.id("block/casings/bec/peace_enforcement_casing"));
+    public static final BlockEntry<Block> CONDENSATE_TRANSFORMATIVE_COIL = createCasingBlock(
+            "condensate_transformative_coil", GTNACORE.id("block/casings/bec/condensate_transformative_coil"));
+    public static final BlockEntry<Block> CONDENSATE_GUIDANCE_COIL = createCasingBlock("condensate_guidance_coil",
+            GTNACORE.id("block/casings/bec/condensate_guidance_coil"));
+    public static final BlockEntry<Block> ELECTROMAGNETIC_WAVEGUIDE = createGlassCasingBlock(
+            "electromagnetic_waveguide",
+            GTNACORE.id("block/casings/bec/electromagnetic_waveguide"), () -> RenderType::cutoutMipped);
+
     // GTO blocks of the Dyson Sphere and the Space Elevator.
     public static final BlockEntry<Block> SPACE_ELEVATOR_INTERNAL_SUPPORT = createPlainSidedCasingBlock(
             "space_elevator_internal_support");

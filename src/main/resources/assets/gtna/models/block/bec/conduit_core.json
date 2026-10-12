@@ -1,0 +1,87 @@
+{
+  "parent": "block/block",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "bg": "gtna:block/bec/conduit_background",
+    "bar": "gtna:block/bec/conduit_bar",
+    "particle": "gtna:block/bec/conduit_background"
+  },
+  "elements": [
+    {
+      "from": [
+        2,
+        2,
+        2
+      ],
+      "to": [
+        14,
+        14,
+        14
+      ],
+      "faces": {
+        "north": {
+          "texture": "#bg",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#bg",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#bg",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#bg",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#bg",
+          "tintindex": 0
+        },
+        "down": {
+          "texture": "#bg",
+          "tintindex": 0
+        }
+      }
+    },
+    {
+      "from": [
+        1.99,
+        1.99,
+        1.99
+      ],
+      "to": [
+        14.01,
+        14.01,
+        14.01
+      ],
+      "faces": {
+        "north": {
+          "texture": "#bar",
+          "tintindex": 1
+        },
+        "south": {
+          "texture": "#bar",
+          "tintindex": 1
+        },
+        "east": {
+          "texture": "#bar",
+          "tintindex": 1
+        },
+        "west": {
+          "texture": "#bar",
+          "tintindex": 1
+        },
+        "up": {
+          "texture": "#bar",
+          "tintindex": 1
+        },
+        "down": {
+          "texture": "#bar",
+          "tintindex": 1
+        }
+      }
+    }
+  ]
+}

@@ -25,6 +25,13 @@ import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlag
 public final class GodforgeChainMaterials {
 
     public static Material Creon;
+    /** GTNH Bedrockium (BEC condensate source; recipes are GTNA adaptations, see GTNABECRecipes). */
+    public static Material Bedrockium;
+    /** GoodGenerator Tairitsu (W8 Nq*7 Bedrockium4 C4 V3 + Black Plutonium → Plutonium-241). */
+    public static Material Tairitsu;
+    /** GTNH Inactive Cosmic Solder / Boundless Cosmic Solder (BEC condensate source). */
+    public static Material InactiveCosmicSolder;
+    public static Material BoundlessCosmicSolder;
     public static Material Mellion;
     public static Material TranscendentMetal;
     public static Material SixPhasedCopper;
@@ -267,6 +274,29 @@ public final class GodforgeChainMaterials {
                 .flags(GENERATE_PLATE, GENERATE_FRAME, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_GEAR,
                         GENERATE_SMALL_GEAR, DISABLE_DECOMPOSITION)
                 .buildAndRegister();
+    }
+
+    /** GTNH BEC materials GTNA did not have. */
+    public static void initBEC() {
+        Bedrockium = builder("bedrockium", "Bedrockium", 0x272727, MaterialIconSet.METALLIC).ingot()
+                .liquid(liquid("bedrockium", 9_900)).blastTemp(9_900)
+                .flags(GENERATE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME, NO_SMELTING,
+                        DISABLE_DECOMPOSITION, GTNAMaterialFlags.GENERATE_SUPERDENSE)
+                .buildAndRegister();
+        Tairitsu = builder("tairitsu", "Tairitsu", 0x363636, MaterialIconSet.SHINY).ingot()
+                .liquid(liquid("tairitsu", 7_400)).blastTemp(7_400)
+                .components(com.gregtechceu.gtceu.common.data.GTMaterials.Tungsten, 8,
+                        com.gregtechceu.gtceu.common.data.GTMaterials.Naquadria, 7, Bedrockium, 4,
+                        com.gregtechceu.gtceu.common.data.GTMaterials.Carbon, 4,
+                        com.gregtechceu.gtceu.common.data.GTMaterials.Vanadium, 3,
+                        com.gregtechceu.gtceu.common.data.GTMaterials.Plutonium241, 1)
+                .flags(GENERATE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_GEAR,
+                        GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_FINE_WIRE, GENERATE_FOIL,
+                        GENERATE_RING, GENERATE_ROTOR, GENERATE_ROUND, DISABLE_DECOMPOSITION)
+                .buildAndRegister();
+        InactiveCosmicSolder = fluid("inactive_cosmic_solder", "Inactive Cosmic Solder", 0x9a9aa8);
+        BoundlessCosmicSolder = fluid("boundless_cosmic_solder", "Boundless Cosmic Solder", 0xfaf6ff)
+                .setFormula("✧✦✧✦✧");
     }
 
     private static Material alloy(String id, String lang, int color, int blast, Object... components) {

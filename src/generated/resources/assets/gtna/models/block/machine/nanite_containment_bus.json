@@ -1,0 +1,24 @@
+{
+  "parent": "minecraft:block/block",
+  "loader": "gtceu:machine",
+  "machine": "gtna:nanite_containment_bus",
+  "replaceable_textures": [
+    "bottom",
+    "top",
+    "side"
+  ],
+  "variants": {
+    "": {
+      "model": {
+        "parent": "gtceu:block/machine/template/part/hatch_machine_emissive",
+        "textures": {
+          "bottom": "gtceu:block/casings/voltage/uhv/bottom",
+          "overlay": "gtna:block/bec/nanite_hatch",
+          "overlay_emissive": "gtna:block/bec/nanite_hatch_emissive",
+          "side": "gtceu:block/casings/voltage/uhv/side",
+          "top": "gtceu:block/casings/voltage/uhv/top"
+        }
+      }
+    }
+  }
+}

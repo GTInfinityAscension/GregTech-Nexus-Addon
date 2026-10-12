@@ -1993,6 +1993,63 @@
    }
   ]
  },
+ "bec_storage": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/bec/BECStorageMachine.java",
+    "pattern": "fieldStrength = 1;",
+    "expr": "1 field strength = 1 mB = 1 EU/t"
+   }
+  ],
+  "9": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/bec/BECStorageMachine.java",
+    "pattern": "amount \\* 9 / 10",
+    "expr": "decay 9/10"
+   }
+  ],
+  "10": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/bec/BECStorageMachine.java",
+    "pattern": "amount \\* 9 / 10",
+    "expr": "decay 9/10"
+   }
+  ]
+ },
+ "bec_assembler": {
+  "30720": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/bec/BECAssemblerMachine.java",
+    "pattern": "MAX_NANITES = 2048 \\* 15",
+    "expr": "max nanites"
+   }
+  ],
+  "3": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/bec/BECIONodeMachine.java",
+    "pattern": "slowdowns > 3",
+    "expr": "clog at more than 3"
+   }
+  ]
+ },
+ "bec_io_node": {
+  "2": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/bec/BECIONodeMachine.java",
+    "pattern": "1 << Math.abs",
+    "expr": "2^(provided - required)"
+   }
+  ]
+ },
+ "bec_diode": {
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/bec/BECDiodeMachine.java",
+    "pattern": "VA\\[UIV\\], 1, 1",
+    "expr": "1A UIV"
+   }
+  ]
+ },
  "nexus_me_hypercore": {
   "320": [
    {

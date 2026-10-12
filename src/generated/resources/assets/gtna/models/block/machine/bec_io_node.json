@@ -1,0 +1,86 @@
+{
+  "parent": "minecraft:block/block",
+  "loader": "gtceu:machine",
+  "machine": "gtna:bec_io_node",
+  "texture_overrides": {
+    "all": "gtna:block/casings/bec/coherence_preserving_plasma_conduit"
+  },
+  "variants": {
+    "is_formed=false,recipe_logic_status=idle": {
+      "model": {
+        "parent": "gtceu:block/machine/template/cube_all/sided",
+        "textures": {
+          "all": "gtna:block/casings/bec/coherence_preserving_plasma_conduit",
+          "overlay_front": "gtna:block/multiblock/bec/bec_io_node/overlay_front"
+        }
+      }
+    },
+    "is_formed=false,recipe_logic_status=suspend": {
+      "model": {
+        "parent": "gtceu:block/machine/template/cube_all/sided",
+        "textures": {
+          "all": "gtna:block/casings/bec/coherence_preserving_plasma_conduit",
+          "overlay_front": "gtna:block/multiblock/bec/bec_io_node/overlay_front"
+        }
+      }
+    },
+    "is_formed=false,recipe_logic_status=waiting": {
+      "model": {
+        "parent": "gtceu:block/machine/template/cube_all/sided",
+        "textures": {
+          "all": "gtna:block/casings/bec/coherence_preserving_plasma_conduit",
+          "overlay_front": "gtna:block/multiblock/bec/bec_io_node/overlay_front_active",
+          "overlay_front_emissive": "gtna:block/multiblock/bec/bec_io_node/overlay_front_active_emissive"
+        }
+      }
+    },
+    "is_formed=false,recipe_logic_status=working": {
+      "model": {
+        "parent": "gtceu:block/machine/template/cube_all/sided",
+        "textures": {
+          "all": "gtna:block/casings/bec/coherence_preserving_plasma_conduit",
+          "overlay_front": "gtna:block/multiblock/bec/bec_io_node/overlay_front_active",
+          "overlay_front_emissive": "gtna:block/multiblock/bec/bec_io_node/overlay_front_active_emissive"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=idle": {
+      "model": {
+        "parent": "gtceu:block/machine/template/cube_all/sided",
+        "textures": {
+          "all": "gtna:block/casings/bec/coherence_preserving_plasma_conduit",
+          "overlay_front": "gtna:block/multiblock/bec/bec_io_node/overlay_front"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=suspend": {
+      "model": {
+        "parent": "gtceu:block/machine/template/cube_all/sided",
+        "textures": {
+          "all": "gtna:block/casings/bec/coherence_preserving_plasma_conduit",
+          "overlay_front": "gtna:block/multiblock/bec/bec_io_node/overlay_front"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=waiting": {
+      "model": {
+        "parent": "gtceu:block/machine/template/cube_all/sided",
+        "textures": {
+          "all": "gtna:block/casings/bec/coherence_preserving_plasma_conduit",
+          "overlay_front": "gtna:block/multiblock/bec/bec_io_node/overlay_front_active",
+          "overlay_front_emissive": "gtna:block/multiblock/bec/bec_io_node/overlay_front_active_emissive"
+        }
+      }
+    },
+    "is_formed=true,recipe_logic_status=working": {
+      "model": {
+        "parent": "gtceu:block/machine/template/cube_all/sided",
+        "textures": {
+          "all": "gtna:block/casings/bec/coherence_preserving_plasma_conduit",
+          "overlay_front": "gtna:block/multiblock/bec/bec_io_node/overlay_front_active",
+          "overlay_front_emissive": "gtna:block/multiblock/bec/bec_io_node/overlay_front_active_emissive"
+        }
+      }
+    }
+  }
+}

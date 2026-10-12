@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "gtna:block/casings/bec/fine_structure_constant_manipulator"
+  }
+}

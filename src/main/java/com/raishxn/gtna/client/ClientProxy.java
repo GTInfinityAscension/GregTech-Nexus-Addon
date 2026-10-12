@@ -44,6 +44,7 @@ public class ClientProxy extends CommonProxy {
         var ignoredHarmony = EyeOfHarmonyRenderer.TYPE;
         var ignoredWood = EyeOfWoodRenderer.TYPE;
         var ignoredBallHatch = BallHatchRenderer.TYPE;
+        var ignoredLineOfSight = com.raishxn.gtna.client.renderer.machine.LineOfSightBeamRenderer.TYPE;
         var ignoredForgeOfGods = com.raishxn.gtna.client.renderer.machine.ForgeOfGodsRenderer.TYPE;
         MinecraftForge.EVENT_BUS.addListener(
                 com.raishxn.gtna.client.renderer.machine.ForgeOfGodsRenderer::onRenderLevelStage);
