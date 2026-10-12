@@ -1364,6 +1364,94 @@ public final class GTNAMegaMachines {
                     GTCEu.id("block/multiblock/fusion_reactor"))
             .register();
 
+    /**
+     * GTO {@code assembler_module}: Space Elevator module (Assembler Module recipes, limited by the Power Module tier);
+     * works only while its elevator runs above ZPM.
+     */
+    public static final MultiblockMachineDefinition ASSEMBLER_MODULE = REGISTRATE
+            .multiblock("assembler_module",
+                    holder -> new com.raishxn.gtna.common.machine.multiblock.electric.space.SpaceElevatorModuleMachine(
+                            holder, true))
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTNARecipeType.ASSEMBLER_MODULE_RECIPES)
+            .recipeModifiers(
+                    com.raishxn.gtna.common.machine.multiblock.electric.space.SpaceElevatorModuleMachine::recipeModifier,
+                    GTRecipeModifiers.OC_NON_PERFECT)
+            .appearanceBlock(GTNABlocks.SPACE_ELEVATOR_MECHANICAL_CASING)
+            .pattern(definition -> GTOCompressedPatternReader.start("assembler_module")
+                    .where('~', controller(blocks(definition.get())))
+                    .where('b', blocks(GTNABlocks.SPACE_ELEVATOR_MECHANICAL_CASING.get())
+                            .or(autoAbilities(definition.getRecipeTypes())))
+                    .where('a', blocks(GTNABlocks.SPACE_ELEVATOR_MODULE_BASE.get()))
+                    .where('c', blocks(GTNABlocks.MODULE_CONNECTOR.get()))
+                    .build())
+            .workableCasingModel(GTNACORE.id("block/casings/space_elevator_mechanical_casing"),
+                    GTCEu.id("block/multiblock/gcym/large_assembler"))
+            .register();
+
+    /**
+     * GTO {@code resource_collection_module}: Space Elevator module (drones mine asteroid ores and collect gases);
+     * works only while its elevator runs above ZPM.
+     */
+    public static final MultiblockMachineDefinition RESOURCE_COLLECTION_MODULE = REGISTRATE
+            .multiblock("resource_collection_module",
+                    holder -> new com.raishxn.gtna.common.machine.multiblock.electric.space.SpaceElevatorModuleMachine(
+                            holder, false))
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTNARecipeType.MINER_MODULE_RECIPES)
+            .recipeType(GTNARecipeType.DRILLING_MODULE_RECIPES)
+            .recipeModifiers(
+                    com.raishxn.gtna.common.machine.multiblock.electric.space.SpaceElevatorModuleMachine::recipeModifier,
+                    GTRecipeModifiers.OC_NON_PERFECT)
+            .appearanceBlock(GTNABlocks.SPACE_ELEVATOR_MECHANICAL_CASING)
+            .pattern(definition -> GTOCompressedPatternReader.start("resource_collection_module")
+                    .where('~', controller(blocks(definition.get())))
+                    .where('b', blocks(GTNABlocks.SPACE_ELEVATOR_MECHANICAL_CASING.get())
+                            .or(autoAbilities(definition.getRecipeTypes())))
+                    .where('a', blocks(GTNABlocks.SPACE_ELEVATOR_MODULE_BASE.get()))
+                    .where('c', blocks(GTNABlocks.MODULE_CONNECTOR.get()))
+                    .build())
+            .workableCasingModel(GTNACORE.id("block/casings/space_elevator_mechanical_casing"),
+                    GTCEu.id("block/multiblock/gcym/large_assembler"))
+            .register();
+
+    /**
+     * GTO {@code space_elevator}: hosts up to twelve modules ({@link #ASSEMBLER_MODULE},
+     * {@link #RESOURCE_COLLECTION_MODULE}) in its module slots; needs 256 Nanotube Spools, EU above ZPM and
+     * computation. The Power Modules ('H', all the same MK) set the modules' parallel.
+     */
+    public static final MultiblockMachineDefinition SPACE_ELEVATOR = REGISTRATE
+            .multiblock("space_elevator",
+                    com.raishxn.gtna.common.machine.multiblock.electric.space.SpaceElevatorMachine::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTRecipeTypes.DUMMY_RECIPES)
+            .appearanceBlock(GTNABlocks.SPACE_ELEVATOR_MECHANICAL_CASING)
+            .pattern(definition -> GTOCompressedPatternReader.start("space_elevator")
+                    .where('~', controller(blocks(definition.get())))
+                    .where('A', blocks(GTNABlocks.HIGH_STRENGTH_CONCRETE.get()))
+                    .where('B', blocks(GTNABlocks.SPACE_ELEVATOR_INTERNAL_SUPPORT.get()))
+                    .where('C', blocks(GTNABlocks.SPACE_ELEVATOR_MECHANICAL_CASING.get()))
+                    .where('D', blocks(GTNABlocks.SPACE_ELEVATOR_SUPPORT.get()))
+                    .where('E', frames(GTMaterials.Neutronium))
+                    .where('F', blocks(GTNABlocks.SPACE_ELEVATOR_MODULE_BASE.get()))
+                    .where('G', blocks(GTNABlocks.HIGH_STRENGTH_CONCRETE.get())
+                            .or(blocks(GTNABlocks.MODULE_CONNECTOR.get()).setPreviewCount(1)))
+                    .where('H', com.raishxn.gtna.common.machine.multiblock.electric.space.SpaceElevatorMachine
+                            .powerModules())
+                    .where('I', com.gregtechceu.gtceu.api.pattern.Predicates.air())
+                    .where('J', blocks(GTNABlocks.SPACE_ELEVATOR_POWER_CORE.get()))
+                    .where('M', com.raishxn.gtna.common.machine.multiblock.electric.space.SpaceElevatorMachine
+                            .moduleSlot(() -> ASSEMBLER_MODULE, () -> RESOURCE_COLLECTION_MODULE))
+                    .where('X', blocks(GTNABlocks.SPACE_ELEVATOR_MECHANICAL_CASING.get())
+                            .or(abilities(PartAbility.IMPORT_ITEMS).setExactLimit(1))
+                            .or(abilities(PartAbility.INPUT_ENERGY).setExactLimit(1))
+                            .or(abilities(PartAbility.COMPUTATION_DATA_RECEPTION).setExactLimit(1)))
+                    .where(' ', any())
+                    .build())
+            .workableCasingModel(GTNACORE.id("block/casings/space_elevator_mechanical_casing"),
+                    GTCEu.id("block/multiblock/fusion_reactor"))
+            .register();
+
     /** GTO {@code hand_of_arachne}: Loom with Parallel Hatch and Thread Hatch; GTO Pikyonium casing ported. */
     public static final MultiblockMachineDefinition HAND_OF_ARACHNE = REGISTRATE
             .multiblock("hand_of_arachne", WorkableElectricMultipleRecipesMachine::new)

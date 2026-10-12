@@ -11,6 +11,11 @@
 - **Reaction Furnace** (new `gtna:reaction_furnace` type): coil furnace like the Electric Blast Furnace, with an upgrade module that unlocks the Parallel and Accelerate hatches.
 - **Dyson Sphere Launch Silo** and **Receiving Station** (new `gtna:dyson_sphere` type, Dyson Swarm Module item): the silo puts swarm modules in orbit of its planet, the station turns them into laser power, needing computation and liquid helium; the swarm takes damage over time.
 
+- **Space Elevator** with the **Assembler Module** and **Resource Collection Module** (new `gtna:assembler_module`, `gtna:miner_module` and `gtna:drilling_module` types; Nanotube Spool and Space Drones MK I–VI): above ZPM, with computation and 256 Nanotube Spools, the elevator powers up to twelve modules; the Power Module MK (I–V) sets their parallel `4^(MK - 1)` and which Assembler Module recipes they may run. The Resource Collection Module mines 20 asteroid ore mixes and collects 11 gases with drones and rocket fuel.
+
+### Nano Forge
+- **Tier 4**: the MagMatter extension (GTNH structure with its own casings) and MagMatter Nanites. With a nanite equal to the recipe's output in an input bus, the forge drains all molten MagMatter from its hatches for extra parallel and a shorter duration, as in GTNH.
+
 ### Other
 - **Tiered glass**: any of 13 glasses (Tempered, MV, through Cosmic Neutronium Borosilicate, MAX) in structures that read a glass tier; all glass of one structure must match. Six GTO borosilicate glasses added (Titanium, Tritanium, Enderium, Quarks, Draconium, Cosmic Neutronium).
 - New GTO casings: Shielded Accelerator, Bioactive Mechanical Casing, Advanced Fusion Coil, UHV Accelerator Electromagnetic Coil, Uruium Coil Block, Spacetime Assembly Line Casing, Quark Pipe, Space Elevator Internal Support and Support, Space Elevator Power Modules MK I–V, Dyson Deployment Magnet, Core and Casing.

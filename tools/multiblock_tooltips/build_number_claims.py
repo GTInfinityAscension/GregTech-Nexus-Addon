@@ -250,6 +250,7 @@ c("dimensionally_transcendent_plasma_forge", 1, D + "common/data/GTNAPlasmaForge
 c("transcendent_plasma_mixer", 10, EC + "TranscendentPlasmaMixerMachine.java", r"getLong\(EU_MULTIPLIER\) : 10", "default multiplier 10")
 for n in (1, 2, 3):
     c("nano_forge", n, D + "common/data/GTNANanoForge.java", r"CARBON_NANITES\.get\(\), NEUTRONIUM_NANITES\.get\(\), TRANSCENDENT_METAL_NANITES\.get\(\)", "nanite tiers 1-3")
+c("nano_forge", 4, D + "common/data/GTNANanoForge.java", r"MAGMATTER_NANITES\.get\(\) \}", "MagMatter nanites unlock tier 4")
 HC = EN + "NexusMEHyperCoreMachine.java"
 c("nexus_me_hypercore", 320, HC, r"TOTAL_MODULE_SLOTS = 320", "320 slots")
 for n, pat in ((4, r"MODULE_I_THREADS = 4L"), (16, r"MODULE_II_THREADS = 16L"), (128, r"MODULE_III_THREADS = 128L"), (1024, r"MODULE_IV_THREADS = 1024L")):
@@ -336,6 +337,10 @@ c("giant_sintering_array", 4, EC + "GiantSinteringArrayMachine.java", r"1 << \(2
 
 c("integrated_vapor_deposition_system", 4, EC + "GiantSinteringArrayMachine.java", r"1 << \(2 \* glassTier\)",
   "glass parallel = 4^glass tier (shared with GlassParallelMultipleRecipesMachine)")
+
+for mid in ("assembler_module", "resource_collection_module"):
+    c(mid, 4, EC + "space/SpaceElevatorModuleMachine.java", r"1 << \(2 \* exponent\)", "4^(power module tier - 1)")
+    c(mid, 1, EC + "space/SpaceElevatorModuleMachine.java", r"powerModuleTier - 1", "exponent = MK - 1")
 
 Path(__file__).with_name("number_claims.json").write_text(json.dumps(C, indent=1) + "\n")
 print(sum(len(v) for v in C.values()), "claims")

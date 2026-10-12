@@ -483,6 +483,15 @@ public final class GTNAGodforgeChainRecipes {
                 .inputFluids(GTNAMaterials.Space.getFluid(2 * 144)).inputFluids(ExcitedDTSC.getFluid(12_500))
                 .inputFluids(PrimordialMatter.getFluid(64_000))
                 .outputItems(com.raishxn.gtna.common.data.GTNANanoForge.ETERNITY_NANITES.asStack()).save(provider);
+        // GTNH MagMatter nanites (tier 4): Forcicium/Forcillium lenses -> the special laser lens, YPIC -> APIC
+        // stand-in, MAX circuit kept.
+        nano("magmatter", 4, GTValues.V[GTValues.MAX], 20_000).notConsumable(special)
+                .inputItems(com.raishxn.gtna.common.data.GTNANanoForge.UNIVERSIUM_NANITES.asStack(4))
+                .inputItems(TagPrefix.block, GTNAMaterials.MagMatter, 8).inputItems(apic, 64)
+                .inputItems(com.gregtechceu.gtceu.data.recipe.CustomTags.MAX_CIRCUITS)
+                .inputFluids(GTNAMaterials.QuarkGluonPlasma.getFluid(100_000))
+                .inputFluids(PhononMedium.getFluid(64_000)).inputFluids(PrimordialMatter.getFluid(128_000))
+                .outputItems(com.raishxn.gtna.common.data.GTNANanoForge.MAGMATTER_NANITES.asStack()).save(provider);
 
         // Stellar Alloy (Nano Forge frames): GTNA composition, GT5U has no alloy recipe to follow here.
         com.gregtechceu.gtceu.common.data.GCYMRecipeTypes.ALLOY_BLAST_RECIPES

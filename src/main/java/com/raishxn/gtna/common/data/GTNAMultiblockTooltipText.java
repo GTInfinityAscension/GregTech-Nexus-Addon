@@ -71,6 +71,16 @@ public final class GTNAMultiblockTooltipText {
                 "§a▸ §ePerfect overclock§a: duration /4 per tier",
                 "§b▸ Outputs through Laser or up to §e16§b Dynamo Hatches",
         });
+        ENGLISH.put("assembler_module", new String[] {
+                "Machine Type: §eSpace Assembly",
+                "§7§oPlug it into a Space Elevator and look up.",
+                "§b§m                                                        ",
+                "§7Assembles parts in orbit, where §6zero gravity§7",
+                "§7helps the tiniest tolerances.",
+                "§b§m                                                        ",
+                "§a▸ Parallel: §e4^(Power Module MK - 1)§a",
+                "§b▸ Works only while its Space Elevator runs",
+        });
         ENGLISH.put("blaze_blast_furnace", new String[] {
                 "Machine Type: §eElectric Blast Furnace",
                 "§7§oAn intern kept a blaze spawner in here. It worked.",
@@ -1164,6 +1174,7 @@ public final class GTNAMultiblockTooltipText {
                 "§a▸ §ePerfect overclock§a on lower-tier recipes",
                 "§a▸ The tier nanite is never consumed",
                 "§b▸ Carbon §eT1§b, Neutronium §eT2§b, Transcendent §eT3§b",
+                "§b▸ MagMatter §eT4§b: molten MagMatter adds parallels",
                 "§b▸ Keep the tier nanite in an §einput bus§b",
                 "§c▸ Each tier needs structural changes",
         });
@@ -1304,6 +1315,16 @@ public final class GTNAMultiblockTooltipText {
                 "§a▸ The module unlocks Parallel and Accelerate Hatches",
                 "§b▸ Coil temperature must reach the recipe's",
         });
+        ENGLISH.put("resource_collection_module", new String[] {
+                "Machine Type: §eSpace Miner, Space Drilling",
+                "§7§oAsteroid mining, minus the movie heroics.",
+                "§b§m                                                        ",
+                "§7Sends §6space drones§7 to mine asteroids",
+                "§7and collect gases.",
+                "§b§m                                                        ",
+                "§a▸ Parallel: §e4^(Power Module MK - 1)§a",
+                "§b▸ Works only while its Space Elevator runs",
+        });
         ENGLISH.put("rocket_large_turbine", new String[] {
                 "Machine Type: §eRocket Engine",
                 "§7§oNot rocket science. Okay, it is rocket science.",
@@ -1315,6 +1336,18 @@ public final class GTNAMultiblockTooltipText {
                 "§a▸ Engine module: §e2x§a output, §e+20%§a efficiency",
                 "§b▸ Base output: §e5,120§b EU/t",
                 "§c▸ High-Speed Mode: §e3x§c output, §e10x§c rotor wear",
+        });
+        ENGLISH.put("space_elevator", new String[] {
+                "Machine Type: §eSpace Elevator",
+                "§7§oA very long elevator. Mind the doors on the way up.",
+                "§b§m                                                        ",
+                "§7A cable to orbit that powers the §6modules§7",
+                "§7standing in its twelve module slots.",
+                "§b§m                                                        ",
+                "§a▸ Power Module MK sets the modules' parallel",
+                "§b▸ Runs only above ZPM, with computation",
+                "§b▸ Needs Nanotube Spools fed through its input bus",
+                "§c▸ All Power Modules must be the same MK",
         });
         ENGLISH.put("space_probe_surface_reception", new String[] {
                 "Machine Type: §eSpace Probe Receiver",

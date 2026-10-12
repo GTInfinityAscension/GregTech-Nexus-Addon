@@ -27,7 +27,7 @@ import static com.raishxn.gtna.api.registry.GTNARegistry.REGISTRATE;
 
 /**
  * GTNH Nano Forge (G-0196): pieces converted from {@code MTENanoForge} by {@code tools/convert_nano_forge_structure.py}
- * (main, tier 2 and tier 3; tier 4 is not ported) and GTNH nanites. Nanite textures are GT5U / Modernity-GTNH
+ * (main and tiers 2-4) and GTNH nanites. Nanite textures are GT5U / Modernity-GTNH
  * originals: the generic one is tinted with the material colour, the custom ones are drawn as is.
  */
 public final class GTNANanoForge {
@@ -47,6 +47,8 @@ public final class GTNANanoForge {
             "Black Dwarf Matter", 0x0c0c0c);
     public static final ItemEntry<ComponentItem> UNIVERSIUM_NANITES = custom("universium", "Universium", false);
     public static final ItemEntry<ComponentItem> ETERNITY_NANITES = custom("eternity", "Eternity", false);
+    /** GTNH MagMatter Nanites: unlock tier 4. */
+    public static final ItemEntry<ComponentItem> MAGMATTER_NANITES = nanite("magmatter", "MagMatter", 0xaa00ff);
 
     public static final MultiblockMachineDefinition NANO_FORGE = REGISTRATE
             .multiblock("nano_forge", NanoForgeMachine::new)
@@ -74,9 +76,20 @@ public final class GTNANanoForge {
 
     private GTNANanoForge() {}
 
-    /** Nanites that unlock tiers 1, 2 and 3. */
+    /** Nanites that unlock tiers 1, 2, 3 and 4. */
     public static Item[] tierNanites() {
-        return new Item[] { CARBON_NANITES.get(), NEUTRONIUM_NANITES.get(), TRANSCENDENT_METAL_NANITES.get() };
+        return new Item[] { CARBON_NANITES.get(), NEUTRONIUM_NANITES.get(), TRANSCENDENT_METAL_NANITES.get(),
+                MAGMATTER_NANITES.get() };
+    }
+
+    /** Every nanite GTNA registers (the GTNH {@code nanite} prefix). */
+    public static boolean isNanite(Item item) {
+        for (var nanite : java.util.List.of(CARBON_NANITES, NEUTRONIUM_NANITES, TRANSCENDENT_METAL_NANITES,
+                SILVER_NANITES, GOLD_NANITES, GLOWSTONE_NANITES, SIX_PHASED_COPPER_NANITES, WHITE_DWARF_MATTER_NANITES,
+                BLACK_DWARF_MATTER_NANITES, UNIVERSIUM_NANITES, ETERNITY_NANITES, MAGMATTER_NANITES)) {
+            if (nanite.get() == item) return true;
+        }
+        return false;
     }
 
     private static ItemEntry<ComponentItem> nanite(String id, String lang, int color) {
@@ -115,5 +128,25 @@ public final class GTNANanoForge {
                 .where('~', controller(blocks(def.getBlock())))
                 .where(' ', any())
                 .build(), Component.translatable("gtna.machine.nano_forge.module", 3));
+        GTNASubPatterns.register(id, def -> GTNAMultiBlockFileReader.start(def, "nano_forge_tier4")
+                .where('C', blocks(GTNABlocks.RADIANT_NAQUADAH_ALLOY_CASING.get()))
+                .where('J', blocks(GTNABlocks.PRECISION_FIELD_SYNC_CASING.get()))
+                .where('K', blocks(GTNABlocks.FIELD_ENERGY_ABSORBER_CASING.get()))
+                .where('P', blocks(GTNABlocks.LOADBEARING_DISTRIBUTION_CASING.get()))
+                .where('Q', blocks(GTNABlocks.NANITE_FRAMEWORK.get()))
+                .where('R', blocks(GTNABlocks.NANITE_SHIELDING_GLASS.get()))
+                .where('X', blocks(GTNABlocks.ADVANCED_IRIDIUM_CASING.get()))
+                .where('V', blocks(GTNABlocks.MAGNETIC_ANCHOR_CASING.get())
+                        .or(abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1))
+                        .or(abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
+                        .or(abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
+                        .or(abilities(PartAbility.INPUT_ENERGY).setPreviewCount(1))
+                        .or(abilities(PartAbility.INPUT_LASER).setPreviewCount(0)))
+                .where('M', frames(GTNAMaterials.MagMatter))
+                .where('N', frames(GTNAMaterials.BlackDwarfMatter))
+                .where('O', frames(GTNAMaterials.WhiteDwarfMatter))
+                .where('~', controller(blocks(def.getBlock())))
+                .where(' ', any())
+                .build(), Component.translatable("gtna.machine.nano_forge.module", 4));
     }
 }

@@ -1410,6 +1410,16 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.loom", "Loom");
         add("gtna.sintering_furnace", "Sintering Furnace");
         add("gtna.dyson_sphere", "Dyson Sphere");
+        add("gtna.assembler_module", "Space Assembly");
+        add("gtna.miner_module", "Space Miner");
+        add("gtna.drilling_module", "Space Drilling");
+        add("gtna.recipe.power_module_tier", "Power Module: MK %s");
+        add("gtna.multiblock.pattern.error.power_module", "All Power Modules must be the same MK");
+        add("gtna.machine.space_elevator.spools", "Nanotube Spools: %s / %s");
+        add("gtna.machine.space_elevator.power_module", "Power Module: MK %s");
+        add("gtna.machine.space_elevator.modules", "Modules connected: %s");
+        add("gtna.machine.space_elevator_module.connected", "Connected to a running Space Elevator");
+        add("gtna.machine.space_elevator_module.not_connected", "Not connected to a running Space Elevator");
         add("gtna.machine.dyson_sphere.amount", "Swarm modules in orbit: %s");
         add("gtna.machine.dyson_sphere.damage", "Swarm damage: %s%%");
         add("gtna.reaction_furnace", "Reaction Furnace");

@@ -556,6 +556,22 @@ public class GTNABlocks {
             "tungsten_borosilicate_glass", GTNACORE.id("block/casings/tungsten_borosilicate_glass"),
             () -> RenderType::cutoutMipped);
     // GTO tiered borosilicate glasses (GTOBlocks.createTierGlassCasings); the tiers live in GTNAGlassTiers.
+    // GTNH Nano Forge tier 4 (BlockCasings13 metas 5-9, Advanced Iridium, Nanite Shielding Glass); Modernity-GTNH art.
+    public static final BlockEntry<Block> PRECISION_FIELD_SYNC_CASING = createCasingBlock(
+            "precision_field_sync_casing", GTNACORE.id("block/casings/nano_forge/precision_field_sync_casing"));
+    public static final BlockEntry<Block> MAGNETIC_ANCHOR_CASING = createCasingBlock("magnetic_anchor_casing",
+            GTNACORE.id("block/casings/nano_forge/magnetic_anchor_casing"));
+    public static final BlockEntry<Block> FIELD_ENERGY_ABSORBER_CASING = createCasingBlock(
+            "field_energy_absorber_casing", GTNACORE.id("block/casings/nano_forge/field_energy_absorber_casing"));
+    public static final BlockEntry<Block> LOADBEARING_DISTRIBUTION_CASING = createCasingBlock(
+            "loadbearing_distribution_casing", GTNACORE.id("block/casings/nano_forge/loadbearing_distribution_casing"));
+    public static final BlockEntry<Block> NANITE_FRAMEWORK = createCasingBlock("nanite_framework",
+            GTNACORE.id("block/casings/nano_forge/nanite_framework"));
+    public static final BlockEntry<Block> ADVANCED_IRIDIUM_CASING = createCasingBlock("advanced_iridium_casing",
+            GTNACORE.id("block/casings/nano_forge/advanced_iridium_casing"));
+    public static final BlockEntry<Block> NANITE_SHIELDING_GLASS = createGlassCasingBlock("nanite_shielding_glass",
+            GTNACORE.id("block/casings/nano_forge/nanite_shielding_glass"), () -> RenderType::cutoutMipped);
+
     // GTO blocks of the Dyson Sphere and the Space Elevator.
     public static final BlockEntry<Block> SPACE_ELEVATOR_INTERNAL_SUPPORT = createPlainSidedCasingBlock(
             "space_elevator_internal_support");
@@ -567,6 +583,12 @@ public class GTNABlocks {
             GTNACORE.id("block/casings/dyson_deployment_casing"));
     public static final BlockEntry<com.gregtechceu.gtceu.api.block.ActiveBlock> SPACE_ELEVATOR_SUPPORT = createActiveCasing(
             "space_elevator_support", "block/variant/space_elevator_support");
+    public static final BlockEntry<Block> SPACE_ELEVATOR_MODULE_BASE = createPlainSidedCasingBlock(
+            "space_elevator_module_base");
+    public static final BlockEntry<Block> MODULE_CONNECTOR = createCasingBlock("module_connector",
+            GTNACORE.id("block/module_connector"));
+    public static final BlockEntry<com.gregtechceu.gtceu.api.block.ActiveBlock> SPACE_ELEVATOR_POWER_CORE = createActiveCasing(
+            "space_elevator_power_core", "block/variant/space_elevator_power_core");
     /** GTO Space Elevator Power Modules MK I-V; their tier is {@link #spaceElevatorPowerModuleTier}. */
     public static final java.util.List<BlockEntry<com.gregtechceu.gtceu.api.block.ActiveBlock>> SPACE_ELEVATOR_POWER_MODULES = java.util.stream.IntStream
             .rangeClosed(1, 5)

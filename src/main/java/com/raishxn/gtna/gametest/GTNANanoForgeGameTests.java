@@ -20,12 +20,13 @@ public final class GTNANanoForgeGameTests {
 
     private GTNANanoForgeGameTests() {}
 
-    /** Every GTNH nanite recipe of tiers 1-3 and the controller are registered. */
+    /** Every GTNH nanite recipe of tiers 1-4 and the controller are registered. */
     @GameTest(template = "empty_12", timeoutTicks = 40)
     public static void naniteRecipesAreRegistered(GameTestHelper helper) {
         var wanted = new java.util.HashSet<>(java.util.List.of("nano_carbon", "nano_silver", "nano_neutronium",
                 "nano_glowstone", "nano_gold", "nano_transcendent_metal", "nano_six_phased_copper",
                 "nano_white_dwarf_matter", "nano_black_dwarf_matter", "nano_universium", "nano_eternity",
+                "nano_magmatter",
                 "nano_forge", "carbon_nanites", "stellar_alloy", "tesseract", "transcendent_metal_dust",
                 "transcendent_metal", "stable_boson_containment_unit", "superconductor_composite",
                 "electromagnet_tengam",
@@ -40,6 +41,16 @@ public final class GTNANanoForgeGameTests {
                 wanted.removeIf(id -> gt.id.getPath().endsWith("godforge_chain/" + id));
         }
         helper.assertTrue(wanted.isEmpty(), "missing Nano Forge recipes: " + wanted);
+        helper.succeed();
+    }
+
+    /** The tier 2, 3 and 4 extensions all build (the tier-4 piece is 41x52x41 with MagMatter frames). */
+    @GameTest(template = "empty_12", timeoutTicks = 40)
+    public static void nanoForgeHasThreeTierExtensions(GameTestHelper helper) {
+        var patterns = com.raishxn.gtna.api.machine.multiblock.GTNASubPatterns.get(GTNANanoForge.NANO_FORGE);
+        helper.assertTrue(patterns.size() >= 3, "tier 2, 3 and 4 extensions, got " + patterns.size());
+        helper.assertTrue(GTNANanoForge.tierNanites().length == 4, "four tier nanites");
+        helper.assertTrue(GTNANanoForge.isNanite(GTNANanoForge.MAGMATTER_NANITES.get()), "MagMatter is a nanite");
         helper.succeed();
     }
 

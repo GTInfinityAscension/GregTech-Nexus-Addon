@@ -1,6 +1,7 @@
 {
   "values": [
     "gtna:space_elevator_support",
+    "gtna:space_elevator_power_core",
     "gtna:space_elevator_power_module_1",
     "gtna:space_elevator_power_module_2",
     "gtna:space_elevator_power_module_3",

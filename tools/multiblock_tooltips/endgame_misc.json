@@ -324,6 +324,7 @@
     ],
     "num": [
       "Carbon *T1*, Neutronium *T2*, Transcendent *T3*",
+      "MagMatter *T4*: molten MagMatter adds parallels",
       "Keep the tier nanite in an *input bus*"
     ],
     "con": [
@@ -342,6 +343,7 @@
       ],
       "num": [
         "Carbono *T1*, Neutrônio *T2*, Transcendente *T3*",
+        "MagMatter *T4*: MagMatter fundido dá paralelos",
         "Mantenha a nanita do tier em um *barramento de entrada*"
       ],
       "con": [

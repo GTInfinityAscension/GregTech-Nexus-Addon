@@ -1,0 +1,16 @@
+{
+    "animation": {
+        "interpolate": true,
+        "frametime": 10,
+        "frames": [
+            {
+                "index": 0,
+                "time": 50
+            },
+            1
+        ]
+    },
+    "ldlib": {
+        "connection": "gtna:block/casings/nano_forge/nanite_framework_ctm"
+    }
+}

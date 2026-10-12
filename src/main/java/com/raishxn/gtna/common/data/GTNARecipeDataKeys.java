@@ -19,5 +19,8 @@ public final class GTNARecipeDataKeys {
      */
     public static final String FILTER_CASING = "filter_casing";
 
+    /** GTOCore Space Elevator Power Module tier (1-5) an Assembler Module recipe needs. */
+    public static final String POWER_MODULE_TIER = "power_module_tier";
+
     private GTNARecipeDataKeys() {}
 }

@@ -2436,5 +2436,101 @@
         "Cada ciclo pode danificar o enxame"
       ]
     }
+  },
+  "space_elevator": {
+    "type": "Space Elevator",
+    "flavor": "A very long elevator. Mind the doors on the way up.",
+    "desc": [
+      "A cable to orbit that powers the *modules*",
+      "standing in its twelve module slots."
+    ],
+    "pro": [
+      "Power Module MK sets the modules' parallel"
+    ],
+    "num": [
+      "Runs only above ZPM, with computation",
+      "Needs Nanotube Spools fed through its input bus"
+    ],
+    "con": [
+      "All Power Modules must be the same MK"
+    ],
+    "pt": {
+      "type": "Elevador Espacial",
+      "flavor": "Um elevador bem comprido. Cuidado com as portas na subida.",
+      "desc": [
+        "Um cabo até a órbita que alimenta os *módulos*",
+        "nos seus doze slots de módulo."
+      ],
+      "pro": [
+        "O MK do Power Module define os paralelos dos módulos"
+      ],
+      "num": [
+        "Só funciona acima de ZPM, com computação",
+        "Precisa de Nanotube Spools pelo input bus"
+      ],
+      "con": [
+        "Todos os Power Modules precisam ser do mesmo MK"
+      ]
+    }
+  },
+  "assembler_module": {
+    "type": "Space Assembly",
+    "flavor": "Plug it into a Space Elevator and look up.",
+    "desc": [
+      "Assembles parts in orbit, where *zero gravity*",
+      "helps the tiniest tolerances."
+    ],
+    "pro": [
+      "Parallel: *4^(Power Module MK - 1)*"
+    ],
+    "num": [
+      "Works only while its Space Elevator runs"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Montagem Espacial",
+      "flavor": "Conecte num Elevador Espacial e olhe para cima.",
+      "desc": [
+        "Monta peças em órbita, onde a *gravidade zero*",
+        "ajuda as menores tolerâncias."
+      ],
+      "pro": [
+        "Paralelos: *4^(MK do Power Module - 1)*"
+      ],
+      "num": [
+        "Só funciona com o Elevador Espacial rodando"
+      ],
+      "con": []
+    }
+  },
+  "resource_collection_module": {
+    "type": "Space Miner, Space Drilling",
+    "flavor": "Asteroid mining, minus the movie heroics.",
+    "desc": [
+      "Sends *space drones* to mine asteroids",
+      "and collect gases."
+    ],
+    "pro": [
+      "Parallel: *4^(Power Module MK - 1)*"
+    ],
+    "num": [
+      "Works only while its Space Elevator runs"
+    ],
+    "con": [],
+    "pt": {
+      "type": "Mineração Espacial, Perfuração Espacial",
+      "flavor": "Mineração de asteroides, sem o heroísmo de filme.",
+      "desc": [
+        "Envia *drones espaciais* para minerar asteroides",
+        "e coletar gases."
+      ],
+      "pro": [
+        "Paralelos: *4^(MK do Power Module - 1)*"
+      ],
+      "num": [
+        "Só funciona com o Elevador Espacial rodando"
+      ],
+      "con": []
+    }
   }
 }

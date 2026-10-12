@@ -101,6 +101,10 @@ public class GTNAItems {
     public static ItemEntry<ComponentItem> FLUID_SEPARATION_FILTER;
     /** GTO {@code dyson_swarm_module}: what the Dyson Sphere Launch Silo puts in orbit. */
     public static ItemEntry<ComponentItem> DYSON_SWARM_MODULE;
+    /** GTO {@code nanotube_spool}: the Space Elevator needs 256. */
+    public static ItemEntry<ComponentItem> NANOTUBE_SPOOL;
+    /** GTO Space Drones MK I-VI, the tools of the Space Elevator's Resource Collection Module. */
+    public static final java.util.List<ItemEntry<ComponentItem>> SPACE_DRONES = new java.util.ArrayList<>();
     public static final java.util.Map<String, ItemEntry<ComponentItem>> FLUID_REMOTE_UPGRADES = new java.util.LinkedHashMap<>();
     public static ItemEntry<ComponentItem> ESSENCE;
     public static ItemEntry<ComponentItem> ESSENCE_SEED;
@@ -133,6 +137,17 @@ public class GTNAItems {
                 .onRegister(attach(new com.raishxn.gtna.common.item.DepositDataBehavior()))
                 .model((ctx, provider) -> provider.generated(ctx, GTNACORE.id("item/" + ctx.getName())))
                 .register();
+        NANOTUBE_SPOOL = REGISTRATE.item("nanotube_spool", ComponentItem::create)
+                .lang("Nanotube Spool")
+                .model((ctx, provider) -> provider.generated(ctx, GTNACORE.id("item/" + ctx.getName())))
+                .register();
+        String[] roman = { "I", "II", "III", "IV", "V", "VI" };
+        for (int mk = 1; mk <= 6; mk++) {
+            SPACE_DRONES.add(REGISTRATE.item("space_drone_mk" + mk, ComponentItem::create)
+                    .lang("Space Drone MK " + roman[mk - 1])
+                    .model((ctx, provider) -> provider.generated(ctx, GTNACORE.id("item/" + ctx.getName())))
+                    .register());
+        }
         DYSON_SWARM_MODULE = REGISTRATE.item("dyson_swarm_module", ComponentItem::create)
                 .lang("Dyson Swarm Module")
                 .model((ctx, provider) -> provider.generated(ctx, GTNACORE.id("item/" + ctx.getName())))

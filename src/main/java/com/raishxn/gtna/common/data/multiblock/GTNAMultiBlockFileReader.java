@@ -81,6 +81,9 @@ public final class GTNAMultiBlockFileReader {
             case 15 -> 'P';
             case 16 -> 'S';
             case 18 -> 'Q';
+            case 20 -> 'R';
+            case 21 -> 'V';
+            case 22 -> 'X';
             case 19 -> ' ';
             case 61 -> '~';
             case 99 -> ' ';

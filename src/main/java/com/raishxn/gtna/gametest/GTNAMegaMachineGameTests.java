@@ -196,6 +196,36 @@ public final class GTNAMegaMachineGameTests {
         helper.succeed();
     }
 
+    @GameTest(template = "empty_12", timeoutTicks = 200)
+    public static void assemblerModuleForms(GameTestHelper helper) {
+        assertForms(helper, GTNAMegaMachines.ASSEMBLER_MODULE);
+    }
+
+    @GameTest(template = "empty_12", timeoutTicks = 200)
+    public static void resourceCollectionModuleForms(GameTestHelper helper) {
+        assertForms(helper, GTNAMegaMachines.RESOURCE_COLLECTION_MODULE);
+    }
+
+    /**
+     * The preview has MK I Power Modules and empty module slots; without spools the elevator is not operational, and
+     * a module's parallel is 4^(MK - 1).
+     */
+    @GameTest(template = "empty_80", timeoutTicks = 1200)
+    public static void spaceElevatorFormsWithPowerModuleTier(GameTestHelper helper) {
+        IMultiController controller = buildPreview(helper, GTNAMegaMachines.SPACE_ELEVATOR);
+        helper.assertTrue(controller != null && controller.checkPatternWithLock(),
+                "the Space Elevator must form from its preview: " +
+                        (controller == null ? "no controller" : controller.getMultiblockState().error));
+        controller.onStructureFormed();
+        var elevator = (com.raishxn.gtna.common.machine.multiblock.electric.space.SpaceElevatorMachine) controller;
+        helper.assertTrue(elevator.getPowerModuleTier() == 1, "preview Power Modules are MK I");
+        helper.assertTrue(!elevator.isOperational(), "no spools, no power: not operational");
+        var module = com.raishxn.gtna.common.machine.multiblock.electric.space.SpaceElevatorModuleMachine.class;
+        helper.assertTrue(com.raishxn.gtna.common.machine.multiblock.electric.space.SpaceElevatorModuleMachine
+                .moduleParallel(3) == 16, module.getSimpleName() + ": MK III gives 16 parallels");
+        helper.succeed();
+    }
+
     @GameTest(template = "empty_80", timeoutTicks = 1200)
     public static void nyarlathotepsTentacleForms(GameTestHelper helper) {
         assertForms(helper, GTNAMegaMachines.NYARLATHOTEPS_TENTACLE);

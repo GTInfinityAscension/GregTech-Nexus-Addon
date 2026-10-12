@@ -1984,6 +1984,13 @@
     "pattern": "CARBON_NANITES\\.get\\(\\), NEUTRONIUM_NANITES\\.get\\(\\), TRANSCENDENT_METAL_NANITES\\.get\\(\\)",
     "expr": "nanite tiers 1-3"
    }
+  ],
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/data/GTNANanoForge.java",
+    "pattern": "MAGMATTER_NANITES\\.get\\(\\) \\}",
+    "expr": "MagMatter nanites unlock tier 4"
+   }
   ]
  },
  "nexus_me_hypercore": {
@@ -2504,6 +2511,38 @@
     "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/GiantSinteringArrayMachine.java",
     "pattern": "1 << \\(2 \\* glassTier\\)",
     "expr": "glass parallel = 4^glass tier (shared with GlassParallelMultipleRecipesMachine)"
+   }
+  ]
+ },
+ "assembler_module": {
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/space/SpaceElevatorModuleMachine.java",
+    "pattern": "1 << \\(2 \\* exponent\\)",
+    "expr": "4^(power module tier - 1)"
+   }
+  ],
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/space/SpaceElevatorModuleMachine.java",
+    "pattern": "powerModuleTier - 1",
+    "expr": "exponent = MK - 1"
+   }
+  ]
+ },
+ "resource_collection_module": {
+  "4": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/space/SpaceElevatorModuleMachine.java",
+    "pattern": "1 << \\(2 \\* exponent\\)",
+    "expr": "4^(power module tier - 1)"
+   }
+  ],
+  "1": [
+   {
+    "file": "src/main/java/com/raishxn/gtna/common/machine/multiblock/electric/space/SpaceElevatorModuleMachine.java",
+    "pattern": "powerModuleTier - 1",
+    "expr": "exponent = MK - 1"
    }
   ]
  }

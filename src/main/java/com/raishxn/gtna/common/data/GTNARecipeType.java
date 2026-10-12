@@ -415,6 +415,26 @@ public class GTNARecipeType {
                     com.gregtechceu.gtceu.utils.FormattingUtil.formatTemperature(data.getInt("ebf_temp"))))
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ARC);
 
+    /** GTO {@code assembler_module} (Space Elevator): needs the Power Module tier in {@code power_module_tier}. */
+    public static final GTRecipeType ASSEMBLER_MODULE_RECIPES = register("assembler_module",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(16, 1, 4, 0).setEUIO(IO.IN)
+            .addDataInfo(data -> com.lowdragmc.lowdraglib.utils.LocalizationUtils.format(
+                    "gtna.recipe.power_module_tier", data.getInt("power_module_tier")))
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ASSEMBLER);
+
+    /** GTO {@code miner_module} (Space Elevator): drones mine asteroid ores. */
+    public static final GTRecipeType MINER_MODULE_RECIPES = register("miner_module",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(2, 6, 1, 0).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.MINER);
+
+    /** GTO {@code drilling_module} (Space Elevator): drones collect gases. */
+    public static final GTRecipeType DRILLING_MODULE_RECIPES = register("drilling_module",
+            com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
+            .setMaxIOSize(2, 0, 1, 1).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.MINER);
+
     /** GTO {@code dyson_sphere} (Dyson Sphere Launch Silo): launches swarm modules. */
     public static final GTRecipeType DYSON_SPHERE_RECIPES = register("dyson_sphere",
             com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)

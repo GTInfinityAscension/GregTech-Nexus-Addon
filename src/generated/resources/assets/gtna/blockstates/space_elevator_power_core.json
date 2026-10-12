@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "gtna:block/variant/space_elevator_power_core"
+    },
+    "active=true": {
+      "model": "gtna:block/variant/space_elevator_power_core_active"
+    }
+  }
+}

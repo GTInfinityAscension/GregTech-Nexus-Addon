@@ -57,7 +57,7 @@ public final class GodforgeMaterials {
         MagMatter = new Material.Builder(GTNACORE.id("magmatter")).langValue("Magmatter").ingot()
                 .liquid(new com.gregtechceu.gtceu.api.fluids.FluidBuilder().temperature(0).customStill())
                 .color(0xffffff).iconSet(GodforgeIconSets.MAGMATTER)
-                .flags(DISABLE_DECOMPOSITION, DISABLE_MATERIAL_RECIPES)
+                .flags(DISABLE_DECOMPOSITION, DISABLE_MATERIAL_RECIPES, GENERATE_FRAME)
                 .buildAndRegister().setFormula("M⎋");
         QuarkGluonPlasma = new Material.Builder(GTNACORE.id("quark_gluon_plasma"))
                 .langValue("Degenerate Quark Gluon Plasma")
