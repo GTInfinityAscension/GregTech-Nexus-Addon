@@ -323,7 +323,7 @@ html_content = f"""<!DOCTYPE html>
         </div>
         <h1>Awakened Draconium — 3 Opções de Animação</h1>
         <p class="subtitle">
-          Texturas novas fluidas de 30 frames combinadas com o <strong>Original Halo Shader</strong> (<code style="color:#fdba74">renderblender:halo</code>).
+          Texturas novas fluidas de 30 frames combinadas com o <strong>Original Halo Shader</strong> (<code style="color:#fdba74">gtna:halo</code>).
         </p>
       </div>
 

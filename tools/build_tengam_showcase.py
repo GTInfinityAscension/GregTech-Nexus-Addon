@@ -346,7 +346,7 @@ html_content = f"""<!DOCTYPE html>
         </div>
         <h1>Tengam — 3 Opções de Animação</h1>
         <p class="subtitle">
-          Texturas novas fluidas de 30 frames combinadas com o <strong>Magnetic Glow Edge Shader</strong> (<code style="color:#d9f99d">renderblender:glow_edge</code>).
+          Texturas novas fluidas de 30 frames combinadas com o <strong>Magnetic Glow Edge Shader</strong> (<code style="color:#d9f99d">gtna:glow_edge</code>).
         </p>
       </div>
 

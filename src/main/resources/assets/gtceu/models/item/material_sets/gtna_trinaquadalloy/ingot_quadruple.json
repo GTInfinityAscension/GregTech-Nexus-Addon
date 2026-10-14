@@ -4,9 +4,9 @@
     "layer0": "gtceu:item/material_sets/gtna_trinaquadalloy/ingot_quadruple",
     "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_stellite/ingot_double_overlay",
-    "halo": "renderblender:misc/halo_noise"
+    "halo": "gtna:item/effect/halo_noise"
   },
-  "loader": "renderblender:halo",
+  "loader": "gtna:halo",
   "halo": {
     "texture": "#halo",
     "color": -7191588,

@@ -254,10 +254,6 @@ dependencies {
     if (project.hasProperty('gtiaDevJar')) {
         runtimeOnly files(project.property('gtiaDevJar'))
     }
-    // RenderBlender (halo/cosmic/eternal/unstable/glow_edge item model loaders); not on Maven, local jar.
-    if (file('libs/renderblender-1.1.1.jar').exists()) {
-        modRuntimeOnly('local:renderblender:1.1.1')
-    }
     def isDataRun =gradle.startParameter.taskNames.any { it.toLowerCase(java.util.Locale.ROOT).contains("rundata") }
 
     compileOnly("org.jetbrains:annotations:26.0.1")

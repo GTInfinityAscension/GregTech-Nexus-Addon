@@ -1,4 +1,4 @@
-"""Applies RenderBlender item-model loaders to GTNA material sets (schema of renderblender 1.1.1)."""
+"""Applies GTNA item-effect model loaders (gtna:halo, gtna:glow_edge, gtna:cosmic, ...) to GTNA material sets."""
 import json
 from pathlib import Path
 
@@ -35,16 +35,16 @@ for d in sorted(ROOT.glob("gtna_*")):
             m.pop(k, None)
         m.get("textures", {}).pop("halo", None)
         if name in GLOW:
-            m["loader"] = "renderblender:glow_edge"
+            m["loader"] = "gtna:glow_edge"
             m["glow_edge"] = {"color": GLOW[name], "width": 1.5}
         elif name in HALO:
             tex, rgb = HALO[name]
-            m["textures"]["halo"] = f"renderblender:misc/{tex}"
-            m["loader"] = "renderblender:halo"
+            m["textures"]["halo"] = f"gtna:item/effect/{tex}"
+            m["loader"] = "gtna:halo"
             m["halo"] = {"texture": "#halo", "color": signed(0xFF000000 | rgb), "size": 4, "pulse": True}
         elif name in MASKED:
             kind = MASKED[name]
             mask = "gtna:mask/cosmic_wire_fine" if p.stem == "wire_fine" else "gtna:mask/cosmic"
-            m["loader"] = f"renderblender:{kind}"
+            m["loader"] = f"gtna:{kind}"
             m[kind] = {"mask": mask}
         p.write_text(json.dumps(m, indent=2) + "\n")

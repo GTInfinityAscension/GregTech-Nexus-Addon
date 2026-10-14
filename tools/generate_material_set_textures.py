@@ -2314,41 +2314,41 @@ def animate(base_im, material_type="white_dwarf", bd_style="obsidian", n_frames=
 
 def apply_item_shader(model_json, material_type, item_name=""):
     if material_type in ("awakened_draconium", "ichorium"):
-        model_json["loader"] = "renderblender:halo"
-        model_json["textures"]["halo"] = "renderblender:misc/halo"
+        model_json["loader"] = "gtna:halo"
+        model_json["textures"]["halo"] = "gtna:item/effect/halo"
         model_json["halo"] = {"texture": "#halo", "color": -1, "size": 4, "pulse": False}
     elif material_type == "draconium":
-        model_json["loader"] = "renderblender:glow_edge"
+        model_json["loader"] = "gtna:glow_edge"
         model_json["glow_edge"] = {
             "color": 11546879,
             "width": 1.5
         }
     elif material_type in ("tengam_purified", "tengam_attuned"):
-        model_json["loader"] = "renderblender:glow_edge"
+        model_json["loader"] = "gtna:glow_edge"
         model_json["glow_edge"] = {
             "color": 14024576 if material_type == "tengam_attuned" else 12513904,
             "width": 1.5
         }
     elif material_type == "fallking":
-        model_json["loader"] = "renderblender:glow_edge"
+        model_json["loader"] = "gtna:glow_edge"
         model_json["glow_edge"] = {
             "color": 16764779,
             "width": 1.5
         }
     elif material_type == "odyssey":
-        model_json["loader"] = "renderblender:glow_edge"
+        model_json["loader"] = "gtna:glow_edge"
         model_json["glow_edge"] = {
             "color": 2999487,
             "width": 1.5
         }
     elif material_type == "shijima":
-        model_json["loader"] = "renderblender:glow_edge"
+        model_json["loader"] = "gtna:glow_edge"
         model_json["glow_edge"] = {
             "color": 12900082,
             "width": 1.5
         }
     elif material_type == "churitsu":
-        model_json["loader"] = "renderblender:glow_edge"
+        model_json["loader"] = "gtna:glow_edge"
         model_json["glow_edge"] = {
             "color": 15066597,
             "width": 1.5
@@ -2360,8 +2360,8 @@ def apply_item_shader(model_json, material_type, item_name=""):
         "trinaquadalloy", "mar_m_200_steel", "hastelloy_n_75",
         "stellite", "indalloy_140", "end_steel", "dark_steel"
     ):
-        model_json["loader"] = "renderblender:halo"
-        model_json["textures"]["halo"] = "renderblender:misc/halo_noise"
+        model_json["loader"] = "gtna:halo"
+        model_json["textures"]["halo"] = "gtna:item/effect/halo_noise"
         model_json["halo"] = {"texture": "#halo", "color": -1, "size": 4, "pulse": False}
 
 

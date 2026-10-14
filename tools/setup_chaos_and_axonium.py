@@ -142,7 +142,7 @@ def process_item(item, filename, tmpl):
                 "layer1": f"gtceu:item/material_sets/gtna_chaos_matter/{alias}_secondary",
                 "layer2": f"gtceu:item/material_sets/gtna_chaos_matter/{alias}_overlay"
             },
-            "loader": "renderblender:unstable",
+            "loader": "gtna:unstable",
             "unstable": {
                 "mask": "gtna:mask/cosmic_wire_fine" if alias in ("wire_fine", "wireFine") else "gtna:mask/cosmic"
             }
@@ -176,7 +176,7 @@ def process_item(item, filename, tmpl):
                 "layer1": f"gtceu:item/material_sets/gtna_axonium/{alias}_secondary",
                 "layer2": f"gtceu:item/material_sets/gtna_axonium/{alias}_overlay"
             },
-            "loader": "renderblender:glow_edge",
+            "loader": "gtna:glow_edge",
             "glow": {
                 "color": 16766720,
                 "width": 1.5

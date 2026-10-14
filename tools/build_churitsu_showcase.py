@@ -579,7 +579,7 @@ def main():
         </div>
         <h1>Churitsu — 3 Opções de Animação</h1>
         <p class="subtitle">
-          Texturas monocromáticas fluidas de 30 frames combinadas com o <strong>Platinum Neutral Glow Edge Shader</strong> (<code style="color:#e5e7eb">renderblender:glow_edge</code>).
+          Texturas monocromáticas fluidas de 30 frames combinadas com o <strong>Platinum Neutral Glow Edge Shader</strong> (<code style="color:#e5e7eb">gtna:glow_edge</code>).
         </p>
       </div>
 

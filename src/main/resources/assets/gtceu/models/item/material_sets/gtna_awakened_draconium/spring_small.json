@@ -4,9 +4,9 @@
     "layer0": "gtceu:item/material_sets/gtna_awakened_draconium/spring_small",
     "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay",
-    "halo": "renderblender:misc/halo"
+    "halo": "gtna:item/effect/halo"
   },
-  "loader": "renderblender:halo",
+  "loader": "gtna:halo",
   "halo": {
     "texture": "#halo",
     "color": -2328025,

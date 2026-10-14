@@ -5,7 +5,7 @@
     "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_creon/wire_fine_overlay"
   },
-  "loader": "renderblender:eternal",
+  "loader": "gtna:eternal",
   "eternal": {
     "mask": "gtna:mask/cosmic"
   }

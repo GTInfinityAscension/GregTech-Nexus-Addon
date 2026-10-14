@@ -1,108 +1,108 @@
 {
   "advanced_nitinol": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -2314903,
     "size": 2,
     "pulse": false
   },
   "atomic_separation_catalyst": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -2325472,
     "size": 4,
     "pulse": true
   },
   "awakened_draconium": {
-    "texture": "renderblender:misc/halo",
+    "texture": "gtna:item/effect/halo",
     "color": -2328025,
     "size": 4,
     "pulse": true
   },
   "dark_steel": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -6586660,
     "size": 2,
     "pulse": false
   },
   "end_steel": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -2433920,
     "size": 3,
     "pulse": false
   },
   "hastelloy_n_75": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -3023718,
     "size": 2,
     "pulse": false
   },
   "ichorium": {
-    "texture": "renderblender:misc/halo",
+    "texture": "gtna:item/effect/halo",
     "color": -2327023,
     "size": 2,
     "pulse": false
   },
   "indalloy_140": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -8882980,
     "size": 2,
     "pulse": false
   },
   "magmatter": {
-    "texture": "renderblender:misc/halo",
+    "texture": "gtna:item/effect/halo",
     "color": -2303782,
     "size": 3,
     "pulse": true
   },
   "mar_m_200_steel": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -4208676,
     "size": 2,
     "pulse": false
   },
   "mhdcsm": {
-    "texture": "renderblender:misc/halo",
+    "texture": "gtna:item/effect/halo",
     "color": -2331879,
     "size": 5,
     "pulse": true
   },
   "nitinol_60": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -3223076,
     "size": 2,
     "pulse": false
   },
   "platinum_manganese_antimony_heusler_alloy": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -5588260,
     "size": 3,
     "pulse": false
   },
   "stellar_alloy": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -3945764,
     "size": 5,
     "pulse": true
   },
   "stellite": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -4213028,
     "size": 4,
     "pulse": false
   },
   "superconductor_uiv_base": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -2331952,
     "size": 3,
     "pulse": false
   },
   "superconductor_umv_base": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -3591460,
     "size": 5,
     "pulse": false
   },
   "trinaquadalloy": {
-    "texture": "renderblender:misc/halo_noise",
+    "texture": "gtna:item/effect/halo_noise",
     "color": -7191588,
     "size": 3,
     "pulse": false

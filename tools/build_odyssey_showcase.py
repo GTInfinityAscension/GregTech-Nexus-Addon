@@ -320,7 +320,7 @@ html_content = f"""<!DOCTYPE html>
         </div>
         <h1>Odyssey Nano Superalloy — 3 Opções de Animação</h1>
         <p class="subtitle">
-          Texturas fluidas de 30 frames combinadas com o <strong>Nanotech Glow Edge Shader</strong> (<code style="color:#5eead4">renderblender:glow_edge</code>).
+          Texturas fluidas de 30 frames combinadas com o <strong>Nanotech Glow Edge Shader</strong> (<code style="color:#5eead4">gtna:glow_edge</code>).
         </p>
       </div>
 

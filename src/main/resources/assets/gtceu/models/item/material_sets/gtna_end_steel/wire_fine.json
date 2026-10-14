@@ -4,9 +4,9 @@
     "layer0": "gtceu:item/material_sets/gtna_end_steel/wire_fine",
     "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_creon/wire_fine_overlay",
-    "halo": "renderblender:misc/halo_noise"
+    "halo": "gtna:item/effect/halo_noise"
   },
-  "loader": "renderblender:halo",
+  "loader": "gtna:halo",
   "halo": {
     "texture": "#halo",
     "color": -2433920,

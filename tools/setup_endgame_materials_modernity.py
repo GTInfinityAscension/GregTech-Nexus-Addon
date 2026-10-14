@@ -74,19 +74,19 @@ def apply_shader(model_data, loader_name, item_name, mask_name):
     if not loader_name:
         return
     model_data["loader"] = loader_name
-    if loader_name == "renderblender:cosmic":
+    if loader_name == "gtna:cosmic":
         model_data["cosmic"] = {
             "mask": "gtna:mask/cosmic_wire_fine" if item_name in ("wire_fine", "wireFine") else mask_name
         }
-    elif loader_name == "renderblender:eternal":
+    elif loader_name == "gtna:eternal":
         model_data["eternal"] = {
             "mask": mask_name
         }
-    elif loader_name == "renderblender:unstable":
+    elif loader_name == "gtna:unstable":
         model_data["unstable"] = {
             "mask": mask_name
         }
-    elif loader_name == "renderblender:halo":
+    elif loader_name == "gtna:halo":
         name = model_data["textures"]["layer0"].split("/")[-2].removeprefix("gtna_")
         profile = json.loads((REPO_ROOT / "tools/material_effect_profiles.json").read_text())[name]
         model_data["textures"]["halo"] = profile["texture"]
@@ -316,29 +316,29 @@ def port_material(set_name, mod_folder, loader_name, custom_block_path=None, mas
 
 if __name__ == "__main__":
     # 1. Cosmic Neutronium
-    port_material("gtna_cosmic_neutronium", "cosmicneutronium", "renderblender:cosmic")
+    port_material("gtna_cosmic_neutronium", "cosmicneutronium", "gtna:cosmic")
 
     # 2. Eternity
-    port_material("gtna_eternity", "eternity", "renderblender:eternal",
+    port_material("gtna_eternity", "eternity", "gtna:eternal",
                   custom_block_path=MOD_ROOT / "blocks/iconsets/BLOCK_ETERNITY.png")
 
     # 3. Magmatter
-    port_material("gtna_magmatter", "magmatter", "renderblender:halo",
+    port_material("gtna_magmatter", "magmatter", "gtna:halo",
                   custom_block_path=MOD_ROOT / "blocks/iconsets/BLOCK_MAGMATTER.png")
 
     # 4. Exo-Halkonite
-    port_material("gtna_exo_halkonite", "exohalkonite", "renderblender:cosmic")
+    port_material("gtna_exo_halkonite", "exohalkonite", "gtna:cosmic")
 
     # 5. Infinity
     port_material("gtna_infinity", "infinity", None)
 
     # 6. Spacetime
-    port_material("gtna_spacetime", "spacetime", "renderblender:eternal")
+    port_material("gtna_spacetime", "spacetime", "gtna:eternal")
 
     # 7. MHDCSM
-    port_material("gtna_mhdcsm", "MagnetohydrodynamicallyConstrainedStarMatter", "renderblender:halo")
+    port_material("gtna_mhdcsm", "MagnetohydrodynamicallyConstrainedStarMatter", "gtna:halo")
 
     # 8. Graviton Shard
-    port_material("gtna_graviton_shard", "GravitonShard", "renderblender:cosmic")
+    port_material("gtna_graviton_shard", "GravitonShard", "gtna:cosmic")
 
     print("All endgame Modernity materials ported successfully!")

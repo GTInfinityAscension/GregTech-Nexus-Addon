@@ -4,9 +4,9 @@
     "layer0": "gtceu:item/material_sets/gtna_magmatter/plate_quintuple",
     "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_eternity/plate_triple_overlay",
-    "halo": "renderblender:misc/halo"
+    "halo": "gtna:item/effect/halo"
   },
-  "loader": "renderblender:halo",
+  "loader": "gtna:halo",
   "halo": {
     "texture": "#halo",
     "color": -2303782,

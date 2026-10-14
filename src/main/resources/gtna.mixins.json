@@ -38,8 +38,7 @@
     "client.CoreCraftConfirmScreenMixin",
     "client.StereoscopicItemRendererMixin",
     "client.MaterialItemGeometryMixin",
-    "client.RenderBlenderGlowMixin",
-    "client.UniversiumItemRendererMixin",
+    "client.ItemEffectRendererMixin",
     "client.UniversiumFluidGuiMixin",
     "client.UniversiumJeiFluidMixin",
     "client.WorldSceneRendererBatchMixin"

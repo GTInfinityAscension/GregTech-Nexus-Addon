@@ -7,7 +7,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.BakedModel;
@@ -15,57 +14,37 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.client.event.RegisterShadersEvent;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.blaze3d.vertex.VertexFormat;
 import com.raishxn.gtna.GTNACORE;
+import com.raishxn.gtna.client.renderer.effect.ItemEffectRenderer;
 import com.raishxn.gtna.common.data.GTNAMaterials;
 import org.joml.Vector3f;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Universium's live RenderBlender star field on world surfaces and non-material items. */
-public final class UniversiumRenderer extends RenderType {
+/** Universium's live star field (GTNA item effect shader) on world surfaces and non-material items. */
+public final class UniversiumRenderer {
 
-    private static ShaderInstance shader;
-    private static final long START = System.currentTimeMillis();
     private static final ResourceLocation SOLID = GTNACORE.id("item/universium/solid_mask");
     private static final ResourceLocation FRAME = GTNACORE.id("item/universium/frame_mask");
     private static final ResourceLocation NANITES = GTNACORE.id("item/universium/nanites_mask");
-    private static final RenderType COSMIC = create("gtna_universium_cosmic", DefaultVertexFormat.NEW_ENTITY,
-            VertexFormat.Mode.QUADS, 256, false, true, CompositeState.builder()
-                    .setShaderState(new ShaderStateShard(() -> shader))
-                    .setTextureState(new TextureStateShard(InventoryMenu.BLOCK_ATLAS, false, false))
-                    .setTransparencyState(TRANSLUCENT_TRANSPARENCY).setCullState(NO_CULL)
-                    .setLightmapState(LIGHTMAP).setOverlayState(OVERLAY)
-                    .setWriteMaskState(COLOR_WRITE).createCompositeState(false));
+    private static final RenderType COSMIC = ItemEffectRenderer.EFFECT;
     private static final List<BlockPos> SURFACES = new ArrayList<>();
     private static net.minecraft.client.multiplayer.ClientLevel cachedLevel;
     private static long nextScan;
 
-    private UniversiumRenderer() {
-        super("unused", DefaultVertexFormat.NEW_ENTITY, VertexFormat.Mode.QUADS, 256, false, true, () -> {}, () -> {});
-    }
-
-    public static void register(RegisterShadersEvent event) throws IOException {
-        event.registerShader(new ShaderInstance(event.getResourceProvider(), GTNACORE.id("universium_cosmic"),
-                DefaultVertexFormat.NEW_ENTITY), instance -> shader = instance);
-    }
+    private UniversiumRenderer() {}
 
     public static boolean isFluid(Fluid fluid) {
         return GTNAMaterials.Universium != null && fluid.isSame(GTNAMaterials.Universium.getFluid());
@@ -77,27 +56,14 @@ public final class UniversiumRenderer extends RenderType {
     }
 
     private static boolean ready(boolean inventory) {
-        if (shader == null || !ModList.get().isLoaded("renderblender")) return false;
-        var mc = Minecraft.getInstance();
-        shader.safeGetUniform("time").set((System.currentTimeMillis() - START) / 2000f);
-        shader.safeGetUniform("yaw").set(mc.player == null ? 0 : (float) Math.toRadians(mc.player.getYRot()));
-        shader.safeGetUniform("pitch").set(mc.player == null ? 0 : -(float) Math.toRadians(mc.player.getXRot()));
-        shader.safeGetUniform("externalScale").set(inventory ? 25f : 1f);
-        shader.safeGetUniform("opacity").set(1f);
-        float[] uv = new float[40];
-        for (int i = 0; i < 10; i++) {
-            var s = sprite(ResourceLocation.fromNamespaceAndPath("renderblender", "misc/cosmic_" + i));
-            uv[i * 4] = s.getU0();
-            uv[i * 4 + 1] = s.getU1();
-            uv[i * 4 + 2] = s.getV0();
-            uv[i * 4 + 3] = s.getV1();
-        }
-        shader.safeGetUniform("cosmicuvs").set(uv);
-        return true;
+        int mode = ItemEffectRenderer.MODE_COSMIC;
+        return ItemEffectRenderer.shaderEffectsEnabled() &&
+                ItemEffectRenderer.prepare(mode, ItemEffectRenderer.defaultColor(mode, false),
+                        ItemEffectRenderer.defaultColor(mode, true), ItemEffectRenderer.time(1), inventory, false);
     }
 
     private static TextureAtlasSprite sprite(ResourceLocation id) {
-        return Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(id);
+        return ItemEffectRenderer.sprite(id);
     }
 
     public static void renderItem(ItemStack stack, net.minecraft.world.item.ItemDisplayContext context,

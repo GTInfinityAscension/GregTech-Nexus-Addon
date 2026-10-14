@@ -584,7 +584,7 @@ def main():
         </div>
         <h1>Shijima — 3 Opções de Animação</h1>
         <p class="subtitle">
-          Texturas fluidas de 30 frames combinadas com o <strong>Celestial Glow/Halo Shader</strong> (<code style="color:#bfdbfe">renderblender:glow_edge / halo</code>).
+          Texturas fluidas de 30 frames combinadas com o <strong>Celestial Glow/Halo Shader</strong> (<code style="color:#bfdbfe">gtna:glow_edge / halo</code>).
         </p>
       </div>
 

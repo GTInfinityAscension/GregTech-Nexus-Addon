@@ -11,7 +11,7 @@ materials = [
     {
         "id": "cosmic_neutronium",
         "name": "Cosmic Neutronium",
-        "loader": "renderblender:cosmic",
+        "loader": "gtna:cosmic",
         "effect": "Avaritia Cosmic Starfield",
         "desc": "Shader estelar dinâmico com céu infinito de estrelas móveis e glints cintilantes nos vértices.",
         "tex_path": Path("src/main/resources/assets/gtceu/textures/item/material_sets/gtna_cosmic_neutronium"),
@@ -20,7 +20,7 @@ materials = [
     {
         "id": "eternity",
         "name": "Eternity (En⦼)",
-        "loader": "renderblender:eternal",
+        "loader": "gtna:eternal",
         "effect": "Temporal Continuity Shader",
         "desc": "Animação contínua de 20 frames de fluxo temporal com halo celestial de resplendor puro.",
         "tex_path": Path("src/main/resources/assets/gtceu/textures/item/material_sets/gtna_eternity"),
@@ -29,7 +29,7 @@ materials = [
     {
         "id": "magmatter",
         "name": "Magmatter",
-        "loader": "renderblender:halo",
+        "loader": "gtna:halo",
         "effect": "Antimatter Magnetic Vacuum",
         "desc": "8 frames de pulso de contração magnética com halo de antimatéria escura (#212121).",
         "tex_path": Path("src/main/resources/assets/gtceu/textures/item/material_sets/gtna_magmatter"),
@@ -38,7 +38,7 @@ materials = [
     {
         "id": "exo_halkonite",
         "name": "Exo-Halkonite",
-        "loader": "renderblender:cosmic",
+        "loader": "gtna:cosmic",
         "effect": "Alien Exotic Plasma",
         "desc": "57 frames fluidos de plasma exótico alienígena com refração de energia extraterrestre.",
         "tex_path": Path("src/main/resources/assets/gtceu/textures/item/material_sets/gtna_exo_halkonite"),
@@ -47,7 +47,7 @@ materials = [
     {
         "id": "chaos_matter",
         "name": "Chaos Matter",
-        "loader": "renderblender:unstable",
+        "loader": "gtna:unstable",
         "effect": "Dimensional Unstable Fissure",
         "desc": "Shader de quebra dimensional e vácuo caótico com estática do Chaos Vortex.",
         "tex_path": Path("src/main/resources/assets/gtceu/textures/item/material_sets/gtna_chaos_matter"),
@@ -56,7 +56,7 @@ materials = [
     {
         "id": "axonium",
         "name": "Axonium (煥律璨金)",
-        "loader": "renderblender:glow_edge",
+        "loader": "gtna:glow_edge",
         "effect": "Harmonic Golden Resonance",
         "desc": "Ouro cósmico harmônico do TST com ressonância áurea e bordas luminescentes.",
         "tex_path": Path("src/main/resources/assets/gtceu/textures/item/material_sets/gtna_axonium"),

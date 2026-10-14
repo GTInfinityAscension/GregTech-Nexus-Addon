@@ -346,7 +346,7 @@ html_content = f"""<!DOCTYPE html>
         </div>
         <h1>Draconium — 3 Opções de Animação</h1>
         <p class="subtitle">
-          Texturas novas fluidas de 30 frames combinadas com o <strong>Dragon Glow Edge Shader</strong> (<code style="color:#d8b4fe">renderblender:glow_edge</code>).
+          Texturas novas fluidas de 30 frames combinadas com o <strong>Dragon Glow Edge Shader</strong> (<code style="color:#d8b4fe">gtna:glow_edge</code>).
         </p>
       </div>
 

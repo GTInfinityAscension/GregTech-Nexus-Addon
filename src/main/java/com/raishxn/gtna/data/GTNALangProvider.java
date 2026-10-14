@@ -1614,6 +1614,10 @@ public class GTNALangProvider extends LanguageProvider {
         add("config.gtna.option.wirelessSteamHudX", "Wireless Steam HUD X Position");
         add("config.gtna.option.wirelessSteamHudY", "Wireless Steam HUD Y Position");
         add("config.gtna.option.wirelessSteamHudHistorySeconds", "Wireless Steam HUD History Seconds");
+        add("config.gtna.option.itemHalo", "Item Halos");
+        add("config.gtna.option.itemGlowEdge", "Item Glow Edges");
+        add("config.gtna.option.itemShaderEffects", "Item Shader Effects");
+        add("config.gtna.option.itemEffectSpeed", "Item Effect Speed (%)");
 
         // Accelerate Hatch
         add("config.gtna.option.accelerateHatchMultiplier", "Accelerate Hatch Speed");

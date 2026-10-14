@@ -47,7 +47,7 @@ def apply():
         mask = Image.merge('RGBA', (alpha, alpha, alpha, alpha))
         mask.save(textures / f'{name}_cosmic_mask.png')
         data = json.loads(path.read_text())
-        data['loader'] = 'renderblender:cosmic'
+        data['loader'] = 'gtna:cosmic'
         data['cosmic'] = {'mask': f'gtceu:item/material_sets/gtna_universium/{name}_cosmic_mask'}
         path.write_text(json.dumps(data, indent=2) + '\n')
         count += 1

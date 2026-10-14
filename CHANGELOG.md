@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+### Item effects (RenderBlender no longer needed)
+- GTNA now draws its own item effects: `gtna:halo`, `gtna:glow_edge`, `gtna:cosmic`, `gtna:eternal` and `gtna:unstable` model loaders, with a new procedural shader and new halo textures. RenderBlender is no longer used.
+- Fixes material icons (ingots, plates, dusts, gears, wires, gems of 56 GTNA material sets) showing as missing textures when RenderBlender was not installed (0.5.4–0.5.5). Icons now always render; the effect is drawn on top.
+- KubeJS: `GTNAClientEvents.itemEffects` (client scripts) adds, replaces or removes effects per item or per GTCEu material. Example in `examples/kubejs/client_scripts/gtna_item_effects.js`.
+- Client config: toggle halos, glow edges and shader effects, and set the animation speed.
+
 ### New multiblocks (GTO)
 - **Large Incubator**: Incubator with Parallel Hatch; the glass tier caps the voltage tier, and the cleanroom filters set the filter tier a recipe may ask for (`filter_casing` recipe data: 1 plain, 2 sterile).
 - **Kerr-Newman Homogenizer**: Mixer running several recipes at once (Thread Hatch), Parallel and laser hatches.

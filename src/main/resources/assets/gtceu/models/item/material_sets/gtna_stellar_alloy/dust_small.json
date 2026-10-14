@@ -4,9 +4,9 @@
     "layer0": "gtceu:item/material_sets/gtna_stellar_alloy/dust_small",
     "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay",
-    "halo": "renderblender:misc/halo_noise"
+    "halo": "gtna:item/effect/halo_noise"
   },
-  "loader": "renderblender:halo",
+  "loader": "gtna:halo",
   "halo": {
     "texture": "#halo",
     "color": -3945764,

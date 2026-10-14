@@ -346,7 +346,7 @@ html_content = f"""<!DOCTYPE html>
         </div>
         <h1>Ichorium — 3 Opções de Animação</h1>
         <p class="subtitle">
-          Texturas novas fluidas de 30 frames combinadas com o <strong>Celestial Halo Shader</strong> (<code style="color:#fde68a">renderblender:halo</code>).
+          Texturas novas fluidas de 30 frames combinadas com o <strong>Celestial Halo Shader</strong> (<code style="color:#fde68a">gtna:halo</code>).
         </p>
       </div>
 

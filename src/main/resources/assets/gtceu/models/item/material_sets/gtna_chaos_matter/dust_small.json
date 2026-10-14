@@ -5,7 +5,7 @@
     "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_chaos_matter/dust_small_overlay"
   },
-  "loader": "renderblender:unstable",
+  "loader": "gtna:unstable",
   "unstable": {
     "mask": "gtna:mask/cosmic"
   }

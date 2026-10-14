@@ -488,10 +488,19 @@ Universium item silhouettes and overlays are copied from the local Modernity-GTN
 under the Modernity-GTNH CC BY-NC-SA 4.0 attribution documented above. Existing GTCEu
 model aliases retain these original sprites; the extra singularity form uses the original
 gem silhouette. Per-form cosmic masks are derived from the silhouette alpha channel.
-The live star field uses the installed RenderBlender 1.1.1 cosmic renderer; it is not
-a claim of byte-identical GTNH/GTO/GTL shader behavior. No RenderBlender Java code
-was copied or bundled by this fix; GTNA adds compatibility mixins. Other permission
+The live star field is drawn by GTNA's own `gtna:item_effect` shader (see "Item effects"
+below); it is not a claim of byte-identical GTNH/GTO/GTL shader behavior. Other permission
 requests recorded in this document remain pending.
+
+### Item effects (2026-10-14)
+
+The `gtna:halo`, `gtna:glow_edge`, `gtna:cosmic`, `gtna:eternal` and `gtna:unstable` item
+model loaders, the `gtna:item_effect` shader and the `gtna:item/effect/halo*` textures are
+original GTNA work. They replace the earlier optional use of RenderBlender (LGPL-3.0): no
+RenderBlender code, shader or texture is copied or bundled, and the former copy of its cosmic
+fragment shader (`universium_cosmic.fsh`) was removed. The loaders keep RenderBlender's JSON
+field names (`color`, `size`, `pulse`, `width`, `mask`) so existing models only change the
+loader namespace.
 
 ## Multiblock tooltip adaptation (2026-10-10)
 
@@ -508,3 +517,10 @@ controller implementation. See `docs/reports/multiblock-tooltips-technical-detai
 `assets/gtna/lang/zh_cn.json` was written for GTNA. Where an English string is identical to one in the official Simplified
 Chinese translations of GregTech CEu Modern (LGPL-3.0), GTOCore (GTO, with permission), GTLCore (LGPL-3.0) or GregTech:
 New Horizons (GT5-Unofficial, LGPL-3.0), that translation is reused so players see the terms they already know.
+
+## GT New Horizons wiki content (2026-10-14)
+
+`docs/assets/gtnh/forge_of_the_gods.png` and `docs/assets/gtnh/godforge_upgrade_tree.png` come from the
+GT New Horizons wiki (https://wiki.gtnewhorizons.com/wiki/Forge_of_the_Gods), licensed under CC BY-SA 4.0.
+Wiki pages that use them credit the source and are distributed under CC BY-SA 4.0. They are documentation
+assets only and are not packaged in the mod jar.

@@ -4361,5 +4361,9 @@
   "gtna.machine.bec_diode.tooltip.6": "§a▸ 参数中按凝聚态类型设置过滤",
   "gtna.machine.bec_diode.tooltip.7": "§a▸ 流体输入仓会设定过滤",
   "gtna.machine.bec_diode.tooltip.8": "§b▸ 运行时消耗 §e1A UIV§b",
-  "gtna.machine.bec_diode.tooltip.9": "§c▸ 关闭时阻断网络"
+  "gtna.machine.bec_diode.tooltip.9": "§c▸ 关闭时阻断网络",
+  "config.gtna.option.itemHalo": "物品光环",
+  "config.gtna.option.itemGlowEdge": "物品发光边缘",
+  "config.gtna.option.itemShaderEffects": "物品着色器特效",
+  "config.gtna.option.itemEffectSpeed": "物品特效速度（%）"
 }

@@ -480,7 +480,7 @@ def main():
     </div>
 
     <div class="shader-alert">
-        <strong>⚡ Original Shader Integration:</strong> Os modelos JSON serão gerados com o shader <code>renderblender:glow_edge</code> (com contorno nanotecnológico ciano-elétrico <code>#2dd4bf</code>) ou <code>renderblender:halo</code>, reproduzindo a iluminação física em tempo real no cliente 1.20.1!
+        <strong>⚡ Original Shader Integration:</strong> Os modelos JSON serão gerados com o shader <code>gtna:glow_edge</code> (com contorno nanotecnológico ciano-elétrico <code>#2dd4bf</code>) ou <code>gtna:halo</code>, reproduzindo a iluminação física em tempo real no cliente 1.20.1!
     </div>
 
     <div class="grid-container">

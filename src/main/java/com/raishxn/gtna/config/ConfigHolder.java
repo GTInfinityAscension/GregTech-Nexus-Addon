@@ -229,6 +229,27 @@ public class ConfigHolder {
         @Comment({ "En: Seconds of balance history drawn as a graph in the HUD (0 hides the graph).",
                 "Pt: Segundos de historico de saldo no grafico do HUD (0 esconde o grafico)." })
         public int wirelessSteamHudHistorySeconds = 60;
+
+        @Configurable
+        @Comment({ "En: Draw item halos (soft disc behind the icon) in inventories.",
+                "Pt: Desenha halos de item (disco suave atras do icone) nos inventarios." })
+        public boolean itemHalo = true;
+
+        @Configurable
+        @Comment({ "En: Draw item glow edges (tinted outline behind the icon) in inventories.",
+                "Pt: Desenha bordas brilhantes de item (contorno colorido atras do icone) nos inventarios." })
+        public boolean itemGlowEdge = true;
+
+        @Configurable
+        @Comment({ "En: Draw animated item shader effects (cosmic, eternal, unstable).",
+                "Pt: Desenha efeitos animados de shader nos itens (cosmic, eternal, unstable)." })
+        public boolean itemShaderEffects = true;
+
+        @Configurable
+        @Range(min = 0, max = 400)
+        @Comment({ "En: Item effect animation speed in percent (0 freezes the animation).",
+                "Pt: Velocidade da animacao dos efeitos de item em porcentagem (0 congela a animacao)." })
+        public int itemEffectSpeed = 100;
     }
 
     public static class RestrictedItems {

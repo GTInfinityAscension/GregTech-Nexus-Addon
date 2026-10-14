@@ -5,7 +5,7 @@
     "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_eternity/nugget_overlay"
   },
-  "loader": "renderblender:cosmic",
+  "loader": "gtna:cosmic",
   "cosmic": {
     "mask": "gtna:mask/cosmic"
   }

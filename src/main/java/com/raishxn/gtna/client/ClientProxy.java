@@ -52,21 +52,24 @@ public class ClientProxy extends CommonProxy {
                 .addListener((net.minecraftforge.client.event.RegisterShadersEvent event) -> {
                     try {
                         com.raishxn.gtna.client.renderer.machine.GodforgeShaders.register(event);
-                        com.raishxn.gtna.client.renderer.material.UniversiumRenderer.register(event);
+                        com.raishxn.gtna.client.renderer.effect.ItemEffectRenderer.register(event);
                     } catch (java.io.IOException e) {
                         throw new java.io.UncheckedIOException(e);
                     }
                 });
         net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get().getModEventBus()
                 .addListener((net.minecraftforge.client.event.ModelEvent.BakingCompleted event) -> {
-                    long effects = event.getModels().entrySet().stream()
-                            .filter(entry -> entry.getKey().getNamespace().equals("gtna"))
-                            .filter(entry -> entry.getValue().getClass().getName().startsWith(
-                                    "committee.nova.mods.renderblender."))
+                    long effects = event.getModels().values().stream()
+                            .filter(model -> model instanceof com.raishxn.gtna.client.renderer.effect.ItemEffectBakedModel)
                             .count();
-                    com.raishxn.gtna.GTNACORE.LOGGER.info("GTNA material item models with RenderBlender effects: {}",
-                            effects);
+                    com.raishxn.gtna.GTNACORE.LOGGER.info("GTNA item models with item effects: {}", effects);
+                    // Scripted effects are re-read on every bake, so F3+T picks up client script edits.
+                    if (net.minecraftforge.fml.ModList.get().isLoaded("kubejs")) {
+                        com.raishxn.gtna.integration.kubejs.GTNAClientEvents.postItemEffects();
+                    }
                 });
+        net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get().getModEventBus()
+                .addListener(com.raishxn.gtna.client.renderer.effect.ItemEffectModelLoader::register);
         // Load LDLib's scene renderer at startup so a failed preview mixin shows up here, not when a GUI opens.
         net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get().getModEventBus()
                 .addListener((net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent event) -> {

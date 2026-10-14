@@ -4376,5 +4376,9 @@
   "gtna.machine.void_miner_steam_gate_aged.tooltip.9": "§a▸ Insanely: itens §e5x§a, velocidade §e5x§a",
   "gtna.machine.void_miner_steam_gate_aged.tooltip.10": "§b▸ Os bônus são configuráveis na config do GTNA",
   "gtna.machine.void_miner_steam_gate_aged.tooltip.11": "§c▸ Custo de EU: §e1,5x§c / §e2x§c / §e4x§c com cada bônus",
-  "gtna.machine.void_miner_steam_gate_aged.tooltip.12": "§c▸ Precisa de Fluido de Perfuração por operação"
+  "gtna.machine.void_miner_steam_gate_aged.tooltip.12": "§c▸ Precisa de Fluido de Perfuração por operação",
+  "config.gtna.option.itemHalo": "Halos de Itens",
+  "config.gtna.option.itemGlowEdge": "Bordas Brilhantes de Itens",
+  "config.gtna.option.itemShaderEffects": "Efeitos de Shader em Itens",
+  "config.gtna.option.itemEffectSpeed": "Velocidade dos Efeitos de Item (%)"
 }

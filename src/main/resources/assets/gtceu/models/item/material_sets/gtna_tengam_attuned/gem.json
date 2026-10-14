@@ -5,7 +5,7 @@
     "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_creon/gem_overlay"
   },
-  "loader": "renderblender:glow_edge",
+  "loader": "gtna:glow_edge",
   "glow_edge": {
     "color": 14024576,
     "width": 1.5

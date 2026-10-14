@@ -346,7 +346,7 @@ html_content = f"""<!DOCTYPE html>
         </div>
         <h1>Fallking — 3 Opções de Animação</h1>
         <p class="subtitle">
-          Texturas novas fluidas de 30 frames combinadas com o <strong>Aerospace Glow Edge Shader</strong> (<code style="color:#fde68a">renderblender:glow_edge</code>).
+          Texturas novas fluidas de 30 frames combinadas com o <strong>Aerospace Glow Edge Shader</strong> (<code style="color:#fde68a">gtna:glow_edge</code>).
         </p>
       </div>
 

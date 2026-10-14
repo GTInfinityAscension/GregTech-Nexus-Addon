@@ -584,7 +584,7 @@ def main():
         </div>
         <h1>Advanced Nitinol — 3 Opções de Animação</h1>
         <p class="subtitle">
-          Superliga com memória de forma termo-elástica de 30 frames combinada com o <strong>Titanium-Amber Glow Edge Shader</strong> (<code style="color:#fbbf24">renderblender:glow_edge</code>).
+          Superliga com memória de forma termo-elástica de 30 frames combinada com o <strong>Titanium-Amber Glow Edge Shader</strong> (<code style="color:#fbbf24">gtna:glow_edge</code>).
         </p>
       </div>
 
