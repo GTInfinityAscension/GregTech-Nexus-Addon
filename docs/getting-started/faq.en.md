@@ -1,21 +1,19 @@
-﻿# FAQ
+# FAQ
 
-## General
-**Q: Is GTNA compatible with other GT addons?**
-A: Yes! GTNA is designed as a standalone addon for GregTech CEu Modern 1.20.1. It should be compatible with most other addons.
+??? question "GTNA material icons show as missing textures"
+    In 0.5.4 and 0.5.5 the models depended on RenderBlender. Update to 0.5.6 or newer, which has its own renderer.
 
-**Q: Do I need KubeJS?**
-A: No, KubeJS is optional. The KubeJS integration (v0.2.0) will allow modpack developers to create custom machines using GTNA hatches.
+??? question "Can I turn item effects (halo, shaders) off?"
+    Yes: `config/gtna.json`, client section: `itemHalo`, `itemGlowEdge`, `itemShaderEffects` and `itemEffectSpeed`.
 
-**Q: Can I use GTNA in a modpack?**
-A: Yes! GTNA is licensed under LGPLv3. Feel free to include it.
+??? question "The structure does not form"
+    Use the controller's structure check button: it marks the wrong block. JEI/EMI shows the structure layer by layer.
 
-## Machines
-**Q: Why is my Large Steam Solar Boiler not producing steam?**
-A: Check that all Solar Boiling Cells have direct sky access (no blocks above them) and that it's daytime with clear weather.
+??? question "Recipes differ from GTNH"
+    GTNA ships working default recipes; balance belongs to the modpack, which can replace everything through KubeJS.
 
-**Q: How do I switch Slaughterhouse modes?**
-A: Insert a Programmed Circuit in the Input Bus: 0/1=Passive, 2=Hostile, 3=Bosses, 4=Dragon.
+??? question "Do I need Ad Astra?"
+    No. Without it the Steam Elevator does not travel and the Eye of Harmony only has the Minecraft planets.
 
-**Q: What's a Thread Hatch?**
-A: Thread Hatches allow a multiblock to process multiple DIFFERENT recipes simultaneously. Unlike Parallel Hatches (same recipe x N), Thread Hatches run N different recipes at once.
+??? question "Where do I report a bug?"
+    On the project's GitHub, with `latest.log` and the GTNA and GTCEu versions.

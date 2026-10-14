@@ -1,20 +1,20 @@
-# 🔌 KubeJS Compatibility
+# API KubeJS
 
-Starting with version `0.2.0`, GregTech Nexus Addon (GTNA) provides full compatibility with **KubeJS** out of the box via soft-dependency.
-Modpack developers can create advanced multiblocks utilizing our custom Hatches (Thread, Accelerate, Overclock, Advanced Parallel) directly from KubeJS!
+O GTNA tem integração com KubeJS sem configuração: basta ter o KubeJS instalado. Tudo abaixo existe no código atual; os exemplos completos ficam em `examples/kubejs/` no repositório.
 
-## The `multiple_recipes` Machine Type
+| Recurso | Pasta do script | Para quê |
+|---|---|---|
+| `gtna:multiple_recipes` | `startup_scripts` | multibloco que roda várias receitas ao mesmo tempo (Thread Hatch) |
+| `GTNAStartupEvents.eyeOfHarmony` | `startup_scripts` | adicionar ou remover planetas do Olho da Harmonia |
+| `GTNAServerEvents.subPatterns` | `server_scripts` | módulos auxiliares (estruturas extras) para qualquer multibloco |
+| `GTNAClientEvents.itemEffects` | `client_scripts` | halo, borda e shaders nos ícones de itens |
+| `GTNAPartAbility` | qualquer | habilidades dos hatches do GTNA nos padrões |
 
-You can define a new specialized multiblock machine using our factory type `gtna:multiple_recipes`.
-Any multiblock instantiated this way automatically uses `WorkableElectricMultipleRecipesMachine` under the hood.
+Os tipos de receita do GTNA são registrados no GTCEu, então `event.recipes.gtceu.<tipo>` funciona normalmente para todos eles. A lista completa de tipos está no catálogo de multiblocos.
 
----
+## Tipo de máquina `multiple_recipes`
 
-## Practical Example: 4-Tier Threaded Processor
-
-Here's a working example inside a KubeJS script that creates an Assembly Machine capable of having multiple recipes running simultaneously.
-
-**File:** `kubejs/startup_scripts/gtna_processor.js`
+Cria um multibloco que usa `WorkableElectricMultipleRecipesMachine`: com um Thread Hatch, roda várias receitas diferentes ao mesmo tempo.
 
 ```javascript
 GTCEuStartupEvents.registry('gtceu:machine', event => {
@@ -67,12 +67,73 @@ GTCEuStartupEvents.registry('gtceu:machine', event => {
 })
 ```
 
-### Explanation of Custom Abilities
-- `PartAbility.PARALLEL_HATCH`: Uses GTCEu's standard parallel system or GTNA's advanced large-scale parallels.
-- `GTNAPartAbility.THREAD_HATCH`: Allows executing **completely different recipes** simultaneously. (e.g. Assembling Recipe A and Recipe B at the same time).
-- `GTNAPartAbility.ACCELERATE_HATCH`: Strips raw duration (ticks) from recipes without costing extra energy-per-tick.
-- `GTNAPartAbility.OVERCLOCK_HATCH`: Provides immense Overclock multiples on top of standard GT electrical tiers.
+## GTNAPartAbility
 
-### Registering Recipes
+| Binding | Hatch |
+|---|---|
+| `GTNAPartAbility.THREAD_HATCH` | Thread Hatch |
+| `GTNAPartAbility.ACCELERATE_HATCH` | Accelerate Hatch |
+| `GTNAPartAbility.OVERCLOCK_HATCH` | Overclock Hatch |
+| `GTNAPartAbility.OUTPUT_BOOST_HATCH` | Output Boost Hatch |
+| `GTNAPartAbility.PARALLEL_HATCH` | Parallel Hatch (GTCEu) |
 
-Whenever you add normal GTCEu recipes for the type passed into `.recipeType()`, it will immediately benefit from all the hatches without needing special syntax inside `server_scripts/recipes.js`. 
+## Planetas do Olho da Harmonia
+
+`add(itemDoPlaneta, dimensão, tierDeFoguete[, poDePedra])`. Os produtos são os veios de minério do GTCEu registrados naquela dimensão, escalados pelas regras do GTNH para o tier (0–9). Veja a página do Olho da Harmonia para as fórmulas.
+
+```javascript
+// GTNA: Eye of Harmony planetary programs (startup script; runs on client and server).
+// add(planetItem, dimension, gtnhRocketTier[, stoneDust]): the products are the GTCEu ore veins
+// registered for that dimension, scaled with the GTNH rules for the rocket tier (0-9).
+GTNAStartupEvents.eyeOfHarmony(event => {
+    // Example: a KubeJS block as the selector of a modded dimension.
+    // event.add('kubejs:titan_planet_block', 'mymod:titan', 5)
+    // Example: hide a built-in program.
+    // event.remove('gtna:eye_of_harmony_planet_glacio')
+})
+```
+
+## Módulos auxiliares (sub-patterns)
+
+Registra uma estrutura extra para um multibloco existente. As partes do módulo formado entram no controlador, então o módulo pode liberar hatches novos. Argumentos opcionais: chave de tradução do tooltip e bônus de velocidade (2.0 = o dobro).
+
+```javascript
+// Development example: a three-block auxiliary column beside the Integrated Ore Processor.
+// Copy this file to kubejs/server_scripts with KubeJS installed. The middle block may be an
+// Item Import Bus; the other two are Clean Stainless Steel Casings.
+// The third argument is a translation key for the controller's Auxiliary Module tooltip.
+GTNAServerEvents.subPatterns(event => {
+  event.add('gtna:integrated_ore_processor', definition => FactoryBlockPattern.start()
+    .aisle('   A', 'C  A', '   A')
+    .where('C', Predicates.controller(Predicates.blocks(definition.get())))
+    .where('A', Predicates.blocks(GTBlocks.CASING_STAINLESS_CLEAN.get())
+      .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(1)))
+    .where(' ', Predicates.any())
+    .build(), 'gtna.machine.auxiliary_module.kubejs.item_import')
+  console.info('[GTNA] Registered Integrated Ore Processor auxiliary module example')
+})
+```
+
+## Efeitos de item
+
+Roda de novo a cada F3+T. Efeitos: `halo(argb, tamanho)`, `glowEdge(argb[, largura])`, `cosmic()`, `eternal()`, `unstable()`. Modificadores agem no último efeito: `colors(a, b)`, `color(argb)`, `pulse(bool)`, `speed(x)`, `mask(textura)`. `item(id)` substitui os efeitos do modelo; `material(id)` vale para todas as formas de um material do GTCEu; `clear()` remove.
+
+```javascript
+// GTNA item icon effects. Client script; reloads with F3+T.
+// Effects: halo(argb, size), glowEdge(argb[, width]), cosmic(), eternal(), unstable().
+// Modifiers act on the last effect added: colors(a, b), color(argb), pulse(bool), speed(x), mask(texture), texture(texture).
+
+GTNAClientEvents.itemEffects(event => {
+    // Every form (ingot, plate, dust...) of a GTCEu material
+    event.material('gtna:advanced_nitinol').halo(0xFF66CCFF, 8).pulse(true)
+
+    // One item; replaces the effects of its model
+    event.item('minecraft:nether_star').cosmic().colors(0xFF050418, 0xFF7FD4FF).glowEdge(0xFFFFAA00, 1.5)
+
+    // Shader effect limited to a mask texture from the block atlas
+    event.item('minecraft:amethyst_shard').eternal().mask('gtna:mask/cosmic').speed(0.5)
+
+    // Remove the effects a model declares
+    // event.item('gtceu:gtna_chaos_matter_dust').clear()
+})
+```

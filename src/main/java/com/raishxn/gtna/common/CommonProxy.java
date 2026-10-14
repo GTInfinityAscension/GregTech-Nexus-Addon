@@ -113,6 +113,7 @@ public class CommonProxy {
         // Single en_us writer: GTNA translations are merged into Registrate's lang provider.
         com.raishxn.gtna.api.registry.GTNARegistry.REGISTRATE.addDataGenerator(
                 com.tterrag.registrate.providers.ProviderType.LANG, lang -> GTNALangProvider.feed(lang, packOutput));
+        generator.addProvider(server, new com.raishxn.gtna.data.GTNAWikiDataProvider(packOutput));
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {

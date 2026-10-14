@@ -1,13 +1,17 @@
-﻿# First Steps
-## Your First Multiblock
-The **Large Steam Alloy Smelter** is the simplest multiblock to build. It only requires:
-- ~20 Bronze Plated Bricks
-- 3 Bronze Fireboxes
-- 1 Steam Hatch, 1 Input Bus, 1 Output Bus
+# First steps
 
-## Progression Guide
-1. Build a **Steam Boiler** (vanilla GT)
-2. Build the **Large Steam Alloy Smelter** (3x4x3 - first GTNA multiblock)
-3. Build the **Large Steam Furnace** (9x8x9 - 128 parallels!)
-4. Build the **Large Steam Solar Boiler** (expandable steam generation)
-5. Transition to **Electric Multiblocks** for late-game content
+GTNA follows GregTech progression. This is the order in which its systems appear:
+
+| Era | What GTNA adds | Where to read |
+|---|---|---|
+| Steam | Steam multiblocks (furnace, crusher, alloys, solar boiler), Huge Steam Bus, wireless steam network, Steam Elevator | [Steam and Steel Era](../gameplay/eras/steam-and-steel.md), [Wireless steam network](../gameplay/systems/wireless-steam-network.md) |
+| LV–EV | Processing and parallel multiblocks, Thread and Accelerate Hatch | [Catalog](../gameplay/machines/catalog/index.md), [Hatches](../gameplay/parts/index.md) |
+| IV–UV | Pattern Buffer, Nexus energy network, PCB Factory, Data Center, Research Center | [Nexus Flux Matrix](../gameplay/systems/nexus-flux-matrix.md) |
+| UHV–UXV | Space Elevator, Nano Forge, DTPF, Dyson Sphere, Bose-Einstein Condensate | [Systems](../gameplay/systems/space-elevator.md) |
+| UIV–MAX | Forge of the Gods and Eye of Harmony | [Forge of the Gods](../gameplay/systems/forge-of-gods.md), [Eye of Harmony](../gameplay/systems/eye-of-harmony.md) |
+
+## Getting started tips
+
+- Every controller shows its structure in JEI/EMI; GTCEu's hologram projector builds it for you.
+- GTNA's structure check button points at the wrong block.
+- Default recipes are a baseline: the modpack can replace all of them through KubeJS.

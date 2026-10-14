@@ -31,6 +31,26 @@ foi feito nem repetir os erros já pagos.
 
 ## Estado atual
 
+> **Wiki de sistemas + design dos originais (G-0260, 2026-10-14):** `tools/wiki/system_pages.py` gera
+> `docs/gameplay/systems/forge-of-gods(.en).md` com tabelas calculadas das constantes do código e imagens da wiki GTNH
+> (CC BY-SA 4.0, créditos na página e em THIRD_PARTY_NOTICES). Fichas de design em `docs/roadmap/design/`
+> (`tools/design/*.py`), mockups GUI com texturas reais em `docs/roadmap/design/mockups/gt/` (`tools/design/mockups.py`).
+> Pendente: páginas de EoH, BEC, Space Elevator, Nano Forge, Dyson; nerf do Artificial Star é só proposta.
+
+> **Catálogo da wiki gerado (G-0259, 2026-10-14):** `GTNAWikiDataProvider` (runData) grava
+> `build/wiki/multiblocks.json` (164 multiblocos: tipos de receita + menor estrutura). `tools/wiki/
+> generate_machine_pages.py` gera `docs/gameplay/machines/catalog/` (pt + en, 330 páginas) e renders
+> isométricos em `docs/assets/machines/` (2,3 MB). Nav ganhou "Catálogo". `mkdocs build` local OK.
+> Pendente: revisão do autor; es e zh_cn não gerados; blocos sem textura aparecem como cor lisa.
+
+> **Item effects próprios (G-0258, 2026-10-14):** RenderBlender removido (issue: 1088 ícones de material
+> viravam textura faltando sem ele em 0.5.4/0.5.5). Loaders `gtna:halo|glow_edge|cosmic|eternal|unstable`
+> (`client/renderer/effect/`) assam o ícone via `ItemLayerModel` e anexam o efeito; shader procedural novo
+> `gtna:item_effect` (o `universium_cosmic.fsh` era cópia do RenderBlender e foi apagado); halos novos
+> gerados; atlas `mask/` próprio. KubeJS `GTNAClientEvents.itemEffects` (item/material), config client
+> (halo, glow edge, shaders, velocidade). Gate completo verde. **Pendente:** teste visual no `runClient`
+> (aparência dos 3 shaders, halo, glow edge e Universium em blocos/fluido).
+
 > **Tooltips pela origem (G-0254):** revisão G-0253 substituída a pedido do autor. 108 das 148
 > tooltips ajustadas a partir das originais, sem requisitos óbvios ou repetição de recipe type.
 > Seções técnicas podem ficar vazias. Evidências e adaptações em

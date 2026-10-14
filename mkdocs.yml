@@ -71,6 +71,9 @@ plugins:
             "Multiblocos Elétricos": "Electric Multiblocks"
             "Sem Eletricidade": "No Electricity"
             "Void Miner": "Void Miner"
+            "Catálogo": "Catalog"
+            "Sistemas": "Systems"
+            "🧪 Originais (WIP)": "🧪 Originals (WIP)"
         - locale: es
           name: Español
           build: true
@@ -148,6 +151,7 @@ nav:
     - getting-started/installation.md
     - getting-started/first-steps.md
     - getting-started/faq.md
+    - changelog.md
   - 🎮 Gameplay:
     - gameplay/index.md
     - Eras:
@@ -155,6 +159,7 @@ nav:
       - gameplay/eras/steam-and-steel.md
     - Máquinas:
       - gameplay/machines/index.md
+      - "Catálogo": gameplay/machines/catalog/index.md
       - "Era Vapor & Aço":
         - gameplay/machines/steam/large-steam-furnace.md
         - gameplay/machines/steam/large-steam-crusher.md
@@ -164,14 +169,25 @@ nav:
         - gameplay/machines/steam/stone-superheater.md
         - gameplay/machines/steam/steam-manufacturer.md
         - gameplay/machines/steam/steam-woodcutter.md
+        - gameplay/machines/steam/void-miner.md
       - "Multiblocos Elétricos":
         - gameplay/machines/electric/industrial-slaughterhouse.md
       - "Sem Eletricidade":
         - gameplay/machines/noenergy/infernal-coke-oven.md
         - gameplay/machines/noenergy/hyper-pressure-reactor.md
         - gameplay/machines/noenergy/leap-forward-blast-furnace.md
-      - "Void Miner":
-        - gameplay/machines/steam/void-miner.md
+    - Sistemas:
+      - gameplay/systems/forge-of-gods.md
+      - gameplay/systems/eye-of-harmony.md
+      - gameplay/systems/bec.md
+      - gameplay/systems/space-elevator.md
+      - gameplay/systems/nano-forge.md
+      - gameplay/systems/dyson-sphere.md
+      - gameplay/systems/nexus-flux-matrix.md
+      - gameplay/systems/wireless-steam-network.md
+      - gameplay/systems/research-engine.md
+      - gameplay/systems/hydraulic-system.md
+      - gameplay/systems/item-effects.md
     - Hatches & Partes:
       - gameplay/parts/index.md
       - gameplay/parts/wireless-steam-hatches.md
@@ -185,14 +201,15 @@ nav:
       - gameplay/materials/alloys.md
       - gameplay/materials/elements.md
       - gameplay/materials/fluids.md
-    - Sistemas:
-      - gameplay/systems/wireless-steam-network.md
-      - gameplay/systems/nexus-flux-matrix.md
-      - gameplay/systems/hydraulic-system.md
-      - gameplay/systems/research-engine.md
     - Dicas:
       - gameplay/tips/optimization.md
       - gameplay/tips/ae2-integration.md
+  - 🧪 Originais (WIP):
+    - roadmap/design/reator-pwr.md
+    - roadmap/design/lanca-cinetica-orbital.md
+    - roadmap/design/portao-de-fenda.md
+    - roadmap/design/anel-colisor.md
+    - roadmap/design/camara-estelar.md
   - 🔧 Desenvolvimento:
     - development/index.md
     - development/setup.md
@@ -205,6 +222,3 @@ nav:
     - development/contributing.md
   - 📋 Roadmap:
     - roadmap/index.md
-    - roadmap/multiblock-port-manifest.md
-    - roadmap/technical-audit-pattern-buffer.md
-    - roadmap/pattern-buffer-fidelity-gap.md

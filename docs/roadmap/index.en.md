@@ -1,80 +1,149 @@
-# Public roadmap — GregTech Nexus Addon
+# Roadmap
 
-Updated **2026-09-30**. Development baseline: **Minecraft 1.20.1 / GTCEu 7.5.3 / GTNA 0.5.1**.
+GTNA currently registers **164 multiblocks**. This page shows the progress of the requested ports and of the original multiblocks. It is generated from the project working documents, so it follows the code.
 
-GTNA expands steam industry, electric factories and GregTech automation with multiblocks,
-wireless networks, modules and AE2 integration. Configuration lets modpacks adapt these
-systems to their own progression.
+## Overall port progress
 
-## Reading the roadmap
+`████████████████░░░░░░░░░░░░░░` **46/86** (53%)
 
-- **Implemented:** present in current development; may not be in a published release yet.
-- **In validation:** covered by tests, with in-game confirmation or balancing still needed.
-- **Planned:** a next task; checked only after implementation and verification.
-- **Under consideration:** scope remains undecided; not a promised delivery.
+| Phase | Progress | Done |
+|---|---|---|
+| 3.1 Fase A: necessário e mecânicas do endgame existente | `███████████████░░░░░` | 3/4 |
+| 3.2 Fase B: barato e de alto valor (GTO/GTL, poucos blocos faltando) | `███████████████████░` | 18/19 |
+| 3.3 Fase C: médio (GTO, 2–5 blocos faltando ou classe própria) | `███████████████████░` | 21/22 |
+| 3.4 Fase D: caro / sistemas grandes (GTO) | `█████░░░░░░░░░░░░░░░` | 4/16 |
+| 3.5 Fase E: GTNH 1.7.10 sem equivalente no GTO/GTL (conversão por script) | `░░░░░░░░░░░░░░░░░░░░` | 0/5 |
+| 3.6 Fase F: TST, GTNL e 123Tech sem versão no GTO/GTL | `░░░░░░░░░░░░░░░░░░░░` | 0/10 |
+| 3.7 Fase G: GTLAdditions | `░░░░░░░░░░░░░░░░░░░░` | 0/10 |
 
-Priorities may change with testing. No release dates are committed. This page covers
-major systems rather than listing every machine.
+## Original multiblocks (in development)
 
-## Implemented
+Machines made for GTNA, with no equivalent in another mod. Each has a spec sheet with formulas, its own progression and an animated render.
 
-- [x] Wireless steam and energy networks, monitoring and Nexus Flux Matrix.
-- [x] Steam and Large Steam machines, hydraulic components and Steam Elevator modules.
-- [x] Nexus Structure Terminal previews and construction for registered multiblocks/modules.
-- [x] Auxiliary modules on compatible electric machines and an ore processing chain.
-- [x] Acceleration, overclock, parallel and concurrent-recipe hatches on compatible machines.
-- [x] ME Pattern Buffers with recipe modes, configurable capacity and upgrades that preserve data.
-- [x] Universal Factory with configurable rules for sharing resources between recipes.
-- [x] Electric Void Miner precise/random modes, essences, World Data Scanners and Incubator.
-- [x] Void Fluid Drilling Rig: actual extraction unlocks reusable discovery data and remote upgrades.
-- [x] JEI/Jade integration, English/Portuguese translations and automated tests for major systems.
+| Machine | Tier | Status | Spec |
+|---|---|---|---|
+| Pressurized Water Reactor | IV | :material-progress-wrench: design done, implementation starting | [open](design/reator-pwr.md) |
+| Kinetic Orbital Lance | UEV | :material-progress-wrench: in implementation | [open](design/lanca-cinetica-orbital.md) |
+| Dimensional Rift Gate | UIV | :material-progress-wrench: in implementation | [open](design/portao-de-fenda.md) |
+| Antimatter Collider Ring | UIV | :material-progress-wrench: in implementation | [open](design/anel-colisor.md) |
+| Stellar Containment Chamber | MAX | :material-progress-wrench: in implementation | [open](design/camara-estelar.md) |
 
-## Now — stabilize the content being tested
+??? note "3.1 Fase A: necessário e mecânicas do endgame existente — 3/4"
+    | Machine | Source | Status |
+    |---|---|---|
+    | Multiblocos BEC (Condensate Assembler + geradores/contenção) | GTNH (GT5U `BECRecipes`, tectech) | ✅ ported |
+    | Convergence do DTPF | GTNH `MTEPlasmaForge` | ⏳ pending |
+    | Nano Forge tier 4 | GTNH `MTENanoForge` | ✅ ported |
+    | Hyperdimensional Plasma Fusion Core ("DTPF MK2") | GTO | ✅ ported |
 
-- [ ] **GTNA-01 · Void mining:** confirm both modes, revised times, Accelerate Hatch and more than two parallels in game; check consumption and full outputs.
-- [ ] **GTNA-02 · Fluid discovery:** verify human prospecting, extraction, oil recording and Mars → Radon → remote production in the GTIA profile; clarify the instructions.
-- [ ] **GTNA-03 · Interfaces:** check scanner names, Jade chance summaries, scrolling large JEI output pools and different GUI scales.
-- [ ] **GTNA-04 · Teams:** test discovery sharing and access limits with two real players, including leaving and rejoining a team.
-- [ ] **GTNA-05 · Data safety:** retest Pattern Buffer upgrades, full/unpowered ME networks, world reloads and capacity migration without loss or duplication.
-- [ ] **GTNA-06 · Wireless energy:** verify loss is applied once, cross-dimension transfers and recovery of existing worlds across configurable profiles.
+??? note "3.2 Fase B: barato e de alto valor (GTO/GTL, poucos blocos faltando) — 18/19"
+    | Machine | Source | Status |
+    |---|---|---|
+    | Cracker Hub | GTO | ✅ ported |
+    | Mega Distillation | GTL `mega_distillery` | ✅ ported |
+    | Desulfurizer | GTO | ✅ ported |
+    | Supercomputing Center | GTO | ✅ ported |
+    | Research / Analysis Center | GTO `analysis_and_research_center` | ✅ ported |
+    | Data Center | GTO | ✅ ported |
+    | Giant Flotation Tank | GTO | ✅ ported |
+    | Dimensional Focus Engraving Array | GTO | ✅ ported |
+    | Phase Change Cube | GTO | ✅ ported |
+    | Large Incubator | GTO | ✅ ported |
+    | Mega Vacuum Drying | GTO | ✅ ported |
+    | Mega Brewer | GTO | ✅ ported |
+    | Engraving Laser Plant | GTO | ✅ ported |
+    | Large Pyrolyse Oven | GTO/GTL | ✅ ported |
+    | Infinity Fluid Drilling Rig | GTO | ✅ ported |
+    | Star Ultimate Material Forge | GTO | ✅ ported |
+    | Reaction Furnace | GTO | ✅ ported |
+    | PCB Factory | GTO | ✅ ported |
+    | Tiers da ISA Mill / Isa Factory | GTO `isa_mill` + 123Tech `OTEMegaIsaFactory` | ⏳ pending |
 
-**Completion:** record the outcomes and fix item loss, duplication, crashes and incorrect
-costs. Automated tests complement client and multiplayer-server validation.
+??? note "3.3 Fase C: médio (GTO, 2–5 blocos faltando ou classe própria) — 21/22"
+    | Machine | Source | Status |
+    |---|---|---|
+    | Crystal Builder | GTO | ✅ ported |
+    | Holy Separator | GTO/GTL (também no TST) | ✅ ported |
+    | High Energy Laser Lathe | GTO | ✅ ported |
+    | Neutronium Wire Cutting | GTO | ✅ ported |
+    | Superconducting Magnetic Presser | GTO | ✅ ported |
+    | Giant Electrochemical Workstation | GTO | ✅ ported |
+    | Heavy Rolling | GTO | ✅ ported |
+    | Hand of Arachne (tear) | GTO | ✅ ported |
+    | Lightning Rod (gerador de arco) | GTO | ✅ ported |
+    | Fuel Cell Generator | GTO | ✅ ported |
+    | Giant Sintering Array | GTO | ✅ ported |
+    | Particle Stream Matrix Filling | GTO | ✅ ported |
+    | Extreme Compressor | GTO | ✅ ported |
+    | Gemini Containment System | GTO | ✅ ported |
+    | Space Probe Surface Reception | GTO | ✅ ported |
+    | Integrated Vapor Deposition System | GTO | ✅ ported |
+    | Integrated Assembler  / Integrated Assembly Facility | GTO (+ versões GTNL/TST) | ✅ ported |
+    | Compound Extreme Cooling Unit | GTO | ✅ ported |
+    | Hyper Naquadah Reactor / Advanced | GTO `hyper_reactor` / `advanced_hyper_reactor` | ✅ ported |
+    | Nanites Circuit Assembly Factory | GTO | ✅ ported |
+    | Rare Earth Centrifugal  / Advanced | GTO/GTL | ✅ ported |
+    | Platinum Group Processing Hub | GTNL | ⏳ pending |
 
-## Next — integration, balancing and documentation
+??? note "3.4 Fase D: caro / sistemas grandes (GTO) — 4/16"
+    | Machine | Source | Status |
+    |---|---|---|
+    | Space Elevator + módulos (Ore Extraction, drilling, assembly) | GTO | ✅ ported |
+    | Road of Heaven | GTO | ⏳ pending |
+    | Dyson Sphere Launch Silo + Receiving Station | GTO | ✅ ported |
+    | Kerr-Newman Homogenizer | GTO | ✅ ported |
+    | Nyarlathotep's Tentacle | GTO | ✅ ported |
+    | Nano Phagocytosis Plant | GTO | ⏳ pending |
+    | Plasma Centrifuge | GTO | ⏳ pending |
+    | Stellar Forge | GTO | ⏳ pending |
+    | Planetary Gas Collector | GTO | ⏳ pending |
+    | Core Drilling Plant (`planet_core_drilling`) | GTO | ⏳ pending |
+    | Petrochemical Plant | GTO | ⏳ pending |
+    | Fuel Refining Complex | GTO | ⏳ pending |
+    | Neutron Forging Anvil | GTO | ⏳ pending |
+    | Transliminal Oasis | GTO | ⏳ pending |
+    | Biochemical Extraction | GTO | ⏳ pending |
+    | Fast Neutron Breeder Reactor | GTO | ⏳ pending |
 
-- [ ] **GTNA-07 · Real factories:** measure AE2 autocrafting, concurrent recipes and performance under load; check native CPUs alongside Nexus systems.
-- [ ] **GTNA-08 · Multiblocks/modules:** expand checks for orientation, formation, previews and hatch support on existing machines.
-- [ ] **GTNA-09 · Pack configuration:** complete cost, yield, parallel and enable/disable controls where verified needs arise; document defaults and examples.
-- [ ] **GTNA-10 · Progression content:** review Steam, electric and component recipes, costs and yields, prioritizing practical machines.
-- [ ] **GTNA-11 · Guides/translations:** update construction/use instructions and keep languages and tooltips consistent with actual behavior and limits.
+??? note "3.5 Fase E: GTNH 1.7.10 sem equivalente no GTO/GTL (conversão por script) — 0/5"
+    | Machine | Source | Status |
+    |---|---|---|
+    | Semi-Stable Antimatter Stabilization Sequencer | GoodGenerator `AntimatterForge` | ⏳ pending |
+    | Pseudostable Black Hole Containment Field | GT5U `MTEBlackHoleCompressor` | ⏳ pending |
+    | Industrial Arc Furnace | GT++ | ⏳ pending |
+    | Endothermic Fridge | GT5U | ⏳ pending |
+    | Mega Distillation Tower / Mega Oil Cracker | BartWorks | ⏳ pending |
 
-**Completion:** documented machines and settings should reproduce observed factory
-behavior, with understandable costs and limitations.
+??? note "3.6 Fase F: TST, GTNL e 123Tech sem versão no GTO/GTL — 0/10"
+    | Machine | Source | Status |
+    |---|---|---|
+    | Hyper Thermal Convector | TST | ⏳ pending |
+    | Magnetic Drive Pressure Former | TST | ⏳ pending |
+    | Precise High-Energy Photonic Quantum Master | TST | ⏳ pending |
+    | DTPF MK-II (`MM_…PlasmaForgePrototypeMK2`) | TST (modular) | ⏳ pending |
+    | Eye of Harmony Injector | GTNL | ⏳ pending |
+    | EGTW (Eternal GregTech Workshop) + módulos | GTNL (2.376 linhas) | ⏳ pending |
+    | Vortex Matter Centrifuge, Field Forge Press, Horizontal Compressor, Mega Mixer, Nano Assembler Mk-50 | GTNL | ⏳ pending |
+    | Tangshan Steel Mill | 123Tech | ⏳ pending |
+    | Hyperdimensional Biebie Plasma Forge | 123Tech | ⏳ pending |
+    | Ammonia Plant | Steam Reborn (gtsr) | ⏳ pending |
 
-## Later — expansion and release preparation
+??? note "3.7 Fase G: GTLAdditions — 0/10"
+    | Machine | Source | Status |
+    |---|---|---|
+    | Apocalyptic Torsion Quantum Matrix | QFT com 100% de chance, 1/10 do insumo probabilístico, 1024 threads + distort + neutron compressor | ⏳ pending |
+    | Heart of the Universe | Genesis Engine: 4096× um Creative Laser por plano | ⏳ pending |
+    | Fuxi Bagua Heaven Forging Furnace | 4 tipos de endgame do GTL | ⏳ pending |
+    | Primordial Evolution Nexus | Tipo de receita próprio | ⏳ pending |
+    | Biosphere III + módulos Garden of Hermes | Hospedeiro de módulos com laser | ⏳ pending |
+    | Skeleton Shift Rift Engine | Decay hastener | ⏳ pending |
+    | Space Scaling Instrument | Packer com bobina especial | ⏳ pending |
+    | Planetary Ionisation Convergence Tower | Mecânica própria (classe ainda não lida) | ⏳ pending |
+    | Inferno Cleft Smelting Vault | Pirólise + cracking | ⏳ pending |
+    | Space Elevator MKII / Mega Space Elevator / Light Hunter Space Station | Hubs de módulos com paralelo máximo | ⏳ pending |
 
-- [ ] **GTNA-12 · New ports:** select machines for progression needs; verify structure, recipes, behavior, art and licensing before implementation.
-- [ ] **GTNA-13 · Technical quality:** reduce duplicated registrations and expand regression coverage where player reports reveal problems.
-- [ ] **GTNA-14 · Release preparation:** review changes, save/config migration, compatibility, credits, changelog and installation instructions before publication.
+## How it works
 
-Complex new machine families remain **under consideration** until scope and prerequisites
-are defined. This roadmap does not automatically approve every reference port.
-
-## Relationship with GregTech Infinity Ascension
-
-GTNA is a core part of GTIA and remains usable by other packs. GTIACore requires GTNA;
-GTNA does not require GTIACore. Pack-specific recipes, planetary deposits and gates belong
-to the GTIA profile and can differ from the addon's defaults.
-
-## Help test
-
-Report version, machine, relevant settings, reproduction steps and expected/observed behavior.
-An [oil and Radon testing guide](void-fluid-manual-test.md) is available in Portuguese.
-See [credits and licenses](https://github.com/Raishxn/GregTech-Nexus-Addon/blob/main/THIRD_PARTY_NOTICES.md) for code and asset origins.
-
-## Eye of Harmony
-
-- [ ] [GTNH-faithful Eye of Harmony](eye-of-harmony-implementation-roadmap.md). In progress: physical content, structure and Overworld operation implemented locally; client QA pending. Crafting deferred; other planets, viewer and parallels follow. Detailed plan in Portuguese.
-
-- [Crafting, materials and planets audit](eye-of-harmony-progression-port-audit.md): verified dependencies, BEC route, adapted progression and naming proposals. Document in Portuguese.
+- Only machines the author asked for are ported, from the named source (GTO, GTL, GTNL, TST, GTNH).
+- Each port brings its original structure, mechanics and textures, with KubeJS support.
+- Default recipes are a baseline; balance belongs to the modpack.

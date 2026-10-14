@@ -1,30 +1,29 @@
-# 📥 Instalação / Installation
+# Instalação
 
 ## Requisitos
 
-| Mod | Versão | Link |
-|-----|--------|------|
-| **Minecraft** | 1.20.1 | - |
-| **Forge** | 47.4.x | [Download](https://files.minecraftforge.net/) |
-| **GregTech CEu Modern** | 7.4.0+ | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/gregtechceu-modern) |
-| **Applied Energistics 2** | Latest | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2) |
-| **ExtendedAE** | Latest | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/ex-pattern-provider) |
-| **GregTech Nexus Addon** | 0.1.5+ | [GitHub Releases](https://github.com/Raishxn/GregTech-Nexus-Addon/releases) |
+| Mod | Versão | Obrigatório |
+|---|---|---|
+| Minecraft | 1.20.1 | sim |
+| Forge | 47.4.1 ou mais novo | sim |
+| GregTech CEu Modern | 7.5.3 ou mais novo | sim |
+| LDLib | a que acompanha o GTCEu | sim (vem com o GTCEu) |
+| Ad Astra | 1.15.20 ou mais novo | não: planetas, Elevador a Vapor, Olho da Harmonia fora do Overworld |
+| Stargate Journey | 0.6.44 ou mais novo | não: integração de portais |
+| KubeJS | 2001.6.5 | não: scripts (veja a API KubeJS) |
+| Applied Energistics 2 | 15.x | não: Pattern Buffer, hatches ME, automação |
+| JEI ou EMI | qualquer recente | não: receitas e estruturas |
 
-## Passo a Passo
+!!! info "RenderBlender não é mais necessário"
+    Até a 0.5.5 os efeitos dos ícones de material dependiam do RenderBlender. Desde a 0.5.6 o GTNA tem render próprio.
 
-1. Instale **Minecraft Forge** para 1.20.1
-2. Baixe e coloque na pasta `mods/`:
-    - GregTech CEu Modern
-    - Applied Energistics 2
-    - ExtendedAE
-    - **GregTech Nexus Addon** (este mod)
-3. Inicie o Minecraft e verifique que todos os mods aparecem na lista
+## Passo a passo
 
-!!! warning "Versão Mínima"
-    O GTNA requer GTCEu Modern **7.4.0** ou superior. Versões anteriores podem causar crashes.
+1. Instale Forge 47.4.1 ou mais novo para o Minecraft 1.20.1.
+2. Coloque o GTCEu Modern e o GTNA na pasta `mods`.
+3. Adicione os opcionais que quiser.
+4. Abra o jogo uma vez para gerar `config/gtna.json`.
 
-!!! tip "Mods Recomendados (Opcionais)"
-    - **JEI** ou **EMI**: Para visualizar receitas
-    - **Jade**: Para ver informações de blocos no HUD
-    - **GTMThings**: Compatibilidade com stocking buses
+## Configuração
+
+O arquivo `config/gtna.json` tem seções de gameplay, cliente, máquinas, itens restritos, vapor wireless e liga/desliga por máquina e por hatch. Todas as opções têm nome e comentário em português e inglês no menu de configuração do jogo.

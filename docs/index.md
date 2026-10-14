@@ -6,84 +6,52 @@ hide:
 
 # GregTech Nexus Addon
 
-<div style="text-align: center; margin: 2rem 0;">
-  <h2 style="color: #9B59B6; font-size: 1.8rem;">⚙️ The Nexus of Steam & Steel</h2>
-  <p style="font-size: 1.1rem; color: #aaa; max-width: 700px; margin: 0 auto;">
-    Uma expansão para o GregTech CEu Modern que transforma como você gera energia, processa materiais e constrói suas fábricas. Do vapor primitivo à tecnologia cósmica.
-  </p>
-</div>
-
----
+<p style="font-size:1.1rem;max-width:720px">Multiblocos, mecânicas de endgame e automação para o GregTech CEu Modern 1.20.1.</p>
 
 <div class="feature-grid" markdown>
 
 <div class="feature-card" markdown>
-### 📡 Rede Wireless de Vapor
-Diga adeus ao espaguete de tubos! Transmita vapor pela rede wireless com hatches especializadas — chega de piping entre boilers e máquinas.
+### 🏗️ 164 multiblocos
+Ports fiéis do GTNH, GTO, GTL, GTNL e TST, cada um com estrutura, mecânica e texturas originais. Todos têm página com render, tooltip e lista de blocos.
 
-[:octicons-arrow-right-24: Saiba mais](gameplay/systems/wireless-steam-network.md)
+[:octicons-arrow-right-24: Catálogo](gameplay/machines/catalog/index.md)
 </div>
-
 <div class="feature-card" markdown>
-### 🏗️ Multiblocos Avançados
-8+ multiblocos a vapor para processamento em massa: Large Steam Furnace (9x velocidade!), Large Steam Solar Boiler (vapor infinito), Steam Woodcutter, e mais.
+### 🌌 Sistemas de endgame
+Forja dos Deuses, Olho da Harmonia, Condensado de Bose-Einstein, Elevador Espacial, Nano Forge e Esfera de Dyson, com todas as fórmulas.
 
-[:octicons-arrow-right-24: Ver máquinas](gameplay/machines/index.md)
+[:octicons-arrow-right-24: Sistemas](gameplay/systems/forge-of-gods.md)
 </div>
-
 <div class="feature-card" markdown>
-### 🧵 Hatches Personalizadas
-Thread Hatches para receitas simultâneas, Accelerate Hatches para velocidade, Overclock Hatches para eficiência, e Advanced Parallel para escalabilidade insana.
+### 📡 Energia wireless
+Rede Nexus de EU e rede wireless de vapor: sem cabos entre geradores e máquinas.
 
-[:octicons-arrow-right-24: Ver partes](gameplay/parts/index.md)
+[:octicons-arrow-right-24: Nexus Flux Matrix](gameplay/systems/nexus-flux-matrix.md)
 </div>
-
 <div class="feature-card" markdown>
-### 🔧 Integração AE2
-Compatibilidade nativa com Applied Energistics 2 e ExtendedAE. Autocrafting otimizado com wireless steam e hatches inteligentes.
+### 🧵 Hatches especiais
+Thread, Accelerate, Overclock, Advanced Parallel, Huge Steam Bus e os hatches dos sistemas de endgame.
 
-[:octicons-arrow-right-24: Dicas de AE2](gameplay/tips/ae2-integration.md)
+[:octicons-arrow-right-24: Hatches](gameplay/parts/index.md)
 </div>
-
 <div class="feature-card" markdown>
-### 🧪 Materiais Customizados
-Ligas exclusivas como Stronze, Breel, Echoite e vapores supercríticos. Cada material com propósito real na progressão.
+### 🔌 API KubeJS
+Tipos de receita, módulos auxiliares, planetas do Olho da Harmonia e efeitos de item, tudo por script.
 
-[:octicons-arrow-right-24: Ver materiais](gameplay/materials/index.md)
+[:octicons-arrow-right-24: API KubeJS](development/api/kubejs.md)
 </div>
-
 <div class="feature-card" markdown>
-### 📋 Roadmap Público
-Acompanhe o que estamos desenvolvendo: novos multiblocos, Pattern Buffer, novos elementos, e muito mais. Tudo aberto e transparente.
+### 📋 Roadmap
+O que já foi portado, o que está em andamento e os multiblocos originais em desenvolvimento.
 
-[:octicons-arrow-right-24: Ver roadmap](roadmap/index.md)
+[:octicons-arrow-right-24: Roadmap](roadmap/index.md)
 </div>
 
 </div>
 
----
+## Comece por aqui
 
-## 🚀 Início Rápido
-
-1. **Instale os requisitos**: GregTech CEu Modern 7.4.x + Applied Energistics 2 + ExtendedAE
-2. **Baixe o GTNA**: [:octicons-download-24: Download Latest](https://github.com/Raishxn/GregTech-Nexus-Addon/releases){ .md-button .md-button--primary }
-3. **Coloque na pasta mods** e inicie o Minecraft 1.20.1
-
-[:octicons-book-24: Guia de Instalação Completo](getting-started/installation.md){ .md-button }
-
----
-
-## 📊 Status Atual — v0.1.5
-
-| Feature | Status |
-|---------|--------|
-| Wireless Steam Network | <span class="status-badge status-done">✅ Pronto</span> |
-| Sistema Hidráulico | <span class="status-badge status-done">✅ Pronto</span> |
-| Multiblocos a Vapor (8+) | <span class="status-badge status-done">✅ Pronto</span> |
-| Thread / Accelerate / Overclock Hatches | <span class="status-badge status-done">✅ Pronto</span> |
-| Advanced Parallel Hatches | <span class="status-badge status-done">✅ Pronto</span> |
-| **Nexus Flux Matrix (Wireless Energy)** | <span class="status-badge status-wip">🔄 Em Progresso</span> |
-| Pattern Buffer System | <span class="status-badge status-done">✅ Pronto</span> |
-| Novos Elementos & Ligas | <span class="status-badge status-planned">🔮 Planejado</span> |
-| Integração KubeJS | <span class="status-badge status-planned">🔮 Planejado</span> |
-| Wiki Completa | <span class="status-badge status-wip">🔄 Em Progresso</span> |
+- [Instalação](getting-started/installation.md)
+- [Primeiros passos](getting-started/first-steps.md)
+- [Perguntas frequentes](getting-started/faq.md)
+- [Novidades](changelog.md)

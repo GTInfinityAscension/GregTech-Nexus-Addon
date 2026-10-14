@@ -1,47 +1,17 @@
-# 🎯 Primeiros Passos / First Steps
+# Primeiros passos
 
-## Sua Primeira Hora com GTNA
+O GTNA acompanha a progressão do GregTech. Esta é a ordem em que os sistemas aparecem:
 
-O GTNA adiciona conteúdo desde o começo do jogo. Aqui está o que fazer:
+| Era | O que o GTNA traz | Onde ler |
+|---|---|---|
+| Vapor | Multiblocos a vapor (fornalha, britador, ligas, caldeira solar), Huge Steam Bus, rede wireless de vapor, Elevador a Vapor | [Era Vapor e Aço](../gameplay/eras/steam-and-steel.md), [Rede wireless de vapor](../gameplay/systems/wireless-steam-network.md) |
+| LV–EV | Multiblocos de processamento e de paralelo, Thread e Accelerate Hatch | [Catálogo](../gameplay/machines/catalog/index.md), [Hatches](../gameplay/parts/index.md) |
+| IV–UV | Pattern Buffer, rede Nexus de energia, PCB Factory, Data Center, Research Center | [Nexus Flux Matrix](../gameplay/systems/nexus-flux-matrix.md) |
+| UHV–UXV | Elevador Espacial, Nano Forge, DTPF, Esfera de Dyson, Condensado de Bose-Einstein | [Sistemas](../gameplay/systems/space-elevator.md) |
+| UIV–MAX | Forja dos Deuses e Olho da Harmonia | [Forja dos Deuses](../gameplay/systems/forge-of-gods.md), [Olho da Harmonia](../gameplay/systems/eye-of-harmony.md) |
 
-### 1. Montar seu primeiro Steam Boiler (GT Base)
-Antes de usar o GTNA, você precisa de vapor! Monte um **Bronze Boiler** ou **Steel Boiler** do GregTech base.
+## Dicas para começar
 
-### 2. Construir a Wireless Steam Network
-Em vez de passar tubos para cada máquina, construa:
-
-- **1x Wireless Steam Output Hatch** — conecte ao seu boiler
-- **1x Wireless Steam Input Hatch** — conecte à máquina que quer alimentar
-
-O vapor é transmitido automaticamente pela rede sem fios!
-
-!!! tip "Dica: Versão Steel"
-    As variantes **Steel** das wireless hatches têm capacidade de armazenamento **muito maior** (Integer.MAX_VALUE). Vale fazer o upgrade rápido.
-
-### 3. Construir seu Primeiro Multiblocko GTNA
-
-O multiblocko mais simples para começar é o **Large Steam Alloy Smelter**:
-- Tamanho: 3x4x3 (pequeno!)
-- Materiais: Bronze Plated Bricks + Bronze Firebox
-- Benefício: 64 paralelos + 43% mais rápido
-
-[Ver guia completo do Large Steam Alloy Smelter →](../gameplay/machines/steam/large-steam-alloy-smelter.md)
-
-### 4. Explorar Receitas no JEI/EMI
-
-Todas as receitas do GTNA aparecem no JEI. Procure por:
-- `Hydraulic Manufacturing` — receitas do Steam Manufacturer
-- `Woodcutter` — receitas automáticas de madeira
-- `Super Heater` — receitas de derretimento de pedra
-- `Infernal Coke` — receitas de carvão intensificado
-
-### 5. Próximos Passos
-
-1. Construa o **Large Steam Solar Boiler** para vapor infinito
-2. Explore os **multiblocos maiores** (Large Steam Furnace, Large Steam Crusher)
-3. Considere adicionar **Huge Steam Buses** para mais itens
-
----
-
-!!! info "Filosofia do Mod"
-    O GTNA foi projetado para ser **desafiador mas justo**. Cada máquina que você constrói traz um benefício real e significativo. Se uma máquina parece cara, o retorno sobre o investimento será insano!
+- Cada controlador mostra a estrutura no JEI/EMI; o projetor holográfico do GTCEu monta a estrutura para você.
+- O botão de checagem de estrutura do GTNA aponta o bloco errado.
+- As receitas padrão são uma base: o modpack pode trocar todas pelo KubeJS.
