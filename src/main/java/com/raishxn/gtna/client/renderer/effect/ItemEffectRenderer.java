@@ -116,22 +116,46 @@ public final class ItemEffectRenderer extends RenderType {
                                     MultiBufferSource buffers, int overlay) {
         if (context != ItemDisplayContext.GUI) return;
         for (var effect : effects(stack, model)) {
-            if (!enabled(effect.type())) continue;
-            if (effect.type() == ItemEffect.Type.HALO) renderHalo(effect, pose, buffers);
-            else if (effect.type() == ItemEffect.Type.GLOW_EDGE) renderGlowEdge(effect, stack, model, pose, buffers,
-                    overlay);
+            if (effect.type() != ItemEffect.Type.HALO || !enabled(effect.type())) continue;
+            renderHalo(effect, pose, buffers);
+            if (effect.pulse()) renderPulse(stack, model, pose, buffers, overlay);
         }
     }
 
     /** Called with the icon's pose right after the icon is drawn. */
     public static void renderOver(ItemStack stack, ItemDisplayContext context, BakedModel model, PoseStack pose,
                                   MultiBufferSource buffers) {
-        if (shader == null || !(buffers instanceof MultiBufferSource.BufferSource source)) return;
-        for (var effect : effects(stack, model)) {
-            if (!effect.type().isShader() || !enabled(effect.type())) continue;
+        var effects = effects(stack, model);
+        if (effects.isEmpty()) return;
+        boolean flushed = false;
+        for (var effect : effects) {
+            if (!enabled(effect.type())) continue;
+            if (effect.type() == ItemEffect.Type.GLOW_EDGE) {
+                renderGlowEdge(effect, stack, model, pose, buffers);
+                continue;
+            }
+            if (!effect.type().isShader() || !(buffers instanceof MultiBufferSource.BufferSource source)) continue;
+            // The icon is still batched: draw it now, so the effect (equal depth / over it) lands on its faces.
+            if (!flushed) {
+                source.endBatch();
+                flushed = true;
+            }
             var mask = effect.texture() == null ? null : sprite(effect.texture());
-            // The icon itself is still batched; draw it now so the effect lands on top instead of under it.
-            if (context == ItemDisplayContext.GUI) source.endBatch();
+            var kind = switch (effect.type()) {
+                case ETERNAL -> CosmicShader.Kind.ETERNAL;
+                case UNSTABLE -> CosmicShader.Kind.UNSTABLE;
+                default -> CosmicShader.Kind.COSMIC;
+            };
+            if (CosmicShader.ready(kind)) {
+                // RenderBlender's star-field shaders over the icon's own faces, masked.
+                CosmicShader.prepare(kind, context == ItemDisplayContext.GUI);
+                var out = source.getBuffer(kind.item());
+                for (var quad : silhouette(model)) CosmicShader.quad(quad, pose, out,
+                        mask != null ? mask : quad.getSprite(), 0, FULL_BRIGHT);
+                source.endBatch(kind.item());
+                continue;
+            }
+            if (shader == null) continue;
             prepare(effect, context == ItemDisplayContext.GUI, mask == null);
             var out = source.getBuffer(EFFECT);
             emitSilhouette(model, pose, out, mask);
@@ -139,44 +163,126 @@ public final class ItemEffectRenderer extends RenderType {
         }
     }
 
+    /**
+     * RenderBlender's halo: a flat quad behind the item, {@code size} pixels wider on every side, tinted with the
+     * ARGB colour.
+     */
     private static void renderHalo(ItemEffect effect, PoseStack pose, MultiBufferSource buffers) {
         var sprite = sprite(effect.texture() == null ? ItemEffect.DEFAULT_HALO : effect.texture());
-        int color = effect.color() == 0 ? 0xFFFFFFFF : opaque(effect.color());
-        float grow = effect.size() / 16f;
-        float alpha = (color >>> 24) / 255f;
-        if (effect.pulse()) {
-            float wave = Mth.sin(time(effect.speed()) * 2.5f);
-            grow *= 1 + 0.08f * wave;
-            alpha *= 0.8f + 0.2f * wave;
-        }
-        var out = buffers.getBuffer(RenderType.text(InventoryMenu.BLOCK_ATLAS));
+        int color = effect.color() == 0 ? 0xFFFFFFFF : effect.color();
+        float spread = effect.size() / 16f, min = -spread, max = 1 + spread;
+        var out = buffers.getBuffer(RenderType.entityTranslucent(InventoryMenu.BLOCK_ATLAS));
         var matrix = pose.last().pose();
-        int r = (color >> 16) & 255, g = (color >> 8) & 255, b = color & 255, a = (int) (alpha * 255);
-        // Generated item faces sit at z 7.5..8.5 px; the halo goes just behind the back face.
-        float z = 0.44f, min = -grow, max = 1 + grow;
-        out.vertex(matrix, min, max, z).color(r, g, b, a).uv(sprite.getU0(), sprite.getV0()).uv2(FULL_BRIGHT)
-                .endVertex();
-        out.vertex(matrix, min, min, z).color(r, g, b, a).uv(sprite.getU0(), sprite.getV1()).uv2(FULL_BRIGHT)
-                .endVertex();
-        out.vertex(matrix, max, min, z).color(r, g, b, a).uv(sprite.getU1(), sprite.getV1()).uv2(FULL_BRIGHT)
-                .endVertex();
-        out.vertex(matrix, max, max, z).color(r, g, b, a).uv(sprite.getU1(), sprite.getV0()).uv2(FULL_BRIGHT)
-                .endVertex();
+        var normal = pose.last().normal();
+        int r = (color >> 16) & 255, g = (color >> 8) & 255, b = color & 255, a = (color >>> 24) & 255;
+        float[][] v = { { max, max, sprite.getU1(), sprite.getV0() }, { min, max, sprite.getU0(), sprite.getV0() },
+                { min, min, sprite.getU0(), sprite.getV1() }, { max, min, sprite.getU1(), sprite.getV1() } };
+        for (float[] q : v)
+            out.vertex(matrix, q[0], q[1], 0).color(r, g, b, a).uv(q[2], q[3])
+                    .overlayCoords(OverlayTexture.NO_OVERLAY).uv2(FULL_BRIGHT).normal(normal, 0, 0, 1).endVertex();
     }
 
-    private static void renderGlowEdge(ItemEffect effect, ItemStack stack, BakedModel model, PoseStack pose,
-                                       MultiBufferSource buffers, int overlay) {
-        int color = effect.color() == 0 ? 0xFFFFFFFF : effect.color();
-        float width = effect.size();
+    private static final RandomSource PULSE = RandomSource.create();
+
+    /** RenderBlender's pulse: a slightly rescaled, 60 % transparent copy of the icon that jitters every frame. */
+    private static void renderPulse(ItemStack stack, BakedModel model, PoseStack pose, MultiBufferSource buffers,
+                                    int overlay) {
         pose.pushPose();
-        // Enlarged copy centred on the icon, a hair behind it so only the rim shows.
-        pose.translate(-width * 0.025f, -width * 0.025f, -0.001f);
-        float scale = 1 + width * 0.05f;
-        pose.scale(scale, scale, 1);
-        var tinted = new TintedConsumer(buffers.getBuffer(RenderType.entityTranslucent(InventoryMenu.BLOCK_ATLAS)),
-                color);
-        Minecraft.getInstance().getItemRenderer().renderModelLists(model, stack, FULL_BRIGHT, overlay, pose, tinted);
+        float scale = (float) (PULSE.nextDouble() * 0.15 + 0.95);
+        float shift = (1 - scale) / 2;
+        pose.translate(shift, shift, 0);
+        pose.scale(scale, scale, 1.0001f);
+        var out = new AlphaConsumer(buffers.getBuffer(RenderType.entityTranslucent(InventoryMenu.BLOCK_ATLAS)), 0.6f);
+        Minecraft.getInstance().getItemRenderer().renderModelLists(model, stack, FULL_BRIGHT, overlay, pose, out);
         pose.popPose();
+    }
+
+    /**
+     * RenderBlender's glow edge: after the item, an emissive copy enlarged by {@code 1 + width * 0.05} and lifted a
+     * little, drawn translucent over it.
+     */
+    private static void renderGlowEdge(ItemEffect effect, ItemStack stack, BakedModel model, PoseStack pose,
+                                       MultiBufferSource buffers) {
+        float width = Math.max(0.5f, effect.size());
+        pose.pushPose();
+        pose.translate(0, 0.02f, 0);
+        float expand = 1 + width * 0.05f;
+        pose.scale(expand, expand, expand);
+        VertexConsumer out = buffers.getBuffer(RenderType.entityTranslucentEmissive(InventoryMenu.BLOCK_ATLAS));
+        if (effect.color() != 0) out = new TintedConsumer(out, effect.color());
+        Minecraft.getInstance().getItemRenderer().renderModelLists(model, stack, FULL_BRIGHT,
+                OverlayTexture.NO_OVERLAY, pose, out);
+        pose.popPose();
+    }
+
+    /** First-layer quads (the silhouette) of an item model. */
+    private static List<BakedQuad> silhouette(BakedModel model) {
+        var random = RandomSource.create(42);
+        List<BakedQuad> quads = new ArrayList<>();
+        for (Direction face : Direction.values()) {
+            random.setSeed(42);
+            quads.addAll(model.getQuads(null, face, random));
+        }
+        random.setSeed(42);
+        quads.addAll(model.getQuads(null, null, random));
+        boolean layered = quads.stream().anyMatch(q -> q.getTintIndex() == 0);
+        if (layered) quads.removeIf(q -> q.getTintIndex() != 0);
+        return quads;
+    }
+
+    /** Multiplies vertex alpha. */
+    private record AlphaConsumer(VertexConsumer delegate, float factor) implements VertexConsumer {
+
+        @Override
+        public VertexConsumer vertex(double x, double y, double z) {
+            delegate.vertex(x, y, z);
+            return this;
+        }
+
+        @Override
+        public VertexConsumer color(int r, int g, int b, int a) {
+            delegate.color(r, g, b, (int) (a * factor));
+            return this;
+        }
+
+        @Override
+        public VertexConsumer uv(float u, float v) {
+            delegate.uv(u, v);
+            return this;
+        }
+
+        @Override
+        public VertexConsumer overlayCoords(int u, int v) {
+            delegate.overlayCoords(u, v);
+            return this;
+        }
+
+        @Override
+        public VertexConsumer uv2(int u, int v) {
+            delegate.uv2(u, v);
+            return this;
+        }
+
+        @Override
+        public VertexConsumer normal(float x, float y, float z) {
+            delegate.normal(x, y, z);
+            return this;
+        }
+
+        @Override
+        public void endVertex() {
+            delegate.endVertex();
+        }
+
+        @Override
+        public void defaultColor(int r, int g, int b, int a) {
+            delegate.defaultColor(r, g, b, a);
+        }
+
+        @Override
+        public void unsetDefaultColor() {
+            delegate.unsetDefaultColor();
+        }
     }
 
     /** Sets the shader uniforms for one effect. */

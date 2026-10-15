@@ -7743,3 +7743,12 @@ Decisão do autor (2026-10-12, `docs/roadmap/bec-proposta.md`): rede física igu
 - Dev: `StallDetector` (stack da thread travada >3 s, só fora de produção), `DevCommandFile` (`run/gtna_dev_commands.txt`), `/gtna_preview_bench`, `/gtna_preview_open`, `/gtna_star_preview`, `-PquickPlay`.
 - Validação: spotlessCheck, runUnitTests, runGameTestServer 358/358, runData PASS; cliente verificado por screenshots.
 - Pendente: congelamento de vários minutos relatado pelo autor ao construir o Portão de Fenda não reproduzido aqui — o detector de travamento agora registra a stack quando acontecer.
+
+## G-0264 — 2026-10-15 — Congelamentos da Lança/Colisor, efeitos de item como no RenderBlender, Eternity do Modernity
+- Congelamento ao ligar a Lança: cada bloco retirado do canhão disparava uma checagem completa da estrutura (GTCEu `onBlockStateChanged`). Captura/retorno agora em `NexusBuildCheckGuard.quiet`. Construção 1,4 s + um soluço ~4 s ao ligar (antes travava minutos). Mesmo para os anéis do Colisor.
+- Malhas capturadas (anel, canhão) com sombreamento por face e luz real da posição (antes FULL_BRIGHT: tom diferente do multibloco).
+- Efeitos de item portados do RenderBlender 1.1.1 (LGPL-3.0): shaders `rb_cosmic`/`rb_eternal`/`rb_unstable` + sprites `misc/cosmic_*`, `misc/eternal/*`; passada de profundidade igual sobre o ícone; halo atrás do ícone, pulso por tremor, glow edge emissivo; vale na GUI e na mão. Universium (itens, blocos, frame, fluido) com o cosmic original.
+- Eternity: texturas animadas do Modernity-GTNH (itens, bloco, fluido), sem shader. `rb_eternal` com paleta dourada para os demais usos.
+- Portão de Fenda: horizonte com o vórtice da prévia 3D (stellar_fx modo 5, aditivo, sem costura); `additive_color` para geometria aditiva (antes saía opaca).
+- Dev: `/gtna_material_sheet <página>` (todos os itens de material), `/gtna_rift_preview`, `/gtna_dev_build <id>`.
+- Validação: gametests 358/358, runData, spotless; cliente: folhas de materiais (4 páginas), Universium na mão, Fenda, Lança construída.

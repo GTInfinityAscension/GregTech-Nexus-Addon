@@ -14,6 +14,86 @@
       "type": "minecraft:directory",
       "source": "item/material_sets",
       "prefix": "item/material_sets/"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/cosmic_0"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/cosmic_1"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/cosmic_2"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/cosmic_3"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/cosmic_4"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/cosmic_5"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/cosmic_6"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/cosmic_7"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/cosmic_8"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/cosmic_9"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/eternal/eternal_0"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/eternal/eternal_1"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/eternal/eternal_2"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/eternal/eternal_3"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/eternal/eternal_4"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/eternal/eternal_5"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/eternal/eternal_6"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/eternal/eternal_7"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/eternal/eternal_8"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "gtna:misc/eternal/eternal_9"
     }
   ]
 }

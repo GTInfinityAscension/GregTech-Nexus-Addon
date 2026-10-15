@@ -18,6 +18,30 @@ public final class PreviewBenchCommand {
 
     private PreviewBenchCommand() {}
 
+    private static void devBuild(net.minecraft.server.MinecraftServer server, java.util.UUID uuid,
+                                 net.minecraft.resources.ResourceLocation id) {
+        var player = server.getPlayerList().getPlayer(uuid);
+        var block = net.minecraftforge.registries.ForgeRegistries.BLOCKS.getValue(id);
+        if (player == null || block == null) return;
+        var level = player.serverLevel();
+        var facing = player.getDirection();
+        var pos = player.blockPosition().relative(facing, 8);
+        var state = block.defaultBlockState();
+        var prop = state.getBlock().getStateDefinition().getProperty("facing");
+        if (prop instanceof net.minecraft.world.level.block.state.properties.DirectionProperty dir &&
+                dir.getPossibleValues().contains(facing.getOpposite()))
+            state = state.setValue(dir, facing.getOpposite());
+        level.setBlock(pos, state, 3);
+        if (!(com.gregtechceu.gtceu.api.machine.MetaMachine.getMachine(level,
+                pos) instanceof com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiController controller))
+            return;
+        var terminal = new net.minecraft.world.item.ItemStack(
+                com.raishxn.gtna.common.data.GTNAItems.NEXUS_STRUCTURE_TERMINAL.get());
+        long t0 = System.nanoTime();
+        com.raishxn.gtna.common.item.terminal.NexusAutoBuilder.autoBuild(player, controller, terminal);
+        GTNACORE.LOGGER.info("[GTNA perf] dev build {} at {}: {} ms", id, pos, (System.nanoTime() - t0) / 1_000_000);
+    }
+
     private static int starPreview(boolean hole) {
         var player = net.minecraft.client.Minecraft.getInstance().player;
         if (player == null) return 0;
@@ -28,6 +52,37 @@ public final class PreviewBenchCommand {
     }
 
     public static void register(RegisterClientCommandsEvent event) {
+        // /gtna_material_sheet <page>: every GTNA material item in a grid, to check item effects.
+        event.getDispatcher().register(Commands.literal("gtna_material_sheet").then(Commands
+                .argument("page", com.mojang.brigadier.arguments.IntegerArgumentType.integer(0)).executes(ctx -> {
+                    int page = com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(ctx, "page");
+                    var mc = net.minecraft.client.Minecraft.getInstance();
+                    mc.tell(() -> mc.setScreen(new MaterialSheetScreen(page)));
+                    return 1;
+                })));
+        // /gtna_rift_preview [off]: the Dimensional Rift Gate's horizon, 60 blocks ahead.
+        event.getDispatcher().register(Commands.literal("gtna_rift_preview").executes(ctx -> {
+            var player = net.minecraft.client.Minecraft.getInstance().player;
+            if (player == null) return 0;
+            com.raishxn.gtna.client.renderer.machine.OriginalsRenderer.debugRift = player.getEyePosition()
+                    .add(0, 0, 60);
+            return 1;
+        }).then(Commands.literal("off").executes(ctx -> {
+            com.raishxn.gtna.client.renderer.machine.OriginalsRenderer.debugRift = null;
+            return 1;
+        })));
+        // /gtna_dev_build <machine id>: places the controller 8 blocks ahead and runs the Nexus Terminal auto-build
+        // as the player (singleplayer only), to reproduce build-time stalls.
+        event.getDispatcher().register(Commands.literal("gtna_dev_build").then(Commands
+                .argument("id", com.mojang.brigadier.arguments.StringArgumentType.word()).executes(ctx -> {
+                    var mc = net.minecraft.client.Minecraft.getInstance();
+                    var server = mc.getSingleplayerServer();
+                    if (server == null || mc.player == null) return 0;
+                    var id = GTNACORE.id(com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "id"));
+                    var uuid = mc.player.getUUID();
+                    server.execute(() -> devBuild(server, uuid, id));
+                    return 1;
+                })));
         // /gtna_preview_open <machine id>: opens the JEI page of the multiblock (what players see), for timing.
         event.getDispatcher().register(Commands.literal("gtna_preview_open").then(Commands
                 .argument("id", com.mojang.brigadier.arguments.StringArgumentType.word()).executes(ctx -> {

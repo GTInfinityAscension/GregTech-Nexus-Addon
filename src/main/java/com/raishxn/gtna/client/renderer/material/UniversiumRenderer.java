@@ -26,6 +26,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.raishxn.gtna.GTNACORE;
+import com.raishxn.gtna.client.renderer.effect.CosmicShader;
 import com.raishxn.gtna.client.renderer.effect.ItemEffectRenderer;
 import com.raishxn.gtna.common.data.GTNAMaterials;
 import org.joml.Vector3f;
@@ -39,7 +40,8 @@ public final class UniversiumRenderer {
     private static final ResourceLocation SOLID = GTNACORE.id("item/universium/solid_mask");
     private static final ResourceLocation FRAME = GTNACORE.id("item/universium/frame_mask");
     private static final ResourceLocation NANITES = GTNACORE.id("item/universium/nanites_mask");
-    private static final RenderType COSMIC = ItemEffectRenderer.EFFECT;
+    /** RenderBlender's cosmic star field (see {@link CosmicShader}), lifted off the surface. */
+    private static final RenderType COSMIC = CosmicShader.WORLD;
     private static final List<BlockPos> SURFACES = new ArrayList<>();
     private static net.minecraft.client.multiplayer.ClientLevel cachedLevel;
     private static long nextScan;
@@ -56,10 +58,9 @@ public final class UniversiumRenderer {
     }
 
     private static boolean ready(boolean inventory) {
-        int mode = ItemEffectRenderer.MODE_COSMIC;
-        return ItemEffectRenderer.shaderEffectsEnabled() &&
-                ItemEffectRenderer.prepare(mode, ItemEffectRenderer.defaultColor(mode, false),
-                        ItemEffectRenderer.defaultColor(mode, true), ItemEffectRenderer.time(1), inventory, false);
+        if (!ItemEffectRenderer.shaderEffectsEnabled() || !CosmicShader.ready()) return false;
+        CosmicShader.prepare(inventory);
+        return true;
     }
 
     private static TextureAtlasSprite sprite(ResourceLocation id) {
@@ -76,8 +77,11 @@ public final class UniversiumRenderer {
             mask = NANITES;
         } else return;
         if (!ready(context == net.minecraft.world.item.ItemDisplayContext.GUI)) return;
+        // Draw the batched block icon first, so the star field lands on it instead of under it.
+        if (buffers instanceof MultiBufferSource.BufferSource source) source.endBatch();
         var out = buffers.getBuffer(COSMIC);
         emitModel(model, null, null, pose, out, sprite(mask));
+        if (buffers instanceof MultiBufferSource.BufferSource source) source.endBatch(COSMIC);
     }
 
     private static void emitModel(BakedModel model, BlockState state, BlockPos pos, PoseStack pose,
@@ -111,8 +115,7 @@ public final class UniversiumRenderer {
 
     private static void vertex(PoseStack pose, VertexConsumer out, float x, float y, float z,
                                float u, float v, Vector3f normal) {
-        out.vertex(pose.last().pose(), x, y, z).color(255, 255, 255, 255).uv(u, v)
-                .overlayCoords(0, 10).uv2(240, 240)
+        out.vertex(pose.last().pose(), x, y, z).color(255, 255, 255, 255).uv(u, v).uv2(240, 240)
                 .normal(pose.last().normal(), normal.x(), normal.y(), normal.z()).endVertex();
     }
 

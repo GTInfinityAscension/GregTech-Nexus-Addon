@@ -138,13 +138,16 @@ public class LanceMachine extends OriginalMachine {
 
     private void captureGun() {
         if (captured || getLevel() == null) return;
-        CapturedParts.capture(getLevel(), gun());
+        // Each removed block would otherwise trigger a full structure check (seconds on a structure this size).
+        com.raishxn.gtna.common.item.terminal.NexusBuildCheckGuard.quiet(getMultiblockState(),
+                () -> CapturedParts.capture(getLevel(), gun()));
         captured = true;
     }
 
     private void releaseGun() {
         if (!captured || getLevel() == null || getLevel().isClientSide) return;
-        CapturedParts.release(getLevel(), "kinetic_orbital_lance", gun());
+        com.raishxn.gtna.common.item.terminal.NexusBuildCheckGuard.quiet(getMultiblockState(),
+                () -> CapturedParts.release(getLevel(), "kinetic_orbital_lance", gun()));
         captured = false;
     }
 

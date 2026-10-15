@@ -21,6 +21,8 @@ public final class StellarShaders {
     private static ShaderInstance fxAdditive;
     @Nullable
     private static ShaderInstance lens;
+    @Nullable
+    private static ShaderInstance additiveColor;
 
     private StellarShaders() {}
 
@@ -30,6 +32,9 @@ public final class StellarShaders {
         // Same program with additive blending: a ShaderInstance applies its own blend mode (none unless declared).
         event.registerShader(new ShaderInstance(event.getResourceProvider(), GTNACORE.id("stellar_fx_add"),
                 DefaultVertexFormat.POSITION_TEX), shader -> fxAdditive = shader);
+        // Vanilla position_color with additive blending declared, for glow geometry drawn with a Tesselator.
+        event.registerShader(new ShaderInstance(event.getResourceProvider(), GTNACORE.id("additive_color"),
+                DefaultVertexFormat.POSITION_COLOR), shader -> additiveColor = shader);
         event.registerShader(new ShaderInstance(event.getResourceProvider(), GTNACORE.id("stellar_lens"),
                 DefaultVertexFormat.POSITION_TEX), shader -> lens = shader);
     }
@@ -42,6 +47,11 @@ public final class StellarShaders {
     @Nullable
     public static ShaderInstance fxAdditive() {
         return fxAdditive;
+    }
+
+    @Nullable
+    public static ShaderInstance additiveColor() {
+        return additiveColor;
     }
 
     @Nullable

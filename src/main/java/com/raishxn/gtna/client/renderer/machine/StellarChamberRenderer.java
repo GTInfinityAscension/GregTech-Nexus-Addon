@@ -172,7 +172,8 @@ public class StellarChamberRenderer extends DynamicRender<StellarChamberMachine,
             shader.safeGetUniform("Mode").set(2f);
             drawMesh(cone(), axis, projection, shader);
             drawMesh(cone(), new Matrix4f(axis).rotateX((float) Math.PI), projection, shader);
-            RenderSystem.setShader(GameRenderer::getPositionColorShader);
+            var lines = StellarShaders.additiveColor();
+            RenderSystem.setShader(lines != null ? () -> lines : GameRenderer::getPositionColorShader);
             fieldLines(axis, 0.56f, 0.73f, 1f);
         }
         RenderSystem.disableCull();

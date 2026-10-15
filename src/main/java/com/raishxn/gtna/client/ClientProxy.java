@@ -62,6 +62,7 @@ public class ClientProxy extends CommonProxy {
                         com.raishxn.gtna.client.renderer.machine.GodforgeShaders.register(event);
                         com.raishxn.gtna.client.renderer.machine.StellarShaders.register(event);
                         com.raishxn.gtna.client.renderer.effect.ItemEffectRenderer.register(event);
+                        com.raishxn.gtna.client.renderer.effect.CosmicShader.register(event);
                     } catch (java.io.IOException e) {
                         throw new java.io.UncheckedIOException(e);
                     }

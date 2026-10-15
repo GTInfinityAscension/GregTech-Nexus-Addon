@@ -43,7 +43,14 @@ public final class OriginalsRenderer {
 
     private OriginalsRenderer() {}
 
+    /** Free-standing rift horizon for {@code /gtna_rift_preview}; null when off. */
+    @org.jetbrains.annotations.Nullable
+    public static Vec3 debugRift;
+
     public static void onRenderLevelStage(net.minecraftforge.client.event.RenderLevelStageEvent event) {
+        if (event.getStage() == net.minecraftforge.client.event.RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS &&
+                debugRift != null)
+            debugRift(event);
         if (event.getStage() != net.minecraftforge.client.event.RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS ||
                 QUEUE.isEmpty())
             return;
@@ -67,13 +74,17 @@ public final class OriginalsRenderer {
             RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE);
             RenderSystem.depthMask(false);
             RenderSystem.disableCull();
-            RenderSystem.setShader(GameRenderer::getPositionColorShader);
+            // A ShaderInstance applies its own blend mode: the vanilla position_color one would turn blending off.
+            var additive = StellarShaders.additiveColor();
+            RenderSystem.setShader(additive != null ? () -> additive : GameRenderer::getPositionColorShader);
             for (var m : QUEUE.values()) {
                 if (m.isInValid() || !m.isFormed()) continue;
                 pose.pushPose();
                 if (m instanceof ColliderRingMachine c && c.isBeamOn()) collider(c, pose, cam, time);
-                else if (m instanceof RiftGateMachine r && r.isRiftOpen()) rift(r, pose, cam, time);
-                else if (m instanceof LanceMachine l) lance(l, pose, cam, time);
+                else if (m instanceof RiftGateMachine r && r.isRiftOpen()) {
+                    rift(r, pose, cam, projection);
+                    RenderSystem.setShader(additive != null ? () -> additive : GameRenderer::getPositionColorShader);
+                } else if (m instanceof LanceMachine l) lance(l, pose, cam, time);
                 pose.popPose();
             }
         } finally {
@@ -114,30 +125,58 @@ public final class OriginalsRenderer {
         Tesselator.getInstance().end();
     }
 
-    private static void rift(RiftGateMachine r, PoseStack pose, Vec3 cam, float time) {
+    @org.jetbrains.annotations.Nullable
+    private static com.mojang.blaze3d.vertex.VertexBuffer horizon;
+
+    /**
+     * The rift's event horizon: the 3D preview's swirling disc (stellar_fx mode 5) filling the ring, tinted with the
+     * biome's colour, brighter with stability.
+     */
+    private static void rift(RiftGateMachine r, PoseStack pose, Vec3 cam, Matrix4f projection) {
         Matrix4f m = frame(r, pose, cam, r.offset(RiftGateMachine.CENTER_UP, RiftGateMachine.CENTER_BACK));
         float[] col = biomeColour(r.biome());
-        float strength = (float) Math.max(0.15, r.stability() / 100);
-        float res = (float) r.resonance();
-        BufferBuilder buf = Tesselator.getInstance().getBuilder();
-        buf.begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
-        int seg = 96, rings = 16;
-        float R = (float) RiftGateMachine.INNER_RADIUS;
-        for (int ri = 0; ri < rings; ri++) {
-            float r0 = R * ri / rings, r1 = R * (ri + 1) / rings;
-            for (int i = 0; i < seg; i++) {
-                double a0 = 2 * Math.PI * i / seg, a1 = 2 * Math.PI * (i + 1) / seg;
-                float swirl = 0.5f + 0.5f * (float) Math.sin(a0 * 5 + 30 / (r0 + 4) - time * (1.5 + res));
-                float fade = 1 - (float) ri / rings;
-                float alpha = strength * (0.25f + 0.5f * swirl) * (0.4f + 0.6f * fade);
-                float white = (float) Math.pow(fade, 6);
-                quad(buf, m, (float) Math.cos(a0) * r0, (float) Math.sin(a0) * r0, (float) Math.cos(a0) * r1,
-                        (float) Math.sin(a0) * r1, (float) Math.cos(a1) * r1, (float) Math.sin(a1) * r1,
-                        (float) Math.cos(a1) * r0, (float) Math.sin(a1) * r0, col[0] + white, col[1] + white,
-                        col[2] + white, alpha);
-            }
+        float strength = (float) Math.max(0.35, r.stability() / 100);
+        float time = (float) ((net.minecraft.Util.getMillis() % 3_600_000L) / 1000.0) * (1 + (float) r.resonance());
+        drawHorizon(m, projection, col, strength, time);
+    }
+
+    private static void drawHorizon(Matrix4f m, Matrix4f projection, float[] col, float strength, float time) {
+        var shader = StellarShaders.fxAdditive();
+        if (shader == null) return;
+        if (horizon == null) {
+            BufferBuilder b = new BufferBuilder(6 * 20);
+            b.begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_TEX);
+            float[][] q = { { -1, -1, 0, 0 }, { 1, -1, 1, 0 }, { 1, 1, 1, 1 }, { -1, 1, 0, 1 } };
+            for (int k : new int[] { 0, 1, 2, 0, 2, 3 }) b.vertex(q[k][0], q[k][1], 0).uv(q[k][2], q[k][3]).endVertex();
+            horizon = new com.mojang.blaze3d.vertex.VertexBuffer(com.mojang.blaze3d.vertex.VertexBuffer.Usage.STATIC);
+            horizon.bind();
+            horizon.upload(b.end());
+            com.mojang.blaze3d.vertex.VertexBuffer.unbind();
         }
-        Tesselator.getInstance().end();
+        shader.safeGetUniform("Time").set(time);
+        shader.safeGetUniform("Mode").set(5f);
+        shader.safeGetUniform("Tint").set(col[0], col[1], col[2], strength);
+        RenderSystem.disableCull();
+        horizon.bind();
+        horizon.drawWithShader(new Matrix4f(m).scale((float) RiftGateMachine.INNER_RADIUS), projection, shader);
+        com.mojang.blaze3d.vertex.VertexBuffer.unbind();
+    }
+
+    private static void debugRift(net.minecraftforge.client.event.RenderLevelStageEvent event) {
+        var shader = StellarShaders.fxAdditive();
+        if (shader == null) return;
+        var pose = event.getPoseStack();
+        Vec3 cam = event.getCamera().getPosition();
+        pose.pushPose();
+        pose.translate(debugRift.x - cam.x, debugRift.y - cam.y, debugRift.z - cam.z);
+        RenderSystem.enableDepthTest();
+        RenderSystem.depthMask(false);
+        float[] col = biomeColour(RiftCore.Biome.CRYSTAL_PLAINS);
+        drawHorizon(new Matrix4f(pose.last().pose()), new Matrix4f(event.getProjectionMatrix()), col, 1f,
+                (float) ((net.minecraft.Util.getMillis() % 3_600_000L) / 1000.0));
+        RenderSystem.depthMask(true);
+        RenderSystem.enableCull();
+        pose.popPose();
     }
 
     private static float[] biomeColour(RiftCore.Biome biome) {
@@ -315,10 +354,14 @@ public final class OriginalsRenderer {
             for (Direction side : Direction.values()) {
                 if (parts.containsKey(p.relative(side))) continue;
                 random.setSeed(42);
+                // Match the blocks still in the world: vanilla face shading and the light at that spot (packed
+                // light reads the live lightmap, so day and night still apply).
+                float shade = quadShade(c.getLevel(), side);
+                int light = net.minecraft.client.renderer.LevelRenderer.getLightColor(c.getLevel(), p.relative(side));
                 for (var quad : model.getQuads(state, side, random,
                         net.minecraftforge.client.model.data.ModelData.EMPTY, null))
-                    builder.putBulkData(ps.last(), quad, 1f, 1f, 1f,
-                            net.minecraft.client.renderer.LightTexture.FULL_BRIGHT,
+                    builder.putBulkData(ps.last(), quad, quad.isShade() ? shade : 1f, quad.isShade() ? shade : 1f,
+                            quad.isShade() ? shade : 1f, light,
                             net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY);
             }
             ps.popPose();
@@ -328,6 +371,10 @@ public final class OriginalsRenderer {
         mesh.upload(builder.end());
         com.mojang.blaze3d.vertex.VertexBuffer.unbind();
         return mesh;
+    }
+
+    private static float quadShade(net.minecraft.world.level.Level level, Direction side) {
+        return level.getShade(side, true);
     }
 
     // ------------------------------------------------------------------ primitives

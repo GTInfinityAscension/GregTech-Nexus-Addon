@@ -82,15 +82,20 @@ public class ColliderRingMachine extends OriginalMachine {
 
     private void captureRings() {
         if (captured || getLevel() == null) return;
-        CapturedParts.capture(getLevel(), parts("ring"));
-        CapturedParts.capture(getLevel(), parts("gyro"));
+        // Each removed block would otherwise trigger a full structure check (seconds on a structure this size).
+        com.raishxn.gtna.common.item.terminal.NexusBuildCheckGuard.quiet(getMultiblockState(), () -> {
+            CapturedParts.capture(getLevel(), parts("ring"));
+            CapturedParts.capture(getLevel(), parts("gyro"));
+        });
         captured = true;
     }
 
     private void releaseRings() {
         if (!captured || getLevel() == null || getLevel().isClientSide) return;
-        CapturedParts.release(getLevel(), "antimatter_collider_ring", parts("ring"));
-        CapturedParts.release(getLevel(), "antimatter_collider_ring", parts("gyro"));
+        com.raishxn.gtna.common.item.terminal.NexusBuildCheckGuard.quiet(getMultiblockState(), () -> {
+            CapturedParts.release(getLevel(), "antimatter_collider_ring", parts("ring"));
+            CapturedParts.release(getLevel(), "antimatter_collider_ring", parts("gyro"));
+        });
         captured = false;
     }
 

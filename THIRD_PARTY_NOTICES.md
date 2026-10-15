@@ -502,6 +502,22 @@ fragment shader (`universium_cosmic.fsh`) was removed. The loaders keep RenderBl
 field names (`color`, `size`, `pulse`, `width`, `mask`) so existing models only change the
 loader namespace.
 
+### Eternity textures from Modernity-GTNH (2026-10-15)
+
+At the author's request the `gtna_eternity` material set uses Modernity-GTNH's animated Eternity icons
+(`gregtech/textures/items/materialicons/CUSTOM/eternity/*`, `blocks/iconsets/BLOCK_ETERNITY`,
+`blocks/fluids/fluid.molten.eternity`), copied unchanged and renamed to GTCEu prefixes. Licence as in the
+Modernity row of the table above (CC BY-NC-SA 4.0); the permission request listed there is still pending.
+
+### RenderBlender cosmic shader and item effect behaviour (2026-10-15)
+
+At the author's request the item effects again follow RenderBlender 1.1.1 (committee.nova.mods.renderblender,
+LGPL-3.0, the same licence as GTNA): `assets/gtna/shaders/core/rb_cosmic.{vsh,fsh}` and
+`assets/gtna/textures/misc/cosmic_0..9.png` are copied unchanged from it (the star-field shader originally from
+Avaritia), and `CosmicShader`, the halo quad, the pulse jitter and the glow-edge copy in `ItemEffectRenderer` are
+ported from its `CosmicBakeModel`, `HaloBakedModel` and `GlowEdgeBakedModel`. The eternal and unstable effects stay
+GTNA's own `gtna:item_effect` shader.
+
 ## Multiblock tooltip adaptation (2026-10-10)
 
 The multiblock tooltip facts are adapted from the original controller tooltips and translations

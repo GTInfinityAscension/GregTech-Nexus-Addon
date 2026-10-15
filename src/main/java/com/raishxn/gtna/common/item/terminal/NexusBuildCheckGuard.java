@@ -38,6 +38,20 @@ public final class NexusBuildCheckGuard {
         }
     }
 
+    /**
+     * Runs {@code action} without re-checking {@code state} on each block it changes and without a check afterwards:
+     * for machines that move their own parts in and out of the world (the result is valid by construction).
+     */
+    public static void quiet(MultiblockState state, Runnable action) {
+        MultiblockState previous = BUILDING.get();
+        BUILDING.set(state);
+        try {
+            action.run();
+        } finally {
+            restore(previous);
+        }
+    }
+
     private static void restore(MultiblockState previous) {
         if (previous == null) BUILDING.remove();
         else BUILDING.set(previous);
