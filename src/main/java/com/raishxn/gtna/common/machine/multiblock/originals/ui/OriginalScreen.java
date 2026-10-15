@@ -1,6 +1,5 @@
 package com.raishxn.gtna.common.machine.multiblock.originals.ui;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.UITemplate;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 
@@ -113,7 +112,22 @@ public final class OriginalScreen {
             display.paint(g, x, y);
         }));
         root.addWidget(new Paint(4, Y0 + 130, 166, 13, chips));
-        root.addWidget(UITemplate.bindPlayerInventory(player.getInventory(), GuiTextures.SLOT, 4, Y0 + 148, true));
+        // NEXUS chip: rechecks the structure and highlights the first wrong block in the world.
+        root.addWidget(new Plate(t, 116, Y0 + 130, 50, 13, null, Component.literal("NEXUS"), () -> false, click -> {
+            if (click.isRemote)
+                com.raishxn.gtna.client.GTNAStructureCheckClient.request(machine.getPos(), true);
+        }) {
+
+            @Override
+            @OnlyIn(Dist.CLIENT)
+            public void drawInBackground(GuiGraphics g, int mouseX, int mouseY, float partialTicks) {
+                var p = getPosition();
+                boolean over = isMouseOverElement(mouseX, mouseY);
+                chip(g, t, p.x, p.y, 50, "NEXUS", over ? lighter(VIOLET) : VIOLET);
+                if (over) g.fill(p.x + 2, p.y + 11, p.x + 49, p.y + 12, VIOLET);
+            }
+        }.tip("gtna.ui.o.nexus.tip"));
+        root.addWidget(UITemplate.bindPlayerInventory(player.getInventory(), t.tex("slot"), 4, Y0 + 148, true));
         return root;
     }
 
@@ -147,19 +161,7 @@ public final class OriginalScreen {
      */
     public static WidgetGroup panel(Theme t, Nav nav, String name, String titleKey, int w, int h, String texture,
                                     Painter content) {
-        var group = new com.lowdragmc.lowdraglib.gui.widget.DraggableWidgetGroup((W - w) / 2, Math.max(0, DY - 18 -
-                (h - 150)), w, h) {
-
-            @Override
-            public boolean isVisible() {
-                return name.equals(nav.open);
-            }
-
-            @Override
-            public boolean isActive() {
-                return name.equals(nav.open);
-            }
-        };
+        var group = new Drag((W - w) / 2, Math.max(0, DY - 18 - (h - 150)), w, h, () -> name.equals(nav.open));
         group.addWidget(new ImageWidget(0, 0, w, h, t.tex(texture)));
         group.addWidget(new Paint(0, 0, w, h, (g, x, y) -> {
             text(g, Component.translatable("gtna.ui.o." + titleKey).getString(), x + 6, y + 4, t.accent, true);
@@ -172,29 +174,18 @@ public final class OriginalScreen {
     // ------------------------------------------------------------------ field manual
 
     /** The how-it-works manual: chapters on the left, one page on the right, prev / next. */
-    public static WidgetGroup manual(Nav nav, String machineId) {
+    public static WidgetGroup manual(Theme t, Nav nav, String machineId) {
         String[][] sections = OriginalsInfoPanel.sections(machineId);
-        WidgetGroup group = new com.lowdragmc.lowdraglib.gui.widget.DraggableWidgetGroup(4, 0, 292, 200) {
-
-            @Override
-            public boolean isVisible() {
-                return "manual".equals(nav.open);
-            }
-
-            @Override
-            public boolean isActive() {
-                return "manual".equals(nav.open);
-            }
-        };
-        group.addWidget(new ImageWidget(0, 0, 292, 200, tex("manual", "slate")));
+        WidgetGroup group = new Drag(4, 0, 292, 200, () -> "manual".equals(nav.open));
+        group.addWidget(new ImageWidget(0, 0, 292, 200, t.tex("slate")));
         String prefix = "gtna.originals.info." + machineId + ".";
         group.addWidget(new Paint(0, 0, 292, 200, (g, x, y) -> {
             text(g, Component.translatable("gtna.ui.o.manual").getString() + " - " +
-                    Component.translatable("block.gtna." + machineId).getString(), x + 8, y + 18, 0xFFE8E8EC, true);
+                    Component.translatable("block.gtna." + machineId).getString(), x + 8, y + 18, t.glow, true);
             if (sections.length == 0) return;
             int page = Math.min(nav.page, sections.length - 1);
             String[] sec = sections[page];
-            text(g, Component.translatable(prefix + sec[0]).getString(), x + 82, y + 35, 0xFFF0BA28, true);
+            text(g, Component.translatable(prefix + sec[0]).getString(), x + 82, y + 35, t.accent, true);
             var font = Minecraft.getInstance().font;
             int ly = y + 49;
             for (int i = 1; i < sec.length && ly < y + 176; i++) {
@@ -210,37 +201,35 @@ public final class OriginalScreen {
                 ly += 4;
             }
             text(g, "< " + Component.translatable("gtna.ui.o.prev").getString(), x + 82, y + 180,
-                    page > 0 ? 0xFFF0BA28 : 0xFF6A6C70, false);
+                    page > 0 ? t.accent : t.line, false);
             String next = Component.translatable("gtna.ui.o.next").getString() + " >";
             text(g, next, x + 280 - Minecraft.getInstance().font.width(next), y + 180,
-                    page < sections.length - 1 ? 0xFFF0BA28 : 0xFF6A6C70, false);
+                    page < sections.length - 1 ? t.accent : t.line, false);
         }));
         for (int i = 0; i < Math.min(9, sections.length); i++) {
             final int k = i;
             String title = sections[i][0];
-            group.addWidget(new Tab(6, 32 + i * 18, k, nav, Component.translatable(prefix + title)));
+            group.addWidget(new Tab(t, 6, 32 + i * 18, k, nav, Component.translatable(prefix + title)));
         }
         group.addWidget(new ButtonWidget(80, 176, 60, 14, IGuiTexture.EMPTY,
                 click -> nav.page = Math.max(0, nav.page - 1)));
         group.addWidget(new ButtonWidget(222, 176, 64, 14, IGuiTexture.EMPTY,
                 click -> nav.page = Math.min(sections.length - 1, nav.page + 1)));
-        group.addWidget(new Plate(LANCE, 276, 2, 12, 11, "close", null, () -> false, click -> nav.open = null));
+        group.addWidget(new Plate(t, 276, 2, 12, 11, "close", null, () -> false, click -> nav.open = null));
         return group;
-    }
-
-    private static ResourceTexture tex(String dir, String name) {
-        return new ResourceTexture(GTNACORE.id("textures/gui/originals_v2/" + dir + "/" + name + ".png").toString());
     }
 
     /** A chapter tab of the manual. */
     private static final class Tab extends ButtonWidget {
 
+        private final Theme theme;
         private final int index;
         private final Nav nav;
         private final Component title;
 
-        Tab(int x, int y, int index, Nav nav, Component title) {
+        Tab(Theme t, int x, int y, int index, Nav nav, Component title) {
             super(x, y, 66, 15, IGuiTexture.EMPTY, null);
+            this.theme = t;
             this.index = index;
             this.nav = nav;
             this.title = title;
@@ -252,11 +241,11 @@ public final class OriginalScreen {
         public void drawInBackground(GuiGraphics g, int mouseX, int mouseY, float partialTicks) {
             var p = getPosition();
             boolean on = nav.page == index;
-            tex("manual", on ? "tab_on" : "tab").draw(g, mouseX, mouseY, p.x, p.y, 66, 15);
+            theme.tex(on ? "tab_on" : "tab").draw(g, mouseX, mouseY, p.x, p.y, 66, 15);
             var font = Minecraft.getInstance().font;
             String s = (index + 1) + " " + title.getString();
             while (font.width(s) > 60 && s.length() > 3) s = s.substring(0, s.length() - 1);
-            g.drawString(font, s, p.x + 4, p.y + 4, on ? 0xFF18140A : 0xFF9A9EA4, !on);
+            g.drawString(font, s, p.x + 4, p.y + 4, on ? theme.base : theme.dim, !on);
         }
     }
 
@@ -277,6 +266,63 @@ public final class OriginalScreen {
         public void drawInBackground(GuiGraphics g, int mouseX, int mouseY, float partialTicks) {
             var p = getPosition();
             painter.paint(g, p.x, p.y);
+        }
+    }
+
+    /**
+     * A group shown while {@code shown} holds, dragged by any spot its children leave free (title bar, frame, empty
+     * glass). Clicks on it never fall through to what is underneath.
+     */
+    public static class Drag extends WidgetGroup {
+
+        private final BooleanSupplier shown;
+        private boolean dragging;
+        private double grabX, grabY;
+
+        public Drag(int x, int y, int w, int h, BooleanSupplier shown) {
+            super(x, y, w, h);
+            this.shown = shown;
+        }
+
+        @Override
+        public boolean isVisible() {
+            return shown.getAsBoolean();
+        }
+
+        @Override
+        public boolean isActive() {
+            return shown.getAsBoolean();
+        }
+
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public boolean mouseClicked(double mouseX, double mouseY, int button) {
+            if (!isMouseOverElement(mouseX, mouseY)) return super.mouseClicked(mouseX, mouseY, button);
+            if (super.mouseClicked(mouseX, mouseY, button)) return true;
+            dragging = button == 0;
+            grabX = mouseX - getPosition().x;
+            grabY = mouseY - getPosition().y;
+            return true;
+        }
+
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
+            if (!dragging) return super.mouseDragged(mouseX, mouseY, button, dragX, dragY);
+            int dx = (int) Math.round(mouseX - grabX) - getPosition().x;
+            int dy = (int) Math.round(mouseY - grabY) - getPosition().y;
+            if (dx != 0 || dy != 0) addSelfPosition(dx, dy);
+            return true;
+        }
+
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public boolean mouseReleased(double mouseX, double mouseY, int button) {
+            if (dragging) {
+                dragging = false;
+                return true;
+            }
+            return super.mouseReleased(mouseX, mouseY, button);
         }
     }
 
@@ -373,9 +419,10 @@ public final class OriginalScreen {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public static void chip(GuiGraphics g, int x, int y, int w, String s, int colour) {
-        g.fill(x, y, x + w, y + 13, 0xFF0C0A0E);
-        g.fill(x + 1, y + 1, x + w - 1, y + 12, 0xFF000000);
+    public static void chip(GuiGraphics g, Theme t, int x, int y, int w, String s, int colour) {
+        g.fill(x, y, x + w, y + 13, t.line);
+        g.fill(x + 1, y + 1, x + w - 1, y + 12, t.base);
+        g.fill(x + 1, y + 1, x + w - 1, y + 2, dim(t.line, 0.5));
         g.fill(x + 1, y + 1, x + 2, y + 12, colour);
         centre(g, s, x + w / 2 + 1, y + 3, colour);
     }

@@ -7797,3 +7797,10 @@ Também pendente da avaliação das propostas de UI (tools/design/ui_proposals, 
 - Lang `gtna.ui.o.*` (192 chaves) em en/pt_br/zh_cn; rótulos de botão curtos.
 - Validação: gate 358/358; screenshots no cliente das 4 telas, 8 painéis e manuais (`/gtna_dev_panel`). Corrigidos: status da Bancada sob o X, rótulo 45:32 do Acorde cortado.
 - Pendente: travamento ~60 s ao sair do mundo; entrada ~21 s; erro em loop do `GodforgeModuleMachine`; antiproton_cell e contained_antiproton com o mesmo visual.
+
+## G-0269 — 2026-10-15 — UIs v2: identidade nos chips/slots/manual, arraste, NEXUS escaneia, portal pela sintonia
+- Chips (BEAM/DUMP/NEXUS etc.) desenhados com base/linha do tema; slots do inventário com textura `slot.png` por tema; manual de campo com `slate/tab/tab_on` por tema (pasta `manual/` removida) e cores do tema.
+- Painéis e manual: classe `OriginalScreen.Drag` própria (o `DraggableWidgetGroup` do LDLib só arrasta dentro de um `DraggableScrollableWidgetGroup`); arrasta por qualquer ponto livre. Validado com xdotool no cliente.
+- Chip NEXUS clicável: `GTNAStructureCheckClient.request(pos, true)` — mensagem no chat + destaque do bloco errado (validado). Lang `gtna.ui.o.nexus.tip`.
+- Portal da Fenda: uniform `Rift` (seed, freq, fase, amplitude) no `stellar_fx` modo 5 — seed: nº de braços, padrão e matiz; frequência: giro e densidade das ondas; fase: torção e matiz; amplitude: turbulência e borda irregular. `/gtna_rift_preview <seed> <freq> <phase> <amp>` (0..1).
+- Gate 358/358.

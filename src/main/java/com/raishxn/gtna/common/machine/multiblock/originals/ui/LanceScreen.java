@@ -29,9 +29,8 @@ public final class LanceScreen {
     public static ModularUI create(LanceMachine m, Player player) {
         Nav nav = new Nav();
         var root = window(T, m, player, (g, x, y) -> display(g, m, x, y), (g, x, y) -> {
-            chip(g, x, y, 52, tr("formed"), m.isFormed() ? GREEN : RED);
-            chip(g, x + 56, y, 52, tr("auto"), v(m, 7) > 0 ? T.accent() : T.dim());
-            chip(g, x + 112, y, 50, "NEXUS", VIOLET);
+            chip(g, T, x, y, 52, tr("formed"), m.isFormed() ? GREEN : RED);
+            chip(g, T, x + 56, y, 52, tr("auto"), v(m, 7) > 0 ? T.accent() : T.dim());
         });
         root.addWidget(gridButton(T, 0, "left", "prev_target", () -> false, click -> act(m, "tp", click)));
         root.addWidget(gridButton(T, 1, "right", "next_target", () -> false, click -> act(m, "tn", click)));
@@ -43,7 +42,7 @@ public final class LanceScreen {
         root.addWidget(powerButton(T, 7, m));
         root.addWidget(orbitPanel(m, nav));
         root.addWidget(benchPanel(m, nav));
-        root.addWidget(manual(nav, "kinetic_orbital_lance"));
+        root.addWidget(manual(T, nav, "kinetic_orbital_lance"));
         return ui(root, m, player);
     }
 

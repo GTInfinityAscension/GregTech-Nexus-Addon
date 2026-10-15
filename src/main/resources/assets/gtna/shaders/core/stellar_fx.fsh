@@ -4,6 +4,8 @@
 uniform float Time;
 uniform float Mode;
 uniform vec4 Tint;
+// Rift horizon: seed hash, frequency, phase, amplitude, each 0..1.
+uniform vec4 Rift;
 
 in vec3 objPos;
 in vec3 viewNormal;
@@ -50,17 +52,32 @@ void main() {
         float i = smoothstep(1.0, 0.6, r) * smoothstep(0.33, 0.45, r) * (0.4 + 0.6 * s);
         fragColor = vec4(mix(vec3(1.0, 0.45, 0.1), vec3(1.0, 0.85, 0.5), 1.0 - r) * i, i * Tint.a);
     } else if (mode == 5) {
-        // Rift event horizon (the 3D preview's swirl), tinted with the biome colour.
+        // Rift event horizon, shaped by the tuning: the seed picks the arm count and pattern, frequency the spin
+        // and ripple density, phase the twist and hue, amplitude the turbulence and the ragged rim.
         vec2 c = uv - 0.5;
+        float seed = Rift.x, freq = Rift.y, phase = Rift.z, amp = Rift.w;
         float r = length(c) * 2.0;
-        if (r > 1.0) discard;
-        float ang = atan(c.y, c.x) + Time * 0.6 + 3.0 / (r + 0.25);
-        // Sample the noise on a circle so the angle wraps without a seam.
+        float a0 = atan(c.y, c.x);
+        float rim = 1.0 - amp * 0.12 * (0.5 + 0.5 * sin(a0 * (3.0 + floor(seed * 5.0)) + Time * (0.8 + freq * 2.0)));
+        if (r > rim) discard;
+        float arms = 2.0 + floor(seed * 5.0);
+        float twist = 2.0 + phase * 4.0;
+        float spin = Time * (0.3 + freq * 1.4);
+        float ang = a0 + spin + twist / (r + 0.25) + phase * 6.2832;
         vec2 dir = vec2(cos(ang), sin(ang));
-        float s = noise(vec3(dir * 1.0, r * 6.0 - Time * 1.4)) * noise(vec3(dir * 2.3, r * 13.0 + Time + 3.7));
-        vec3 col = mix(Tint.rgb * 0.35 + vec3(0.12, 0.02, 0.3), Tint.rgb * 0.6 + vec3(0.3, 0.5, 0.6), s);
-        col += vec3(1.0) * pow(1.0 - r, 6.0) * 1.5;
-        fragColor = vec4(col, (0.55 + 0.45 * s) * smoothstep(1.0, 0.85, r) * Tint.a);
+        vec3 off = vec3(seed * 91.7, seed * 37.3, 0.0);
+        float turb = noise(vec3(c * (4.0 + amp * 10.0), Time * 0.7) + off) * amp;
+        float s = noise(vec3(dir, r * (4.0 + freq * 12.0) - Time * 1.4) + off) *
+                  noise(vec3(dir * 2.3, r * 13.0 + Time + 3.7 + turb * 3.0) + off.zyx);
+        float spiral = 0.5 + 0.5 * cos(arms * ang - r * (6.0 + freq * 10.0));
+        s = mix(s, s * (0.4 + 1.2 * spiral), 0.75);
+        float ripple = 0.5 + 0.5 * sin(r * (10.0 + freq * 40.0) - Time * (2.0 + freq * 6.0));
+        vec3 hue = 0.5 + 0.5 * cos(6.2832 * (seed + phase * 0.35 + vec3(0.0, 0.33, 0.67)));
+        vec3 tint = mix(Tint.rgb, hue, 0.5);
+        vec3 col = mix(tint * 0.35 + vec3(0.12, 0.02, 0.3), tint * 0.6 + vec3(0.3, 0.5, 0.6), s);
+        col += tint * ripple * 0.15 * (1.0 - r);
+        col += vec3(1.0) * pow(max(0.0, 1.0 - r), 6.0) * 1.5;
+        fragColor = vec4(col, (0.55 + 0.45 * s) * smoothstep(rim, rim * 0.85, r) * Tint.a);
     } else {
         // Event horizon with a thin photon ring at the silhouette.
         float ring = smoothstep(0.25, 0.0, facing) * 0.9;

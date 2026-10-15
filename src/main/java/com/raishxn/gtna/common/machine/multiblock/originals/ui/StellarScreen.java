@@ -23,9 +23,8 @@ public final class StellarScreen {
     public static ModularUI create(StellarChamberMachine m, Player player) {
         Nav nav = new Nav();
         var root = window(T, m, player, (g, x, y) -> display(g, m, x, y), (g, x, y) -> {
-            chip(g, x, y, 52, tr("star"), m.isStarRunning() ? 0xFFFFECA0 : T.dim());
-            chip(g, x + 56, y, 52, tr("probe"), m.hasSeismicProbe() ? GREEN : T.dim());
-            chip(g, x + 112, y, 50, "NEXUS", VIOLET);
+            chip(g, T, x, y, 52, tr("star"), m.isStarRunning() ? 0xFFFFECA0 : T.dim());
+            chip(g, T, x + 56, y, 52, tr("probe"), m.hasSeismicProbe() ? GREEN : T.dim());
         });
         root.addWidget(gridButton(T, 0, "minus", "less", () -> false, click -> act(m, "sp_sub", click)));
         root.addWidget(gridButton(T, 1, "plus", "more", () -> false, click -> act(m, "sp_add", click)));
@@ -38,7 +37,7 @@ public final class StellarScreen {
         root.addWidget(powerButton(T, 7, m));
         root.addWidget(massPeriod(m, nav));
         root.addWidget(seismogram(m, nav));
-        root.addWidget(manual(nav, "stellar_containment_chamber"));
+        root.addWidget(manual(T, nav, "stellar_containment_chamber"));
         return ui(root, m, player);
     }
 

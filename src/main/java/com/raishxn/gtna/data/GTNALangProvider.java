@@ -1806,6 +1806,7 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.subtitle.originals.collider_quench", "Collider magnets quench");
         add("gtna.subtitle.originals.stellar_quake", "Starquake");
         add("gtna.subtitle.originals.rift_open", "Rift opens");
+        add("gtna.ui.o.nexus.tip", "Scan the structure: highlights the first wrong block");
         add("gtna.ui.o.prev_target", "Prev");
         add("gtna.ui.o.prev_target.tip", "Previous targetable body");
         add("gtna.ui.o.next_target", "Next");

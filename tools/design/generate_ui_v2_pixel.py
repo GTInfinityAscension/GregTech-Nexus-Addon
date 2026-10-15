@@ -725,26 +725,30 @@ def export_textures(root):
             bevel(b, 0, 0, w, h, t, raised=raised)
             if not raised and name != 'card': b.hline(3, h - 3, w - 6, t['accent'])
             b.im.save(os.path.join(d, name + '.png'))
-    # The field manual slate, shared by the four.
-    t = dict(THEMES['lance'])
-    t.update(panel=(40, 42, 46), hi=(96, 100, 106), lo=(14, 14, 16), base=(22, 24, 28), accent=(240, 186, 40))
-    m = Px(292, 200)
-    bevel(m, 0, 0, 292, 200, t, cut=3)
-    for x in (4, 286):
-        for y in (4, 194):
-            m.rect(x, y, 2, 2, (130, 134, 140, 255)); m.px(x, y, (190, 194, 200, 255))
-    for k in range(0, 276, 6):
-        for j in range(4):
-            for o in range(3): m.px(8 + k + j + o, 10 + j, t['accent'] + (255,))
-    bevel(m, 76, 30, 210, 164, t, raised=False)
-    os.makedirs(os.path.join(root, 'manual'), exist_ok=True)
-    m.im.save(os.path.join(root, 'manual', 'slate.png'))
-    for name, on in (('tab', False), ('tab_on', True)):
-        b = Px(66, 15)
-        if on: b.rect(0, 0, 66, 15, t['accent'] + (255,))
-        else: bevel(b, 0, 0, 66, 15, t)
-        b.im.save(os.path.join(root, 'manual', name + '.png'))
-
+        # Inventory slot in the theme's tones: a mid plate light enough for items, sunk into the window.
+        mid = tuple((a + b) // 2 for a, b in zip(t['hi'], t['dim']))
+        sl = Px(18, 18)
+        sl.rect(0, 0, 18, 18, mid + (255,))
+        sl.hline(0, 0, 17, t['lo'] + (255,)); sl.vline(0, 0, 17, t['lo'] + (255,))
+        light = tuple(min(255, c + 50) for c in t['dim'])
+        sl.hline(1, 17, 17, light + (255,)); sl.vline(17, 1, 17, light + (255,))
+        sl.im.save(os.path.join(d, 'slot.png'))
+        # The field manual slate in the theme's colours.
+        m = Px(292, 200)
+        bevel(m, 0, 0, 292, 200, t, cut=3)
+        for x in (4, 286):
+            for y in (4, 194):
+                m.rect(x, y, 2, 2, t['hi'] + (255,)); m.px(x, y, light + (255,))
+        for k in range(0, 276, 6):
+            for j in range(4):
+                for o in range(3): m.px(8 + k + j + o, 10 + j, t['accent'] + (255,))
+        bevel(m, 76, 30, 210, 164, t, raised=False)
+        m.im.save(os.path.join(d, 'slate.png'))
+        for name, on in (('tab', False), ('tab_on', True)):
+            b = Px(66, 15)
+            if on: b.rect(0, 0, 66, 15, t['accent'] + (255,))
+            else: bevel(b, 0, 0, 66, 15, t)
+            b.im.save(os.path.join(d, name + '.png'))
 
 if __name__ == '__main__' and len(sys.argv) > 2 and sys.argv[2] == '--textures':
     FONT = MCFont(sys.argv[1])

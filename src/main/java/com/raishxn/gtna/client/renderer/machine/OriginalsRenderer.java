@@ -46,6 +46,8 @@ public final class OriginalsRenderer {
     /** Free-standing rift horizon for {@code /gtna_rift_preview}; null when off. */
     @org.jetbrains.annotations.Nullable
     public static Vec3 debugRift;
+    /** Seed, frequency, phase and amplitude (0..1) of the debug horizon. */
+    public static float[] debugRiftParams = { 0.3f, 0.5f, 0.5f, 0.5f };
 
     public static void onRenderLevelStage(net.minecraftforge.client.event.RenderLevelStageEvent event) {
         if (event.getStage() == net.minecraftforge.client.event.RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS &&
@@ -137,10 +139,20 @@ public final class OriginalsRenderer {
         float[] col = biomeColour(r.biome());
         float strength = (float) Math.max(0.35, r.stability() / 100);
         float time = (float) ((net.minecraft.Util.getMillis() % 3_600_000L) / 1000.0) * (1 + (float) r.resonance());
-        drawHorizon(m, projection, col, strength, time);
+        double[] v = r.view();
+        float seed = 0.5f, freq = 0.5f, phase = 0.5f, amp = 0.5f;
+        if (v.length >= 10) {
+            long bits = Double.doubleToRawLongBits(v[9]);
+            seed = (float) ((bits * 0x9E3779B97F4A7C15L >>> 40) / (double) (1L << 24));
+            freq = (float) Math.min(1, Math.max(0, v[0] / 1000));
+            phase = (float) (((v[1] % 360) + 360) % 360 / 360);
+            amp = (float) Math.min(1, Math.max(0, v[2] / 100));
+        }
+        drawHorizon(m, projection, col, strength, time, seed, freq, phase, amp);
     }
 
-    private static void drawHorizon(Matrix4f m, Matrix4f projection, float[] col, float strength, float time) {
+    private static void drawHorizon(Matrix4f m, Matrix4f projection, float[] col, float strength, float time,
+                                    float seed, float freq, float phase, float amp) {
         var shader = StellarShaders.fxAdditive();
         if (shader == null) return;
         if (horizon == null) {
@@ -156,6 +168,7 @@ public final class OriginalsRenderer {
         shader.safeGetUniform("Time").set(time);
         shader.safeGetUniform("Mode").set(5f);
         shader.safeGetUniform("Tint").set(col[0], col[1], col[2], strength);
+        shader.safeGetUniform("Rift").set(seed, freq, phase, amp);
         RenderSystem.disableCull();
         horizon.bind();
         horizon.drawWithShader(new Matrix4f(m).scale((float) RiftGateMachine.INNER_RADIUS), projection, shader);
@@ -173,7 +186,9 @@ public final class OriginalsRenderer {
         RenderSystem.depthMask(false);
         float[] col = biomeColour(RiftCore.Biome.CRYSTAL_PLAINS);
         drawHorizon(new Matrix4f(pose.last().pose()), new Matrix4f(event.getProjectionMatrix()), col, 1f,
-                (float) ((net.minecraft.Util.getMillis() % 3_600_000L) / 1000.0));
+                (float) ((net.minecraft.Util.getMillis() % 3_600_000L) / 1000.0), debugRiftParams[0],
+                debugRiftParams[1], debugRiftParams[2],
+                debugRiftParams[3]);
         RenderSystem.depthMask(true);
         RenderSystem.enableCull();
         pose.popPose();

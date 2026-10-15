@@ -4557,6 +4557,7 @@
   "gtna.subtitle.originals.collider_quench": "Ímãs do colisor sofrem quench",
   "gtna.subtitle.originals.stellar_quake": "Tremor estelar",
   "gtna.subtitle.originals.rift_open": "Fenda se abre",
+  "gtna.ui.o.nexus.tip": "Escaneia a estrutura: destaca o primeiro bloco errado",
   "gtna.ui.o.prev_target": "Ant.",
   "gtna.ui.o.prev_target.tip": "Corpo anterior disponível",
   "gtna.ui.o.next_target": "Próx.",

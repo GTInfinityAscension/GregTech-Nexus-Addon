@@ -25,9 +25,8 @@ public final class RiftScreen {
     public static ModularUI create(RiftGateMachine m, Player player) {
         Nav nav = new Nav();
         var root = window(T, m, player, (g, x, y) -> display(g, m, x, y), (g, x, y) -> {
-            chip(g, x, y, 52, m.isRiftOpen() ? tr("open") : tr("closed"), m.isRiftOpen() ? GREEN : T.dim());
-            chip(g, x + 56, y, 52, tr("tuning"), T.accent());
-            chip(g, x + 112, y, 50, "NEXUS", VIOLET);
+            chip(g, T, x, y, 52, m.isRiftOpen() ? tr("open") : tr("closed"), m.isRiftOpen() ? GREEN : T.dim());
+            chip(g, T, x + 56, y, 52, tr("tuning"), T.accent());
         });
         // Knobs: -10, -1, +1, +10 per axis, on the display.
         for (int i = 0; i < 3; i++) {
@@ -50,7 +49,7 @@ public final class RiftScreen {
         root.addWidget(powerButton(T, 7, m));
         root.addWidget(chord(m, nav));
         root.addWidget(atlas(m, nav));
-        root.addWidget(manual(nav, "dimensional_rift_gate"));
+        root.addWidget(manual(T, nav, "dimensional_rift_gate"));
         return ui(root, m, player);
     }
 

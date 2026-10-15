@@ -4490,6 +4490,7 @@
   "gtna.subtitle.originals.collider_quench": "对撞机磁体失超",
   "gtna.subtitle.originals.stellar_quake": "星震",
   "gtna.subtitle.originals.rift_open": "裂隙开启",
+  "gtna.ui.o.nexus.tip": "扫描结构：高亮第一个错误方块",
   "gtna.ui.o.prev_target": "上个",
   "gtna.ui.o.prev_target.tip": "上一个可瞄准天体",
   "gtna.ui.o.next_target": "下个",

@@ -25,9 +25,8 @@ public final class ColliderScreen {
     public static ModularUI create(ColliderRingMachine m, Player player) {
         Nav nav = new Nav();
         var root = window(T, m, player, (g, x, y) -> display(g, m, x, y), (g, x, y) -> {
-            chip(g, x, y, 52, tr("beam"), m.isBeamOn() ? GREEN : RED);
-            chip(g, x + 56, y, 52, tr("dump"), v(m, 4) > 0 ? GREEN : T.dim());
-            chip(g, x + 112, y, 50, "NEXUS", VIOLET);
+            chip(g, T, x, y, 52, tr("beam"), m.isBeamOn() ? GREEN : RED);
+            chip(g, T, x + 56, y, 52, tr("dump"), v(m, 4) > 0 ? GREEN : T.dim());
         });
         root.addWidget(gridButton(T, 0, "swap", "mode", m::isPhysicsRun, click -> act(m, "mode", click)));
         root.addWidget(gridButton(T, 1, "atom", "model", () -> "model".equals(nav.open), c -> nav.toggle("model")));
@@ -40,7 +39,7 @@ public final class ColliderScreen {
         root.addWidget(powerButton(T, 7, m));
         root.addWidget(model(m, nav));
         root.addWidget(committee(m, nav));
-        root.addWidget(manual(nav, "antimatter_collider_ring"));
+        root.addWidget(manual(T, nav, "antimatter_collider_ring"));
         return ui(root, m, player);
     }
 

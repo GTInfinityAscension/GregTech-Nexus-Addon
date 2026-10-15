@@ -4220,6 +4220,7 @@
   "gtna.ui.o.next": "next",
   "gtna.ui.o.next_target": "Next",
   "gtna.ui.o.next_target.tip": "Next targetable body",
+  "gtna.ui.o.nexus.tip": "Scan the structure: highlights the first wrong block",
   "gtna.ui.o.no_probe": "No Seismic Probe: quakes are not decoded",
   "gtna.ui.o.no_slug": "No slug in the input bus",
   "gtna.ui.o.note": "Harmonic",

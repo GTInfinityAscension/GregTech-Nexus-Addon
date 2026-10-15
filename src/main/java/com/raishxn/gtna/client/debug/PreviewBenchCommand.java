@@ -123,7 +123,28 @@ public final class PreviewBenchCommand {
         }).then(Commands.literal("off").executes(ctx -> {
             com.raishxn.gtna.client.renderer.machine.OriginalsRenderer.debugRift = null;
             return 1;
-        })));
+        })).then(Commands.argument("seed", com.mojang.brigadier.arguments.FloatArgumentType.floatArg(0, 1))
+                .then(Commands.argument("freq", com.mojang.brigadier.arguments.FloatArgumentType.floatArg(0, 1))
+                        .then(Commands
+                                .argument("phase", com.mojang.brigadier.arguments.FloatArgumentType.floatArg(0, 1))
+                                .then(Commands.argument("amp",
+                                        com.mojang.brigadier.arguments.FloatArgumentType.floatArg(0, 1))
+                                        .executes(ctx -> {
+                                            var player = net.minecraft.client.Minecraft.getInstance().player;
+                                            if (player == null) return 0;
+                                            com.raishxn.gtna.client.renderer.machine.OriginalsRenderer.debugRiftParams = new float[] {
+                                                    com.mojang.brigadier.arguments.FloatArgumentType
+                                                            .getFloat(ctx, "seed"),
+                                                    com.mojang.brigadier.arguments.FloatArgumentType
+                                                            .getFloat(ctx, "freq"),
+                                                    com.mojang.brigadier.arguments.FloatArgumentType
+                                                            .getFloat(ctx, "phase"),
+                                                    com.mojang.brigadier.arguments.FloatArgumentType
+                                                            .getFloat(ctx, "amp") };
+                                            com.raishxn.gtna.client.renderer.machine.OriginalsRenderer.debugRift = player
+                                                    .getEyePosition().add(0, 0, 60);
+                                            return 1;
+                                        }))))));
         // /gtna_dev_build <machine id>: places the controller 8 blocks ahead and runs the Nexus Terminal auto-build
         // as the player (singleplayer only), to reproduce build-time stalls.
         event.getDispatcher().register(Commands.literal("gtna_dev_build").then(Commands
