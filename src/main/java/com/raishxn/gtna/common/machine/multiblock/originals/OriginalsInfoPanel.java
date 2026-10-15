@@ -58,6 +58,11 @@ public final class OriginalsInfoPanel extends WidgetGroup {
                 { "bench", "bench.1", "bench.2" } });
     }
 
+    /** Sections of the manual of a machine: {header key, line keys...}; a line key starting with '=' is a formula. */
+    public static String[][] sections(String machine) {
+        return SECTIONS.getOrDefault(machine, new String[0][]);
+    }
+
     /** Whether the machine with this id path has a panel. */
     public static boolean has(String machine) {
         return SECTIONS.containsKey(machine);

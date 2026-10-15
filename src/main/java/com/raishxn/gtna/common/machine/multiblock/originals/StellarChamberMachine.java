@@ -124,6 +124,18 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine imp
         return captured && isFormed() && isWorkingEnabled();
     }
 
+    public double damage() {
+        return syncedDamage;
+    }
+
+    public int bandTier() {
+        return syncedBands;
+    }
+
+    public double output() {
+        return lastEnergy;
+    }
+
     public double renderMass() {
         return syncedMass;
     }
@@ -261,7 +273,17 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine imp
         sync();
     }
 
+    /** What the screen shows that the fields above do not: see {@link #view()} for the layout. */
+    @DescSynced
+    private double[] view = new double[0];
+
+    public double[] view() {
+        return view;
+    }
+
     private void sync() {
+        // view: crust stress, extraction setpoint (2^n EU/t), extraction cap (EU/t), magnetar seconds
+        view = new double[] { core.stress, setpoint, core.extractionCap(), core.magnetarSeconds };
         syncedMass = core.mass;
         syncedPeriod = core.period;
         syncedDamage = core.damage;
@@ -463,10 +485,8 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine imp
     }
 
     @Override
-    public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
-        super.attachSideTabs(sideTabs);
-        OriginalsGui.attach(sideTabs, "mass_period", OriginalsGui.massPeriod(this));
-        OriginalsGui.attach(sideTabs, "quakes", OriginalsGui.quakes(this));
+    public com.lowdragmc.lowdraglib.gui.modular.ModularUI createUI(net.minecraft.world.entity.player.Player player) {
+        return com.raishxn.gtna.common.machine.multiblock.originals.ui.StellarScreen.create(this, player);
     }
 
     // ------------------------------------------------------------------ persistence

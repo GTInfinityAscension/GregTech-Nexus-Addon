@@ -7790,3 +7790,10 @@ Também pendente da avaliação das propostas de UI (tools/design/ui_proposals, 
 - Dev: `/gtna_dev_fps <s>`, `/gtna_dev_mismatch`, `/gtna_dev_swap` reescrito (quebra; depois recoloca no mesmo lugar).
 - Hatches da Lança: só as 25 posições `B` (casing clean stainless no bloco 5×3 em volta do controlador, na camada dele e na de trás).
 - Pendente: entrada no mundo ainda ~21 s (JEI de todos os multiblocos); erro em loop do `GodforgeModuleMachine` no thread async (pré-existente); integração completa das UIs propostas (layout principal com barras e botões) aguarda ajuste dos botões/rótulos às mecânicas.
+
+## G-0268 — 2026-10-15 — UIs v2 dos quatro originais (pixel art aprovada)
+- Telas novas em `originals/ui/` (`OriginalScreen` + `LanceScreen`, `StellarScreen`, `ColliderScreen`, `RiftScreen`), texturas em `textures/gui/originals_v2/<máquina>/` geradas por `tools/design/generate_ui_v2_pixel.py --textures`. As máquinas sobrescrevem `createUI(Player)`; estado da tela via `@DescSynced double[] view`.
+- Display 292×108, 3 chips, grade de 8 botões (baixada para Y0+148), painéis arrastáveis: Mapa Orbital largo (380×170) e Bancada (Lança), Massa-Período e Sismograma (Câmara), Modelo Padrão e Comitê (Colisor), Acorde e Atlas (Fenda); manual de campo arrastável em todas. Lança ganhou alvo anterior/próximo (`tp`/`tn`).
+- Lang `gtna.ui.o.*` (192 chaves) em en/pt_br/zh_cn; rótulos de botão curtos.
+- Validação: gate 358/358; screenshots no cliente das 4 telas, 8 painéis e manuais (`/gtna_dev_panel`). Corrigidos: status da Bancada sob o X, rótulo 45:32 do Acorde cortado.
+- Pendente: travamento ~60 s ao sair do mundo; entrada ~21 s; erro em loop do `GodforgeModuleMachine`; antiproton_cell e contained_antiproton com o mesmo visual.

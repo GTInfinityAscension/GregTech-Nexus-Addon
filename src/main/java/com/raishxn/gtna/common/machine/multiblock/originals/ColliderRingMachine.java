@@ -99,6 +99,14 @@ public class ColliderRingMachine extends OriginalMachine {
         captured = false;
     }
 
+    /** What the screen shows that the fields above do not: see {@link #view()} for the layout. */
+    @DescSynced
+    private double[] view = new double[0];
+
+    public double[] view() {
+        return view;
+    }
+
     @Override
     public void onStructureInvalid() {
         releaseRings();
@@ -126,6 +134,18 @@ public class ColliderRingMachine extends OriginalMachine {
 
     public double proposalProgress() {
         return syncedProposalProgress;
+    }
+
+    public int magnetTier() {
+        return syncedMagnet;
+    }
+
+    public double energyTeV() {
+        return syncedEnergyTeV;
+    }
+
+    public double luminosity() {
+        return syncedLumi;
     }
 
     public boolean isPhysicsRun() {
@@ -189,6 +209,10 @@ public class ColliderRingMachine extends OriginalMachine {
         syncedProposalsDone = done;
         syncedProposal = core.activeProposal == null ? -1 : core.activeProposal.ordinal();
         syncedProposalProgress = core.proposalProgress;
+        // view: helium level, antiprotons, trap capacity, quench seconds, beam dump, detector, ramp seconds
+        view = new double[] { core.heliumLevel, core.antiprotons, core.trapCapacity(), core.quenchCooldown,
+                hatch(OriginalHatchPartMachine.Kind.BEAM_DUMP) != null ? 1 : 0,
+                hatch(OriginalHatchPartMachine.Kind.DETECTOR) != null ? 1 : 0, core.rampSeconds };
     }
 
     // ------------------------------------------------------------------ GUI
@@ -228,10 +252,8 @@ public class ColliderRingMachine extends OriginalMachine {
     }
 
     @Override
-    public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
-        super.attachSideTabs(sideTabs);
-        OriginalsGui.attach(sideTabs, "standard_model", OriginalsGui.standardModel(this));
-        OriginalsGui.attach(sideTabs, "committee", OriginalsGui.committee(this));
+    public com.lowdragmc.lowdraglib.gui.modular.ModularUI createUI(net.minecraft.world.entity.player.Player player) {
+        return com.raishxn.gtna.common.machine.multiblock.originals.ui.ColliderScreen.create(this, player);
     }
 
     // ------------------------------------------------------------------ persistence

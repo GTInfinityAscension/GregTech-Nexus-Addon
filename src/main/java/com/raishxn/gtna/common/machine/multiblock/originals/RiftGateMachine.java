@@ -150,7 +150,20 @@ public class RiftGateMachine extends OriginalMachine {
         return m == null ? ItemStack.EMPTY : ChemicalHelper.get(TagPrefix.dust, m);
     }
 
+    /** What the screen shows that the fields above do not: see {@link #view()} for the layout. */
+    @DescSynced
+    private double[] view = new double[0];
+
+    public double[] view() {
+        return view;
+    }
+
     private void sync() {
+        // view: frequency, phase, amplitude, closeness x3, depth, max depth, SpaceTime L/s, seed (as bits)
+        view = new double[] { core.frequency, core.phase, core.amplitude, core.open ? core.axisCloseness(0) : 0,
+                core.open ? core.axisCloseness(1) : 0, core.open ? core.axisCloseness(2) : 0, core.depth,
+                core.effectiveMaxDepth(), core.open ? core.upkeep() * SPACETIME_PER_UNIT : 0,
+                Double.longBitsToDouble(core.seed) };
         syncedOpen = core.open;
         syncedStability = core.stability;
         syncedResonance = core.open ? core.resonance() : 0;
@@ -249,10 +262,8 @@ public class RiftGateMachine extends OriginalMachine {
     }
 
     @Override
-    public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
-        super.attachSideTabs(sideTabs);
-        OriginalsGui.attach(sideTabs, "seismograph", OriginalsGui.seismograph(this));
-        OriginalsGui.attach(sideTabs, "atlas", OriginalsGui.atlas(this));
+    public com.lowdragmc.lowdraglib.gui.modular.ModularUI createUI(net.minecraft.world.entity.player.Player player) {
+        return com.raishxn.gtna.common.machine.multiblock.originals.ui.RiftScreen.create(this, player);
     }
 
     // ------------------------------------------------------------------ persistence

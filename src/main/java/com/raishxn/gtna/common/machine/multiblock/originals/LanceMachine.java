@@ -193,7 +193,29 @@ public class LanceMachine extends OriginalMachine
         releaseGun();
     }
 
+    /** What the screen shows that the fields above do not: see {@link #view()} for the layout. */
+    @DescSynced
+    private double[] view = new double[0];
+
+    public double[] view() {
+        return view;
+    }
+
     private void syncBench() {
+        // view: bank, capacity, barrel K, liner wear, efficiency, accuracy, capsules, auto, loaded slug, surveys...
+        var v = new double[9 + Body.values().length];
+        v[0] = core.bankCharge;
+        v[1] = core.bankCapacity();
+        v[2] = core.barrelTemperature;
+        v[3] = core.linerWear;
+        v[4] = core.efficiency();
+        v[5] = core.accuracy(target(), cwu);
+        v[6] = capsules.size();
+        v[7] = autoFire ? 1 : 0;
+        Projectile loaded = getLevel() != null && !getLevel().isClientSide ? loadedProjectile() : null;
+        v[8] = loaded == null ? -1 : loaded.ordinal();
+        for (var b : Body.values()) v[9 + b.ordinal()] = core.survey(b);
+        view = v;
         syncedBench = new double[] { core.totalMass(), core.massBudget(), core.totalHeat(), core.heatBudget(),
                 core.inductance() };
         int[] fitted = new int[LanceCore.Component.values().length];
@@ -366,6 +388,19 @@ public class LanceMachine extends OriginalMachine
     @Override
     public void handleDisplayClick(String data, ClickData click) {
         if (click.isRemote || data.isEmpty()) return;
+        if (data.equals("tp") || data.equals("tn")) {
+            // Previous / next targetable body.
+            int n = Body.values().length;
+            for (int k = 1; k <= n; k++) {
+                int t = Math.floorMod(target + (data.equals("tn") ? k : -k), n);
+                if (core.targetable(Body.values()[t])) {
+                    target = t;
+                    break;
+                }
+            }
+            syncBench();
+            return;
+        }
         switch (data.charAt(0)) {
             case 't' -> {
                 int t = Integer.parseInt(data.substring(1));
@@ -388,10 +423,8 @@ public class LanceMachine extends OriginalMachine
     }
 
     @Override
-    public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
-        super.attachSideTabs(sideTabs);
-        OriginalsGui.attach(sideTabs, "orbital_map", OriginalsGui.orbitalMap(this));
-        OriginalsGui.attach(sideTabs, "bench", OriginalsGui.bench(this));
+    public com.lowdragmc.lowdraglib.gui.modular.ModularUI createUI(net.minecraft.world.entity.player.Player player) {
+        return com.raishxn.gtna.common.machine.multiblock.originals.ui.LanceScreen.create(this, player);
     }
 
     // ------------------------------------------------------------------ persistence

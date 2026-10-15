@@ -211,6 +211,14 @@ public final class PreviewBenchCommand {
             });
             return 1;
         }));
+        // /gtna_dev_panel <name>: opens a panel of the original multiblock screen that is open (or closes: none).
+        event.getDispatcher().register(Commands.literal("gtna_dev_panel").then(Commands
+                .argument("name", com.mojang.brigadier.arguments.StringArgumentType.word()).executes(ctx -> {
+                    var nav = com.raishxn.gtna.common.machine.multiblock.originals.ui.OriginalScreen.Nav.last;
+                    String name = com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "name");
+                    if (nav != null) nav.open = name.equals("none") ? null : name;
+                    return 1;
+                })));
         // /gtna_dev_fire: the last dev-built lance fires one full shot.
         event.getDispatcher().register(Commands.literal("gtna_dev_fire").executes(ctx -> {
             var server = net.minecraft.client.Minecraft.getInstance().getSingleplayerServer();
