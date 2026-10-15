@@ -155,7 +155,19 @@ public final class OriginalsRenderer {
     private static void lance(LanceMachine l, PoseStack pose, Vec3 cam, float time) {
         int since = l.secondsSinceShot();
         if (since > 2) return;
-        Matrix4f m = frame(l, pose, cam, l.offset(LanceMachine.MUZZLE_UP, LanceMachine.MUZZLE_BACK));
+        BlockPos muzzle = l.offset(LanceMachine.MUZZLE_UP, LanceMachine.MUZZLE_BACK);
+        BlockPos pivot = PIVOTS.get(l.getPos());
+        float[] yaw = YAW.get(l.getPos());
+        Matrix4f m;
+        if (l.isCaptured() && pivot != null && yaw != null) {
+            // Follow the slewing gun: turn the muzzle and the barrel axis about the turret bearing.
+            pose.translate(pivot.getX() + 0.5 - cam.x, pivot.getY() + 0.5 - cam.y, pivot.getZ() + 0.5 - cam.z);
+            pose.mulPose(new Quaternionf().rotationY(yaw[0]));
+            pose.translate(muzzle.getX() - pivot.getX(), muzzle.getY() - pivot.getY(), muzzle.getZ() - pivot.getZ());
+            Direction back = l.getFrontFacing().getOpposite();
+            m = new Matrix4f(pose.last().pose()).rotate(new Quaternionf().rotationTo(new Vector3f(0, 0, 1),
+                    new Vector3f(back.getStepX(), back.getStepY(), back.getStepZ())));
+        } else m = frame(l, pose, cam, muzzle);
         float phase = (since + (time % 1)) / 2f;
         BufferBuilder buf = Tesselator.getInstance().getBuilder();
         buf.begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);

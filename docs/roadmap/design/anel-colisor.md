@@ -170,7 +170,7 @@ A tensão do sistema é o tempo: cada fb⁻¹ de física é antimatéria que nã
 
 **Falta:**
 
-- Comitê de propostas desenhado na GUI
+- Aba do comitê de tempo de feixe (propostas feitas, ativa e progresso) — feito
 - Beam Dump e hatch de detector
 - Receita do controlador
 

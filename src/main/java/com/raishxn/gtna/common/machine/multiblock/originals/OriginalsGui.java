@@ -250,4 +250,99 @@ public final class OriginalsGui {
             text(g, m.computation() + " CWU/t", x + 2, y + h - 10, m.computation() > 0 ? GREEN : RED);
         };
     }
+
+    // ------------------------------------------------------------------ collider: beam-time committee
+
+    static Plot.Painter committee(ColliderRingMachine m) {
+        return (g, x, y, w, h) -> {
+            var proposals = ColliderCore.Proposal.values();
+            int row = (h - 2) / proposals.length;
+            for (int i = 0; i < proposals.length; i++) {
+                int yy = y + 1 + i * row;
+                boolean done = m.proposalDone(i), active = m.activeProposal() == i;
+                int colour = done ? GREEN : active ? GOLD : GREY;
+                g.fill(x + 2, yy + 2, x + 8, yy + 8, colour);
+                text(g, Component.translatable("gtna.machine.antimatter_collider_ring.proposal." +
+                        proposals[i].name().toLowerCase()), x + 12, yy + 1, colour);
+                if (active) {
+                    int bar = (int) (Math.min(1, m.proposalProgress() / 40) * 50);
+                    g.renderOutline(x + w - 54, yy + 2, 52, 6, GOLD);
+                    g.fill(x + w - 53, yy + 3, x + w - 53 + bar, yy + 7, GOLD);
+                }
+            }
+        };
+    }
+
+    // ------------------------------------------------------------------ rift: constellation atlas
+
+    static Plot.Painter atlas(RiftGateMachine m) {
+        return (g, x, y, w, h) -> {
+            // Harmonics as a chord wheel: collected ones lit, the loaded score joined by lines.
+            var harmonics = com.raishxn.gtna.api.machine.feature.rift.RiftCore.Harmonic.values();
+            int cx = x + 40, cy = y + h / 2, r = Math.min(36, h / 2 - 8);
+            int[][] pts = new int[harmonics.length][];
+            for (int i = 0; i < harmonics.length; i++) {
+                double a = 2 * Math.PI * i / harmonics.length - Math.PI / 2;
+                pts[i] = new int[] { cx + (int) (Math.cos(a) * r), cy + (int) (Math.sin(a) * r) };
+            }
+            int prev = -1;
+            for (int i = 0; i < harmonics.length; i++) {
+                if (!m.harmonicLoaded(harmonics[i])) continue;
+                if (prev >= 0) line(g, pts[prev][0], pts[prev][1], pts[i][0], pts[i][1], 0xA055FFFF);
+                prev = i;
+            }
+            for (int i = 0; i < harmonics.length; i++) {
+                var hm = harmonics[i];
+                int colour = m.harmonicLoaded(hm) ? CYAN : m.harmonicCollected(hm) ? 0xFFDDDDDD : GREY;
+                dot(g, pts[i][0], pts[i][1], 2, colour);
+                text(g, hm.p + ":" + hm.q, pts[i][0] - 8, pts[i][1] + 4, colour);
+            }
+            // Charted rifts as stars: position from the seed, size from depth, brightness from resonance.
+            int ax = x + 86, aw = w - 90;
+            g.renderOutline(ax, y + 2, aw, h - 14, GRID);
+            long[] atlas = m.atlas();
+            for (int i = 0; i + 2 < atlas.length; i += 3) {
+                long seed = atlas[i];
+                int sx = ax + 2 + (int) Math.floorMod(seed, (long) Math.max(1, aw - 4));
+                int sy = y + 4 + (int) Math.floorMod(seed >>> 20, (long) Math.max(1, h - 18));
+                int bright = 80 + (int) Math.min(175, atlas[i + 2] / 6);
+                dot(g, sx, sy, (int) Math.min(2, atlas[i + 1] / 4), 0xFF000000 | bright << 16 | bright << 8 | 255);
+            }
+            text(g, Component.translatable("gtna.machine.dimensional_rift_gate.atlas", m.atlasSize()), ax,
+                    y + h - 10, AXIS);
+        };
+    }
+
+    // ------------------------------------------------------------------ lance: workbench
+
+    static Plot.Painter bench(LanceMachine m) {
+        return (g, x, y, w, h) -> {
+            double[] b = m.bench();
+            String[] names = { "kg", "MJ", "L" };
+            double[][] bars = { { b[0], b[1] }, { b[2], b[3] }, { b[4], 1 } };
+            for (int i = 0; i < 3; i++) {
+                int yy = y + 2 + i * 12;
+                double share = bars[i][1] <= 0 ? 0 : bars[i][0] / bars[i][1];
+                int colour = share > 1 ? RED : share > 0.85 ? GOLD : GREEN;
+                text(g, names[i], x + 2, yy, AXIS);
+                g.renderOutline(x + 20, yy, w - 70, 8, GRID);
+                g.fill(x + 21, yy + 1, x + 21 + (int) (Math.min(1, share) * (w - 72)), yy + 7, colour);
+                text(g, String.format("%.0f%%", share * 100), x + w - 44, yy, colour);
+            }
+            int yy = y + 40, col = 0;
+            for (var c : LanceCore.Component.values()) {
+                int n = m.fitted(c);
+                int cx = x + 2 + col * (w / 2);
+                text(g, (n > 0 ? "▣ " : "□ ") + c.name().toLowerCase() + (n > 1 ? " ×" + n : ""), cx, yy,
+                        n > 0 ? CYAN : GREY);
+                if (++col == 2) {
+                    col = 0;
+                    yy += 10;
+                }
+            }
+            text(g, Component.translatable("gtna.machine.kinetic_orbital_lance." +
+                    (m.benchValid() ? "bench_ok" : "bench_invalid")), x + 2, y + h - 10,
+                    m.benchValid() ? GREEN : RED);
+        };
+    }
 }

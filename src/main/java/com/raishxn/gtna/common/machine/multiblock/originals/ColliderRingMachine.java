@@ -47,6 +47,10 @@ public class ColliderRingMachine extends OriginalMachine {
     @DescSynced
     private double syncedEnergyTeV, syncedLumi;
     @DescSynced
+    private int syncedProposalsDone, syncedProposal = -1;
+    @DescSynced
+    private double syncedProposalProgress;
+    @DescSynced
     private double[] syncedSigma = new double[ColliderCore.Particle.values().length];
 
     public ColliderRingMachine(IMachineBlockEntity holder, Object... args) {
@@ -107,6 +111,18 @@ public class ColliderRingMachine extends OriginalMachine {
         return syncedSigma[i];
     }
 
+    public boolean proposalDone(int i) {
+        return (syncedProposalsDone & 1 << i) != 0;
+    }
+
+    public int activeProposal() {
+        return syncedProposal;
+    }
+
+    public double proposalProgress() {
+        return syncedProposalProgress;
+    }
+
     public boolean isPhysicsRun() {
         return syncedMode == ColliderCore.Mode.PHYSICS.ordinal();
     }
@@ -152,6 +168,11 @@ public class ColliderRingMachine extends OriginalMachine {
         var sigma = new double[syncedSigma.length];
         for (var p : ColliderCore.Particle.values()) sigma[p.ordinal()] = core.significance(p);
         syncedSigma = sigma;
+        int done = 0;
+        for (int i = 0; i < core.proposalsDone.length; i++) if (core.proposalsDone[i]) done |= 1 << i;
+        syncedProposalsDone = done;
+        syncedProposal = core.activeProposal == null ? -1 : core.activeProposal.ordinal();
+        syncedProposalProgress = core.proposalProgress;
     }
 
     // ------------------------------------------------------------------ GUI
@@ -194,6 +215,7 @@ public class ColliderRingMachine extends OriginalMachine {
     public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
         super.attachSideTabs(sideTabs);
         OriginalsGui.attach(sideTabs, "standard_model", OriginalsGui.standardModel(this));
+        OriginalsGui.attach(sideTabs, "committee", OriginalsGui.committee(this));
     }
 
     // ------------------------------------------------------------------ persistence

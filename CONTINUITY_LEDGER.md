@@ -7714,3 +7714,9 @@ Decisão do autor (2026-10-12, `docs/roadmap/bec-proposta.md`): rede física igu
 - Perf: captura do anel do colisor 2,2 s uma vez ao ligar (pico de lag); depois 158 µs/s. Lança: pattern check 1,5–3 s.
 - Validação: spotlessCheck, runUnitTests, runGameTestServer 358/358, runData PASS. Render e abas NÃO vistos no cliente.
 - Pendente: clarão do tiro seguir a rotação; bancada/atlas/comitê desenhados; hatches próprios; receitas (modpack); PWR.
+
+## G-0260 — 2026-10-15 — Originais: abas do comitê, atlas e bancada; clarão segue o canhão
+- Novas abas gráficas: Comitê de Tempo de Feixe (colisor), Atlas de Constelações (fenda), Bancada (lança). Dados por campos sincronizados; lang en/pt/zh.
+- Clarão/rastro do tiro da lança gira com o canhão em volta do mancal da torre.
+- Validação: spotlessCheck, runUnitTests, runGameTestServer 358/358, runData PASS. Cliente não aberto.
+- Fora deste lote (decisão do autor): hatches próprios, receitas (modpack), PWR.

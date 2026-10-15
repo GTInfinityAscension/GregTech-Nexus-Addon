@@ -47,7 +47,10 @@ public class RiftGateMachine extends OriginalMachine {
     @DescSynced
     private double syncedStability, syncedResonance;
     @DescSynced
-    private int syncedBiome;
+    private int syncedBiome, syncedCollected, syncedScore, syncedAtlasSize;
+    /** Atlas entries for the GUI: seed, best depth, best resonance x1000. */
+    @DescSynced
+    private long[] syncedAtlas = new long[0];
 
     public RiftGateMachine(IMachineBlockEntity holder, Object... args) {
         super(holder, args);
@@ -72,6 +75,22 @@ public class RiftGateMachine extends OriginalMachine {
 
     public double resonance() {
         return syncedResonance;
+    }
+
+    public boolean harmonicCollected(RiftCore.Harmonic h) {
+        return (syncedCollected & 1 << h.ordinal()) != 0;
+    }
+
+    public boolean harmonicLoaded(RiftCore.Harmonic h) {
+        return (syncedScore & 1 << h.ordinal()) != 0;
+    }
+
+    public long[] atlas() {
+        return syncedAtlas;
+    }
+
+    public int atlasSize() {
+        return syncedAtlasSize;
     }
 
     public RiftCore.Biome biome() {
@@ -130,6 +149,18 @@ public class RiftGateMachine extends OriginalMachine {
         syncedStability = core.stability;
         syncedResonance = core.open ? core.resonance() : 0;
         syncedBiome = RiftCore.biome(core.seed).ordinal();
+        int collected = 0, score = 0;
+        for (var h : RiftCore.Harmonic.values()) {
+            if (core.collected[h.ordinal()]) collected |= 1 << h.ordinal();
+            if (core.score.contains(h)) score |= 1 << h.ordinal();
+        }
+        syncedCollected = collected;
+        syncedScore = score;
+        syncedAtlasSize = core.atlas.size();
+        int n = Math.min(64, core.atlas.size());
+        long[] atlas = new long[n * 3];
+        for (int i = 0; i < n; i++) System.arraycopy(core.atlas.get(core.atlas.size() - n + i), 0, atlas, i * 3, 3);
+        syncedAtlas = atlas;
     }
 
     // ------------------------------------------------------------------ GUI
@@ -205,6 +236,7 @@ public class RiftGateMachine extends OriginalMachine {
     public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
         super.attachSideTabs(sideTabs);
         OriginalsGui.attach(sideTabs, "seismograph", OriginalsGui.seismograph(this));
+        OriginalsGui.attach(sideTabs, "atlas", OriginalsGui.atlas(this));
     }
 
     // ------------------------------------------------------------------ persistence

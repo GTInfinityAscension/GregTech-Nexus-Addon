@@ -166,7 +166,7 @@ A sintonia aceita valores por cover de dados ou computador (OpenComputers/CC). U
 
 **Falta:**
 
-- Atlas de constelações desenhado na GUI
+- Aba do atlas (roda de harmônicos, partitura e fendas mapeadas) — feito
 - Núcleos de pilone nos espinhos
 - Uso da Singularidade de Fenda
 - Receita do controlador

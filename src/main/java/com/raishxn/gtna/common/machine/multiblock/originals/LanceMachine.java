@@ -64,6 +64,13 @@ public class LanceMachine extends OriginalMachine {
     private boolean captured;
     @DescSynced
     private int targetableMask;
+    /** Bench for the GUI: mass, mass budget, heat, heat budget, inductance; and fitted count per component. */
+    @DescSynced
+    private double[] syncedBench = new double[5];
+    @DescSynced
+    private int[] syncedFitted = new int[LanceCore.Component.values().length];
+    @DescSynced
+    private boolean syncedBenchValid;
     /** CWU/t the computation hatch delivered last second. */
     @DescSynced
     private int cwu;
@@ -134,6 +141,27 @@ public class LanceMachine extends OriginalMachine {
         if (!enabled) releaseGun();
     }
 
+    private void syncBench() {
+        syncedBench = new double[] { core.totalMass(), core.massBudget(), core.totalHeat(), core.heatBudget(),
+                core.inductance() };
+        int[] fitted = new int[LanceCore.Component.values().length];
+        for (var c : core.fitted) fitted[c.ordinal()]++;
+        syncedFitted = fitted;
+        syncedBenchValid = core.benchValid();
+    }
+
+    public double[] bench() {
+        return syncedBench;
+    }
+
+    public int fitted(LanceCore.Component c) {
+        return syncedFitted[c.ordinal()];
+    }
+
+    public boolean benchValid() {
+        return syncedBenchValid;
+    }
+
     public boolean isTargetable(Body b) {
         return (targetableMask & 1 << b.ordinal()) != 0;
     }
@@ -171,6 +199,7 @@ public class LanceMachine extends OriginalMachine {
         int mask = 0;
         for (var b : Body.values()) if (core.targetable(b)) mask |= 1 << b.ordinal();
         targetableMask = mask;
+        syncBench();
     }
 
     /** One dust per tonne recovered, split over the body's materials. */
@@ -282,12 +311,14 @@ public class LanceMachine extends OriginalMachine {
             case 'a' -> autoFire = !autoFire;
             default -> {}
         }
+        syncBench();
     }
 
     @Override
     public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
         super.attachSideTabs(sideTabs);
         OriginalsGui.attach(sideTabs, "orbital_map", OriginalsGui.orbitalMap(this));
+        OriginalsGui.attach(sideTabs, "bench", OriginalsGui.bench(this));
     }
 
     // ------------------------------------------------------------------ persistence

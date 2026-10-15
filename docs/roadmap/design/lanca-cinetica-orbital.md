@@ -232,8 +232,8 @@ Projéteis e revestimentos por AE2. O cartucho de alvo (item) define corpo e pro
 
 **Falta:**
 
-- Bancada desenhada na GUI
-- Clarão do tiro acompanhando a rotação do canhão
+- Aba da bancada (massa, calor, indutância e peças) — feito
+- Clarão do tiro acompanha a rotação do canhão — feito
 - Hatches de revestimento e cartucho
 - Receita do controlador
 
