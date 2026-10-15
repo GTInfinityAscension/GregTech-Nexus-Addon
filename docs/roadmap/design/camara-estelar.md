@@ -181,10 +181,11 @@ O sismograma é uma fita que corre na GUI. O jogador aprende a ler os padrões e
 - Energia entregue na rede Nexus do dono; bandas pagam manutenção pela rede
 - Render da estrela, feixes de pulsar, linhas de campo, coroa e disco de acreção
 - GUI em texto com extração ajustável e campo magnetar; gametest de formação, alimentação e núcleo
+- Aba gráfica com o diagrama Massa–Período (trilha da estrela, limite TOV e curva de ruptura de Kepler)
 
 **Falta:**
 
-- Diagrama M–P e sismograma desenhados na GUI (hoje em texto)
+- Sismograma dos tremores desenhado
 - Lente gravitacional no jogo
 - Hatches próprios (Injetor de Massa, Sonda Sísmica)
 - Receita do controlador (fica com o modpack)

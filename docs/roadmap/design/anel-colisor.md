@@ -165,11 +165,12 @@ A tensão do sistema é o tempo: cada fb⁻¹ de física é antimatéria que nã
 - Física em `ColliderCore`: rigidez magnética, luminosidade, 5σ, quench, armadilhas de Penning, propostas (teste `ColliderCoreTest`)
 - Hélio líquido pelos hatches, ímãs e armadilhas pela rede; partículas contidas como itens
 - Render dos dois feixes contrarrotativos e do núcleo pulsando; gametest de formação, produção e física
+- Anel e giroscópios saem do mundo ao ligar e giram em sentidos opostos (como a Forja dos Deuses); voltam ao desligar
+- Aba gráfica com o quadro do Modelo Padrão (significância de cada partícula até 5σ)
 
 **Falta:**
 
-- Anel e giroscópios girando de verdade (tirar os blocos para o controlador, como a Forja dos Deuses)
-- Tabela do Modelo Padrão e comitê na GUI (hoje em texto)
+- Comitê de propostas desenhado na GUI
 - Beam Dump e hatch de detector
 - Receita do controlador
 

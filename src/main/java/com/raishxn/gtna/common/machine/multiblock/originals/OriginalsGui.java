@@ -1,0 +1,253 @@
+package com.raishxn.gtna.common.machine.multiblock.originals;
+
+import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.gui.fancy.TabsWidget;
+
+import com.lowdragmc.lowdraglib.gui.widget.ImageWidget;
+import com.lowdragmc.lowdraglib.gui.widget.Widget;
+import com.lowdragmc.lowdraglib.gui.widget.WidgetGroup;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.network.chat.Component;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+
+import com.raishxn.gtna.api.machine.feature.collider.ColliderCore;
+import com.raishxn.gtna.api.machine.feature.lance.LanceCore;
+import com.raishxn.gtna.api.machine.feature.stellar.StellarCore;
+import com.raishxn.gtna.common.machine.multiblock.godforge.gui.GodforgeGui;
+import com.raishxn.gtna.common.machine.multiblock.godforge.gui.GodforgePage;
+
+/**
+ * Graphic side tabs of the original multiblocks, on the Forge of Gods star background: the stellar chamber's
+ * mass–period diagram, the collider's Standard Model board, the rift's seismograph and the lance's orbital map.
+ * Everything is drawn from synced fields, so the server sends nothing extra.
+ */
+public final class OriginalsGui {
+
+    public static final int W = 200, H = 140;
+    private static final int GRID = 0x40FFFFFF, AXIS = 0xA0FFFFFF, CYAN = 0xFF55FFFF, GOLD = 0xFFFFAA00,
+            RED = 0xFFFF5555, GREEN = 0xFF55FF55, GREY = 0xFF777777;
+
+    private OriginalsGui() {}
+
+    static void attach(TabsWidget tabs, String key, Plot.Painter painter) {
+        tabs.attachSubTab(new GodforgePage("gtna.originals.gui." + key, GuiTextures.BUTTON_POWER
+                .getSubTexture(0, 0, 1, 0.5), () -> page(key, painter)));
+    }
+
+    private static Widget page(String key, Plot.Painter painter) {
+        var page = new WidgetGroup(0, 0, W, H);
+        page.setBackground(GodforgeGui.BACKGROUND_STAR);
+        page.addWidget(new ImageWidget(5, 4, W - 10, 10, GodforgeGui.text("gtna.originals.gui." + key, 0xFFAA00)));
+        page.addWidget(new Plot(6, 18, W - 12, H - 24, painter));
+        return page;
+    }
+
+    /** A client-side canvas. */
+    public static final class Plot extends Widget {
+
+        @FunctionalInterface
+        public interface Painter {
+
+            void paint(GuiGraphics g, int x, int y, int w, int h);
+        }
+
+        private final Painter painter;
+
+        Plot(int x, int y, int w, int h, Painter painter) {
+            super(x, y, w, h);
+            this.painter = painter;
+        }
+
+        @Override
+        @OnlyIn(Dist.CLIENT)
+        public void drawInBackground(GuiGraphics g, int mouseX, int mouseY, float partialTicks) {
+            super.drawInBackground(g, mouseX, mouseY, partialTicks);
+            var p = getPosition();
+            var s = getSize();
+            g.fill(p.x, p.y, p.x + s.width, p.y + s.height, 0x90000010);
+            painter.paint(g, p.x, p.y, s.width, s.height);
+        }
+    }
+
+    // ------------------------------------------------------------------ helpers
+
+    private static void text(GuiGraphics g, String s, int x, int y, int colour) {
+        g.drawString(Minecraft.getInstance().font, s, x, y, colour, false);
+    }
+
+    private static void text(GuiGraphics g, Component s, int x, int y, int colour) {
+        g.drawString(Minecraft.getInstance().font, s, x, y, colour, false);
+    }
+
+    private static void dot(GuiGraphics g, int x, int y, int r, int colour) {
+        g.fill(x - r, y - r, x + r + 1, y + r + 1, colour);
+    }
+
+    private static void line(GuiGraphics g, int x0, int y0, int x1, int y1, int colour) {
+        int n = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0));
+        for (int i = 0; i <= n; i++) {
+            int x = x0 + (n == 0 ? 0 : (x1 - x0) * i / n), y = y0 + (n == 0 ? 0 : (y1 - y0) * i / n);
+            g.fill(x, y, x + 1, y + 1, colour);
+        }
+    }
+
+    /** A rolling history sampled on the client, for trails and traces. */
+    static final class Trace {
+
+        final double[] a, b;
+        int head, size;
+        long last;
+
+        Trace(int n) {
+            a = new double[n];
+            b = new double[n];
+        }
+
+        void sample(double x, double y, long everyMs) {
+            long now = net.minecraft.Util.getMillis();
+            if (size > 0 && now - last < everyMs) return;
+            last = now;
+            a[head] = x;
+            b[head] = y;
+            head = (head + 1) % a.length;
+            size = Math.min(size + 1, a.length);
+        }
+
+        /** i = 0 is the oldest sample. */
+        double x(int i) {
+            return a[(head - size + i + a.length) % a.length];
+        }
+
+        double y(int i) {
+            return b[(head - size + i + b.length) % b.length];
+        }
+    }
+
+    // ------------------------------------------------------------------ stellar: mass–period diagram
+
+    static Plot.Painter massPeriod(StellarChamberMachine m) {
+        var trail = new Trace(120);
+        return (g, x, y, w, h) -> {
+            // log period 0.5 ms .. 1 s on X, mass 1.0 .. 2.6 M☉ on Y.
+            double lo = Math.log10(5e-4), hi = 0;
+            int left = x + 22, bottom = y + h - 12, pw = w - 26, ph = h - 16;
+            for (double mm = 1.2; mm <= 2.6; mm += 0.2) {
+                int yy = bottom - (int) ((mm - 1) / 1.6 * ph);
+                g.fill(left, yy, left + pw, yy + 1, GRID);
+                text(g, String.format("%.1f", mm), x, yy - 4, AXIS);
+            }
+            int tov = bottom - (int) ((StellarCore.TOV - 1) / 1.6 * ph);
+            g.fill(left, tov, left + pw, tov + 1, RED);
+            text(g, "TOV", left + pw - 18, tov - 9, RED);
+            // Kepler break-up: the shortest period a neutron star of this mass survives (~0.7 ms at 1.4 M☉).
+            int px = -1, py = -1;
+            for (int i = 0; i <= pw; i += 2) {
+                double mm = 1 + 1.6 * i / pw;
+                double p = 7e-4 * Math.sqrt(1.4 / mm);
+                int xx = left + (int) ((Math.log10(p) - lo) / (hi - lo) * pw);
+                int yy = bottom - (int) ((mm - 1) / 1.6 * ph);
+                if (px >= 0) line(g, px, py, xx, yy, GOLD);
+                px = xx;
+                py = yy;
+            }
+            text(g, "P (s)", left + pw - 24, bottom + 3, AXIS);
+            text(g, "M☉", x, y, AXIS);
+            trail.sample(m.renderPeriod(), m.renderMass(), 500);
+            for (int i = 0; i < trail.size; i++) {
+                int xx = left + (int) ((Math.log10(Math.max(5e-4, trail.x(i))) - lo) / (hi - lo) * pw);
+                int yy = bottom - (int) ((Math.min(2.6, trail.y(i)) - 1) / 1.6 * ph);
+                int alpha = 40 + 200 * i / Math.max(1, trail.size);
+                g.fill(xx, yy, xx + 1, yy + 1, (alpha << 24) | 0x55FFFF);
+            }
+            if (trail.size > 0) {
+                int xx = left + (int) ((Math.log10(Math.max(5e-4, m.renderPeriod())) - lo) / (hi - lo) * pw);
+                int yy = bottom - (int) ((Math.min(2.6, m.renderMass()) - 1) / 1.6 * ph);
+                dot(g, xx, yy, 2, m.isBlackHole() ? 0xFFAA55FF : m.isMagnetar() ? GOLD : CYAN);
+            }
+        };
+    }
+
+    // ------------------------------------------------------------------ collider: Standard Model board
+
+    static Plot.Painter standardModel(ColliderRingMachine m) {
+        return (g, x, y, w, h) -> {
+            var particles = ColliderCore.Particle.values();
+            int cols = 5, cw = w / cols, chh = (h - 4) / 2;
+            for (int i = 0; i < particles.length; i++) {
+                int cx = x + (i % cols) * cw + 2, cy = y + (i / cols) * chh + 2;
+                double z = m.significance(i);
+                int colour = z >= 5 ? GREEN : z >= 3 ? GOLD : GREY;
+                g.fill(cx, cy, cx + cw - 4, cy + chh - 4, (colour & 0x00FFFFFF) | 0x30000000);
+                g.renderOutline(cx, cy, cw - 4, chh - 4, colour);
+                text(g, Component.translatable("gtna.machine.antimatter_collider_ring.particle." +
+                        particles[i].name().toLowerCase()), cx + 2, cy + 2, 0xFFFFFFFF);
+                text(g, String.format("%.0f GeV", particles[i].thresholdGeV), cx + 2, cy + 13, AXIS);
+                int bar = (int) (Math.min(5, z) / 5 * (cw - 8));
+                g.fill(cx + 2, cy + chh - 14, cx + 2 + bar, cy + chh - 10, colour);
+                text(g, String.format("%.1fσ", z), cx + 2, cy + chh - 24, colour);
+            }
+        };
+    }
+
+    // ------------------------------------------------------------------ rift: seismograph
+
+    static Plot.Painter seismograph(RiftGateMachine m) {
+        var trace = new Trace(160);
+        return (g, x, y, w, h) -> {
+            trace.sample(m.stability(), m.resonance(), 250);
+            int mid = y + h / 2;
+            for (int k = 1; k < 4; k++) g.fill(x, y + h * k / 4, x + w, y + h * k / 4 + 1, GRID);
+            long t = net.minecraft.Util.getMillis();
+            int px = -1, py = -1;
+            for (int i = 0; i < trace.size; i++) {
+                int xx = x + (int) ((double) i / (trace.a.length - 1) * (w - 1));
+                double instability = 1 - Math.max(0, Math.min(100, trace.x(i))) / 100;
+                double wiggle = Math.sin(i * 1.7 + t / 90.0) * Math.sin(i * 0.31);
+                int yy = mid - (int) (wiggle * instability * (h / 2 - 4));
+                if (px >= 0) line(g, px, py, xx, yy, m.isRiftOpen() ? CYAN : GREY);
+                px = xx;
+                py = yy;
+            }
+            int bar = (int) (Math.max(0, Math.min(1, m.resonance())) * (w - 60));
+            text(g, "Ψ", x + 2, y + h - 10, GOLD);
+            g.fill(x + 12, y + h - 8, x + 12 + bar, y + h - 4, GOLD);
+            text(g, String.format("%.0f%%", m.stability()), x + w - 30, y + 2, m.stability() > 50 ? GREEN : RED);
+            text(g, Component.translatable("gtna.machine.dimensional_rift_gate.biome." +
+                    m.biome().name().toLowerCase()), x + 2, y + 2, AXIS);
+        };
+    }
+
+    // ------------------------------------------------------------------ lance: orbital map
+
+    static Plot.Painter orbitalMap(LanceMachine m) {
+        return (g, x, y, w, h) -> {
+            int cx = x + w / 2, cy = y + h / 2, rMax = Math.min(w, h) / 2 - 6;
+            dot(g, cx, cy, 3, 0xFF3399FF);
+            var bodies = LanceCore.Body.values();
+            double lo = Math.log10(50), hi = Math.log10(1e7);
+            long t = net.minecraft.Util.getMillis();
+            for (var b : bodies) {
+                int r = (int) ((Math.log10(b.distanceMm) - lo) / (hi - lo) * rMax) + 6;
+                for (int a = 0; a < 360; a += 6) {
+                    double rad = Math.toRadians(a);
+                    g.fill(cx + (int) (Math.cos(rad) * r), cy + (int) (Math.sin(rad) * r),
+                            cx + (int) (Math.cos(rad) * r) + 1, cy + (int) (Math.sin(rad) * r) + 1, GRID);
+                }
+                double ang = b.ordinal() * 0.9 + t / (4000.0 * (1 + b.ordinal()));
+                int bx = cx + (int) (Math.cos(ang) * r), by = cy + (int) (Math.sin(ang) * r);
+                boolean selected = b == m.target();
+                int colour = selected ? CYAN : m.isTargetable(b) ? 0xFFDDDDDD : GREY;
+                dot(g, bx, by, selected ? 2 : 1, colour);
+                if (selected) {
+                    line(g, cx, cy, bx, by, 0x8055FFFF);
+                    text(g, Component.translatable("gtna.machine.kinetic_orbital_lance.body." +
+                            b.name().toLowerCase()), bx + 4, by - 4, CYAN);
+                }
+            }
+            text(g, m.computation() + " CWU/t", x + 2, y + h - 10, m.computation() > 0 ? GREEN : RED);
+        };
+    }
+}

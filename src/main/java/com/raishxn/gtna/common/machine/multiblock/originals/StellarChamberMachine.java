@@ -326,6 +326,12 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
         sync();
     }
 
+    @Override
+    public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
+        super.attachSideTabs(sideTabs);
+        OriginalsGui.attach(sideTabs, "mass_period", OriginalsGui.massPeriod(this));
+    }
+
     // ------------------------------------------------------------------ persistence
 
     @Override

@@ -252,10 +252,15 @@ public final class GTNAOriginalsGameTests {
         var helium = com.gregtechceu.gtceu.common.data.GTMaterials.Helium.getFluid(
                 com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys.LIQUID, 64_000);
         fill(ring, helium);
+        // The first second captures the ring and gyroscopes (two pattern walks); time it apart from the steady state.
         long t0 = System.nanoTime();
-        seconds(ring, 30);
+        seconds(ring, 1);
+        GTNACORE.LOGGER.info("[GTNA perf] antimatter_collider_ring capture: {} ms",
+                (System.nanoTime() - t0) / 1_000_000);
+        t0 = System.nanoTime();
+        seconds(ring, 29);
         GTNACORE.LOGGER.info("[GTNA perf] antimatter_collider_ring second: {} us",
-                (System.nanoTime() - t0) / 1000 / 30);
+                (System.nanoTime() - t0) / 1000 / 29);
         helper.assertTrue(ring.core().quenchCooldown == 0 && ring.core().rampSeconds > 0,
                 "helium keeps the beam on: helium=" + ring.core().heliumLevel + " quench=" +
                         ring.core().quenchCooldown + " " + probe(helper, ring, owner));

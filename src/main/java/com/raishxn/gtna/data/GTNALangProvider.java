@@ -1642,6 +1642,12 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.machine.kinetic_orbital_lance.bank", "Bank: §e%s / %s EU");
         add("gtna.machine.kinetic_orbital_lance.barrel", "Barrel: §e%s K§7, liner wear §e%s%%");
         add("gtna.machine.kinetic_orbital_lance.efficiency", "Rail efficiency η §e%s§7, accuracy §e%s");
+        add("gtna.originals.gui.mass_period", "Mass–Period Diagram");
+        add("gtna.originals.gui.standard_model", "Standard Model Board");
+        add("gtna.originals.gui.seismograph", "Rift Seismograph");
+        add("gtna.originals.gui.orbital_map", "Orbital Map");
+        add("gtna.machine.kinetic_orbital_lance.computation", "Aim computation: §b%s CWU/t");
+        add("gtna.machine.kinetic_orbital_lance.computation_none", "§cNo optical computation hatch: the aim is blind");
         add("gtna.machine.kinetic_orbital_lance.capsules", "Capsules in flight: §e%s");
         add("gtna.machine.kinetic_orbital_lance.bench", "Bench:");
         add("gtna.machine.kinetic_orbital_lance.bench_ok", "§aBench within budget");

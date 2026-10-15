@@ -129,7 +129,9 @@ public final class GTNAOriginals {
             .appearanceBlock(() -> ForgeRegistries.BLOCKS.getValue(new ResourceLocation("gtceu:clean_machine_casing")))
             .pattern(definition -> pattern(definition, "kinetic_orbital_lance", "gtceu:clean_machine_casing",
                     h -> h.or(abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
-                            .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))))
+                            .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
+                            .or(abilities(PartAbility.COMPUTATION_DATA_RECEPTION).setMaxGlobalLimited(1)
+                                    .setPreviewCount(1))))
             .modelProperty(com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.RECIPE_LOGIC_STATUS,
                     com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status.IDLE)
             .model(com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel(

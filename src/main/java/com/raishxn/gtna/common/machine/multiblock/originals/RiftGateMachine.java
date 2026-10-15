@@ -201,6 +201,12 @@ public class RiftGateMachine extends OriginalMachine {
         return Math.max(lo, Math.min(hi, v));
     }
 
+    @Override
+    public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
+        super.attachSideTabs(sideTabs);
+        OriginalsGui.attach(sideTabs, "seismograph", OriginalsGui.seismograph(this));
+    }
+
     // ------------------------------------------------------------------ persistence
 
     @Override

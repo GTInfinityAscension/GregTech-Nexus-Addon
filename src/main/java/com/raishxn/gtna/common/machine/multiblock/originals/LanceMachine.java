@@ -1,5 +1,6 @@
 package com.raishxn.gtna.common.machine.multiblock.originals;
 
+import com.gregtechceu.gtceu.api.capability.IOpticalComputationProvider;
 import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
@@ -42,8 +43,8 @@ public class LanceMachine extends OriginalMachine {
     public static final double MUZZLE_UP = 98, MUZZLE_BACK = 195;
     /** Bank charge rate from the network, EU per second. */
     public static final double CHARGE_PER_SECOND = Math.pow(2, 36) * 20;
-    /** Computation assumed for the aim until the optical data hatch is wired in. */
-    public static final double DEFAULT_CWU = 16000;
+    /** CWU/t asked from the optical computation hatch for the aim. */
+    public static final int AIM_CWUT = 16000;
 
     private final LanceCore core = new LanceCore();
     /** Return capsules in flight: {body, kg, seconds left}. */
@@ -58,6 +59,14 @@ public class LanceMachine extends OriginalMachine {
     private int shotFlash;          // seconds since the last shot, for the renderer
     @DescSynced
     private double syncedYaw;
+    @Persisted
+    @DescSynced
+    private boolean captured;
+    @DescSynced
+    private int targetableMask;
+    /** CWU/t the computation hatch delivered last second. */
+    @DescSynced
+    private int cwu;
 
     public LanceMachine(IMachineBlockEntity holder, Object... args) {
         super(holder, args);
@@ -76,6 +85,59 @@ public class LanceMachine extends OriginalMachine {
         return shotFlash;
     }
 
+    public int computation() {
+        return cwu;
+    }
+
+    public double yaw() {
+        return syncedYaw;
+    }
+
+    /** CWU/t from the optical computation hatch; without one the aim is blind. */
+    private int requestComputation() {
+        for (var part : getParts())
+            if (part instanceof IOpticalComputationProvider provider) return provider.requestCWUt(AIM_CWUT, false);
+        return 0;
+    }
+
+    /** The gun (everything above the turret ring) is in the controller and drawn slewing to the target. */
+    public boolean isCaptured() {
+        return captured && isFormed();
+    }
+
+    private java.util.Map<net.minecraft.core.BlockPos, Character> gun() {
+        return CapturedParts.positions(getLevel(), "kinetic_orbital_lance", "gun", getPos(), getFrontFacing(),
+                getUpwardsFacing(), isFlipped());
+    }
+
+    private void captureGun() {
+        if (captured || getLevel() == null) return;
+        CapturedParts.capture(getLevel(), gun());
+        captured = true;
+    }
+
+    private void releaseGun() {
+        if (!captured || getLevel() == null || getLevel().isClientSide) return;
+        CapturedParts.release(getLevel(), "kinetic_orbital_lance", gun());
+        captured = false;
+    }
+
+    @Override
+    public void onStructureInvalid() {
+        releaseGun();
+        super.onStructureInvalid();
+    }
+
+    @Override
+    public void setWorkingEnabled(boolean enabled) {
+        super.setWorkingEnabled(enabled);
+        if (!enabled) releaseGun();
+    }
+
+    public boolean isTargetable(Body b) {
+        return (targetableMask & 1 << b.ordinal()) != 0;
+    }
+
     public Body target() {
         return Body.values()[target];
     }
@@ -83,16 +145,18 @@ public class LanceMachine extends OriginalMachine {
     @Override
     protected void secondTick(ServerLevel level) {
         shotFlash = Math.min(shotFlash + 1, 99);
+        captureGun();
         core.cool(Math.pow(2, 34) * 20);
         double room = core.bankCapacity() - core.bankCharge;
         if (room > 0) {
             double charge = Math.min(room, CHARGE_PER_SECOND);
             if (consume(level, charge)) core.bankCharge += charge;
         }
+        cwu = requestComputation();
         Projectile projectile = loadedProjectile();
         if (autoFire && projectile != null && core.bankCharge >= core.bankCapacity() && core.targetable(target())) {
             if (take(s -> projectileOf(s) == projectile, 1) == 1) {
-                var shot = core.fire(target(), projectile, DEFAULT_CWU);
+                var shot = core.fire(target(), projectile, cwu);
                 if (shot.fired) shotFlash = 0;
                 if (shot.recoveredKg > 0) capsules.add(new double[] { target, shot.recoveredKg, shot.returnSeconds });
             }
@@ -104,6 +168,9 @@ public class LanceMachine extends OriginalMachine {
             deliverCapsule(Body.values()[(int) c[0]], c[1]);
         }
         syncedYaw = target * 0.4;
+        int mask = 0;
+        for (var b : Body.values()) if (core.targetable(b)) mask |= 1 << b.ordinal();
+        targetableMask = mask;
     }
 
     /** One dust per tonne recovered, split over the body's materials. */
@@ -178,7 +245,8 @@ public class LanceMachine extends OriginalMachine {
         text.add(Component.translatable(k + "barrel", String.format("%.0f", core.barrelTemperature),
                 String.format("%.0f", core.linerWear * 100)));
         text.add(Component.translatable(k + "efficiency", String.format("%.2f", core.efficiency()),
-                String.format("%.2f", core.accuracy(target(), DEFAULT_CWU))));
+                String.format("%.2f", core.accuracy(target(), cwu))));
+        text.add(Component.translatable(k + (cwu > 0 ? "computation" : "computation_none"), cwu));
         text.add(Component.translatable(k + "capsules", capsules.size()));
         var bench = Component.translatable(k + "bench");
         for (var c : LanceCore.Component.values()) {
@@ -214,6 +282,12 @@ public class LanceMachine extends OriginalMachine {
             case 'a' -> autoFire = !autoFire;
             default -> {}
         }
+    }
+
+    @Override
+    public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
+        super.attachSideTabs(sideTabs);
+        OriginalsGui.attach(sideTabs, "orbital_map", OriginalsGui.orbitalMap(this));
     }
 
     // ------------------------------------------------------------------ persistence

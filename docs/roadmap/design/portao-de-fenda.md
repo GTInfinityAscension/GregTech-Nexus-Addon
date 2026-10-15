@@ -162,6 +162,7 @@ A sintonia aceita valores por cover de dados ou computador (OpenComputers/CC). U
 - Sintonia, estabilidade, profundidade, harmônicos, partitura e atlas em `RiftCore` (teste `RiftCoreTest`)
 - Botões de sintonia na GUI; SpaceTime estabiliza; sondas e âncoras pelos barramentos; saída por bioma
 - Render do horizonte de eventos com a cor do bioma; gametest de formação e estabilidade
+- Aba gráfica com o sismógrafo da fenda (traço da estabilidade e barra de ressonância)
 
 **Falta:**
 

@@ -56,6 +56,10 @@ public final class OriginalsRenderer {
                 pose.pushPose();
                 spinningParts(c, pose, cam, projection, time);
                 pose.popPose();
+            } else if (m instanceof LanceMachine l && l.isCaptured() && !l.isInValid()) {
+                pose.pushPose();
+                turret(l, pose, cam, projection);
+                pose.popPose();
             }
         }
         try {
@@ -199,19 +203,72 @@ public final class OriginalsRenderer {
         com.mojang.blaze3d.vertex.VertexBuffer.unbind();
     }
 
+    private static final Map<BlockPos, BlockPos> PIVOTS = new java.util.HashMap<>();
+    private static final Map<BlockPos, float[]> YAW = new java.util.HashMap<>();
+
+    /** The lance's gun, taken into the controller, slewing about the vertical axis to the selected body. */
+    private static void turret(LanceMachine l, PoseStack pose, Vec3 cam, Matrix4f projection) {
+        if (l.getLevel() == null) return;
+        BlockPos key = l.getPos().immutable();
+        BlockPos pivot = PIVOTS.computeIfAbsent(key, k -> pivot(l));
+        if (pivot == null) return;
+        var meshes = MESHES.computeIfAbsent(key,
+                k -> new com.mojang.blaze3d.vertex.VertexBuffer[] { mesh(l, "kinetic_orbital_lance", "gun", pivot) });
+        var shader = GameRenderer.getRendertypeCutoutShader();
+        if (shader == null || meshes[0] == null) return;
+        // Slew towards the target at about 6 degrees a second.
+        float[] yaw = YAW.computeIfAbsent(key, k -> new float[] { (float) l.yaw(), net.minecraft.Util.getMillis() });
+        float dt = Math.min(1, (net.minecraft.Util.getMillis() - yaw[1]) / 1000f);
+        yaw[1] = net.minecraft.Util.getMillis();
+        float diff = (float) l.yaw() - yaw[0];
+        yaw[0] += Math.signum(diff) * Math.min(Math.abs(diff), 0.1f * dt);
+        pose.translate(pivot.getX() + 0.5 - cam.x, pivot.getY() + 0.5 - cam.y, pivot.getZ() + 0.5 - cam.z);
+        RenderSystem.setShaderTexture(0, net.minecraft.client.renderer.texture.TextureAtlas.LOCATION_BLOCKS);
+        net.minecraft.client.Minecraft.getInstance().gameRenderer.lightTexture().turnOnLightLayer();
+        RenderSystem.enableDepthTest();
+        RenderSystem.depthMask(true);
+        RenderSystem.disableBlend();
+        Matrix4f model = new Matrix4f(pose.last().pose()).rotate(yaw[0], new Vector3f(0, 1, 0))
+                .translate(-0.5f, -0.5f, -0.5f);
+        meshes[0].bind();
+        meshes[0].drawWithShader(model, projection, shader);
+        com.mojang.blaze3d.vertex.VertexBuffer.unbind();
+    }
+
+    /** Horizontal centroid of the gun at the height of its lowest block: the turret bearing. */
+    private static BlockPos pivot(LanceMachine l) {
+        var parts = com.raishxn.gtna.common.machine.multiblock.originals.CapturedParts.positions(l.getLevel(),
+                "kinetic_orbital_lance", "gun", l.getPos(), l.getFrontFacing(), l.getUpwardsFacing(), l.isFlipped());
+        if (parts.isEmpty()) return null;
+        long x = 0, z = 0;
+        int y = Integer.MAX_VALUE;
+        for (BlockPos p : parts.keySet()) {
+            x += p.getX();
+            z += p.getZ();
+            y = Math.min(y, p.getY());
+        }
+        return new BlockPos((int) (x / parts.size()), y, (int) (z / parts.size()));
+    }
+
     private static com.mojang.blaze3d.vertex.VertexBuffer mesh(ColliderRingMachine c, String tag, BlockPos center) {
+        return mesh(c, "antimatter_collider_ring", tag, center);
+    }
+
+    private static com.mojang.blaze3d.vertex.VertexBuffer mesh(OriginalMachine c, String name, String tag,
+                                                               BlockPos center) {
         var parts = com.raishxn.gtna.common.machine.multiblock.originals.CapturedParts.positions(c.getLevel(),
-                "antimatter_collider_ring", tag, c.getPos(), c.getFrontFacing(), c.getUpwardsFacing(), c.isFlipped());
+                name, tag, c.getPos(), c.getFrontFacing(), c.getUpwardsFacing(), c.isFlipped());
         if (parts.isEmpty()) return null;
         var dispatcher = net.minecraft.client.Minecraft.getInstance().getBlockRenderer();
         var random = net.minecraft.util.RandomSource.create(42);
-        var builder = new BufferBuilder(parts.size() * 6 * 4 * DefaultVertexFormat.BLOCK.getVertexSize());
+        var builder = new BufferBuilder(
+                Math.min(parts.size() * 4 * 4, 1 << 18) * DefaultVertexFormat.BLOCK.getVertexSize());
         builder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.BLOCK);
         PoseStack ps = new PoseStack();
         for (var e : parts.entrySet()) {
             BlockPos p = e.getKey();
             var state = com.raishxn.gtna.common.machine.multiblock.originals.CapturedParts
-                    .blockFor("antimatter_collider_ring", e.getValue()).defaultBlockState();
+                    .blockFor(name, e.getValue()).defaultBlockState();
             var model = dispatcher.getBlockModel(state);
             ps.pushPose();
             ps.translate(p.getX() - center.getX(), p.getY() - center.getY(), p.getZ() - center.getZ());
@@ -362,7 +419,7 @@ public final class OriginalsRenderer {
 
         @Override
         public boolean shouldRender(LanceMachine machine, Vec3 cameraPos) {
-            return machine.secondsSinceShot() <= 2;
+            return machine.secondsSinceShot() <= 2 || machine.isCaptured();
         }
 
         @Override

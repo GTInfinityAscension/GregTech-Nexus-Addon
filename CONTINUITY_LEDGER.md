@@ -7707,3 +7707,10 @@ Decisão do autor (2026-10-12, `docs/roadmap/bec-proposta.md`): rede física igu
 - GameTests `GTNAOriginalsGameTests` (batch gtna_originals). Perf: pattern check estelar 229 ms, colisor 909 ms, fenda 318 ms, lança 1.5 s; segundo de física estelar 34 µs, colisor 65 ms (inclui a captura dos anéis no 1º segundo — conferir).
 - Validação: spotlessCheck, compileJava, runUnitTests, runGameTestServer (358/358 PASS), runData PASS; wiki regenerada e `mkdocs build` sem erros.
 - Pendente/manual: testar in-game render e GUI; GUI desenhada (diagrama M–P, sismograma, Modelo Padrão, atlas, mapa orbital); torre da lança girando; lente gravitacional; hatches próprios; CWU real; receitas no modpack; PWR.
+
+## G-0259 — 2026-10-15 — Originais: CWU real, canhão girando, abas gráficas
+- Lança: hatch de computação óptica (COMPUTATION_DATA_RECEPTION, máx. 1); a mira usa o CWU/t entregue (16000 pedido); sem hatch a mira fica cega. O canhão (#gun) sai do mundo ao ligar e o render gira no eixo vertical até o alvo (~6°/s); volta ao desligar.
+- Abas laterais gráficas (fundo da Forja dos Deuses, `OriginalsGui`): Massa–Período (estelar), Modelo Padrão (colisor), Sismógrafo (fenda), Mapa Orbital (lança). Lang en/pt/zh.
+- Perf: captura do anel do colisor 2,2 s uma vez ao ligar (pico de lag); depois 158 µs/s. Lança: pattern check 1,5–3 s.
+- Validação: spotlessCheck, runUnitTests, runGameTestServer 358/358, runData PASS. Render e abas NÃO vistos no cliente.
+- Pendente: clarão do tiro seguir a rotação; bancada/atlas/comitê desenhados; hatches próprios; receitas (modpack); PWR.

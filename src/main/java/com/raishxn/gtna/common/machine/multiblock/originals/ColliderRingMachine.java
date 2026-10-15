@@ -46,6 +46,8 @@ public class ColliderRingMachine extends OriginalMachine {
     private int syncedMode, syncedMagnet;
     @DescSynced
     private double syncedEnergyTeV, syncedLumi;
+    @DescSynced
+    private double[] syncedSigma = new double[ColliderCore.Particle.values().length];
 
     public ColliderRingMachine(IMachineBlockEntity holder, Object... args) {
         super(holder, args);
@@ -100,6 +102,11 @@ public class ColliderRingMachine extends OriginalMachine {
         if (!enabled) releaseRings();
     }
 
+    /** Discovery significance of particle {@code i}, synced for the GUI. */
+    public double significance(int i) {
+        return syncedSigma[i];
+    }
+
     public boolean isPhysicsRun() {
         return syncedMode == ColliderCore.Mode.PHYSICS.ordinal();
     }
@@ -142,6 +149,9 @@ public class ColliderRingMachine extends OriginalMachine {
         syncedMagnet = core.magnetTier;
         syncedEnergyTeV = core.centreOfMassGeV() / 2000;
         syncedLumi = core.luminosity();
+        var sigma = new double[syncedSigma.length];
+        for (var p : ColliderCore.Particle.values()) sigma[p.ordinal()] = core.significance(p);
+        syncedSigma = sigma;
     }
 
     // ------------------------------------------------------------------ GUI
@@ -178,6 +188,12 @@ public class ColliderRingMachine extends OriginalMachine {
         if (click.isRemote || !"mode".equals(data)) return;
         core.mode = core.mode == ColliderCore.Mode.PHYSICS ? ColliderCore.Mode.PRODUCTION : ColliderCore.Mode.PHYSICS;
         syncedMode = core.mode.ordinal();
+    }
+
+    @Override
+    public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
+        super.attachSideTabs(sideTabs);
+        OriginalsGui.attach(sideTabs, "standard_model", OriginalsGui.standardModel(this));
     }
 
     // ------------------------------------------------------------------ persistence

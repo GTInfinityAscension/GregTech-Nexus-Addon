@@ -226,12 +226,14 @@ Projéteis e revestimentos por AE2. O cartucho de alvo (item) define corpo e pro
 - Tiro, mira, regimes, cano, banco, levantamento e bancada em `LanceCore` (teste `LanceCoreTest`)
 - Banco carregado pela rede; projéteis de lingotes; cápsulas devolvem os materiais de cada corpo
 - Render do clarão e do rastro de plasma; gametest de formação, tiro e retorno
+- O canhão sai do mundo ao ligar e gira no render até o alvo selecionado
+- Mira usa CWU real do hatch de computação óptica (sem hatch a mira fica cega)
+- Aba gráfica com o mapa orbital (corpos, alvo e CWU)
 
 **Falta:**
 
-- Torre girando para o alvo
-- Computação real pelo hatch óptico (hoje fixa em 16.000 CWU)
-- Mapa orbital e bancada desenhados na GUI
+- Bancada desenhada na GUI
+- Clarão do tiro acompanhando a rotação do canhão
 - Hatches de revestimento e cartucho
 - Receita do controlador
 
