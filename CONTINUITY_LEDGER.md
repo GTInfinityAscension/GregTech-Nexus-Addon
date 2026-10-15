@@ -7752,3 +7752,15 @@ Decisão do autor (2026-10-12, `docs/roadmap/bec-proposta.md`): rede física igu
 - Portão de Fenda: horizonte com o vórtice da prévia 3D (stellar_fx modo 5, aditivo, sem costura); `additive_color` para geometria aditiva (antes saía opaca).
 - Dev: `/gtna_material_sheet <página>` (todos os itens de material), `/gtna_rift_preview`, `/gtna_dev_build <id>`.
 - Validação: gametests 358/358, runData, spotless; cliente: folhas de materiais (4 páginas), Universium na mão, Fenda, Lança construída.
+
+## G-0265 — 2026-10-15 — PENDENTE para a próxima sessão (relato do autor testando a Lança)
+Prioridade máxima: desempenho (item 6). Ordem sugerida: 6, 1, 3, 2, 5, 8, 4, 7.
+1. Lança: GUI diz "sem hatch de computação" mesmo com Computation Data Reception Hatch instalado. Ver `LanceMachine.requestComputation` (procura `IOpticalComputationProvider` entre as partes; o hatch receptor provavelmente é `IOpticalComputationHatch`/receiver e precisa de transmissor ligado — conferir API GTCEu 7.5.3 e mensagem quando há hatch mas 0 CWU).
+2. Target Cartridge Hatch e Barrel Liner Hatch não adotam a textura do casing ao formar: `OriginalHatchPartMachine` precisa do comportamento de aparência de parte de multibloco (como os hatches GTCEu: `getAppearance`/casing do controlador via `partAppearance` / `IMultiPart` render).
+3. Lança: banco mostra 4,00e+12 mas o topo da UI mostra "Max Recipe Tier: ULV" (linha padrão do WorkableElectricMultiblockMachine; os originais não usam receitas nem hatch de energia) — esconder/substituir essa linha nos 4 originais.
+4. Widget de informação como o da Godforge (abrir pelo ícone GTNA da UI) para os 4 originais.
+5. Estrutura da Lança: blocos avulsos (ex.: solid machine casing) soltos — limpar no `convert_originals.py` (letra 'M' gtceu:solid_machine_casing#gun e outras ilhas desconexas) e regenerar o .mbs.
+6. Câmara Estelar: quebrar um bloco para pôr a Seismic Probe congelou o jogo. Provável: cada mudança de bloco re-checa o padrão inteiro (93³) de forma síncrona; investigar com o StallDetector (logs `[GTNA stall]` em run/logs/latest.log) e reduzir o custo do checkPattern dos originais (cache/limitar re-check, async do GTCEu). Rever também a prévia (multiblock info) — ainda 0,7–1,2 s.
+7. Escrever para o autor um roteiro de teste por multibloco: o que montar, que hatches/fluidos/itens/energia colocar, que comandos/cliques usar e o que deve acontecer.
+8. Render da Câmara Estelar: a lente não deve aparecer através dos blocos (usar profundidade: só distorcer onde a estrela é visível / depth test contra a cena); feixes do pulsar mais grossos e girando como na prévia 3D.
+Também pendente da avaliação das propostas de UI (tools/design/ui_proposals, arquivos do autor, não commitados por mim): integrar fundos/ícones/botões/barras como abas GUI após o autor decidir se a UI segue a mecânica atual ou o contrário (ver resposta de 2026-10-15).
