@@ -38,7 +38,7 @@ A Alloy Blast Smelter, só que foi para a academia. Roda receitas da Alloy Blast
 | Tungstensteel Firebox Casing | 24 |
 | Extreme Engine Intake Casing | 20 |
 | Tungstensteel Pipe Casing | 15 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Forja de Liga Metálica Gigante | 1 |
 | Tungsten Steel Frame | 1 |
 | Elite Parallel Control Hatch | 1 |

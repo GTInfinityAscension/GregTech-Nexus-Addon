@@ -7726,3 +7726,10 @@ Decisão do autor (2026-10-12, `docs/roadmap/bec-proposta.md`): rede física igu
 - Colisor: sem Beam Dump o quench dobra a recuperação. Estelar: sem Sonda Sísmica tremores novos não são decodificados; aba Sismograma. Lança: Hatch de Revestimento troca o revestimento gasto (chapa WC 5e13 EU, neutrônio 2e14 EU).
 - Gametests: Beam Dump presente na prévia; troca do revestimento verificada. 358/358 PASS; spotlessCheck, runUnitTests, runData PASS.
 - Pendente: Injetor de Massa, hatch de detector, cartucho de alvo, sintonia; receitas (modpack); cliente não testado.
+
+## G-0262 — 2026-10-15 — Originais: Injetor de Massa, Detector, Cartucho de Alvo, Sintonia; crash de JEI no dev
+- Hatches: Injetor de Massa (estelar; pó/lingote = 144 mB do fluido), Hatch de Detector (colisor; sem ele física não registra), Hatch de Cartucho de Alvo (lança; 8 itens `target_cartridge_<corpo>`, revezam a cada tiro), Hatch de Sintonia (fenda; redstone 1–15 → amplitude). Texturas geradas por `tools/design/originals_hatch_textures.py`.
+- Corrigido crash ao entrar no mundo com JEI < 15.32 (dev usa 15.20): `UniversiumJeiFluidMixin` dividido em novo/legado e escolhido por `GTNAMixinPlugin` conforme `TilingDirection` existe.
+- `./gradlew runClient -PquickPlay="New World"` abre o save direto (smoke test).
+- Validação: spotlessCheck, runUnitTests, runGameTestServer 358/358, runData PASS; cliente abriu e entrou no mundo sem crash (multiblocos não montados no cliente).
+- Visto no log (pré-existente): JEI marca as páginas do Eye of Harmony como "broken recipe".

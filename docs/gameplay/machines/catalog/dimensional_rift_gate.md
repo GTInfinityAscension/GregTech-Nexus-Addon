@@ -32,7 +32,7 @@ Toda semente leva a algum lugar. A maioria morde. Abre fendas para dimensões po
 
 | Bloco | Qtd. |
 |---|---:|
-| Invólucro Dimensionalmente Transcendente | 7.925 |
+| Invólucro Dimensionalmente Transcendente | 7.924 |
 | Carcaça de Estrutura Espacial Reforçada | 7.270 |
 | Fusion Coil Block | 3.715 |
 | Invólucro de Injeção Dimensional | 2.880 |
@@ -42,6 +42,7 @@ Toda semente leva a algum lugar. A maioria morde. Abre fendas para dimensões po
 | ULV Input Bus | 1 |
 | Portão de Fenda Dimensional | 1 |
 | ULV Input Hatch | 1 |
+| Hatch de Sintonia da Fenda | 1 |
 | ULV Output Bus | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

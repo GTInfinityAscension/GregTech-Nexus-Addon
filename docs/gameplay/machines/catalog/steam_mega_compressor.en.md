@@ -32,7 +32,7 @@ Diamonds are made under pressure. So is this machine. A supercompressor where im
 | Bronze Frame | 144 |
 | Glass | 64 |
 | Steam Supercompressor | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Wireless Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

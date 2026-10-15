@@ -35,10 +35,11 @@ Gira setecentas vezes por segundo. Não encoste. Mantém uma estrela de nêutron
 | Vidro de Campo de Plasma | 15.773 |
 | Carcaça Estável de Neutrônio | 4.428 |
 | Núcleo de Matéria Degenerada | 1.419 |
-| Carcaça de Liga de Naquadah Radiante | 199 |
+| Carcaça de Liga de Naquadah Radiante | 198 |
 | Sonda Sísmica | 1 |
 | ULV Input Hatch | 1 |
 | Câmara de Contenção Estelar | 1 |
+| Injetor de Massa | 1 |
 | ULV Output Bus | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

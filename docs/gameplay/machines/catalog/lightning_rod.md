@@ -49,7 +49,7 @@ Chama raios de propósito. Os vizinhos têm perguntas. Canaliza descargas de arc
 | ULV Output Bus | 1 |
 | Para-raios | 1 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

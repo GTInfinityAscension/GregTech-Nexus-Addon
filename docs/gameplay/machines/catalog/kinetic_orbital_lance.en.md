@@ -32,7 +32,7 @@ Asteroid mining, the loud way. Fires projectiles at moons and asteroids from a c
 
 | Block | Qty |
 |---|---:|
-| Clean Stainless Steel Casing | 101,576 |
+| Clean Stainless Steel Casing | 101,575 |
 | Radiant Naquadah Alloy Casing | 52,147 |
 | Tungstensteel Pipe Casing | 7,963 |
 | Chemically Inert PTFE Machine Casing | 7,044 |
@@ -42,6 +42,7 @@ Asteroid mining, the loud way. Fires projectiles at moons and asteroids from a c
 | Molecular Casing | 418 |
 | Plasma Heater Casing | 172 |
 | Solid Machine Casing | 49 |
+| Target Cartridge Hatch | 1 |
 | Barrel Liner Hatch | 1 |
 | Kinetic Orbital Lance | 1 |
 | Computation Data Reception Hatch | 1 |

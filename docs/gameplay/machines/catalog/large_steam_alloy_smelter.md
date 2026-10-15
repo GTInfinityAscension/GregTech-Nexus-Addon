@@ -32,7 +32,7 @@ Metalurgia da Idade do Bronze, agora com ambição industrial. Uma câmara de va
 |---|---:|
 | Steam Machine Casing | 18 |
 | Bronze Firebox Casing | 9 |
-| Barramento Grande de Saída a Vapor | 1 |
+| Barramento de Saída a Vapor com Boost de Saída | 1 |
 | Grande Fundição de Ligas a Vapor | 1 |
 | Steam Input Bus | 1 |
 | Hatch de Entrada de Vapor Wireless | 1 |

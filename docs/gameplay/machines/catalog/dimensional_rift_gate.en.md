@@ -32,7 +32,7 @@ Every seed is somewhere. Most of them bite. Opens rifts to seeded dimensions; tu
 
 | Block | Qty |
 |---|---:|
-| Dimensionally Transcendent Casing | 7,925 |
+| Dimensionally Transcendent Casing | 7,924 |
 | Reinforced Spatial Structure Casing | 7,270 |
 | Fusion Coil Block | 3,715 |
 | Dimension Injection Casing | 2,880 |
@@ -42,6 +42,7 @@ Every seed is somewhere. Most of them bite. Opens rifts to seeded dimensions; tu
 | ULV Input Bus | 1 |
 | Dimensional Rift Gate | 1 |
 | ULV Input Hatch | 1 |
+| Rift Tuning Hatch | 1 |
 | ULV Output Bus | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

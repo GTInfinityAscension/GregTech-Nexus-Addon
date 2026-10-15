@@ -38,7 +38,7 @@ Focuses a laser through a fold in space. Precision, now in 4D. Engraves with dim
 | Containment Field Generator | 96 |
 | Dimensionally Transcendent Casing | 43 |
 | ULV Energy Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Hatch | 1 |

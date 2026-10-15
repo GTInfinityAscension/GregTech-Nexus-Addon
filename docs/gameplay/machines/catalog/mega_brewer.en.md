@@ -43,7 +43,7 @@ Thousand-ton brewing. The whole workshop smells great. Brews and ferments at ind
 | ULV Output Bus | 1 |
 | Mega Brewer | 1 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Hatch | 1 |
 

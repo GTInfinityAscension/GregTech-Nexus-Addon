@@ -41,7 +41,7 @@ De lingotes pesados a fios perfeitos finos como cabelo. Puxa metal em fios perfe
 | Caixa de Engrenagens de Amprósio | 39 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Mega Trefiladora | 1 |
 | ULV Input Bus | 1 |
 

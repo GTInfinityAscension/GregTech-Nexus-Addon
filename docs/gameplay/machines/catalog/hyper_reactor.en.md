@@ -42,6 +42,6 @@ Burns hyper fuel. Do not ask what is hyper about it. Turns hyper fuels into huge
 | Amprosium Pipe Casing | 4 |
 | ULV Input Hatch | 2 |
 | Hyper Reactor | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

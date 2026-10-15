@@ -34,7 +34,7 @@ Quatro geradores entram num bar. Uma conta só. Roda até quatro geradores iguai
 |---|---:|
 | Solid Machine Casing | 14 |
 | Tempered Glass | 8 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Matriz de Geradores | 1 |
 | ULV Dynamo Hatch | 1 |
 | ULV Input Bus | 1 |

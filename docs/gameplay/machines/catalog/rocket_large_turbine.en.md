@@ -36,7 +36,7 @@ Not rocket science. Okay, it is rocket science. An EV turbine that burns rocket 
 | Muffler Hatch IV | 1 |
 | ULV Input Hatch | 1 |
 | Rocket Large Turbine | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | IV Rotor Holder | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

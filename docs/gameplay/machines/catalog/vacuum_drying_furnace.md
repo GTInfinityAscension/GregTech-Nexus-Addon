@@ -32,7 +32,7 @@ Transforma espuma de volta em pó. Mágica, só que com vácuo. Seca espumas de 
 | Cupronickel Coil Block | 24 |
 | Carcaça de Aço Vermelho | 10 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Fornalha de Secagem a Vácuo | 1 |
 | ULV Input Hatch | 1 |
 | Muffler Hatch IV | 1 |

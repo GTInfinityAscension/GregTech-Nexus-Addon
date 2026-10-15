@@ -42,7 +42,7 @@ The entire ore processing line, in one box. Complete ore processing in one step;
 | Tungstensteel Gearbox Casing | 16 |
 | ULV Output Bus | 1 |
 | Elite Parallel Control Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Integrated Ore Processor | 1 |
 | ULV Energy Hatch | 1 |
 | Muffler Hatch ZPM | 1 |

@@ -31,7 +31,7 @@ The chairman poses with a microscope. Nobody is fooled. Runs Large Chemical Reac
 | Chemically Inert PTFE Machine Casing | 66 |
 | Cupronickel Coil Block | 15 |
 | PTFE Pipe Casing | 12 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |

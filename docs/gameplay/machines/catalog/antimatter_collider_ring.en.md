@@ -32,7 +32,7 @@ Two beams, one ring, zero room for error. Accelerates counter-rotating beams thr
 
 | Block | Qty |
 |---|---:|
-| Precision Field Sync Casing | 7,557 |
+| Precision Field Sync Casing | 7,556 |
 | Hsss Borosilicate Glass | 3,235 |
 | High Strength Support Spindle | 1,367 |
 | Nanite Shielding Glass | 928 |
@@ -45,6 +45,7 @@ Two beams, one ring, zero room for error. Accelerates counter-rotating beams thr
 | Beam Dump | 1 |
 | ULV Input Hatch | 1 |
 | Antimatter Collider Ring | 1 |
+| Collision Detector Hatch | 1 |
 | ULV Output Bus | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

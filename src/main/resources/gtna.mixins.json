@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "mixins.gtna.refmap.json",
   "minVersion": "0.8",
+  "plugin": "com.raishxn.gtna.mixin.GTNAMixinPlugin",
   "mixins": [
     "ae2.CraftingCPUClusterMixin",
     "ae2.CraftingServiceMixin",
@@ -41,6 +42,7 @@
     "client.ItemEffectRendererMixin",
     "client.UniversiumFluidGuiMixin",
     "client.UniversiumJeiFluidMixin",
+    "client.UniversiumJeiFluidLegacyMixin",
     "client.WorldSceneRendererBatchMixin"
   ],
   "injectors": {

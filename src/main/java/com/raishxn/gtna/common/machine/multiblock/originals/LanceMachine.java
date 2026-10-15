@@ -201,11 +201,20 @@ public class LanceMachine extends OriginalMachine {
         }
         cwu = requestComputation();
         replaceWornLiner();
+        // A cartridge in the Target Cartridge Hatch picks the target; cartridges take turns shot by shot.
+        var cartridges = hatch(OriginalHatchPartMachine.Kind.TARGET_CARTRIDGE);
+        if (cartridges != null && !cartridges.stock().get(0).isEmpty()) {
+            var body = com.raishxn.gtna.common.data.GTNAOriginals.cartridgeBody(cartridges.stock().get(0));
+            if (body != null && core.targetable(body)) target = body.ordinal();
+        }
         Projectile projectile = loadedProjectile();
         if (autoFire && projectile != null && core.bankCharge >= core.bankCapacity() && core.targetable(target())) {
             if (take(s -> projectileOf(s) == projectile, 1) == 1) {
                 var shot = core.fire(target(), projectile, cwu);
-                if (shot.fired) shotFlash = 0;
+                if (shot.fired) {
+                    shotFlash = 0;
+                    if (cartridges != null) cartridges.cycle();
+                }
                 if (shot.recoveredKg > 0) capsules.add(new double[] { target, shot.recoveredKg, shot.returnSeconds });
             }
         }

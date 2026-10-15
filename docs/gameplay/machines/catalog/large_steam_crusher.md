@@ -34,7 +34,7 @@ Pedra entra, cascalho sai. Ninguém pergunta do barulho. Um salão de trituraç�
 | Bronze Frame | 24 |
 | Bronze Gearbox Casing | 14 |
 | Bronze Pipe Casing | 14 |
-| Barramento Grande de Saída a Vapor | 1 |
+| Barramento de Saída a Vapor com Boost de Saída | 1 |
 | Grande Macerador a Vapor | 1 |
 | Steam Input Bus | 1 |
 | Hatch de Entrada de Vapor Wireless | 1 |

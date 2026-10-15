@@ -34,7 +34,7 @@ Hand-soldered circuits, minus the hands. A steam-era circuit line that targets o
 | Bronze Pipe Casing | 8 |
 | Steam Assembly Block | 8 |
 | Wireless Steam Input Hatch | 1 |
-| Huge Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Large Steam Circuit Assembler | 1 |
 | Steam Input Bus | 1 |
 

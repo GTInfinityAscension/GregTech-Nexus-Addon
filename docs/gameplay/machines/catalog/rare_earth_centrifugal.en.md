@@ -32,7 +32,7 @@ Spins rare earths until every lanthanide finds its jar. Splits rare earth concen
 | Amprosium Pipe Casing | 3 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Rare Earth Centrifugal | 1 |
 | ULV Output Bus | 1 |
 | ULV Energy Hatch | 1 |

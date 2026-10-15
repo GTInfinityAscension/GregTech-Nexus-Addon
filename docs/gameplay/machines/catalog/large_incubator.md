@@ -32,12 +32,12 @@ Uma estufa para o que é melhor deixar atrás do vidro. Cultiva culturas numa c�
 | Casing Mecanico de Hastelloy N Resistente a Oxidacao | 242 |
 | Tempered Glass | 96 |
 | Plascrete | 85 |
-| Sterilizing Filter Casing | 36 |
+| Filter Casing | 36 |
 | PTFE Pipe Casing | 7 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |
 | Incubadora Grande | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |

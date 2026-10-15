@@ -266,8 +266,24 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
         return false;
     }
 
+    /** Solar masses of one item in the Mass Injector: the material's fluid value times 144 mB. */
+    public static double itemFeedValue(ItemStack stack) {
+        var entry = ChemicalHelper.getMaterialEntry(stack.getItem());
+        if (entry.isEmpty() || entry.material() == null || !entry.material().hasFluid()) return 0;
+        if (entry.tagPrefix() != TagPrefix.dust && entry.tagPrefix() != TagPrefix.ingot) return 0;
+        return feedValue(entry.material().getFluid()) * 144;
+    }
+
     private double feed() {
         double total = 0;
+        var injector = OriginalMachine.hatchOf(getParts(), OriginalHatchPartMachine.Kind.MASS_INJECTOR);
+        if (injector != null) {
+            var stock = injector.stock();
+            for (int i = 0; i < stock.size(); i++) {
+                double value = itemFeedValue(stock.get(i));
+                if (value > 0) total += value * injector.take(i, 64).getCount();
+            }
+        }
         for (var part : getParts()) {
             for (var handlers : part.getRecipeHandlers()) {
                 if (!handlers.isValid(IO.IN)) continue;

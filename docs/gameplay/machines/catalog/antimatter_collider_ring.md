@@ -32,7 +32,7 @@ Dois feixes, um anel, nenhuma margem de erro. Acelera feixes contrarrotativos pe
 
 | Bloco | Qtd. |
 |---|---:|
-| Carcaça de Sincronização de Campo de Precisão | 7.557 |
+| Carcaça de Sincronização de Campo de Precisão | 7.556 |
 | Vidro Borossilicato de HSS-S | 3.235 |
 | Eixo de Suporte de Alta Resistência | 1.367 |
 | Vidro de Blindagem de Nanites | 928 |
@@ -45,6 +45,7 @@ Dois feixes, um anel, nenhuma margem de erro. Acelera feixes contrarrotativos pe
 | Descarte de Feixe | 1 |
 | ULV Input Hatch | 1 |
 | Anel Colisor de Antimatéria | 1 |
+| Hatch de Detector de Colisões | 1 |
 | ULV Output Bus | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

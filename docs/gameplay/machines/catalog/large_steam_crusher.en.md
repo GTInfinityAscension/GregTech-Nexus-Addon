@@ -34,7 +34,7 @@ Rocks go in, gravel comes out. Nobody asks about the noise. A steam-driven crush
 | Bronze Frame | 24 |
 | Bronze Gearbox Casing | 14 |
 | Bronze Pipe Casing | 14 |
-| Huge Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Large Steam Crusher | 1 |
 | Steam Input Bus | 1 |
 | Wireless Steam Input Hatch | 1 |

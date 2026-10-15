@@ -44,7 +44,7 @@ Billions of bubbles, each one a tiny elevator for ore. A mineral flotation sanct
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | Giant Flotation Tank | 1 |
 

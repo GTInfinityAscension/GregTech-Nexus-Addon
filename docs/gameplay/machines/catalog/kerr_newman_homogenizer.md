@@ -60,7 +60,7 @@ Um buraco negro carregado e girando. Mexe melhor que qualquer colher. Mistura na
 | Carcaça de Estrutura Espacial Reforçada | 10 |
 | Gerador de Campo de Contenção | 10 |
 | ULV Output Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 | Homogeneizador Kerr-Newman | 1 |
 | ULV Energy Hatch | 1 |

@@ -47,7 +47,7 @@ The Braggs' dream factory, one perfect lattice at a time. Grows defect-free crys
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Output Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Crystal Builder | 1 |
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |

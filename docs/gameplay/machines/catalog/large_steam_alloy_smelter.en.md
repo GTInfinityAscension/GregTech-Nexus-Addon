@@ -32,7 +32,7 @@ Bronze Age metallurgy, now with industrial ambition. A high-pressure steam chamb
 |---|---:|
 | Steam Machine Casing | 18 |
 | Bronze Firebox Casing | 9 |
-| Huge Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Large Steam Alloy Smelter | 1 |
 | Steam Input Bus | 1 |
 | Wireless Steam Input Hatch | 1 |

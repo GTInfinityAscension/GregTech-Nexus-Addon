@@ -268,6 +268,9 @@ public final class GTNAOriginalsGameTests {
         helper.assertTrue(ring.hatch(
                 com.raishxn.gtna.common.machine.multiblock.originals.OriginalHatchPartMachine.Kind.BEAM_DUMP) != null,
                 "the preview places a Beam Dump");
+        helper.assertTrue(ring.hatch(
+                com.raishxn.gtna.common.machine.multiblock.originals.OriginalHatchPartMachine.Kind.DETECTOR) != null,
+                "the preview places a Collision Detector Hatch");
         ring.core().mode = com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Mode.PHYSICS;
         fill(ring, helium);
         seconds(ring, 10);
@@ -321,6 +324,12 @@ public final class GTNAOriginalsGameTests {
                 "the hatch accepts a neutronium liner: " + liner);
         core.linerWear = 1;
         seconds(lance, 1);
+        // A Target Cartridge picks the next target.
+        var carts = lance.hatch(
+                com.raishxn.gtna.common.machine.multiblock.originals.OriginalHatchPartMachine.Kind.TARGET_CARTRIDGE);
+        helper.assertTrue(carts != null, "the preview places a Target Cartridge Hatch");
+        carts.insert(new net.minecraft.world.item.ItemStack(GTNAOriginals.cartridge(
+                com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body.MOON)));
         helper.assertTrue(core.linerWear < 1 && core.linerLife == 2e14,
                 "the neutronium liner replaces the worn one: wear=" + core.linerWear + " life=" + core.linerLife);
         helper.succeed();

@@ -1657,6 +1657,21 @@ public class GTNALangProvider extends LanguageProvider {
                 "§7A worn or cracked liner is swapped automatically, without taking the gun apart.");
         add("gtna.originals.gui.quakes", "Seismogram");
         add("gtna.originals.gui.no_probe", "Install a Seismic Probe to record quakes");
+        add("gtna.machine.mass_injector.tooltip.0",
+                "§7Feeds solid star matter (dust or ingots) to the §bStellar Containment Chamber§7.");
+        add("gtna.machine.mass_injector.tooltip.1",
+                "§7Each item counts as 144 mB of the matching fluid; up to 64 per slot per second.");
+        add("gtna.machine.detector_hatch.tooltip.0",
+                "§7Records the collisions of the §bAntimatter Collider Ring§7 for the beam-time committee.");
+        add("gtna.machine.detector_hatch.tooltip.1",
+                "§cWithout one, physics runs record nothing: no significance and no proposal progress.");
+        add("gtna.machine.target_cartridge_hatch.tooltip.0",
+                "§7The first Target Cartridge picks the §bKinetic Orbital Lance§7 target.");
+        add("gtna.machine.target_cartridge_hatch.tooltip.1",
+                "§7After each shot the cartridges take turns: load several to rotate targets.");
+        add("gtna.machine.tuning_hatch.tooltip.0", "§7Lets redstone tune the §bDimensional Rift Gate§7.");
+        add("gtna.machine.tuning_hatch.tooltip.1",
+                "§7Signal strength 1–15 sets the amplitude (about 6.7 % per level); 0 leaves the GUI value.");
         add("gtna.originals.gui.mass_period", "Mass–Period Diagram");
         add("gtna.originals.gui.standard_model", "Standard Model Board");
         add("gtna.originals.gui.seismograph", "Rift Seismograph");

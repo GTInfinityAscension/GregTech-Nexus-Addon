@@ -35,7 +35,7 @@ Não tente assar biscoitos aqui dentro. Eles evaporam. Uma instalação industri
 | Bronze Pipe Casing | 32 |
 | Bronze Frame | 31 |
 | Bronze Firebox Casing | 22 |
-| Barramento Grande de Saída a Vapor | 1 |
+| Barramento de Saída a Vapor com Boost de Saída | 1 |
 | Grande Fornalha a Vapor | 1 |
 | Steam Input Bus | 1 |
 | Hatch de Entrada de Vapor Wireless | 1 |

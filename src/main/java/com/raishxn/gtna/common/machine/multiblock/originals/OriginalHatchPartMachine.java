@@ -29,7 +29,11 @@ public class OriginalHatchPartMachine extends TieredIOPartMachine implements IMa
     public enum Kind {
         BEAM_DUMP,
         SEISMIC_PROBE,
-        LINER
+        LINER,
+        MASS_INJECTOR,
+        DETECTOR,
+        TARGET_CARTRIDGE,
+        TUNING
     }
 
     public final Kind kind;
@@ -57,6 +61,41 @@ public class OriginalHatchPartMachine extends TieredIOPartMachine implements IMa
             if (!got.isEmpty()) return got;
         }
         return ItemStack.EMPTY;
+    }
+
+    /** Every stack in the stock, slot by slot (empty ones skipped is up to the caller). */
+    public java.util.List<ItemStack> stock() {
+        var out = new java.util.ArrayList<ItemStack>();
+        if (inventory != null)
+            for (int i = 0; i < inventory.storage.getSlots(); i++) out.add(inventory.storage.getStackInSlot(i));
+        return out;
+    }
+
+    /** Takes up to {@code n} items from slot {@code i}. */
+    public ItemStack take(int i, int n) {
+        return inventory == null ? ItemStack.EMPTY : inventory.storage.extractItem(i, n, false);
+    }
+
+    /** Moves the first stack to the back, so cartridges take turns; returns the new first stack. */
+    public ItemStack cycle() {
+        if (inventory == null) return ItemStack.EMPTY;
+        var s = inventory.storage;
+        int n = s.getSlots();
+        var first = s.getStackInSlot(0).copy();
+        if (first.isEmpty()) return ItemStack.EMPTY;
+        int last = 0;
+        for (int i = 1; i < n; i++) {
+            if (s.getStackInSlot(i).isEmpty()) break;
+            s.setStackInSlot(i - 1, s.getStackInSlot(i).copy());
+            last = i;
+        }
+        s.setStackInSlot(last, first);
+        return s.getStackInSlot(0);
+    }
+
+    /** Strongest redstone signal reaching the hatch, 0–15. */
+    public int signal() {
+        return getLevel() == null ? 0 : getLevel().getBestNeighborSignal(getPos());
     }
 
     /** Puts items in the stock (tests and automation); returns what did not fit. */

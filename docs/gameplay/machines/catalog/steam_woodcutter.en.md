@@ -34,7 +34,7 @@ I'm a lumberjack and I'm okay. An industrial tree processor that turns saplings 
 | Iron Reinforced Wood | 12 |
 | Dirt | 9 |
 | Steel Reinforced Wood | 5 |
-| Huge Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Steam Woodcutter | 1 |
 | Steam Input Bus | 1 |
 | Wireless Steam Input Hatch | 1 |

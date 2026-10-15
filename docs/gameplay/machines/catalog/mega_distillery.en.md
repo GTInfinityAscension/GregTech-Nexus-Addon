@@ -37,11 +37,11 @@ Every fraction of the barrel, accounted for. Runs Distillery, Distillation Tower
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
 | Mega Distillery | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
 | ZPM Thread Hatch | 1 |
-| IV 256A Laser Target Hatch | 1 |
+| IV 4,096A Laser Target Hatch | 1 |
 | Elite Parallel Control Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

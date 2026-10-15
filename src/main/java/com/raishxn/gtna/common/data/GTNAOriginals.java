@@ -65,6 +65,14 @@ public final class GTNAOriginals {
     public static final ItemEntry<ComponentItem> DEPTH_ANCHOR = item("depth_anchor", "Depth Anchor");
     public static final ItemEntry<ComponentItem> RIFT_SINGULARITY = item("rift_singularity", "Rift Singularity");
 
+    private static final Map<com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body, ItemEntry<ComponentItem>> CARTRIDGES = new EnumMap<>(
+            com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body.class);
+    static {
+        for (var b : com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body.values())
+            CARTRIDGES.put(b, item("target_cartridge_" + b.name().toLowerCase(),
+                    "Target Cartridge (" + bodyName(b) + ")"));
+    }
+
     // ------------------------------------------------------------------ special hatches
     public static final com.gregtechceu.gtceu.api.machine.MachineDefinition BEAM_DUMP = hatch("beam_dump",
             "Beam Dump", com.gregtechceu.gtceu.api.GTValues.UIV, OriginalHatchPartMachine.Kind.BEAM_DUMP,
@@ -75,6 +83,19 @@ public final class GTNAOriginals {
     public static final com.gregtechceu.gtceu.api.machine.MachineDefinition LINER_HATCH = hatch("liner_hatch",
             "Barrel Liner Hatch", com.gregtechceu.gtceu.api.GTValues.UEV, OriginalHatchPartMachine.Kind.LINER,
             GTNAPartAbility.LINER_HATCH, s -> LanceMachine.linerLife(s) > 0);
+    public static final com.gregtechceu.gtceu.api.machine.MachineDefinition MASS_INJECTOR = hatch("mass_injector",
+            "Mass Injector", com.gregtechceu.gtceu.api.GTValues.UXV, OriginalHatchPartMachine.Kind.MASS_INJECTOR,
+            GTNAPartAbility.MASS_INJECTOR, s -> StellarChamberMachine.itemFeedValue(s) > 0);
+    public static final com.gregtechceu.gtceu.api.machine.MachineDefinition DETECTOR_HATCH = hatch("detector_hatch",
+            "Collision Detector Hatch", com.gregtechceu.gtceu.api.GTValues.UIV,
+            OriginalHatchPartMachine.Kind.DETECTOR, GTNAPartAbility.DETECTOR_HATCH, null);
+    public static final com.gregtechceu.gtceu.api.machine.MachineDefinition CARTRIDGE_HATCH = hatch(
+            "target_cartridge_hatch", "Target Cartridge Hatch", com.gregtechceu.gtceu.api.GTValues.UEV,
+            OriginalHatchPartMachine.Kind.TARGET_CARTRIDGE, GTNAPartAbility.TARGET_CARTRIDGE,
+            s -> cartridgeBody(s) != null);
+    public static final com.gregtechceu.gtceu.api.machine.MachineDefinition TUNING_HATCH = hatch("tuning_hatch",
+            "Rift Tuning Hatch", com.gregtechceu.gtceu.api.GTValues.UIV, OriginalHatchPartMachine.Kind.TUNING,
+            GTNAPartAbility.TUNING_HATCH, null);
 
     // ------------------------------------------------------------------ machines
     public static final MultiblockMachineDefinition STELLAR_CONTAINMENT_CHAMBER = REGISTRATE
@@ -87,7 +108,8 @@ public final class GTNAOriginals {
                     "gtna:radiant_naquadah_alloy_casing",
                     h -> h.or(abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(8).setPreviewCount(1))
                             .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
-                            .or(abilities(GTNAPartAbility.SEISMIC_PROBE).setMaxGlobalLimited(1).setPreviewCount(1))))
+                            .or(abilities(GTNAPartAbility.SEISMIC_PROBE).setMaxGlobalLimited(1).setPreviewCount(1))
+                            .or(abilities(GTNAPartAbility.MASS_INJECTOR).setMaxGlobalLimited(4).setPreviewCount(1))))
             .modelProperty(com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.RECIPE_LOGIC_STATUS,
                     com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status.IDLE)
             .model(com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel(
@@ -106,7 +128,8 @@ public final class GTNAOriginals {
             .pattern(definition -> pattern(definition, "antimatter_collider_ring", "gtna:precision_field_sync_casing",
                     h -> h.or(abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(4).setPreviewCount(1))
                             .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
-                            .or(abilities(GTNAPartAbility.BEAM_DUMP).setMaxGlobalLimited(1).setPreviewCount(1))))
+                            .or(abilities(GTNAPartAbility.BEAM_DUMP).setMaxGlobalLimited(1).setPreviewCount(1))
+                            .or(abilities(GTNAPartAbility.DETECTOR_HATCH).setMaxGlobalLimited(1).setPreviewCount(1))))
             .modelProperty(com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.RECIPE_LOGIC_STATUS,
                     com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status.IDLE)
             .model(com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel(
@@ -126,7 +149,9 @@ public final class GTNAOriginals {
                     definition -> pattern(definition, "dimensional_rift_gate", "gtna:dimensionally_transcendent_casing",
                             h -> h.or(abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(4).setPreviewCount(1))
                                     .or(abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
-                                    .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))))
+                                    .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
+                                    .or(abilities(GTNAPartAbility.TUNING_HATCH).setMaxGlobalLimited(1)
+                                            .setPreviewCount(1))))
             .modelProperty(com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.RECIPE_LOGIC_STATUS,
                     com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status.IDLE)
             .model(com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel(
@@ -147,7 +172,9 @@ public final class GTNAOriginals {
                             .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
                             .or(abilities(PartAbility.COMPUTATION_DATA_RECEPTION).setMaxGlobalLimited(1)
                                     .setPreviewCount(1))
-                            .or(abilities(GTNAPartAbility.LINER_HATCH).setMaxGlobalLimited(1).setPreviewCount(1))))
+                            .or(abilities(GTNAPartAbility.LINER_HATCH).setMaxGlobalLimited(1).setPreviewCount(1))
+                            .or(abilities(GTNAPartAbility.TARGET_CARTRIDGE).setMaxGlobalLimited(1)
+                                    .setPreviewCount(1))))
             .modelProperty(com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.RECIPE_LOGIC_STATUS,
                     com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status.IDLE)
             .model(com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel(
@@ -181,6 +208,31 @@ public final class GTNAOriginals {
     }
 
     public static void init() {}
+
+    public static Item cartridge(com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body b) {
+        return CARTRIDGES.get(b).get();
+    }
+
+    /** Body a target cartridge points at, or null. */
+    @org.jetbrains.annotations.Nullable
+    public static com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body cartridgeBody(
+                                                                                          net.minecraft.world.item.ItemStack stack) {
+        for (var e : CARTRIDGES.entrySet()) if (stack.is(e.getValue().get())) return e.getKey();
+        return null;
+    }
+
+    private static String bodyName(com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body b) {
+        return switch (b) {
+            case MOON -> "Moon";
+            case PHOBOS -> "Phobos";
+            case VESTA -> "Vesta";
+            case CERES -> "Ceres";
+            case PSYCHE -> "Psyche";
+            case EUROPA -> "Europa";
+            case ARROKOTH -> "Arrokoth";
+            case NEXUS_1 -> "Nexus-1";
+        };
+    }
 
     // ------------------------------------------------------------------ helpers
 

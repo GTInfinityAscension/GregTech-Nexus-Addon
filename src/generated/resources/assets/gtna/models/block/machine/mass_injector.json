@@ -1,0 +1,23 @@
+{
+  "parent": "minecraft:block/block",
+  "loader": "gtceu:machine",
+  "machine": "gtna:mass_injector",
+  "replaceable_textures": [
+    "bottom",
+    "top",
+    "side"
+  ],
+  "variants": {
+    "": {
+      "model": {
+        "parent": "gtceu:block/machine/template/part/hatch_machine",
+        "textures": {
+          "bottom": "gtceu:block/casings/voltage/uxv/bottom",
+          "overlay": "gtna:block/overlay/machine/mass_injector",
+          "side": "gtceu:block/casings/voltage/uxv/side",
+          "top": "gtceu:block/casings/voltage/uxv/top"
+        }
+      }
+    }
+  }
+}

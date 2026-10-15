@@ -44,7 +44,7 @@ Bilhões de bolhas, cada uma um elevadorzinho de minério. Um santuário de flot
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | Tanque de Flotação Gigante | 1 |
 

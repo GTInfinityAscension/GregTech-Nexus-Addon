@@ -33,7 +33,7 @@ Squeezes the juice out of things that never had juice. A compact steam extractor
 | Bronze Frame | 13 |
 | Bronze Pipe Casing | 6 |
 | Large Steam Extractor | 1 |
-| Huge Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Steam Input Bus | 1 |
 | Wireless Steam Input Hatch | 1 |
 

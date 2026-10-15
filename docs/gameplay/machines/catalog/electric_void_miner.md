@@ -37,6 +37,6 @@ Minerando o nada e recebendo tudo. A física é opcional. Minera programas de ve
 | Minerador do Vazio Elétrico | 1 |
 | Titanium Frame | 1 |
 | ULV Energy Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

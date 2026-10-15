@@ -145,7 +145,16 @@ public class ColliderRingMachine extends OriginalMachine {
         boolean magnets = consume(level, magnetUpkeep() * 20);
         boolean traps = consume(level, core.trapUpkeepEUt() * 20);
         double share = magnets ? Math.min(1, got / Math.max(1, demand)) : 0;
+        // Physics runs need a detector: without one the collisions happen but nothing is recorded.
+        boolean blind = core.mode == ColliderCore.Mode.PHYSICS &&
+                hatch(OriginalHatchPartMachine.Kind.DETECTOR) == null;
+        double[] integrated = blind ? core.integrated.clone() : null;
+        double progress = core.proposalProgress;
         var result = core.step(share, traps);
+        if (blind) {
+            System.arraycopy(integrated, 0, core.integrated, 0, integrated.length);
+            if (!result.proposalFinished) core.proposalProgress = progress;
+        }
         // Without a Beam Dump the quenched beam hits the ring: twice the recovery time.
         if (result.quench && hatch(OriginalHatchPartMachine.Kind.BEAM_DUMP) == null) core.quenchCooldown *= 2;
         for (var p : ColliderCore.Particle.values()) {

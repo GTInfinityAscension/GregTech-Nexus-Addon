@@ -35,7 +35,7 @@ Do not attempt to bake cookies inside. They will vaporize. An industrial-grade s
 | Bronze Pipe Casing | 32 |
 | Bronze Frame | 31 |
 | Bronze Firebox Casing | 22 |
-| Huge Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Large Steam Furnace | 1 |
 | Steam Input Bus | 1 |
 | Wireless Steam Input Hatch | 1 |

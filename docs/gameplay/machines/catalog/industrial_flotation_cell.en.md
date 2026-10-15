@@ -34,7 +34,7 @@ Smells like essential balm. Fewer mosquitoes, too. Froth-floats Milled ore with 
 | Hastelloy N 75 Pipe | 6 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 | Industrial Flotation Cell | 1 |
 | ULV Input Bus | 1 |

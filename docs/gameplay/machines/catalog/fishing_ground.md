@@ -34,7 +34,7 @@ Gosta de peixe? O escritório inteiro gosta agora. sozinha com isca numa estrutu
 | Stainless Steel Frame | 19 |
 | Steel Pipe Casing | 7 |
 | ULV Energy Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | Campo de Pesca | 1 |
 | ULV Output Bus | 1 |

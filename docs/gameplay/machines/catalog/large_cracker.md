@@ -35,7 +35,7 @@ Craqueando hidrocarbonetos como palavras cruzadas de domingo. Roda receitas do C
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
 | Grande Craqueador | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Elite Parallel Control Hatch | 1 |
 | ULV Energy Hatch | 1 |
 

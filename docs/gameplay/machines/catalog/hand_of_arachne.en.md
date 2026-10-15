@@ -38,7 +38,7 @@ Eight arms, zero tangles. Arachne would be jealous. A giant loom that weaves fib
 | Amprosium Gearbox | 37 |
 | Assembly Line Grating | 6 |
 | ULV Energy Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | Hand Of Arachne | 1 |
 | ULV Output Bus | 1 |

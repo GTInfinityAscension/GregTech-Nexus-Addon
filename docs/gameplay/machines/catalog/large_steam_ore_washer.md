@@ -33,7 +33,7 @@ Os minérios mais limpos da Idade do Bronze. A mãe ficaria orgulhosa. Uma grand
 | Glass | 18 |
 | Bronze Pipe Casing | 16 |
 | ULV Input Hatch | 1 |
-| Barramento Grande de Saída a Vapor | 1 |
+| Barramento de Saída a Vapor com Boost de Saída | 1 |
 | Grande Lavador de Minério a Vapor | 1 |
 | Steam Input Bus | 1 |
 | Hatch de Entrada de Vapor Wireless | 1 |

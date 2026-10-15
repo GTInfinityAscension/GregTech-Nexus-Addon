@@ -42,7 +42,7 @@ Listens to the cosmos and bottles what it hears. Catches cosmic particles with a
 | Hyper Core | 28 |
 | Tritanium Frame | 15 |
 | Amprosium Active Casing | 7 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | Space Probe Receiver | 1 |
 | ULV Output Hatch | 1 |

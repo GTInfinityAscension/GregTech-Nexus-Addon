@@ -97,7 +97,7 @@ Com o nerf, a melhor barra do Artificial Star fica em 2^46 EU/t. A câmara come�
 
 | Hatch | Função | Inspiração |
 |---|---|---|
-| Injetor de Massa | recebe matéria (itens/fluidos) e converte em ṁ no disco de acreção | BEC Hatch (GTNH) |
+| Injetor de Massa — feito (pó/lingote de matéria estelar = 144 mB) | recebe matéria (itens/fluidos) e converte em ṁ no disco de acreção | BEC Hatch (GTNH) |
 | Extrator Rotacional | saída de energia; só aceita laser ou Nexus Network, nunca dínamo comum | — |
 | Sonda Sísmica | registra tremores; sem ela o sismograma não funciona | — |
 | Gerador de Banda | um por banda; define o tier e a capacidade da banda | Graviton Flow Modulator (Godforge) |
@@ -188,7 +188,7 @@ O sismograma é uma fita que corre na GUI. O jogador aprende a ler os padrões e
 - Sismograma dos tremores desenhado — feito
 - Lente gravitacional no jogo
 - Sonda Sísmica — feita (sem ela tremores não são decodificados; alimenta a aba do sismograma)
-- Injetor de Massa
+- Injetor de Massa — feito (pó/lingote de matéria estelar = 144 mB)
 - Receita do controlador (fica com o modpack)
 
 ## Telas (mockup)

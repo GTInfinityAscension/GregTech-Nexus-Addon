@@ -30,7 +30,7 @@ Se você está lendo isto, achou a sala dos devs. Uma máquina de teste para Dur
 |---|---:|
 | Solid Machine Casing | 20 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Testador de Duração | 1 |
 | ULV Input Hatch | 1 |
 | ULV Energy Hatch | 1 |

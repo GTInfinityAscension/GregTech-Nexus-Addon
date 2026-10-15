@@ -14,8 +14,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
  * Draws the animated Universium fluid over JEI fluid tanks. {@code FluidTankRenderer.drawTiledSprite} has a
- * {@link TilingDirection} parameter from JEI 15.32 on and none before, so there is one injection per signature, each
- * with its exact descriptor and optional: whichever JEI 15.x is installed, one matches and the other is skipped.
+ * {@link TilingDirection} parameter from JEI 15.32 on and none before. This mixin covers the new signature; {@link
+ * UniversiumJeiFluidLegacyMixin} covers the old one, and {@code GTNAMixinPlugin} applies only the one whose types exist
+ * (a handler naming {@code TilingDirection} crashes on older JEI even when its injection is optional).
  */
 @Pseudo
 @Mixin(targets = "mezz.jei.library.render.FluidTankRenderer", remap = false)
@@ -28,16 +29,6 @@ public class UniversiumJeiFluidMixin {
     private static void gtna$universiumJei(GuiGraphics graphics, int width, int height, int color, long amount,
                                            TextureAtlasSprite sprite, TilingDirection direction, int x, int y,
                                            CallbackInfo ci) {
-        gtna$overlay(graphics, width, height, amount, sprite, x, y);
-    }
-
-    /** JEI 15.31 and older. */
-    @Inject(method = "drawTiledSprite(Lnet/minecraft/client/gui/GuiGraphics;IIIJLnet/minecraft/client/renderer/texture/TextureAtlasSprite;II)V",
-            at = @At("TAIL"),
-            require = 0,
-            expect = 0)
-    private static void gtna$universiumJeiOld(GuiGraphics graphics, int width, int height, int color, long amount,
-                                              TextureAtlasSprite sprite, int x, int y, CallbackInfo ci) {
         gtna$overlay(graphics, width, height, amount, sprite, x, y);
     }
 

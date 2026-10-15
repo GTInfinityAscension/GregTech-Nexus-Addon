@@ -22,5 +22,9 @@ public class GTNAPartAbility {
     public static final PartAbility BEAM_DUMP = new PartAbility("beam_dump");
     public static final PartAbility SEISMIC_PROBE = new PartAbility("seismic_probe");
     public static final PartAbility LINER_HATCH = new PartAbility("liner_hatch");
+    public static final PartAbility MASS_INJECTOR = new PartAbility("mass_injector");
+    public static final PartAbility DETECTOR_HATCH = new PartAbility("detector_hatch");
+    public static final PartAbility TARGET_CARTRIDGE = new PartAbility("target_cartridge_hatch");
+    public static final PartAbility TUNING_HATCH = new PartAbility("tuning_hatch");
     public static final PartAbility IO_NODE_CONTROLLER_HATCH = new PartAbility("io_node_controller_hatch");
 }

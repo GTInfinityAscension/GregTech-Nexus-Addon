@@ -39,7 +39,7 @@ O Hyper Reactor, depois de uma longa conversa com um eco. Queima combustíveis h
 | Gerador de Campo de Contenção | 32 |
 | Carcaça de Ponte Dimensional | 12 |
 | ULV Input Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Reator Hyper Avançado | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

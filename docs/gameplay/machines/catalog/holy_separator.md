@@ -43,7 +43,7 @@ Centrifugação como ritual sagrado de purificação. Amém. Uma centrífuga em 
 | Caixa de Engrenagens de Amprósio | 33 |
 | Invólucro Oco | 32 |
 | Invólucro de Injeção Dimensional | 16 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |

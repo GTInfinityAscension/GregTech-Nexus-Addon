@@ -37,7 +37,7 @@ Who needs the sun? We have lamps and ambition. Grows crops and trees in two sele
 | Large Greenhouse | 1 |
 | Elite Parallel Control Hatch | 1 |
 | ULV Input Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |

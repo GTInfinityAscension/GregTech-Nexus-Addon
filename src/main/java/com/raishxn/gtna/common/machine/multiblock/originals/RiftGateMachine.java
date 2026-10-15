@@ -108,6 +108,9 @@ public class RiftGateMachine extends OriginalMachine {
             sync();
             return;
         }
+        // A redstone signal on the Tuning Hatch drives the amplitude (0–15 -> 0–100 %).
+        var tuning = hatch(OriginalHatchPartMachine.Kind.TUNING);
+        if (tuning != null && tuning.signal() > 0) core.amplitude = tuning.signal() * 100.0 / 15;
         if (take(s -> s.is(GTNAOriginals.RIFT_PROBE.get()), 1) > 0) core.probes++;
         if (take(s -> s.is(GTNAOriginals.DEPTH_ANCHOR.get()), 1) > 0) core.deepen();
         var spacetime = GTNAMaterials.SpaceTime;

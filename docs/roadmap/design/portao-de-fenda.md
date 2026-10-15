@@ -161,6 +161,7 @@ A sintonia aceita valores por cover de dados ou computador (OpenComputers/CC). U
 - Estrutura de 126×126×54 convertida da sua construção
 - Sintonia, estabilidade, profundidade, harmônicos, partitura e atlas em `RiftCore` (teste `RiftCoreTest`)
 - Botões de sintonia na GUI; SpaceTime estabiliza; sondas e âncoras pelos barramentos; saída por bioma
+- Hatch de Sintonia: sinal de redstone 1–15 define a amplitude
 - Render do horizonte de eventos com a cor do bioma; gametest de formação e estabilidade
 - Aba gráfica com o sismógrafo da fenda (traço da estabilidade e barra de ressonância)
 

@@ -43,7 +43,7 @@ Centrifugation as a sacred purification ritual. Amen. An altar-like centrifuge t
 | Amprosium Gearbox | 33 |
 | Hollow Casing | 32 |
 | Dimension Injection Casing | 16 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |

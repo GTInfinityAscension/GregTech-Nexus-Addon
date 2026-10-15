@@ -38,7 +38,7 @@ An advanced steam rock generator that makes different stones by programmed circu
 | Block of Iron | 8 |
 | Steam Cobbler | 1 |
 | ULV Output Bus | 1 |
-| Huge Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | ULV Input Bus | 1 |
 | Wireless Steam Input Hatch | 1 |
 

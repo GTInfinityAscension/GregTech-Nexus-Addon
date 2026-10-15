@@ -32,7 +32,7 @@ Mineração de asteroides, do jeito barulhento. Dispara projéteis contra luas e
 
 | Bloco | Qtd. |
 |---|---:|
-| Clean Stainless Steel Casing | 101.576 |
+| Clean Stainless Steel Casing | 101.575 |
 | Carcaça de Liga de Naquadah Radiante | 52.147 |
 | Tungstensteel Pipe Casing | 7.963 |
 | Chemically Inert PTFE Machine Casing | 7.044 |
@@ -42,6 +42,7 @@ Mineração de asteroides, do jeito barulhento. Dispara projéteis contra luas e
 | Carcaça Molecular | 418 |
 | Carcaça de Aquecedor de Plasma | 172 |
 | Solid Machine Casing | 49 |
+| Hatch de Cartucho de Alvo | 1 |
 | Hatch de Revestimento do Cano | 1 |
 | Lança Cinética Orbital | 1 |
 | Computation Data Reception Hatch | 1 |

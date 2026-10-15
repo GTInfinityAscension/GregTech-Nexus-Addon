@@ -48,7 +48,7 @@ Prensa de megatons. Até o metal mais duro aprende modos. Um sistema hidráulico
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
 | Compressor Extremo | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

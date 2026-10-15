@@ -47,7 +47,7 @@ Neutron star matter cuts like butter. Earth stuff? Air. Cuts with neutron-degene
 | Extreme Density Casing | 16 |
 | Fusion Glass | 8 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Neutronium Wire Cutting | 1 |
 | ULV Input Hatch | 1 |
 | ULV Energy Hatch | 1 |

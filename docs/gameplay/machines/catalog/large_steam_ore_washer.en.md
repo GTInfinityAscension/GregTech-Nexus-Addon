@@ -33,7 +33,7 @@ The cleanest ores in the Bronze Age. Mom would be proud. A large steam washing b
 | Glass | 18 |
 | Bronze Pipe Casing | 16 |
 | ULV Input Hatch | 1 |
-| Huge Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Large Steam Ore Washer | 1 |
 | Steam Input Bus | 1 |
 | Wireless Steam Input Hatch | 1 |

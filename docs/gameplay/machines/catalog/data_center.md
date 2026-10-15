@@ -46,7 +46,7 @@ Toda anotação de pesquisa, resfriada por NICH, à velocidade da luz. Um Banco 
 | ULV Energy Hatch | 2 |
 | Optical Data Transmission Hatch | 1 |
 | Optical Data Reception Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Centro de Dados | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

@@ -142,6 +142,8 @@ legacyForge {
             client()
             sourceSet = sourceSets.main
             systemProperty('forge.enabledGameTestNamespaces', project.mod_id)
+            // ./gradlew runClient -PquickPlay="New World" opens that save directly (smoke tests).
+            if (project.hasProperty('quickPlay')) programArguments.addAll('--quickPlaySingleplayer', project.quickPlay)
         }
         server {
             server()

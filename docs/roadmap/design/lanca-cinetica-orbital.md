@@ -235,7 +235,7 @@ Projéteis e revestimentos por AE2. O cartucho de alvo (item) define corpo e pro
 - Aba da bancada (massa, calor, indutância e peças) — feito
 - Clarão do tiro acompanha a rotação do canhão — feito
 - Hatch de Revestimento — feito (troca automática do revestimento gasto)
-- Hatch de cartucho
+- Hatch de Cartucho de Alvo — feito (8 cartuchos; revezam a cada tiro)
 - Receita do controlador
 
 ## Telas (mockup)
