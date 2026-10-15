@@ -79,6 +79,9 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
     private double lastEnergy;
     @DescSynced
     private boolean hasProbe;
+    /** The bands were powered last second and the star is not disrupted: the renderer shows it only then. */
+    @DescSynced
+    private boolean running;
     /** Recent quakes {size, kind} flattened, for the seismogram tab. */
     @DescSynced
     private double[] syncedQuakes = new double[0];
@@ -108,6 +111,11 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
 
     public double[] quakes() {
         return syncedQuakes;
+    }
+
+    /** Lit and actually running (powered bands, not disrupted); what the renderer shows. */
+    public boolean isStarRunning() {
+        return running && isStarLit() && syncedMode != StellarCore.Mode.DISRUPTED.ordinal();
     }
 
     public boolean isStarLit() {
@@ -163,10 +171,15 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
         if (!(getLevel() instanceof ServerLevel level) || ++ticker % 20 != 0) return;
         if (networkOwner == null) networkOwner = getOwnerUUID();
         if (!isWorkingEnabled()) return;
-        if (!captured && !captureCore()) return;
-        double fed = feed();
         Int128 upkeep = Int128.fromBigInteger(BigDecimal.valueOf(core.bandUpkeep() * 20).toBigInteger());
         boolean powered = networkOwner != null && WirelessEnergyManager.consumeEnergy(level, networkOwner, upkeep);
+        running = powered;
+        // The star is lit (the core taken in) only once the bands have power; until then the core stays a block.
+        if (!captured && (!powered || !captureCore())) {
+            sync();
+            return;
+        }
+        double fed = feed();
         var known = java.util.EnumSet.copyOf(core.decoded.isEmpty() ?
                 java.util.EnumSet.noneOf(StellarCore.Quake.class) : core.decoded);
         var result = core.step(Math.pow(2, setpoint), fed, false, powered);

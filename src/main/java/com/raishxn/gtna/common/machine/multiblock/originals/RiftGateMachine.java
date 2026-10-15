@@ -34,7 +34,7 @@ public class RiftGateMachine extends OriginalMachine {
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(RiftGateMachine.class,
             OriginalMachine.MANAGED_FIELD_HOLDER);
 
-    public static final double CENTER_UP = 60.5, CENTER_BACK = 13.5, INNER_RADIUS = 46;
+    public static final double CENTER_UP = 56.5, CENTER_BACK = 13.5, INNER_RADIUS = 46;
     /** EU/t of the rift field. */
     public static final double FIELD_EUT = Math.pow(2, 36);
 

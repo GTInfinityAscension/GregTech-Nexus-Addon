@@ -222,6 +222,8 @@ public abstract class WorldSceneRendererBatchMixin {
         maxProgress = renderedBlocksMap.keySet().stream().map(Collection::size).reduce(0, Integer::sum) *
                 (layers.size() + 1);
         gtna$setState("COMPILING");
+        long started = System.nanoTime();
+        int blocks = maxProgress / (layers.size() + 1);
         thread = new Thread(() -> {
             BlockRenderDispatcher dispatcher = mc.getBlockRenderer();
             RandomSource random = RandomSource.createNewThreadLocalInstance();
@@ -262,6 +264,10 @@ public abstract class WorldSceneRendererBatchMixin {
             }
             tileEntities = withRenderer;
             gtna$setState("COMPILED");
+            long ms = (System.nanoTime() - started) / 1_000_000;
+            if (ms > 500)
+                com.raishxn.gtna.GTNACORE.LOGGER.info("[GTNA perf] preview scene of {} blocks compiled in {} ms",
+                        blocks, ms);
             thread = null;
             maxProgress = -1;
         }, "GTNA scene compile");

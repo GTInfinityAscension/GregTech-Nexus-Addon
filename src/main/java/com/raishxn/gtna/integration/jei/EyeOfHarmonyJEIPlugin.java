@@ -62,8 +62,18 @@ public final class EyeOfHarmonyJEIPlugin implements IModPlugin {
         }
     }
 
+    /** For the dev preview command; null until JEI has started. */
+    @org.jetbrains.annotations.Nullable
+    public static IJeiRuntime runtime;
+
+    @Override
+    public void onRuntimeUnavailable() {
+        runtime = null;
+    }
+
     @Override
     public void onRuntimeAvailable(IJeiRuntime runtime) {
+        EyeOfHarmonyJEIPlugin.runtime = runtime;
         if (enabled()) runtime.getRecipeManager().hideRecipeCategory(
                 GTRecipeJEICategory.TYPES.apply(GTNARecipeType.COSMOS_SIMULATION_RECIPES.getCategory()));
     }

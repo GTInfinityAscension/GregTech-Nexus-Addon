@@ -162,6 +162,9 @@ def portal(voxels):
     col = [(x, y, z) for (x, y, z) in cells if abs(x - 62) <= 2 and y <= bottom + 2]
     front = min(z for (x, y, z) in col)
     ctrl = min((p for p in col if p[2] == front), key=lambda p: (abs(p[0] - 62), p[1]))
+    # Author's request (2026-10-15): the controller sits four blocks higher, clear of the structure's underside.
+    above = [p for p in cells if p[0] == ctrl[0] and p[1] == ctrl[1] + 4]
+    ctrl = min(above, key=lambda p: p[2])
     hatch_ring(cells, letters, ctrl, None)
     write('dimensional_rift_gate', to_structurelib(cells, ctrl), letters, rel(ctrl, (62.5, 62.5, 26.5)))
 

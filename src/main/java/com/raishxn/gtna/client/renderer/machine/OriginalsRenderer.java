@@ -193,8 +193,15 @@ public final class OriginalsRenderer {
         var level = c.getLevel();
         if (level == null) return;
         BlockPos center = c.offset(ColliderRingMachine.CENTER_UP, ColliderRingMachine.CENTER_BACK);
+        if (!retryDue(c.getPos())) return;
         var meshes = MESHES.computeIfAbsent(c.getPos().immutable(), k -> new com.mojang.blaze3d.vertex.VertexBuffer[] {
                 mesh(c, "ring", center), mesh(c, "gyro", center) });
+        if (meshes[0] == null && meshes[1] == null) {
+            // Parts not found yet (chunks still loading): try again in a few seconds, not every frame.
+            MESHES.remove(c.getPos());
+            RETRY.put(c.getPos().immutable(), net.minecraft.Util.getMillis() + 5000);
+            return;
+        }
         var shader = GameRenderer.getRendertypeCutoutShader();
         if (shader == null) return;
         pose.translate(center.getX() + 0.5 - cam.x, center.getY() + 0.5 - cam.y, center.getZ() + 0.5 - cam.z);
@@ -216,16 +223,37 @@ public final class OriginalsRenderer {
     }
 
     private static final Map<BlockPos, BlockPos> PIVOTS = new java.util.HashMap<>();
+    private static final Map<BlockPos, Long> RETRY = new java.util.HashMap<>();
+
+    private static boolean retryDue(BlockPos key) {
+        Long at = RETRY.get(key);
+        if (at == null) return true;
+        if (net.minecraft.Util.getMillis() < at) return false;
+        RETRY.remove(key);
+        return true;
+    }
+
     private static final Map<BlockPos, float[]> YAW = new java.util.HashMap<>();
 
     /** The lance's gun, taken into the controller, slewing about the vertical axis to the selected body. */
     private static void turret(LanceMachine l, PoseStack pose, Vec3 cam, Matrix4f projection) {
         if (l.getLevel() == null) return;
         BlockPos key = l.getPos().immutable();
+        if (!retryDue(key)) return;
         BlockPos pivot = PIVOTS.computeIfAbsent(key, k -> pivot(l));
-        if (pivot == null) return;
+        if (pivot == null) {
+            PIVOTS.remove(key);
+            RETRY.put(key, net.minecraft.Util.getMillis() + 5000);
+            return;
+        }
+        if (!retryDue(key)) return;
         var meshes = MESHES.computeIfAbsent(key,
                 k -> new com.mojang.blaze3d.vertex.VertexBuffer[] { mesh(l, "kinetic_orbital_lance", "gun", pivot) });
+        if (meshes[0] == null) {
+            MESHES.remove(key);
+            RETRY.put(key, net.minecraft.Util.getMillis() + 5000);
+            return;
+        }
         var shader = GameRenderer.getRendertypeCutoutShader();
         if (shader == null || meshes[0] == null) return;
         // Slew towards the target at about 6 degrees a second.

@@ -57,6 +57,20 @@ public final class ItemEffectModelLoader implements IGeometryLoader<ItemEffectMo
                 .withPulse(GsonHelper.getAsBoolean(section, "pulse", false))
                 .withSpeed(GsonHelper.getAsFloat(section, "speed", 1));
         String texture = GsonHelper.getAsString(section, type == ItemEffect.Type.HALO ? "texture" : "mask", null);
+        // "#halo" points into this model's own textures. Resolve it here: GTCEu's material items bake through a
+        // generated child model whose texture map only has the layers, so the reference would be lost at bake time.
+        if (texture != null && texture.startsWith("#")) {
+            var textures = GsonHelper.getAsJsonObject(json, "textures", new JsonObject());
+            String key = texture.substring(1);
+            for (int i = 0; i < 4 && textures.has(key); i++) {
+                String value = GsonHelper.getAsString(textures, key);
+                if (!value.startsWith("#")) {
+                    texture = value;
+                    break;
+                }
+                key = value.substring(1);
+            }
+        }
         // Shader effects use the icon's own silhouette when no mask is given.
         if (texture != null || type.isShader()) effect = effect.withTexture(null);
         return new Geometry(ItemLayerModel.Loader.INSTANCE.read(json, context), effect, texture);

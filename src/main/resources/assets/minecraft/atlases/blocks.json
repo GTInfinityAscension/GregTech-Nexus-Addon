@@ -4,6 +4,16 @@
       "type": "minecraft:directory",
       "source": "mask",
       "prefix": "mask/"
+    },
+    {
+      "type": "minecraft:directory",
+      "source": "item/effect",
+      "prefix": "item/effect/"
+    },
+    {
+      "type": "minecraft:directory",
+      "source": "item/material_sets",
+      "prefix": "item/material_sets/"
     }
   ]
 }

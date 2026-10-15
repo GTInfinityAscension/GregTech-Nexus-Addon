@@ -43,7 +43,9 @@
     "client.UniversiumFluidGuiMixin",
     "client.UniversiumJeiFluidMixin",
     "client.UniversiumJeiFluidLegacyMixin",
-    "client.WorldSceneRendererBatchMixin"
+    "client.WorldSceneRendererBatchMixin",
+    "client.TrackedDummyWorldMapsMixin",
+    "client.SceneWidgetCoreMixin"
   ],
   "injectors": {
     "defaultRequire": 1

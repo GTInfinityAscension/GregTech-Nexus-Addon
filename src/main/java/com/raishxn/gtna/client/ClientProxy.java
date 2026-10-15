@@ -60,6 +60,7 @@ public class ClientProxy extends CommonProxy {
                 .addListener((net.minecraftforge.client.event.RegisterShadersEvent event) -> {
                     try {
                         com.raishxn.gtna.client.renderer.machine.GodforgeShaders.register(event);
+                        com.raishxn.gtna.client.renderer.machine.StellarShaders.register(event);
                         com.raishxn.gtna.client.renderer.effect.ItemEffectRenderer.register(event);
                     } catch (java.io.IOException e) {
                         throw new java.io.UncheckedIOException(e);
@@ -87,6 +88,11 @@ public class ClientProxy extends CommonProxy {
                     com.raishxn.gtna.GTNACORE.LOGGER.info("GTNA batched multiblock preview compile: {}",
                             batched ? "active" : "NOT applied");
                 });
+        MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.debug.PreviewBenchCommand::register);
+        MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.debug.DevCommandFile::onClientTick);
+        MinecraftForge.EVENT_BUS.addListener(
+                (net.minecraftforge.event.TickEvent.RenderTickEvent event) -> com.raishxn.gtna.common.debug.StallDetector
+                        .beat("client"));
         MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.renderer.material.UniversiumRenderer::tick);
         MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.renderer.material.UniversiumRenderer::renderWorld);
         MinecraftForge.EVENT_BUS.register(ModuleCountClientHandler.class);

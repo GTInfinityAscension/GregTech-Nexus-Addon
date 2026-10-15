@@ -130,6 +130,8 @@ public final class ItemEffectRenderer extends RenderType {
         for (var effect : effects(stack, model)) {
             if (!effect.type().isShader() || !enabled(effect.type())) continue;
             var mask = effect.texture() == null ? null : sprite(effect.texture());
+            // The icon itself is still batched; draw it now so the effect lands on top instead of under it.
+            if (context == ItemDisplayContext.GUI) source.endBatch();
             prepare(effect, context == ItemDisplayContext.GUI, mask == null);
             var out = source.getBuffer(EFFECT);
             emitSilhouette(model, pose, out, mask);

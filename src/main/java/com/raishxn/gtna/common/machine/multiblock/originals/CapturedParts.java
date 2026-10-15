@@ -72,19 +72,41 @@ public final class CapturedParts {
         }, null);
     }
 
+    private record Key(String name, String tag, BlockPos controller, Direction front, Direction up,
+                       boolean flipped) {}
+
+    /** Walking a 2-million-cell pattern takes seconds; the result only depends on placement, so it is kept. */
+    private static final Map<Key, Map<BlockPos, Character>> POSITIONS = new java.util.concurrent.ConcurrentHashMap<>();
+
     /** World position -> letter of every part tagged {@code tag}. */
     public static Map<BlockPos, Character> positions(Level level, String name, String tag, BlockPos controller,
                                                      Direction front, Direction up, boolean flipped) {
+        var key = new Key(name, tag, controller.immutable(), front, up, flipped);
+        var cached = POSITIONS.get(key);
+        if (cached != null) return cached;
+        var walked = walk(level, name, tag, controller, front, up, flipped);
+        // An incomplete walk (structure not all there) is not cached; it is returned as found so far.
+        if (walked == null) return Map.of();
+        var result = java.util.Collections.unmodifiableMap(walked);
+        if (POSITIONS.size() > 64) POSITIONS.clear();
+        POSITIONS.put(key, result);
+        return result;
+    }
+
+    private static Map<BlockPos, Character> walk(Level level, String name, String tag, BlockPos controller,
+                                                 Direction front, Direction up, boolean flipped) {
         var rec = recorded(name);
         Map<BlockPos, Character> all = new LinkedHashMap<>();
         SINK.set(all);
+        boolean complete;
         try {
-            rec.pattern().checkPatternAt(new MultiblockState(level, controller), controller, front, up, flipped, false);
+            complete = rec.pattern().checkPatternAt(new MultiblockState(level, controller), controller, front, up,
+                    flipped, false);
         } finally {
             SINK.remove();
         }
         all.values().removeIf(c -> !tag.equals(rec.tags().get(c)));
-        return all;
+        return complete ? all : null;
     }
 
     public static Block blockFor(String name, char letter) {
@@ -94,14 +116,15 @@ public final class CapturedParts {
     /** Takes the parts out of the world. */
     public static void capture(Level level, Map<BlockPos, Character> parts) {
         var air = Blocks.AIR.defaultBlockState();
-        for (BlockPos p : parts.keySet()) level.setBlock(p, air, 2);
+        // Clients are told, but neighbours are not reshaped one by one: the whole part leaves at once.
+        for (BlockPos p : parts.keySet()) level.setBlock(p, air, 2 | 16);
     }
 
     /** Puts the parts back where there is air. */
     public static void release(Level level, String name, Map<BlockPos, Character> parts) {
         for (var e : parts.entrySet())
             if (level.getBlockState(e.getKey()).isAir())
-                level.setBlock(e.getKey(), blockFor(name, e.getValue()).defaultBlockState(), 2);
+                level.setBlock(e.getKey(), blockFor(name, e.getValue()).defaultBlockState(), 2 | 16);
     }
 
     private static JsonObject sidecar(String name) {

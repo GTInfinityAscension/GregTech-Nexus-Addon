@@ -7733,3 +7733,13 @@ Decisão do autor (2026-10-12, `docs/roadmap/bec-proposta.md`): rede física igu
 - `./gradlew runClient -PquickPlay="New World"` abre o save direto (smoke test).
 - Validação: spotlessCheck, runUnitTests, runGameTestServer 358/358, runData PASS; cliente abriu e entrou no mundo sem crash (multiblocos não montados no cliente).
 - Visto no log (pré-existente): JEI marca as páginas do Eye of Harmony como "broken recipe".
+
+## G-0263 — 2026-10-15 — Desempenho das estruturas gigantes, render da estrela, efeitos de item
+- Prévia (multiblock info): `getMatchingShapes` em cache por definição (GTCEu refazia 2,8 s na Lança a cada chamada); `TrackedDummyWorld` e `SceneWidget.core` com coleções fastutil de hash próprio para `BlockPos` (`BlockPosHashing`) — o hash vanilla colide e degrada HashMap. Widget da Lança 2,0→1,2 s, Colisor 1,2→0,7 s (medido no cliente com `/gtna_preview_bench`).
+- `CapturedParts.positions` em cache (só caminhadas completas); captura/retorno com flag 16; renderer tenta de novo a cada 5 s (não a cada frame). Captura do anel 2,3→1,7 s.
+- Estrela da Câmara Estelar refeita com shaders próprios (`stellar_fx`, `stellar_fx_add`, `stellar_lens`): superfície com polos quentes, coroa fresnel, feixes, linhas de campo, disco, lente gravitacional em espaço de tela. Só acende com bandas energizadas (`isStarRunning`). Visto no cliente via `/gtna_star_preview` (40, 22 e 80 blocos).
+- Efeitos de item: `#halo` resolvido no loader (o modelo gerado do GTCEu perde o mapa de texturas); máscaras `item/material_sets` e `item/effect` no atlas; na GUI o ícone é descarregado antes do efeito (antes ficava por cima). Universium em lingote/pó com o shader; halos e Eternity visíveis.
+- Portão de Fenda: controlador 4 blocos acima (`convert_originals.py`; CENTER_UP 56,5).
+- Dev: `StallDetector` (stack da thread travada >3 s, só fora de produção), `DevCommandFile` (`run/gtna_dev_commands.txt`), `/gtna_preview_bench`, `/gtna_preview_open`, `/gtna_star_preview`, `-PquickPlay`.
+- Validação: spotlessCheck, runUnitTests, runGameTestServer 358/358, runData PASS; cliente verificado por screenshots.
+- Pendente: congelamento de vários minutos relatado pelo autor ao construir o Portão de Fenda não reproduzido aqui — o detector de travamento agora registra a stack quando acontecer.
