@@ -34,7 +34,8 @@ import java.util.List;
  * from the input buses at the selected body and queues return capsules that drop the body's materials.
  * Design: {@code docs/roadmap/design/lanca-cinetica-orbital.md}.
  */
-public class LanceMachine extends OriginalMachine {
+public class LanceMachine extends OriginalMachine
+                          implements com.gregtechceu.gtceu.api.machine.feature.IMachineLife {
 
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(LanceMachine.class,
             OriginalMachine.MANAGED_FIELD_HOLDER);
@@ -112,12 +113,12 @@ public class LanceMachine extends OriginalMachine {
         if (!liner.isEmpty()) core.replaceLiner(linerLife(liner));
     }
 
-    /** Liner life in EU: tungsten carbide 5e13, neutronium 2e14 (design sheet, section 5); 0 if not a liner. */
+    /** Liner life in EU: naquadah alloy 5e13, neutronium 2e14; 0 if not a liner. UEV inputs, not EV ones. */
     public static double linerLife(ItemStack stack) {
         var entry = ChemicalHelper.getMaterialEntry(stack.getItem());
         if (entry.isEmpty() || entry.tagPrefix() != TagPrefix.plateDense && entry.tagPrefix() != TagPrefix.plate)
             return 0;
-        if (entry.material() == GTMaterials.TungstenCarbide) return 5e13;
+        if (entry.material() == GTMaterials.NaquadahAlloy) return 5e13;
         if (entry.material() == GTMaterials.Neutronium) return 2e14;
         return 0;
     }
@@ -144,9 +145,13 @@ public class LanceMachine extends OriginalMachine {
         return cap.resolve().orElse(null);
     }
 
-    /** The gun (everything above the turret ring) is in the controller and drawn slewing to the target. */
+    /**
+     * The gun (everything above the turret ring) is in the controller and drawn slewing to the target. It stays
+     * there while the structure is broken or paused: putting 100 000 blocks back on every broken casing made the
+     * clients rebuild a hundred chunk sections each time. It returns to the world only when the controller goes.
+     */
     public boolean isCaptured() {
-        return captured && isFormed();
+        return captured;
     }
 
     private java.util.Map<net.minecraft.core.BlockPos, Character> gun() {
@@ -175,16 +180,17 @@ public class LanceMachine extends OriginalMachine {
         captured = false;
     }
 
-    @Override
-    public void onStructureInvalid() {
-        releaseGun();
-        super.onStructureInvalid();
+    /** Development: fires a neutronium slug at the current target with a full bank, as a real shot. */
+    public void debugFire() {
+        core.bankCharge = core.bankCapacity();
+        var shot = core.fire(target(), Projectile.NEUTRONIUM, cwu);
+        if (shot.fired) shotFlash = 0;
+        if (shot.recoveredKg > 0) capsules.add(new double[] { target, shot.recoveredKg, shot.returnSeconds });
     }
 
     @Override
-    public void setWorkingEnabled(boolean enabled) {
-        super.setWorkingEnabled(enabled);
-        if (!enabled) releaseGun();
+    public void onMachineRemoved() {
+        releaseGun();
     }
 
     private void syncBench() {
@@ -245,12 +251,13 @@ public class LanceMachine extends OriginalMachine {
                 if (shot.recoveredKg > 0) capsules.add(new double[] { target, shot.recoveredKg, shot.returnSeconds });
             }
         }
-        var landed = new ArrayList<double[]>();
-        for (double[] c : capsules) if (--c[2] <= 0) landed.add(c);
-        for (double[] c : landed) {
-            capsules.remove(c);
-            deliverCapsule(Body.values()[(int) c[0]], c[1]);
+        var unloaded = new ArrayList<double[]>();
+        for (double[] c : capsules) {
+            if (--c[2] > 0) continue;
+            c[1] = deliverCapsule(Body.values()[(int) c[0]], c[1]);
+            if (c[1] <= 0) unloaded.add(c);
         }
+        capsules.removeAll(unloaded);
         syncedYaw = target * 0.4;
         int mask = 0;
         for (var b : Body.values()) if (core.targetable(b)) mask |= 1 << b.ordinal();
@@ -258,14 +265,23 @@ public class LanceMachine extends OriginalMachine {
         syncBench();
     }
 
-    /** One dust per tonne recovered, split over the body's materials. */
-    private void deliverCapsule(Body body, double kg) {
+    /** Kilograms of recovered mass per dust (100 t). */
+    public static final double KG_PER_DUST = 100_000;
+
+    /**
+     * Unloads a landed capsule into the output buses: one dust per {@link #KG_PER_DUST}, split over the body's
+     * materials. Returns the mass still aboard; a capsule that does not fit waits instead of voiding its cargo.
+     */
+    private double deliverCapsule(Body body, double kg) {
         var materials = materials(body);
-        long dusts = (long) Math.max(1, kg / 1000);
+        long dusts = (long) (kg / KG_PER_DUST / materials.length);
+        if (dusts <= 0) return 0;
+        long left = 0;
         for (var m : materials) {
             var stack = ChemicalHelper.get(TagPrefix.dust, m);
-            if (!stack.isEmpty()) output(stack, Math.max(1, dusts / materials.length));
+            left += stack.isEmpty() ? 0 : output(stack, dusts);
         }
+        return left * KG_PER_DUST;
     }
 
     public static Material[] materials(Body body) {
@@ -290,10 +306,10 @@ public class LanceMachine extends OriginalMachine {
         var entry = ChemicalHelper.getMaterialEntry(stack.getItem());
         if (entry.isEmpty() || entry.tagPrefix() != TagPrefix.ingot || entry.material() == null) return null;
         var m = entry.material();
-        if (m == GTMaterials.Tungsten) return Projectile.TUNGSTEN;
-        if (m == GTMaterials.TungstenCarbide) return Projectile.TUNGSTEN_CARBIDE;
-        if (m == GTMaterials.Osmiridium) return Projectile.OSMIRIDIUM;
+        if (m == GTMaterials.NaquadahAlloy) return Projectile.NAQUADAH_ALLOY;
+        if (m == GTMaterials.Trinium) return Projectile.TRINIUM;
         if (m == GTMaterials.Neutronium) return Projectile.NEUTRONIUM;
+        if (m == GTNAMaterials.CosmicNeutronium) return Projectile.COSMIC_NEUTRONIUM;
         if (m == GTNAMaterials.WhiteDwarfMatter) return Projectile.DEGENERATE;
         return null;
     }
@@ -312,7 +328,7 @@ public class LanceMachine extends OriginalMachine {
 
     @Override
     public void addDisplayText(List<Component> text) {
-        OriginalMachine.displayHeader(this, text, isCaptured());
+        OriginalMachine.displayHeader(this, text, isCaptured() && isFormed());
         if (!isFormed()) return;
         String k = "gtna.machine.kinetic_orbital_lance.";
         var targets = Component.translatable(k + "target");

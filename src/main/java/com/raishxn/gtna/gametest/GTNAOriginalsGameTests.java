@@ -337,9 +337,9 @@ public final class GTNAOriginalsGameTests {
         core.bankCharge = core.bankCapacity();
         give(lance, com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper.get(
                 com.gregtechceu.gtceu.api.data.tag.TagPrefix.ingot,
-                com.gregtechceu.gtceu.common.data.GTMaterials.Tungsten, 4));
+                com.gregtechceu.gtceu.common.data.GTMaterials.NaquadahAlloy, 4));
         seconds(lance, 1);
-        helper.assertTrue(lance.secondsSinceShot() == 0, "a full bank with a tungsten slug fires");
+        helper.assertTrue(lance.secondsSinceShot() == 0, "a full bank with a naquadah alloy slug fires");
         helper.assertTrue(core.recovered[0] > 0, "the Moon shot recovers mass");
         seconds(lance, 45);
         helper.assertTrue(outputs(lance) > 0, "the capsule returns with lunar material");

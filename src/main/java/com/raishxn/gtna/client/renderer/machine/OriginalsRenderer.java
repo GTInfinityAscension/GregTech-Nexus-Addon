@@ -207,19 +207,65 @@ public final class OriginalsRenderer {
             m = new Matrix4f(pose.last().pose()).rotate(new Quaternionf().rotationTo(new Vector3f(0, 0, 1),
                     new Vector3f(back.getStepX(), back.getStepY(), back.getStepZ())));
         } else m = frame(l, pose, cam, muzzle);
-        float phase = (since + (time % 1)) / 2f;
+        // The shot fills the bore (about 11 blocks of radius): a layered beam from the breech out past the muzzle,
+        // a muzzle flash and shock rings, over three seconds. secondsSinceShot counts whole seconds (0..2).
+        float t = since + (time % 1);
+        float grow = Math.min(1, t / 0.15f), fade = t < 1.2f ? 1 : Math.max(0, 1 - (t - 1.2f) / 1.8f);
+        if (fade <= 0) return;
         BufferBuilder buf = Tesselator.getInstance().getBuilder();
         buf.begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_COLOR);
-        float flash = Math.max(0, 1 - phase * 4);
-        sphereGlow(buf, m, 6 + 10 * flash, 0.6f, 1f, 0.7f, flash);
-        float z0 = 10 + phase * 600, z1 = z0 + 80;
-        float a = Math.max(0, 1 - phase);
-        for (int i = 0; i < 4; i++) {
-            double ang = i * Math.PI / 4;
-            float x = (float) Math.cos(ang) * 1.2f, y = (float) Math.sin(ang) * 1.2f;
-            quad(buf, m, -x, -y, x, y, x, y, -x, -y, 0.7f, 1f, 0.8f, a, z0, z0, z1, z1);
+        float reach = 1500 * grow, breech = -LANCE_BORE_DEPTH;
+        float pulse = 0.85f + 0.15f * (float) Math.sin(time * 40);
+        cylinder(buf, m, LANCE_BORE * 0.95f, breech, reach, 0.25f, 0.9f, 1f, 0.18f * fade);
+        cylinder(buf, m, LANCE_BORE * 0.6f, breech, reach, 0.45f, 1f, 0.95f, 0.35f * fade * pulse);
+        cylinder(buf, m, LANCE_BORE * 0.25f, breech, reach, 0.9f, 1f, 1f, 0.9f * fade);
+        // Muzzle flash and expanding shock rings.
+        float flash = Math.max(0, 1 - t * 1.5f);
+        sphereGlow(buf, m, LANCE_BORE * (1.5f + 2.5f * flash), 0.7f, 1f, 0.9f, flash);
+        for (int k = 0; k < 3; k++) {
+            float rt = t - k * 0.25f;
+            if (rt <= 0) continue;
+            float r = LANCE_BORE + rt * 45, a = Math.max(0, 0.6f - rt * 0.35f);
+            ring(buf, m, r - 1.5f, r + 1.5f, 2 + k * 6 + rt * 10, 0.6f, 1f, 0.9f, a);
         }
         Tesselator.getInstance().end();
+    }
+
+    /** Inner radius of the lance's barrel and how far the bore runs back from the muzzle, in blocks. */
+    private static final float LANCE_BORE = 10.5f, LANCE_BORE_DEPTH = 150;
+
+    /** Open cylinder along +Z in {@code m}. */
+    private static void cylinder(BufferBuilder buf, Matrix4f m, float r, float z0, float z1, float red, float green,
+                                 float blue, float alpha) {
+        int seg = 32;
+        for (int i = 0; i < seg; i++) {
+            double a0 = 2 * Math.PI * i / seg, a1 = 2 * Math.PI * (i + 1) / seg;
+            float x0 = (float) Math.cos(a0) * r, y0 = (float) Math.sin(a0) * r;
+            float x1 = (float) Math.cos(a1) * r, y1 = (float) Math.sin(a1) * r;
+            buf.vertex(m, x0, y0, z0).color(red, green, blue, alpha).endVertex();
+            buf.vertex(m, x1, y1, z0).color(red, green, blue, alpha).endVertex();
+            buf.vertex(m, x1, y1, z1).color(red, green, blue, alpha * 0.4f).endVertex();
+            buf.vertex(m, x0, y0, z0).color(red, green, blue, alpha).endVertex();
+            buf.vertex(m, x1, y1, z1).color(red, green, blue, alpha * 0.4f).endVertex();
+            buf.vertex(m, x0, y0, z1).color(red, green, blue, alpha * 0.4f).endVertex();
+        }
+    }
+
+    /** Flat ring facing +Z at depth {@code z}. */
+    private static void ring(BufferBuilder buf, Matrix4f m, float r0, float r1, float z, float red, float green,
+                             float blue, float alpha) {
+        int seg = 48;
+        for (int i = 0; i < seg; i++) {
+            double a0 = 2 * Math.PI * i / seg, a1 = 2 * Math.PI * (i + 1) / seg;
+            float c0 = (float) Math.cos(a0), s0 = (float) Math.sin(a0), c1 = (float) Math.cos(a1),
+                    s1 = (float) Math.sin(a1);
+            buf.vertex(m, c0 * r0, s0 * r0, z).color(red, green, blue, alpha).endVertex();
+            buf.vertex(m, c1 * r0, s1 * r0, z).color(red, green, blue, alpha).endVertex();
+            buf.vertex(m, c1 * r1, s1 * r1, z).color(red, green, blue, 0).endVertex();
+            buf.vertex(m, c0 * r0, s0 * r0, z).color(red, green, blue, alpha).endVertex();
+            buf.vertex(m, c1 * r1, s1 * r1, z).color(red, green, blue, 0).endVertex();
+            buf.vertex(m, c0 * r1, s0 * r1, z).color(red, green, blue, 0).endVertex();
+        }
     }
 
     // ------------------------------------------------------------------ captured parts
@@ -457,7 +503,8 @@ public final class OriginalsRenderer {
                            int overlay) {
             if (machine.getLevel() == null) return;
             OriginalsSound.track(machine);
-            if (machine.isFormed()) QUEUE.put(machine.getPos().immutable(), machine);
+            if (machine.isFormed() || machine instanceof LanceMachine l && l.isCaptured())
+                QUEUE.put(machine.getPos().immutable(), machine);
         }
     }
 

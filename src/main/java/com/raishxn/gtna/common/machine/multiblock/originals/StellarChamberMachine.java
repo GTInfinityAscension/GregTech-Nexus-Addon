@@ -191,7 +191,44 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine imp
         if (!enabled) releaseCore();
     }
 
+    /** Radius (blocks from the centre) inside the hull where the star pulls entities in. */
+    public static final double GRAVITY_RADIUS = 43;
+
+    /**
+     * Every tick while the star burns: entities inside the hull fall towards it, harder the closer they get (a
+     * game-scale 1/r pull, capped so a player can still fly out at the edge).
+     */
+    private void pullEntities(ServerLevel level) {
+        var c = net.minecraft.world.phys.Vec3.atCenterOf(center());
+        for (var e : level.getEntitiesOfClass(net.minecraft.world.entity.Entity.class,
+                new net.minecraft.world.phys.AABB(c, c).inflate(GRAVITY_RADIUS))) {
+            // Players move on their own client: StellarGravityClient pulls the local player there.
+            if (e instanceof net.minecraft.world.entity.player.Player) continue;
+            if (pull(e, c, isBlackHole())) e.hurtMarked = true;
+        }
+    }
+
+    /**
+     * One tick of the star's gravity on an entity: a 1/r pull with drag and a terminal speed, the world's own gravity
+     * cancelled inside the hull, and inside 10 blocks a field that holds entities off the star. Returns whether it
+     * applied.
+     */
+    public static boolean pull(net.minecraft.world.entity.Entity e, net.minecraft.world.phys.Vec3 c, boolean hole) {
+        if (e.isSpectator() || e.noPhysics) return false;
+        var to = c.subtract(e.position());
+        double d = to.length();
+        if (d > GRAVITY_RADIUS || d < 1) return false;
+        double a = Math.min(0.12, 0.6 * (hole ? 2.5 : 1) / d) * (d < 10 ? -1 : 1);
+        var v = e.getDeltaMovement().scale(0.9).add(to.scale(a / d));
+        if (!e.isNoGravity()) v = v.add(0, 0.08, 0);
+        double speed = v.length();
+        e.setDeltaMovement(speed > 0.9 ? v.scale(0.9 / speed) : v);
+        e.fallDistance = 0;
+        return true;
+    }
+
     private void stellarTick() {
+        if (getLevel() instanceof ServerLevel pulling && running && isStarLit()) pullEntities(pulling);
         if (!(getLevel() instanceof ServerLevel level) || ++ticker % 20 != 0) return;
         if (networkOwner == null) networkOwner = getOwnerUUID();
         if (!isWorkingEnabled()) return;
@@ -250,6 +287,16 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine imp
                 for (int z = -CORE_RADIUS; z <= CORE_RADIUS; z++)
                     if (x * x + y * y + z * z <= CORE_RADIUS * CORE_RADIUS) out.add(c.offset(x, y, z));
         return out;
+    }
+
+    /** Development: fills the degenerate core (the terminal leaves it as air, the pattern accepts both). */
+    public void debugFillCore() {
+        var level = getLevel();
+        if (level == null || captured) return;
+        var state = GTNAOriginals.DEGENERATE_MATTER_CORE.get().defaultBlockState();
+        NexusBuildCheckGuard.quiet(getMultiblockState(), () -> {
+            for (BlockPos p : corePositions()) level.setBlock(p, state, 2);
+        });
     }
 
     /** Takes the degenerate core into the controller; all of it must be in place. */

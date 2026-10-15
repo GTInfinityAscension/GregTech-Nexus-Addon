@@ -93,6 +93,8 @@ public class ClientProxy extends CommonProxy {
         MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.debug.DevCommandFile::onClientTick);
         MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.debug.PreviewBenchCommand::fpsTick);
         MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.renderer.machine.OriginalsSound::onClientTick);
+        MinecraftForge.EVENT_BUS
+                .addListener(com.raishxn.gtna.client.renderer.machine.StellarGravityClient::onClientTick);
         MinecraftForge.EVENT_BUS.addListener(
                 (net.minecraftforge.event.TickEvent.RenderTickEvent event) -> com.raishxn.gtna.common.debug.StallDetector
                         .beat("client"));

@@ -4,9 +4,5 @@
     "layer0": "gtceu:item/material_sets/gtna_spacetime/ingot_hot",
     "layer1": "gtceu:item/material_sets/gtna_creon/gem_overlay",
     "layer2": "gtceu:item/material_sets/gtna_magmatter/ingot_hot_overlay"
-  },
-  "loader": "gtna:eternal",
-  "eternal": {
-    "mask": "gtna:mask/cosmic"
   }
 }

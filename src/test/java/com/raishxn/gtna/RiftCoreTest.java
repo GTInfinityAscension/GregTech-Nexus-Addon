@@ -27,7 +27,7 @@ public final class RiftCoreTest {
         gate.phase = o[1];
         gate.amplitude = o[2];
         near(gate.resonance(), 1, 1e-9, "exact tuning gives R = 1");
-        gate.frequency += 40;
+        gate.frequency += gate.sigmaF();
         near(gate.resonance(), Math.exp(-1), 1e-6, "one sigma off gives e^-1");
         gate.probes = 3;
         check(gate.resonance() < Math.exp(-1), "probes narrow the tolerance");

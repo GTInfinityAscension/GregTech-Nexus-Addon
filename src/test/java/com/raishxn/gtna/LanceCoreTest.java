@@ -23,8 +23,8 @@ public final class LanceCoreTest {
     private static void shot() {
         var lance = new LanceCore();
         lance.bankCharge = 1e12;
-        var s = lance.fire(Body.MOON, Projectile.TUNGSTEN, 1000);
-        near(s.velocity / 1000, 3742, 0.01, "tungsten at 1e12 EU, eta 0.35");
+        var s = lance.fire(Body.MOON, Projectile.NAQUADAH_ALLOY, 1000);
+        near(s.velocity / 1000, 3742, 0.01, "naquadah alloy at 1e12 EU, eta 0.35");
         check(s.regime == LanceCore.Regime.RELATIVISTIC || s.regime == LanceCore.Regime.VAPORISATION,
                 "7e9 J/kg against the Moon vaporises or better: " + s.regime);
         check(s.recoveredKg > 0 && lance.bankCharge == 0, "the shot recovers mass and empties the bank");
@@ -61,7 +61,7 @@ public final class LanceCoreTest {
         var lance = new LanceCore();
         lance.linerLife = 1e12;
         lance.bankCharge = 1e12;
-        var s = lance.fire(Body.MOON, Projectile.TUNGSTEN, 1000);
+        var s = lance.fire(Body.MOON, Projectile.NAQUADAH_ALLOY, 1000);
         check(s.misfire && lance.linerWear >= 1, "a worn-out liner misfires");
         lance.replaceLiner(5e13);
         lance.cool(1e15);

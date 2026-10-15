@@ -79,6 +79,7 @@ public class StellarChamberRenderer extends DynamicRender<StellarChamberMachine,
     public void render(StellarChamberMachine machine, float partialTicks, PoseStack poseStack, MultiBufferSource buffer,
                        int combinedLight, int combinedOverlay) {
         if (machine.getLevel() != null) OriginalsSound.track(machine);
+        if (machine.getLevel() != null && machine.isStarRunning()) StellarGravityClient.seen(machine);
         if (machine.getLevel() != null && machine.isStarRunning()) QUEUE.put(machine.getPos().immutable(), machine);
     }
 
@@ -91,7 +92,12 @@ public class StellarChamberRenderer extends DynamicRender<StellarChamberMachine,
             }
             return;
         }
-        if (event.getStage() != net.minecraftforge.client.event.RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS ||
+        // Drawn before the translucent layer: the Plasma Field Glass of the hull then blends over the star instead of
+        // hiding it with its depth. The depth the lens tests against is taken here too, before the glass.
+        if (event.getStage() == net.minecraftforge.client.event.RenderLevelStageEvent.Stage.AFTER_CUTOUT_BLOCKS &&
+                !QUEUE.isEmpty())
+            snapshotDepth();
+        if (event.getStage() != net.minecraftforge.client.event.RenderLevelStageEvent.Stage.AFTER_CUTOUT_BLOCKS ||
                 (QUEUE.isEmpty() && debugCenter == null))
             return;
         Vec3 camera = event.getCamera().getPosition();
@@ -272,6 +278,27 @@ public class StellarChamberRenderer extends DynamicRender<StellarChamberMachine,
     @Nullable
     private static com.mojang.blaze3d.pipeline.TextureTarget sceneCopy;
 
+    /** Copies the depth of the opaque scene (before glass and water) for the lens. */
+    private static void snapshotDepth() {
+        var main = net.minecraft.client.Minecraft.getInstance().getMainRenderTarget();
+        ensureCopy(main);
+        com.mojang.blaze3d.platform.GlStateManager._glBindFramebuffer(org.lwjgl.opengl.GL30.GL_READ_FRAMEBUFFER,
+                main.frameBufferId);
+        com.mojang.blaze3d.platform.GlStateManager._glBindFramebuffer(org.lwjgl.opengl.GL30.GL_DRAW_FRAMEBUFFER,
+                sceneCopy.frameBufferId);
+        com.mojang.blaze3d.platform.GlStateManager._glBlitFrameBuffer(0, 0, main.width, main.height, 0, 0,
+                main.width, main.height, org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT, org.lwjgl.opengl.GL11.GL_NEAREST);
+        main.bindWrite(false);
+    }
+
+    private static void ensureCopy(com.mojang.blaze3d.pipeline.RenderTarget main) {
+        if (sceneCopy == null || sceneCopy.width != main.width || sceneCopy.height != main.height) {
+            if (sceneCopy != null) sceneCopy.destroyBuffers();
+            sceneCopy = new com.mojang.blaze3d.pipeline.TextureTarget(main.width, main.height, true,
+                    net.minecraft.client.Minecraft.ON_OSX);
+        }
+    }
+
     /** Screen-space lens after everything else in the level is drawn (the preview's post pass). */
     private static void applyLenses(Matrix4f projection) {
         var shader = StellarShaders.lens();
@@ -309,7 +336,7 @@ public class StellarChamberRenderer extends DynamicRender<StellarChamberMachine,
                     sceneCopy.frameBufferId);
             com.mojang.blaze3d.platform.GlStateManager._glBlitFrameBuffer(0, 0, main.width, main.height, 0, 0,
                     main.width, main.height,
-                    org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT | org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT,
+                    org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT,
                     org.lwjgl.opengl.GL11.GL_NEAREST);
             main.bindWrite(false);
             shader.setSampler("Scene", sceneCopy.getColorTextureId());

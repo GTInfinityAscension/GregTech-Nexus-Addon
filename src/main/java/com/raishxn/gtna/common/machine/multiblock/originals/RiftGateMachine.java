@@ -37,6 +37,8 @@ public class RiftGateMachine extends OriginalMachine {
     public static final double CENTER_UP = 56.5, CENTER_BACK = 13.5, INNER_RADIUS = 46;
     /** EU/t of the rift field. */
     public static final double FIELD_EUT = Math.pow(2, 36);
+    /** Litres of SpaceTime per stability unit of the core. */
+    public static final double SPACETIME_PER_UNIT = 16;
 
     private final RiftCore core = new RiftCore();
     private final SplittableRandom random = new SplittableRandom();
@@ -114,9 +116,10 @@ public class RiftGateMachine extends OriginalMachine {
         if (take(s -> s.is(GTNAOriginals.RIFT_PROBE.get()), 1) > 0) core.probes++;
         if (take(s -> s.is(GTNAOriginals.DEPTH_ANCHOR.get()), 1) > 0) core.deepen();
         var spacetime = GTNAMaterials.SpaceTime;
-        long exotic = spacetime == null ? 0 :
-                drain(f -> StellarChamberMachine.is(f, spacetime), (long) Math.ceil(core.upkeep() * 1000 + 1000));
-        var result = core.step(exotic / 1000.0, random);
+        // SpaceTime is spent SPACETIME_PER_UNIT times faster than the core's stability units (a UIV rift is costly).
+        long exotic = spacetime == null ? 0 : drain(f -> StellarChamberMachine.is(f, spacetime),
+                (long) Math.ceil((core.upkeep() + 1) * 1000 * SPACETIME_PER_UNIT));
+        var result = core.step(exotic / 1000.0 / SPACETIME_PER_UNIT, random);
         outputBuffer += result.output * 16;
         long whole = (long) outputBuffer;
         if (whole > 0 && result.biome != null) {
@@ -179,13 +182,16 @@ public class RiftGateMachine extends OriginalMachine {
             text.add(Component.translatable(k + "seed", Long.toHexString(core.seed).toUpperCase()));
             text.add(Component.translatable(k + "biome",
                     Component.translatable(k + "biome." + biome().name().toLowerCase())));
-            text.add(knob(k + "frequency", String.format("%.1f", core.frequency), "f"));
-            text.add(knob(k + "phase", String.format("%.0f", core.phase), "p"));
-            text.add(knob(k + "amplitude", String.format("%.0f", core.amplitude), "a"));
+            text.add(knob(k + "frequency", String.format("%.1f", core.frequency), "f").copy()
+                    .append(closeness(core.axisCloseness(0))));
+            text.add(knob(k + "phase", String.format("%.0f", core.phase), "p").copy()
+                    .append(closeness(core.axisCloseness(1))));
+            text.add(knob(k + "amplitude", String.format("%.0f", core.amplitude), "a").copy()
+                    .append(closeness(core.axisCloseness(2))));
             text.add(Component.translatable(k + "resonance", String.format("%.3f", syncedResonance)));
             text.add(Component.translatable(k + "stability", String.format("%.1f", syncedStability)));
             text.add(Component.translatable(k + "depth", core.depth, core.effectiveMaxDepth()));
-            text.add(Component.translatable(k + "upkeep", String.format("%.2f", core.upkeep())));
+            text.add(Component.translatable(k + "upkeep", String.format("%.2f", core.upkeep() * SPACETIME_PER_UNIT)));
             text.add(ComponentPanelWidget.withButton(Component.translatable(k + "close"), "close"));
         }
         var chord = Component.translatable(k + "score");
@@ -197,6 +203,13 @@ public class RiftGateMachine extends OriginalMachine {
         }
         text.add(chord);
         text.add(Component.translatable(k + "atlas", core.atlas.size()));
+    }
+
+    /** Hot/cold bar for one tuning axis: five cells, red when far, green when close. */
+    private static Component closeness(double c) {
+        int n = (int) Math.round(c * 5);
+        String colour = c > 0.8 ? "§a" : c > 0.4 ? "§e" : "§c";
+        return Component.literal(" " + colour + "▮".repeat(n) + "§8" + "▯".repeat(5 - n));
     }
 
     private static Component knob(String key, String value, String id) {

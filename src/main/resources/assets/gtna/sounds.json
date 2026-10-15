@@ -13,8 +13,8 @@
     "sounds": [
       {
         "name": "gtna:originals/collider_loop",
-        "volume": 0.35,
-        "attenuation_distance": 64,
+        "volume": 1.0,
+        "attenuation_distance": 160,
         "stream": true
       }
     ]
@@ -24,8 +24,8 @@
     "sounds": [
       {
         "name": "gtna:originals/lance_charge_loop",
-        "volume": 0.3,
-        "attenuation_distance": 48,
+        "volume": 1.0,
+        "attenuation_distance": 160,
         "stream": true
       }
     ]
@@ -35,8 +35,8 @@
     "sounds": [
       {
         "name": "gtna:originals/rift_loop",
-        "volume": 0.35,
-        "attenuation_distance": 96,
+        "volume": 1.0,
+        "attenuation_distance": 160,
         "stream": true
       }
     ]
@@ -46,8 +46,8 @@
     "sounds": [
       {
         "name": "gtna:originals/stellar_black_hole_loop",
-        "volume": 0.4,
-        "attenuation_distance": 96,
+        "volume": 1.0,
+        "attenuation_distance": 160,
         "stream": true
       }
     ]
@@ -57,8 +57,8 @@
     "sounds": [
       {
         "name": "gtna:originals/stellar_pulsar_loop",
-        "volume": 0.35,
-        "attenuation_distance": 96,
+        "volume": 1.0,
+        "attenuation_distance": 160,
         "stream": true
       }
     ]
@@ -69,7 +69,7 @@
       {
         "name": "gtna:originals/lance_fire",
         "volume": 1.0,
-        "attenuation_distance": 256,
+        "attenuation_distance": 384,
         "stream": false
       }
     ]
@@ -79,8 +79,8 @@
     "sounds": [
       {
         "name": "gtna:originals/collider_quench",
-        "volume": 0.8,
-        "attenuation_distance": 96,
+        "volume": 1.0,
+        "attenuation_distance": 192,
         "stream": false
       }
     ]
@@ -90,8 +90,8 @@
     "sounds": [
       {
         "name": "gtna:originals/stellar_quake",
-        "volume": 0.9,
-        "attenuation_distance": 128,
+        "volume": 1.0,
+        "attenuation_distance": 192,
         "stream": false
       }
     ]
@@ -101,8 +101,8 @@
     "sounds": [
       {
         "name": "gtna:originals/rift_open",
-        "volume": 0.8,
-        "attenuation_distance": 128,
+        "volume": 1.0,
+        "attenuation_distance": 192,
         "stream": false
       }
     ]

@@ -1652,7 +1652,7 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.machine.seismic_probe.tooltip.1",
                 "§7Only recorded quakes are decoded and unlock new regions; also feeds the seismogram tab.");
         add("gtna.machine.liner_hatch.tooltip.0",
-                "§7Holds spare barrel liners for the §bKinetic Orbital Lance§7: tungsten carbide or neutronium plates (dense or plain).");
+                "§7Holds spare barrel liners for the §bKinetic Orbital Lance§7: naquadah alloy or neutronium plates (dense or plain).");
         add("gtna.machine.liner_hatch.tooltip.1",
                 "§7A worn or cracked liner is swapped automatically, without taking the gun apart.");
         add("gtna.originals.gui.quakes", "Seismogram");
@@ -1784,7 +1784,7 @@ public class GTNALangProvider extends LanguageProvider {
                 "The bank charges from the Nexus network at up to 2^36 EU/t. With auto-fire on, a shot fires the whole bank as soon as it is full.");
         add("gtna.originals.info.kinetic_orbital_lance.power.2", "Bank = 4e12·2^(rings − 1) EU");
         add("gtna.originals.info.kinetic_orbital_lance.power.3",
-                "Projectiles: ingots of tungsten, tungsten carbide, osmiridium, neutronium or white dwarf matter. Heavier projectiles are slower but carry more.");
+                "Projectiles: ingots of naquadah alloy, trinium, neutronium, cosmic neutronium or white dwarf matter. Heavier projectiles are slower but carry more.");
         add("gtna.originals.info.kinetic_orbital_lance.power.4",
                 "v = sqrt(2·η·E / m); recovered mass ∝ 0.2·η·E / hardness × capsule × accuracy");
         add("gtna.originals.info.kinetic_orbital_lance.targets", "Targets and aim");
@@ -1796,7 +1796,7 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.originals.info.kinetic_orbital_lance.bench.1",
                 "Click components on the bench line: rails raise efficiency (up to 8, shift-click removes), cooling raises heat capacity, sensors improve aim, capsules improve recovery, the salvo splitter fires several projectiles. Mass and heat must stay within the budget; surveying bodies unlocks components.");
         add("gtna.originals.info.kinetic_orbital_lance.bench.2",
-                "Each shot wears the liner and heats the barrel. A worn liner (100%) or a barrel over 2500 K misfires. Spare liners (tungsten carbide or neutronium plates) in the Barrel Liner Hatch are swapped in automatically. Side tabs: Orbital map and Bench.");
+                "Each shot wears the liner and heats the barrel. A worn liner (100%) or a barrel over 2500 K misfires. Spare liners (naquadah alloy or neutronium plates) in the Barrel Liner Hatch are swapped in automatically. Side tabs: Orbital map and Bench.");
         add("gtna.subtitle.originals.collider_loop", "Collider ring hums");
         add("gtna.subtitle.originals.lance_charge_loop", "Lance capacitors charge");
         add("gtna.subtitle.originals.rift_loop", "Rift resonates");

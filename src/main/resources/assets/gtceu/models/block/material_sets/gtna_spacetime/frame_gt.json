@@ -1,6 +1,5 @@
 {
   "parent": "block/block",
-  "loader": "forge:composite",
   "textures": {
     "particle": "gtceu:block/material_sets/gtna_spacetime/frame_gt"
   },

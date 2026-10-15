@@ -100,16 +100,31 @@ public final class RiftCore {
         };
     }
 
+    // Tolerances start wide enough to find the optimum by hand (the knobs span 1..1000 THz, 0..360 deg, 0..100 %);
+    // each Rift Probe narrows them, which raises the resonance the same settings reach.
     public double sigmaF() {
-        return 40 * Math.pow(0.8, probes);
+        return 260 * Math.pow(0.8, probes);
     }
 
     public double sigmaPhi() {
-        return 30 * Math.pow(0.8, probes);
+        return 100 * Math.pow(0.8, probes);
     }
 
     public double sigmaA() {
-        return 15 * Math.pow(0.8, probes);
+        return 45 * Math.pow(0.8, probes);
+    }
+
+    /** How close one axis is to the optimum, 0..1 (0 frequency, 1 phase, 2 amplitude): the knobs' hot/cold hint. */
+    public double axisCloseness(int axis) {
+        double[] o = optimum(seed);
+        return switch (axis) {
+            case 0 -> Math.exp(-sq((frequency - o[0]) / sigmaF()));
+            case 1 -> {
+                double d = Math.abs(phase - o[1]) % 360;
+                yield Math.exp(-sq(Math.min(d, 360 - d) / sigmaPhi()));
+            }
+            default -> Math.exp(-sq((amplitude - o[2]) / sigmaA()));
+        };
     }
 
     /** Resonance R in 0..1. */

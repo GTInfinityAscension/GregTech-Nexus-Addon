@@ -35,6 +35,8 @@ public final class PreviewBenchCommand {
         if (!(com.gregtechceu.gtceu.api.machine.MetaMachine.getMachine(level,
                 pos) instanceof com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiController controller))
             return;
+        // Placed by command, not by the player: give it an owner like a hand-placed controller has.
+        controller.self().setOwnerUUID(uuid);
         var terminal = new net.minecraft.world.item.ItemStack(
                 com.raishxn.gtna.common.data.GTNAItems.NEXUS_STRUCTURE_TERMINAL.get());
         long t0 = System.nanoTime();
@@ -195,6 +197,28 @@ public final class PreviewBenchCommand {
                     GTNACORE.LOGGER.info("[GTNA perf]   {} wants {} has {}", pos, layout.matcher(i),
                             level.getBlockState(pos));
                 }
+            });
+            return 1;
+        }));
+        // /gtna_dev_core: fills the degenerate core of the last dev-built Stellar Chamber.
+        event.getDispatcher().register(Commands.literal("gtna_dev_core").executes(ctx -> {
+            var server = net.minecraft.client.Minecraft.getInstance().getSingleplayerServer();
+            if (server == null || lastBuilt == null) return 0;
+            server.execute(() -> {
+                if (com.gregtechceu.gtceu.api.machine.MetaMachine.getMachine(server.overworld(),
+                        lastBuilt) instanceof com.raishxn.gtna.common.machine.multiblock.originals.StellarChamberMachine c)
+                    c.debugFillCore();
+            });
+            return 1;
+        }));
+        // /gtna_dev_fire: the last dev-built lance fires one full shot.
+        event.getDispatcher().register(Commands.literal("gtna_dev_fire").executes(ctx -> {
+            var server = net.minecraft.client.Minecraft.getInstance().getSingleplayerServer();
+            if (server == null || lastBuilt == null) return 0;
+            server.execute(() -> {
+                if (com.gregtechceu.gtceu.api.machine.MetaMachine.getMachine(server.overworld(),
+                        lastBuilt) instanceof com.raishxn.gtna.common.machine.multiblock.originals.LanceMachine l)
+                    l.debugFire();
             });
             return 1;
         }));

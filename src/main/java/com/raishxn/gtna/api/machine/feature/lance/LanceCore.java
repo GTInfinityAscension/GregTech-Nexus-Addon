@@ -41,10 +41,10 @@ public final class LanceCore {
 
     public enum Projectile {
 
-        TUNGSTEN(50),
-        TUNGSTEN_CARBIDE(80),
-        OSMIRIDIUM(120),
+        NAQUADAH_ALLOY(50),
+        TRINIUM(80),
         NEUTRONIUM(400),
+        COSMIC_NEUTRONIUM(800),
         DEGENERATE(1200);
 
         public final double mass;
@@ -106,7 +106,7 @@ public final class LanceCore {
     public double bankCharge;                                            // EU
     public double barrelTemperature = 300;                               // K
     public double linerWear;                                             // 0..1
-    public double linerLife = 5e13;                                      // EU of a tungsten carbide liner
+    public double linerLife = 5e13;                                      // EU of a naquadah alloy liner
 
     // ------------------------------------------------------------------ survey and map
 
