@@ -46,6 +46,6 @@ All that sunlight was going to waste anyway. Collects the power of the planet's 
 | Computation Data Reception Hatch | 1 |
 | Dyson Sphere Receiving Station | 1 |
 | ULV Input Hatch | 1 |
-| IV 4,096A Laser Source Hatch | 1 |
+| IV 256A Laser Source Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

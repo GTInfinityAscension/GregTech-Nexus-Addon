@@ -32,7 +32,7 @@ Dois feixes, um anel, nenhuma margem de erro. Acelera feixes contrarrotativos pe
 
 | Bloco | Qtd. |
 |---|---:|
-| Carcaça de Sincronização de Campo de Precisão | 7.558 |
+| Carcaça de Sincronização de Campo de Precisão | 7.557 |
 | Vidro Borossilicato de HSS-S | 3.235 |
 | Eixo de Suporte de Alta Resistência | 1.367 |
 | Vidro de Blindagem de Nanites | 928 |
@@ -42,6 +42,7 @@ Dois feixes, um anel, nenhuma margem de erro. Acelera feixes contrarrotativos pe
 | Vidro Borossilicato de Neutrônio Cósmico | 137 |
 | Clean Stainless Steel Casing | 68 |
 | Casing Magtech | 36 |
+| Descarte de Feixe | 1 |
 | ULV Input Hatch | 1 |
 | Anel Colisor de Antimatéria | 1 |
 | ULV Output Bus | 1 |

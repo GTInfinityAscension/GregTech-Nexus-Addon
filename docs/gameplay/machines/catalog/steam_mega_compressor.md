@@ -32,7 +32,7 @@ Diamantes nascem sob pressão. Esta máquina também. Um supercompressor em que 
 | Bronze Frame | 144 |
 | Glass | 64 |
 | Supercompressor a Vapor | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Hatch de Entrada de Vapor Wireless | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

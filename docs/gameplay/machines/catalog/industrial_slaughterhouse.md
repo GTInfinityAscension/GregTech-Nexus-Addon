@@ -38,6 +38,6 @@ Nenhum mob se machucou nesta tooltip. Muitos na máquina. o tier de voltagem, es
 | Steel Gearbox Casing | 25 |
 | Steel Firebox Casing | 25 |
 | Matadouro Industrial | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

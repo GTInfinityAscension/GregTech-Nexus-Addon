@@ -29,7 +29,7 @@ Petrochemistry, Victorian edition. A steam cracker that thermally cracks sulfuri
 |---|---:|
 | Steam Machine Casing | 73 |
 | Bronze Firebox Casing | 16 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Steam Cracker | 1 |
 | Wireless Steam Input Hatch | 1 |
 

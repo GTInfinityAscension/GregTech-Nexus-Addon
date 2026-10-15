@@ -46,7 +46,7 @@ Every research note, cooled by NICH and served at the speed of light. A large Da
 | ULV Energy Hatch | 2 |
 | Optical Data Transmission Hatch | 1 |
 | Optical Data Reception Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Data Center | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

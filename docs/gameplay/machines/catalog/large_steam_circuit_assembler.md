@@ -34,8 +34,8 @@ Circuitos soldados à mão, só que sem as mãos. Uma linha de circuitos da era 
 | Bronze Pipe Casing | 8 |
 | Bloco de Montagem a Vapor | 8 |
 | Hatch de Entrada de Vapor Wireless | 1 |
-| Steam Output Bus | 1 |
+| Barramento Grande de Saída a Vapor | 1 |
 | Large Steam Circuit Assembler | 1 |
-| Barramento Grande de Entrada a Vapor | 1 |
+| Steam Input Bus | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

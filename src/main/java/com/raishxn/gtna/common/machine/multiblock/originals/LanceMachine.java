@@ -100,6 +100,25 @@ public class LanceMachine extends OriginalMachine {
         return syncedYaw;
     }
 
+    /** A worn or cracked liner is swapped from the Barrel Liner Hatch without taking the gun apart. */
+    private void replaceWornLiner() {
+        if (core.linerWear < 1) return;
+        var hatch = hatch(OriginalHatchPartMachine.Kind.LINER);
+        if (hatch == null) return;
+        var liner = hatch.takeOne();
+        if (!liner.isEmpty()) core.replaceLiner(linerLife(liner));
+    }
+
+    /** Liner life in EU: tungsten carbide 5e13, neutronium 2e14 (design sheet, section 5); 0 if not a liner. */
+    public static double linerLife(ItemStack stack) {
+        var entry = ChemicalHelper.getMaterialEntry(stack.getItem());
+        if (entry.isEmpty() || entry.tagPrefix() != TagPrefix.plateDense && entry.tagPrefix() != TagPrefix.plate)
+            return 0;
+        if (entry.material() == GTMaterials.TungstenCarbide) return 5e13;
+        if (entry.material() == GTMaterials.Neutronium) return 2e14;
+        return 0;
+    }
+
     /** CWU/t from the optical computation hatch; without one the aim is blind. */
     private int requestComputation() {
         for (var part : getParts())
@@ -181,6 +200,7 @@ public class LanceMachine extends OriginalMachine {
             if (consume(level, charge)) core.bankCharge += charge;
         }
         cwu = requestComputation();
+        replaceWornLiner();
         Projectile projectile = loadedProjectile();
         if (autoFire && projectile != null && core.bankCharge >= core.bankCapacity() && core.targetable(target())) {
             if (take(s -> projectileOf(s) == projectile, 1) == 1) {

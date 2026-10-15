@@ -37,6 +37,6 @@ Mining nothing and getting everything. Physics is optional. Mines vein programs 
 | Electric Void Miner | 1 |
 | Titanium Frame | 1 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

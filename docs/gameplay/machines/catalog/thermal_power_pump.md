@@ -37,7 +37,7 @@ Transforma vapor de volta em água. O ciclo da vida. Condensa vapor em água de 
 | Bronze Gearbox Casing | 4 |
 | ULV Output Hatch | 1 |
 | Bomba Termal | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

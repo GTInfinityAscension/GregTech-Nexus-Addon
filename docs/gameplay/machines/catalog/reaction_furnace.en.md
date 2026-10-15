@@ -38,6 +38,6 @@ Hot enough to make chemistry happen whether it wants to or not. Runs high-temper
 | ULV Input Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

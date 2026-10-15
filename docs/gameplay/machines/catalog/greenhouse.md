@@ -32,7 +32,7 @@ Fotossíntese como serviço. Cultiva plantas a partir de uma semente ou muda gua
 | Tempered Glass | 9 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Estufa | 1 |
 | ULV Input Bus | 1 |
 | ULV Energy Hatch | 1 |

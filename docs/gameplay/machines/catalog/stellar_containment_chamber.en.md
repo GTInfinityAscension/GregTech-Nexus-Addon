@@ -35,7 +35,8 @@ It spins seven hundred times a second. Do not touch. Holds a neutron star in fie
 | Plasma Field Glass | 15,773 |
 | Neutronium Stable Casing | 4,428 |
 | Degenerate Matter Core | 1,419 |
-| Radiant Naquadah Alloy Casing | 200 |
+| Radiant Naquadah Alloy Casing | 199 |
+| Seismic Probe | 1 |
 | ULV Input Hatch | 1 |
 | Stellar Containment Chamber | 1 |
 | ULV Output Bus | 1 |

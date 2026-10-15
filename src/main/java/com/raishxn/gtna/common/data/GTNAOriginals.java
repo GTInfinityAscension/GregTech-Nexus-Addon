@@ -17,9 +17,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.raishxn.gtna.GTNACORE;
 import com.raishxn.gtna.api.machine.feature.collider.ColliderCore;
+import com.raishxn.gtna.api.machine.multiblock.GTNAPartAbility;
 import com.raishxn.gtna.common.data.multiblock.GTNAMultiBlockFileReader;
 import com.raishxn.gtna.common.machine.multiblock.originals.ColliderRingMachine;
 import com.raishxn.gtna.common.machine.multiblock.originals.LanceMachine;
+import com.raishxn.gtna.common.machine.multiblock.originals.OriginalHatchPartMachine;
 import com.raishxn.gtna.common.machine.multiblock.originals.RiftGateMachine;
 import com.raishxn.gtna.common.machine.multiblock.originals.StellarChamberMachine;
 import com.tterrag.registrate.util.entry.BlockEntry;
@@ -63,6 +65,17 @@ public final class GTNAOriginals {
     public static final ItemEntry<ComponentItem> DEPTH_ANCHOR = item("depth_anchor", "Depth Anchor");
     public static final ItemEntry<ComponentItem> RIFT_SINGULARITY = item("rift_singularity", "Rift Singularity");
 
+    // ------------------------------------------------------------------ special hatches
+    public static final com.gregtechceu.gtceu.api.machine.MachineDefinition BEAM_DUMP = hatch("beam_dump",
+            "Beam Dump", com.gregtechceu.gtceu.api.GTValues.UIV, OriginalHatchPartMachine.Kind.BEAM_DUMP,
+            GTNAPartAbility.BEAM_DUMP, null);
+    public static final com.gregtechceu.gtceu.api.machine.MachineDefinition SEISMIC_PROBE = hatch("seismic_probe",
+            "Seismic Probe", com.gregtechceu.gtceu.api.GTValues.UXV, OriginalHatchPartMachine.Kind.SEISMIC_PROBE,
+            GTNAPartAbility.SEISMIC_PROBE, null);
+    public static final com.gregtechceu.gtceu.api.machine.MachineDefinition LINER_HATCH = hatch("liner_hatch",
+            "Barrel Liner Hatch", com.gregtechceu.gtceu.api.GTValues.UEV, OriginalHatchPartMachine.Kind.LINER,
+            GTNAPartAbility.LINER_HATCH, s -> LanceMachine.linerLife(s) > 0);
+
     // ------------------------------------------------------------------ machines
     public static final MultiblockMachineDefinition STELLAR_CONTAINMENT_CHAMBER = REGISTRATE
             .multiblock("stellar_containment_chamber", StellarChamberMachine::new)
@@ -73,7 +86,8 @@ public final class GTNAOriginals {
             .pattern(definition -> pattern(definition, "stellar_containment_chamber",
                     "gtna:radiant_naquadah_alloy_casing",
                     h -> h.or(abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(8).setPreviewCount(1))
-                            .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))))
+                            .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
+                            .or(abilities(GTNAPartAbility.SEISMIC_PROBE).setMaxGlobalLimited(1).setPreviewCount(1))))
             .modelProperty(com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.RECIPE_LOGIC_STATUS,
                     com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status.IDLE)
             .model(com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel(
@@ -91,7 +105,8 @@ public final class GTNAOriginals {
             .appearanceBlock(GTNABlocks.PRECISION_FIELD_SYNC_CASING)
             .pattern(definition -> pattern(definition, "antimatter_collider_ring", "gtna:precision_field_sync_casing",
                     h -> h.or(abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(4).setPreviewCount(1))
-                            .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))))
+                            .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
+                            .or(abilities(GTNAPartAbility.BEAM_DUMP).setMaxGlobalLimited(1).setPreviewCount(1))))
             .modelProperty(com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.RECIPE_LOGIC_STATUS,
                     com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status.IDLE)
             .model(com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel(
@@ -131,7 +146,8 @@ public final class GTNAOriginals {
                     h -> h.or(abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
                             .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
                             .or(abilities(PartAbility.COMPUTATION_DATA_RECEPTION).setMaxGlobalLimited(1)
-                                    .setPreviewCount(1))))
+                                    .setPreviewCount(1))
+                            .or(abilities(GTNAPartAbility.LINER_HATCH).setMaxGlobalLimited(1).setPreviewCount(1))))
             .modelProperty(com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.RECIPE_LOGIC_STATUS,
                     com.gregtechceu.gtceu.api.machine.trait.RecipeLogic.Status.IDLE)
             .model(com.gregtechceu.gtceu.common.data.models.GTMachineModels.createWorkableCasingMachineModel(
@@ -142,6 +158,23 @@ public final class GTNAOriginals {
             .register();
 
     private GTNAOriginals() {}
+
+    private static com.gregtechceu.gtceu.api.machine.MachineDefinition hatch(String id, String name, int tier,
+                                                                             OriginalHatchPartMachine.Kind kind,
+                                                                             PartAbility ability,
+                                                                             java.util.function.Predicate<net.minecraft.world.item.ItemStack> filter) {
+        return REGISTRATE.machine(id, holder -> new OriginalHatchPartMachine(holder, tier, kind, filter))
+                .langValue(name)
+                .tier(tier)
+                .rotationState(RotationState.ALL)
+                .abilities(ability)
+                .model(com.gregtechceu.gtceu.common.data.models.GTMachineModels
+                        .createColorOverlayTieredHullMachineModel(GTNACORE.id("block/overlay/machine/" + id), null,
+                                null))
+                .tooltips(net.minecraft.network.chat.Component.translatable("gtna.machine." + id + ".tooltip.0"),
+                        net.minecraft.network.chat.Component.translatable("gtna.machine." + id + ".tooltip.1"))
+                .register();
+    }
 
     public static Item particle(ColliderCore.Particle p) {
         return PARTICLES.get(p).get();

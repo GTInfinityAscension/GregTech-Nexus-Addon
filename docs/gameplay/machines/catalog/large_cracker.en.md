@@ -35,7 +35,7 @@ Cracking hydrocarbons like it's a Sunday crossword. Runs Cracker recipes in bulk
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
 | Large Cracker | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Elite Parallel Control Hatch | 1 |
 | ULV Energy Hatch | 1 |
 

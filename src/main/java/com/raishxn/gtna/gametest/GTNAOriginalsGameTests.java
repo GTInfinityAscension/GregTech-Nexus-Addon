@@ -265,6 +265,9 @@ public final class GTNAOriginalsGameTests {
                 "helium keeps the beam on: helium=" + ring.core().heliumLevel + " quench=" +
                         ring.core().quenchCooldown + " " + probe(helper, ring, owner));
         helper.assertTrue(ring.core().antiprotons > 0 || outputs(ring) > 0, "production run makes particles");
+        helper.assertTrue(ring.hatch(
+                com.raishxn.gtna.common.machine.multiblock.originals.OriginalHatchPartMachine.Kind.BEAM_DUMP) != null,
+                "the preview places a Beam Dump");
         ring.core().mode = com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Mode.PHYSICS;
         fill(ring, helium);
         seconds(ring, 10);
@@ -306,6 +309,20 @@ public final class GTNAOriginalsGameTests {
         helper.assertTrue(core.recovered[0] > 0, "the Moon shot recovers mass");
         seconds(lance, 45);
         helper.assertTrue(outputs(lance) > 0, "the capsule returns with lunar material");
+
+        // A worn liner is swapped from the Barrel Liner Hatch.
+        var liners = lance
+                .hatch(com.raishxn.gtna.common.machine.multiblock.originals.OriginalHatchPartMachine.Kind.LINER);
+        helper.assertTrue(liners != null, "the preview places a Barrel Liner Hatch");
+        var liner = com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper.get(
+                com.gregtechceu.gtceu.api.data.tag.TagPrefix.plate,
+                com.gregtechceu.gtceu.common.data.GTMaterials.Neutronium, 1);
+        helper.assertTrue(!liner.isEmpty() && liners.insert(liner.copy()).isEmpty(),
+                "the hatch accepts a neutronium liner: " + liner);
+        core.linerWear = 1;
+        seconds(lance, 1);
+        helper.assertTrue(core.linerWear < 1 && core.linerLife == 2e14,
+                "the neutronium liner replaces the worn one: wear=" + core.linerWear + " life=" + core.linerLife);
         helper.succeed();
     }
 }

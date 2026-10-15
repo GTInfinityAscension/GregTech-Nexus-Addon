@@ -77,6 +77,11 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
     private boolean syncedMagnetar;
     @DescSynced
     private double lastEnergy;
+    @DescSynced
+    private boolean hasProbe;
+    /** Recent quakes {size, kind} flattened, for the seismogram tab. */
+    @DescSynced
+    private double[] syncedQuakes = new double[0];
 
     @Nullable
     private TickableSubscription tick;
@@ -96,6 +101,14 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
     }
 
     // ------------------------------------------------------------------ client view
+
+    public boolean hasSeismicProbe() {
+        return hasProbe;
+    }
+
+    public double[] quakes() {
+        return syncedQuakes;
+    }
 
     public boolean isStarLit() {
         return captured && isFormed() && isWorkingEnabled();
@@ -154,7 +167,16 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
         double fed = feed();
         Int128 upkeep = Int128.fromBigInteger(BigDecimal.valueOf(core.bandUpkeep() * 20).toBigInteger());
         boolean powered = networkOwner != null && WirelessEnergyManager.consumeEnergy(level, networkOwner, upkeep);
+        var known = java.util.EnumSet.copyOf(core.decoded.isEmpty() ?
+                java.util.EnumSet.noneOf(StellarCore.Quake.class) : core.decoded);
         var result = core.step(Math.pow(2, setpoint), fed, false, powered);
+        // Only a Seismic Probe records quakes: without one a new quake is felt but not decoded.
+        boolean probe = OriginalMachine.hatchOf(getParts(), OriginalHatchPartMachine.Kind.SEISMIC_PROBE) != null;
+        if (!probe && result.quake != null && !known.contains(result.quake)) {
+            core.decoded.remove(result.quake);
+            if (!core.seismogram.isEmpty()) core.seismogram.remove(core.seismogram.size() - 1);
+        }
+        hasProbe = probe;
         if (result.energy > 0 && networkOwner != null)
             WirelessEnergyManager.addEnergy(level, networkOwner,
                     Int128.fromBigInteger(BigDecimal.valueOf(result.energy).toBigInteger()));
@@ -172,6 +194,12 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
         syncedMode = core.mode.ordinal();
         syncedBands = core.bandTier;
         syncedMagnetar = core.magnetarField;
+        double[] q = new double[core.seismogram.size() * 2];
+        for (int i = 0; i < core.seismogram.size(); i++) {
+            q[i * 2] = core.seismogram.get(i)[0];
+            q[i * 2 + 1] = core.seismogram.get(i)[1];
+        }
+        syncedQuakes = q;
         markDirty();
     }
 
@@ -330,6 +358,7 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
     public void attachSideTabs(com.gregtechceu.gtceu.api.gui.fancy.TabsWidget sideTabs) {
         super.attachSideTabs(sideTabs);
         OriginalsGui.attach(sideTabs, "mass_period", OriginalsGui.massPeriod(this));
+        OriginalsGui.attach(sideTabs, "quakes", OriginalsGui.quakes(this));
     }
 
     // ------------------------------------------------------------------ persistence

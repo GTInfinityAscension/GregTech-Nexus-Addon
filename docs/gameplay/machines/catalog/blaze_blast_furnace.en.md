@@ -40,7 +40,7 @@ An intern kept a blaze spawner in here. It worked. Runs Electric Blast Furnace r
 | Blaze Blast Furnace | 1 |
 | ULV Output Bus | 1 |
 | Muffler Hatch IV | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

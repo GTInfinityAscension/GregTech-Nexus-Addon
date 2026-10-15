@@ -49,7 +49,7 @@ Empacota e desempacota de uma vez. Pauli aprovaria. Duas linhas de empacotamento
 | Titanium Gearbox Casing | 46 |
 | Unidade Avançada de Linha de Montagem | 46 |
 | Tungstensteel Gearbox Casing | 46 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
 | Sistema de Contenção Gêmeos | 1 |
 | ULV Energy Hatch | 1 |

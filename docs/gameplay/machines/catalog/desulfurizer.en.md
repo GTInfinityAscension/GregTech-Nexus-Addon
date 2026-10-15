@@ -39,7 +39,7 @@ Sulfur out, clean fuel in. The air says thanks. Strips sulfur from sulfuric fuel
 | Bronze Pipe Casing | 5 |
 | ULV Output Bus | 1 |
 | Desulfurizer | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Hatch | 1 |

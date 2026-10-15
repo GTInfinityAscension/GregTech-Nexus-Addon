@@ -38,7 +38,7 @@ Steam, but it has seen things. An IV turbine that expands supercritical steam th
 | Muffler Hatch IV | 1 |
 | ULV Input Hatch | 1 |
 | Supercritical Steam Turbine | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | IV Rotor Holder | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

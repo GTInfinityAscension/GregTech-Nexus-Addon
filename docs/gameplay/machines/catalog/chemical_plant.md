@@ -31,7 +31,7 @@ O presidente posa com um microscópio. Ninguém cai nessa. Roda receitas do Reat
 | Chemically Inert PTFE Machine Casing | 66 |
 | Cupronickel Coil Block | 15 |
 | PTFE Pipe Casing | 12 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |

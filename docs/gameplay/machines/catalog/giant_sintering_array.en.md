@@ -44,7 +44,7 @@ Powder in, solid out. No melting allowed, only patience. Fuses powders into dens
 | Iridium Gearbox | 6 |
 | Muffler Hatch IV | 6 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Giant Sintering Array | 1 |
 | ULV Input Hatch | 1 |
 | ULV Energy Hatch | 1 |

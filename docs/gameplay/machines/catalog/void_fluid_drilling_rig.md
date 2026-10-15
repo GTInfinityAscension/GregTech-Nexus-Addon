@@ -34,7 +34,7 @@ O poço secou. O vazio não. Continua produzindo um fluido depois que o depósit
 | Stable Titanium Machine Casing | 6 |
 | ULV Input Hatch | 1 |
 | Void Fluid Drilling Rig | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |

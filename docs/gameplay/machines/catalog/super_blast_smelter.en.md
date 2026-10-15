@@ -54,7 +54,7 @@ Smelting all things at artificial-sun temperatures. Electric Blast Furnace and A
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

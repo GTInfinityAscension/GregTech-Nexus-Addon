@@ -43,7 +43,7 @@ Cervejaria de mil toneladas. A oficina inteira cheira bem. Fermenta e produz beb
 | ULV Output Bus | 1 |
 | Mega Cervejaria | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Hatch | 1 |
 

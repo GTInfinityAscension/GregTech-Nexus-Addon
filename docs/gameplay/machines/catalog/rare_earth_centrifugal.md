@@ -32,7 +32,7 @@ Gira as terras raras até cada lantanídeo achar o seu pote. Separa concentrados
 | Carcaça de Tubo de Amprósio | 3 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Centrífuga de Terras Raras | 1 |
 | ULV Output Bus | 1 |
 | ULV Energy Hatch | 1 |

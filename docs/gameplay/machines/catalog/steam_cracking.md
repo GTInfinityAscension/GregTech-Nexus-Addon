@@ -29,7 +29,7 @@ Petroquímica, edição vitoriana. Um craqueador a vapor que quebra termicamente
 |---|---:|
 | Steam Machine Casing | 73 |
 | Bronze Firebox Casing | 16 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Craqueador a Vapor | 1 |
 | Hatch de Entrada de Vapor Wireless | 1 |
 

@@ -171,7 +171,8 @@ A tensão do sistema é o tempo: cada fb⁻¹ de física é antimatéria que nã
 **Falta:**
 
 - Aba do comitê de tempo de feixe (propostas feitas, ativa e progresso) — feito
-- Beam Dump e hatch de detector
+- Beam Dump — feito (sem ele o quench dobra a recuperação)
+- Hatch de detector
 - Receita do controlador
 
 ## Telas (mockup)

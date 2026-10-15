@@ -42,7 +42,7 @@ Preciso o bastante para gravar QR code em vírus. Por quê? Ninguém sabe. Uma p
 | Bobina de Fusão Comprimida Avançada | 8 |
 | Heat Vent | 8 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |
 | Usina de Gravação a Laser | 1 |

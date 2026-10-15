@@ -38,7 +38,7 @@ Born from a liquid ice leak. The intern is still missing. Freezes Vacuum Freezer
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Output Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Cold Ice Freezer | 1 |
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |

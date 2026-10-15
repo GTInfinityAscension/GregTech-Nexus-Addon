@@ -49,7 +49,7 @@ Corrente que separa água, sal e a sua paciência. Um salão de eletrólise giga
 | ULV Output Bus | 1 |
 | Estação Eletroquímica Gigante | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

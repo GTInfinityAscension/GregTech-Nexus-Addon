@@ -54,7 +54,7 @@ Industry's closest approximation to divine creation. Runs component assembly bat
 | LV Component Assembly Line Casing | 63 |
 | Spacetime Assembly Line Unit | 33 |
 | Electrolytic Cell | 20 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
 | Component Assembly Line | 1 |
 | ULV Energy Hatch | 1 |

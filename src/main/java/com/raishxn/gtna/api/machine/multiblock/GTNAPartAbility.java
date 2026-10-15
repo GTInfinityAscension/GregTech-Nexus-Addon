@@ -18,5 +18,9 @@ public class GTNAPartAbility {
     public static final PartAbility LINE_OF_SIGHT_HATCH = new PartAbility("line_of_sight_hatch");
     public static final PartAbility NANITE_DETECTOR_HATCH = new PartAbility("nanite_detector_hatch");
     public static final PartAbility CONDENSATE_DETECTOR_HATCH = new PartAbility("condensate_detector_hatch");
+    // Original multiblocks' special hatches.
+    public static final PartAbility BEAM_DUMP = new PartAbility("beam_dump");
+    public static final PartAbility SEISMIC_PROBE = new PartAbility("seismic_probe");
+    public static final PartAbility LINER_HATCH = new PartAbility("liner_hatch");
     public static final PartAbility IO_NODE_CONTROLLER_HATCH = new PartAbility("io_node_controller_hatch");
 }

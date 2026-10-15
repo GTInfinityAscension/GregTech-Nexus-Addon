@@ -38,7 +38,7 @@ Oito braços, nenhum nó. Aracne teria inveja. Um tear gigante que tece fibras e
 | Caixa de Engrenagens de Amprósio | 37 |
 | Assembly Line Grating | 6 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | Mão de Aracne | 1 |
 | ULV Output Bus | 1 |

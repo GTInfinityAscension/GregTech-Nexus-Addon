@@ -39,7 +39,7 @@ Três gerações de computadores sob o mesmo teto. Cuidado com o calor. GWCA for
 | Carcaça de Irídio | 2.231 |
 | Carcaça Mecânica de Plástico ABS Branca | 1.325 |
 | Computer Heat Vent | 980 |
-| Componentes de Resfriamento NICH | 840 |
+| Componentes de Resfriamento GWCA | 840 |
 | Computer Casing | 728 |
 | Vidro Borossilicato de Tungstênio | 546 |
 | Carcaça Anticongelante à Prova de Calor | 526 |
@@ -62,7 +62,7 @@ Três gerações de computadores sob o mesmo teto. Cuidado com o calor. GWCA for
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

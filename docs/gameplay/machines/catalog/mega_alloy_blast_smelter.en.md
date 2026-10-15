@@ -38,7 +38,7 @@ The Alloy Blast Smelter, but it went to the gym. Runs Alloy Blast Smelter recipe
 | Tungstensteel Firebox Casing | 24 |
 | Extreme Engine Intake Casing | 20 |
 | Tungstensteel Pipe Casing | 15 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Mega Alloy Blast Smelter | 1 |
 | Tungsten Steel Frame | 1 |
 | Elite Parallel Control Hatch | 1 |

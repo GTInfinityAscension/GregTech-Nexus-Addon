@@ -84,6 +84,18 @@ public abstract class OriginalMachine extends WorkableElectricMultiblockMachine 
         return getPos().relative(Direction.UP, (int) Math.round(up)).relative(b, (int) Math.round(back));
     }
 
+    /** The special hatch of this kind in the structure, or null. */
+    @Nullable
+    public OriginalHatchPartMachine hatch(OriginalHatchPartMachine.Kind kind) {
+        return hatchOf(getParts(), kind);
+    }
+
+    @Nullable
+    static OriginalHatchPartMachine hatchOf(Iterable<? extends Object> parts, OriginalHatchPartMachine.Kind kind) {
+        for (var part : parts) if (part instanceof OriginalHatchPartMachine h && h.kind == kind) return h;
+        return null;
+    }
+
     // ------------------------------------------------------------------ energy
 
     protected boolean consume(ServerLevel level, double eu) {

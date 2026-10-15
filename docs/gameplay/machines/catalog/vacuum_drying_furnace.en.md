@@ -32,7 +32,7 @@ Turns foam back into dust. Magic, but with vacuum. Dries flotation ore foams bac
 | Cupronickel Coil Block | 24 |
 | Red Steel Casing | 10 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Vacuum Drying Furnace | 1 |
 | ULV Input Hatch | 1 |
 | Muffler Hatch IV | 1 |

@@ -34,7 +34,7 @@ Feed it scans, get insight. Sometimes the insight you wanted. Turns scan data in
 | Electrolytic Cell | 48 |
 | Computer Heat Vent | 17 |
 | ULV Output Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Analysis And Research Center | 1 |
 | ULV Input Bus | 1 |
 | ULV Energy Hatch | 1 |

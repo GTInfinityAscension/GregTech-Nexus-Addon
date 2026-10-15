@@ -44,7 +44,7 @@ Lâminas de laser torneiam hastes. A serragem agora é holograma. Remodela a mat
 | Emissor de Laser de Alta Energia | 8 |
 | Caixa de Engrenagens de Amprósio | 4 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Torno a Laser de Alta Energia | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |

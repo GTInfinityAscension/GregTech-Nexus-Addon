@@ -38,7 +38,7 @@ Foca o laser por uma dobra no espaço. Precisão, agora em 4D. Grava com lasers 
 | Gerador de Campo de Contenção | 96 |
 | Invólucro Dimensionalmente Transcendente | 43 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Hatch | 1 |

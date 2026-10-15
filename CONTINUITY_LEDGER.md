@@ -7720,3 +7720,9 @@ Decisão do autor (2026-10-12, `docs/roadmap/bec-proposta.md`): rede física igu
 - Clarão/rastro do tiro da lança gira com o canhão em volta do mancal da torre.
 - Validação: spotlessCheck, runUnitTests, runGameTestServer 358/358, runData PASS. Cliente não aberto.
 - Fora deste lote (decisão do autor): hatches próprios, receitas (modpack), PWR.
+
+## G-0261 — 2026-10-15 — Originais: hatches próprios (Beam Dump, Sonda Sísmica, Revestimento)
+- `OriginalHatchPartMachine` + abilities BEAM_DUMP / SEISMIC_PROBE / LINER_HATCH; overlays gerados por `tools/design/originals_hatch_textures.py` (arte provisória minha, substituível pelo autor).
+- Colisor: sem Beam Dump o quench dobra a recuperação. Estelar: sem Sonda Sísmica tremores novos não são decodificados; aba Sismograma. Lança: Hatch de Revestimento troca o revestimento gasto (chapa WC 5e13 EU, neutrônio 2e14 EU).
+- Gametests: Beam Dump presente na prévia; troca do revestimento verificada. 358/358 PASS; spotlessCheck, runUnitTests, runData PASS.
+- Pendente: Injetor de Massa, hatch de detector, cartucho de alvo, sintonia; receitas (modpack); cliente não testado.

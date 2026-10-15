@@ -34,7 +34,7 @@ Cheira a pomada. E tem menos mosquito. Faz flotação de minério Moído com eti
 | Tubulação de Hastelloy N 75 | 6 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 | Célula de Flotação Industrial | 1 |
 | ULV Input Bus | 1 |

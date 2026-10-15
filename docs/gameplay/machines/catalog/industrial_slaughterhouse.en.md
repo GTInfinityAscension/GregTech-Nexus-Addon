@@ -38,6 +38,6 @@ No mobs were harmed in this tooltip. Many were in the machine. voltage tier, pic
 | Steel Gearbox Casing | 25 |
 | Steel Firebox Casing | 25 |
 | Industrial Slaughterhouse | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

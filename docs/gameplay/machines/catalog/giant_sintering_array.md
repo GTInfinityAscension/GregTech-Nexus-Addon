@@ -44,7 +44,7 @@ Pó entra, sólido sai. Nada de derreter, só paciência. Funde pós em blocos d
 | Carcaça de Caixa de Engrenagens de Irídio | 6 |
 | Muffler Hatch IV | 6 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Matriz de Sinterização Gigante | 1 |
 | ULV Input Hatch | 1 |
 | ULV Energy Hatch | 1 |

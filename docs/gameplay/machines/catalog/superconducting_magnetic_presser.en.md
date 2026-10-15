@@ -47,7 +47,7 @@ Can easily accelerate coins to Mach 3! Shapes metal with railgun-grade electroma
 | Naquadria Frame | 8 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | Superconducting Magnetic Presser | 1 |
 

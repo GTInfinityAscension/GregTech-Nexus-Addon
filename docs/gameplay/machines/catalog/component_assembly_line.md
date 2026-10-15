@@ -54,7 +54,7 @@ O mais perto que a indústria chegou da criação divina. Roda lotes de montagem
 | Carcaça de Linha de Montagem de Componentes LV | 63 |
 | Unidade de Montagem Espaço-Temporal | 33 |
 | Electrolytic Cell | 20 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
 | Linha de Montagem de Componentes | 1 |
 | ULV Energy Hatch | 1 |

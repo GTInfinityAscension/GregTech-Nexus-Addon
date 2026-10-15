@@ -56,7 +56,7 @@ Cresce filmes um átomo por vez. Fábricas pagam bilhões por menos. Deposita fi
 | Polytetrafluoroethylene Frame | 22 |
 | Sistema Integrado de Deposição de Vapor | 1 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Hatch | 1 |

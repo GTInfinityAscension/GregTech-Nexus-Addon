@@ -32,12 +32,12 @@ Growing ore veins in a petri dish. Science! Cultivates vein essences from seeds 
 |---|---:|
 | Plascrete | 50 |
 | Cleanroom Glass | 32 |
-| Filter Casing | 9 |
+| Sterilizing Filter Casing | 9 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | Incubator | 1 |
 | ULV Output Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Energy Hatch | 1 |
 

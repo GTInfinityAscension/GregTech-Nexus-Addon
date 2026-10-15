@@ -34,7 +34,7 @@ The well ran dry. The void did not. Keeps producing a fluid after its natural de
 | Stable Titanium Machine Casing | 6 |
 | ULV Input Hatch | 1 |
 | Void Fluid Drilling Rig | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |

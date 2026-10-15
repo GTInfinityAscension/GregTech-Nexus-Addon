@@ -33,8 +33,8 @@ Sob pressão, tudo vira placa uma hora. Um compressor a vapor de alto volume par
 | Bronze Gearbox Casing | 24 |
 | Block of Iron | 18 |
 | Bronze Frame | 12 |
-| Steam Output Bus | 1 |
-| Barramento Grande de Entrada a Vapor | 1 |
+| Barramento Grande de Saída a Vapor | 1 |
+| Steam Input Bus | 1 |
 | Grande Compressor a Vapor | 1 |
 | Hatch de Entrada de Vapor Wireless | 1 |
 

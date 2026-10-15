@@ -38,7 +38,7 @@ Nasceu de um vazamento de gelo líquido. O estagiário segue sumido. Congela rec
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Output Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Congelador de Gelo Frio | 1 |
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |

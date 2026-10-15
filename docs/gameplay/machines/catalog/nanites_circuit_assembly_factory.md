@@ -41,7 +41,7 @@ Sem rugido de fornalha, sem braço robótico. Só nanitas. Roda receitas de Mont
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | Fábrica de Montagem de Circuitos por Nanites | 1 |
 

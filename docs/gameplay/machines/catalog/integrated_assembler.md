@@ -46,7 +46,7 @@ Torne o complexo simples e o impossível rotina. Uma linha de montagem hiperespa
 | Assembly Control Casing | 24 |
 | Carcaça da Linha de Montagem de Circuitos | 12 |
 | Casing de Maquina de Processo | 2 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |

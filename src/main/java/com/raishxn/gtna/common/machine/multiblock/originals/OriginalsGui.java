@@ -345,4 +345,27 @@ public final class OriginalsGui {
                     m.benchValid() ? GREEN : RED);
         };
     }
+
+    // ------------------------------------------------------------------ stellar: seismogram
+
+    static Plot.Painter quakes(StellarChamberMachine m) {
+        return (g, x, y, w, h) -> {
+            if (!m.hasSeismicProbe()) {
+                text(g, Component.translatable("gtna.originals.gui.no_probe"), x + 4, y + h / 2 - 4, RED);
+                return;
+            }
+            double[] q = m.quakes();
+            int n = q.length / 2, mid = y + h / 2 + 4;
+            g.fill(x, mid, x + w, mid + 1, GRID);
+            var kinds = StellarCore.Quake.values();
+            for (int i = 0; i < n; i++) {
+                int xx = x + 4 + i * (w - 8) / 64;
+                int amp = (int) Math.min(h / 2 - 6, 4 + q[i * 2] * (h / 2 - 6));
+                int kind = (int) q[i * 2 + 1];
+                int colour = kind == StellarCore.Quake.ANTI.ordinal() ? 0xFFAA55FF : kind == 0 ? CYAN : GOLD;
+                line(g, xx, mid - amp, xx, mid + amp, colour);
+            }
+            if (n > 0) text(g, kinds[(int) q[n * 2 - 1]].name().toLowerCase(), x + 2, y + 2, AXIS);
+        };
+    }
 }

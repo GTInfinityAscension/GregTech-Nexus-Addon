@@ -34,7 +34,7 @@ Like eating fish? The whole office does now. automatically with bait in a water-
 | Stainless Steel Frame | 19 |
 | Steel Pipe Casing | 7 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | Fishing Ground | 1 |
 | ULV Output Bus | 1 |

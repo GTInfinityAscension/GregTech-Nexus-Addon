@@ -37,7 +37,7 @@ Every fraction of the barrel, accounted for. Runs Distillery, Distillation Tower
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
 | Mega Distillery | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
 | ZPM Thread Hatch | 1 |

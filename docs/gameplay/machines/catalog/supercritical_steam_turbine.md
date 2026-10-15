@@ -38,7 +38,7 @@ Vapor, só que já viu coisas. Uma turbina IV que expande vapor supercrítico po
 | Muffler Hatch IV | 1 |
 | ULV Input Hatch | 1 |
 | Turbina de Vapor Supercrítica | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | IV Rotor Holder | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

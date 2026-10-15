@@ -46,7 +46,7 @@ Make sure the safety valves work. Then check again. Six reaction columns that cr
 | Muffler Hatch IV | 16 |
 | ULV Energy Hatch | 1 |
 | ULV Output Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | Cracker Hub | 1 |
 | ULV Output Bus | 1 |

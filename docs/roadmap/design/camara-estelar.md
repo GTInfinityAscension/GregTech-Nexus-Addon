@@ -185,9 +185,10 @@ O sismograma é uma fita que corre na GUI. O jogador aprende a ler os padrões e
 
 **Falta:**
 
-- Sismograma dos tremores desenhado
+- Sismograma dos tremores desenhado — feito
 - Lente gravitacional no jogo
-- Hatches próprios (Injetor de Massa, Sonda Sísmica)
+- Sonda Sísmica — feita (sem ela tremores não são decodificados; alimenta a aba do sismograma)
+- Injetor de Massa
 - Receita do controlador (fica com o modpack)
 
 ## Telas (mockup)

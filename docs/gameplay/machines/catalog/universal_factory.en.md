@@ -36,7 +36,7 @@ One factory to rule them all. Processes many different recipes at once with cros
 | Universal Factory | 1 |
 | Steel Frame | 1 |
 | ULV Output Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

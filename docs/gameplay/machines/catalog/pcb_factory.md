@@ -39,7 +39,7 @@ Imprime placas aos milhares. O corrosivo cheira a progresso. Grava placas de cir
 | Hermetic Casing VII | 29 |
 | Casing Magtech | 14 |
 | Invólucro Mecânico Anticorrosão de PPS | 12 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
 | Fábrica de PCB | 1 |
 | ULV Energy Hatch | 1 |

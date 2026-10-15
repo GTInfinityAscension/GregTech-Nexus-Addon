@@ -38,6 +38,6 @@ Quente o bastante para a química acontecer, queira ou não. Faz reações de al
 | ULV Input Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

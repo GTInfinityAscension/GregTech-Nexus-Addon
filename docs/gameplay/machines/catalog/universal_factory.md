@@ -36,7 +36,7 @@ Uma fábrica para a todos governar. Processa várias receitas diferentes ao mesm
 | Fábrica Universal | 1 |
 | Steel Frame | 1 |
 | ULV Output Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

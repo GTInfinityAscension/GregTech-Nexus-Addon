@@ -34,9 +34,9 @@ Sou lenhador e tá tudo bem. Um processador de árvores industrial que transform
 | Iron Reinforced Wood | 12 |
 | Dirt | 9 |
 | Steel Reinforced Wood | 5 |
-| Steam Output Bus | 1 |
+| Barramento Grande de Saída a Vapor | 1 |
 | Cortador de Madeira a Vapor | 1 |
-| Barramento Grande de Entrada a Vapor | 1 |
+| Steam Input Bus | 1 |
 | Hatch de Entrada de Vapor Wireless | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

@@ -146,6 +146,8 @@ public class ColliderRingMachine extends OriginalMachine {
         boolean traps = consume(level, core.trapUpkeepEUt() * 20);
         double share = magnets ? Math.min(1, got / Math.max(1, demand)) : 0;
         var result = core.step(share, traps);
+        // Without a Beam Dump the quenched beam hits the ring: twice the recovery time.
+        if (result.quench && hatch(OriginalHatchPartMachine.Kind.BEAM_DUMP) == null) core.quenchCooldown *= 2;
         for (var p : ColliderCore.Particle.values()) {
             particleBuffer[p.ordinal()] += result.produced[p.ordinal()];
             long whole = (long) particleBuffer[p.ordinal()];

@@ -42,6 +42,6 @@ Queima combustível hyper. Não pergunte o que ele tem de hyper. Transforma comb
 | Carcaça de Tubo de Amprósio | 4 |
 | ULV Input Hatch | 2 |
 | Reator Hyper | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

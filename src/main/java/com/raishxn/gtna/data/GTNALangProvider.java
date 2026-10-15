@@ -1645,6 +1645,18 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.originals.gui.committee", "Beam-Time Committee");
         add("gtna.originals.gui.atlas", "Constellation Atlas");
         add("gtna.originals.gui.bench", "Workbench");
+        add("gtna.machine.beam_dump.tooltip.0",
+                "§7Absorbs the beam of the §bAntimatter Collider Ring§7 when its magnets quench.");
+        add("gtna.machine.beam_dump.tooltip.1", "§cWithout one, a quench hits the ring: recovery takes twice as long.");
+        add("gtna.machine.seismic_probe.tooltip.0", "§7Records the starquakes of the §bStellar Containment Chamber§7.");
+        add("gtna.machine.seismic_probe.tooltip.1",
+                "§7Only recorded quakes are decoded and unlock new regions; also feeds the seismogram tab.");
+        add("gtna.machine.liner_hatch.tooltip.0",
+                "§7Holds spare barrel liners for the §bKinetic Orbital Lance§7: tungsten carbide or neutronium plates (dense or plain).");
+        add("gtna.machine.liner_hatch.tooltip.1",
+                "§7A worn or cracked liner is swapped automatically, without taking the gun apart.");
+        add("gtna.originals.gui.quakes", "Seismogram");
+        add("gtna.originals.gui.no_probe", "Install a Seismic Probe to record quakes");
         add("gtna.originals.gui.mass_period", "Mass–Period Diagram");
         add("gtna.originals.gui.standard_model", "Standard Model Board");
         add("gtna.originals.gui.seismograph", "Rift Seismograph");
