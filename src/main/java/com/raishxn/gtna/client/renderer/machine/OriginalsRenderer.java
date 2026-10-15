@@ -338,6 +338,13 @@ public final class OriginalsRenderer {
         var parts = com.raishxn.gtna.common.machine.multiblock.originals.CapturedParts.positions(c.getLevel(),
                 name, tag, c.getPos(), c.getFrontFacing(), c.getUpwardsFacing(), c.isFlipped());
         if (parts.isEmpty()) return null;
+        long t0 = System.nanoTime();
+        // Membership by packed long: BlockPos's own hash collides badly over a structure this size.
+        var occupied = new it.unimi.dsi.fastutil.longs.LongOpenHashSet(parts.size());
+        for (BlockPos p : parts.keySet()) occupied.add(p.asLong());
+        var states = new java.util.HashMap<Character, net.minecraft.world.level.block.state.BlockState>();
+        float[] shades = new float[6];
+        for (Direction side : Direction.values()) shades[side.ordinal()] = quadShade(c.getLevel(), side);
         var dispatcher = net.minecraft.client.Minecraft.getInstance().getBlockRenderer();
         var random = net.minecraft.util.RandomSource.create(42);
         var builder = new BufferBuilder(
@@ -346,17 +353,18 @@ public final class OriginalsRenderer {
         PoseStack ps = new PoseStack();
         for (var e : parts.entrySet()) {
             BlockPos p = e.getKey();
-            var state = com.raishxn.gtna.common.machine.multiblock.originals.CapturedParts
-                    .blockFor(name, e.getValue()).defaultBlockState();
+            var state = states.computeIfAbsent(e.getValue(),
+                    k -> com.raishxn.gtna.common.machine.multiblock.originals.CapturedParts.blockFor(name, k)
+                            .defaultBlockState());
             var model = dispatcher.getBlockModel(state);
             ps.pushPose();
             ps.translate(p.getX() - center.getX(), p.getY() - center.getY(), p.getZ() - center.getZ());
             for (Direction side : Direction.values()) {
-                if (parts.containsKey(p.relative(side))) continue;
+                if (occupied.contains(BlockPos.offset(p.asLong(), side))) continue;
                 random.setSeed(42);
                 // Match the blocks still in the world: vanilla face shading and the light at that spot (packed
                 // light reads the live lightmap, so day and night still apply).
-                float shade = quadShade(c.getLevel(), side);
+                float shade = shades[side.ordinal()];
                 int light = net.minecraft.client.renderer.LevelRenderer.getLightColor(c.getLevel(), p.relative(side));
                 for (var quad : model.getQuads(state, side, random,
                         net.minecraftforge.client.model.data.ModelData.EMPTY, null))
@@ -370,6 +378,8 @@ public final class OriginalsRenderer {
         mesh.bind();
         mesh.upload(builder.end());
         com.mojang.blaze3d.vertex.VertexBuffer.unbind();
+        com.raishxn.gtna.GTNACORE.LOGGER.info("[GTNA perf] {} {} mesh: {} blocks in {} ms", name, tag, parts.size(),
+                (System.nanoTime() - t0) / 1_000_000);
         return mesh;
     }
 
@@ -445,7 +455,9 @@ public final class OriginalsRenderer {
         @Override
         public void render(M machine, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int light,
                            int overlay) {
-            if (machine.getLevel() != null && machine.isFormed()) QUEUE.put(machine.getPos().immutable(), machine);
+            if (machine.getLevel() == null) return;
+            OriginalsSound.track(machine);
+            if (machine.isFormed()) QUEUE.put(machine.getPos().immutable(), machine);
         }
     }
 

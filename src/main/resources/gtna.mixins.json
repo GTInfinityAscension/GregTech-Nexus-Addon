@@ -17,6 +17,8 @@
     "gtceu.GTNAPlateDoubleMixin",
     "gtceu.FluidDrillLogicMixin",
     "gtceu.BlockPatternAccessor",
+    "gtceu.BlockPatternPreviewMapMixin",
+    "gtceu.BlockPatternSparseWalkMixin",
     "gtceu.FancyMachineUIWidgetStructureMixin",
     "gtceu.MetaMachineBlockMixin",
     "gtceu.MultiblockStateBuildMixin",
@@ -28,6 +30,9 @@
     "kubejs.DataGeneratorMixin"
   ],
   "client": [
+    "client.PatternPreviewAirMixin",
+    "client.PatternPreviewTimingMixin",
+    "client.ClientLevelUniversiumMixin",
     "ae2.CPUSelectionListMixin",
     "client.MultiblockInfoSlotGuardMixin",
     "client.GTRecipeWidgetMixin",

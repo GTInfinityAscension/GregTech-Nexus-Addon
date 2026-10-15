@@ -327,6 +327,11 @@ public final class GTNAOriginalsGameTests {
     public static void lanceFormsFiresAndReturnsCapsules(GameTestHelper helper) throws Exception {
         com.raishxn.gtna.common.machine.multiblock.originals.LanceMachine lance = formed(helper,
                 GTNAOriginals.KINETIC_ORBITAL_LANCE, "kinetic_orbital_lance");
+        // The incremental checks rely on the layout covering exactly what GTCEu's walk visits.
+        var layout = lance.structureWatch().layout().positionSet();
+        var walked = lance.getMultiblockState().cache;
+        helper.assertTrue(layout.size() > 100_000 && layout.containsAll(walked),
+                "layout " + layout.size() + " covers the walked " + walked.size());
         power(helper, lance);
         var core = lance.core();
         core.bankCharge = core.bankCapacity();

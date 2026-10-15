@@ -44,6 +44,16 @@ public final class PreviewBenchCommand {
     }
 
     private static net.minecraft.core.BlockPos lastBuilt;
+    private static int FPS_LEFT;
+
+    public static void fpsTick(net.minecraftforge.event.TickEvent.ClientTickEvent event) {
+        if (event.phase != net.minecraftforge.event.TickEvent.Phase.END || FPS_LEFT <= 0) return;
+        if (--FPS_LEFT % 20 != 0) return;
+        var mc = net.minecraft.client.Minecraft.getInstance();
+        var server = mc.getSingleplayerServer();
+        GTNACORE.LOGGER.info("[GTNA perf] fps {} mspt {}", mc.getFps(),
+                server == null ? -1 : String.format("%.1f", server.getAverageTickTime()));
+    }
 
     /**
      * Breaks one casing of the last dev-built multiblock as the player, then places {@code part} (a machine id) in the
@@ -57,34 +67,31 @@ public final class PreviewBenchCommand {
         if (!(com.gregtechceu.gtceu.api.machine.MetaMachine.getMachine(level,
                 lastBuilt) instanceof com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiController controller))
             return;
-        boolean formedBefore = controller.isFormed();
-        if (!formedBefore) {
-            controller.checkPatternWithLock();
-            var error = controller.getMultiblockState().error;
-            GTNACORE.LOGGER.info("[GTNA perf] dev swap: not formed at {}: {}",
-                    error == null ? null : error.getPos(), error == null ? null : error.getErrorInfo().getString());
-            return;
-        }
+        // Formed: break the casing nearest the controller and put {@code part} there (air = just break).
+        // Not formed: put {@code part} back where the last swap broke. The machine's own checks do the rest.
         net.minecraft.core.BlockPos target = null;
-        for (var p : controller.getMultiblockState().getCache()) {
-            if (p.equals(lastBuilt) || level.getBlockEntity(p) != null) continue;
-            if (target == null || p.distSqr(lastBuilt) < target.distSqr(lastBuilt)) target = p;
-        }
+        boolean breaking = controller.isFormed() || lastSwap == null;
+        if (breaking) {
+            for (var p : controller.getMultiblockState().getCache()) {
+                if (p.equals(lastBuilt) || level.getBlockEntity(p) != null || level.getBlockState(p).isAir()) continue;
+                if (target == null || p.distSqr(lastBuilt) < target.distSqr(lastBuilt)) target = p;
+            }
+        } else target = lastSwap;
         if (target == null) return;
+        lastSwap = target;
         long t0 = System.nanoTime();
-        player.gameMode.destroyBlock(target);
+        if (breaking) player.gameMode.destroyBlock(target);
         long breakMs = (System.nanoTime() - t0) / 1_000_000;
         var block = net.minecraftforge.registries.ForgeRegistries.BLOCKS.getValue(part);
         t0 = System.nanoTime();
-        if (block != null) level.setBlock(target, block.defaultBlockState(), 3);
+        if (block != null && block != net.minecraft.world.level.block.Blocks.AIR)
+            level.setBlock(target, block.defaultBlockState(), 3);
         long placeMs = (System.nanoTime() - t0) / 1_000_000;
-        t0 = System.nanoTime();
-        boolean formed = controller instanceof com.gregtechceu.gtceu.api.machine.multiblock.MultiblockControllerMachine m &&
-                com.raishxn.gtna.api.machine.multiblock.GTNAStructureRefresh.refresh(m, true);
-        long checkMs = (System.nanoTime() - t0) / 1_000_000;
-        GTNACORE.LOGGER.info("[GTNA perf] dev swap at {}: break {} ms, place {} {} ms, re-check {} ms, formed {}",
-                target, breakMs, part, placeMs, checkMs, formed);
+        GTNACORE.LOGGER.info("[GTNA perf] dev swap at {}: break {} ms, place {} {} ms, formed {}", target, breakMs,
+                part, placeMs, controller.isFormed());
     }
+
+    private static net.minecraft.core.BlockPos lastSwap;
 
     private static int starPreview(boolean hole) {
         var player = net.minecraft.client.Minecraft.getInstance().player;
@@ -158,6 +165,37 @@ public final class PreviewBenchCommand {
         event.getDispatcher().register(Commands.literal("gtna_dev_info").executes(ctx -> {
             var panel = com.raishxn.gtna.common.machine.multiblock.originals.OriginalsInfoPanel.last;
             if (panel != null) net.minecraft.client.Minecraft.getInstance().tell(panel::toggle);
+            return 1;
+        }));
+        // /gtna_dev_fps <s>: logs client FPS and server MSPT once a second for s seconds.
+        event.getDispatcher().register(Commands.literal("gtna_dev_fps").then(Commands
+                .argument("s", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1, 120)).executes(ctx -> {
+                    FPS_LEFT = com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(ctx, "s") * 20;
+                    return 1;
+                })));
+        // /gtna_dev_mismatch: lists the wrong positions of the last dev build's original multiblock.
+        event.getDispatcher().register(Commands.literal("gtna_dev_mismatch").executes(ctx -> {
+            var server = net.minecraft.client.Minecraft.getInstance().getSingleplayerServer();
+            if (server == null || lastBuilt == null) return 0;
+            server.execute(() -> {
+                var level = server.overworld();
+                if (!(com.gregtechceu.gtceu.api.machine.MetaMachine.getMachine(level,
+                        lastBuilt) instanceof com.raishxn.gtna.common.machine.multiblock.originals.StructureWatch.Host h))
+                    return;
+                var layout = h.structureWatch().layout();
+                var wrong = layout.mismatches(level);
+                GTNACORE.LOGGER.info("[GTNA perf] mismatch: {} of {}, formed {}",
+                        wrong == null ? "unloaded" : wrong.size(), layout.size(),
+                        ((com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiController) h).isFormed());
+                if (wrong == null) return;
+                int n = 0;
+                for (int i : wrong) {
+                    if (n++ >= 12) break;
+                    var pos = net.minecraft.core.BlockPos.of(layout.position(i));
+                    GTNACORE.LOGGER.info("[GTNA perf]   {} wants {} has {}", pos, layout.matcher(i),
+                            level.getBlockState(pos));
+                }
+            });
             return 1;
         }));
         // /gtna_preview_open <machine id>: opens the JEI page of the multiblock (what players see), for timing.

@@ -1797,6 +1797,15 @@ public class GTNALangProvider extends LanguageProvider {
                 "Click components on the bench line: rails raise efficiency (up to 8, shift-click removes), cooling raises heat capacity, sensors improve aim, capsules improve recovery, the salvo splitter fires several projectiles. Mass and heat must stay within the budget; surveying bodies unlocks components.");
         add("gtna.originals.info.kinetic_orbital_lance.bench.2",
                 "Each shot wears the liner and heats the barrel. A worn liner (100%) or a barrel over 2500 K misfires. Spare liners (tungsten carbide or neutronium plates) in the Barrel Liner Hatch are swapped in automatically. Side tabs: Orbital map and Bench.");
+        add("gtna.subtitle.originals.collider_loop", "Collider ring hums");
+        add("gtna.subtitle.originals.lance_charge_loop", "Lance capacitors charge");
+        add("gtna.subtitle.originals.rift_loop", "Rift resonates");
+        add("gtna.subtitle.originals.stellar_black_hole_loop", "Black hole roars");
+        add("gtna.subtitle.originals.stellar_pulsar_loop", "Pulsar spins");
+        add("gtna.subtitle.originals.lance_fire", "Orbital lance fires");
+        add("gtna.subtitle.originals.collider_quench", "Collider magnets quench");
+        add("gtna.subtitle.originals.stellar_quake", "Starquake");
+        add("gtna.subtitle.originals.rift_open", "Rift opens");
         add("gtna.machine.original.nexus_power", "Powered by the owner's Nexus wireless network");
         add("gtna.machine.kinetic_orbital_lance.computation_none", "§cNo optical computation hatch: the aim is blind");
         add("gtna.machine.kinetic_orbital_lance.computation_starved",

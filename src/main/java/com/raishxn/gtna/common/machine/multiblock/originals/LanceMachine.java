@@ -157,15 +157,21 @@ public class LanceMachine extends OriginalMachine {
     private void captureGun() {
         if (captured || getLevel() == null) return;
         // Each removed block would otherwise trigger a full structure check (seconds on a structure this size).
+        long t0 = System.nanoTime();
         com.raishxn.gtna.common.item.terminal.NexusBuildCheckGuard.quiet(getMultiblockState(),
                 () -> CapturedParts.capture(getLevel(), gun()));
+        com.raishxn.gtna.GTNACORE.LOGGER.info("[GTNA perf] lance gun captured in {} ms",
+                (System.nanoTime() - t0) / 1_000_000);
         captured = true;
     }
 
     private void releaseGun() {
         if (!captured || getLevel() == null || getLevel().isClientSide) return;
+        long t0 = System.nanoTime();
         com.raishxn.gtna.common.item.terminal.NexusBuildCheckGuard.quiet(getMultiblockState(),
                 () -> CapturedParts.release(getLevel(), "kinetic_orbital_lance", gun()));
+        com.raishxn.gtna.GTNACORE.LOGGER.info("[GTNA perf] lance gun released in {} ms",
+                (System.nanoTime() - t0) / 1_000_000);
         captured = false;
     }
 

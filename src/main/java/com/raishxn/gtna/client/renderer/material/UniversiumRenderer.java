@@ -31,9 +31,6 @@ import com.raishxn.gtna.client.renderer.effect.ItemEffectRenderer;
 import com.raishxn.gtna.common.data.GTNAMaterials;
 import org.joml.Vector3f;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /** Universium's live star field (GTNA item effect shader) on world surfaces and non-material items. */
 public final class UniversiumRenderer {
 
@@ -42,9 +39,7 @@ public final class UniversiumRenderer {
     private static final ResourceLocation NANITES = GTNACORE.id("item/universium/nanites_mask");
     /** RenderBlender's cosmic star field (see {@link CosmicShader}), lifted off the surface. */
     private static final RenderType COSMIC = CosmicShader.WORLD;
-    private static final List<BlockPos> SURFACES = new ArrayList<>();
     private static net.minecraft.client.multiplayer.ClientLevel cachedLevel;
-    private static long nextScan;
 
     private UniversiumRenderer() {}
 
@@ -137,43 +132,66 @@ public final class UniversiumRenderer {
         graphics.bufferSource().endBatch(COSMIC);
     }
 
+    // ------------------------------------------------------------------ tracking world surfaces
+
+    /** Universium blocks and fluid in loaded chunks, by chunk. Kept current on load, unload and every change. */
+    private static final it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap<it.unimi.dsi.fastutil.longs.LongOpenHashSet> TRACKED = new it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap<>();
+    /** Distance from the camera within which the star field is drawn. */
+    private static final double RANGE = 64;
+
+    private static boolean tracked(BlockState state) {
+        return isBlock(state) || isFluid(state.getFluidState().getType());
+    }
+
+    /**
+     * A block changed on the client (from {@code ClientLevel.sendBlockUpdated}): placed Universium gets its star
+     * field in the same frame instead of after the next scan.
+     */
+    public static void blockChanged(BlockPos pos, BlockState newState) {
+        long chunk = net.minecraft.world.level.ChunkPos.asLong(pos.getX() >> 4, pos.getZ() >> 4);
+        if (tracked(newState)) TRACKED.computeIfAbsent(chunk, k -> new it.unimi.dsi.fastutil.longs.LongOpenHashSet())
+                .add(pos.asLong());
+        else {
+            var set = TRACKED.get(chunk);
+            if (set != null && set.remove(pos.asLong()) && set.isEmpty()) TRACKED.remove(chunk);
+        }
+    }
+
+    public static void chunkLoaded(net.minecraftforge.event.level.ChunkEvent.Load event) {
+        if (!event.getLevel().isClientSide() ||
+                !(event.getChunk() instanceof net.minecraft.world.level.chunk.LevelChunk chunk))
+            return;
+        var cp = chunk.getPos();
+        var set = new it.unimi.dsi.fastutil.longs.LongOpenHashSet();
+        var sections = chunk.getSections();
+        for (int si = 0; si < sections.length; si++) {
+            var section = sections[si];
+            // Palettes answer "maybe has" without touching the 4096 entries.
+            if (section.hasOnlyAir() || !section.maybeHas(UniversiumRenderer::tracked)) continue;
+            int bottom = chunk.getSectionYFromSectionIndex(si) << 4;
+            for (int y = 0; y < 16; y++) for (int z = 0; z < 16; z++) for (int x = 0; x < 16; x++)
+                if (tracked(section.getBlockState(x, y, z)))
+                    set.add(BlockPos.asLong(cp.getMinBlockX() + x, bottom + y, cp.getMinBlockZ() + z));
+        }
+        if (set.isEmpty()) TRACKED.remove(cp.toLong());
+        else TRACKED.put(cp.toLong(), set);
+    }
+
+    public static void chunkUnloaded(net.minecraftforge.event.level.ChunkEvent.Unload event) {
+        if (event.getLevel().isClientSide()) TRACKED.remove(event.getChunk().getPos().toLong());
+    }
+
     public static void tick(TickEvent.ClientTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
         var mc = Minecraft.getInstance();
         if (mc.level != cachedLevel) {
-            SURFACES.clear();
+            TRACKED.clear();
             cachedLevel = mc.level;
-            nextScan = 0;
-        }
-        if (mc.level == null || mc.player == null || mc.level.getGameTime() < nextScan) return;
-        nextScan = mc.level.getGameTime() + 20;
-        SURFACES.clear();
-        var center = mc.player.blockPosition();
-        // Inspect palettes of already loaded nearby sections; never request/generate chunks.
-        for (int cx = (center.getX() >> 4) - 2; cx <= (center.getX() >> 4) + 2; cx++) {
-            for (int cz = (center.getZ() >> 4) - 2; cz <= (center.getZ() >> 4) + 2; cz++) {
-                var chunk = mc.level.getChunkSource().getChunk(cx, cz, false);
-                if (chunk == null) continue;
-                var sections = chunk.getSections();
-                for (int sectionIndex = 0; sectionIndex < sections.length; sectionIndex++) {
-                    int bottom = mc.level.getSectionYFromSectionIndex(sectionIndex) << 4;
-                    if (Math.abs(bottom - center.getY()) > 48) continue;
-                    var section = sections[sectionIndex];
-                    if (!section.maybeHas(s -> isBlock(s) || isFluid(s.getFluidState().getType()))) continue;
-                    for (int y = 0; y < 16; y++) for (int z = 0; z < 16; z++) for (int x = 0; x < 16; x++) {
-                        var state = section.getBlockState(x, y, z);
-                        if (isBlock(state) || isFluid(state.getFluidState().getType())) {
-                            var pos = new BlockPos((cx << 4) + x, bottom + y, (cz << 4) + z);
-                            if (pos.distSqr(center) <= 32 * 32) SURFACES.add(pos);
-                        }
-                    }
-                }
-            }
         }
     }
 
     public static void renderWorld(RenderLevelStageEvent event) {
-        if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS || SURFACES.isEmpty() ||
+        if (event.getStage() != RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS || TRACKED.isEmpty() ||
                 !ready(false))
             return;
         var mc = Minecraft.getInstance();
@@ -182,8 +200,26 @@ public final class UniversiumRenderer {
         var camera = event.getCamera().getPosition();
         var buffers = mc.renderBuffers().bufferSource();
         var out = buffers.getBuffer(COSMIC);
-        for (var pos : SURFACES) {
-            if (!event.getFrustum().isVisible(new net.minecraft.world.phys.AABB(pos))) continue;
+        var pos = new BlockPos.MutableBlockPos();
+        for (var chunk : TRACKED.long2ObjectEntrySet()) {
+            int cx = net.minecraft.world.level.ChunkPos.getX(chunk.getLongKey()) * 16 + 8;
+            int cz = net.minecraft.world.level.ChunkPos.getZ(chunk.getLongKey()) * 16 + 8;
+            double dx = cx - camera.x, dz = cz - camera.z;
+            if (dx * dx + dz * dz > (RANGE + 12) * (RANGE + 12)) continue;
+            for (long packed : chunk.getValue()) {
+                pos.set(packed);
+                if (pos.distToCenterSqr(camera) > RANGE * RANGE ||
+                        !event.getFrustum().isVisible(new net.minecraft.world.phys.AABB(pos)))
+                    continue;
+                renderSurface(mc, pos, pose, camera, out);
+            }
+        }
+        buffers.endBatch(COSMIC);
+    }
+
+    private static void renderSurface(Minecraft mc, BlockPos pos, PoseStack pose,
+                                      net.minecraft.world.phys.Vec3 camera, VertexConsumer out) {
+        {
             var state = mc.level.getBlockState(pos);
             pose.pushPose();
             pose.translate(pos.getX() - camera.x, pos.getY() - camera.y, pos.getZ() - camera.z);
@@ -196,7 +232,6 @@ public final class UniversiumRenderer {
             }
             pose.popPose();
         }
-        buffers.endBatch(COSMIC);
     }
 
     private static float fluidCorner(net.minecraft.client.multiplayer.ClientLevel level, BlockPos pos, int dx, int dz) {

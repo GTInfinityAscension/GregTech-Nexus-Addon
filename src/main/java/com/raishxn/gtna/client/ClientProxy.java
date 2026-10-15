@@ -91,10 +91,16 @@ public class ClientProxy extends CommonProxy {
                 });
         MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.debug.PreviewBenchCommand::register);
         MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.debug.DevCommandFile::onClientTick);
+        MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.debug.PreviewBenchCommand::fpsTick);
+        MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.renderer.machine.OriginalsSound::onClientTick);
         MinecraftForge.EVENT_BUS.addListener(
                 (net.minecraftforge.event.TickEvent.RenderTickEvent event) -> com.raishxn.gtna.common.debug.StallDetector
                         .beat("client"));
         MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.renderer.material.UniversiumRenderer::tick);
+        MinecraftForge.EVENT_BUS
+                .addListener(com.raishxn.gtna.client.renderer.material.UniversiumRenderer::chunkLoaded);
+        MinecraftForge.EVENT_BUS
+                .addListener(com.raishxn.gtna.client.renderer.material.UniversiumRenderer::chunkUnloaded);
         MinecraftForge.EVENT_BUS.addListener(com.raishxn.gtna.client.renderer.material.UniversiumRenderer::renderWorld);
         MinecraftForge.EVENT_BUS.register(ModuleCountClientHandler.class);
         MinecraftForge.EVENT_BUS.register(EyeOfHarmonyTooltips.class);

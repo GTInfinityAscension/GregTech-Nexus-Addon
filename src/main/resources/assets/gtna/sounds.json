@@ -7,5 +7,104 @@
         "stream": true
       }
     ]
+  },
+  "originals.collider_loop": {
+    "subtitle": "gtna.subtitle.originals.collider_loop",
+    "sounds": [
+      {
+        "name": "gtna:originals/collider_loop",
+        "volume": 0.35,
+        "attenuation_distance": 64,
+        "stream": true
+      }
+    ]
+  },
+  "originals.lance_charge_loop": {
+    "subtitle": "gtna.subtitle.originals.lance_charge_loop",
+    "sounds": [
+      {
+        "name": "gtna:originals/lance_charge_loop",
+        "volume": 0.3,
+        "attenuation_distance": 48,
+        "stream": true
+      }
+    ]
+  },
+  "originals.rift_loop": {
+    "subtitle": "gtna.subtitle.originals.rift_loop",
+    "sounds": [
+      {
+        "name": "gtna:originals/rift_loop",
+        "volume": 0.35,
+        "attenuation_distance": 96,
+        "stream": true
+      }
+    ]
+  },
+  "originals.stellar_black_hole_loop": {
+    "subtitle": "gtna.subtitle.originals.stellar_black_hole_loop",
+    "sounds": [
+      {
+        "name": "gtna:originals/stellar_black_hole_loop",
+        "volume": 0.4,
+        "attenuation_distance": 96,
+        "stream": true
+      }
+    ]
+  },
+  "originals.stellar_pulsar_loop": {
+    "subtitle": "gtna.subtitle.originals.stellar_pulsar_loop",
+    "sounds": [
+      {
+        "name": "gtna:originals/stellar_pulsar_loop",
+        "volume": 0.35,
+        "attenuation_distance": 96,
+        "stream": true
+      }
+    ]
+  },
+  "originals.lance_fire": {
+    "subtitle": "gtna.subtitle.originals.lance_fire",
+    "sounds": [
+      {
+        "name": "gtna:originals/lance_fire",
+        "volume": 1.0,
+        "attenuation_distance": 256,
+        "stream": false
+      }
+    ]
+  },
+  "originals.collider_quench": {
+    "subtitle": "gtna.subtitle.originals.collider_quench",
+    "sounds": [
+      {
+        "name": "gtna:originals/collider_quench",
+        "volume": 0.8,
+        "attenuation_distance": 96,
+        "stream": false
+      }
+    ]
+  },
+  "originals.stellar_quake": {
+    "subtitle": "gtna.subtitle.originals.stellar_quake",
+    "sounds": [
+      {
+        "name": "gtna:originals/stellar_quake",
+        "volume": 0.9,
+        "attenuation_distance": 128,
+        "stream": false
+      }
+    ]
+  },
+  "originals.rift_open": {
+    "subtitle": "gtna.subtitle.originals.rift_open",
+    "sounds": [
+      {
+        "name": "gtna:originals/rift_open",
+        "volume": 0.8,
+        "attenuation_distance": 128,
+        "stream": false
+      }
+    ]
   }
 }

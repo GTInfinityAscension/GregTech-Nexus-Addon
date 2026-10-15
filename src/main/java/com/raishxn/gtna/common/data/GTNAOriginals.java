@@ -22,6 +22,7 @@ import com.raishxn.gtna.common.data.multiblock.GTNAMultiBlockFileReader;
 import com.raishxn.gtna.common.machine.multiblock.originals.ColliderRingMachine;
 import com.raishxn.gtna.common.machine.multiblock.originals.LanceMachine;
 import com.raishxn.gtna.common.machine.multiblock.originals.OriginalHatchPartMachine;
+import com.raishxn.gtna.common.machine.multiblock.originals.OriginalLayout;
 import com.raishxn.gtna.common.machine.multiblock.originals.RiftGateMachine;
 import com.raishxn.gtna.common.machine.multiblock.originals.StellarChamberMachine;
 import com.tterrag.registrate.util.entry.BlockEntry;
@@ -211,6 +212,17 @@ public final class GTNAOriginals {
 
     public static void init() {}
 
+    /** The original multiblock with this pattern name. */
+    public static MultiblockMachineDefinition byName(String name) {
+        return switch (name) {
+            case "stellar_containment_chamber" -> STELLAR_CONTAINMENT_CHAMBER;
+            case "antimatter_collider_ring" -> ANTIMATTER_COLLIDER_RING;
+            case "dimensional_rift_gate" -> DIMENSIONAL_RIFT_GATE;
+            case "kinetic_orbital_lance" -> KINETIC_ORBITAL_LANCE;
+            default -> throw new IllegalArgumentException(name);
+        };
+    }
+
     public static Item cartridge(com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body b) {
         return CARTRIDGES.get(b).get();
     }
@@ -265,18 +277,28 @@ public final class GTNAOriginals {
     static BlockPattern pattern(MultiblockMachineDefinition definition, String name, String hatchCasing,
                                 Function<TraceabilityPredicate, TraceabilityPredicate> hatches) {
         var pattern = GTNAMultiBlockFileReader.start(definition, name);
+        // Every predicate is also registered with what it accepts, so the machine can test single positions
+        // (OriginalLayout) instead of re-walking the whole pattern.
         for (var entry : sidecar(name).getAsJsonObject("letters").entrySet()) {
             char letter = entry.getKey().charAt(0);
             String raw = entry.getValue().getAsString();
             String id = raw.split("[#|]")[0];
-            if ("hatch".equals(id)) pattern.where(letter, hatches.apply(block(hatchCasing)));
+            String tag = raw.contains("#") ? raw.substring(raw.indexOf('#') + 1) : null;
+            if ("hatch".equals(id)) pattern.where(letter, OriginalLayout.register(hatches.apply(block(hatchCasing)),
+                    new OriginalLayout.Matcher(letter, OriginalLayout.Kind.HATCH, blockOf(hatchCasing), null)));
             // Moving parts are taken into the controller while it runs, so their place may be air.
-            else if (raw.contains("#")) pattern.where(letter, block(id).or(air()));
+            else if (tag != null) pattern.where(letter, OriginalLayout.register(block(id).or(air()),
+                    new OriginalLayout.Matcher(letter, OriginalLayout.Kind.BLOCK_OR_AIR, blockOf(id), tag)));
             else if ("gtna:degenerate_matter_core".equals(id))
-                pattern.where(letter, blocks(DEGENERATE_MATTER_CORE.get()).or(air()));
-            else pattern.where(letter, block(id));
+                pattern.where(letter, OriginalLayout.register(blocks(DEGENERATE_MATTER_CORE.get()).or(air()),
+                        new OriginalLayout.Matcher(letter, OriginalLayout.Kind.BLOCK_OR_AIR,
+                                DEGENERATE_MATTER_CORE.get(), null)));
+            else pattern.where(letter, OriginalLayout.register(block(id),
+                    new OriginalLayout.Matcher(letter, OriginalLayout.Kind.BLOCK, blockOf(id), null)));
         }
-        return pattern.where('~', controller(blocks(definition.getBlock()))).where(' ', any()).build();
+        return pattern.where('~', OriginalLayout.register(controller(blocks(definition.getBlock())),
+                new OriginalLayout.Matcher('~', OriginalLayout.Kind.CONTROLLER, definition.getBlock(), null)))
+                .where(' ', any()).build();
     }
 
     private static JsonObject sidecar(String name) {
@@ -286,6 +308,10 @@ public final class GTNAOriginals {
         } catch (java.io.IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static net.minecraft.world.level.block.Block blockOf(String id) {
+        return ForgeRegistries.BLOCKS.getValue(new ResourceLocation(id));
     }
 
     private static TraceabilityPredicate block(String id) {

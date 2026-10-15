@@ -78,6 +78,7 @@ public class StellarChamberRenderer extends DynamicRender<StellarChamberMachine,
     @Override
     public void render(StellarChamberMachine machine, float partialTicks, PoseStack poseStack, MultiBufferSource buffer,
                        int combinedLight, int combinedOverlay) {
+        if (machine.getLevel() != null) OriginalsSound.track(machine);
         if (machine.getLevel() != null && machine.isStarRunning()) QUEUE.put(machine.getPos().immutable(), machine);
     }
 

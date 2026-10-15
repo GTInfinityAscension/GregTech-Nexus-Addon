@@ -33,7 +33,7 @@ import java.util.function.Predicate;
  * Shared base of the original GTNA multiblocks: a once-per-second server tick, the owner's Nexus network as power
  * source and sink, and helpers to drain hatches and fill output buses. The machines do not run GTCEu recipes.
  */
-public abstract class OriginalMachine extends WorkableElectricMultiblockMachine {
+public abstract class OriginalMachine extends WorkableElectricMultiblockMachine implements StructureWatch.Host {
 
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(OriginalMachine.class,
             WorkableElectricMultiblockMachine.MANAGED_FIELD_HOLDER);
@@ -43,6 +43,7 @@ public abstract class OriginalMachine extends WorkableElectricMultiblockMachine 
     protected UUID networkOwner;
     @Nullable
     private TickableSubscription tick;
+    private final StructureWatch watch = new StructureWatch(this);
     protected int ticker;
 
     protected OriginalMachine(IMachineBlockEntity holder, Object... args) {
@@ -55,14 +56,36 @@ public abstract class OriginalMachine extends WorkableElectricMultiblockMachine 
     }
 
     @Override
+    public StructureWatch structureWatch() {
+        return watch;
+    }
+
+    /** Not re-walked on GTCEu's async thread every second: see {@link StructureWatch}. */
+    @Override
+    public void asyncCheckPattern(long periodID) {
+        if (watch.usable()) watch.poll();
+        else super.asyncCheckPattern(periodID);
+    }
+
+    @Override
+    public boolean shouldOpenUI(net.minecraft.world.entity.player.Player player,
+                                net.minecraft.world.InteractionHand hand,
+                                net.minecraft.world.phys.BlockHitResult hit) {
+        watch.opened();
+        return super.shouldOpenUI(player, hand, hit);
+    }
+
+    @Override
     public void onStructureFormed() {
         super.onStructureFormed();
+        watch.formed();
         tick = subscribeServerTick(tick, this::originalTick);
     }
 
     @Override
     public void onStructureInvalid() {
         super.onStructureInvalid();
+        watch.invalid();
         if (tick != null) {
             tick.unsubscribe();
             tick = null;

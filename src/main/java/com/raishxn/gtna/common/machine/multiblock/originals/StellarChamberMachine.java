@@ -49,7 +49,7 @@ import java.util.UUID;
  * the star in their place) and put back when the machine is switched off, the way the Forge of Gods handles its
  * rings. Design: {@code docs/roadmap/design/camara-estelar.md}.
  */
-public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
+public class StellarChamberMachine extends WorkableElectricMultiblockMachine implements StructureWatch.Host {
 
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(
             StellarChamberMachine.class, WorkableElectricMultiblockMachine.MANAGED_FIELD_HOLDER);
@@ -89,6 +89,7 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
 
     @Nullable
     private TickableSubscription tick;
+    private final StructureWatch watch = new StructureWatch(this);
     private int ticker;
 
     public StellarChamberMachine(IMachineBlockEntity holder, Object... args) {
@@ -147,8 +148,29 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
     // ------------------------------------------------------------------ lifecycle
 
     @Override
+    public StructureWatch structureWatch() {
+        return watch;
+    }
+
+    /** Not re-walked on GTCEu's async thread every second: see {@link StructureWatch}. */
+    @Override
+    public void asyncCheckPattern(long periodID) {
+        if (watch.usable()) watch.poll();
+        else super.asyncCheckPattern(periodID);
+    }
+
+    @Override
+    public boolean shouldOpenUI(net.minecraft.world.entity.player.Player player,
+                                net.minecraft.world.InteractionHand hand,
+                                net.minecraft.world.phys.BlockHitResult hit) {
+        watch.opened();
+        return super.shouldOpenUI(player, hand, hit);
+    }
+
+    @Override
     public void onStructureFormed() {
         super.onStructureFormed();
+        watch.formed();
         tick = subscribeServerTick(tick, this::stellarTick);
     }
 
@@ -156,6 +178,7 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
     public void onStructureInvalid() {
         releaseCore();
         super.onStructureInvalid();
+        watch.invalid();
         if (tick != null) {
             tick.unsubscribe();
             tick = null;
