@@ -12,8 +12,10 @@ import com.gregtechceu.gtceu.api.machine.trait.NotifiableItemStackHandler;
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
@@ -94,6 +96,21 @@ public abstract class OriginalMachine extends WorkableElectricMultiblockMachine 
     static OriginalHatchPartMachine hatchOf(Iterable<? extends Object> parts, OriginalHatchPartMachine.Kind kind) {
         for (var part : parts) if (part instanceof OriginalHatchPartMachine h && h.kind == kind) return h;
         return null;
+    }
+
+    // ------------------------------------------------------------------ display
+
+    /**
+     * The top of the originals' status panel. Replaces GTCEu's recipe lines (max recipe tier, parallels, progress):
+     * the originals run no recipes and have no energy hatch, so those lines only showed "ULV" and "Idling".
+     */
+    static void displayHeader(WorkableElectricMultiblockMachine machine, java.util.List<Component> text,
+                              boolean active) {
+        com.gregtechceu.gtceu.api.machine.multiblock.MultiblockDisplayText.builder(text, machine.isFormed())
+                .setWorkingStatus(machine.isWorkingEnabled(), active).addWorkingStatusLine();
+        if (machine.isFormed())
+            text.add(Component.translatable("gtna.machine.original.nexus_power").withStyle(ChatFormatting.GRAY));
+        for (var part : machine.getParts()) part.addMultiText(text);
     }
 
     // ------------------------------------------------------------------ energy

@@ -1,6 +1,7 @@
 """Convert the author's builds into GTNA .mbs patterns for the original endgame multiblocks.
 
     python3 tools/design/convert_originals.py <voxels.pkl>
+    python3 tools/design/convert_originals.py --drop-islands <pattern name>   (cleans an existing .mbs in place)
 
 <voxels.pkl> holds the four builds as {name: [(x, y, z, block, props)]} (x right, y up, z), produced from
 ~/Downloads/{bfg.zip, portal.zip, 27971.litematic, 20061.schematic} by the session tools that also made the
@@ -38,6 +39,62 @@ def write(name, grid, letters, center=None):
     (OUT / f'{name}.json').write_text(json.dumps({'letters': letters, 'counts': counts, 'center': center,
                                                   'size': [len(data), len(data[0]), len(data[0][0])]}, indent=1))
     print(f'{name}: {len(data)}x{len(data[0])}x{len(data[0][0])} {counts}')
+
+
+NEIGHBOURS = ((1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1))
+
+
+def drop_islands(cells, keep):
+    """Removes every group of blocks not face-connected to {@code keep} (stray blocks of the source build)."""
+    seen, stack = {keep}, [keep]
+    while stack:
+        x, y, z = stack.pop()
+        for dx, dy, dz in NEIGHBOURS:
+            n = (x + dx, y + dy, z + dz)
+            if n in cells and n not in seen:
+                seen.add(n)
+                stack.append(n)
+    dropped = len(cells) - len(seen)
+    for p in [p for p in cells if p not in seen]: del cells[p]
+    return dropped
+
+
+def clean_mbs(name):
+    """Drops the islands of an already written pattern, keeping its size, letters and centre."""
+    inv = {v: k for k, v in CODES.items()}
+    raw, at = (OUT / f'{name}.mbs').read_bytes(), 0
+
+    def num():
+        nonlocal at
+        at += 4
+        return struct.unpack('>i', raw[at - 4:at])[0]
+
+    data = []
+    for _ in range(num()):
+        rows = []
+        for _ in range(num()):
+            n = num()
+            rows.append([inv[b] for b in raw[at:at + n]])
+            at += n
+        data.append(rows)
+    cells = {(c, r, a): ch for a, rows in enumerate(data) for r, row in enumerate(rows) for c, ch in enumerate(row)
+             if ch != ' '}
+    ctrl = next(p for p, ch in cells.items() if ch == '~')
+    dropped = drop_islands(cells, ctrl)
+    with (OUT / f'{name}.mbs').open('wb') as out:
+        out.write(struct.pack('>i', len(data)))
+        for a, rows in enumerate(data):
+            out.write(struct.pack('>i', len(rows)))
+            for r, row in enumerate(rows):
+                out.write(struct.pack('>i', len(row)))
+                out.write(bytes(CODES[cells.get((c, r, a), ' ')] for c in range(len(row))))
+    meta = json.loads((OUT / f'{name}.json').read_text())
+    counts = {}
+    for ch in cells.values():
+        counts[ch] = counts.get(ch, 0) + 1
+    meta['counts'] = {k: counts[k] for k in CODES if k in counts}
+    (OUT / f'{name}.json').write_text(json.dumps(meta, indent=1))
+    print(f'{name}: dropped {dropped} stray blocks')
 
 
 def rel(controller, point):
@@ -176,11 +233,16 @@ def lance(voxels):
     front = min(z for (x, y, z) in base)
     ctrl = min((p for p in base if p[2] == front), key=lambda p: (abs(p[0] - 82), p[1]))
     hatch_ring(cells, letters, ctrl, None)
+    # The source build has a few dozen stray blocks floating next to the hull (solid casings and others).
+    drop_islands(cells, ctrl)
     muzzle = max(z for (x, y, z) in cells if y >= 67)
     write('kinetic_orbital_lance', to_structurelib(cells, ctrl), letters, rel(ctrl, (81, 100, muzzle)))
 
 
 def main():
+    if sys.argv[1] == '--drop-islands':
+        clean_mbs(sys.argv[2])
+        return
     builds = pickle.load(open(sys.argv[1], 'rb'))
     stellar(builds['schematic_20061'])
     station(builds['litematic_27971'])

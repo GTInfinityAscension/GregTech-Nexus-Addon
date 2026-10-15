@@ -1,6 +1,5 @@
 package com.raishxn.gtna.common.machine.multiblock.originals;
 
-import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.fancy.TabsWidget;
 
 import com.lowdragmc.lowdraglib.gui.widget.ImageWidget;
@@ -32,14 +31,19 @@ public final class OriginalsGui {
 
     private OriginalsGui() {}
 
+    private static com.lowdragmc.lowdraglib.gui.texture.ResourceTexture texture(String name) {
+        return new com.lowdragmc.lowdraglib.gui.texture.ResourceTexture("gtna:textures/gui/originals/" + name + ".png");
+    }
+
     static void attach(TabsWidget tabs, String key, Plot.Painter painter) {
-        tabs.attachSubTab(new GodforgePage("gtna.originals.gui." + key, GuiTextures.BUTTON_POWER
-                .getSubTexture(0, 0, 1, 0.5), () -> page(key, painter)));
+        tabs.attachSubTab(new GodforgePage("gtna.originals.gui." + key, texture("icon_" + key),
+                () -> page(key, painter)));
     }
 
     private static Widget page(String key, Plot.Painter painter) {
         var page = new WidgetGroup(0, 0, W, H);
-        page.setBackground(GodforgeGui.BACKGROUND_STAR);
+        // The author's tab art (tools/design/ui_proposals, "clean" variants without baked text).
+        page.setBackground(texture("bg_" + key));
         page.addWidget(new ImageWidget(5, 4, W - 10, 10, GodforgeGui.text("gtna.originals.gui." + key, 0xFFAA00)));
         page.addWidget(new Plot(6, 18, W - 12, H - 24, painter));
         return page;
@@ -67,7 +71,8 @@ public final class OriginalsGui {
             super.drawInBackground(g, mouseX, mouseY, partialTicks);
             var p = getPosition();
             var s = getSize();
-            g.fill(p.x, p.y, p.x + s.width, p.y + s.height, 0x90000010);
+            // Opaque enough to hide the static guide lines of the background art under the live plot.
+            g.fill(p.x, p.y, p.x + s.width, p.y + s.height, 0xC8100820);
             painter.paint(g, p.x, p.y, s.width, s.height);
         }
     }

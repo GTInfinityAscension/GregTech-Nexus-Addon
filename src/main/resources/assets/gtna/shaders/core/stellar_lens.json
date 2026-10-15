@@ -8,6 +8,9 @@
   "samplers": [
     {
       "name": "Scene"
+    },
+    {
+      "name": "SceneDepth"
     }
   ],
   "uniforms": [
@@ -50,6 +53,14 @@
       "count": 1,
       "values": [
         0.02
+      ]
+    },
+    {
+      "name": "FrontDepth",
+      "type": "float",
+      "count": 1,
+      "values": [
+        1.0
       ]
     }
   ]

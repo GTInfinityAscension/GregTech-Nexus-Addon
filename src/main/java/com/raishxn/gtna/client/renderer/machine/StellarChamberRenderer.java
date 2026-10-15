@@ -37,7 +37,8 @@ public class StellarChamberRenderer extends DynamicRender<StellarChamberMachine,
     public static final DynamicRenderType<StellarChamberMachine, StellarChamberRenderer> TYPE = DynamicRenderManager
             .register(GTNACORE.id("stellar_chamber/render"), new DynamicRenderType<>(CODEC));
 
-    private static final float STAR_RADIUS = 5f, CORONA_RADIUS = 13f, BEAM_LENGTH = 90f, BEAM_WIDTH = 4f,
+    private static final float STAR_RADIUS = 5f, CORONA_RADIUS = 13f, BEAM_LENGTH = 90f, BEAM_WIDTH = 10f,
+            BEAM_BASE = 1.6f,
             DISK_RADIUS = 28f, LENS_RANGE = 160f;
     private static final float AXIS_TILT = 0.5f;
 
@@ -168,7 +169,9 @@ public class StellarChamberRenderer extends DynamicRender<StellarChamberMachine,
             RenderSystem.disableCull();
             shader.safeGetUniform("Mode").set(1f);
             drawMesh(sphere(), new Matrix4f(center).scale(CORONA_RADIUS), projection, shader);
-            Matrix4f axis = new Matrix4f(center).rotateZ(AXIS_TILT).rotateY(spin);
+            // Lighthouse: the magnetic axis is tilted off the spin axis and sweeps around it (spin first in the
+            // matrix, so the tilted beams turn about the vertical; turning a cone about its own axis looks still).
+            Matrix4f axis = new Matrix4f(center).rotateY(spin).rotateZ(AXIS_TILT);
             shader.safeGetUniform("Mode").set(2f);
             drawMesh(cone(), axis, projection, shader);
             drawMesh(cone(), new Matrix4f(axis).rotateX((float) Math.PI), projection, shader);
@@ -218,21 +221,23 @@ public class StellarChamberRenderer extends DynamicRender<StellarChamberMachine,
     @Nullable
     private static VertexBuffer cone, disk;
 
-    /** Open cone along +Y: apex at the star's surface (v = 1), wide end BEAM_LENGTH away (v = 0). */
+    /** Open truncated cone along +Y: narrow end at the star's surface (v = 1), wide end BEAM_LENGTH away (v = 0). */
     private static VertexBuffer cone() {
         if (cone != null) return cone;
-        BufferBuilder builder = new BufferBuilder(32 * 6 * 20);
-        builder.begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_TEX);
         int seg = 32;
+        BufferBuilder builder = new BufferBuilder(seg * 6 * 20);
+        builder.begin(VertexFormat.Mode.TRIANGLES, DefaultVertexFormat.POSITION_TEX);
         float y0 = STAR_RADIUS * 0.6f, y1 = y0 + BEAM_LENGTH;
         for (int i = 0; i < seg; i++) {
             double a0 = 2 * Math.PI * i / seg, a1 = 2 * Math.PI * (i + 1) / seg;
             float u0 = (float) i / seg, u1 = (float) (i + 1) / seg;
-            builder.vertex(0, y0, 0).uv(u0, 1).endVertex();
-            builder.vertex((float) Math.cos(a0) * BEAM_WIDTH, y1, (float) Math.sin(a0) * BEAM_WIDTH).uv(u0, 0)
-                    .endVertex();
-            builder.vertex((float) Math.cos(a1) * BEAM_WIDTH, y1, (float) Math.sin(a1) * BEAM_WIDTH).uv(u1, 0)
-                    .endVertex();
+            float c0 = (float) Math.cos(a0), s0 = (float) Math.sin(a0), c1 = (float) Math.cos(a1),
+                    s1 = (float) Math.sin(a1);
+            float[][] q = { { c0 * BEAM_BASE, y0, s0 * BEAM_BASE, u0, 1 },
+                    { c0 * BEAM_WIDTH, y1, s0 * BEAM_WIDTH, u0, 0 },
+                    { c1 * BEAM_WIDTH, y1, s1 * BEAM_WIDTH, u1, 0 }, { c1 * BEAM_BASE, y0, s1 * BEAM_BASE, u1, 1 } };
+            for (int k : new int[] { 0, 1, 2, 0, 2, 3 })
+                builder.vertex(q[k][0], q[k][1], q[k][2]).uv(q[k][3], q[k][4]).endVertex();
         }
         cone = upload(builder);
         return cone;
@@ -274,7 +279,7 @@ public class StellarChamberRenderer extends DynamicRender<StellarChamberMachine,
         var main = mc.getMainRenderTarget();
         if (sceneCopy == null || sceneCopy.width != main.width || sceneCopy.height != main.height) {
             if (sceneCopy != null) sceneCopy.destroyBuffers();
-            sceneCopy = new com.mojang.blaze3d.pipeline.TextureTarget(main.width, main.height, false,
+            sceneCopy = new com.mojang.blaze3d.pipeline.TextureTarget(main.width, main.height, true,
                     net.minecraft.client.Minecraft.ON_OSX);
         }
         float aspect = (float) main.width / main.height;
@@ -291,16 +296,24 @@ public class StellarChamberRenderer extends DynamicRender<StellarChamberMachine,
             var rim = new org.joml.Vector4f(lens[0], lens[1] + STAR_RADIUS, lens[2], 1).mul(projection);
             float starRadius = Math.abs(rim.y / rim.w * 0.5f + 0.5f - cy);
             if (radius > 1.5f) continue;
+            // Depth of the corona's near side: anything closer (the hull, a wall) hides the lens.
+            float toCamera = Math.max(0, dist - CORONA_RADIUS) / Math.max(dist, 1e-3f);
+            var front = new org.joml.Vector4f(lens[0] * toCamera, lens[1] * toCamera, lens[2] * toCamera, 1)
+                    .mul(projection);
+            float frontDepth = front.w <= 0 ? 0 : front.z / front.w * 0.5f + 0.5f;
             // Copy the frame, then draw it back through the lens.
             com.mojang.blaze3d.platform.GlStateManager._glBindFramebuffer(org.lwjgl.opengl.GL30.GL_READ_FRAMEBUFFER,
                     main.frameBufferId);
             com.mojang.blaze3d.platform.GlStateManager._glBindFramebuffer(org.lwjgl.opengl.GL30.GL_DRAW_FRAMEBUFFER,
                     sceneCopy.frameBufferId);
             com.mojang.blaze3d.platform.GlStateManager._glBlitFrameBuffer(0, 0, main.width, main.height, 0, 0,
-                    main.width, main.height, org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT,
+                    main.width, main.height,
+                    org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT | org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT,
                     org.lwjgl.opengl.GL11.GL_NEAREST);
             main.bindWrite(false);
             shader.setSampler("Scene", sceneCopy.getColorTextureId());
+            shader.setSampler("SceneDepth", sceneCopy.getDepthTextureId());
+            shader.safeGetUniform("FrontDepth").set(frontDepth);
             shader.safeGetUniform("Center").set(cx, cy);
             shader.safeGetUniform("Radius").set(radius);
             shader.safeGetUniform("StarRadius").set(starRadius);

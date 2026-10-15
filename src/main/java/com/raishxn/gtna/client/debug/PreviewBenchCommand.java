@@ -40,6 +40,50 @@ public final class PreviewBenchCommand {
         long t0 = System.nanoTime();
         com.raishxn.gtna.common.item.terminal.NexusAutoBuilder.autoBuild(player, controller, terminal);
         GTNACORE.LOGGER.info("[GTNA perf] dev build {} at {}: {} ms", id, pos, (System.nanoTime() - t0) / 1_000_000);
+        lastBuilt = pos;
+    }
+
+    private static net.minecraft.core.BlockPos lastBuilt;
+
+    /**
+     * Breaks one casing of the last dev-built multiblock as the player, then places {@code part} (a machine id) in the
+     * hole, timing both: the author's "break a casing to put the Seismic Probe" freeze.
+     */
+    private static void devSwap(net.minecraft.server.MinecraftServer server, java.util.UUID uuid,
+                                net.minecraft.resources.ResourceLocation part) {
+        var player = server.getPlayerList().getPlayer(uuid);
+        if (player == null || lastBuilt == null) return;
+        var level = player.serverLevel();
+        if (!(com.gregtechceu.gtceu.api.machine.MetaMachine.getMachine(level,
+                lastBuilt) instanceof com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiController controller))
+            return;
+        boolean formedBefore = controller.isFormed();
+        if (!formedBefore) {
+            controller.checkPatternWithLock();
+            var error = controller.getMultiblockState().error;
+            GTNACORE.LOGGER.info("[GTNA perf] dev swap: not formed at {}: {}",
+                    error == null ? null : error.getPos(), error == null ? null : error.getErrorInfo().getString());
+            return;
+        }
+        net.minecraft.core.BlockPos target = null;
+        for (var p : controller.getMultiblockState().getCache()) {
+            if (p.equals(lastBuilt) || level.getBlockEntity(p) != null) continue;
+            if (target == null || p.distSqr(lastBuilt) < target.distSqr(lastBuilt)) target = p;
+        }
+        if (target == null) return;
+        long t0 = System.nanoTime();
+        player.gameMode.destroyBlock(target);
+        long breakMs = (System.nanoTime() - t0) / 1_000_000;
+        var block = net.minecraftforge.registries.ForgeRegistries.BLOCKS.getValue(part);
+        t0 = System.nanoTime();
+        if (block != null) level.setBlock(target, block.defaultBlockState(), 3);
+        long placeMs = (System.nanoTime() - t0) / 1_000_000;
+        t0 = System.nanoTime();
+        boolean formed = controller instanceof com.gregtechceu.gtceu.api.machine.multiblock.MultiblockControllerMachine m &&
+                com.raishxn.gtna.api.machine.multiblock.GTNAStructureRefresh.refresh(m, true);
+        long checkMs = (System.nanoTime() - t0) / 1_000_000;
+        GTNACORE.LOGGER.info("[GTNA perf] dev swap at {}: break {} ms, place {} {} ms, re-check {} ms, formed {}",
+                target, breakMs, part, placeMs, checkMs, formed);
     }
 
     private static int starPreview(boolean hole) {
@@ -83,6 +127,39 @@ public final class PreviewBenchCommand {
                     server.execute(() -> devBuild(server, uuid, id));
                     return 1;
                 })));
+        // /gtna_dev_swap <machine id>: breaks a casing of the last dev build and places that machine in the hole.
+        event.getDispatcher().register(Commands.literal("gtna_dev_swap").then(Commands
+                .argument("id", com.mojang.brigadier.arguments.StringArgumentType.greedyString()).executes(ctx -> {
+                    var mc = net.minecraft.client.Minecraft.getInstance();
+                    var server = mc.getSingleplayerServer();
+                    if (server == null || mc.player == null) return 0;
+                    String raw = com.mojang.brigadier.arguments.StringArgumentType.getString(ctx, "id");
+                    var id = raw.contains(":") ? new net.minecraft.resources.ResourceLocation(raw) : GTNACORE.id(raw);
+                    var uuid = mc.player.getUUID();
+                    server.execute(() -> devSwap(server, uuid, id));
+                    return 1;
+                })));
+        // /gtna_dev_open: opens the controller UI of the last dev build.
+        event.getDispatcher().register(Commands.literal("gtna_dev_open").executes(ctx -> {
+            var mc = net.minecraft.client.Minecraft.getInstance();
+            var server = mc.getSingleplayerServer();
+            if (server == null || mc.player == null || lastBuilt == null) return 0;
+            var uuid = mc.player.getUUID();
+            server.execute(() -> {
+                var player = server.getPlayerList().getPlayer(uuid);
+                var machine = player == null ? null :
+                        com.gregtechceu.gtceu.api.machine.MetaMachine.getMachine(player.serverLevel(), lastBuilt);
+                if (machine != null)
+                    com.gregtechceu.gtceu.api.gui.factory.MachineUIFactory.INSTANCE.openUI(machine, player);
+            });
+            return 1;
+        }));
+        // /gtna_dev_info: opens or closes the info panel of the original multiblock screen that is open.
+        event.getDispatcher().register(Commands.literal("gtna_dev_info").executes(ctx -> {
+            var panel = com.raishxn.gtna.common.machine.multiblock.originals.OriginalsInfoPanel.last;
+            if (panel != null) net.minecraft.client.Minecraft.getInstance().tell(panel::toggle);
+            return 1;
+        }));
         // /gtna_preview_open <machine id>: opens the JEI page of the multiblock (what players see), for timing.
         event.getDispatcher().register(Commands.literal("gtna_preview_open").then(Commands
                 .argument("id", com.mojang.brigadier.arguments.StringArgumentType.word()).executes(ctx -> {

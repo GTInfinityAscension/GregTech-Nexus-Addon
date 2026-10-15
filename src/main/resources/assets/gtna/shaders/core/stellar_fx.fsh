@@ -37,8 +37,10 @@ void main() {
         float i = pow(1.0 - facing, 2.2);
         fragColor = vec4(Tint.rgb * 0.82 * i * (1.1 + 0.15 * sin(Time * 7.0)), i * Tint.a);
     } else if (mode == 2) {
-        float a = (1.0 - uv.y) * (0.55 + 0.45 * sin(uv.y * 40.0 - Time * 20.0));
-        fragColor = vec4(vec3(0.7, 0.85, 1.0) * a, a * 0.8 * Tint.a);
+        // Brightest at the pole, fading along the beam; soft at the silhouette so the thick cone reads as light.
+        float core = pow(facing, 0.8);
+        float a = mix(0.15, 1.0, uv.y) * core * (0.7 + 0.3 * sin(uv.y * 40.0 - Time * 20.0));
+        fragColor = vec4(mix(vec3(0.7, 0.85, 1.0), vec3(1.0), core * uv.y * 0.5) * a, a * 0.85 * Tint.a);
     } else if (mode == 3) {
         vec2 c = uv - 0.5;
         float r = length(c) * 2.0;

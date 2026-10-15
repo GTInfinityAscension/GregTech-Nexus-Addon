@@ -195,7 +195,7 @@ public class ColliderRingMachine extends OriginalMachine {
 
     @Override
     public void addDisplayText(List<Component> text) {
-        super.addDisplayText(text);
+        OriginalMachine.displayHeader(this, text, isCaptured());
         if (!isFormed()) return;
         String k = "gtna.machine.antimatter_collider_ring.";
         text.add(ComponentPanelWidget

@@ -10,9 +10,11 @@ import com.lowdragmc.lowdraglib.gui.widget.WidgetGroup;
 
 import com.raishxn.gtna.GTNACORE;
 import com.raishxn.gtna.client.renderer.GTNATextures;
+import com.raishxn.gtna.common.machine.multiblock.originals.OriginalsInfoPanel;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -62,6 +64,19 @@ public abstract class FancyMachineUIWidgetMixin {
         }
         int x = Math.max(0, target.getSize().width - GTNATextures.LOGO_SIZE - 2);
         int y = Math.max(0, target.getSize().height - GTNATextures.LOGO_SIZE - 2);
-        target.addWidget(GTNATextures.logo(x, y));
+        String id = machine.getDefinition().getId().getPath();
+        if (!OriginalsInfoPanel.has(id)) {
+            target.addWidget(GTNATextures.logo(x, y));
+            return;
+        }
+        // Originals: the logo opens the how-it-works panel, laid over the whole screen.
+        var self = (WidgetGroup) (Object) this;
+        if (gtna$infoPanel != null) self.removeWidget(gtna$infoPanel);
+        gtna$infoPanel = new OriginalsInfoPanel(id, self.getSize().width, self.getSize().height);
+        self.addWidget(gtna$infoPanel);
+        target.addWidget(OriginalsInfoPanel.logoButton(x, y, gtna$infoPanel));
     }
+
+    @Unique
+    private OriginalsInfoPanel gtna$infoPanel;
 }

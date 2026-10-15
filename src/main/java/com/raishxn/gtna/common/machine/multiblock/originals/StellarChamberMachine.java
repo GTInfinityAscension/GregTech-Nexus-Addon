@@ -32,6 +32,7 @@ import com.raishxn.gtna.api.capability.WirelessEnergyManager;
 import com.raishxn.gtna.api.machine.feature.stellar.StellarCore;
 import com.raishxn.gtna.common.data.GTNAMaterials;
 import com.raishxn.gtna.common.data.GTNAOriginals;
+import com.raishxn.gtna.common.item.terminal.NexusBuildCheckGuard;
 import com.raishxn.gtna.utils.datastructure.Int128;
 import org.jetbrains.annotations.Nullable;
 
@@ -235,8 +236,12 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
         var block = GTNAOriginals.DEGENERATE_MATTER_CORE.get();
         var positions = corePositions();
         for (BlockPos p : positions) if (!level.getBlockState(p).is(block)) return false;
-        for (BlockPos p : positions) level.setBlock(p, Blocks.AIR.defaultBlockState(), 2);
         captured = true;
+        // Each changed block would otherwise re-check the whole 93-block sphere.
+        NexusBuildCheckGuard.quiet(getMultiblockState(),
+                () -> {
+                    for (BlockPos p : positions) level.setBlock(p, Blocks.AIR.defaultBlockState(), 2);
+                });
         return true;
     }
 
@@ -245,8 +250,12 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
         var level = getLevel();
         if (!captured || level == null || level.isClientSide) return;
         var state = GTNAOriginals.DEGENERATE_MATTER_CORE.get().defaultBlockState();
-        for (BlockPos p : corePositions()) if (level.getBlockState(p).isAir()) level.setBlock(p, state, 2);
+        // Cleared first: a structure check fired by these block changes would call back in here (it used to recurse
+        // once per core block, a full sphere check each time: minutes of frozen server).
         captured = false;
+        NexusBuildCheckGuard.quiet(getMultiblockState(), () -> {
+            for (BlockPos p : corePositions()) if (level.getBlockState(p).isAir()) level.setBlock(p, state, 2);
+        });
     }
 
     // ------------------------------------------------------------------ feed and output
@@ -349,7 +358,7 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine {
 
     @Override
     public void addDisplayText(List<Component> text) {
-        super.addDisplayText(text);
+        OriginalMachine.displayHeader(this, text, running);
         if (!isFormed()) return;
         String key = "gtna.machine.stellar_containment_chamber.";
         text.add(Component.translatable(key + (captured ? "lit" : "dark")));

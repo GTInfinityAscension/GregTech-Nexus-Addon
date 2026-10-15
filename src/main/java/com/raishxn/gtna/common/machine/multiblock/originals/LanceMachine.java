@@ -74,6 +74,9 @@ public class LanceMachine extends OriginalMachine {
     /** CWU/t the computation hatch delivered last second. */
     @DescSynced
     private int cwu;
+    /** Whether a computation hatch is in the structure (it may still deliver nothing: no network behind it). */
+    @DescSynced
+    private boolean computationHatch;
 
     public LanceMachine(IMachineBlockEntity holder, Object... args) {
         super(holder, args);
@@ -121,9 +124,24 @@ public class LanceMachine extends OriginalMachine {
 
     /** CWU/t from the optical computation hatch; without one the aim is blind. */
     private int requestComputation() {
-        for (var part : getParts())
-            if (part instanceof IOpticalComputationProvider provider) return provider.requestCWUt(AIM_CWUT, false);
+        // The Computation Data Reception Hatch exposes its provider as a trait/capability, not as the part itself.
+        for (var part : getParts()) {
+            var provider = computationProvider(part);
+            if (provider == null) continue;
+            computationHatch = true;
+            return provider.requestCWUt(AIM_CWUT, false);
+        }
+        computationHatch = false;
         return 0;
+    }
+
+    @org.jetbrains.annotations.Nullable
+    private static IOpticalComputationProvider computationProvider(
+                                                                   com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart part) {
+        if (part instanceof IOpticalComputationProvider provider) return provider;
+        var cap = part.self().holder.self()
+                .getCapability(com.gregtechceu.gtceu.api.capability.forge.GTCapability.CAPABILITY_COMPUTATION_PROVIDER);
+        return cap.resolve().orElse(null);
     }
 
     /** The gun (everything above the turret ring) is in the controller and drawn slewing to the target. */
@@ -288,7 +306,7 @@ public class LanceMachine extends OriginalMachine {
 
     @Override
     public void addDisplayText(List<Component> text) {
-        super.addDisplayText(text);
+        OriginalMachine.displayHeader(this, text, isCaptured());
         if (!isFormed()) return;
         String k = "gtna.machine.kinetic_orbital_lance.";
         var targets = Component.translatable(k + "target");
@@ -307,7 +325,8 @@ public class LanceMachine extends OriginalMachine {
                 String.format("%.0f", core.linerWear * 100)));
         text.add(Component.translatable(k + "efficiency", String.format("%.2f", core.efficiency()),
                 String.format("%.2f", core.accuracy(target(), cwu))));
-        text.add(Component.translatable(k + (cwu > 0 ? "computation" : "computation_none"), cwu));
+        text.add(Component.translatable(k + (cwu > 0 ? "computation" : computationHatch ? "computation_starved" :
+                "computation_none"), cwu));
         text.add(Component.translatable(k + "capsules", capsules.size()));
         var bench = Component.translatable(k + "bench");
         for (var c : LanceCore.Component.values()) {

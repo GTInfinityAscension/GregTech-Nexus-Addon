@@ -170,7 +170,7 @@ public class RiftGateMachine extends OriginalMachine {
 
     @Override
     public void addDisplayText(List<Component> text) {
-        super.addDisplayText(text);
+        OriginalMachine.displayHeader(this, text, syncedOpen);
         if (!isFormed()) return;
         String k = "gtna.machine.dimensional_rift_gate.";
         if (!core.open) {

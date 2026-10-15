@@ -5,7 +5,7 @@ import com.lowdragmc.lowdraglib.gui.widget.SceneWidget;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 
-import com.raishxn.gtna.utils.BlockPosHashing;
+import com.raishxn.gtna.utils.BlockPosLongSet;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,7 +16,7 @@ import java.util.Set;
 
 /**
  * The scene's rendered-block set is filled with the whole structure and queried by the preview world's render filter
- * for every block lookup; a {@link BlockPosHashing} set keeps that fast for very large multiblocks.
+ * for every block lookup; a {@link BlockPosLongSet} keeps filling and lookups fast for very large multiblocks.
  */
 @Mixin(value = SceneWidget.class, remap = false)
 public abstract class SceneWidgetCoreMixin {
@@ -26,6 +26,6 @@ public abstract class SceneWidgetCoreMixin {
 
     @Inject(method = "createScene(Lnet/minecraft/world/level/Level;Z)V", at = @At("TAIL"))
     private void gtna$fastCore(Level world, boolean useFBOSceneRenderer, CallbackInfo ci) {
-        if (core != null) core = BlockPosHashing.newSet();
+        if (core != null) core = new BlockPosLongSet();
     }
 }

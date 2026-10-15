@@ -117,6 +117,32 @@ public final class GTNAOriginalsGameTests {
         helper.assertTrue(helper.getLevel().getBlockState(center).is(GTNAOriginals.DEGENERATE_MATTER_CORE.get()),
                 "switching off puts the core back");
         helper.assertTrue(machine.checkPatternWithLock(), "the full structure forms again");
+
+        // Breaking a casing while the star burns (the author's Seismic Probe swap) used to recurse: every core block
+        // put back re-checked the sphere and released again. It must invalidate once and give the core back.
+        machine.setWorkingEnabled(true);
+        tick(machine, "stellarTick", 1);
+        helper.assertTrue(machine.isStarLit(), "lit again before the break");
+        BlockPos casing = null;
+        for (BlockPos p : machine.getMultiblockState().getCache()) {
+            if (!p.equals(machine.getPos()) && helper.getLevel().getBlockEntity(p) == null &&
+                    !helper.getLevel().getBlockState(p).isAir()) {
+                casing = p;
+                break;
+            }
+        }
+        helper.assertTrue(casing != null, "a structure block to break");
+        // Formed by hand above, so register the block-change mapping GTCEu adds when a structure forms in play.
+        com.gregtechceu.gtceu.api.pattern.MultiblockWorldSavedData.getOrCreate(helper.getLevel())
+                .addMapping(machine.getMultiblockState());
+        long b0 = System.nanoTime();
+        helper.getLevel().destroyBlock(casing, false);
+        long breakMs = (System.nanoTime() - b0) / 1_000_000;
+        GTNACORE.LOGGER.info("[GTNA perf] stellar_containment_chamber casing broken while lit: {} ms", breakMs);
+        helper.assertTrue(!machine.isFormed(), "breaking a casing invalidates the chamber");
+        helper.assertTrue(helper.getLevel().getBlockState(center).is(GTNAOriginals.DEGENERATE_MATTER_CORE.get()),
+                "breaking a casing puts the core back");
+        helper.assertTrue(breakMs < 10_000, "breaking a casing must not freeze the server: " + breakMs + " ms");
         helper.succeed();
     }
 

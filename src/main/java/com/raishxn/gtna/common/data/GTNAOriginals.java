@@ -195,6 +195,8 @@ public final class GTNAOriginals {
                 .tier(tier)
                 .rotationState(RotationState.ALL)
                 .abilities(ability)
+                // Without is_formed in the render state GTCEu never swaps the hull for the controller's casing.
+                .modelProperty(com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.IS_FORMED, false)
                 .model(com.gregtechceu.gtceu.common.data.models.GTMachineModels
                         .createColorOverlayTieredHullMachineModel(GTNACORE.id("block/overlay/machine/" + id), null,
                                 null))

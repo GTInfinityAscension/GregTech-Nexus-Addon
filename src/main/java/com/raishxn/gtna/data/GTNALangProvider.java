@@ -1677,7 +1677,130 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.originals.gui.seismograph", "Rift Seismograph");
         add("gtna.originals.gui.orbital_map", "Orbital Map");
         add("gtna.machine.kinetic_orbital_lance.computation", "Aim computation: §b%s CWU/t");
+        add("gtna.originals.info.title", "Information");
+        add("gtna.originals.info.toc", "Contents");
+        add("gtna.originals.info.close", "§c[Close]");
+        add("gtna.originals.info.hint", "Click for how this machine works");
+        add("gtna.originals.info.stellar_containment_chamber.overview", "Overview");
+        add("gtna.originals.info.stellar_containment_chamber.overview.1",
+                "Holds a neutron star in containment bands and turns its spin into EU for the owner's Nexus wireless network. There are no recipes: the star has a mass, a spin period and a crust, and everything you do changes them.");
+        add("gtna.originals.info.stellar_containment_chamber.build", "Structure and hatches");
+        add("gtna.originals.info.stellar_containment_chamber.build.1",
+                "93×93×93 sphere. Hatches replace the Radiant Naquadah casings in the 5×5 ring around the controller: up to 8 Input Hatches, 4 Output Buses, 4 Mass Injectors and 1 Seismic Probe.");
+        add("gtna.originals.info.stellar_containment_chamber.build.2",
+                "The Degenerate Matter Core (radius 7) at the centre must be complete. When the bands get power the core is taken into the star; it comes back as blocks when the chamber stops or the structure breaks.");
+        add("gtna.originals.info.stellar_containment_chamber.power", "Power and extraction");
+        add("gtna.originals.info.stellar_containment_chamber.power.1",
+                "The bands draw their upkeep from the owner's Nexus network every second. Without it the star stays dark, and a lit star takes containment damage.");
+        add("gtna.originals.info.stellar_containment_chamber.power.2", "Band upkeep = 2^(40 + 2·tier) EU/t");
+        add("gtna.originals.info.stellar_containment_chamber.power.3",
+                "Set the extraction with [-] and [+] as 2^n EU/t (n from 40 to 62). The energy goes to the Nexus network.");
+        add("gtna.originals.info.stellar_containment_chamber.power.4",
+                "Cap = 2^(55 + tier) EU/t (half until the star reaches the millisecond region); 2^62 as a black hole");
+        add("gtna.originals.info.stellar_containment_chamber.feeding", "Feeding and outputs");
+        add("gtna.originals.info.stellar_containment_chamber.feeding.1",
+                "Feed star matter through Input Hatches (liquid, molten, gas or plasma) or as dusts and ingots through a Mass Injector (144 mB each). Feeding adds mass and spins the star up, like a recycled pulsar; 15% of the mass leaves as binding energy, paid at once as EU.");
+        add("gtna.originals.info.stellar_containment_chamber.feeding.2",
+                "Solar masses per mB: constrained star matter 1e-7, white dwarf matter 1e-8, raw star matter 1e-9, neutronium 1e-10");
+        add("gtna.originals.info.stellar_containment_chamber.feeding.3",
+                "Outputs in the Output Buses: neutronium dust from crust mining (grows with extraction) and white dwarf matter dust from starquakes.");
+        add("gtna.originals.info.stellar_containment_chamber.quakes", "Starquakes and bands");
+        add("gtna.originals.info.stellar_containment_chamber.quakes.1",
+                "Changing the spin builds stress; at 1 a starquake happens. Only a Seismic Probe decodes quakes (Seismogram tab). Decoded quakes raise the band tier: micro → tier 2, Vela (fast feeding) → tier 3, Vela plus a record spin (< 1.4 ms) → tier 4.");
+        add("gtna.originals.info.stellar_containment_chamber.quakes.2",
+                "The Magnetar button inverts the band field. After 10 minutes the star becomes a magnetar and can give antiquakes.");
+        add("gtna.originals.info.stellar_containment_chamber.quakes.3",
+                "A quake bigger than the band capacity, or any quake with unpowered bands, damages containment by 10%. At 100% the star loses 10% of its mass.");
+        add("gtna.originals.info.stellar_containment_chamber.limits", "Limits");
+        add("gtna.originals.info.stellar_containment_chamber.limits.1",
+                "Above the TOV limit (2.2 M☉) the star collapses into a black hole, for good. Energy then comes from the ergosphere: the faster it spun when it collapsed, the more there is.");
+        add("gtna.originals.info.stellar_containment_chamber.limits.2",
+                "Kepler period = 2π·sqrt(R³ / (G·M)); spinning faster tears the star apart");
+        add("gtna.originals.info.stellar_containment_chamber.limits.3",
+                "Side tabs: Mass–Period diagram (the star's track with the TOV and Kepler limits) and Seismogram.");
+        add("gtna.originals.info.antimatter_collider_ring.overview", "Overview");
+        add("gtna.originals.info.antimatter_collider_ring.overview.1",
+                "Accelerates two counter-rotating beams around a 3 km ring and collides them. Production runs make exotic particles and antiprotons; physics runs gather luminosity to discover particles and complete committee proposals.");
+        add("gtna.originals.info.antimatter_collider_ring.build", "Structure and hatches");
+        add("gtna.originals.info.antimatter_collider_ring.build.1",
+                "Hatches replace casings in the 5×5 ring around the controller: Input Hatches for liquid helium, Output Buses for particles and antiproton cells, a Collision Detector Hatch (needed for physics runs) and a Beam Dump (halves the quench recovery).");
+        add("gtna.originals.info.antimatter_collider_ring.build.2",
+                "While running, the ring and gyro blocks are taken into the controller and drawn moving; they come back when the machine stops.");
+        add("gtna.originals.info.antimatter_collider_ring.power", "Power and cooling");
+        add("gtna.originals.info.antimatter_collider_ring.power.1",
+                "Magnets = 2^(33 + magnet tier) EU/t; Penning traps = 2^(20 + trap tier) EU/t, both from the Nexus network");
+        add("gtna.originals.info.antimatter_collider_ring.power.2",
+                "Liquid helium per second = 0.5·2^tier L (×0.6 after cryogenic Penning traps)");
+        add("gtna.originals.info.antimatter_collider_ring.power.3",
+                "Less helium than the demand quenches the magnets: the beam stops for 60·(tier + 1) seconds.");
+        add("gtna.originals.info.antimatter_collider_ring.modes", "Modes");
+        add("gtna.originals.info.antimatter_collider_ring.modes.1",
+                "Click the mode line to switch. Production: particles with 10% yield before evidence, 40% at 3σ and 100% after the 5σ discovery; antiprotons fill the traps and leave as Antiproton Penning Cells (1e11 each).");
+        add("gtna.originals.info.antimatter_collider_ring.modes.2",
+                "Physics: the integrated luminosity raises each particle's significance and advances the active proposal.");
+        add("gtna.originals.info.antimatter_collider_ring.modes.3",
+                "Beam energy p = 0.3·B·ρ (B magnet field, ρ = 3 km); a particle needs E_cm above its threshold");
+        add("gtna.originals.info.antimatter_collider_ring.proposals", "Committee proposals");
+        add("gtna.originals.info.antimatter_collider_ring.proposals.1",
+                "In order: Nb3Sn magnet, vertex detector, stochastic cooling, cryogenic Penning traps, REBCO magnet, lepton collider, heavy ions, neutronium magnet, beyond the Standard Model. Each one unlocks stronger magnets, traps or modes.");
+        add("gtna.originals.info.antimatter_collider_ring.proposals.2",
+                "If the trap upkeep is not paid the stored antiprotons annihilate and damage the ring. Side tabs: Standard Model board and Committee.");
+        add("gtna.originals.info.dimensional_rift_gate.overview", "Overview");
+        add("gtna.originals.info.dimensional_rift_gate.overview.1",
+                "Opens a rift to a seeded dimension and pulls resources from it. Tune frequency, phase and amplitude towards the seed's hidden optimum to raise the resonance.");
+        add("gtna.originals.info.dimensional_rift_gate.build", "Structure and hatches");
+        add("gtna.originals.info.dimensional_rift_gate.build.1",
+                "Hatches in the 5×5 ring around the controller: an Input Hatch for SpaceTime, an Input Bus for Rift Probes and Depth Anchors, an Output Bus, and a Rift Tuning Hatch (a redstone signal 0–15 sets the amplitude to 0–100%).");
+        add("gtna.originals.info.dimensional_rift_gate.power", "Power and stability");
+        add("gtna.originals.info.dimensional_rift_gate.power.1",
+                "Field = 2^36 EU/t from the Nexus network while open; without it the rift collapses");
+        add("gtna.originals.info.dimensional_rift_gate.power.2",
+                "SpaceTime fluid keeps it stable: each litre adds 2 stability. Losses grow with low resonance and with depth.");
+        add("gtna.originals.info.dimensional_rift_gate.power.3",
+                "Upkeep (L/s) = (λ·(1 − R)·(1 + D/10) + 0.4·(8 − pylons)) / 2");
+        add("gtna.originals.info.dimensional_rift_gate.tuning", "Tuning");
+        add("gtna.originals.info.dimensional_rift_gate.tuning.1",
+                "Click Open for a rift with a random seed. Tune with [--] [-] [+] [++] (±10 / ±1). Each Rift Probe consumed narrows the tolerances by 20%.");
+        add("gtna.originals.info.dimensional_rift_gate.tuning.2", "Resonance R = exp(−(Δf/σf)² − (Δφ/σφ)² − (ΔA/σA)²)");
+        add("gtna.originals.info.dimensional_rift_gate.tuning.3",
+                "Output per second ∝ R²·D^1.5·S/100, as dusts of the biome's materials");
+        add("gtna.originals.info.dimensional_rift_gate.tuning.4",
+                "A Depth Anchor deepens the rift by one, up to the maximum depth. Relic and Void biomes only yield from depth 20 and 40.");
+        add("gtna.originals.info.dimensional_rift_gate.harmonics", "Harmonics");
+        add("gtna.originals.info.dimensional_rift_gate.harmonics.1",
+                "Holding R ≥ 0.9 for 30 s records the seed's harmonic. Click recorded harmonics to load up to 5 in the chord: consonant chords (octave, fifth) are stable; dissonant chords (tritone, minor second) dig deeper but cost more SpaceTime.");
+        add("gtna.originals.info.dimensional_rift_gate.harmonics.2",
+                "Holding R ≥ 0.98 for a minute can give a Rift Singularity. Stability at 0 collapses the rift; R under 0.2 for 10 s inverts it (−10 stability). Side tabs: Seismograph and Atlas.");
+        add("gtna.originals.info.kinetic_orbital_lance.overview", "Overview");
+        add("gtna.originals.info.kinetic_orbital_lance.overview.1",
+                "Fires projectiles from a capacitor bank at moons and asteroids and recovers the fragments in return capsules, which land as dusts of the body's materials.");
+        add("gtna.originals.info.kinetic_orbital_lance.build", "Structure and hatches");
+        add("gtna.originals.info.kinetic_orbital_lance.build.1",
+                "Hatches in the 5×5 ring around the controller: Input Bus (projectile ingots), Output Bus (dusts), Computation Data Reception Hatch (aim), Barrel Liner Hatch (spare liners) and Target Cartridge Hatch.");
+        add("gtna.originals.info.kinetic_orbital_lance.build.2",
+                "While formed, the gun (everything above the turret ring) is taken into the controller and drawn slewing to the target.");
+        add("gtna.originals.info.kinetic_orbital_lance.power", "Bank and firing");
+        add("gtna.originals.info.kinetic_orbital_lance.power.1",
+                "The bank charges from the Nexus network at up to 2^36 EU/t. With auto-fire on, a shot fires the whole bank as soon as it is full.");
+        add("gtna.originals.info.kinetic_orbital_lance.power.2", "Bank = 4e12·2^(rings − 1) EU");
+        add("gtna.originals.info.kinetic_orbital_lance.power.3",
+                "Projectiles: ingots of tungsten, tungsten carbide, osmiridium, neutronium or white dwarf matter. Heavier projectiles are slower but carry more.");
+        add("gtna.originals.info.kinetic_orbital_lance.power.4",
+                "v = sqrt(2·η·E / m); recovered mass ∝ 0.2·η·E / hardness × capsule × accuracy");
+        add("gtna.originals.info.kinetic_orbital_lance.targets", "Targets and aim");
+        add("gtna.originals.info.kinetic_orbital_lance.targets.1",
+                "Start with the Moon. A body becomes targetable once its parents are surveyed to 100% (recover their characteristic mass). Cartridges in the Target Cartridge Hatch pick the target and take turns shot by shot.");
+        add("gtna.originals.info.kinetic_orbital_lance.targets.2",
+                "The reception hatch must be linked by optical cable to a transmission hatch of a working computation network (e.g. Network Switch fed by a Supercomputer). More CWU/t tightens the aim; it matters for far bodies.");
+        add("gtna.originals.info.kinetic_orbital_lance.bench", "Barrel bench and wear");
+        add("gtna.originals.info.kinetic_orbital_lance.bench.1",
+                "Click components on the bench line: rails raise efficiency (up to 8, shift-click removes), cooling raises heat capacity, sensors improve aim, capsules improve recovery, the salvo splitter fires several projectiles. Mass and heat must stay within the budget; surveying bodies unlocks components.");
+        add("gtna.originals.info.kinetic_orbital_lance.bench.2",
+                "Each shot wears the liner and heats the barrel. A worn liner (100%) or a barrel over 2500 K misfires. Spare liners (tungsten carbide or neutronium plates) in the Barrel Liner Hatch are swapped in automatically. Side tabs: Orbital map and Bench.");
+        add("gtna.machine.original.nexus_power", "Powered by the owner's Nexus wireless network");
         add("gtna.machine.kinetic_orbital_lance.computation_none", "§cNo optical computation hatch: the aim is blind");
+        add("gtna.machine.kinetic_orbital_lance.computation_starved",
+                "§eComputation hatch receives 0 CWU/t: link it to a transmitter of a running Network Switch/Supercomputer");
         add("gtna.machine.kinetic_orbital_lance.capsules", "Capsules in flight: §e%s");
         add("gtna.machine.kinetic_orbital_lance.bench", "Bench:");
         add("gtna.machine.kinetic_orbital_lance.bench_ok", "§aBench within budget");

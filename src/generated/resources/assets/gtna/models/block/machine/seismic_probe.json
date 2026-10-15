@@ -8,7 +8,18 @@
     "side"
   ],
   "variants": {
-    "": {
+    "is_formed=false": {
+      "model": {
+        "parent": "gtceu:block/machine/template/part/hatch_machine",
+        "textures": {
+          "bottom": "gtceu:block/casings/voltage/uxv/bottom",
+          "overlay": "gtna:block/overlay/machine/seismic_probe",
+          "side": "gtceu:block/casings/voltage/uxv/side",
+          "top": "gtceu:block/casings/voltage/uxv/top"
+        }
+      }
+    },
+    "is_formed=true": {
       "model": {
         "parent": "gtceu:block/machine/template/part/hatch_machine",
         "textures": {

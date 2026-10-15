@@ -7764,3 +7764,16 @@ Prioridade máxima: desempenho (item 6). Ordem sugerida: 6, 1, 3, 2, 5, 8, 4, 7.
 7. Escrever para o autor um roteiro de teste por multibloco: o que montar, que hatches/fluidos/itens/energia colocar, que comandos/cliques usar e o que deve acontecer.
 8. Render da Câmara Estelar: a lente não deve aparecer através dos blocos (usar profundidade: só distorcer onde a estrela é visível / depth test contra a cena); feixes do pulsar mais grossos e girando como na prévia 3D.
 Também pendente da avaliação das propostas de UI (tools/design/ui_proposals, arquivos do autor, não commitados por mim): integrar fundos/ícones/botões/barras como abas GUI após o autor decidir se a UI segue a mecânica atual ou o contrário (ver resposta de 2026-10-15).
+
+## G-0266 — 2026-10-15 — Pendências do teste da Lança (G-0265): congelamento da Câmara, computação, hatches, info
+- Congelamento ao quebrar bloco da Câmara Estelar (log do autor: servidor 300 s parado): `releaseCore` recursivo — cada bloco do núcleo recolocado re-checava a esfera, falhava e chamava `onStructureInvalid` → `releaseCore` de novo. Agora `captured=false` antes e captura/retorno em `NexusBuildCheckGuard.quiet`. Medido no cliente: quebrar um casing 372 ms. Gametest novo no `stellarChamberFormsLightsAndReleasesTheCore` (quebra com a estrela acesa, < 10 s, núcleo volta).
+- Prévias: `SceneWidget.core` agora `BlockPosLongSet` (LongOpenHashSet + lista, hash por identidade: o LDLib usa o conjunto como chave de mapa e fazia hash de todas as posições). Lança 1014→744 ms, Colisor 606→460, Câmara 167→113, Fenda 147→99. Entrada no mundo ainda trava ~40 s montando as prévias JEI de todos os multiblocos do GTCEu (pendente).
+- Lança: provedor de computação procurado pela capability (o Computation Data Reception Hatch expõe um trait); mensagem nova quando há hatch mas 0 CWU/t.
+- 4 originais: cabeçalho próprio (status + "alimentado pela rede Nexus") no lugar de "Max Recipe Tier".
+- Hatches próprios: `modelProperty(IS_FORMED)` — sem isso o GTCEu nunca troca o casco pela textura do casing.
+- Lança: `convert_originals.py --drop-islands` (e `drop_islands` no fluxo normal); 65 blocos soltos removidos do .mbs (1 componente).
+- Render da Câmara: lente com teste de profundidade (cópia do depth; nada na frente da coroa é distorcido); feixes estilo farol (eixo inclinado varrendo em torno do eixo de rotação), mais largos (tronco de cone 1,6→10).
+- Painel de informação (`OriginalsInfoPanel`) aberto pelo logo GTNA nos 4 originais, estilo Godforge (sumário clicável, títulos roxos, texto dourado, fórmulas verdes); en/pt_br/zh_cn.
+- UIs do autor integradas: fundos `*_clean` e ícones 32px como fundo/ícone das abas gráficas (`textures/gui/originals/`). Fundos `_wide` têm dados de mockup gravados, não usados; botões/barras ainda sem uso (a tela principal é texto).
+- Dev: `/gtna_dev_swap <id>`, `/gtna_dev_open`, `/gtna_dev_info`.
+- Pendente: o `/gtna_dev_build` da Lança no mundo do autor não formou (gametest forma); a Câmara de dev não acendeu em 20 s no cliente.
