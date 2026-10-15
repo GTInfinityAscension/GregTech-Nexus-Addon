@@ -289,7 +289,14 @@ public final class GTNAOriginals {
             // Moving parts are taken into the controller while it runs, so their place may be air.
             else if (tag != null) pattern.where(letter, OriginalLayout.register(block(id).or(air()),
                     new OriginalLayout.Matcher(letter, OriginalLayout.Kind.BLOCK_OR_AIR, blockOf(id), tag)));
-            else if ("gtna:degenerate_matter_core".equals(id))
+            // The hatch casing accepts hatches everywhere in the structure, not only in the ring by the controller.
+            // Previews and the terminal still put them in the ring: GTCEu fills preview hatches in walk order,
+            // which would start at the far end of the structure.
+            else if (tag == null && id.equals(hatchCasing)) {
+                var anywhere = hatches.apply(block(hatchCasing));
+                for (var limited : anywhere.limited) limited.previewCount = 0;
+                pattern.where(letter, OriginalLayout.register(anywhere, hatchCasingAnywhere(letter, hatchCasing)));
+            } else if ("gtna:degenerate_matter_core".equals(id))
                 pattern.where(letter, OriginalLayout.register(blocks(DEGENERATE_MATTER_CORE.get()).or(air()),
                         new OriginalLayout.Matcher(letter, OriginalLayout.Kind.BLOCK_OR_AIR,
                                 DEGENERATE_MATTER_CORE.get(), null)));
@@ -308,6 +315,10 @@ public final class GTNAOriginals {
         } catch (java.io.IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static OriginalLayout.Matcher hatchCasingAnywhere(char letter, String casing) {
+        return new OriginalLayout.Matcher(letter, OriginalLayout.Kind.HATCH, blockOf(casing), null);
     }
 
     private static net.minecraft.world.level.block.Block blockOf(String id) {
