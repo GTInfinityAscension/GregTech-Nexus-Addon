@@ -48,6 +48,14 @@ public class ClientProxy extends CommonProxy {
         var ignoredForgeOfGods = com.raishxn.gtna.client.renderer.machine.ForgeOfGodsRenderer.TYPE;
         MinecraftForge.EVENT_BUS.addListener(
                 com.raishxn.gtna.client.renderer.machine.ForgeOfGodsRenderer::onRenderLevelStage);
+        var ignoredStellar = com.raishxn.gtna.client.renderer.machine.StellarChamberRenderer.TYPE;
+        var ignoredCollider = com.raishxn.gtna.client.renderer.machine.OriginalsRenderer.ColliderRender.TYPE;
+        var ignoredRift = com.raishxn.gtna.client.renderer.machine.OriginalsRenderer.RiftRender.TYPE;
+        var ignoredLance = com.raishxn.gtna.client.renderer.machine.OriginalsRenderer.LanceRender.TYPE;
+        MinecraftForge.EVENT_BUS.addListener(
+                com.raishxn.gtna.client.renderer.machine.OriginalsRenderer::onRenderLevelStage);
+        MinecraftForge.EVENT_BUS.addListener(
+                com.raishxn.gtna.client.renderer.machine.StellarChamberRenderer::onRenderLevelStage);
         net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get().getModEventBus()
                 .addListener((net.minecraftforge.client.event.RegisterShadersEvent event) -> {
                     try {

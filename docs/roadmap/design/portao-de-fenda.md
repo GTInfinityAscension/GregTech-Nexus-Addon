@@ -154,6 +154,22 @@ Grupos de estrelas ligadas formam **constelações**. Completar uma constelaçã
 
 A sintonia aceita valores por cover de dados ou computador (OpenComputers/CC). Uma rotina pode varrer f e φ procurando o máximo de R, como os scripts de automação da Godforge.
 
+## Estado da implementação
+
+**No código:**
+
+- Estrutura de 126×126×54 convertida da sua construção
+- Sintonia, estabilidade, profundidade, harmônicos, partitura e atlas em `RiftCore` (teste `RiftCoreTest`)
+- Botões de sintonia na GUI; SpaceTime estabiliza; sondas e âncoras pelos barramentos; saída por bioma
+- Render do horizonte de eventos com a cor do bioma; gametest de formação e estabilidade
+
+**Falta:**
+
+- Atlas de constelações desenhado na GUI
+- Núcleos de pilone nos espinhos
+- Uso da Singularidade de Fenda
+- Receita do controlador
+
 ## Telas (mockup)
 
 ![rift_score](mockups/gt/rift_score.png){ loading=lazy }

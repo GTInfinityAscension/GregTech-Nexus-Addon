@@ -44,7 +44,7 @@ Laser blades turn rods. Sawdust is now a hologram. Reshapes matter with photon b
 | High Energy Laser Emitter | 8 |
 | Amprosium Gearbox | 4 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | High Energy Laser Lathe | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |

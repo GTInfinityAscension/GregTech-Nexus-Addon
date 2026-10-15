@@ -46,6 +46,6 @@ Toda essa luz do sol ia ser desperdiçada mesmo. Coleta a energia do enxame de D
 | Computation Data Reception Hatch | 1 |
 | Estação Receptora da Esfera de Dyson | 1 |
 | ULV Input Hatch | 1 |
-| IV 256A Laser Source Hatch | 1 |
+| IV 4,096A Laser Source Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

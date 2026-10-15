@@ -47,7 +47,7 @@ Até fótons e ondas sonoras cabem numa lata agora. Injeta fluxos de partículas
 | ULV Output Bus | 1 |
 | Envasadora Matricial por Fluxo de Partículas | 1 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

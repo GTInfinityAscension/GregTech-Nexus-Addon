@@ -1,0 +1,59 @@
+{
+ "letters": {
+  "C": "gtceu:clean_machine_casing",
+  "A": "gtceu:tungstensteel_pipe_casing",
+  "J": "gtna:radiant_naquadah_alloy_casing",
+  "G": "gtceu:inert_machine_casing",
+  "F": "gtceu:clean_machine_casing#gun",
+  "E": "gtceu:tungstensteel_pipe_casing#gun",
+  "K": "gtceu:inert_machine_casing#gun",
+  "L": "gtna:radiant_naquadah_alloy_casing#gun",
+  "I": "gtna:molecular_casing#gun",
+  "H": "gtceu:heat_vent#gun",
+  "O": "gtna:plasma_heater_casing#gun",
+  "N": "gtna:dyson_deployment_core#gun",
+  "M": "gtceu:solid_machine_casing#gun",
+  "P": "gtna:molecular_casing",
+  "S": "gtceu:heat_vent",
+  "Q": "gtna:plasma_heater_casing",
+  "R": "gtna:dyson_deployment_core",
+  "V": "gtna:neutronium_stable_casing",
+  "X": "gtceu:solid_machine_casing",
+  "1": "gtna:neutronium_stable_casing#gun",
+  "B": "hatch"
+ },
+ "counts": {
+  "C": 59442,
+  "B": 25,
+  "A": 2345,
+  "J": 8958,
+  "G": 854,
+  "F": 42113,
+  "E": 5618,
+  "K": 6190,
+  "L": 43189,
+  "I": 375,
+  "H": 673,
+  "O": 151,
+  "N": 793,
+  "M": 37,
+  "P": 43,
+  "S": 86,
+  "Q": 21,
+  "R": 10,
+  "V": 615,
+  "X": 12,
+  "1": 5,
+  "~": 1
+ },
+ "center": [
+  -1,
+  98,
+  195
+ ],
+ "size": [
+  242,
+  130,
+  142
+ ]
+}

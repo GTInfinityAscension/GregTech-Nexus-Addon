@@ -49,6 +49,6 @@ Cheira a ozônio. Fresco, mas perigoso. Arcos de plasma presos por campos magné
 | ULV Input Bus | 1 |
 | ULV Output Bus | 1 |
 | ULV Energy Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

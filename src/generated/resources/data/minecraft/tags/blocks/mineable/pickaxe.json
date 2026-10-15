@@ -288,6 +288,7 @@
     "gtna:harmonic_phonon_transmission_conduit",
     "gtna:spatially_transcendent_gravitational_lens",
     "gtna:bec_conduit",
-    "gtna:bec_conduit_casing"
+    "gtna:bec_conduit_casing",
+    "gtna:degenerate_matter_core"
   ]
 }

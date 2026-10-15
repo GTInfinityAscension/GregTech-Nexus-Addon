@@ -42,7 +42,7 @@ A linha inteira de processamento de minério, numa caixa. Processamento de miné
 | Tungstensteel Gearbox Casing | 16 |
 | ULV Output Bus | 1 |
 | Elite Parallel Control Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Processador de Minério Integrado | 1 |
 | ULV Energy Hatch | 1 |
 | Muffler Hatch ZPM | 1 |

@@ -38,7 +38,7 @@ Seis faces, seis mudanças de fase. Um cubo mágico da matéria. Derrete sólido
 | High Power Casing | 38 |
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Cubo de Mudança de Fase | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |

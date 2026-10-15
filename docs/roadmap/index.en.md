@@ -1,6 +1,6 @@
 # Roadmap
 
-GTNA currently registers **164 multiblocks**. This page shows the progress of the requested ports and of the original multiblocks. It is generated from the project working documents, so it follows the code.
+GTNA currently registers **168 multiblocks**. This page shows the progress of the requested ports and of the original multiblocks. It is generated from the project working documents, so it follows the code.
 
 ## Overall port progress
 
@@ -23,10 +23,10 @@ Machines made for GTNA, with no equivalent in another mod. Each has a spec sheet
 | Machine | Tier | Status | Spec |
 |---|---|---|---|
 | Pressurized Water Reactor | IV | :material-progress-wrench: design done, implementation starting | [open](design/reator-pwr.md) |
-| Kinetic Orbital Lance | UEV | :material-progress-wrench: in implementation | [open](design/lanca-cinetica-orbital.md) |
-| Dimensional Rift Gate | UIV | :material-progress-wrench: in implementation | [open](design/portao-de-fenda.md) |
-| Antimatter Collider Ring | UIV | :material-progress-wrench: in implementation | [open](design/anel-colisor.md) |
-| Stellar Containment Chamber | MAX | :material-progress-wrench: in implementation | [open](design/camara-estelar.md) |
+| Kinetic Orbital Lance | UEV | :material-progress-wrench: in game, under test (WIP) | [open](design/lanca-cinetica-orbital.md) |
+| Dimensional Rift Gate | UIV | :material-progress-wrench: in game, under test (WIP) | [open](design/portao-de-fenda.md) |
+| Antimatter Collider Ring | UIV | :material-progress-wrench: in game, under test (WIP) | [open](design/anel-colisor.md) |
+| Stellar Containment Chamber | MAX | :material-progress-wrench: in game, under test (WIP) | [open](design/camara-estelar.md) |
 
 ??? note "3.1 Fase A: necessário e mecânicas do endgame existente — 3/4"
     | Machine | Source | Status |

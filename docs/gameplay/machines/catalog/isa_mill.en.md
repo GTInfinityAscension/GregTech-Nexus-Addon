@@ -37,7 +37,7 @@ Despite its green paint, it is not eco-friendly at all. Wet-grinds ores and raw 
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Muffler Hatch IV | 1 |
 | ISA Mill | 1 |
 | Grinding Ball Hatch | 1 |

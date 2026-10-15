@@ -47,7 +47,7 @@ Acelera moedas a Mach 3 com facilidade! Molda metal com força eletromagnética 
 | Naquadria Frame | 8 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | Prensa Magnética Supercondutora | 1 |
 

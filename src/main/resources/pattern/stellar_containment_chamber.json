@@ -1,0 +1,27 @@
+{
+ "letters": {
+  "C": "gtna:radiant_naquadah_alloy_casing",
+  "N": "gtna:neutronium_stable_casing",
+  "G": "gtna:plasma_field_glass",
+  "B": "hatch",
+  "D": "gtna:degenerate_matter_core"
+ },
+ "counts": {
+  "C": 166,
+  "B": 36,
+  "G": 15773,
+  "D": 1419,
+  "N": 4428,
+  "~": 1
+ },
+ "center": [
+  0,
+  0,
+  46
+ ],
+ "size": [
+  93,
+  93,
+  93
+ ]
+}

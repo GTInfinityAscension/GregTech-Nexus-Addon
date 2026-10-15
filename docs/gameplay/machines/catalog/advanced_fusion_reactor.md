@@ -43,7 +43,7 @@ Ele simula a luz eterna. energia aumentam a capacidade de calor e um módulo de 
 | Tungsten Frame | 164 |
 | Fusion Glass | 80 |
 | Electrolytic Cell | 60 |
-| IV 1,024A Laser Target Hatch | 16 |
+| IV 256A Laser Target Hatch | 16 |
 | ULV Input Hatch | 16 |
 | ULV Output Hatch | 16 |
 | Reator de Fusão Avançado MK-I | 1 |

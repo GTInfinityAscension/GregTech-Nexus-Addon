@@ -49,7 +49,7 @@ Packs and unpacks at once. Pauli would approve. Twin packaging lines that seal a
 | Titanium Gearbox Casing | 46 |
 | Advanced Assembly Line Unit | 46 |
 | Tungstensteel Gearbox Casing | 46 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
 | Gemini Containment System | 1 |
 | ULV Energy Hatch | 1 |

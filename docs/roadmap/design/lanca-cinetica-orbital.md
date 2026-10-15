@@ -218,6 +218,23 @@ Não existe a melhor configuração: trilhos pesados exigem mais anéis de capac
 
 Projéteis e revestimentos por AE2. O cartucho de alvo (item) define corpo e projétil; um AE2 com vários cartuchos faz rotação de alvos. O Barramento ME de Retorno é obrigatório.
 
+## Estado da implementação
+
+**No código:**
+
+- Estrutura de 242×130×142 convertida da sua construção; base e canhão separados no padrão
+- Tiro, mira, regimes, cano, banco, levantamento e bancada em `LanceCore` (teste `LanceCoreTest`)
+- Banco carregado pela rede; projéteis de lingotes; cápsulas devolvem os materiais de cada corpo
+- Render do clarão e do rastro de plasma; gametest de formação, tiro e retorno
+
+**Falta:**
+
+- Torre girando para o alvo
+- Computação real pelo hatch óptico (hoje fixa em 16.000 CWU)
+- Mapa orbital e bancada desenhados na GUI
+- Hatches de revestimento e cartucho
+- Receita do controlador
+
 ## Telas (mockup)
 
 ![lance_survey](mockups/gt/lance_survey.png){ loading=lazy }

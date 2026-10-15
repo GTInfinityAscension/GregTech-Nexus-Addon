@@ -34,7 +34,7 @@ Four generators walk into a bar. Only one bill. Runs up to four matching GTCEu g
 |---|---:|
 | Solid Machine Casing | 14 |
 | Tempered Glass | 8 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Generator Array | 1 |
 | ULV Dynamo Hatch | 1 |
 | ULV Input Bus | 1 |

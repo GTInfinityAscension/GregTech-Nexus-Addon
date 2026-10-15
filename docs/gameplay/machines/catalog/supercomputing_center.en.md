@@ -39,7 +39,7 @@ Three generations of computers under one roof. Mind the heat. supply CWU/t to th
 | Iridium Casing | 2,231 |
 | White ABS Plastic Mechanical Casing | 1,325 |
 | Computer Heat Vent | 980 |
-| HPCA Computation Component | 840 |
+| NICH Cooling Components | 840 |
 | Computer Casing | 728 |
 | Tungsten Borosilicate Glass | 546 |
 | Antifreeze Heatproof Machine Casing | 526 |
@@ -62,7 +62,7 @@ Three generations of computers under one roof. Mind the heat. supply CWU/t to th
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

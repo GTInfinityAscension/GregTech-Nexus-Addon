@@ -30,7 +30,7 @@ If you are reading this, you found the dev room. A test machine for Duration and
 |---|---:|
 | Solid Machine Casing | 20 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Duration Tester | 1 |
 | ULV Input Hatch | 1 |
 | ULV Energy Hatch | 1 |

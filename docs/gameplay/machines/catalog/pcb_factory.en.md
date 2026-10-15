@@ -39,7 +39,7 @@ Prints boards by the thousand. The etchant smells like progress. Etches printed 
 | Hermetic Casing VII | 29 |
 | Magtech Casing | 14 |
 | Pps Corrosion Resistant Mechanical Housing | 12 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
 | Pcb Factory | 1 |
 | ULV Energy Hatch | 1 |

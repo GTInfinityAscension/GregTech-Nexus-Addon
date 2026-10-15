@@ -49,7 +49,7 @@ Enough current to split water, salt and your patience. A giant electrolysis hall
 | ULV Output Bus | 1 |
 | Giant Electrochemical Workstation | 1 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

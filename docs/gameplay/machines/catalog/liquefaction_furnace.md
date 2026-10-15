@@ -30,7 +30,7 @@ Tudo é líquido se você esquentar o suficiente. Derrete itens em fluidos quand
 | Heat Proof Invar Machine Casing | 32 |
 | Cupronickel Coil Block | 16 |
 | Solid Machine Casing | 8 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Energy Hatch | 1 |

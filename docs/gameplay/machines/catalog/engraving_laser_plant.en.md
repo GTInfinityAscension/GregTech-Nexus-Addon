@@ -42,7 +42,7 @@ Precise enough to engrave QR codes on viruses. Why? Unknown. A photon engraving 
 | Advanced Compressed Fusion Coil | 8 |
 | Heat Vent | 8 |
 | ULV Energy Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |
 | Engraving Laser Plant | 1 |

@@ -32,7 +32,7 @@ Photosynthesis as a service. Grows crops from a kept seed or plant, water and op
 | Tempered Glass | 9 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Greenhouse | 1 |
 | ULV Input Bus | 1 |
 | ULV Energy Hatch | 1 |

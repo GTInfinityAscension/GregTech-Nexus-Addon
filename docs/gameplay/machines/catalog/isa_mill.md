@@ -37,7 +37,7 @@ Apesar da tinta verde, não tem nada de ecológico. Mói a úmido minérios e mi
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Muffler Hatch IV | 1 |
 | Moinho ISA | 1 |
 | Hatch de Esferas de Moagem | 1 |

@@ -46,7 +46,7 @@ Make complexity simple, make impossible routine. A hyperspatial assembly line th
 | Assembly Control Casing | 24 |
 | Circuit Assembly Line Machine Casing | 12 |
 | Process Machine Casing | 2 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |

@@ -1,0 +1,170 @@
+{
+ "stellar_containment_chamber": {
+  "type": "Stellar Containment",
+  "flavor": "It spins seven hundred times a second. Do not touch.",
+  "desc": [
+   "Holds a *neutron star* in field bands and extracts",
+   "the energy of its spin into the Nexus network."
+  ],
+  "pro": [
+   "Output up to *2^59 EU/t* as a neutron star",
+   "Black hole mode: up to *2^62 EU/t* from the ergosphere"
+  ],
+  "num": [
+   "Feeding mass spins the star up (*recycled pulsar*)",
+   "Starquakes decode the star and unlock *band tiers*",
+   "Above *2,2 M☉* it collapses into a black hole"
+  ],
+  "con": [
+   "Spinning below the *Kepler period* tears the star apart",
+   "Unpowered bands during a quake damage containment"
+  ],
+  "pt": {
+   "type": "Contenção Estelar",
+   "flavor": "Gira setecentas vezes por segundo. Não encoste.",
+   "desc": [
+    "Mantém uma *estrela de nêutrons* presa em bandas de campo",
+    "e extrai a energia da rotação para a rede Nexus."
+   ],
+   "pro": [
+    "Saída de até *2^59 EU/t* como estrela de nêutrons",
+    "Modo buraco negro: até *2^62 EU/t* da ergosfera"
+   ],
+   "num": [
+    "Alimentar massa acelera a estrela (*pulsar reciclado*)",
+    "Tremores decifram a estrela e liberam *tiers de banda*",
+    "Acima de *2,2 M☉* ela colapsa num buraco negro"
+   ],
+   "con": [
+    "Girar abaixo do *período de Kepler* despedaça a estrela",
+    "Bandas sem energia num tremor danificam a contenção"
+   ]
+  }
+ },
+ "antimatter_collider_ring": {
+  "type": "Particle Collider",
+  "flavor": "Two beams, one ring, zero room for error.",
+  "desc": [
+   "Accelerates *counter-rotating beams* through boosters into",
+   "the main ring and collides them for exotic particles."
+  ],
+  "pro": [
+   "Discover particles with *5σ* significance for full yield",
+   "Proposals unlock stronger *magnets* and traps"
+  ],
+  "num": [
+   "Beam energy: *p = 0,3 · B · ρ*",
+   "Liquid helium cools the *superconducting magnets*",
+   "Antiprotons fill *Penning traps* (wireless EU)"
+  ],
+  "con": [
+   "Missing helium *quenches* the magnets",
+   "Unpowered traps *annihilate* their antimatter"
+  ],
+  "pt": {
+   "type": "Colisor de Partículas",
+   "flavor": "Dois feixes, um anel, nenhuma margem de erro.",
+   "desc": [
+    "Acelera *feixes contrarrotativos* pelos boosters até",
+    "o anel principal e os colide em partículas exóticas."
+   ],
+   "pro": [
+    "Descubra partículas com *5σ* para rendimento cheio",
+    "Propostas liberam *ímãs* e armadilhas melhores"
+   ],
+   "num": [
+    "Energia do feixe: *p = 0,3 · B · ρ*",
+    "Hélio líquido resfria os *ímãs supercondutores*",
+    "Antiprótons enchem *armadilhas de Penning* (EU wireless)"
+   ],
+   "con": [
+    "Sem hélio, os ímãs sofrem *quench*",
+    "Armadilhas sem energia *aniquilam* a antimatéria"
+   ]
+  }
+ },
+ "dimensional_rift_gate": {
+  "type": "Rift Opening",
+  "flavor": "Every seed is somewhere. Most of them bite.",
+  "desc": [
+   "Opens rifts to *seeded dimensions*; tune frequency,",
+   "phase and amplitude until the rift holds."
+  ],
+  "pro": [
+   "Each biome drops its own *resources*",
+   "Recorded *harmonics* form chords that shape the rift"
+  ],
+  "num": [
+   "Resonance *R* from three tuning axes",
+   "SpaceTime keeps the rift *stable*",
+   "Depth anchors raise the output by *D^1,5*"
+  ],
+  "con": [
+   "Stability at *0* collapses the rift",
+   "Dissonant chords dig deeper but cost more"
+  ],
+  "pt": {
+   "type": "Abertura de Fendas",
+   "flavor": "Toda semente leva a algum lugar. A maioria morde.",
+   "desc": [
+    "Abre fendas para *dimensões por semente*; ajuste frequência,",
+    "fase e amplitude até a fenda segurar."
+   ],
+   "pro": [
+    "Cada bioma solta seus próprios *recursos*",
+    "*Harmônicos* gravados formam acordes que moldam a fenda"
+   ],
+   "num": [
+    "Ressonância *R* em três eixos de sintonia",
+    "SpaceTime mantém a fenda *estável*",
+    "Âncoras de profundidade sobem a saída em *D^1,5*"
+   ],
+   "con": [
+    "Estabilidade em *0* colapsa a fenda",
+    "Acordes dissonantes descem mais fundo e custam mais"
+   ]
+  }
+ },
+ "kinetic_orbital_lance": {
+  "type": "Orbital Mining",
+  "flavor": "Asteroid mining, the loud way.",
+  "desc": [
+   "Fires *projectiles* at moons and asteroids from a",
+   "capacitor bank and recovers the fragments in capsules."
+  ],
+  "pro": [
+   "Survey each body to open the *orbital map*",
+   "Fit rails, coolers and sensors on the *barrel bench*"
+  ],
+  "num": [
+   "Shot energy: *½ m v²* from the whole bank",
+   "Impact regime: *fragment, melt, vaporise*",
+   "Capsules return after the *travel time*"
+  ],
+  "con": [
+   "A worn liner *misfires*",
+   "A hot barrel *drifts* off target"
+  ],
+  "pt": {
+   "type": "Mineração Orbital",
+   "flavor": "Mineração de asteroides, do jeito barulhento.",
+   "desc": [
+    "Dispara *projéteis* contra luas e asteroides com um",
+    "banco de capacitores e recolhe os fragmentos em cápsulas."
+   ],
+   "pro": [
+    "Levante cada corpo para abrir o *mapa orbital*",
+    "Monte trilhos, refrigeração e sensores na *bancada*"
+   ],
+   "num": [
+    "Energia do tiro: *½ m v²* do banco inteiro",
+    "Regime do impacto: *fragmenta, funde, vaporiza*",
+    "Cápsulas voltam depois do *tempo de viagem*"
+   ],
+   "con": [
+    "Revestimento gasto *falha o tiro*",
+    "Cano quente *desvia* a mira"
+   ]
+  }
+ }
+}

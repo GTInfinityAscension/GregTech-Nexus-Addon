@@ -157,6 +157,22 @@ A tensão do sistema é o tempo: cada fb⁻¹ de física é antimatéria que nã
 | Fonte de Íons | entrada de gás no linac; define o tipo de feixe (p, e⁻, íons pesados) |
 
 
+## Estado da implementação
+
+**No código:**
+
+- Estrutura de 155×127×137; anel e giroscópios já marcados no padrão para girar
+- Física em `ColliderCore`: rigidez magnética, luminosidade, 5σ, quench, armadilhas de Penning, propostas (teste `ColliderCoreTest`)
+- Hélio líquido pelos hatches, ímãs e armadilhas pela rede; partículas contidas como itens
+- Render dos dois feixes contrarrotativos e do núcleo pulsando; gametest de formação, produção e física
+
+**Falta:**
+
+- Anel e giroscópios girando de verdade (tirar os blocos para o controlador, como a Forja dos Deuses)
+- Tabela do Modelo Padrão e comitê na GUI (hoje em texto)
+- Beam Dump e hatch de detector
+- Receita do controlador
+
 ## Telas (mockup)
 
 ![collider_sm](mockups/gt/collider_sm.png){ loading=lazy }

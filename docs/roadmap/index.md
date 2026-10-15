@@ -1,6 +1,6 @@
 # Roadmap
 
-O GTNA tem hoje **164 multiblocos** registrados. Esta página mostra o andamento dos ports pedidos e dos multiblocos originais. Ela é gerada a partir dos documentos de trabalho do projeto, então acompanha o que está no código.
+O GTNA tem hoje **168 multiblocos** registrados. Esta página mostra o andamento dos ports pedidos e dos multiblocos originais. Ela é gerada a partir dos documentos de trabalho do projeto, então acompanha o que está no código.
 
 ## Progresso geral dos ports
 
@@ -23,10 +23,10 @@ Máquinas criadas para o GTNA, sem equivalente em outro mod. Cada uma tem ficha 
 | Máquina | Tier | Estado | Ficha |
 |---|---|---|---|
 | Reator de Água Pressurizada | IV | :material-progress-wrench: design fechado, implementação começando | [abrir](design/reator-pwr.md) |
-| Lança Cinética Orbital | UEV | :material-progress-wrench: em implementação | [abrir](design/lanca-cinetica-orbital.md) |
-| Portão de Fenda Dimensional | UIV | :material-progress-wrench: em implementação | [abrir](design/portao-de-fenda.md) |
-| Anel Colisor de Antimatéria | UIV | :material-progress-wrench: em implementação | [abrir](design/anel-colisor.md) |
-| Câmara de Contenção Estelar | MAX | :material-progress-wrench: em implementação | [abrir](design/camara-estelar.md) |
+| Lança Cinética Orbital | UEV | :material-progress-wrench: no jogo, em teste (WIP) | [abrir](design/lanca-cinetica-orbital.md) |
+| Portão de Fenda Dimensional | UIV | :material-progress-wrench: no jogo, em teste (WIP) | [abrir](design/portao-de-fenda.md) |
+| Anel Colisor de Antimatéria | UIV | :material-progress-wrench: no jogo, em teste (WIP) | [abrir](design/anel-colisor.md) |
+| Câmara de Contenção Estelar | MAX | :material-progress-wrench: no jogo, em teste (WIP) | [abrir](design/camara-estelar.md) |
 
 ??? note "3.1 Fase A: necessário e mecânicas do endgame existente — 3/4"
     | Máquina | Fonte | Estado |

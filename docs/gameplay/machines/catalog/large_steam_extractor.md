@@ -33,8 +33,8 @@ Espreme suco de coisas que nunca tiveram suco. Um extrator a vapor compacto de e
 | Bronze Frame | 13 |
 | Bronze Pipe Casing | 6 |
 | Grande Extrator a Vapor | 1 |
-| Barramento Grande de Saída a Vapor | 1 |
-| Steam Input Bus | 1 |
+| Steam Output Bus | 1 |
+| Barramento Grande de Entrada a Vapor | 1 |
 | Hatch de Entrada de Vapor Wireless | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

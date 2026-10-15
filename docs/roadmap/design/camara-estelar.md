@@ -172,6 +172,23 @@ O equipamento novo vem dos **tremores** (glitches, como os de pulsares reais). C
 O sismograma é uma fita que corre na GUI. O jogador aprende a ler os padrões e provoca os tremores que faltam, usando a própria estrela.
 
 
+## Estado da implementação
+
+**No código:**
+
+- Estrutura de 93³ convertida da sua construção; o núcleo degenerado (raio 7) some ao acender e volta ao desligar
+- Física completa em `StellarCore`: rotação, alimentação, frenagem, tremores, regiões, colapso em buraco negro (teste `StellarCoreTest`)
+- Energia entregue na rede Nexus do dono; bandas pagam manutenção pela rede
+- Render da estrela, feixes de pulsar, linhas de campo, coroa e disco de acreção
+- GUI em texto com extração ajustável e campo magnetar; gametest de formação, alimentação e núcleo
+
+**Falta:**
+
+- Diagrama M–P e sismograma desenhados na GUI (hoje em texto)
+- Lente gravitacional no jogo
+- Hatches próprios (Injetor de Massa, Sonda Sísmica)
+- Receita do controlador (fica com o modpack)
+
 ## Telas (mockup)
 
 ![star_mp](mockups/gt/star_mp.png){ loading=lazy }

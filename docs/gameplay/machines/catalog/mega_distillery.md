@@ -37,11 +37,11 @@ Cada fração do barril, contabilizada. Roda receitas de Destilaria, Torre de De
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
 | Mega Destilaria | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
 | ZPM Hatch de Threads | 1 |
-| IV 1,024A Laser Target Hatch | 1 |
+| IV 256A Laser Target Hatch | 1 |
 | Elite Parallel Control Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

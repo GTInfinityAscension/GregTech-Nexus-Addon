@@ -7700,3 +7700,10 @@ Decisão do autor (2026-10-12, `docs/roadmap/bec-proposta.md`): rede física igu
 - **Materiais**: 19 gases `entangled_*` (texturas do fluido de origem quando existe), Bedrockium (adaptação: mixer SiO₂ + diamante; no GTNH é minério), Tairitsu (composição do GoodGenerator, Black Plutonium→Pu-241), Inactive Cosmic Solder (TPM do GT5U) e Boundless Cosmic Solder (adaptação: Plasma Forge, o GTNH usa o Beamcrafter). Formas extras (round, rotor, dense, superdense...) em vários metais; peças de MagMatter e MHDCSM por receitas próprias (os dois têm `DISABLE_MATERIAL_RECIPES`).
 - Tiers GTNH→GTCEu: UMV→UXV, UXV→OpV.
 - Validação: `runData`, `spotlessCheck runUnitTests runGameTestServer --offline`: **353/353** (estruturas dos 5 multiblocos, receitas, rede com nós de teste, passos de nanite). Pendente: jogar no cliente.
+
+## G-0258 — 2026-10-14 — Os 4 multiblocos originais (WIP, prontos para teste do autor)
+- Câmara de Contenção Estelar, Anel Colisor de Antimatéria, Portão de Fenda Dimensional e Lança Cinética Orbital: núcleos de física puros (`api/machine/feature/{stellar,collider,rift,lance}`) com testes unitários; estruturas `.mbs` + sidecar JSON gerados por `tools/design/convert_originals.py`; máquinas em `common/machine/multiblock/originals/`; renderers (estrela/buraco negro, feixes + anéis capturados girando, horizonte da fenda, clarão da lança); itens/bloco novos em `GTNAOriginals`; lang en/pt/zh.
+- Energia pela rede Nexus (exige Matrix no modo MATRIX_INPUT_ONCE). Sem receitas de controlador (ficam no modpack).
+- GameTests `GTNAOriginalsGameTests` (batch gtna_originals). Perf: pattern check estelar 229 ms, colisor 909 ms, fenda 318 ms, lança 1.5 s; segundo de física estelar 34 µs, colisor 65 ms (inclui a captura dos anéis no 1º segundo — conferir).
+- Validação: spotlessCheck, compileJava, runUnitTests, runGameTestServer (358/358 PASS), runData PASS; wiki regenerada e `mkdocs build` sem erros.
+- Pendente/manual: testar in-game render e GUI; GUI desenhada (diagrama M–P, sismograma, Modelo Padrão, atlas, mapa orbital); torre da lança girando; lente gravitacional; hatches próprios; CWU real; receitas no modpack; PWR.

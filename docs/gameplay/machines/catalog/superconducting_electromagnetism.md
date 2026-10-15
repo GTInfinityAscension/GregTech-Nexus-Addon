@@ -37,7 +37,7 @@ As equações de Maxwell, agora em tamanho industrial. Polariza e separa magneti
 | ULV Output Bus | 1 |
 | Fábrica Eletromagnética Supercondutora | 1 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

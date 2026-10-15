@@ -33,8 +33,8 @@ Under pressure, everything becomes a plate eventually. A high-throughput steam c
 | Bronze Gearbox Casing | 24 |
 | Block of Iron | 18 |
 | Bronze Frame | 12 |
-| Huge Steam Output Bus | 1 |
-| Steam Input Bus | 1 |
+| Steam Output Bus | 1 |
+| Huge Steam Input Bus | 1 |
 | Large Steam Compressor | 1 |
 | Wireless Steam Input Hatch | 1 |
 

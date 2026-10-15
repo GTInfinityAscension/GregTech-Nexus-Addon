@@ -30,7 +30,7 @@ Everything is a liquid if you heat it enough. Melts items into fluids once the c
 | Heat Proof Invar Machine Casing | 32 |
 | Cupronickel Coil Block | 16 |
 | Solid Machine Casing | 8 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Energy Hatch | 1 |

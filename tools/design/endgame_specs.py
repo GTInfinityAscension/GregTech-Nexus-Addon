@@ -391,6 +391,33 @@ WIP = '''!!! warning "Em desenvolvimento"
 '''
 
 
+STATUS = {
+    'camara-estelar': (['Estrutura de 93³ convertida da sua construção; o núcleo degenerado (raio 7) some ao acender e volta ao desligar',
+                        'Física completa em `StellarCore`: rotação, alimentação, frenagem, tremores, regiões, colapso em buraco negro (teste `StellarCoreTest`)',
+                        'Energia entregue na rede Nexus do dono; bandas pagam manutenção pela rede',
+                        'Render da estrela, feixes de pulsar, linhas de campo, coroa e disco de acreção',
+                        'GUI em texto com extração ajustável e campo magnetar; gametest de formação, alimentação e núcleo'],
+                       ['Diagrama M–P e sismograma desenhados na GUI (hoje em texto)', 'Lente gravitacional no jogo',
+                        'Hatches próprios (Injetor de Massa, Sonda Sísmica)', 'Receita do controlador (fica com o modpack)']),
+    'anel-colisor': (['Estrutura de 155×127×137; anel e giroscópios já marcados no padrão para girar',
+                      'Física em `ColliderCore`: rigidez magnética, luminosidade, 5σ, quench, armadilhas de Penning, propostas (teste `ColliderCoreTest`)',
+                      'Hélio líquido pelos hatches, ímãs e armadilhas pela rede; partículas contidas como itens',
+                      'Render dos dois feixes contrarrotativos e do núcleo pulsando; gametest de formação, produção e física'],
+                     ['Anel e giroscópios girando de verdade (tirar os blocos para o controlador, como a Forja dos Deuses)',
+                      'Tabela do Modelo Padrão e comitê na GUI (hoje em texto)', 'Beam Dump e hatch de detector', 'Receita do controlador']),
+    'portao-de-fenda': (['Estrutura de 126×126×54 convertida da sua construção',
+                         'Sintonia, estabilidade, profundidade, harmônicos, partitura e atlas em `RiftCore` (teste `RiftCoreTest`)',
+                         'Botões de sintonia na GUI; SpaceTime estabiliza; sondas e âncoras pelos barramentos; saída por bioma',
+                         'Render do horizonte de eventos com a cor do bioma; gametest de formação e estabilidade'],
+                        ['Atlas de constelações desenhado na GUI', 'Núcleos de pilone nos espinhos', 'Uso da Singularidade de Fenda', 'Receita do controlador']),
+    'lanca-cinetica-orbital': (['Estrutura de 242×130×142 convertida da sua construção; base e canhão separados no padrão',
+                                'Tiro, mira, regimes, cano, banco, levantamento e bancada em `LanceCore` (teste `LanceCoreTest`)',
+                                'Banco carregado pela rede; projéteis de lingotes; cápsulas devolvem os materiais de cada corpo',
+                                'Render do clarão e do rastro de plasma; gametest de formação, tiro e retorno'],
+                               ['Torre girando para o alvo', 'Computação real pelo hatch óptico (hoje fixa em 16.000 CWU)',
+                                'Mapa orbital e bancada desenhados na GUI', 'Hatches de revestimento e cartucho', 'Receita do controlador']),
+}
+
 MOCKUPS = {'lanca-cinetica-orbital': ['lance_survey', 'lance_bench'], 'portao-de-fenda': ['rift_score', 'rift_atlas'],
            'anel-colisor': ['collider_sm', 'collider_beam'], 'camara-estelar': ['star_mp']}
 
@@ -408,6 +435,10 @@ def main():
         text = text[:a] + prog() + '\n' + text[m.end():]
         head, rest = text.split('\n', 1)
         text = head + '\n\n' + WIP + rest
+        done, todo = STATUS.get(name, ([], []))
+        if done:
+            text += '\n## Estado da implementação\n\n**No código:**\n\n' + ''.join(f'- {d}\n' for d in done)
+            text += '\n**Falta:**\n\n' + ''.join(f'- {d}\n' for d in todo)
         shots = MOCKUPS.get(name, [])
         if shots: text += '\n## Telas (mockup)\n\n' + ''.join(f'![{s}](mockups/gt/{s}.png){{ loading=lazy }}\n\n' for s in shots)
         open(os.path.join(OUT, name + '.md'), 'w', encoding='utf-8').write(text)

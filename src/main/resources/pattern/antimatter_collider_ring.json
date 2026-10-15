@@ -1,0 +1,47 @@
+{
+ "letters": {
+  "C": "gtna:precision_field_sync_casing#ring",
+  "A": "gtna:hsss_borosilicate_glass#ring",
+  "J": "gtna:hsss_borosilicate_glass",
+  "G": "gtna:nanite_shielding_glass",
+  "F": "gtceu:fusion_glass",
+  "E": "gtna:plasma_heater_casing",
+  "K": "gtna:high_strength_support_spindle#gyro",
+  "L": "gtna:nanite_shielding_glass#gyro",
+  "I": "gtna:high_strength_support_spindle",
+  "H": "gtna:precision_field_sync_casing",
+  "O": "gtna:molecular_casing",
+  "N": "gtceu:clean_machine_casing",
+  "M": "gtna:magtech_casing",
+  "P": "gtna:cosmic_neutronium_borosilicate_glass",
+  "B": "hatch"
+ },
+ "counts": {
+  "C": 6407,
+  "B": 8,
+  "A": 1810,
+  "J": 1425,
+  "G": 920,
+  "F": 162,
+  "E": 252,
+  "K": 870,
+  "L": 8,
+  "I": 497,
+  "H": 1145,
+  "O": 672,
+  "N": 68,
+  "M": 36,
+  "P": 137,
+  "~": 1
+ },
+ "center": [
+  0,
+  0,
+  64.5
+ ],
+ "size": [
+  155,
+  127,
+  137
+ ]
+}

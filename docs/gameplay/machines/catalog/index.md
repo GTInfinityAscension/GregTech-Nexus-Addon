@@ -1,6 +1,6 @@
 # Catálogo de multiblocos
 
-Todos os 164 multiblocos do GTNA, gerados a partir do código. Os que têm guia escrito à mão estão marcados.
+Todos os 168 multiblocos do GTNA, gerados a partir do código. Os que têm guia escrito à mão estão marcados.
 
 | Máquina | Tipos de receita | Tamanho |
 |---|---|---|
@@ -9,6 +9,7 @@ Todos os 164 multiblocos do GTNA, gerados a partir do código. Os que têm guia 
 | [Processador de Minério Integrado Avançado](advanced_integrated_ore_processor.md) | Processamento Integrado de Minério | 15×12×32 |
 | [Centro de Análise e Pesquisa](analysis_and_research_center.md) | Análise de Dados, Integração de Dados | 13×11×13 |
 | [Estrela Artificial](annihilate_generator.md) | Gerador de Aniquilação | 121×112×109 |
+| [Anel Colisor de Antimatéria](antimatter_collider_ring.md) | Nenhum | 137×127×155 |
 | [Módulo de Montagem](assembler_module.md) | Montagem Espacial | 1×5×3 |
 | [Matriz de Observação de Condensado de Bose-Einstein](bec_assembler.md) | Montagem com Condensado | 61×31×31 |
 | [Portão de Maxwell de Condensado de Bose-Einstein](bec_diode.md) | Nenhum | 17×11×11 |
@@ -28,6 +29,7 @@ Todos os 164 multiblocos do GTNA, gerados a partir do código. Os que têm guia 
 | [Centro de Dados](data_center.md) | Nenhum | 15×9×15 |
 | [Dessulfurizador](desulfurizer.md) | Dessulfurização | 12×6×6 |
 | [Matriz de Gravação de Foco Dimensional](dimensional_focus_engraving_array.md) | Gravação de Foco Dimensional | 89×89×89 |
+| [Portão de Fenda Dimensional](dimensional_rift_gate.md) | Nenhum | 126×126×54 |
 | [Dimensionally Transcendent Dirt Forge](dimensionally_transcendent_dirt_forge.md) | Primitive Blast Furnace | 33×24×27 |
 | [Forja de Plasma Dimensionalmente Transcendente](dimensionally_transcendent_plasma_forge.md) | Forja de Plasma | 33×24×33 |
 | [Dimensionally Transcendent Steam Boiler](dimensionally_transcendent_steam_boiler.md) | Large Boiler | 33×24×27 |
@@ -71,6 +73,7 @@ Todos os 164 multiblocos do GTNA, gerados a partir do código. Os que têm guia 
 | [Sistema Integrado de Deposição de Vapor](integrated_vapor_deposition_system.md) | Deposição Química de Vapor, Deposição Física de Vapor | 32×21×25 |
 | [Moinho ISA](isa_mill.md) | Moinho ISA | 7×3×3 |
 | [Homogeneizador Kerr-Newman](kerr_newman_homogenizer.md) | Mixer | 83×36×83 |
+| [Lança Cinética Orbital](kinetic_orbital_lance.md) | Nenhum | 142×130×242 |
 | [Grande Craqueador](large_cracker.md) | Cracker | 9×7×13 |
 | [Estufa Grande](large_greenhouse.md) | Estufa, Simulador de Crescimento de Árvores | 9×10×9 |
 | [Incubadora Grande](large_incubator.md) | Incubadora | 13×9×13 |
@@ -156,6 +159,7 @@ Todos os 164 multiblocos do GTNA, gerados a partir do código. Os que têm guia 
 | [Fabricante a Vapor](steam_manufacturer.md) ★ | Manufatura Hidráulica | 9×7×7 |
 | [Supercompressor a Vapor](steam_mega_compressor.md) | Compressor | 35×33×35 |
 | [Cortador de Madeira a Vapor](steam_woodcutter.md) ★ | Serralheria | 7×7×7 |
+| [Câmara de Contenção Estelar](stellar_containment_chamber.md) | Nenhum | 93×93×93 |
 | [Superaquecedor de Pedra](stone_superheater.md) ★ | Superaquecedor | 3×5×3 |
 | [Super Fundidora](super_blast_smelter.md) | Electric Blast Furnace, Alloy Blast Smelter | 24×43×23 |
 | [Centro de Supercomputação](supercomputing_center.md) | Nenhum | 28×59×21 |

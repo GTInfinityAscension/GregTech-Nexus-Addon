@@ -60,7 +60,7 @@ A charged, spinning black hole. Stirs better than any spoon. Mixes at the edge o
 | Reinforced Spatial Structure Casing | 10 |
 | Containment Field Generator | 10 |
 | ULV Output Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 | Kerr Newman Homogenizer | 1 |
 | ULV Energy Hatch | 1 |

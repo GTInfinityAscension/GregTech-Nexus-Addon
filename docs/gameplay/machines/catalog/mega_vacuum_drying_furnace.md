@@ -46,7 +46,7 @@ Zero oxidação, zero contaminação, zero paciência necessária. Seca espumas 
 | Tungstensteel Gearbox Casing | 3 |
 | ULV Energy Hatch | 1 |
 | ULV Input Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Mega Forno de Secagem a Vácuo | 1 |
 | ULV Output Bus | 1 |
 | ULV Output Hatch | 1 |

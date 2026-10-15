@@ -39,7 +39,7 @@ The Hyper Reactor, after a long talk with an echo. Burns concentrated hyper fuel
 | Containment Field Generator | 32 |
 | Dimensional Bridge Casing | 12 |
 | ULV Input Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Advanced Hyper Reactor | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

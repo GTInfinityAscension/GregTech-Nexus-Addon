@@ -71,6 +71,21 @@ public final class GTNAMultiblockTooltipText {
                 "§a▸ §ePerfect overclock§a: duration /4 per tier",
                 "§b▸ Outputs through Laser or up to §e16§b Dynamo Hatches",
         });
+        ENGLISH.put("antimatter_collider_ring", new String[] {
+                "Machine Type: §eParticle Collider",
+                "§7§oTwo beams, one ring, zero room for error.",
+                "§b§m                                                        ",
+                "§7Accelerates §6counter-rotating beams§7 through boosters into",
+                "§7the main ring and collides them for exotic particles.",
+                "§b§m                                                        ",
+                "§a▸ Discover particles with §e5σ§a significance for full yield",
+                "§a▸ Proposals unlock stronger §emagnets§a and traps",
+                "§b▸ Beam energy: §ep = 0,3 · B · ρ§b",
+                "§b▸ Liquid helium cools the §esuperconducting magnets§b",
+                "§b▸ Antiprotons fill §ePenning traps§b (wireless EU)",
+                "§c▸ Missing helium §equenches§c the magnets",
+                "§c▸ Unpowered traps §eannihilate§c their antimatter",
+        });
         ENGLISH.put("assembler_module", new String[] {
                 "Machine Type: §eSpace Assembly",
                 "§7§oPlug it into a Space Elevator and look up.",
@@ -295,6 +310,21 @@ public final class GTNAMultiblockTooltipText {
                 "§a▸ Accepts Laser Hatches",
                 "§a▸ Parallel §e2x§a for each §e900K§a of coil temperature",
                 "§b▸ Uses the Parallel Hatch limit if higher",
+        });
+        ENGLISH.put("dimensional_rift_gate", new String[] {
+                "Machine Type: §eRift Opening",
+                "§7§oEvery seed is somewhere. Most of them bite.",
+                "§b§m                                                        ",
+                "§7Opens rifts to §6seeded dimensions§7; tune frequency,",
+                "§7phase and amplitude until the rift holds.",
+                "§b§m                                                        ",
+                "§a▸ Each biome drops its own §eresources§a",
+                "§a▸ Recorded §eharmonics§a form chords that shape the rift",
+                "§b▸ Resonance §eR§b from three tuning axes",
+                "§b▸ SpaceTime keeps the rift §estable§b",
+                "§b▸ Depth anchors raise the output by §eD^1,5§b",
+                "§c▸ Stability at §e0§c collapses the rift",
+                "§c▸ Dissonant chords dig deeper but cost more",
         });
         ENGLISH.put("dimensionally_transcendent_dirt_forge", new String[] {
                 "Machine Type: §ePrimitive Blast Furnace",
@@ -824,6 +854,21 @@ public final class GTNAMultiblockTooltipText {
                 "§b§m                                                        ",
                 "§a▸ Thread Hatch: several recipes at once",
                 "§a▸ Parallel Hatch and laser hatches supported",
+        });
+        ENGLISH.put("kinetic_orbital_lance", new String[] {
+                "Machine Type: §eOrbital Mining",
+                "§7§oAsteroid mining, the loud way.",
+                "§b§m                                                        ",
+                "§7Fires §6projectiles§7 at moons and asteroids from a",
+                "§7capacitor bank and recovers the fragments in capsules.",
+                "§b§m                                                        ",
+                "§a▸ Survey each body to open the §eorbital map§a",
+                "§a▸ Fit rails, coolers and sensors on the §ebarrel bench§a",
+                "§b▸ Shot energy: §e½ m v²§b from the whole bank",
+                "§b▸ Impact regime: §efragment, melt, vaporise§b",
+                "§b▸ Capsules return after the §etravel time§b",
+                "§c▸ A worn liner §emisfires§c",
+                "§c▸ A hot barrel §edrifts§c off target",
         });
         ENGLISH.put("large_cracker", new String[] {
                 "Machine Type: §eCracker",
@@ -1785,6 +1830,21 @@ public final class GTNAMultiblockTooltipText {
                 "§b§m                                                        ",
                 "§a▸ Sapling in, logs out, no trees planted",
                 "§b▸ Parallel: §e64§b default, adjustable up to §e64§b",
+        });
+        ENGLISH.put("stellar_containment_chamber", new String[] {
+                "Machine Type: §eStellar Containment",
+                "§7§oIt spins seven hundred times a second. Do not touch.",
+                "§b§m                                                        ",
+                "§7Holds a §6neutron star§7 in field bands and extracts",
+                "§7the energy of its spin into the Nexus network.",
+                "§b§m                                                        ",
+                "§a▸ Output up to §e2^59 EU/t§a as a neutron star",
+                "§a▸ Black hole mode: up to §e2^62 EU/t§a from the ergosphere",
+                "§b▸ Feeding mass spins the star up (§erecycled pulsar§b)",
+                "§b▸ Starquakes decode the star and unlock §eband tiers§b",
+                "§b▸ Above §e2,2 M☉§b it collapses into a black hole",
+                "§c▸ Spinning below the §eKepler period§c tears the star apart",
+                "§c▸ Unpowered bands during a quake damage containment",
         });
         ENGLISH.put("stone_superheater", new String[] {
                 "Machine Type: §eSuper Heating",

@@ -1,6 +1,6 @@
 # Multiblock catalog
 
-All 164 GTNA multiblocks, generated from the code. Machines with a hand-written guide are marked.
+All 168 GTNA multiblocks, generated from the code. Machines with a hand-written guide are marked.
 
 | Machine | Recipe types | Size |
 |---|---|---|
@@ -9,6 +9,7 @@ All 164 GTNA multiblocks, generated from the code. Machines with a hand-written 
 | [Advanced Integrated Ore Processor](advanced_integrated_ore_processor.md) | Integrated Ore Processing | 15×12×32 |
 | [Analysis And Research Center](analysis_and_research_center.md) | Data Analysis, Data Integration | 13×11×13 |
 | [Artificial Star](annihilate_generator.md) | Annihilation Generator | 121×112×109 |
+| [Antimatter Collider Ring](antimatter_collider_ring.md) | None | 137×127×155 |
 | [Assembler Module](assembler_module.md) | Space Assembly | 1×5×3 |
 | [Bose-Einstein Condensate Observation Array](bec_assembler.md) | Condensate Assembly | 61×31×31 |
 | [Bose-Einstein Condensate Maxwell Gate](bec_diode.md) | None | 17×11×11 |
@@ -28,6 +29,7 @@ All 164 GTNA multiblocks, generated from the code. Machines with a hand-written 
 | [Data Center](data_center.md) | None | 15×9×15 |
 | [Desulfurizer](desulfurizer.md) | Desulfurizer | 12×6×6 |
 | [Dimensional Focus Engraving Array](dimensional_focus_engraving_array.md) | Dimensional Focus Engraving Array | 89×89×89 |
+| [Dimensional Rift Gate](dimensional_rift_gate.md) | None | 126×126×54 |
 | [Dimensionally Transcendent Dirt Forge](dimensionally_transcendent_dirt_forge.md) | Primitive Blast Furnace | 33×24×27 |
 | [Dimensionally Transcendent Plasma Forge](dimensionally_transcendent_plasma_forge.md) | Plasma Forge | 33×24×33 |
 | [Dimensionally Transcendent Steam Boiler](dimensionally_transcendent_steam_boiler.md) | Large Boiler | 33×24×27 |
@@ -71,6 +73,7 @@ All 164 GTNA multiblocks, generated from the code. Machines with a hand-written 
 | [Integrated Vapor Deposition System](integrated_vapor_deposition_system.md) | Chemical Vapor Deposition, Physical Vapor Deposition | 32×21×25 |
 | [ISA Mill](isa_mill.md) | ISA Mill | 7×3×3 |
 | [Kerr Newman Homogenizer](kerr_newman_homogenizer.md) | Mixer | 83×36×83 |
+| [Kinetic Orbital Lance](kinetic_orbital_lance.md) | None | 142×130×242 |
 | [Large Cracker](large_cracker.md) | Cracker | 9×7×13 |
 | [Large Greenhouse](large_greenhouse.md) | Greenhouse, Tree Growth Simulator | 9×10×9 |
 | [Large Incubator](large_incubator.md) | Incubator | 13×9×13 |
@@ -156,6 +159,7 @@ All 164 GTNA multiblocks, generated from the code. Machines with a hand-written 
 | [Steam Manufacturer](steam_manufacturer.md) ★ | Hydraulic Manufacturing | 9×7×7 |
 | [Steam Supercompressor](steam_mega_compressor.md) | Compressor | 35×33×35 |
 | [Steam Woodcutter](steam_woodcutter.md) ★ | Woodcutter | 7×7×7 |
+| [Stellar Containment Chamber](stellar_containment_chamber.md) | None | 93×93×93 |
 | [Stone SuperHeater](stone_superheater.md) ★ | Super Heating | 3×5×3 |
 | [Super Blast Smelter](super_blast_smelter.md) | Electric Blast Furnace, Alloy Blast Smelter | 24×43×23 |
 | [Supercomputing Center](supercomputing_center.md) | None | 28×59×21 |

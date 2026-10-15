@@ -42,7 +42,7 @@ Escuta o cosmos e engarrafa o que ouve. Capta partículas cósmicas com uma ante
 | Hipernúcleo | 28 |
 | Tritanium Frame | 15 |
 | Carcaça Ativa de Amprósio | 7 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | Receptor de Sonda Espacial | 1 |
 | ULV Output Hatch | 1 |

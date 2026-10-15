@@ -37,7 +37,7 @@ Nanobots, son. Billions of them. Builds nanites with insane amounts of power; th
 | ULV Input Hatch | 1 |
 | Nano Forge | 1 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

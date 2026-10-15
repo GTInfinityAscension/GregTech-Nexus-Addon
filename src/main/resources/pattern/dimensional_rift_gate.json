@@ -1,0 +1,33 @@
+{
+ "letters": {
+  "C": "gtceu:fusion_coil",
+  "A": "gtna:reinforced_spatial_structure_casing",
+  "J": "gtna:dimensionally_transcendent_casing",
+  "G": "gtna:stabilisation_field_generator_tier_0",
+  "F": "gtna:dimension_injection_casing",
+  "E": "gtna:advanced_compressed_fusion_coil",
+  "K": "gtceu:solid_machine_casing",
+  "B": "hatch"
+ },
+ "counts": {
+  "C": 3715,
+  "B": 30,
+  "A": 7270,
+  "J": 7898,
+  "G": 918,
+  "F": 2880,
+  "E": 240,
+  "K": 72,
+  "~": 1
+ },
+ "center": [
+  0.5,
+  60.5,
+  13.5
+ ],
+ "size": [
+  54,
+  126,
+  126
+ ]
+}

@@ -37,7 +37,7 @@ Turns steam back into water. Circle of life. Condenses steam into water based on
 | Bronze Gearbox Casing | 4 |
 | ULV Output Hatch | 1 |
 | Thermal Power Pump | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

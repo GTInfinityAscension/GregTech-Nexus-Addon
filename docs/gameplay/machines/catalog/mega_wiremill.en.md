@@ -41,7 +41,7 @@ From bulky ingots to hair-thin perfect wires. Draws metal into perfect wires und
 | Amprosium Gearbox | 39 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Mega Wiremill | 1 |
 | ULV Input Bus | 1 |
 

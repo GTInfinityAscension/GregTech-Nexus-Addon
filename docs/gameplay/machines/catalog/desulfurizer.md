@@ -39,7 +39,7 @@ Sai o enxofre, fica o combustível limpo. O ar agradece. Remove o enxofre de com
 | Bronze Pipe Casing | 5 |
 | ULV Output Bus | 1 |
 | Dessulfurizador | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Hatch | 1 |

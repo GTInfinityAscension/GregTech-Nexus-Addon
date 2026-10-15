@@ -47,7 +47,7 @@ Matéria de estrela de nêutrons corta como manteiga. Coisa da Terra? Ar. Corta 
 | Casing de Densidade Extrema | 16 |
 | Fusion Glass | 8 |
 | ULV Input Bus | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | Corte por Fio de Neutrônio | 1 |
 | ULV Input Hatch | 1 |
 | ULV Energy Hatch | 1 |

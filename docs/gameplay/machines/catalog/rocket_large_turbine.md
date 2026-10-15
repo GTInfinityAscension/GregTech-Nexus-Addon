@@ -36,7 +36,7 @@ Não é ciência de foguete. Tá, é ciência de foguete. Uma turbina EV que que
 | Muffler Hatch IV | 1 |
 | ULV Input Hatch | 1 |
 | Turbina Grande de Foguete | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | IV Rotor Holder | 1 |
 
 <small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>

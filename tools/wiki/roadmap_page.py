@@ -55,10 +55,10 @@ n_machines = len(json.load(open(DUMP))) if os.path.exists(DUMP) else 0
 
 ORIGINALS = [  # name pt, name en, tier, stage pt, stage en, spec page
     ('Reator de Água Pressurizada', 'Pressurized Water Reactor', 'IV', 'design fechado, implementação começando', 'design done, implementation starting', 'design/reator-pwr.md'),
-    ('Lança Cinética Orbital', 'Kinetic Orbital Lance', 'UEV', 'em implementação', 'in implementation', 'design/lanca-cinetica-orbital.md'),
-    ('Portão de Fenda Dimensional', 'Dimensional Rift Gate', 'UIV', 'em implementação', 'in implementation', 'design/portao-de-fenda.md'),
-    ('Anel Colisor de Antimatéria', 'Antimatter Collider Ring', 'UIV', 'em implementação', 'in implementation', 'design/anel-colisor.md'),
-    ('Câmara de Contenção Estelar', 'Stellar Containment Chamber', 'MAX', 'em implementação', 'in implementation', 'design/camara-estelar.md'),
+    ('Lança Cinética Orbital', 'Kinetic Orbital Lance', 'UEV', 'no jogo, em teste (WIP)', 'in game, under test (WIP)', 'design/lanca-cinetica-orbital.md'),
+    ('Portão de Fenda Dimensional', 'Dimensional Rift Gate', 'UIV', 'no jogo, em teste (WIP)', 'in game, under test (WIP)', 'design/portao-de-fenda.md'),
+    ('Anel Colisor de Antimatéria', 'Antimatter Collider Ring', 'UIV', 'no jogo, em teste (WIP)', 'in game, under test (WIP)', 'design/anel-colisor.md'),
+    ('Câmara de Contenção Estelar', 'Stellar Containment Chamber', 'MAX', 'no jogo, em teste (WIP)', 'in game, under test (WIP)', 'design/camara-estelar.md'),
 ]
 
 

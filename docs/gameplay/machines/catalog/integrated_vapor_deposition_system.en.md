@@ -56,7 +56,7 @@ Grows films one atom at a time. Fabs pay billions for less. Deposits thin films 
 | Polytetrafluoroethylene Frame | 22 |
 | Integrated Vapor Deposition System | 1 |
 | ULV Energy Hatch | 1 |
-| Cleaning Maintenance Hatch | 1 |
+| Auto Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Hatch | 1 |
