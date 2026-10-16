@@ -17,6 +17,8 @@ import com.gregtechceu.gtceu.api.recipe.content.Content;
 import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
 
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.Level;
 
 import com.raishxn.gtna.api.machine.feature.GTNANoConsumeFluidPart;
 import com.raishxn.gtna.api.machine.feature.GTNANoConsumeItemPart;
@@ -45,36 +47,51 @@ public final class GTNASpecialPartUtil {
         return getMetaMachine(holder) != null && !(holder instanceof IMultiController);
     }
 
-    private static boolean hasCover(IRecipeCapabilityHolder holder, Class<? extends CoverBehavior> coverClass) {
-        MetaMachine machine = getMetaMachine(holder);
-        if (machine == null) {
-            return false;
-        }
-        // EN: Runs several times per tick on every machine; GTCEu's getCovers() builds a stream and a list each call
-        // (40% of machine tick time with 2000 furnaces), so the six sides are read directly.
-        // PT: Roda várias vezes por tick em toda máquina; o getCovers() do GTCEu monta stream e lista a cada chamada
-        // (40% do tick das máquinas com 2000 fornos), então os seis lados são lidos direto.
-        // ZH: 每台机器每 tick 会调用多次；GTCEu 的 getCovers() 每次都创建 stream 和列表（2000 台熔炉时占机器 tick 的
-        // 40%），因此直接读取六个面。
+    private static final int ELECTRIC = 1;
+    private static final int STEAM = 2;
+    private static MetaMachine cachedMachine;
+    private static long cachedTick = Long.MIN_VALUE;
+    private static int cachedFlags;
+
+    /**
+     * Which infinity covers a single-block machine has, as {@link #ELECTRIC}/{@link #STEAM} bits.
+     */
+    private static int infinityCoverFlags(IRecipeCapabilityHolder holder) {
+        if (!isSingleblockMachine(holder)) return 0;
+        MetaMachine machine = (MetaMachine) holder;
+        // EN: One recipe pass asks this many times for the same machine in the same tick; on the server the answer is
+        // kept for the rest of the tick (a cover placed mid-tick counts from the next tick).
+        // PT: Uma passada de receita pergunta isso várias vezes para a mesma máquina no mesmo tick; no servidor a
+        // resposta vale até o fim do tick (uma cover posta no meio do tick conta a partir do próximo).
+        // ZH: 一次配方处理会在同一 tick 内对同一台机器多次查询；在服务端，结果在该 tick 内复用（tick 中途放置的覆盖板从下一 tick 起生效）。
+        Level level = machine.getLevel();
+        boolean server = level instanceof ServerLevel;
+        if (server && machine == cachedMachine && level.getGameTime() == cachedTick) return cachedFlags;
         var covers = machine.getCoverContainer();
+        int flags = 0;
         for (Direction side : SIDES) {
-            if (coverClass.isInstance(covers.getCoverAtSide(side))) {
-                return true;
-            }
+            CoverBehavior cover = covers.getCoverAtSide(side);
+            if (cover instanceof InfiniteElectricSingleblockCover) flags |= ELECTRIC;
+            else if (cover instanceof InfiniteSteamSingleblockCover) flags |= STEAM;
         }
-        return false;
+        if (server) {
+            cachedMachine = machine;
+            cachedTick = level.getGameTime();
+            cachedFlags = flags;
+        }
+        return flags;
     }
 
     public static boolean hasInfiniteElectricSingleblockCover(IRecipeCapabilityHolder holder) {
-        return isSingleblockMachine(holder) && hasCover(holder, InfiniteElectricSingleblockCover.class);
+        return (infinityCoverFlags(holder) & ELECTRIC) != 0;
     }
 
     public static boolean hasInfiniteSteamSingleblockCover(IRecipeCapabilityHolder holder) {
-        return isSingleblockMachine(holder) && hasCover(holder, InfiniteSteamSingleblockCover.class);
+        return (infinityCoverFlags(holder) & STEAM) != 0;
     }
 
     public static boolean hasSingleblockInfinityCover(IRecipeCapabilityHolder holder) {
-        return hasInfiniteElectricSingleblockCover(holder) || hasInfiniteSteamSingleblockCover(holder);
+        return infinityCoverFlags(holder) != 0;
     }
 
     /**
