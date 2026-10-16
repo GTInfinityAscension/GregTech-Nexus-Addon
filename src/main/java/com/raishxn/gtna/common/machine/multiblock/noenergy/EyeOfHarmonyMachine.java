@@ -47,12 +47,12 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler.FluidAction;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.api.capability.WirelessEnergyManager;
 import com.raishxn.gtna.api.machine.feature.eyeofharmony.EyeOfHarmonyMath;
 import com.raishxn.gtna.common.data.GTNAMaterials;
 import com.raishxn.gtna.common.data.multiblock.EyeOfHarmonyCatalog;
 import com.raishxn.gtna.common.data.multiblock.EyeOfHarmonyPrograms;
-import com.raishxn.gtna.utils.datastructure.Int128;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

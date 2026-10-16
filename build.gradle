@@ -30,6 +30,11 @@ sourceSets {
 
 repositories {
     flatDir { dirs 'libs' }
+    maven {
+        name = 'GTInfinityAscension'
+        url = 'https://gtinfinityascension.github.io/maven/'
+        content { includeGroup 'com.gtinfinityascension' }
+    }
     mavenLocal()
     mavenCentral()
     maven {
@@ -308,6 +313,7 @@ dependencies {
         modRuntimeOnly('local:modernspace:0.2.0')
     }
     modImplementation("com.gregtechceu.gtceu:gtceu-${minecraft_version}:${gtceu_version}:slim") { transitive = false }
+    modImplementation("com.gtinfinityascension:gtialib:${gtialib_version}") { transitive = false }
     modImplementation("com.lowdragmc.ldlib:ldlib-forge-${minecraft_version}:${ldlib_version}") { transitive = false }
     modImplementation("com.tterrag.registrate:Registrate:${registrate_version}")
 
@@ -371,6 +377,7 @@ tasks.named('processResources', ProcessResources).configure {
             "forge_version": forge_version.split("\\.")[0], // only specify major version of forge
             "minecraft_version": minecraft_version,
             "gtceu_version": gtceu_version,
+            "gtialib_version": gtialib_version,
     ]
     inputs.properties(properties)
 

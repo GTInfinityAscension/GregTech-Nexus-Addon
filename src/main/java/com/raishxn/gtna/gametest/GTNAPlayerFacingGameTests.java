@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.GTNACORE;
 import com.raishxn.gtna.api.capability.WirelessEnergyManager;
 import com.raishxn.gtna.api.machine.multiblock.GTNAStructureRefresh;
@@ -21,7 +22,6 @@ import com.raishxn.gtna.common.data.GTNAOriginals;
 import com.raishxn.gtna.common.data.NexusEnergyNetwork;
 import com.raishxn.gtna.common.machine.multiblock.originals.LanceMachine;
 import com.raishxn.gtna.common.machine.multiblock.originals.OriginalMachine;
-import com.raishxn.gtna.utils.datastructure.Int128;
 
 import java.math.BigInteger;
 import java.util.ArrayList;

@@ -3,8 +3,8 @@ package com.raishxn.gtna.common.item;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.common.data.NexusEnergyNetwork;
-import com.raishxn.gtna.utils.datastructure.Int128;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

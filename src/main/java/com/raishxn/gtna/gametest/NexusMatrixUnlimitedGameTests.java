@@ -11,11 +11,11 @@ import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.common.data.GTNABlocks;
 import com.raishxn.gtna.common.data.GTNAEnergyHatches;
 import com.raishxn.gtna.common.data.NexusEnergyNetwork;
 import com.raishxn.gtna.common.machine.multiblock.energy.NexusFluxMatrixMachine;
-import com.raishxn.gtna.utils.datastructure.Int128;
 
 import java.math.BigInteger;
 import java.util.UUID;

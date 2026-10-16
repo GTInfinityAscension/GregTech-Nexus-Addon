@@ -22,13 +22,13 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.gametest.GameTestHolder;
 import net.minecraftforge.gametest.PrefixGameTestTemplate;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.api.capability.WirelessEnergyManager;
 import com.raishxn.gtna.api.machine.feature.eyeofharmony.EyeOfHarmonyMath;
 import com.raishxn.gtna.common.data.GTNAEyeOfHarmonyContent;
 import com.raishxn.gtna.common.data.NexusEnergyNetwork;
 import com.raishxn.gtna.common.data.multiblock.EyeOfHarmonyCatalog;
 import com.raishxn.gtna.common.machine.multiblock.noenergy.EyeOfHarmonyMachine;
-import com.raishxn.gtna.utils.datastructure.Int128;
 
 import java.math.BigInteger;
 import java.util.UUID;

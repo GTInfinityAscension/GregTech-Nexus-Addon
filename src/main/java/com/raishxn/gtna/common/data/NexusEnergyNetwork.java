@@ -9,8 +9,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.saveddata.SavedData;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.config.GTNABalance;
-import com.raishxn.gtna.utils.datastructure.Int128;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigInteger;

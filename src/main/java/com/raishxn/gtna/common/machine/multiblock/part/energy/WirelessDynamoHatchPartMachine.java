@@ -18,8 +18,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.BlockHitResult;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.api.capability.WirelessEnergyManager;
-import com.raishxn.gtna.utils.datastructure.Int128;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;

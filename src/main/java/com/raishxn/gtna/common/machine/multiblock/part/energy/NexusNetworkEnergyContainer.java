@@ -13,8 +13,8 @@ import com.gregtechceu.gtceu.api.recipe.ingredient.EnergyStack;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.common.data.NexusEnergyNetwork;
-import com.raishxn.gtna.utils.datastructure.Int128;
 
 import java.math.BigInteger;
 import java.util.List;

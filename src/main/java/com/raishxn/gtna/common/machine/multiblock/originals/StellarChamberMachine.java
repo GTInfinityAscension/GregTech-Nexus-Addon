@@ -28,13 +28,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.api.capability.WirelessEnergyManager;
 import com.raishxn.gtna.api.machine.feature.stellar.StellarCore;
 import com.raishxn.gtna.common.data.GTNAMaterials;
 import com.raishxn.gtna.common.data.GTNAOriginals;
 import com.raishxn.gtna.common.data.material.OriginalsMaterials;
 import com.raishxn.gtna.common.item.terminal.NexusBuildCheckGuard;
-import com.raishxn.gtna.utils.datastructure.Int128;
 import org.jetbrains.annotations.Nullable;
 
 import java.math.BigDecimal;

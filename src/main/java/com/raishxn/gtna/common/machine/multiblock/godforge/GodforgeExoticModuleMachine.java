@@ -30,12 +30,12 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler.FluidAction;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.api.capability.WirelessEnergyManager;
 import com.raishxn.gtna.api.machine.feature.godforge.GodforgeModuleStats.Type;
 import com.raishxn.gtna.api.machine.feature.godforge.GodforgeOverclock;
 import com.raishxn.gtna.common.data.GTNAMaterials;
 import com.raishxn.gtna.common.data.material.GodforgeMaterials;
-import com.raishxn.gtna.utils.datastructure.Int128;
 import org.jetbrains.annotations.Nullable;
 
 import java.math.BigInteger;

@@ -2,7 +2,7 @@ package com.raishxn.gtna.mixin.gtceu;
 
 import com.gregtechceu.gtceu.api.pattern.BlockPattern;
 
-import com.raishxn.gtna.utils.BlockPosHashing;
+import com.gtinfinityascension.gtialib.data.BlockPosHashing;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;

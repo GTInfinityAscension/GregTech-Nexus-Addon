@@ -149,9 +149,9 @@ public final class ForgeOfGodsGameTests {
         module.connect();
         var network = com.raishxn.gtna.common.data.NexusEnergyNetwork.get(helper.getLevel());
         network.setMatrixStats(owner, 1, com.gregtechceu.gtceu.api.GTValues.MAX, 0.95,
-                new com.raishxn.gtna.utils.datastructure.Int128(Long.MAX_VALUE), true);
+                new com.gtinfinityascension.gtialib.data.Int128(Long.MAX_VALUE), true);
         network.setMatrixDimension(owner, helper.getLevel().dimension());
-        var budget = new com.raishxn.gtna.utils.datastructure.Int128(Long.MAX_VALUE);
+        var budget = new com.gtinfinityascension.gtialib.data.Int128(Long.MAX_VALUE);
         com.raishxn.gtna.api.capability.WirelessEnergyManager.setEnergy(helper.getLevel(), owner, budget);
 
         com.gregtechceu.gtceu.api.recipe.GTRecipe blast = null;
@@ -185,7 +185,7 @@ public final class ForgeOfGodsGameTests {
                 " eut=" + com.gregtechceu.gtceu.api.recipe.RecipeHelper.getRealEUtWithIO(blast) + " heat=" +
                 blast.data.getInt("ebf_temp") + " full=" + module.fullModifyRecipe(blast));
         boolean debit = com.raishxn.gtna.api.capability.WirelessEnergyManager.consumeDirectEnergy(helper.getLevel(),
-                owner, new com.raishxn.gtna.utils.datastructure.Int128(1),
+                owner, new com.gtinfinityascension.gtialib.data.Int128(1),
                 net.minecraft.core.GlobalPos.of(helper.getLevel().dimension(), module.getPos()), "test");
         helper.assertTrue(debit, "wireless debit works; energy=" +
                 com.raishxn.gtna.api.capability.WirelessEnergyManager.getEnergy(helper.getLevel(), owner) +
@@ -273,10 +273,10 @@ public final class ForgeOfGodsGameTests {
         module.connect();
         var network = com.raishxn.gtna.common.data.NexusEnergyNetwork.get(helper.getLevel());
         network.setMatrixStats(owner, 1, com.gregtechceu.gtceu.api.GTValues.MAX, 0.95,
-                new com.raishxn.gtna.utils.datastructure.Int128(Long.MAX_VALUE), true);
+                new com.gtinfinityascension.gtialib.data.Int128(Long.MAX_VALUE), true);
         network.setMatrixDimension(owner, helper.getLevel().dimension());
         com.raishxn.gtna.api.capability.WirelessEnergyManager.setEnergy(helper.getLevel(), owner,
-                new com.raishxn.gtna.utils.datastructure.Int128(Long.MAX_VALUE));
+                new com.gtinfinityascension.gtialib.data.Int128(Long.MAX_VALUE));
         final var exotic = module;
         helper.runAfterDelay(45, () -> {
             var requirements = exotic.requirements();

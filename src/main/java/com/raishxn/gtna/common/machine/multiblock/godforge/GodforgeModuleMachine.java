@@ -22,12 +22,12 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.Block;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.api.capability.WirelessEnergyManager;
 import com.raishxn.gtna.api.machine.feature.godforge.GodforgeModuleStats;
 import com.raishxn.gtna.api.machine.feature.godforge.GodforgeModuleStats.Type;
 import com.raishxn.gtna.api.machine.feature.godforge.GodforgeOverclock;
 import com.raishxn.gtna.common.data.GTNAGodforgeContent;
-import com.raishxn.gtna.utils.datastructure.Int128;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

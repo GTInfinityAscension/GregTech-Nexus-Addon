@@ -24,6 +24,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.state.BlockState;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.client.hud.WirelessEnergyHudBridge;
 import com.raishxn.gtna.client.renderer.BlockHighlightHandler;
 import com.raishxn.gtna.client.renderer.GTNATextures;
@@ -31,7 +32,6 @@ import com.raishxn.gtna.common.block.NexusCapacitorBlock;
 import com.raishxn.gtna.common.data.NexusEnergyNetwork;
 import com.raishxn.gtna.config.ConfigHolder;
 import com.raishxn.gtna.config.GTNABalance;
-import com.raishxn.gtna.utils.datastructure.Int128;
 
 import java.util.ArrayList;
 import java.util.List;

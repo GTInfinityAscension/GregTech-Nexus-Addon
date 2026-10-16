@@ -6,7 +6,7 @@ import com.lowdragmc.lowdraglib.utils.TrackedDummyWorld;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
-import com.raishxn.gtna.utils.BlockPosHashing;
+import com.gtinfinityascension.gtialib.data.BlockPosHashing;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;

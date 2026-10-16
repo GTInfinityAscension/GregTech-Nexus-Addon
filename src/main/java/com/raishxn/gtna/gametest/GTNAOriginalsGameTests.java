@@ -13,13 +13,13 @@ import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.gametest.GameTestHolder;
 
+import com.gtinfinityascension.gtialib.data.Int128;
 import com.raishxn.gtna.GTNACORE;
 import com.raishxn.gtna.api.capability.WirelessEnergyManager;
 import com.raishxn.gtna.api.machine.feature.stellar.StellarCore;
 import com.raishxn.gtna.common.data.GTNAMaterials;
 import com.raishxn.gtna.common.data.GTNAOriginals;
 import com.raishxn.gtna.common.machine.multiblock.originals.StellarChamberMachine;
-import com.raishxn.gtna.utils.datastructure.Int128;
 
 import java.util.UUID;
 
