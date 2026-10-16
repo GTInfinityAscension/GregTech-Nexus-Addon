@@ -32,6 +32,7 @@ import com.raishxn.gtna.api.capability.WirelessEnergyManager;
 import com.raishxn.gtna.api.machine.feature.stellar.StellarCore;
 import com.raishxn.gtna.common.data.GTNAMaterials;
 import com.raishxn.gtna.common.data.GTNAOriginals;
+import com.raishxn.gtna.common.data.material.OriginalsMaterials;
 import com.raishxn.gtna.common.item.terminal.NexusBuildCheckGuard;
 import com.raishxn.gtna.utils.datastructure.Int128;
 import org.jetbrains.annotations.Nullable;
@@ -253,6 +254,7 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine imp
             return;
         }
         double fed = feed();
+        armourMagnetar();
         var known = java.util.EnumSet.copyOf(core.decoded.isEmpty() ?
                 java.util.EnumSet.noneOf(StellarCore.Quake.class) : core.decoded);
         var result = core.step(Math.pow(2, setpoint), fed, false, powered);
@@ -269,6 +271,11 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine imp
         lastEnergy = result.energy / 20;
         output(dust(GTMaterials.Neutronium), result.neutroniumDust);
         output(dust(GTNAMaterials.WhiteDwarfMatter), result.degenerateMatter);
+        // A magnetar starquake leaves a crystal of the inverted field; a collapse leaves core matter.
+        if (result.quake == StellarCore.Quake.ANTI)
+            output(ChemicalHelper.get(TagPrefix.gem, OriginalsMaterials.MagnetarCrystal), MAGNETAR_CRYSTALS);
+        if (result.quake == StellarCore.Quake.COLLAPSE || result.collapsed)
+            output(dust(OriginalsMaterials.DegenerateCoreMatter), CORE_MATTER);
         if (result.disrupted) releaseCore();
         sync();
     }
@@ -414,6 +421,37 @@ public class StellarChamberMachine extends WorkableElectricMultiblockMachine imp
             }
         }
         return total;
+    }
+
+    /** Magnetar Crystals from one magnetar (ANTI) starquake. */
+    public static final long MAGNETAR_CRYSTALS = 4;
+    /** Degenerate Core Matter dusts from a collapse. */
+    public static final long CORE_MATTER = 64;
+    /** Seconds of magnetar field one Forgecore plate holds. */
+    public static final int ARMOUR_SECONDS = 60;
+
+    /**
+     * The inverted field tears the crust unless Forgecore plates in the Mass Injector take the load: one plate per
+     * {@link #ARMOUR_SECONDS}. Without one the field drops and the crust takes the hit, so the 600 s that a magnetar
+     * starquake needs take ten plates.
+     */
+    private void armourMagnetar() {
+        if (!core.magnetarField || core.magnetarSeconds % ARMOUR_SECONDS != 0) return;
+        var injector = OriginalMachine.hatchOf(getParts(), OriginalHatchPartMachine.Kind.MASS_INJECTOR);
+        if (injector != null) {
+            var stock = injector.stock();
+            for (int i = 0; i < stock.size(); i++) {
+                if (isArmour(stock.get(i)) && !injector.take(i, 1).isEmpty()) return;
+            }
+        }
+        core.magnetarField = false;
+        core.magnetarSeconds = 0;
+        core.damage = Math.min(100, core.damage + 10);
+    }
+
+    public static boolean isArmour(ItemStack stack) {
+        var entry = ChemicalHelper.getMaterialEntry(stack.getItem());
+        return entry.tagPrefix() == TagPrefix.plate && entry.material() == OriginalsMaterials.Forgecore;
     }
 
     private static ItemStack dust(@Nullable Material material) {

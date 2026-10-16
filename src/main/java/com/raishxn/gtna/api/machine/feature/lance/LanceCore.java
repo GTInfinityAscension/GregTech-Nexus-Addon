@@ -45,7 +45,8 @@ public final class LanceCore {
         TRINIUM(80),
         NEUTRONIUM(400),
         COSMIC_NEUTRONIUM(800),
-        DEGENERATE(1200);
+        DEGENERATE(1200),
+        MAGNETAR(2000);
 
         public final double mass;
 
@@ -207,10 +208,15 @@ public final class LanceCore {
         public Regime regime;
     }
 
+    /** Nexus-1's crust only breaks under a Magnetar Slug; every other projectile works on the other bodies. */
+    public static boolean pierces(Body b, Projectile p) {
+        return b != Body.NEXUS_1 || p == Projectile.MAGNETAR;
+    }
+
     /** Fires the whole bank at {@code b}. */
     public Shot fire(Body b, Projectile p, double cwu) {
         Shot s = new Shot();
-        if (!targetable(b) || !benchValid() || bankCharge <= 0) return s;
+        if (!targetable(b) || !benchValid() || bankCharge <= 0 || !pierces(b, p)) return s;
         double energy = bankCharge;
         bankCharge = 0;
         s.fired = true;
@@ -232,8 +238,16 @@ public final class LanceCore {
         double fragmented = 0.2 * eta * perShot * J_PER_EU / (b.hardnessMJ * 1e6) * n;
         s.recoveredKg = fragmented * recovery() * accuracy(b, cwu);
         recovered[b.ordinal()] += s.recoveredKg;
-        s.returnSeconds = 2 * b.distanceMm * 1e6 / 30000 / 600;
+        s.returnSeconds = returnSeconds(b);
         return s;
+    }
+
+    /**
+     * Capsule flight time, compressed logarithmically: about a minute from the Moon, six from the outer bodies.
+     * (Linear compression put Nexus-1 at 231 hours.)
+     */
+    public static double returnSeconds(Body b) {
+        return 30 * Math.log(1 + b.distanceMm / 50);
     }
 
     /** Barrel cooling per second. */

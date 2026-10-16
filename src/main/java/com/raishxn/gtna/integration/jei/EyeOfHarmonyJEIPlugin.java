@@ -46,6 +46,8 @@ public final class EyeOfHarmonyJEIPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         if (!enabled()) return;
+        com.raishxn.gtna.integration.OriginalsInfo.entries().forEach((key, stacks) -> registration.addItemStackInfo(
+                stacks, com.raishxn.gtna.integration.OriginalsInfo.text(key)));
         var level = Minecraft.getInstance().level;
         if (level == null) return;
         for (var program : com.raishxn.gtna.common.data.multiblock.EyeOfHarmonyPrograms.all()) {

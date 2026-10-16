@@ -73,6 +73,8 @@ public final class ColliderCore {
     public final double[] integrated = new double[Particle.values().length];   // fb^-1 above threshold
     public final boolean[] proposalsDone = new boolean[Proposal.values().length];
     public Proposal activeProposal = Proposal.NB3SN_MAGNET;
+    /** Set by the machine each second: Nexium wire for the tier-4 dipoles is waiting in the input buses. */
+    public boolean nexiumWire;
     public double proposalProgress;          // fb^-1 delivered to the active proposal
     public boolean electronMode, heavyIonMode;
 
@@ -198,7 +200,7 @@ public final class ColliderCore {
             case REBCO_MAGNET -> significance(Particle.W_BOSON) >= 5 && significance(Particle.Z_BOSON) >= 5;
             case LEPTON_COLLIDER -> significance(Particle.BOTTOM) >= 5;
             case HEAVY_IONS -> significance(Particle.TOP) >= 5;
-            case NEUTRONIUM_MAGNET -> significance(Particle.HIGGS) >= 5;
+            case NEUTRONIUM_MAGNET -> nexiumWire && significance(Particle.HIGGS) >= 5;
             case BEYOND_STANDARD_MODEL -> significance(Particle.X_NEXUS) >= 3;
         };
     }

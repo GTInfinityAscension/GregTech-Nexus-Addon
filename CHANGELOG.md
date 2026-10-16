@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-16
+
+### Original multiblocks: endgame role
+- Each original now produces something only it makes, and the four feed each other:
+  - **Kinetic Orbital Lance**: Arrokoth capsules bring Primordial Tholin, Nexus-1 capsules bring Nexium. Nexus-1 can only be hit with the new Magnetar Slug (Magnetarium ingots, mass 2000 t).
+  - **Stellar Containment Chamber**: a magnetar starquake drops 4 Magnetar Crystals, a collapse drops 64 Degenerate Core Matter. Each 60 s of magnetar field uses one Forgecore plate from the Mass Injector; without one the field drops and the crust takes 10% damage.
+  - **Antimatter Collider Ring**: the Neutronium Magnet proposal needs 1024 fine Nexium wire in the input buses (used when it completes).
+  - **Dimensional Rift Gate**: each biome drops one exclusive material (Prismatium, Chronomercury, Forgecore, Vivispore, Abyssal Antimatter, Precursor Residue, Void Ash). From depth 40, each Depth Anchor also uses one Contained X-Nexus.
+- Endgame recipes now use them: antiproton cells in the Cosmic Neutronium and Infinity antimatter fuel rods and the Forge of Gods siphon casing; Higgs, top and Prismatium in the Gravitational Lens; X-Nexus and the Rift Singularity in the Forge of Gods controller; Degenerate Core Matter, Chronomercury, Void Ash and the Rift Singularity in Eye of Harmony field generators from the Advanced tier (lower tiers unchanged, since the Rift Gate is built with them and runs on SpaceTime); Primordial Tholin, Precursor Residue and Vivispore in Forge of Gods casings.
+- Default construction recipes for the four originals, their special hatches, Rift Probe, Depth Anchor, Target Cartridges and the structure blocks that had none (Radiant Naquadah Alloy Casing, Precision Field Sync Casing, Nanite Shielding Glass, Degenerate Matter Core), plus a UIV route for Cosmic Neutronium Borosilicate Glass. Only GTCEu and GTNA items; a modpack can replace them by id.
+- New processing: Nexium and Forgecore ingots (blast furnace), Nexium fine wire, Forgecore plates, Magnetarium (mixer + blast furnace).
+- Field manual: new Endgame chapter and two lore pages for each original (en, pt_br, zh_cn).
+
 ### Item effects (RenderBlender no longer needed)
 - GTNA now draws its own item effects: `gtna:halo`, `gtna:glow_edge`, `gtna:cosmic`, `gtna:eternal` and `gtna:unstable` model loaders, with a new procedural shader and new halo textures. RenderBlender is no longer used.
 - Fixes material icons (ingots, plates, dusts, gears, wires, gems of 56 GTNA material sets) showing as missing textures when RenderBlender was not installed (0.5.4–0.5.5). Icons now always render; the effect is drawn on top.
@@ -27,6 +40,20 @@
 
 ### Nano Forge
 - **Tier 4**: the MagMatter extension (GTNH structure with its own casings) and MagMatter Nanites. With a nanite equal to the recipe's output in an input bus, the forge drains all molten MagMatter from its hatches for extra parallel and a shorter duration, as in GTNH.
+
+### Fixed
+- Structure check (the controller's refresh button): when the machine is formed but an optional GTNA module is not, the message now says the machine works and only the module is incomplete. It used the same "Structure incomplete" text as a broken structure, so a formed Electric Blast Furnace looked broken (player report on 0.5.2 and 0.5.5).
+- Kinetic Orbital Lance: capsules return in `30 · ln(1 + d / 50)` seconds (about a minute from Nexus-1 instead of 231 hours; capsules already in flight are shortened); energy is a direct draw on the owner's Nexus network and shows in the Nexus terminal; the shot effect ends when the machine is switched off; the Magnetar Slug has its name in every language.
+- Antimatter Collider Ring: accepts up to two input buses (the Neutronium Magnet's Nexium wire goes there).
+- SpaceTime block and frame were invisible: 14 material-set block models lacked the `forge:composite` loader.
+
+### Original materials: textures and halos
+- The 12 materials of the originals have 32×32 animated textures (48 frames, with a short event per material) and their own 128×128 animated halo: field lines, a comet, pulsar beams, a compression vortex, iron filings, spectral rays, a clock, a corona, spore tendrils, dark tentacles, a nanite swarm and an ash sink. Halos sit on the main forms only (ingot, gem, dust, plate, rod, fine wire) and stay within the slot.
+- JEI/EMI info pages for the originals' exclusive materials and items (en, pt_br, zh_cn).
+
+### Tests
+- New GameTests: every GTCEu multiblock forms from its own preview with GTNA loaded (71 machines); the EBF stays formed without its optional module; the lance's bank is paid from the Nexus network, exactly, and stops on an empty network.
+- New unit tests: material-set models (composite loader, missing textures, animated strips without `.mcmeta`) and the originals' lang keys in en_us, pt_br and zh_cn, including the keys built from enums.
 
 ### Other
 - **Tiered glass**: any of 13 glasses (Tempered, MV, through Cosmic Neutronium Borosilicate, MAX) in structures that read a glass tier; all glass of one structure must match. Six GTO borosilicate glasses added (Titanium, Tritanium, Enderium, Quarks, Draconium, Cosmic Neutronium).

@@ -37,25 +37,33 @@ public final class OriginalsInfoPanel extends WidgetGroup {
                 { "power", "power.1", "=power.2", "power.3", "=power.4" },
                 { "feeding", "feeding.1", "=feeding.2", "feeding.3" },
                 { "quakes", "quakes.1", "quakes.2", "quakes.3" },
-                { "limits", "limits.1", "=limits.2", "limits.3" } });
+                { "limits", "limits.1", "=limits.2", "limits.3" },
+                { "endgame", "endgame.1", "endgame.2", "endgame.3" },
+                { "lore", "lore.1" }, { "lore_2", "lore_2.1" } });
         SECTIONS.put("antimatter_collider_ring", new String[][] {
                 { "overview", "overview.1" },
                 { "build", "build.1", "build.2" },
                 { "power", "=power.1", "=power.2", "power.3" },
                 { "modes", "modes.1", "modes.2", "=modes.3" },
-                { "proposals", "proposals.1", "proposals.2" } });
+                { "proposals", "proposals.1", "proposals.2" },
+                { "endgame", "endgame.1", "endgame.2", "endgame.3" },
+                { "lore", "lore.1" }, { "lore_2", "lore_2.1" } });
         SECTIONS.put("dimensional_rift_gate", new String[][] {
                 { "overview", "overview.1" },
                 { "build", "build.1" },
                 { "power", "=power.1", "power.2", "=power.3" },
                 { "tuning", "tuning.1", "=tuning.2", "=tuning.3", "tuning.4" },
-                { "harmonics", "harmonics.1", "harmonics.2" } });
+                { "harmonics", "harmonics.1", "harmonics.2" },
+                { "endgame", "endgame.1", "endgame.2", "endgame.3" },
+                { "lore", "lore.1" }, { "lore_2", "lore_2.1" } });
         SECTIONS.put("kinetic_orbital_lance", new String[][] {
                 { "overview", "overview.1" },
                 { "build", "build.1", "build.2" },
                 { "power", "power.1", "=power.2", "power.3", "=power.4" },
                 { "targets", "targets.1", "targets.2" },
-                { "bench", "bench.1", "bench.2" } });
+                { "bench", "bench.1", "bench.2" },
+                { "endgame", "endgame.1", "endgame.2", "endgame.3" },
+                { "lore", "lore.1" }, { "lore_2", "lore_2.1" } });
     }
 
     /** Sections of the manual of a machine: {header key, line keys...}; a line key starting with '=' is a formula. */

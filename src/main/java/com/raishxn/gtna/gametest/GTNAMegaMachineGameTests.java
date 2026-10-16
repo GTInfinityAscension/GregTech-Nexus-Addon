@@ -985,6 +985,10 @@ public final class GTNAMegaMachineGameTests {
         var cell = (com.raishxn.gtna.common.machine.multiblock.electric.FuelCellGeneratorMachine) rig.machine();
         cell.setActiveRecipeType(0);
         rig.feed(recipe, 100);
+        rig.itemIn.get(0).getInventory().storage.setStackInSlot(0,
+                com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper.get(
+                        com.raishxn.gtna.api.data.tag.GTNATagPrefix.membraneElectrode,
+                        com.gregtechceu.gtceu.common.data.GTMaterials.Polytetrafluoroethylene));
         var released = com.raishxn.gtna.common.data.GTNARecipeType.FUEL_CELL_ENERGY_RELEASE_RECIPES
                 .recipeBuilder(GTNACORE.id("gametest_released"))
                 .inputFluids(electrolyte.getFluid(

@@ -157,6 +157,15 @@ public class ColliderRingMachine extends OriginalMachine {
                 Math.max(1e-9, 0.3 * ColliderCore.MAGNET_FIELD[syncedMagnet] * ColliderCore.RING_RADIUS_M / 1000);
     }
 
+    /** Fine Nexium wire the tier-4 dipoles take (Neutronium Magnet proposal). */
+    public static final long NEXIUM_WIRE = 1024;
+
+    public static boolean isNexiumWire(ItemStack stack) {
+        var entry = com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper.getMaterialEntry(stack.getItem());
+        return entry.tagPrefix() == com.gregtechceu.gtceu.api.data.tag.TagPrefix.wireFine &&
+                entry.material() == com.raishxn.gtna.common.data.material.OriginalsMaterials.Nexium;
+    }
+
     /** EU/t of the superconducting magnets: 2^(33 + magnet tier). */
     public double magnetUpkeep() {
         return Math.pow(2, 33 + core.magnetTier);
@@ -175,7 +184,12 @@ public class ColliderRingMachine extends OriginalMachine {
                 hatch(OriginalHatchPartMachine.Kind.DETECTOR) == null;
         double[] integrated = blind ? core.integrated.clone() : null;
         double progress = core.proposalProgress;
+        // The tier-4 dipoles are wound from Nexium: the proposal only closes with the wire in the buses.
+        boolean winding = core.activeProposal == ColliderCore.Proposal.NEUTRONIUM_MAGNET;
+        core.nexiumWire = winding && count(ColliderRingMachine::isNexiumWire) >= NEXIUM_WIRE;
         var result = core.step(share, traps);
+        if (winding && core.proposalsDone[ColliderCore.Proposal.NEUTRONIUM_MAGNET.ordinal()])
+            take(ColliderRingMachine::isNexiumWire, NEXIUM_WIRE);
         if (blind) {
             System.arraycopy(integrated, 0, core.integrated, 0, integrated.length);
             if (!result.proposalFinished) core.proposalProgress = progress;

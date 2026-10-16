@@ -20,6 +20,7 @@ import net.minecraft.world.item.ItemStack;
 import com.raishxn.gtna.api.machine.feature.rift.RiftCore;
 import com.raishxn.gtna.common.data.GTNAMaterials;
 import com.raishxn.gtna.common.data.GTNAOriginals;
+import com.raishxn.gtna.common.data.material.OriginalsMaterials;
 
 import java.util.List;
 import java.util.SplittableRandom;
@@ -114,7 +115,11 @@ public class RiftGateMachine extends OriginalMachine {
         var tuning = hatch(OriginalHatchPartMachine.Kind.TUNING);
         if (tuning != null && tuning.signal() > 0) core.amplitude = tuning.signal() * 100.0 / 15;
         if (take(s -> s.is(GTNAOriginals.RIFT_PROBE.get()), 1) > 0) core.probes++;
-        if (take(s -> s.is(GTNAOriginals.DEPTH_ANCHOR.get()), 1) > 0) core.deepen();
+        // Past depth 40 an anchor only holds with a contained X-Nexus in its lattice.
+        boolean deep = core.depth >= DEEP_DEPTH;
+        if (count(s -> s.is(GTNAOriginals.DEPTH_ANCHOR.get())) > 0 && (!deep || count(RiftGateMachine::isXNexus) > 0) &&
+                take(s -> s.is(GTNAOriginals.DEPTH_ANCHOR.get()), 1) > 0 && core.deepen() && deep)
+            take(RiftGateMachine::isXNexus, 1);
         var spacetime = GTNAMaterials.SpaceTime;
         // SpaceTime is spent SPACETIME_PER_UNIT times faster than the core's stability units (a UIV rift is costly).
         long exotic = spacetime == null ? 0 : drain(f -> StellarChamberMachine.is(f, spacetime),
@@ -130,18 +135,30 @@ public class RiftGateMachine extends OriginalMachine {
         sync();
     }
 
-    /** What each biome drops (GTCEu / GTNA materials as dusts). */
+    /** Depth from which a Depth Anchor also takes a contained X-Nexus. */
+    public static final int DEEP_DEPTH = 40;
+
+    public static boolean isXNexus(ItemStack stack) {
+        return stack.is(
+                GTNAOriginals.particle(com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Particle.X_NEXUS));
+    }
+
+    /** What each biome drops (GTCEu / GTNA materials as dusts; the first is found only in that biome). */
     public static Material[] biomeOutputs(RiftCore.Biome biome) {
         return switch (biome) {
-            case CRYSTAL_PLAINS -> new Material[] { GTMaterials.CertusQuartz, GTMaterials.Silicon,
-                    GTMaterials.Titanium };
-            case MERCURY_OCEAN -> new Material[] { GTMaterials.Gold, GTMaterials.Thallium, GTMaterials.Cinnabar };
-            case FORGE_WORLD -> new Material[] { GTMaterials.Tungsten, GTMaterials.Osmium, GTMaterials.Iridium };
-            case SPORE_FOREST -> new Material[] { GTMaterials.Wood, GTMaterials.Carbon, GTMaterials.Phosphorus };
-            case ANTIMATTER_ABYSS -> new Material[] { GTMaterials.Naquadah, GTMaterials.NaquadahEnriched };
-            case CIVILISATION_RELIC -> new Material[] { GTMaterials.Naquadria, GTMaterials.Trinium,
-                    GTMaterials.Duranium };
-            case VOID -> new Material[] { GTMaterials.Neutronium,
+            case CRYSTAL_PLAINS -> new Material[] { OriginalsMaterials.Prismatium, GTMaterials.CertusQuartz,
+                    GTMaterials.Silicon, GTMaterials.Titanium };
+            case MERCURY_OCEAN -> new Material[] { OriginalsMaterials.Chronomercury, GTMaterials.Gold,
+                    GTMaterials.Thallium, GTMaterials.Cinnabar };
+            case FORGE_WORLD -> new Material[] { OriginalsMaterials.Forgecore, GTMaterials.Tungsten,
+                    GTMaterials.Osmium, GTMaterials.Iridium };
+            case SPORE_FOREST -> new Material[] { OriginalsMaterials.Vivispore, GTMaterials.Wood, GTMaterials.Carbon,
+                    GTMaterials.Phosphorus };
+            case ANTIMATTER_ABYSS -> new Material[] { OriginalsMaterials.AbyssalAntimatter, GTMaterials.Naquadah,
+                    GTMaterials.NaquadahEnriched };
+            case CIVILISATION_RELIC -> new Material[] { OriginalsMaterials.PrecursorResidue, GTMaterials.Naquadria,
+                    GTMaterials.Trinium, GTMaterials.Duranium };
+            case VOID -> new Material[] { OriginalsMaterials.VoidAsh, GTMaterials.Neutronium,
                     GTNAMaterials.SpaceTime == null ? GTMaterials.Neutronium : GTNAMaterials.SpaceTime };
         };
     }

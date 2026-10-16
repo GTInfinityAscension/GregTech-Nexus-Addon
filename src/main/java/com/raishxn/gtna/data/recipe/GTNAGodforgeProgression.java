@@ -208,7 +208,9 @@ public final class GTNAGodforgeProgression {
                         form(TagPrefix.plateDense, sixPhasedCopper(), 16), form(TagPrefix.plateDense, creon(), 16),
                         form(TagPrefix.plateDense, metastableOganesson(), 16), component(boson, 8),
                         form(TagPrefix.wireGtHex, superconductorUIV(), 16), item(GTItems.SENSOR_UIV, 32), tunnel(),
-                        distributor()),
+                        distributor(), com.raishxn.gtna.common.data.GTNAOriginals.RIFT_SINGULARITY.asStack(4),
+                        item(com.raishxn.gtna.common.data.GTNAOriginals.particle(
+                                com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Particle.X_NEXUS), 8)),
                 CustomTags.UIV_CIRCUITS, 64,
                 List.of(solder(32 * STACKS), fluid(dtec, 8_192_000), plasma(GTMaterials.Thorium, 4 * STACKS),
                         molten(transcendentMetal(), 32 * STACKS)),
@@ -232,7 +234,9 @@ public final class GTNAGodforgeProgression {
                         form(TagPrefix.frameGt, transcendentMetal(), 8),
                         form(TagPrefix.frameGt, GodforgeChainMaterials.AstralTitanium, 8),
                         form(TagPrefix.plate, creon(), 6), component(boson, 1), item(GTItems.FIELD_GENERATOR_UEV, 2),
-                        item(GTItems.GRAVI_STAR, 4)),
+                        item(GTItems.GRAVI_STAR, 4),
+                        form(TagPrefix.dust, com.raishxn.gtna.common.data.material.OriginalsMaterials.PrimordialTholin,
+                                16)),
                 null, 0, List.of(solder(16 * INGOTS), plasma(GTMaterials.Lead, 2 * INGOTS)),
                 item(boundless, 1), 10 * SECONDS, uiv);
 
@@ -252,7 +256,8 @@ public final class GTNAGodforgeProgression {
                         component(GTNAGodforgeComponents.NEUTRONIUM_HEAT_CAPACITOR, 2),
                         component(GTNAGodforgeComponents.SPACE_COOLANT_CELL, 2), tunnel(),
                         GTMultiMachines.LARGE_PLASMA_TURBINE.asStack(4), form(TagPrefix.plateDense, creon(), 6),
-                        form(TagPrefix.plate, hypogen(), 6)),
+                        form(TagPrefix.plate, hypogen(), 6),
+                        com.raishxn.gtna.common.data.GTNAOriginals.ANTIPROTON_CELL.asStack(32)),
                 null, 0, List.of(solder(16 * INGOTS),
                         molten(GodforgeChainMaterials.SuperconductorUIVBase, 32 * INGOTS), fluid(dtec, 128_000)),
                 item(siphon, 1), 10 * SECONDS, uiv);
@@ -268,7 +273,12 @@ public final class GTNAGodforgeProgression {
                         form(TagPrefix.lens, GTMaterials.NetherStar, 6),
                         form(TagPrefix.plateDense, GodforgeChainMaterials.ChronomaticGlass, 36),
                         form(TagPrefix.rodLong, creon(), 6), form(TagPrefix.rodLong, mellion(), 6),
-                        form(TagPrefix.rodLong, sixPhasedCopper(), 6)),
+                        form(TagPrefix.rodLong, sixPhasedCopper(), 6),
+                        form(TagPrefix.gem, com.raishxn.gtna.common.data.material.OriginalsMaterials.Prismatium, 16),
+                        item(com.raishxn.gtna.common.data.GTNAOriginals.particle(
+                                com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Particle.HIGGS), 4),
+                        item(com.raishxn.gtna.common.data.GTNAOriginals
+                                .particle(com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Particle.TOP), 4)),
                 null, 0, List.of(molten(GodforgeChainMaterials.Rhugnor, 16 * INGOTS), molten(creon(), 16 * INGOTS),
                         molten(GodforgeChainMaterials.AdvancedNitinol, 16 * STACKS)),
                 item(GTNAGodforgeContent.GRAVITATIONAL_LENS.get(), 1), 10 * SECONDS, uiv);
@@ -281,7 +291,9 @@ public final class GTNAGodforgeProgression {
                         component(GTNAGodforgeComponents.GRAVITON_ANOMALY, 2),
                         com.raishxn.gtna.common.data.GTNAItems.LASER_LENS_SPECIAL.asStack(4),
                         item(GTItems.EMITTER_UIV, 4),
-                        com.raishxn.gtna.common.data.GTNANanoForge.SILVER_NANITES.asStack(2)),
+                        com.raishxn.gtna.common.data.GTNANanoForge.SILVER_NANITES.asStack(2),
+                        form(TagPrefix.dust, com.raishxn.gtna.common.data.material.OriginalsMaterials.PrecursorResidue,
+                                16)),
                 CustomTags.UEV_CIRCUITS, 16,
                 List.of(solder(32 * INGOTS), molten(GodforgeChainMaterials.SuperconductorUIVBase, 32 * INGOTS),
                         molten(GodforgeChainMaterials.Infinity, 32 * INGOTS)),
@@ -292,7 +304,8 @@ public final class GTNAGodforgeProgression {
                 List.of(form(TagPrefix.frameGt, transcendentMetal(), 1), form(TagPrefix.rodLong, creon(), 12),
                         GTMachines.QUANTUM_TANK[GTValues.UHV].asStack(), component(GTNAGodforgeComponents.TESSERACT, 8),
                         component(relativistic, 4), component(GTNAGodforgeComponents.THERMAL_SUPERCONDUCTOR, 6),
-                        item(GTItems.FIELD_GENERATOR_UEV, 4), form(TagPrefix.bolt, sixPhasedCopper(), 24)),
+                        item(GTItems.FIELD_GENERATOR_UEV, 4), form(TagPrefix.bolt, sixPhasedCopper(), 24),
+                        form(TagPrefix.dust, com.raishxn.gtna.common.data.material.OriginalsMaterials.Vivispore, 32)),
                 null, 0, List.of(solder(STACKS), fluid(phonon, 1_000),
                         plasma(GTMaterials.Plutonium241, 16 * INGOTS)),
                 item(conduit, 1), 10 * SECONDS, uiv);

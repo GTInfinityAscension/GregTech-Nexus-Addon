@@ -54,7 +54,7 @@ public record CStructureRefreshPacket(BlockPos pos, boolean force) {
             if (!controller.isFormed()) {
                 GTNAPatternDiagnostics.Mismatch mismatch = GTNAPatternDiagnostics.firstMismatch(controller,
                         controller.getPattern());
-                if (mismatch != null) reportMismatch(player, mismatch);
+                if (mismatch != null) reportMismatch(player, mismatch, "missing");
                 else reportError(player, controller.getMultiblockState().error);
                 return;
             }
@@ -67,7 +67,8 @@ public record CStructureRefreshPacket(BlockPos pos, boolean force) {
                     if (!module.checkPatternAt(state, false)) {
                         GTNAPatternDiagnostics.Mismatch mismatch = GTNAPatternDiagnostics.firstMismatch(controller,
                                 module);
-                        if (mismatch != null) reportMismatch(player, mismatch);
+                        // The machine itself is formed and works; only the optional module is incomplete.
+                        if (mismatch != null) reportMismatch(player, mismatch, "module_missing");
                         else reportError(player, state.error);
                         return;
                     }
@@ -107,12 +108,12 @@ public record CStructureRefreshPacket(BlockPos pos, boolean force) {
         highlight(player, errorPos);
     }
 
-    private static void reportMismatch(ServerPlayer player, GTNAPatternDiagnostics.Mismatch mismatch) {
+    private static void reportMismatch(ServerPlayer player, GTNAPatternDiagnostics.Mismatch mismatch, String key) {
         BlockPos pos = mismatch.pos();
         Component expected = mismatch.expected().isEmpty() ?
                 Component.translatable("gtna.machine.structure_check.expected") : mismatch.expected().getHoverName();
         Component actual = player.serverLevel().getBlockState(pos).getBlock().getName();
-        player.displayClientMessage(Component.translatable("gtna.machine.structure_check.missing",
+        player.displayClientMessage(Component.translatable("gtna.machine.structure_check." + key,
                 pos.toShortString(), actual, expected), false);
         highlight(player, pos);
     }

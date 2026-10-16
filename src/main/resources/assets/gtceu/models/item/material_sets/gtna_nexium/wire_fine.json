@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_nexium/wire_fine",
+    "halo": "gtna:item/effect/nexium_field"
+  },
+  "loader": "gtna:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -1,
+    "size": 5,
+    "pulse": false
+  }
+}

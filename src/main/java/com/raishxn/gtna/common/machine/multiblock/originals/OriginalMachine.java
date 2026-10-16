@@ -95,10 +95,16 @@ public abstract class OriginalMachine extends WorkableElectricMultiblockMachine 
     private void originalTick() {
         if (!(getLevel() instanceof ServerLevel level) || ++ticker % 20 != 0) return;
         if (networkOwner == null) networkOwner = getOwnerUUID();
-        if (!isWorkingEnabled()) return;
+        if (!isWorkingEnabled()) {
+            idleSecond();
+            return;
+        }
         secondTick(level);
         markDirty();
     }
+
+    /** Runs once per second while formed but switched off. */
+    protected void idleSecond() {}
 
     /** Runs once per second while formed and enabled. */
     protected abstract void secondTick(ServerLevel level);
@@ -141,7 +147,10 @@ public abstract class OriginalMachine extends WorkableElectricMultiblockMachine 
     protected boolean consume(ServerLevel level, double eu) {
         if (eu <= 0) return true;
         if (networkOwner == null) return false;
-        return WirelessEnergyManager.consumeEnergy(level, networkOwner, int128(eu));
+        // A direct debit shows in the Nexus terminal as this machine's draw.
+        return WirelessEnergyManager.consumeDirectEnergy(level, networkOwner, int128(eu),
+                net.minecraft.core.GlobalPos.of(level.dimension(), getPos()),
+                getDefinition().getId().getPath());
     }
 
     protected void deliver(ServerLevel level, double eu) {
@@ -168,6 +177,24 @@ public abstract class OriginalMachine extends WorkableElectricMultiblockMachine 
                         var take = fluid.copy();
                         take.setAmount((int) Math.min(fluid.getAmount(), max - total));
                         total += tank.drainInternal(take, IFluidHandler.FluidAction.EXECUTE).getAmount();
+                    }
+                }
+            }
+        }
+        return total;
+    }
+
+    /** Counts the items matching {@code filter} in the input buses without taking them. */
+    protected long count(Predicate<ItemStack> filter) {
+        long total = 0;
+        for (var part : getParts()) {
+            for (var handlers : part.getRecipeHandlers()) {
+                if (!handlers.isValid(IO.IN)) continue;
+                for (var handler : handlers.getCapability(ItemRecipeCapability.CAP)) {
+                    if (!(handler instanceof NotifiableItemStackHandler items)) continue;
+                    for (int i = 0; i < items.storage.getSlots(); i++) {
+                        var stack = items.storage.getStackInSlot(i);
+                        if (!stack.isEmpty() && filter.test(stack)) total += stack.getCount();
                     }
                 }
             }

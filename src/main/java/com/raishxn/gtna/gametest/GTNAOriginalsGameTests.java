@@ -341,7 +341,7 @@ public final class GTNAOriginalsGameTests {
         seconds(lance, 1);
         helper.assertTrue(lance.secondsSinceShot() == 0, "a full bank with a naquadah alloy slug fires");
         helper.assertTrue(core.recovered[0] > 0, "the Moon shot recovers mass");
-        seconds(lance, 45);
+        seconds(lance, 70);
         helper.assertTrue(outputs(lance) > 0, "the capsule returns with lunar material");
 
         // A worn liner is swapped from the Barrel Liner Hatch.

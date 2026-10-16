@@ -105,6 +105,7 @@ public class GTNAGTAddon implements IGTAddon {
         com.raishxn.gtna.data.recipe.GTNAGodforgeProgression.register(provider);
         com.raishxn.gtna.data.recipe.GTNAGodforgeProgression.registerExtraCosts();
         com.raishxn.gtna.data.recipe.GTNAEyeOfHarmonyProgression.register(provider);
+        com.raishxn.gtna.data.recipe.GTNAOriginalsRecipes.register(provider);
     }
 
     @Override

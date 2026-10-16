@@ -82,7 +82,7 @@ Projétil leve chega mais rápido e vaporiza mais; projétil pesado fragmenta ma
 | Arrokoth | 6.60e6 | 0,9 | gelos voláteis: N₂, CO, CH₄, tolinas | 733.333 s |
 | Remanescente Kuiper "Nexus-1" | 7.50e6 | 9,5 | matéria exótica: Nq, Nt, Ad (alvo endgame) | 833.333 s |
 
-`t_retorno = 2 · d / 30 km/s ÷ 600` (o tempo é comprimido 600×). As cápsulas ficam numa fila visível na GUI.
+`t_retorno = 30 s · ln(1 + d / 50 Mm)` (compressão logarítmica: ~1 min da Lua, ~6 min dos corpos externos; G-0272). As cápsulas ficam numa fila visível na GUI.
 
 ## 4. Mira e precisão
 

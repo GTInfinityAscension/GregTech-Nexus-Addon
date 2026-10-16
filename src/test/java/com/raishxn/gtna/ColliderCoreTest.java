@@ -15,6 +15,7 @@ public final class ColliderCoreTest {
         quench();
         penning();
         proposals();
+        nexiumDipoles();
         persistence();
         System.out.println("[ColliderCoreTest] all cases passed");
     }
@@ -75,6 +76,16 @@ public final class ColliderCoreTest {
 
     private static void near(double v, double e, double rel, String what) {
         check(Math.abs(v - e) <= Math.abs(e) * rel, what + ": " + v + " vs " + e);
+    }
+
+    private static void nexiumDipoles() {
+        var ring = new ColliderCore();
+        ring.activeProposal = Proposal.NEUTRONIUM_MAGNET;
+        ring.integrated[ColliderCore.Particle.HIGGS.ordinal()] = 1e9;
+        boolean higgs = ring.significance(ColliderCore.Particle.HIGGS) >= 5;
+        check(higgs && !ring.proposalMet(Proposal.NEUTRONIUM_MAGNET), "Higgs alone does not wind the dipoles");
+        ring.nexiumWire = true;
+        check(ring.proposalMet(Proposal.NEUTRONIUM_MAGNET), "Higgs plus Nexium wire closes the proposal");
     }
 
     private static void check(boolean ok, String what) {

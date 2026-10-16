@@ -240,6 +240,31 @@ public final class PreviewBenchCommand {
                     if (nav != null) nav.open = name.equals("none") ? null : name;
                     return 1;
                 })));
+        // /gtna_dev_page <n>: turns the field manual of the open original screen to page n.
+        event.getDispatcher().register(Commands.literal("gtna_dev_page").then(Commands
+                .argument("n", com.mojang.brigadier.arguments.IntegerArgumentType.integer(0)).executes(ctx -> {
+                    var nav = com.raishxn.gtna.common.machine.multiblock.originals.ui.OriginalScreen.Nav.last;
+                    if (nav != null) nav.page = com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(ctx, "n");
+                    return 1;
+                })));
+        // /gtna_dev_endgame [collapse]: puts the last dev-built original right before its endgame step (G-0270).
+        event.getDispatcher().register(Commands.literal("gtna_dev_endgame").executes(ctx -> devEndgame(false))
+                .then(Commands.literal("collapse").executes(ctx -> devEndgame(true))));
+        // /gtna_dev_wireless: prints the player's Nexus network energy (to see what a machine draws).
+        event.getDispatcher().register(Commands.literal("gtna_dev_wireless").executes(ctx -> {
+            var mc = net.minecraft.client.Minecraft.getInstance();
+            var server = mc.getSingleplayerServer();
+            if (server == null || mc.player == null) return 0;
+            var uuid = mc.player.getUUID();
+            server.execute(() -> {
+                var player = server.getPlayerList().getPlayer(uuid);
+                if (player == null) return;
+                var eu = com.raishxn.gtna.api.capability.WirelessEnergyManager.getEnergy(player.serverLevel(), uuid);
+                player.sendSystemMessage(net.minecraft.network.chat.Component.literal(
+                        "[GTNA dev] Nexus energy: " + eu.toBigInteger() + " EU"));
+            });
+            return 1;
+        }));
         // /gtna_dev_fire: the last dev-built lance fires one full shot.
         event.getDispatcher().register(Commands.literal("gtna_dev_fire").executes(ctx -> {
             var server = net.minecraft.client.Minecraft.getInstance().getSingleplayerServer();
@@ -297,5 +322,49 @@ public final class PreviewBenchCommand {
             }
             return 1;
         }));
+    }
+
+    /**
+     * Lance: every body but Nexus-1 surveyed, so Nexus-1 is targetable. Collider: physics run on the Neutronium Magnet
+     * proposal with the Higgs at 5 sigma (only the Nexium wire is missing). Rift: open rift at depth 39 with room to
+     * deepen. Chamber: magnetar field at 600 s with the crust about to quake, or with {@code collapse} a mass past
+     * the TOV limit.
+     */
+    private static int devEndgame(boolean collapse) {
+        var server = net.minecraft.client.Minecraft.getInstance().getSingleplayerServer();
+        if (server == null || lastBuilt == null) return 0;
+        server.execute(() -> {
+            var m = com.gregtechceu.gtceu.api.machine.MetaMachine.getMachine(server.overworld(), lastBuilt);
+            if (m instanceof com.raishxn.gtna.common.machine.multiblock.originals.LanceMachine l) {
+                for (var b : com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body.values())
+                    if (b != com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body.NEXUS_1)
+                        l.core().recovered[b.ordinal()] = b.surveyMass * 10;
+            } else if (m instanceof com.raishxn.gtna.common.machine.multiblock.originals.ColliderRingMachine c) {
+                var core = c.core();
+                for (var p : com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Proposal.values()) {
+                    if (p == com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Proposal.NEUTRONIUM_MAGNET)
+                        break;
+                    core.proposalsDone[p.ordinal()] = true;
+                }
+                core.magnetTier = Math.max(core.magnetTier, 2);
+                core.heavyIonMode = true;
+                core.activeProposal = com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Proposal.NEUTRONIUM_MAGNET;
+                core.mode = com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Mode.PHYSICS;
+                core.integrated[com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Particle.HIGGS
+                        .ordinal()] = 1e9;
+            } else if (m instanceof com.raishxn.gtna.common.machine.multiblock.originals.RiftGateMachine r) {
+                r.core().maxDepth = 100;
+                r.core().depth = 39;
+            } else if (m instanceof com.raishxn.gtna.common.machine.multiblock.originals.StellarChamberMachine st) {
+                var core = st.core();
+                if (collapse) core.mass = core.tovLimit() + 0.01;
+                else {
+                    core.magnetarField = true;
+                    core.magnetarSeconds = 600;
+                    core.stress = 1;
+                }
+            }
+        });
+        return 1;
     }
 }

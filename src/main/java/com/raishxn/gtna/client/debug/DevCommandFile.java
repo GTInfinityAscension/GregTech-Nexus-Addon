@@ -14,7 +14,8 @@ import java.util.Deque;
 
 /**
  * Development aid for driving a test client without the keyboard: every line of {@code gtna_dev_commands.txt} in the
- * game directory runs as a chat command, one per second; {@code close} closes the open screen, {@code shot <name>}
+ * game directory runs as a chat command, one per second; {@code close} closes the open screen, {@code inv} opens the
+ * inventory, {@code shot <name>}
  * saves a screenshot, {@code wait <s>} pauses. Only outside production.
  */
 public final class DevCommandFile {
@@ -53,6 +54,8 @@ public final class DevCommandFile {
         GTNACORE.LOGGER.info("[GTNA dev] {}", line);
         cooldown = 20;
         if (line.equals("close")) mc.setScreen(null);
+        else if (line.equals("inv"))
+            mc.setScreen(new net.minecraft.client.gui.screens.inventory.InventoryScreen(mc.player));
         else if (line.startsWith("wait ")) cooldown = 20 * Integer.parseInt(line.substring(5).trim());
         else if (line.startsWith("shot ")) Screenshot.grab(mc.gameDirectory, line.substring(5).trim() + ".png",
                 mc.getMainRenderTarget(), msg -> {});

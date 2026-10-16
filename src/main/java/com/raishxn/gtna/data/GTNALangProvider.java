@@ -558,6 +558,8 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.machine.structure_check.shift", "Shift+click to force a full structure rebuild");
         add("gtna.machine.structure_check.formed", "Structure formed. Auxiliary modules: %s / %s.");
         add("gtna.machine.structure_check.missing", "Structure incomplete at %s: found %s; expected %s.");
+        add("gtna.machine.structure_check.module_missing",
+                "Structure formed; the machine works. Optional module incomplete at %s: found %s; expected %s.");
         add("gtna.machine.structure_check.generic", "Structure incomplete: %s");
         add("gtna.machine.structure_check.rejected", "Auxiliary module rejected: duplicate performance hatch.");
         add("gtna.machine.structure_check.expected", "a valid structure block");
@@ -1771,6 +1773,98 @@ public class GTNALangProvider extends LanguageProvider {
                 "Holding R ≥ 0.9 for 30 s records the seed's harmonic. Click recorded harmonics to load up to 5 in the chord: consonant chords (octave, fifth) are stable; dissonant chords (tritone, minor second) dig deeper but cost more SpaceTime.");
         add("gtna.originals.info.dimensional_rift_gate.harmonics.2",
                 "Holding R ≥ 0.98 for a minute can give a Rift Singularity. Stability at 0 collapses the rift; R under 0.2 for 10 s inverts it (−10 stability). Side tabs: Seismograph and Atlas.");
+        add("gtna.originals.info.kinetic_orbital_lance.endgame",
+                "Endgame");
+        add("gtna.originals.info.kinetic_orbital_lance.endgame.1",
+                "Exclusive: capsules from Arrokoth bring Primordial Tholin (Forge of Gods structure casing); capsules from Nexus-1 bring Nexium (Collider dipoles, Magnetarium).");
+        add("gtna.originals.info.kinetic_orbital_lance.endgame.2",
+                "Needs: Nexus-1's crust only breaks under Magnetarium ingots (Magnetar Slug, 2000 t). Mixer: 2 Nexium + 1 Magnetar Crystal + 4 White Dwarf Matter dust, then the blast furnace at 12000 K.");
+        add("gtna.originals.info.kinetic_orbital_lance.endgame.3",
+                "The Magnetar Crystal comes from the Stellar Containment Chamber; the Collider needs your Nexium for its last magnets.");
+        add("gtna.originals.info.stellar_containment_chamber.endgame",
+                "Endgame");
+        add("gtna.originals.info.stellar_containment_chamber.endgame.1",
+                "Exclusive: a magnetar starquake (field inverted for 600 s) leaves 4 Magnetar Crystals; a collapse leaves 64 Degenerate Core Matter (Eye of Harmony fields from Advanced tier).");
+        add("gtna.originals.info.stellar_containment_chamber.endgame.2",
+                "Needs: the inverted field tears the crust. Each 60 s of magnetar field takes one Forgecore plate from the Mass Injector; without one the field drops and the crust takes 10% damage.");
+        add("gtna.originals.info.stellar_containment_chamber.endgame.3",
+                "Forgecore comes from the Forge World biome of the Dimensional Rift Gate; the Lance needs your crystals for the Magnetar Slug.");
+        add("gtna.originals.info.antimatter_collider_ring.endgame",
+                "Endgame");
+        add("gtna.originals.info.antimatter_collider_ring.endgame.1",
+                "Exclusive: antiproton cells go into the Cosmic Neutronium and Infinity fuel rods and the Forge of Gods siphon. Higgs and top: Gravitational Lens. X-Nexus: Forge of Gods controller and deep anchors.");
+        add("gtna.originals.info.antimatter_collider_ring.endgame.2",
+                "Needs: the Neutronium Magnet proposal only closes with 1024 fine Nexium wire in the input buses; the wire is wound into the tier-4 dipoles when it closes.");
+        add("gtna.originals.info.antimatter_collider_ring.endgame.3",
+                "Nexium comes from the Kinetic Orbital Lance (Nexus-1); the Rift Gate needs your X-Nexus to go past depth 40.");
+        add("gtna.originals.info.dimensional_rift_gate.endgame",
+                "Endgame");
+        add("gtna.originals.info.dimensional_rift_gate.endgame.1",
+                "Exclusive: one material per biome (Prismatium, Chronomercury, Forgecore, Vivispore, Abyssal Antimatter, Precursor Residue, Void Ash). The Singularity goes into the Forge of Gods controller and Advanced+ Eye of Harmony fields.");
+        add("gtna.originals.info.dimensional_rift_gate.endgame.2",
+                "Needs: from depth 40 on, each Depth Anchor also takes one Contained X-Nexus; without one it stays in the bus.");
+        add("gtna.originals.info.dimensional_rift_gate.endgame.3",
+                "X-Nexus comes from the Antimatter Collider Ring; the Stellar Chamber needs your Forgecore to hold a magnetar.");
+        add("gtna.originals.info.kinetic_orbital_lance.lore",
+                "Records I");
+        add("gtna.originals.info.kinetic_orbital_lance.lore.1",
+                "Nexus-1 was never on any chart. The first survey of Arrokoth's red tholin fields found its shadow: a body heavier than its size allows, its crust pressed into a lattice no slug could dent. The Lance was built to answer one question: what is it made of?");
+        add("gtna.originals.info.kinetic_orbital_lance.lore_2",
+                "Records II");
+        add("gtna.originals.info.kinetic_orbital_lance.lore_2.1",
+                "The answer came back in the capsules as Nexium, a metal that carries current without heat and keeps the shape of every field it has crossed. Each landing raises the same doubt among the engineers: who left it out there, and are they still waiting for it to be collected?");
+        add("gtna.originals.info.stellar_containment_chamber.lore",
+                "Records I");
+        add("gtna.originals.info.stellar_containment_chamber.lore.1",
+                "A contained neutron star is not a power plant; it is a negotiation. Every starquake is the crust giving way, and every quake the Seismic Probe decodes teaches the bands how to hold the next one.");
+        add("gtna.originals.info.stellar_containment_chamber.lore_2",
+                "Records II");
+        add("gtna.originals.info.stellar_containment_chamber.lore_2.1",
+                "Invert the field and the star becomes a magnetar. For ten minutes the crust screams, held together by Forgecore plates from a world that should not exist. When it finally breaks, it breaks into crystals that still carry the inverted field. What else does the star remember?");
+        add("gtna.originals.info.antimatter_collider_ring.lore",
+                "Records I");
+        add("gtna.originals.info.antimatter_collider_ring.lore.1",
+                "The committee grants beam time one proposal at a time, and every proposal is a bet on what lies past the last threshold. Kaons, bottom quarks, the W and the Z were expected. The Higgs was a confirmation.");
+        add("gtna.originals.info.antimatter_collider_ring.lore_2",
+                "Records II");
+        add("gtna.originals.info.antimatter_collider_ring.lore_2.1",
+                "X-Nexus was not. At 4.8 TeV the detectors recorded a particle that decays into nothing the Standard Model allows, and only dipoles wound from Nexium bend the beam hard enough to make it. The heavy-ion runs keep producing it. The committee no longer asks what it is, only how many.");
+        add("gtna.originals.info.dimensional_rift_gate.lore",
+                "Records I");
+        add("gtna.originals.info.dimensional_rift_gate.lore.1",
+                "The Gate does not open a door; it tunes a chord until space agrees to part. Each seed resolves into a different place: crystal plains, a sea of mercury that runs backwards in time, a world that is one endless forge.");
+        add("gtna.originals.info.dimensional_rift_gate.lore_2",
+                "Records II");
+        add("gtna.originals.info.dimensional_rift_gate.lore_2.1",
+                "Below depth 40 the anchors slip unless an X-Nexus is set into their lattice, as if the deep biomes recognise it. There, among ash and precursor ruins, the rift sometimes folds in on itself and leaves a singularity behind. Someone built those ruins. Did they also build the Gate?");
+        add("gtna.originals.jei.nexium",
+                "Only from the Kinetic Orbital Lance: return capsules from Nexus-1, which can only be hit with Magnetar Slugs. Blast furnace (10800 K) for the ingot, wiremill for fine wire: the Antimatter Collider Ring needs 1024 for its tier-4 dipoles.");
+        add("gtna.originals.jei.primordial_tholin",
+                "Only from the Kinetic Orbital Lance: return capsules from Arrokoth. Used in the Forge of Gods structure casing.");
+        add("gtna.originals.jei.magnetar_crystal",
+                "Only from the Stellar Containment Chamber: 4 per magnetar starquake (magnetar field held 600 s, one Forgecore plate per 60 s in the Mass Injector). Mixed into Magnetarium for the Magnetar Slug.");
+        add("gtna.originals.jei.degenerate_core_matter",
+                "Only from the Stellar Containment Chamber: 64 when the star collapses. Used in Eye of Harmony field generators from the Advanced tier.");
+        add("gtna.originals.jei.prismatium",
+                "Only from the Dimensional Rift Gate, Crystal Plains biome. Used in the Forge of Gods Gravitational Lens.");
+        add("gtna.originals.jei.chronomercury",
+                "Only from the Dimensional Rift Gate, Mercury Ocean biome. Used in Eye of Harmony field generators from the Advanced tier.");
+        add("gtna.originals.jei.forgecore",
+                "Only from the Dimensional Rift Gate, Forge World biome. Blast furnace (9000 K) and bender: its plates hold the Stellar Containment Chamber's magnetar field.");
+        add("gtna.originals.jei.vivispore",
+                "Only from the Dimensional Rift Gate, Spore Forest biome. Used in the Forge of Gods Harmonic Phonon Transmission Conduit.");
+        add("gtna.originals.jei.abyssal_antimatter",
+                "Only from the Dimensional Rift Gate, Antimatter Abyss biome. Used in the Infinity Antimatter Fuel Rod.");
+        add("gtna.originals.jei.precursor_residue",
+                "Only from the Dimensional Rift Gate, Civilisation Relic biome. Used in the Forge of Gods Remote Graviton Flow Modulator.");
+        add("gtna.originals.jei.void_ash",
+                "Only from the Dimensional Rift Gate, Void biome (depth 40 and deeper). Used in Eye of Harmony field generators from the Advanced tier.");
+        add("gtna.originals.jei.antiproton_cell",
+                "Only from the Antimatter Collider Ring in production runs: one cell per 1e11 antiprotons in the Penning traps. Used in the Cosmic Neutronium and Infinity antimatter fuel rods and the Forge of Gods siphon casing.");
+        add("gtna.originals.jei.particles",
+                "Only from the Antimatter Collider Ring in production runs, once the beam passes each particle's threshold. Higgs and top go into the Gravitational Lens; X-Nexus into the Forge of Gods controller and Depth Anchors past depth 40.");
+        add("gtna.originals.jei.rift_singularity",
+                "Only from the Dimensional Rift Gate, when a deep rift folds in on itself. Used in the Forge of Gods controller and Eye of Harmony field generators from the Advanced tier.");
         add("gtna.originals.info.kinetic_orbital_lance.overview", "Overview");
         add("gtna.originals.info.kinetic_orbital_lance.overview.1",
                 "Fires projectiles from a capacitor bank at moons and asteroids and recovers the fragments in return capsules, which land as dusts of the body's materials.");
@@ -1961,7 +2055,7 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.ui.o.ask.rebco_magnet", "W, Z 5σ");
         add("gtna.ui.o.ask.lepton_collider", "bottom 5σ");
         add("gtna.ui.o.ask.heavy_ions", "top 5σ");
-        add("gtna.ui.o.ask.neutronium_magnet", "Higgs 5σ");
+        add("gtna.ui.o.ask.neutronium_magnet", "Higgs 5σ + Nx wire");
         add("gtna.ui.o.ask.beyond_standard_model", "X-Nexus 3σ");
         add("gtna.ui.o.slot.rail", "Rail");
         add("gtna.ui.o.slot.cooling", "Cooling");
@@ -1999,6 +2093,7 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.ui.o.slug.neutronium", "Neutronium slug");
         add("gtna.ui.o.slug.cosmic_neutronium", "Cosmic neutronium slug");
         add("gtna.ui.o.slug.degenerate", "White dwarf matter slug");
+        add("gtna.ui.o.slug.magnetar", "Magnetar Slug (Magnetarium)");
         add("gtna.machine.original.nexus_power", "Powered by the owner's Nexus wireless network");
         add("gtna.machine.kinetic_orbital_lance.computation_none", "§cNo optical computation hatch: the aim is blind");
         add("gtna.machine.kinetic_orbital_lance.computation_starved",

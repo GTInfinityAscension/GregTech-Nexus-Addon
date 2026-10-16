@@ -25,6 +25,7 @@ import com.raishxn.gtna.api.machine.feature.lance.LanceCore;
 import com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body;
 import com.raishxn.gtna.api.machine.feature.lance.LanceCore.Projectile;
 import com.raishxn.gtna.common.data.GTNAMaterials;
+import com.raishxn.gtna.common.data.material.OriginalsMaterials;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -212,7 +213,7 @@ public class LanceMachine extends OriginalMachine
         v[5] = core.accuracy(target(), cwu);
         v[6] = capsules.size();
         v[7] = autoFire ? 1 : 0;
-        Projectile loaded = getLevel() != null && !getLevel().isClientSide ? loadedProjectile() : null;
+        Projectile loaded = getLevel() != null && !getLevel().isClientSide ? loadedProjectile(target()) : null;
         v[8] = loaded == null ? -1 : loaded.ordinal();
         for (var b : Body.values()) v[9 + b.ordinal()] = core.survey(b);
         view = v;
@@ -245,6 +246,12 @@ public class LanceMachine extends OriginalMachine
     }
 
     @Override
+    protected void idleSecond() {
+        // Switched off: the shot effect ends instead of freezing on the last frame.
+        shotFlash = 99;
+    }
+
+    @Override
     protected void secondTick(ServerLevel level) {
         shotFlash = Math.min(shotFlash + 1, 99);
         captureGun();
@@ -262,7 +269,7 @@ public class LanceMachine extends OriginalMachine
             var body = com.raishxn.gtna.common.data.GTNAOriginals.cartridgeBody(cartridges.stock().get(0));
             if (body != null && core.targetable(body)) target = body.ordinal();
         }
-        Projectile projectile = loadedProjectile();
+        Projectile projectile = loadedProjectile(target());
         if (autoFire && projectile != null && core.bankCharge >= core.bankCapacity() && core.targetable(target())) {
             if (take(s -> projectileOf(s) == projectile, 1) == 1) {
                 var shot = core.fire(target(), projectile, cwu);
@@ -275,6 +282,8 @@ public class LanceMachine extends OriginalMachine
         }
         var unloaded = new ArrayList<double[]>();
         for (double[] c : capsules) {
+            // Capsules launched before G-0272 carry the old linear flight time.
+            c[2] = Math.min(c[2], LanceCore.returnSeconds(Body.values()[(int) c[0]]));
             if (--c[2] > 0) continue;
             c[1] = deliverCapsule(Body.values()[(int) c[0]], c[1]);
             if (c[1] <= 0) unloaded.add(c);
@@ -317,8 +326,9 @@ public class LanceMachine extends OriginalMachine
             case PSYCHE -> new Material[] { GTMaterials.Iron, GTMaterials.Nickel, GTMaterials.Iridium,
                     GTMaterials.Osmium, GTMaterials.Gold };
             case EUROPA -> new Material[] { GTMaterials.Magnesium, GTMaterials.Sulfur, GTMaterials.Deuterium };
-            case ARROKOTH -> new Material[] { GTMaterials.Nitrogen, GTMaterials.Methane, GTMaterials.Carbon };
-            case NEXUS_1 -> new Material[] { GTMaterials.Naquadah, GTMaterials.Neutronium,
+            case ARROKOTH -> new Material[] { OriginalsMaterials.PrimordialTholin, GTMaterials.Nitrogen,
+                    GTMaterials.Methane, GTMaterials.Carbon };
+            case NEXUS_1 -> new Material[] { OriginalsMaterials.Nexium, GTMaterials.Naquadah, GTMaterials.Neutronium,
                     GTNAMaterials.SpaceTime == null ? GTMaterials.Neutronium : GTNAMaterials.SpaceTime };
         };
     }
@@ -333,14 +343,16 @@ public class LanceMachine extends OriginalMachine
         if (m == GTMaterials.Neutronium) return Projectile.NEUTRONIUM;
         if (m == GTNAMaterials.CosmicNeutronium) return Projectile.COSMIC_NEUTRONIUM;
         if (m == GTNAMaterials.WhiteDwarfMatter) return Projectile.DEGENERATE;
+        if (m == OriginalsMaterials.Magnetarium) return Projectile.MAGNETAR;
         return null;
     }
 
-    private Projectile loadedProjectile() {
+    /** First projectile in the input buses that can break the target's crust. */
+    private Projectile loadedProjectile(Body target) {
         Projectile[] found = { null };
         take(s -> {
             var p = projectileOf(s);
-            if (p != null && found[0] == null) found[0] = p;
+            if (p != null && found[0] == null && LanceCore.pierces(target, p)) found[0] = p;
             return false;
         }, 64);
         return found[0];

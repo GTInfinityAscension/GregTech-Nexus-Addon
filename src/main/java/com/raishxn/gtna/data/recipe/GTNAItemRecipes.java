@@ -530,7 +530,7 @@ public class GTNAItemRecipes {
         GTRecipeTypes.ASSEMBLER_RECIPES.recipeBuilder("gtna_cosmic_neutronium_antimatter_fuel_rod")
                 .inputItems(GTNAItems.DRACONIUM_ANTIMATTER_FUEL_ROD.get())
                 .inputItems(GTItems.FIELD_GENERATOR_UEV.get(), 2)
-                .inputItems(GTItems.GRAVI_STAR.get(), 2)
+                .inputItems(com.raishxn.gtna.common.data.GTNAOriginals.ANTIPROTON_CELL.asStack(4))
                 .inputItems(TagPrefix.plateDouble, GTMaterials.Neutronium, 8)
                 .inputItems(CustomTags.UIV_CIRCUITS, 2)
                 .inputFluids(GTMaterials.SolderingAlloy.getFluid(576))
@@ -546,6 +546,9 @@ public class GTNAItemRecipes {
                 .inputItems(GTItems.EMITTER_UIV.get(), 2)
                 .inputItems(GTItems.SENSOR_UIV.get(), 2)
                 .inputItems(TagPrefix.plateDouble, GTMaterials.Neutronium, 8)
+                .inputItems(com.raishxn.gtna.common.data.GTNAOriginals.ANTIPROTON_CELL.asStack(16))
+                .inputItems(TagPrefix.dust, com.raishxn.gtna.common.data.material.OriginalsMaterials.AbyssalAntimatter,
+                        8)
                 .inputItems(CustomTags.UXV_CIRCUITS, 2)
                 .inputFluids(GTMaterials.Europium.getFluid(1152))
                 .inputFluids(GTMaterials.SolderingAlloy.getFluid(1152))

@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_degenerate_core_matter/dust",
+    "halo": "gtna:item/effect/degenerate_compression"
+  },
+  "loader": "gtna:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -1,
+    "size": 4,
+    "pulse": false
+  }
+}

@@ -17,6 +17,7 @@ public final class LanceCoreTest {
         bench();
         barrel();
         persistence();
+        magnetarSlug();
         System.out.println("[LanceCoreTest] all cases passed");
     }
 
@@ -28,6 +29,16 @@ public final class LanceCoreTest {
         check(s.regime == LanceCore.Regime.RELATIVISTIC || s.regime == LanceCore.Regime.VAPORISATION,
                 "7e9 J/kg against the Moon vaporises or better: " + s.regime);
         check(s.recoveredKg > 0 && lance.bankCharge == 0, "the shot recovers mass and empties the bank");
+    }
+
+    private static void magnetarSlug() {
+        check(!LanceCore.pierces(Body.NEXUS_1, Projectile.DEGENERATE), "Nexus-1 shrugs off degenerate slugs");
+        check(LanceCore.pierces(Body.NEXUS_1, Projectile.MAGNETAR), "the Magnetar Slug breaks Nexus-1");
+        check(LanceCore.pierces(Body.ARROKOTH, Projectile.NAQUADAH_ALLOY), "other bodies take any projectile");
+        var lance = new LanceCore();
+        lance.bankCharge = 1e12;
+        var s = lance.fire(Body.MOON, Projectile.MAGNETAR, 1000);
+        check(s.fired, "the Magnetar Slug fires at any body");
     }
 
     private static void aim() {

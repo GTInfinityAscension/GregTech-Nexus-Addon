@@ -86,7 +86,8 @@ public final class GTNAOriginals {
             GTNAPartAbility.LINER_HATCH, s -> LanceMachine.linerLife(s) > 0);
     public static final com.gregtechceu.gtceu.api.machine.MachineDefinition MASS_INJECTOR = hatch("mass_injector",
             "Mass Injector", com.gregtechceu.gtceu.api.GTValues.UXV, OriginalHatchPartMachine.Kind.MASS_INJECTOR,
-            GTNAPartAbility.MASS_INJECTOR, s -> StellarChamberMachine.itemFeedValue(s) > 0);
+            GTNAPartAbility.MASS_INJECTOR,
+            s -> StellarChamberMachine.itemFeedValue(s) > 0 || StellarChamberMachine.isArmour(s));
     public static final com.gregtechceu.gtceu.api.machine.MachineDefinition DETECTOR_HATCH = hatch("detector_hatch",
             "Collision Detector Hatch", com.gregtechceu.gtceu.api.GTValues.UIV,
             OriginalHatchPartMachine.Kind.DETECTOR, GTNAPartAbility.DETECTOR_HATCH, null);
@@ -128,6 +129,8 @@ public final class GTNAOriginals {
             .appearanceBlock(GTNABlocks.PRECISION_FIELD_SYNC_CASING)
             .pattern(definition -> pattern(definition, "antimatter_collider_ring", "gtna:precision_field_sync_casing",
                     h -> h.or(abilities(PartAbility.IMPORT_FLUIDS).setMaxGlobalLimited(4).setPreviewCount(1))
+                            // Nexium wire for the tier-4 dipoles (G-0270).
+                            .or(abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(2).setPreviewCount(1))
                             .or(abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(4).setPreviewCount(1))
                             .or(abilities(GTNAPartAbility.BEAM_DUMP).setMaxGlobalLimited(1).setPreviewCount(1))
                             .or(abilities(GTNAPartAbility.DETECTOR_HATCH).setMaxGlobalLimited(1).setPreviewCount(1))))

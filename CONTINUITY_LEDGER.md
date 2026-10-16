@@ -7804,3 +7804,56 @@ Também pendente da avaliação das propostas de UI (tools/design/ui_proposals, 
 - Chip NEXUS clicável: `GTNAStructureCheckClient.request(pos, true)` — mensagem no chat + destaque do bloco errado (validado). Lang `gtna.ui.o.nexus.tip`.
 - Portal da Fenda: uniform `Rift` (seed, freq, fase, amplitude) no `stellar_fx` modo 5 — seed: nº de braços, padrão e matiz; frequência: giro e densidade das ondas; fase: torção e matiz; amplitude: turbulência e borda irregular. `/gtna_rift_preview <seed> <freq> <phase> <amp>` (0..1).
 - Gate 358/358.
+
+## G-0270 — 2026-10-15 — Originais no endgame (anel de insumos) + lore
+- Fluxograma aprovado pelo autor (artifact "Originais GTNA no endgame"); nomes de ficção decididos por mim; nenhuma original trava a primeira; pós comuns mantidos como subproduto.
+- `OriginalsMaterials` (12 materiais, sem fluido para não virar alimento da estrela): Nexium, Primordial Tholin, Magnetar Crystal, Degenerate Core Matter, Magnetarium, Prismatium, Chronomercury, Forgecore, Vivispore, Abyssal Antimatter, Precursor Residue, Void Ash. Ícones de conjunto do GTCEu (sem textura nova).
+- Lança: Arrokoth +Tolina, Nexus-1 +Nexium; projétil `MAGNETAR` (Magnetarium, 2000 t); `LanceCore.pierces`: Nexus-1 só com Magnetar (máquina escolhe o projétil que serve ao alvo).
+- Câmara: ANTI → 4 gemas de Magnetar Crystal; COLLAPSE/colapso → 64 Degenerate Core Matter; `armourMagnetar`: 1 placa de Forgecore do Mass Injector a cada 60 s de campo magnetar (filtro do injetor aceita a placa), senão campo cai e +10 de dano.
+- Colisor: `ColliderCore.nexiumWire`; NEUTRONIUM_MAGNET exige 1024 wireFine de Nexium (consumidos ao fechar). Rótulo do pedido "Higgs 5σ + fio Nx".
+- Fenda: um exclusivo por bioma (primeiro da lista); profundidade ≥ 40: âncora só desce com X-Nexus contido (consumido). `OriginalMachine.count`.
+- Receitas: `GTNAOriginalsRecipes` (EBF Nexium/Forgecore/Magnetarium, wiremill, bender, mixer); consumidores em barras de antimatéria (Gravi Star da Cosmic Neutronium trocado por 4 células), FoG (controlador, boundless, siphon, lens, modulator, conduit) e EoH (controlador, casings espacial/temporal).
+- Manual: capítulo Endgame + Registros I/II (lore) nas 4 máquinas, en/pt_br/zh_cn. `/gtna_dev_page <n>`.
+- Validação: gate 358/358, testes unitários (Lance/Collider novos casos); screenshots pt_br dos capítulos Endgame/Registros das 4 máquinas (Colisor e Fenda encurtados após corte).
+- Pendente: receitas de construção dos originais estão no modpack — conferir que não exigem EoH/FoG (senão deadlock); validar em jogo as travas (magnetar com placas, Nexus-1 com Magnetar Slug, âncora com X-Nexus, proposta com fio).
+
+## G-0271 — 2026-10-15 — Receitas genéricas dos originais; ciclos de progressão removidos
+- `GTNAOriginalsRecipes.construction`: 4 controladores (assembly line + research station: Lança UEV, Colisor/Fenda UIV, Câmara UXV), 7 hatches especiais (hull + componente), Rift Probe, Depth Anchor, 8 cartuchos (circuito = corpo), e os blocos de estrutura sem receita (Radiant Naquadah Alloy Casing circ. 21, Precision Field Sync Casing, Nanite Shielding Glass, Degenerate Matter Core) + rota UIV do Cosmic Neutronium Borosilicate Glass (GTNA não produz Cosmic Neutronium; o vidro só saía em MAX). Só GTCEu + componentes UHV+ padrão do GTNA.
+- Ciclo corrigido: a Fenda roda com SpaceTime líquido, que só sai do EoH, e usa campos de estabilização tier 0. Exclusivos removidos do controlador e dos casings do EoH; Degenerate Core Matter, Chronomercury, Void Ash e Rift Singularity entram nos campos do EoH a partir do tier 3 (`ORIGINALS_TIER`). Manual (Câmara/Fenda) e changelog ajustados.
+- Dev: `/gtna_dev_endgame [collapse]` prepara a última original construída para o passo de endgame.
+- AGENTS.md: checkouts movidos para `~/MineProjects/references` (GTNL continua em `~/MineProjects/GTNL`).
+- Validação: gate 358/358; conflito de receita com `gtna_hyper_mechanical_casing` resolvido.
+
+## G-0272 — 2026-10-16 — Texturas e halos animados dos 12 materiais originais de endgame
+- Painel interativo de propostas em HTML gerado com 3 opções conceituais completas para cada um dos 12 materiais (36 propostas com tiras animadas 16×512 de 32 quadros interpolados a 60 FPS, halos 64×64 dedicados e composites de slot).
+- Escolhas vencedoras selecionadas pelo autor instaladas no mod via `tools/design/install_winning_originals_materials.py`:
+  1. Nexium (Opção 1 — Field Singularity, anéis de curvatura gravitacional, halo `nexium_field`)
+  2. Primordial Tholin (Opção 3 — Cryo Methane Tholin, cristais de gelo nitrogenado, cauda de cometa `tholin_comet_tail`)
+  3. Magnetar Crystal (Opção 1 — Polarized Birefringence, feixe pulsar cruzado, halo pulsar `magnetar_pulsar`)
+  4. Degenerate Core Matter (Opção 1 — Fermi Collapse, colapso de elétrons, halo de compressão `degenerate_compression`)
+  5. Magnetarium (Opção 1 — Flux Conductor, linhas toroidais de dipolo magnético, halo `magnetarium_dipole_torus`)
+  6. Prismatium (Opção 1 — Dispersion Prismatic, prisma birrefringente de 7 cores, halo arco-íris `prismatium_rainbow_corona`)
+  7. Chronomercury (Opção 1 — Tachyonic Inversion, gotas com fluxo temporal invertido, halo ampulheta `chronomercury_hourglass_vortex`)
+  8. Forgecore (Opção 1 — Stellar Filament, plasma coronal dourado, alças coronais `forgecore_coronal_loops`)
+  9. Vivispore (Opção 3 — Xenomorphic Spore, biomassa parasitária com bioluminescência fosfórica `vivispore_toxic_phosphor`)
+  10. Abyssal Antimatter (Opção 1 — Horizon Radiance, horizonte de eventos com radiação Hawking `abyssal_hawking_glow`)
+  11. Precursor Residue (Opção 3 — Nanite Gray Goo, enxame autômato de nanitas `precursor_nanite_swarm`)
+  12. Void Ash (Opção 2 — Event Horizon Residue, sumidouro de entropia com singularidade `void_entropy_sink`)
+- Instalação completa de assets:
+  - Halos animados customizados em `assets/gtna/textures/item/effect/<halo>.png` + `.mcmeta` (64×2048, 32 quadros interpolados).
+  - Tiras animadas de itens e blocos em `assets/gtceu/textures/{item,block}/material_sets/gtna_<mat>/` (16×512 + `.mcmeta`).
+  - Modelos de itens GTCEu gerados com loader `gtna:halo` (`color: -1`, `size: 4`, `pulse: true`).
+  - Modelos e texturas de blocos (`block.png`, `block_secondary.png`, `block.json`, `block1.json`) e molduras (`frame_gt.png`, `frame_gt_secondary.png`, `frame_gt.json`).
+- Ajustes de estabilidade dos GameTests:
+  - `GTNAOriginalsGameTests.java`: avanço de 70 s no disparo da Lança Orbital para a cápsula lunar retornar (duração de voo ~64,8 s por `30 * ln(1 + 384/50)`).
+  - `GTNAMegaMachineGameTests.java`: fixação explícita da membrana de PTFE no barramento de entrada do teste de absorção da Fuel Cell (para garantir o teste de decay factor com `IronChromiumElectrolyte`).
+- Validação: `./gradlew spotlessCheck compileJava runUnitTests runGameTestServer runData --offline` 100% verde (358/358 GameTests passaram, 50 icon sets `gtna_`-prefixed).
+
+
+## G-0273 — 2026-10-16 — Release 0.6.0: texturas no estilo Cosmic Frontier, mensagem de módulo, gametests de regressão
+- Texturas/halos de G-0272 substituídos por `tools/design/originals_cf_style.py` (`preview <dir>` / `install`): itens 32×32 com 48 quadros e evento por material, halos 128×128 com forma própria, `size` 5 (4 na Matéria Degenerada), sem `pulse`, só nas formas principais. Referência estudada: cosmiccore 0.8.5 (CF 0.7.3) e 0.21.5 (Prism `Cosmic Frontiers`); nada copiado.
+- Relato de jogador (EBF "estrutura incompleta" em 0.5.2/0.5.5): o EBF estava formado; a mensagem vinha do módulo opcional (casca heatproof GTO). `CStructureRefreshPacket` usa agora `gtna.machine.structure_check.module_missing` (en/pt_br/zh_cn).
+- `GTNAPlayerFacingGameTests`: 71 multiblocos GTCEu formam pela própria preview (lados > 40 pulados); EBF sem módulo continua formado; Lança paga o banco pela rede Nexus (débito = carga, `lastDirectDebit` com nome/posição, rede vazia não carrega).
+- Unit tests novos: `MaterialSetAssetContractTest` (1919 modelos), `OriginalsLangKeysTest` (332 chaves).
+- Validação: gate completo verde, 361/361 GameTests. Release 0.6.0.
+- Pendente: o autor ainda não retestou a Lança/Colisor no cliente nem as UIs v2 (62d918b); automatizar Colisor com input bus e render do tiro desligada.

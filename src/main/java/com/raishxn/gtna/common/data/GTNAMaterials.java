@@ -117,6 +117,7 @@ public class GTNAMaterials {
         com.raishxn.gtna.common.data.material.BECMaterials.init();
         com.raishxn.gtna.common.data.material.FuelCellMaterials.init();
         com.raishxn.gtna.common.data.material.ResearchMaterials.init();
+        com.raishxn.gtna.common.data.material.OriginalsMaterials.init();
         MaterialAdd.init();
     }
 }

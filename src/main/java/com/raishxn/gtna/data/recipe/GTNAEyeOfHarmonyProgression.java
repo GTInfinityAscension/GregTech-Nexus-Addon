@@ -23,6 +23,9 @@ public final class GTNAEyeOfHarmonyProgression {
 
     private GTNAEyeOfHarmonyProgression() {}
 
+    /** First field tier whose recipe takes the originals' exclusive materials. */
+    public static final int ORIGINALS_TIER = 3;
+
     public static void register(Consumer<FinishedRecipe> provider) {
         long eut = GTValues.VA[GTValues.UXV];
         var boundary = GTNAEyeOfHarmonyContent.BOUNDARY_CASING;
@@ -90,6 +93,17 @@ public final class GTNAEyeOfHarmonyProgression {
                                 .getFluid(10 * 144))
                         .inputFluids(GTMaterials.Neutronium.getFluid(20 * 144 * (tier + 1)))
                         .outputItems(fields[tier].asStack(4)).duration(1200 + tier * 400).EUt(eut);
+                // From tier 3 the fields take what only the originals produce. The tiers below stay free of them:
+                // the Rift Gate's structure uses tier-0 stabilisation fields and runs on the EOH's SpaceTime.
+                if (tier >= ORIGINALS_TIER) {
+                    builder.inputItems(TagPrefix.dust,
+                            com.raishxn.gtna.common.data.material.OriginalsMaterials.DegenerateCoreMatter, 4 * tier)
+                            .inputItems(TagPrefix.dust,
+                                    com.raishxn.gtna.common.data.material.OriginalsMaterials.Chronomercury, 4 * tier)
+                            .inputItems(TagPrefix.dust,
+                                    com.raishxn.gtna.common.data.material.OriginalsMaterials.VoidAsh, 8 * tier)
+                            .inputItems(com.raishxn.gtna.common.data.GTNAOriginals.RIFT_SINGULARITY.asStack());
+                }
                 if (tier == 0) {
                     builder.stationResearch(b -> b.researchStack(spatial.asStack()).CWUt(256).EUt(eut));
                 } else {

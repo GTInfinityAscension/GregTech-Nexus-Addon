@@ -20,6 +20,11 @@ public final class EyeOfHarmonyEMIPlugin implements EmiPlugin {
 
     @Override
     public void register(EmiRegistry registry) {
+        com.raishxn.gtna.integration.OriginalsInfo.entries().forEach((key, stacks) -> registry.addRecipe(
+                new dev.emi.emi.api.recipe.EmiInfoRecipe(
+                        stacks.stream().map(s -> (dev.emi.emi.api.stack.EmiIngredient) EmiStack.of(s)).toList(),
+                        java.util.List.of(com.raishxn.gtna.integration.OriginalsInfo.text(key)),
+                        GTNACORE.id("/info/originals/" + key))));
         registry.addCategory(CATEGORY);
         registry.addWorkstation(CATEGORY, EmiStack.of(GTNAMachines.EYE_OF_HARMONY.asStack()));
         registry.removeRecipes(recipe -> recipe.getCategory().getId().equals(

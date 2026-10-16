@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtceu:item/material_sets/gtna_void_ash/dust",
+    "halo": "gtna:item/effect/void_entropy_sink"
+  },
+  "loader": "gtna:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -1,
+    "size": 5,
+    "pulse": false
+  }
+}
