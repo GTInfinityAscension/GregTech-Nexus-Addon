@@ -6,6 +6,7 @@
 - GTNA now requires [GTIA Lib](https://github.com/GTInfinityAscension/GTIA-Lib) 0.4.0 or newer. `Int128`, `BlockPosLongSet` and `BlockPosHashing` moved there (`com.gtinfinityascension.gtialib.data`); addons that imported them from GTNA must update the import.
 
 ### Fixed
+- 10 recipes failed to load because they used item forms that do not exist: Space Drone MK II, MK V and MK VI asked for quadruple wires of Duranium, Americium and Darmstadtium (no cable in GTCEu); they now use Europium (UHV cable) and the UXV superconductor. Ytterbium, Thallium, Erbium, Hafnium, Rhenium and Gadolinium get a dust form, so the ore processing, stellar synthesis and rare earth recipes that output them load.
 - 0.6.0 failed to load on clients without JEI (EMI-only packs): a debug command named a JEI type in a class every client loads. The JEI part is now its own class, registered only with JEI installed, and a unit test fails if a JEI type appears outside JEI-only classes.
 
 ### Performance

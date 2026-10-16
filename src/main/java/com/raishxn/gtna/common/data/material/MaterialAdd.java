@@ -12,8 +12,11 @@ public class MaterialAdd {
     public static void init() {
         // Stock GTCEu declares these elements without item forms. The GTL vein catalog needs
         // dust fallbacks for its fork-only ores; do not generate extra worldgen ore blocks.
+        // Ytterbium, Thallium, Erbium, Hafnium, Rhenium and Gadolinium are by-products of the ported ore and stellar
+        // recipes (front_pro, stellar_superheavy_synthesis, rare_earth); without a dust form those recipes failed.
         for (var material : new com.gregtechceu.gtceu.api.data.chemical.material.Material[] {
-                Rubidium, Strontium, Tellurium, Zirconium }) {
+                Rubidium, Strontium, Tellurium, Zirconium, Ytterbium, Thallium, Erbium, Hafnium, Rhenium,
+                Gadolinium }) {
             if (!material.hasProperty(PropertyKey.DUST)) material.setProperty(PropertyKey.DUST, new DustProperty());
         }
         Bronze.addFlags(GENERATE_SPRING_SMALL, GENERATE_SPRING);

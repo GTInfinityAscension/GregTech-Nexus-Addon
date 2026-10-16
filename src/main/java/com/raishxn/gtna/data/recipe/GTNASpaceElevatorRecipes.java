@@ -24,6 +24,7 @@ import com.raishxn.gtna.common.data.GTNAMachines3;
 import com.raishxn.gtna.common.data.GTNAMegaMachines;
 import com.raishxn.gtna.common.data.GTNARecipeDataKeys;
 import com.raishxn.gtna.common.data.GTNARecipeType;
+import com.raishxn.gtna.common.data.material.GodforgeChainMaterials;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,20 +63,29 @@ public final class GTNASpaceElevatorRecipes {
         // GTO wires/plates: Abyssal Alloy, Titan Steel, Adamantine, Naquadriatic Taranium, Starmetal -> GTCEu
         // superconductor-tier metals; Quantanium, Adamantium, Vibranium -> Neutronium / Duranium / Tritanium;
         // Bohrium, Meitnerium, Livermorium (fluids only in GTO) -> Iridium, Osmium, Naquadria.
+        // EN: Wires need a material with a cable in GTCEu/GTNA (Duranium, Americium and Darmstadtium have none, so the
+        // recipes failed to load): MK II uses Europium (UHV cable), MK V and MK VI the UXV superconductor of the
+        // Godforge chain, the highest cable that exists.
+        // PT: O fio precisa de um material com cabo no GTCEu/GTNA (Duranium, Americium e Darmstadtium não têm, e as
+        // receitas falhavam ao carregar): o MK II usa Europium (cabo UHV), o MK V e o MK VI o supercondutor UXV da
+        // cadeia do Godforge, o cabo mais alto que existe.
+        // ZH: 导线需要在 GTCEu/GTNA 中拥有线缆的材料（Duranium、Americium、Darmstadtium 没有，导致配方加载失败）：
+        // MK II 使用 Europium（UHV 线缆），MK V 和 MK VI 使用 Godforge 链的 UXV 超导体，即现有最高等级线缆。
         List<Drone> drones = List.of(
                 new Drone(Titanium, GTItems.BATTERY_HV_LITHIUM.asStack(4), CustomTags.UV_CIRCUITS, GTValues.UV,
                         Tritanium, Darmstadtium, Manganese, Potin, Ultimet, 491520, 1),
                 new Drone(TungstenSteel, GTItems.BATTERY_EV_VANADIUM.asStack(16), CustomTags.UHV_CIRCUITS,
-                        GTValues.UHV, Duranium, Tritanium, Neodymium, Osmiridium, HSSS, 1966080, 1),
+                        GTValues.UHV, Europium, Tritanium, Neodymium, Osmiridium, HSSS, 1966080, 1),
                 new Drone(HSSE, GTItems.BATTERY_IV_VANADIUM.asStack(4), CustomTags.UEV_CIRCUITS, GTValues.UEV,
                         Trinium, Neutronium, Yttrium, BlueAlloy, RTMAlloy, 7864320, 2),
                 new Drone(NaquadahAlloy, GTItems.BATTERY_IV_VANADIUM.asStack(16), CustomTags.UIV_CIRCUITS,
                         GTValues.UIV, Europium, Duranium, Iridium, TungstenCarbide, RhodiumPlatedPalladium, 31457280,
                         3),
                 new Drone(Duranium, GTItems.BATTERY_LuV_VANADIUM.asStack(4), CustomTags.UXV_CIRCUITS, GTValues.UXV,
-                        Americium, Neutronium, Osmium, BlackBronze, HSSG, 125829120, 4),
+                        GodforgeChainMaterials.SuperconductorUMV, Neutronium, Osmium, BlackBronze, HSSG, 125829120, 4),
                 new Drone(Neutronium, GTItems.BATTERY_LuV_VANADIUM.asStack(16), CustomTags.OpV_CIRCUITS,
-                        GTValues.OpV, Darmstadtium, Neutronium, Naquadria, SterlingSilver, TitaniumTungstenCarbide,
+                        GTValues.OpV, GodforgeChainMaterials.SuperconductorUMV, Neutronium, Naquadria, SterlingSilver,
+                        TitaniumTungstenCarbide,
                         503316480, 5));
         for (int i = 0; i < drones.size(); i++) {
             Drone d = drones.get(i);

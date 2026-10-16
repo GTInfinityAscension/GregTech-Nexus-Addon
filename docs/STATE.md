@@ -55,8 +55,7 @@ Updated: 2026-10-16 · version **0.6.0** (+ unreleased fixes on `main`) · Minec
 
 ## Open items
 
-- 10 recipe errors at load (`Tried to set ... stack that doesn't exist`, e.g. `gtna:space_drone_mk2` with Duranium `wireGtQuadruple`, `gtna:rare_earth` small Gadolinium dust); present in the 0.6.0 release too.
-- Next release must say: requires GTIA Lib; fixes the client crash without JEI; single-block cover check 8.37 → 3.74 ms/tick with 2,000 furnaces.
+- Next release (0.6.1) must say: requires GTIA Lib; fixes the client crash without JEI and 10 recipes that failed to load; single-block cover check 8.37 → 3.74 ms/tick with 2,000 furnaces; soft preview shape cache.
 
 - DTPF Convergence and the ISA Mill tiers (roadmap phases A and B).
 - Phases D–G of the port list (large GTO systems, GTNH-only, TST/GTNL/123Tech, GTLAdditions).
