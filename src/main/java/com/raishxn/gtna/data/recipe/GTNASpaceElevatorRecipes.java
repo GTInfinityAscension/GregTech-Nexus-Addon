@@ -125,8 +125,13 @@ public final class GTNASpaceElevatorRecipes {
     }
 
     private static FluidStack[] fuels() {
-        return new FluidStack[] { RocketFuel.getFluid(10000),
-                new FluidStack(earth.terrarium.adastra.common.registry.ModFluids.FUEL.get(), 6000) };
+        // EN: Look Ad Astra's fuel up by ID so worlds still load without Ad Astra (dev runClient crashed).
+        // PT: Busca o combustível do Ad Astra pelo ID para o mundo abrir sem o Ad Astra (o runClient travava).
+        // ZH: 按 ID 查找 Ad Astra 燃料，使未安装 Ad Astra 时世界也能加载（开发客户端曾崩溃）。
+        var adAstraFuel = ForgeRegistries.FLUIDS.getValue(new ResourceLocation("ad_astra", "fuel"));
+        if (adAstraFuel == null || adAstraFuel == net.minecraft.world.level.material.Fluids.EMPTY)
+            return new FluidStack[] { RocketFuel.getFluid(10000) };
+        return new FluidStack[] { RocketFuel.getFluid(10000), new FluidStack(adAstraFuel, 6000) };
     }
 
     private record Ore(int amount, Material material) {}
