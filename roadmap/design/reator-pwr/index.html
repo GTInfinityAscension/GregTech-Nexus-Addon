@@ -1,0 +1,5052 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Nexus of Steam & Steel — Documentation for GregTech Nexus Addon">
+      
+      
+        <meta name="author" content="Raishxn">
+      
+      
+        <link rel="canonical" href="https://gtinfinityascension.github.io/GregTech-Nexus-Addon/roadmap/design/reator-pwr/">
+      
+      
+        <link rel="prev" href="../../../gameplay/tips/ae2-integration/">
+      
+      
+        <link rel="next" href="../lanca-cinetica-orbital/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="pt">
+        
+          <link rel="alternate" href="../../../en/roadmap/design/reator-pwr/" hreflang="en">
+        
+          <link rel="alternate" href="../../../es/roadmap/design/reator-pwr/" hreflang="es">
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Reator de Água Pressurizada (IV) - GregTech Nexus Addon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reator-de-agua-pressurizada-iv" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="GregTech Nexus Addon" class="md-header__button md-logo" aria-label="GregTech Nexus Addon" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GregTech Nexus Addon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reator de Água Pressurizada (IV)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Selecione o idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="pt" class="md-select__link">
+              Português
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../en/roadmap/design/reator-pwr/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../es/roadmap/design/reator-pwr/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartilhar" aria-label="Compartilhar" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GTInfinityAscension/GregTech-Nexus-Addon" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GTInfinityAscension/GregTech-Nexus-Addon
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏠 Início
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../gameplay/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🎮 Gameplay
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧪 Originais (WIP)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../development/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🔧 Desenvolvimento
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📋 Roadmap
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="GregTech Nexus Addon" class="md-nav__button md-logo" aria-label="GregTech Nexus Addon" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    GregTech Nexus Addon
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GTInfinityAscension/GregTech-Nexus-Addon" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GTInfinityAscension/GregTech-Nexus-Addon
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Início
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 Início
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/first-steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primeiros passos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perguntas frequentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Novidades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../gameplay/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎮 Gameplay
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎮 Gameplay
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eras
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Eras
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/eras/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺️ Visao Geral das Eras / Eras Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/eras/steam-and-steel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙️ Era do Vapor e Aco / Steam and Steel Era
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../gameplay/machines/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Máquinas
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Máquinas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Era Vapor & Aço
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Era Vapor & Aço
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/steam/large-steam-furnace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔥 Large Steam Furnace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/steam/large-steam-crusher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙️ Large Steam Crusher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/steam/large-steam-alloy-smelter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔩 Large Steam Alloy Smelter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/steam/large-steam-solar-boiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ☀️ Large Steam Solar Boiler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/steam/steam-cobbler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🪨 Steam Cobbler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/steam/stone-superheater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌡️ Stone Superheater
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/steam/steam-manufacturer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 Steam Manufacturer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/steam/steam-woodcutter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🪓 Steam Woodcutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/steam/void-miner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⛏️ Void Miner (Steam Gate Aged)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiblocos Elétricos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Multiblocos Elétricos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/electric/industrial-slaughterhouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐄 Industrial Slaughterhouse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sem Eletricidade
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sem Eletricidade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/noenergy/infernal-coke-oven/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔥 Infernal Coke Oven
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/noenergy/hyper-pressure-reactor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💨 Hyper Pressure Reactor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/machines/noenergy/leap-forward-blast-furnace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ Leap Forward Blast Furnace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/systems/forge-of-gods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forja dos Deuses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/systems/eye-of-harmony/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Olho da Harmonia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/systems/bec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Condensado de Bose-Einstein
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/systems/space-elevator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elevador Espacial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/systems/nano-forge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nano Forge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/systems/dyson-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esfera de Dyson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/systems/nexus-flux-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ Nexus Flux Matrix — Wireless Energy System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/systems/wireless-steam-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📡 Wireless Steam Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/systems/research-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Motor de Pesquisa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/systems/hydraulic-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 Sistema Hidraulico / Hydraulic System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/systems/item-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Efeitos de item
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../gameplay/parts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hatches & Partes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hatches & Partes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/parts/wireless-steam-hatches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📡 Wireless Steam Hatches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/parts/thread-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧵 Thread Hatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/parts/accelerate-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ Accelerate Hatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/parts/overclock-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔥 Overclock Hatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/parts/advanced-parallel-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Advanced Parallel Hatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/parts/huge-steam-bus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 Huge Steam Buses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../gameplay/materials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Materiais
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Materiais
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/materials/alloys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚗️ Ligas Metálicas / Metal Alloys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/materials/elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧪 Elementos Customizados / Custom Elements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/materials/fluids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💧 Fluidos / Fluids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dicas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dicas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/tips/optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💡 Dicas de Otimizacao / Optimization Tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gameplay/tips/ae2-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔌 Integracao AE2 / AE2 Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧪 Originais (WIP)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧪 Originais (WIP)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reator de Água Pressurizada (IV)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reator de Água Pressurizada (IV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Visão geral
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-estrutura-e-materiais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Estrutura e materiais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Estrutura e materiais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-hatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Hatches
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-combustivel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Combustível
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-reatividade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Reatividade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Reatividade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-valor-das-barras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Valor das barras
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cinetica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cinética
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-xenonio-e-samario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Xenônio e samário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-boro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Boro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-termo-hidraulica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Termo-hidráulica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Termo-hidráulica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-primario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Primário
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-pressurizador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Pressurizador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-secundario-e-torre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Secundário e torre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-bombas-e-energia-propria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Bombas e energia própria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-calor-de-decaimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Calor de decaimento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-protecao-e-falhas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Proteção e falhas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Proteção e falhas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-scram-automatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 SCRAM automático
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-seguranca-passiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Segurança passiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-danos-em-degraus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Danos em degraus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#114-distribuicao-de-potencia-no-nucleo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Distribuição de potência no núcleo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#115-quimica-do-primario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 Química do primário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#116-geradores-de-vapor-e-transientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 Geradores de vapor e transientes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-automacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Automação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-ciclo-do-combustivel-cadeia-de-producao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Ciclo do combustível (cadeia de produção)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Ciclo do combustível (cadeia de produção)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-enriquecimento-formula-real-de-swu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Enriquecimento (fórmula real de SWU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-etapas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Etapas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-combustivel-gasto-45-gwdt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Combustível gasto (45 GWd/t)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-multiblocos-auxiliares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Multiblocos auxiliares
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tela-mockup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tela (mockup)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lanca-cinetica-orbital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lança Cinética Orbital (UEV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portao-de-fenda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portão de Fenda Dimensional (UIV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anel-colisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anel Colisor de Antimatéria (UIV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../camara-estelar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Câmara de Contenção Estelar (MAX)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../development/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 Desenvolvimento
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 Desenvolvimento
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠️ Setup do Ambiente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ Arquitetura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/api/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visão geral da API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/api/kubejs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API KubeJS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/api/machines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏭 API: Criando Multiblocks com Hatches GTNA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/api/materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧪 API: Criando Materiais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../development/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤝 Contribuindo / Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 Roadmap
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📋 Roadmap
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Visão geral
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-estrutura-e-materiais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Estrutura e materiais
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Estrutura e materiais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-hatches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Hatches
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-combustivel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Combustível
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-reatividade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Reatividade
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Reatividade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-valor-das-barras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Valor das barras
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cinetica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cinética
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-xenonio-e-samario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Xenônio e samário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-boro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Boro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-termo-hidraulica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Termo-hidráulica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Termo-hidráulica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-primario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Primário
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-pressurizador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Pressurizador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-secundario-e-torre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Secundário e torre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-bombas-e-energia-propria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Bombas e energia própria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-calor-de-decaimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Calor de decaimento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-protecao-e-falhas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Proteção e falhas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Proteção e falhas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-scram-automatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 SCRAM automático
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-seguranca-passiva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Segurança passiva
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-danos-em-degraus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Danos em degraus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#114-distribuicao-de-potencia-no-nucleo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Distribuição de potência no núcleo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#115-quimica-do-primario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 Química do primário
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#116-geradores-de-vapor-e-transientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 Geradores de vapor e transientes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-automacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Automação
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-ciclo-do-combustivel-cadeia-de-producao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Ciclo do combustível (cadeia de produção)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Ciclo do combustível (cadeia de produção)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-enriquecimento-formula-real-de-swu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 Enriquecimento (fórmula real de SWU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-etapas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 Etapas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-combustivel-gasto-45-gwdt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Combustível gasto (45 GWd/t)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-multiblocos-auxiliares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Multiblocos auxiliares
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tela-mockup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tela (mockup)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="reator-de-agua-pressurizada-iv">Reator de Água Pressurizada (IV)<a class="headerlink" href="#reator-de-agua-pressurizada-iv" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Em desenvolvimento</p>
+<p>Esta máquina ainda não está pronta no jogo. A ficha descreve o design aprovado; números e detalhes podem mudar no balanço.</p>
+</div>
+<blockquote>
+<p>Ficha de design, versão 2 (opção A escolhida). Tabelas calculadas por <code>tools/design/pwr_spec.py</code>. A física é a de um PWR real, com escala de tempo e de potência de jogo. Os números finais de balanço ficam com o modpack.</p>
+</blockquote>
+<h2 id="1-visao-geral">1. Visão geral<a class="headerlink" href="#1-visao-geral" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Tipo:</strong> gerador térmico. O reator produz <strong>Vapor de Alta Pressão</strong>; turbinas separadas convertem em EU.</li>
+<li><strong>Tier:</strong> IV. Todos os blocos e componentes são da era IV (tungstênio-aço, Inconel 625, Hastelloy-N, carbeto de boro, PBI).</li>
+<li><strong>Potência nominal:</strong> 131.072 EU/t térmicos (16 A IV). Vapor: 262.144 L/t.</li>
+<li><strong>Estrutura:</strong> contenção ≈ 47 × 48 × 47 + torre de resfriamento de 66 blocos.</li>
+<li><strong>Filosofia:</strong> complexo de projetar, simples de manter. Tudo que exige atenção contínua tem um modo automático configurável uma vez (setpoint, programa de boro, campanha de recarga). O jogador projeta a usina; não fica de babá.</li>
+</ul>
+<h2 id="2-estrutura-e-materiais">2. Estrutura e materiais<a class="headerlink" href="#2-estrutura-e-materiais" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parte</th>
+<th>Bloco (era IV)</th>
+<th>Função</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contenção externa</td>
+<td>High Strength Concrete</td>
+<td>barreira final; precisa estar completa para ligar</td>
+</tr>
+<tr>
+<td>Liner da contenção</td>
+<td>PBI Radiation Resistant Mechanical Enclosure</td>
+<td>estanqueidade; vazamento aqui = zona radioativa</td>
+</tr>
+<tr>
+<td>Janelas de inspeção</td>
+<td>Tungsten Borosilicate Glass</td>
+<td>anel no nível do piso de operação</td>
+</tr>
+<tr>
+<td>Blindagem primária</td>
+<td>Radiation Absorbent Casing</td>
+<td>cavidade do reator</td>
+</tr>
+<tr>
+<td>Vaso de pressão e tampa</td>
+<td>Robust Tungstensteel Machine Casing</td>
+<td>aguenta 155 bar</td>
+</tr>
+<tr>
+<td>Barras de controle (CRDM)</td>
+<td>Boron Carbide Ceramic Radiation Resistant Cube</td>
+<td>5 bancos de barras, movidos pela GUI</td>
+</tr>
+<tr>
+<td>Canais de combustível</td>
+<td>Fission Reactor Casing</td>
+<td>cada canal recebe um conjunto combustível</td>
+</tr>
+<tr>
+<td>Geradores de vapor (4)</td>
+<td>Inconel 625 Casing</td>
+<td>troca de calor primário → secundário</td>
+</tr>
+<tr>
+<td>Tubulação primária</td>
+<td>Inconel 625 Pipe Casing</td>
+<td>pernas quente, fria e de cruzamento</td>
+</tr>
+<tr>
+<td>Bombas do primário (4)</td>
+<td>Tungstensteel Gearbox + IV Machine Hull</td>
+<td>vazão do primário; gastam EU</td>
+</tr>
+<tr>
+<td>Pressurizador</td>
+<td>Hastelloy-N 75 Casing</td>
+<td>controla a pressão (aquecedores e spray)</td>
+</tr>
+<tr>
+<td>Linha de surto/spray</td>
+<td>High Pressure Pipe Casing</td>
+<td>liga pressurizador e perna quente</td>
+</tr>
+<tr>
+<td>Fundo do canal de recarga</td>
+<td>Zirconia Ceramic Mechanical Block</td>
+<td>resistente a água borada</td>
+</tr>
+<tr>
+<td>Piso de operação</td>
+<td>Grate Machine Casing</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Ponte rolante polar</td>
+<td>Tungstensteel Pipe Casing + listras</td>
+<td>executa a recarga</td>
+</tr>
+<tr>
+<td>Torre de resfriamento</td>
+<td>High Strength Concrete</td>
+<td>rejeita o calor do secundário</td>
+</tr>
+</tbody>
+</table>
+<h3 id="21-hatches">2.1 Hatches<a class="headerlink" href="#21-hatches" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Hatch</th>
+<th>Qtd.</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hatch de Conjuntos Combustíveis</td>
+<td>1</td>
+<td>entrada de conjuntos novos e saída dos gastos (para a piscina)</td>
+</tr>
+<tr>
+<td>Entrada de Água de Alimentação</td>
+<td>1–4</td>
+<td>água desmineralizada do secundário</td>
+</tr>
+<tr>
+<td>Saída de Vapor de Alta Pressão</td>
+<td>1–4</td>
+<td>para as turbinas</td>
+</tr>
+<tr>
+<td>Entrada de Ácido Bórico</td>
+<td>1</td>
+<td>controle químico de reatividade</td>
+</tr>
+<tr>
+<td>Entrada/Saída de Água do Primário</td>
+<td>1 + 1</td>
+<td>reposição e purga (sai contaminada se houver falha de vareta)</td>
+</tr>
+<tr>
+<td>Energia (IV)</td>
+<td>1–4</td>
+<td>bombas, aquecedores do pressurizador, ponte rolante</td>
+</tr>
+<tr>
+<td>Dados / Redstone</td>
+<td>até 4</td>
+<td>telemetria e comandos (seção 12)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-combustivel">3. Combustível<a class="headerlink" href="#3-combustivel" title="Permanent link">&para;</a></h2>
+<p>O núcleo tem <strong>37 canais</strong>. Cada canal recebe um <strong>Conjunto Combustível</strong> (item) com enriquecimento <code>e</code> e queima <code>B</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>k∞(e, B) = k₀(e) − 0,006 · B          k₀(e) = 0,92 + 0,075 · e     (e em %, B em GWd/t)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>k_núcleo = média dos k∞ · 0,97        (fuga de nêutrons)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>B_max(e) = queima em que o conjunto sozinho deixa de manter o núcleo crítico
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Conjunto</th>
+<th>e (%)</th>
+<th>k₀</th>
+<th>B_max (GWd/t)</th>
+<th>Ciclos de 1/3 do núcleo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LEU-3</td>
+<td>3</td>
+<td>1,15</td>
+<td>19</td>
+<td>1,51</td>
+</tr>
+<tr>
+<td>LEU-4</td>
+<td>4</td>
+<td>1,22</td>
+<td>31,5</td>
+<td>2,5</td>
+</tr>
+<tr>
+<td>LEU-4,5</td>
+<td>4,5</td>
+<td>1,26</td>
+<td>37,8</td>
+<td>3</td>
+</tr>
+<tr>
+<td>LEU-5</td>
+<td>5</td>
+<td>1,29</td>
+<td>44</td>
+<td>3,5</td>
+</tr>
+</tbody>
+</table>
+<p>Variantes: <strong>Conjunto com Gadolínia</strong> (Gd₂O₃ como absorvedor queimável: −3000 pcm no início, some até 15 GWd/t; deixa o boro baixo no começo do ciclo) e, no LuV, <strong>MOX</strong> (Pu reciclado do PUREX).</p>
+<p>Queima por tick: <code>dB/dt = P_canal / massa_U</code>. Com o núcleo a 100%, um conjunto LEU-4,5 sai em cerca de 3 ciclos. Um ciclo nominal dura 6 horas de jogo (ajustável no balanço).</p>
+<h2 id="4-reatividade">4. Reatividade<a class="headerlink" href="#4-reatividade" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ρ = (k − 1)/k                                  em pcm (1 pcm = 1e-5)
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ρ_total = ρ_comb + ρ_barras + ρ_boro + ρ_Doppler + ρ_mod + ρ_Xe + ρ_Sm
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>ρ_barras  = −8000 pcm · f(x)        f(x) = x − sin(2πx)/(2π)   (curva S real de valor integral)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>ρ_boro    = -10 pcm/ppm · C_B
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>ρ_Doppler = -2.5 pcm/K · (T_comb − 565 K)
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>ρ_mod     = -40 pcm/K · (T_mod − 565 K)
+</span></code></pre></div>
+<p>Os dois coeficientes de temperatura são negativos: o reator se autorregula. Subir a potência esquenta o combustível e a água, que tiram reatividade. Isso deixa o controle automático estável.</p>
+<h3 id="41-valor-das-barras">4.1 Valor das barras<a class="headerlink" href="#41-valor-das-barras" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Inserção x</th>
+<th>f(x)</th>
+<th>ρ_barras (pcm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0%</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10%</td>
+<td>0,00645</td>
+<td>-51,6</td>
+</tr>
+<tr>
+<td>25%</td>
+<td>0,0908</td>
+<td>-727</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>0,5</td>
+<td>-4.000</td>
+</tr>
+<tr>
+<td>75%</td>
+<td>0,909</td>
+<td>-7.273</td>
+</tr>
+<tr>
+<td>90%</td>
+<td>0,994</td>
+<td>-7.948</td>
+</tr>
+<tr>
+<td>100%</td>
+<td>1</td>
+<td>-8.000</td>
+</tr>
+</tbody>
+</table>
+<p>As barras valem pouco nas pontas e muito no meio, como num reator real. Ajuste fino se faz com as barras na faixa de 20–40%.</p>
+<h2 id="5-cinetica">5. Cinética<a class="headerlink" href="#5-cinetica" title="Permanent link">&para;</a></h2>
+<p>Cinética pontual com um grupo de nêutrons atrasados: <code>β = 650 pcm</code>, <code>Λ = 2e-05 s</code>, <code>λ = 0.08 /s</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dn/dt = (ρ − β)/Λ · n + λ·C
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>dC/dt = β/Λ · n − λ·C
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>período estável τ ≈ (β − ρ) / (λ · ρ)
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>ρ (pcm)</th>
+<th>Período τ</th>
+<th>Tempo para dobrar a potência</th>
+<th>Situação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>800 s</td>
+<td>555 s</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>50</td>
+<td>150 s</td>
+<td>104 s</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>100</td>
+<td>68,8 s</td>
+<td>47,7 s</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>200</td>
+<td>28,1 s</td>
+<td>19,5 s</td>
+<td>alarme de período</td>
+</tr>
+<tr>
+<td>300</td>
+<td>14,6 s</td>
+<td>10,1 s</td>
+<td>alarme de período</td>
+</tr>
+<tr>
+<td>500</td>
+<td>3,75 s</td>
+<td>2,6 s</td>
+<td>SCRAM por período curto</td>
+</tr>
+<tr>
+<td>640</td>
+<td>0,195 s</td>
+<td>0,135 s</td>
+<td>SCRAM por período curto</td>
+</tr>
+</tbody>
+</table>
+<p>Acima de β (650 pcm) o reator fica <strong>pronto-crítico</strong>: a potência dispara em milissegundos. O SCRAM automático por período curto (&lt; 10 s) existe para isso nunca acontecer em operação normal.</p>
+<h2 id="6-xenonio-e-samario">6. Xenônio e samário<a class="headerlink" href="#6-xenonio-e-samario" title="Permanent link">&para;</a></h2>
+<p>Equações reais do I-135 → Xe-135, com o tempo comprimido (<strong>1 hora real = 1 minuto de jogo</strong>):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>dI/dt = γ_I·Σf·φ − λ_I·I
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>dX/dt = γ_X·Σf·φ + λ_I·I − λ_X·X − σ_X·φ·X
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>meias-vidas reais: I-135 = 6,57 h, Xe-135 = 9,14 h
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>ρ_Xe = −2800 pcm · X / X_eq(100%)
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Minutos após desligar</th>
+<th>Xe / Xe_eq</th>
+<th>ρ_Xe (pcm)</th>
+<th>Pode religar com as barras todas fora?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>-2.800</td>
+<td>sim</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1,43</td>
+<td>-4.013</td>
+<td>sim</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1,78</td>
+<td>-4.979</td>
+<td>não</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1,88</td>
+<td>-5.265</td>
+<td>não</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1,84</td>
+<td>-5.140</td>
+<td>não</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1,66</td>
+<td>-4.635</td>
+<td>não</td>
+</tr>
+<tr>
+<td>20</td>
+<td>1,36</td>
+<td>-3.802</td>
+<td>sim</td>
+</tr>
+<tr>
+<td>30</td>
+<td>0,805</td>
+<td>-2.254</td>
+<td>sim</td>
+</tr>
+<tr>
+<td>45</td>
+<td>0,314</td>
+<td>-880</td>
+<td>sim</td>
+</tr>
+<tr>
+<td>60</td>
+<td>0,112</td>
+<td>-315</td>
+<td>sim</td>
+</tr>
+</tbody>
+</table>
+<p>Depois de desligar, o xenônio <strong>sobe</strong> por ~10 minutos antes de cair (poço de xenônio). Religar nessa janela exige excesso de reatividade (combustível novo) ou esperar. O modo automático conhece o poço e mostra na GUI quanto tempo falta para poder religar.</p>
+<h2 id="7-boro">7. Boro<a class="headerlink" href="#7-boro" title="Permanent link">&para;</a></h2>
+<p>A concentração de boro compensa a queima ao longo do ciclo. O programa de boro automático segue a curva abaixo; o jogador só garante ácido bórico e água desmineralizada.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>C_B(B) = ρ_excesso(B) / 10        ρ_excesso = ρ_comb(B) − 1000 pcm de margem para as barras
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Queima média (GWd/t)</th>
+<th>k_núcleo</th>
+<th>ρ_comb (pcm)</th>
+<th>Boro crítico (ppm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1,22</td>
+<td>18.018</td>
+<td>1.702</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1,19</td>
+<td>16.014</td>
+<td>1.501</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1,16</td>
+<td>13.910</td>
+<td>1.291</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1,13</td>
+<td>11.698</td>
+<td>1.070</td>
+</tr>
+<tr>
+<td>20</td>
+<td>1,1</td>
+<td>9.369</td>
+<td>837</td>
+</tr>
+<tr>
+<td>25</td>
+<td>1,07</td>
+<td>6.914</td>
+<td>591</td>
+</tr>
+<tr>
+<td>30</td>
+<td>1,05</td>
+<td>4.322</td>
+<td>332</td>
+</tr>
+</tbody>
+</table>
+<p>Mudar o boro é lento (diluição pela vazão de reposição), por isso as barras cuidam das mudanças rápidas e o boro das lentas.</p>
+<h2 id="8-termo-hidraulica">8. Termo-hidráulica<a class="headerlink" href="#8-termo-hidraulica" title="Permanent link">&para;</a></h2>
+<h3 id="81-primario">8.1 Primário<a class="headerlink" href="#81-primario" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>P_th = n · P_nom
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>ṁ_prim = P_th / (c_p · ΔT)          ΔT nominal 33 K (292 → 325 °C), 155 bar
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>T_comb = T_mod + P_canal · R_th
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>DNBR = q_crítico(vazão, pressão) / q_local     precisa ficar &gt; 1,3
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Potência</th>
+<th>Vazão do primário</th>
+<th>DNBR</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100%</td>
+<td>100%</td>
+<td>2,1</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>100%</td>
+<td>75%</td>
+<td>1,67</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>100%</td>
+<td>50%</td>
+<td>1,21</td>
+<td>SCRAM por DNBR</td>
+</tr>
+<tr>
+<td>60%</td>
+<td>50%</td>
+<td>2,01</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>110%</td>
+<td>100%</td>
+<td>1,91</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>100%</td>
+<td>25%</td>
+<td>0,693</td>
+<td>SCRAM por DNBR</td>
+</tr>
+</tbody>
+</table>
+<p>Perder bombas com o reator em potência é a falha clássica do PWR. Com 3 de 4 bombas o reator cai sozinho para 70%; com 2, SCRAM.</p>
+<h3 id="82-pressurizador">8.2 Pressurizador<a class="headerlink" href="#82-pressurizador" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pressão sobe  → spray (água fria da perna fria) condensa vapor
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>pressão desce → aquecedores elétricos (EU) ferve mais água
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>alívio a 172 bar: válvula abre e despeja vapor no tanque de alívio (perde água do primário)
+</span></code></pre></div>
+<h3 id="83-secundario-e-torre">8.3 Secundário e torre<a class="headerlink" href="#83-secundario-e-torre" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>vapor = 2 L por EU térmico
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>capacidade da torre Q_torre = 4096 EU/t por bloco de altura útil
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>P_max = Q_torre / (1 − η_turbina)        η_turbina = 0,33
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>reposição de água da torre = 1,8% da água de circulação (evaporação)
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Altura útil da torre</th>
+<th>Q_torre (EU/t)</th>
+<th>P_th máxima (EU/t)</th>
+<th>% do nominal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>40.960</td>
+<td>61.134</td>
+<td>46,6%</td>
+</tr>
+<tr>
+<td>15</td>
+<td>61.440</td>
+<td>91.701</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>21</td>
+<td>86.016</td>
+<td>128.382</td>
+<td>97,9%</td>
+</tr>
+<tr>
+<td>25</td>
+<td>102.400</td>
+<td>152.836</td>
+<td>117%</td>
+</tr>
+</tbody>
+</table>
+<p>Torre menor que o necessário limita a potência. A altura útil é contada pela estrutura (a torre pode ser construída mais alta).</p>
+<h2 id="9-bombas-e-energia-propria">9. Bombas e energia própria<a class="headerlink" href="#9-bombas-e-energia-propria" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Consumidor</th>
+<th>Consumo</th>
+<th>Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bombas do primário (4)</td>
+<td>229 EU/t cada</td>
+<td>0,7% de P_th, como numa usina real</td>
+</tr>
+<tr>
+<td>Aquecedores do pressurizador</td>
+<td>até 2048 EU/t</td>
+<td>só quando a pressão cai</td>
+</tr>
+<tr>
+<td>Ponte rolante</td>
+<td>512 EU/t</td>
+<td>só durante a recarga</td>
+</tr>
+<tr>
+<td>Remoção de calor residual</td>
+<td>1024 EU/t</td>
+<td>após desligar, até o calor de decaimento cair</td>
+</tr>
+</tbody>
+</table>
+<p>Sem energia as bombas perdem vazão pela inércia do volante: <code>vazão(t) = 1 / (1 + t/10 s)</code>. O SCRAM acontece antes do DNBR cair.</p>
+<h2 id="10-calor-de-decaimento">10. Calor de decaimento<a class="headerlink" href="#10-calor-de-decaimento" title="Permanent link">&para;</a></h2>
+<p>Fórmula de Way–Wigner (real). Depois do SCRAM o núcleo continua gerando calor e precisa de remoção de calor residual:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>P_d / P₀ = 0,066 · [ t^−0,2 − (t + T_op)^−0,2 ]
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Tempo após o SCRAM</th>
+<th>P_d / P₀</th>
+<th>Calor (EU/t, a partir do nominal)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 s</td>
+<td>6,39%</td>
+<td>8.377</td>
+</tr>
+<tr>
+<td>10 s</td>
+<td>3,96%</td>
+<td>5.184</td>
+</tr>
+<tr>
+<td>1 min</td>
+<td>2,7%</td>
+<td>3.541</td>
+</tr>
+<tr>
+<td>10 min</td>
+<td>1,63%</td>
+<td>2.133</td>
+</tr>
+<tr>
+<td>1 h</td>
+<td>1,07%</td>
+<td>1.408</td>
+</tr>
+<tr>
+<td>1 dia</td>
+<td>0,471%</td>
+<td>617</td>
+</tr>
+<tr>
+<td>1 mês</td>
+<td>0,138%</td>
+<td>181</td>
+</tr>
+</tbody>
+</table>
+<p>O mesmo calor vale para os conjuntos gastos: eles vão para a <strong>Piscina de Combustível Usado</strong> (multibloco auxiliar) e só podem ir para o reprocessamento depois que o calor cair abaixo de um limite.</p>
+<h2 id="11-protecao-e-falhas">11. Proteção e falhas<a class="headerlink" href="#11-protecao-e-falhas" title="Permanent link">&para;</a></h2>
+<h3 id="111-scram-automatico">11.1 SCRAM automático<a class="headerlink" href="#111-scram-automatico" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Sinal</th>
+<th>Limite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fluxo alto</td>
+<td>109% do nominal</td>
+</tr>
+<tr>
+<td>Período curto</td>
+<td>&lt; 10 s</td>
+</tr>
+<tr>
+<td>Pressão baixa</td>
+<td>&lt; 130 bar</td>
+</tr>
+<tr>
+<td>Pressão alta</td>
+<td>&gt; 166 bar</td>
+</tr>
+<tr>
+<td>Vazão baixa</td>
+<td>&lt; 90% com P &gt; 30%</td>
+</tr>
+<tr>
+<td>DNBR baixo</td>
+<td>&lt; 1,3</td>
+</tr>
+<tr>
+<td>T_quente alta</td>
+<td>&gt; 340 °C</td>
+</tr>
+<tr>
+<td>Perda de energia</td>
+<td>bombas sem EU</td>
+</tr>
+<tr>
+<td>Contenção aberta</td>
+<td>qualquer bloco faltando</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112-seguranca-passiva">11.2 Segurança passiva<a class="headerlink" href="#112-seguranca-passiva" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Acumuladores:</strong> tanques de água borada pressurizados com N₂ injetam sozinhos quando a pressão cai abaixo de 45 bar.</li>
+<li><strong>Injeção de segurança:</strong> bombas de alta e baixa pressão (consomem EU e água borada).</li>
+<li><strong>Contenção:</strong> segura vapor e radioatividade enquanto estiver completa.</li>
+</ul>
+<h3 id="113-danos-em-degraus">11.3 Danos em degraus<a class="headerlink" href="#113-danos-em-degraus" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Degrau</th>
+<th>Causa</th>
+<th>Efeito</th>
+<th>Recuperação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Falha de varetas</td>
+<td>T_comb alto, DNBR &lt; 1 por &gt; 5 s</td>
+<td>água do primário sai <strong>contaminada</strong></td>
+<td>linha de limpeza: resina de troca iônica + evaporador</td>
+</tr>
+<tr>
+<td>2. Dano ao núcleo</td>
+<td>perda de refrigeração com P_d alto</td>
+<td>conjuntos viram <strong>Destroços de Núcleo</strong></td>
+<td>recarga completa; destroços vão para reprocessamento especial</td>
+</tr>
+<tr>
+<td>3. Fusão</td>
+<td>dano ao núcleo sem injeção de segurança</td>
+<td><strong>cório</strong> no fundo do vaso; estrutura desmonta</td>
+<td>remoção do cório (item muito pesado) e reconstrução do vaso</td>
+</tr>
+<tr>
+<td>4. Liberação</td>
+<td>fusão com contenção incompleta</td>
+<td>zona radioativa ao redor</td>
+<td>só limpeza; sem explosão nuclear</td>
+</tr>
+</tbody>
+</table>
+<h2 id="114-distribuicao-de-potencia-no-nucleo">11.4 Distribuição de potência no núcleo<a class="headerlink" href="#114-distribuicao-de-potencia-no-nucleo" title="Permanent link">&para;</a></h2>
+<p>O núcleo não esquenta por igual. A GUI mostra o mapa de potência por canal e duas grandezas reais de operação:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>F_q = potência do canal mais quente / potência média      limite 2,5
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>AO  = (P_topo − P_base) / (P_topo + P_base)              offset axial, alvo −5% a +5%
+</span></code></pre></div>
+<ul>
+<li><strong>Padrão de carregamento:</strong> o jogador escolhe onde vai cada conjunto. Conjuntos novos no centro deixam F_q alto; o padrão de baixa fuga (novos intercalados, gastos na borda) é o que as usinas reais usam e rende mais queima por ciclo. O modo automático sugere um padrão.</li>
+<li><strong>Oscilação de xenônio:</strong> em núcleos grandes o xenônio pode oscilar entre topo e base com período real de ~15–30 h (15–30 min de jogo). O AO mostra a oscilação e o PID amortece com o banco de barras parcial (banco P).</li>
+<li><strong>Inclinação de quadrante:</strong> um conjunto errado num quadrante desequilibra a potência. Acima de 2% de inclinação a potência máxima cai.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>F_q</th>
+<th>Margem de potência</th>
+<th>Efeito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1,8</td>
+<td>100%</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>2,2</td>
+<td>100%</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>2,5</td>
+<td>100%</td>
+<td>normal</td>
+</tr>
+<tr>
+<td>2,8</td>
+<td>89,3%</td>
+<td>potência limitada automaticamente</td>
+</tr>
+<tr>
+<td>3,2</td>
+<td>78,1%</td>
+<td>potência limitada automaticamente</td>
+</tr>
+</tbody>
+</table>
+<h2 id="115-quimica-do-primario">11.5 Química do primário<a class="headerlink" href="#115-quimica-do-primario" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parâmetro</th>
+<th>Faixa</th>
+<th>Como se controla</th>
+<th>Fora da faixa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boro</td>
+<td>0–2000 ppm</td>
+<td>ácido bórico / diluição</td>
+<td>reatividade errada</td>
+</tr>
+<tr>
+<td>Lítio (⁷LiOH)</td>
+<td>2–3,5 ppm</td>
+<td>hatch de química</td>
+<td>pH baixo: corrosão e <strong>crud</strong> nas varetas</td>
+</tr>
+<tr>
+<td>pH a 300 °C</td>
+<td>7,0–7,4</td>
+<td>relação Li/B (coordenada automaticamente)</td>
+<td>crud: depósito que muda o AO (anomalia CIPS)</td>
+</tr>
+<tr>
+<td>Oxigênio</td>
+<td>&lt; 5 ppb</td>
+<td>hidrogênio dissolvido</td>
+<td>corrosão sob tensão no Inconel</td>
+</tr>
+<tr>
+<td>Atividade (I-131)</td>
+<td>baixa</td>
+<td>resina de troca iônica</td>
+<td>sinal de vareta furada; pico de iodo após SCRAM</td>
+</tr>
+</tbody>
+</table>
+<p>O lítio-7 é enriquecido de propósito (o ⁶Li vira trítio). Isso liga o reator a uma linha química de separação de isótopos de lítio.</p>
+<h2 id="116-geradores-de-vapor-e-transientes">11.6 Geradores de vapor e transientes<a class="headerlink" href="#116-geradores-de-vapor-e-transientes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Tubos do gerador:</strong> cada gerador tem 3.388 tubos (número real de um gerador Westinghouse 51). A corrosão trinca tubos com o tempo; tubo trincado vaza primário para o secundário. Na parada, o jogador <strong>tampona</strong> tubos: cada 1% tamponado tira 0,4% da potência máxima daquele loop.</li>
+<li><strong>Rejeição de carga:</strong> se as turbinas param de puxar vapor, o <strong>despejo de vapor</strong> manda o excesso para o condensador da torre por até 40% da potência; acima disso, SCRAM por pressão alta no secundário.</li>
+<li><strong>Pico de iodo:</strong> depois de um SCRAM a atividade do primário sobe por algumas horas; a purga leva água contaminada para a limpeza.</li>
+</ul>
+<h2 id="12-automacao">12. Automação<a class="headerlink" href="#12-automacao" title="Permanent link">&para;</a></h2>
+<p>Configura-se uma vez:</p>
+<ul>
+<li><strong>Modo potência:</strong> setpoint de potência (% ou EU/t). Um PID move as barras; o programa de boro segue a seção 7.</li>
+<li><strong>Modo seguir carga:</strong> a potência segue a demanda de vapor das turbinas (pelo nível do tanque de vapor).</li>
+<li><strong>Campanha de recarga:</strong> com o hatch de conjuntos abastecido, um botão (ou sinal de redstone) desliga, troca 1/3 do núcleo em padrão de embaralhamento, manda os gastos para a piscina e religa depois do poço de xenônio.</li>
+<li><strong>Saídas:</strong> cover/hatch de dados expõe potência, ρ, T, pressão, DNBR, Xe, boro, queima por canal e alarmes. OpenComputers e CC leem tudo.</li>
+</ul>
+<p>Fica manual de propósito: limpar contaminação e consertar danos. Operar bem nunca exige intervenção.</p>
+<h2 id="13-ciclo-do-combustivel-cadeia-de-producao">13. Ciclo do combustível (cadeia de produção)<a class="headerlink" href="#13-ciclo-do-combustivel-cadeia-de-producao" title="Permanent link">&para;</a></h2>
+<h3 id="131-enriquecimento-formula-real-de-swu">13.1 Enriquecimento (fórmula real de SWU)<a class="headerlink" href="#131-enriquecimento-formula-real-de-swu" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>V(x) = (2x − 1) · ln(x / (1 − x))
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>SWU por kg de produto = V(x_p) + T·V(x_t) − F·V(x_f)       x_f = 0,711%, x_t = 0,25%
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Produto</th>
+<th>Alimentação UF₆ natural (kg/kg)</th>
+<th>SWU por kg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LEU-3</td>
+<td>5,97</td>
+<td>3,81</td>
+</tr>
+<tr>
+<td>LEU-4</td>
+<td>8,13</td>
+<td>5,83</td>
+</tr>
+<tr>
+<td>LEU-4,5</td>
+<td>9,22</td>
+<td>6,87</td>
+</tr>
+<tr>
+<td>LEU-5</td>
+<td>10,3</td>
+<td>7,92</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>Cascata de Centrífugas</strong> (multibloco auxiliar) entrega SWU por segundo conforme o número de centrífugas; mais estágios dão enriquecimento maior.</p>
+<h3 id="132-etapas">13.2 Etapas<a class="headerlink" href="#132-etapas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Processo real</th>
+<th>Entrada → Saída</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lixiviação</td>
+<td>ácido sulfúrico</td>
+<td>minério de urânio → yellowcake (U₃O₈)</td>
+</tr>
+<tr>
+<td>Conversão</td>
+<td>HF + F₂</td>
+<td>U₃O₈ → UF₆</td>
+</tr>
+<tr>
+<td>Enriquecimento</td>
+<td>centrífugas</td>
+<td>UF₆ natural → UF₆ enriquecido + UF₆ empobrecido</td>
+</tr>
+<tr>
+<td>Reconversão</td>
+<td>processo ADU</td>
+<td>UF₆ → pó de UO₂</td>
+</tr>
+<tr>
+<td>Pastilhas</td>
+<td>prensagem + sinterização a 1700 °C (EBF)</td>
+<td>UO₂ → pastilhas</td>
+</tr>
+<tr>
+<td>Revestimento</td>
+<td>tubos de Zircaloy-4 (Zr, Sn, Fe, Cr)</td>
+<td>pastilhas → varetas</td>
+</tr>
+<tr>
+<td>Montagem</td>
+<td>grades espaçadoras de Inconel 718, bocais de inox</td>
+<td>varetas → Conjunto Combustível</td>
+</tr>
+</tbody>
+</table>
+<h3 id="133-combustivel-gasto-45-gwdt">13.3 Combustível gasto (45 GWd/t)<a class="headerlink" href="#133-combustivel-gasto-45-gwdt" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Fração</th>
+<th>% em massa</th>
+<th>Destino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Urânio (0,8% U-235)</td>
+<td>93,4</td>
+<td>volta para a conversão (urânio reprocessado)</td>
+</tr>
+<tr>
+<td>Plutônio</td>
+<td>1,2</td>
+<td>MOX no LuV</td>
+</tr>
+<tr>
+<td>Actinídeos menores (Np, Am, Cm)</td>
+<td>0,1</td>
+<td>linha de transmutação (futuro)</td>
+</tr>
+<tr>
+<td>Gases (Kr, Xe)</td>
+<td>0,6</td>
+<td>separação criogênica: xenônio é útil</td>
+</tr>
+<tr>
+<td>Metais do grupo da platina (Ru, Rh, Pd)</td>
+<td>0,5</td>
+<td>subproduto valioso</td>
+</tr>
+<tr>
+<td>Césio e estrôncio</td>
+<td>0,6</td>
+<td>fontes de calor / RTG</td>
+</tr>
+<tr>
+<td>Demais produtos de fissão</td>
+<td>3,6</td>
+<td>vitrificação em vidro borossilicato</td>
+</tr>
+</tbody>
+</table>
+<p>O reprocessamento <strong>PUREX</strong> (dissolução em HNO₃, extração com TBP em querosene) é a linha que separa essas frações.</p>
+<h2 id="14-multiblocos-auxiliares">14. Multiblocos auxiliares<a class="headerlink" href="#14-multiblocos-auxiliares" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Multibloco</th>
+<th>Tier</th>
+<th>Papel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cascata de Centrífugas</td>
+<td>EV–IV</td>
+<td>enriquecimento (SWU)</td>
+</tr>
+<tr>
+<td>Fábrica de Combustível</td>
+<td>IV</td>
+<td>pastilhas → varetas → conjuntos</td>
+</tr>
+<tr>
+<td>Piscina de Combustível Usado</td>
+<td>IV</td>
+<td>resfria conjuntos gastos (calor de decaimento)</td>
+</tr>
+<tr>
+<td>Planta PUREX</td>
+<td>IV–LuV</td>
+<td>reprocessamento</td>
+</tr>
+<tr>
+<td>Vitrificador</td>
+<td>IV</td>
+<td>rejeito em vidro borossilicato</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tela-mockup">Tela (mockup)<a class="headerlink" href="#tela-mockup" title="Permanent link">&para;</a></h2>
+<p><img alt="Sala de controle" loading="lazy" src="../mockups/gt/pwr_control.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../../../gameplay/tips/ae2-integration/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: 🔌 Integracao AE2 / AE2 Integration">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                🔌 Integracao AE2 / AE2 Integration
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../lanca-cinetica-orbital/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Lança Cinética Orbital (UEV)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Lança Cinética Orbital (UEV)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2026 Raishxn — Licensed under LGPLv3
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GTInfinityAscension/GregTech-Nexus-Addon" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/d3qHufwRxb" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "navigation.indexes", "navigation.footer", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.tabs.link", "toc.follow", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

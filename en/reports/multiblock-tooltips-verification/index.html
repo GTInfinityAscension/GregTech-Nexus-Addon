@@ -1,0 +1,4140 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Nexus of Steam & Steel — Documentation for GregTech Nexus Addon">
+      
+      
+        <meta name="author" content="Raishxn">
+      
+      
+        <link rel="canonical" href="https://gtinfinityascension.github.io/GregTech-Nexus-Addon/en/reports/multiblock-tooltips-verification/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="../../../reports/multiblock-tooltips-verification/" hreflang="pt">
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../../es/reports/multiblock-tooltips-verification/" hreflang="es">
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Multiblock tooltip verification (G-0240/G-0242) - GregTech Nexus Addon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#multiblock-tooltip-verification-g-0240g-0242" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="GregTech Nexus Addon" class="md-header__button md-logo" aria-label="GregTech Nexus Addon" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GregTech Nexus Addon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Multiblock tooltip verification (G-0240/G-0242)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../reports/multiblock-tooltips-verification/" hreflang="pt" class="md-select__link">
+              Português
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../es/reports/multiblock-tooltips-verification/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GTInfinityAscension/GregTech-Nexus-Addon" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GTInfinityAscension/GregTech-Nexus-Addon
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🏠 Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../gameplay/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🎮 Gameplay
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../roadmap/design/reator-pwr/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🧪 Originals (WIP)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../development/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  🔧 Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../roadmap/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  📋 Roadmap
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="GregTech Nexus Addon" class="md-nav__button md-logo" aria-label="GregTech Nexus Addon" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    GregTech Nexus Addon
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GTInfinityAscension/GregTech-Nexus-Addon" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GTInfinityAscension/GregTech-Nexus-Addon
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🏠 Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What's new
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gameplay/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎮 Gameplay
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🎮 Gameplay
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eras
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Eras
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/eras/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🗺 Eras Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/eras/steam-and-steel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙ Steam and Steel Era
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gameplay/machines/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machines
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Machines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catalog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Steam & Steel Era
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Steam & Steel Era
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/steam/large-steam-furnace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔥 Large Steam Furnace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/steam/large-steam-crusher/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚙ Large Steam Crusher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/steam/large-steam-alloy-smelter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 Large Steam Alloy Smelter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/steam/large-steam-solar-boiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ☀️ Large Steam Solar Boiler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/steam/steam-cobbler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🪨 Steam Cobbler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/steam/stone-superheater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌡 Stone Superheater
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/steam/steam-manufacturer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 Steam Manufacturer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/steam/steam-woodcutter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🪓 Steam Woodcutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/steam/void-miner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⛏ Void Miner (Steam Gate Aged)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electric Multiblocks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Electric Multiblocks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/electric/industrial-slaughterhouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🐮 Industrial Slaughterhouse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_5" id="__nav_2_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    No Electricity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    No Electricity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/noenergy/infernal-coke-oven/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔥 Infernal Coke Oven
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/noenergy/hyper-pressure-reactor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌀 Hyper Pressure Reactor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/machines/noenergy/leap-forward-blast-furnace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗 Leap Forward Blast Furnace
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/systems/forge-of-gods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forge of the Gods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/systems/eye-of-harmony/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Eye of Harmony
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/systems/bec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bose-Einstein Condensate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/systems/space-elevator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Space Elevator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/systems/nano-forge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nano Forge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/systems/dyson-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dyson Sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/systems/nexus-flux-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ Nexus Flux Matrix — Wireless Energy System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/systems/wireless-steam-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📡 Wireless Steam Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/systems/research-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Research Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/systems/hydraulic-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 Hydraulic System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/systems/item-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Item effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gameplay/parts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hatches & Parts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hatches & Parts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/parts/wireless-steam-hatches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📡 Wireless Steam Hatches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/parts/thread-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧵 Thread Hatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/parts/accelerate-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚡ Accelerate Hatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/parts/overclock-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔥 Overclock Hatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/parts/advanced-parallel-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Advanced Parallel Hatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/parts/huge-steam-bus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📦 Huge Steam Buses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gameplay/materials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Materials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Materials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/materials/alloys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚗ Metal Alloys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/materials/elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧪 Custom Elements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/materials/fluids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💧 Fluids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tips
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/tips/optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💡 Optimization Tips
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gameplay/tips/ae2-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔌 AE2 Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧪 Originals (WIP)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🧪 Originals (WIP)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/design/reator-pwr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reator de Água Pressurizada (IV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/design/lanca-cinetica-orbital/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lança Cinética Orbital (UEV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/design/portao-de-fenda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portão de Fenda Dimensional (UIV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/design/anel-colisor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anel Colisor de Antimatéria (UIV)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/design/camara-estelar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Câmara de Contenção Estelar (MAX)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../development/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔧 Development
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🔧 Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛠 Environment Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗 Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/api/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/api/kubejs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KubeJS API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/api/machines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏭 API: Creating Multiblocks with GTNA Hatches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/api/materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🧪 Materials API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🤝 Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../roadmap/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📋 Roadmap
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    📋 Roadmap
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="multiblock-tooltip-verification-g-0240g-0242">Multiblock tooltip verification (G-0240/G-0242)<a class="headerlink" href="#multiblock-tooltip-verification-g-0240g-0242" title="Permanent link">&para;</a></h1>
+<p>Every ▸ number was checked against the code listed below. Every row was traced to the code cited. The "Unconfirmed numbers" column comes from the mechanical per-number trace in <code>multiblock-tooltips-trace.md</code> (<code>tools/trace_multiblock_tooltip_numbers.py</code>): 0 unconfirmed numbers.</p>
+<table>
+<thead>
+<tr>
+<th>Machine</th>
+<th>id</th>
+<th>Flavor</th>
+<th>Evidence in code</th>
+<th>Unconfirmed numbers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Advanced Fusion Reactor MK-I</td>
+<td><code>advanced_fusion_reactor</code></td>
+<td>It simulates the eternal light.</td>
+<td>AdvancedFusionReactorMachine.bufferCapacity(LuV,16)=160M, module rules</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Advanced Integrated Ore Processor</td>
+<td><code>advanced_integrated_ore_processor</code></td>
+<td>Why process one ore when you can process all of them?</td>
+<td>AdvancedIntegratedOreProcessorMachine Integer.MAX_VALUE; pattern INPUT_LASER only</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Artificial Star</td>
+<td><code>annihilate_generator</code></td>
+<td>Let there be light. Lots of it.</td>
+<td>ArtificialStarMachine 4x/÷4 OC loop; pattern OUTPUT_ENERGY max 16, OUTPUT_LASER</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Blaze Blast Furnace</td>
+<td><code>blaze_blast_furnace</code></td>
+<td>An intern kept a blaze spawner in here. It worked.</td>
+<td>BlazeBlastFurnaceMachine parallel 64, durationMultiplier 0.5</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Brick Kiln</td>
+<td><code>brick_kiln</code></td>
+<td>Bricks: the original building block.</td>
+<td>pattern: item/fluid buses only, no energy hatch; GTNAMachineRecipes brick recipes: coal + 8 compressed clay</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Cactus Wonder</td>
+<td><code>steam_cactus_wonder</code></td>
+<td>Who needs a boiler when you have a desert?</td>
+<td>GTNAMachineRecipes.cactusWonder: 8,000 / 90,000 mB, duration 20</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Chemical Plant</td>
+<td><code>chemical_plant</code></td>
+<td>The chairman poses with a microscope. Nobody is fooled.</td>
+<td>ChemicalPlantMachine 1 - coilTier*0.05, perfect OC</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Cold Ice Freezer</td>
+<td><code>cold_ice_freezer</code></td>
+<td>Born from a liquid ice leak. The intern is still missing.</td>
+<td>ColdIceFreezerMachine parallel 64, durationMultiplier 0.5</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Compact Hyper Pressure Reactor</td>
+<td><code>compact_hyper_pressure_reactor</code></td>
+<td>All the pressure, a fraction of the footprint.</td>
+<td>HyperPressureReactor maxParallel isCompact ? 512 : 1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Component Assembler</td>
+<td><code>component_assembler</code></td>
+<td>Your first salary won't cover one of its parts.</td>
+<td>ComponentAssemblerMachine: baseCap IV, UV with extension, min(cap, casing tier); GTNAModules extension: Laser/Parallel/Accelerate</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Component Assembly Line</td>
+<td><code>component_assembly_line</code></td>
+<td>Industry's closest approximation to divine creation.</td>
+<td>ComponentAssemblyLineMachine: casingTier = min(UV, matched tier), beforeWorking recipe tier &lt;= casingTier; registration hatchParallel</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Cracker Hub</td>
+<td><code>cracker_hub</code></td>
+<td>Make sure the safety valves work. Then check again.</td>
+<td>CoilWorkableElectricMultipleRecipesMachine 2^(coilTemp/900) vs hatch; thread hatch base</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Crystal Builder</td>
+<td><code>crystal_builder</code></td>
+<td>The Braggs' dream factory, one perfect lattice at a time.</td>
+<td>CoilWorkableElectricMultipleRecipesMachine 2^(coilTemp/900) vs hatch; thread hatch base</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Dimensionally Transcendent Dirt Forge</td>
+<td><code>dimensionally_transcendent_dirt_forge</code></td>
+<td>Someone looked at the DTPF and thought: what if dirt?</td>
+<td>DimensionallyTranscendentDirtForgeMachine MAX_PARALLEL 524288, duration -&gt; 1 tick</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Dimensionally Transcendent Plasma Forge</td>
+<td><code>dimensionally_transcendent_plasma_forge</code></td>
+<td>Transcending dimensional boundaries since 2015.</td>
+<td>PlasmaForgeMachine MAXIMUM_DISCOUNT 0.5, 8 h, DECAY 100; GTNAPlasmaForge min 1250 casings, 2 energy / 1 laser</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Dimensionally Transcendent Steam Boiler</td>
+<td><code>dimensionally_transcendent_steam_boiler</code></td>
+<td>Bends spacetime to boil water. Priorities.</td>
+<td>LargeBoilerMachine(holder, 4_096_000, 32)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Dimensionally Transcendent Steam Oven</td>
+<td><code>dimensionally_transcendent_steam_oven</code></td>
+<td>Preheat to 350 degrees. Then add infinity.</td>
+<td>DimensionallyTranscendentSteamOvenMachine(524288, 524288, 0.01, 2 threads)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Duration Tester</td>
+<td><code>duration_tester</code></td>
+<td>If you are reading this, you found the dev room.</td>
+<td>registration: WorkableElectricMultipleRecipesMachine, assembler + circuit assembler, Thread/Overclock hatch abilities</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Electric Void Miner</td>
+<td><code>electric_void_miner</code></td>
+<td>Mining nothing and getting everything. Physics is optional.</td>
+<td>ElectricVoidMinerMachine parallelCap (IV gate from GTNABalance), circuitMeta 1/2 programs</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Engraving Laser Plant</td>
+<td><code>engraving_laser_plant</code></td>
+<td>Precise enough to engrave QR codes on viruses. Why? Unknown.</td>
+<td>registration: precision = IDENTITY (parallel 1), OC_PERFECT</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Evaporation Plant</td>
+<td><code>evaporation_plant</code></td>
+<td>Patience, salt and a very tall tower.</td>
+<td>pattern setRepeatable(5); GTCEu ParallelHatch 4^(tier-EV) (IV=4); GTNAModules performance hatches</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Eye of Harmony</td>
+<td><code>eye_of_harmony</code></td>
+<td>The universe is big. You built a bigger one.</td>
+<td>EyeOfHarmonyMath: circuit 0-24, time <em>2^-circuit, startup &lt;&lt;2</em>circuit, gas 10^9*(tier+1); machine in noenergy; gas reset on start</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Eye of Wood</td>
+<td><code>eye_of_wood</code></td>
+<td>The Eye of Harmony's rustic cousin from the countryside.</td>
+<td>EyeOfWoodMachine STANDARD 256,000, DURATION 1200, SUCCESS_BASE 7500</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Fishing Ground</td>
+<td><code>fishing_ground</code></td>
+<td>Like eating fish? The whole office does now.</td>
+<td>FishingGroundMachine circuit 1-4 loot tables</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Forge of the Gods</td>
+<td><code>forge_of_gods</code></td>
+<td>Also known as Godforge or Gorge for short.</td>
+<td>GodforgeMath.maxModuleCount 8 +4 +4</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Generator Array</td>
+<td><code>generator_array</code></td>
+<td>Four generators walk into a bar. Only one bill.</td>
+<td>GeneratorArrayMachine MAX_GENERATORS 4, OUTPUT_MULTIPLIER 1.3, WIRELESS_LOSS 5%</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Giant Flotation Tank</td>
+<td><code>giant_flotation_tank</code></td>
+<td>Billions of bubbles, each one a tiny elevator for ore.</td>
+<td>WorkableElectricMultipleRecipesMachine: Parallel Hatch, Thread Hatch, laser hatches</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Greenhouse</td>
+<td><code>greenhouse</code></td>
+<td>Photosynthesis as a service.</td>
+<td>GreenhouseMachine skylight gate</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Helioflare Power Forge</td>
+<td><code>godforge_smelting_module</code></td>
+<td>Smelting, but the furnace is a neutron star.</td>
+<td>GodforgeModuleMachine / GTNH module text (no numbers)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Helioflux Melting Core</td>
+<td><code>godforge_molten_module</code></td>
+<td>Skip the ingot. Go straight to soup.</td>
+<td>GodforgeModuleMachine / GTNH module text (no numbers)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Heliofusion Exoticizer</td>
+<td><code>godforge_exotic_module</code></td>
+<td>Breaking the building blocks of reality, responsibly.</td>
+<td>GodforgeModuleMachine / GTNH module text (no numbers)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Heliothermal Plasma Fabricator</td>
+<td><code>godforge_plasma_module</code></td>
+<td>Ionize first, ask questions never.</td>
+<td>GodforgeModuleMachine / GTNH module text (no numbers)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Holy Separator</td>
+<td><code>holy_separator</code></td>
+<td>Centrifugation as a sacred purification ritual. Amen.</td>
+<td>WorkableElectricMultipleRecipesMachine: Parallel Hatch, Thread Hatch, laser hatches</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Hyper Pressure Reactor</td>
+<td><code>hyper_pressure_reactor</code></td>
+<td>Pressure makes diamonds. It also makes this.</td>
+<td>HyperPressureReactor maxParallel isCompact ? 512 : 1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>ISA Mill</td>
+<td><code>isa_mill</code></td>
+<td>Despite its green paint, it is not eco-friendly at all.</td>
+<td>IsaMillParallel parallel 2; registration OC_PERFECT</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Incubator</td>
+<td><code>incubator</code></td>
+<td>Growing ore veins in a petri dish. Science!</td>
+<td>VoidMinerEssenceRecipes: 10000 mB Biomass + Milk, 64 essences</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Industrial Flotation Cell</td>
+<td><code>industrial_flotation_cell</code></td>
+<td>Smells like essential balm. Fewer mosquitoes, too.</td>
+<td>IndustrialFlotationCellMachine perfect OC</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Industrial Slaughterhouse</td>
+<td><code>industrial_slaughterhouse</code></td>
+<td>No mobs were harmed in this tooltip. Many were in the machine.</td>
+<td>IndustrialSlaughterhouse base tiers/multipliers; recipes EUt 1000/2560/32000/120000</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Infernal Coke Oven</td>
+<td><code>infernal_coke_oven</code></td>
+<td>Hell's kitchen, but for coal.</td>
+<td>InfernalCokeOven BASE_PARALLEL 8, PARALLEL_INCREASE 16, MAX 256, TICKS_PER_STAGE 12000, steam 320/t +80/t, bonus cap 10x</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Infinity Fluid Drilling Rig</td>
+<td><code>infinity_fluid_drilling_rig</code></td>
+<td>Better than Minecraft's infinite water. Barely legal.</td>
+<td>InfinityFluidDrillMachine(ZPM, 256), +50% above rig tier</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Integrated Assembler</td>
+<td><code>integrated_assembler</code></td>
+<td>Make complexity simple, make impossible routine.</td>
+<td>WorkableElectricMultipleRecipesMachine: Parallel Hatch, Thread Hatch, laser hatches</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Integrated Ore Processor</td>
+<td><code>integrated_ore_processor</code></td>
+<td>The entire ore processing line, in one box.</td>
+<td>IntegratedOreRecipes circuitMeta 1-7</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Cracker</td>
+<td><code>large_cracker</code></td>
+<td>Cracking hydrocarbons like it's a Sunday crossword.</td>
+<td>GTRecipeModifiers.crackerOverclock 1 - coilTier*0.1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Greenhouse</td>
+<td><code>large_greenhouse</code></td>
+<td>Who needs the sun? We have lamps and ambition.</td>
+<td>registration: Greenhouse + Tree Growth recipe types, hatchParallel, WorkableElectricMultiblockMachine (no skylight gate)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Pyrolyse Oven</td>
+<td><code>large_pyrolyse_oven</code></td>
+<td>Wood goes in, chemistry comes out, smoke goes everywhere.</td>
+<td>GTRecipeModifiers.pyrolyseOvenOverclock</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Alloy Smelter</td>
+<td><code>large_steam_alloy_smelter</code></td>
+<td>Bronze Age metallurgy, now with industrial ambition.</td>
+<td>LargeSteamAlloySmelter parallel 64/64, durationMultiplier 0.57</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Bath</td>
+<td><code>large_steam_bath</code></td>
+<td>A spa day for ores. No cucumbers provided.</td>
+<td>AdjustableSteamParallelMachine args (parallel, durationMultiplier) in GTNAMachines; SteamMultiMachineBase.applyHighPressure</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Bending Machine</td>
+<td><code>large_steam_bending</code></td>
+<td>Bend it like Bessemer.</td>
+<td>AdjustableSteamParallelMachine args (parallel, durationMultiplier) in GTNAMachines; SteamMultiMachineBase.applyHighPressure</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Centrifuge</td>
+<td><code>large_steam_centrifuge</code></td>
+<td>Round and round it goes, where it stops, everyone knows.</td>
+<td>AdjustableSteamParallelMachine args (parallel, durationMultiplier) in GTNAMachines; SteamMultiMachineBase.applyHighPressure</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Circuit Assembler</td>
+<td><code>large_steam_circuit_assembler</code></td>
+<td>Hand-soldered circuits, minus the hands.</td>
+<td>LargeSteamCircuitAssembler MAX_PARALLELS 4, OUTPUT_MULTIPLIER 2, DURATION_MULTIPLIER 4, ENGRAVING_NEEDED 16</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Compressor</td>
+<td><code>large_steam_compressor</code></td>
+<td>Under pressure, everything becomes a plate eventually.</td>
+<td>LargeSteamCompressor parallel 24/48, durationMultiplier 0.4</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Crusher</td>
+<td><code>large_steam_crusher</code></td>
+<td>Rocks go in, gravel comes out. Nobody asks about the noise.</td>
+<td>LargeSteamCrusher targetParallel 8 / max 128, durationMultiplier 0.5</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Cutting Machine</td>
+<td><code>large_steam_cutting</code></td>
+<td>Measure twice, cut sixteen times.</td>
+<td>AdjustableSteamParallelMachine args (parallel, durationMultiplier) in GTNAMachines; SteamMultiMachineBase.applyHighPressure</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Extractor</td>
+<td><code>large_steam_extractor</code></td>
+<td>Squeezes the juice out of things that never had juice.</td>
+<td>LargeSteamExtractor parallel 24/48, durationMultiplier 0.57</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Extruder</td>
+<td><code>large_steam_extruder</code></td>
+<td>Like a pasta maker, but for metal and regret.</td>
+<td>AdjustableSteamParallelMachine args (parallel, durationMultiplier) in GTNAMachines; SteamMultiMachineBase.applyHighPressure</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Forming Press</td>
+<td><code>large_steam_forming_press</code></td>
+<td>Pressing matters, one stamp at a time.</td>
+<td>AdjustableSteamParallelMachine args (parallel, durationMultiplier) in GTNAMachines; SteamMultiMachineBase.applyHighPressure</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Furnace</td>
+<td><code>large_steam_furnace</code></td>
+<td>Do not attempt to bake cookies inside. They will vaporize.</td>
+<td>LargeSteamFurnace targetParallel 8 / max 128, durationMultiplier 0.1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Hammer</td>
+<td><code>large_steam_hammer</code></td>
+<td>Stop. Hammer time.</td>
+<td>LargeSteamHammer parallel 32/64, durationMultiplier 0.5</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Lathe</td>
+<td><code>large_steam_lathe</code></td>
+<td>Turning rods since before electricity was cool.</td>
+<td>AdjustableSteamParallelMachine args (parallel, durationMultiplier) in GTNAMachines; SteamMultiMachineBase.applyHighPressure</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Mixer</td>
+<td><code>large_steam_mixer</code></td>
+<td>Shaken, not stirred. Actually, both.</td>
+<td>AdjustableSteamParallelMachine args (parallel, durationMultiplier) in GTNAMachines; SteamMultiMachineBase.applyHighPressure</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Ore Washer</td>
+<td><code>large_steam_ore_washer</code></td>
+<td>The cleanest ores in the Bronze Age. Mom would be proud.</td>
+<td>LargeSteamOreWasher parallel 48/96, durationMultiplier 0.2</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Sifter</td>
+<td><code>large_steam_sifter</code></td>
+<td>Panning for gems, minus the river and the tetanus.</td>
+<td>AdjustableSteamParallelMachine args (parallel, durationMultiplier) in GTNAMachines; SteamMultiMachineBase.applyHighPressure</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Solar Boiler</td>
+<td><code>large_steam_solar_boiler</code></td>
+<td>Free steam, courtesy of a very large star.</td>
+<td>LargeSteamSolarBoilerMachine MAX_SIDE 63, MAX_BACK 125</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Storage Tank</td>
+<td><code>large_steam_storage_tank</code></td>
+<td>Hot air, stored responsibly.</td>
+<td>LargeSteamStorageTank CAPACITY 120,000,000</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Thermal Centrifuge</td>
+<td><code>large_steam_thermal_centrifuge</code></td>
+<td>Spinning and roasting: the ore's worst day.</td>
+<td>AdjustableSteamParallelMachine args (parallel, durationMultiplier) in GTNAMachines; SteamMultiMachineBase.applyHighPressure</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Large Steam Wiremill</td>
+<td><code>large_steam_wiremill</code></td>
+<td>Thin is in. Very, very thin.</td>
+<td>AdjustableSteamParallelMachine args (parallel, durationMultiplier) in GTNAMachines; SteamMultiMachineBase.applyHighPressure</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Leap Forward One Blast Furnace</td>
+<td><code>leap_forward_one_blast_furnace</code></td>
+<td>A great leap forward in primitive technology.</td>
+<td>LeapForwardBlastFurnace MAX_PARALLEL_CAP 32000, 400 ticks + 400/layer</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Liquefaction Furnace</td>
+<td><code>liquefaction_furnace</code></td>
+<td>Everything is a liquid if you heat it enough.</td>
+<td>GTNAModules liquefaction extension: Parallel + Accelerate</td>
+<td>none</td>
+</tr>
+<tr>
+<td>ME Storage</td>
+<td><code>me_storage</code></td>
+<td>More bytes than you will ever need. Probably.</td>
+<td>ME storage pattern setRepeatable(1, 128)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Magnetic Energy Reaction Furnace</td>
+<td><code>magnetic_energy_reaction_furnace</code></td>
+<td>Smells like ozone. Fresh, but dangerous.</td>
+<td>CoilWorkableElectricMultipleRecipesMachine 2^(coilTemp/900) vs hatch; thread hatch base</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Mega Alloy Blast Smelter</td>
+<td><code>mega_alloy_blast_smelter</code></td>
+<td>The Alloy Blast Smelter, but it went to the gym.</td>
+<td>MegaAlloyBlastSmelterMachine eut 0.8, duration 0.6</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Mega Brewer</td>
+<td><code>mega_brewer</code></td>
+<td>Thousand-ton brewing. The whole workshop smells great.</td>
+<td>CoilWorkableElectricMultipleRecipesMachine 2^(coilTemp/900) vs hatch; thread hatch base</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Mega Distillery</td>
+<td><code>mega_distillery</code></td>
+<td>Every fraction of the barrel, accounted for.</td>
+<td>WorkableElectricMultipleRecipesMachine: Parallel Hatch, Thread Hatch, laser hatches</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Mega Vacuum Drying Furnace</td>
+<td><code>mega_vacuum_drying_furnace</code></td>
+<td>Zero oxidation, zero contamination, zero patience needed.</td>
+<td>CoilWorkableElectricMultipleRecipesMachine 2^(coilTemp/900) vs hatch; thread hatch base</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Mega Wiremill</td>
+<td><code>mega_wiremill</code></td>
+<td>From bulky ingots to hair-thin perfect wires.</td>
+<td>CoilWorkableElectricMultipleRecipesMachine 2^(coilTemp/900) vs hatch; thread hatch base</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Nanites Circuit Assembly Factory</td>
+<td><code>nanites_circuit_assembly_factory</code></td>
+<td>No furnace roar, no robot arms. Just nanites.</td>
+<td>WorkableElectricMultipleRecipesMachine: Parallel Hatch, Thread Hatch, laser hatches</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Nano Forge</td>
+<td><code>nano_forge</code></td>
+<td>Nanobots, son. Billions of them.</td>
+<td>NanoForgeMachine tier nanites (carbon/neutronium/transcendent), OC_PERFECT when tier &gt; required</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Neutronium Wire Cutting</td>
+<td><code>neutronium_wire_cutting</code></td>
+<td>Neutron star matter cuts like butter. Earth stuff? Air.</td>
+<td>WorkableElectricMultipleRecipesMachine: Parallel Hatch, Thread Hatch, laser hatches</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Nexus Assembly Forge</td>
+<td><code>nexus_molecular_forge</code></td>
+<td>Ingredients? Where we're going, we don't need ingredients.</td>
+<td>NexusMolecularForgeMachine eut = totalItems (1 EU/item)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Nexus Flux Matrix</td>
+<td><code>nexus_flux_matrix</code></td>
+<td>Infinite power, if you can afford the batteries.</td>
+<td>NexusFluxMatrixMachine unlimited = 750 capacitors at MAX</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Nexus ME Hypercore</td>
+<td><code>nexus_me_hypercore</code></td>
+<td>Can it run Crysis? It can craft it.</td>
+<td>NexusMEHyperCoreMachine TOTAL_MODULE_SLOTS 320, threads 4/16/128/1024, transcendent = 320 x IV</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Particle Stream Matrix Filling Machine</td>
+<td><code>particle_stream_matrix_filling_machine</code></td>
+<td>Even photons and sound waves fit in a can now.</td>
+<td>CoilWorkableElectricMultipleRecipesMachine 2^(coilTemp/900) vs hatch; thread hatch base</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Phase Change Cube</td>
+<td><code>phase_change_cube</code></td>
+<td>Six faces, six phase changes. A Rubik's Cube for matter.</td>
+<td>CoilWorkableElectricMultipleRecipesMachine 2^(coilTemp/900) vs hatch; thread hatch base</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Primitive Distillation Tower</td>
+<td><code>primitive_distillation_tower</code></td>
+<td>Moonshine technology, scaled up for oil.</td>
+<td>PrimitiveSteamDistillationTowerMachine 0.75 steam, MV cap; pattern 5 repeated tower layers</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Primitive Stone Furnace</td>
+<td><code>primitive_stone_furnace</code></td>
+<td>Carved by hand, powered by nothing, judged by no one.</td>
+<td>PrimitiveStoneFurnaceMachine RECIPE_DURATION 1, getMaxParallel Integer.MAX_VALUE, threads MAX-1, IZeroEnergyMachine</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Rocket Large Turbine</td>
+<td><code>rocket_large_turbine</code></td>
+<td>Not rocket science. Okay, it is rocket science.</td>
+<td>GTNALargeTurbineMachine HIGH_SPEED 3x, rotor damage 10; module 2x/+20%; V[EV]*2.5 = 5120</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Bee Breeding Module</td>
+<td><code>steam_elevator_bee_breeding_module</code></td>
+<td>Let the bees feel the scorching love.</td>
+<td>SteamBeeBreedingModule CYCLE 12000, FEED_CONSUMED 128</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Cobbler</td>
+<td><code>steam_cobbler</code></td>
+<td>Infinite cobblestone: the oldest trick in the book, now industrial.</td>
+<td>SteamCobbler targetParallel 16 / max 16</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Cracker</td>
+<td><code>steam_cracking</code></td>
+<td>Petrochemistry, Victorian edition.</td>
+<td>SteamCracking maxParallel 8 / 16 (high pressure)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Elevator</td>
+<td><code>steam_elevator</code></td>
+<td>Going up? Please hold on to your top hat.</td>
+<td>SteamElevator MODULE_OFFSETS (12 slots), SteamElevatorTeleport.setOut</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Elevator Beacon Module I</td>
+<td><code>steam_elevator_beacon_module_i</code></td>
+<td>A beacon, but it runs on tea-kettle energy.</td>
+<td>SteamBeaconModule range 64/128/256, amplifier tier-1, 10 effects</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Elevator Beacon Module II</td>
+<td><code>steam_elevator_beacon_module_ii</code></td>
+<td>Buffs for the whole neighborhood.</td>
+<td>SteamBeaconModule range 64/128/256, amplifier tier-1, 10 effects</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Elevator Beacon Module III</td>
+<td><code>steam_elevator_beacon_module_iii</code></td>
+<td>Elite beacon. The Wither wishes it were this cool.</td>
+<td>SteamBeaconModule range 64/128/256, amplifier tier-1, 10 effects</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Entity Crusher Module I</td>
+<td><code>steam_elevator_entity_crusher_module_i</code></td>
+<td>Smelting mobs with high-temperature steam. Grim.</td>
+<td>SteamEntityCrusherModule 400/200/100 ticks, 2% + 0.5%/spawner, cap 34%</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Entity Crusher Module II</td>
+<td><code>steam_elevator_entity_crusher_module_ii</code></td>
+<td>Faster crushing. The mobs did not vote for this.</td>
+<td>SteamEntityCrusherModule 400/200/100 ticks, 2% + 0.5%/spawner, cap 34%</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Entity Crusher Module III</td>
+<td><code>steam_elevator_entity_crusher_module_iii</code></td>
+<td>Industrial-grade mob disposal. Very efficient. Very sad.</td>
+<td>SteamEntityCrusherModule 400/200/100 ticks, 2% + 0.5%/spawner, cap 34%</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Flight Module I</td>
+<td><code>steam_elevator_flight_module_i</code></td>
+<td>I believe I can fly. With enough steam.</td>
+<td>SteamFlightModule RANGE 64 x module tier</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Flight Module II</td>
+<td><code>steam_elevator_flight_module_ii</code></td>
+<td>Twice the range, twice the bragging rights.</td>
+<td>SteamFlightModule RANGE 64 x module tier</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Flight Module III</td>
+<td><code>steam_elevator_flight_module_iii</code></td>
+<td>Icarus would have loved this. Briefly.</td>
+<td>SteamFlightModule RANGE 64 x module tier</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Greenhouse Planting Module</td>
+<td><code>steam_elevator_greenhouse_module</code></td>
+<td>The farmer's secret to fortune.</td>
+<td>SteamGreenhouseModule WATER_PER_OPERATION 16,000, RANGE 16, CYCLE 1200, 16 crops</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Item Vault</td>
+<td><code>steam_item_vault</code></td>
+<td>A Victorian warehouse. Dragons not included.</td>
+<td>SteamItemVaultMachine SLOTS 256, SLOT_LIMIT 64,000</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Lava Maker</td>
+<td><code>steam_lava_maker</code></td>
+<td>Turning the floor into lava, professionally.</td>
+<td>SteamLavaMakerMachine parallel 16; GTNALavaMakerRecipes duration 20</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Manufacturer</td>
+<td><code>steam_manufacturer</code></td>
+<td>The assembly line, but every worker is a piston.</td>
+<td>SteamManufacturer targetParallel 16 / max 16</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Monster Repellator Module I</td>
+<td><code>steam_elevator_monster_repellent_module_i</code></td>
+<td>It drives away monsters with loud noise.</td>
+<td>SteamMonsterRepellentModule range 1&lt;&lt;(5+tier)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Monster Repellator Module II</td>
+<td><code>steam_elevator_monster_repellent_module_ii</code></td>
+<td>You can't hear it, but the monsters hear it loud and clear.</td>
+<td>SteamMonsterRepellentModule range 1&lt;&lt;(5+tier)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Monster Repellator Module III</td>
+<td><code>steam_elevator_monster_repellent_module_iii</code></td>
+<td>Monsters get the hint and leave on their own.</td>
+<td>SteamMonsterRepellentModule range 1&lt;&lt;(5+tier)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Oil Drill Module I</td>
+<td><code>steam_elevator_oil_drill_module_i</code></td>
+<td>Black gold, Texas tea, steam-pumped.</td>
+<td>SteamOilDrillModule cycle 1200/(tier-1), yield 250*2^(tier-2), fluids tier-1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Oil Drill Module II</td>
+<td><code>steam_elevator_oil_drill_module_ii</code></td>
+<td>There will be oil. Twice as much.</td>
+<td>SteamOilDrillModule cycle 1200/(tier-1), yield 250*2^(tier-2), fluids tier-1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Oil Drill Module III</td>
+<td><code>steam_elevator_oil_drill_module_iii</code></td>
+<td>I drink your milkshake. All of it.</td>
+<td>SteamOilDrillModule cycle 1200/(tier-1), yield 250*2^(tier-2), fluids tier-1</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Ore Processing Module</td>
+<td><code>steam_elevator_ore_processor_module</code></td>
+<td>The whole ore line in one box. Steam-powered, of course.</td>
+<td>SteamOreProcessorModule maxParallelFor 8&lt;&lt;mode, upkeepFor 128&lt;&lt;mode</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Supercompressor</td>
+<td><code>steam_mega_compressor</code></td>
+<td>Diamonds are made under pressure. So is this machine.</td>
+<td>MegaSteamCompressor parallel 256, durationMultiplier 0.5</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Weather Module I</td>
+<td><code>steam_elevator_weather_module_i</code></td>
+<td>Rain dance, but with pipes.</td>
+<td>SteamWeatherModule WEATHER_TIME 72000 x tier, WEATHER_STEAM_COST 1,000,000</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Weather Module II</td>
+<td><code>steam_elevator_weather_module_ii</code></td>
+<td>The forecast is whatever you want it to be.</td>
+<td>SteamWeatherModule WEATHER_TIME 72000 x tier, WEATHER_STEAM_COST 1,000,000</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Weather Module III</td>
+<td><code>steam_elevator_weather_module_iii</code></td>
+<td>Thor called. He wants his job back.</td>
+<td>SteamWeatherModule WEATHER_TIME 72000 x tier, WEATHER_STEAM_COST 1,000,000</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam Woodcutter</td>
+<td><code>steam_woodcutter</code></td>
+<td>I'm a lumberjack and I'm okay.</td>
+<td>SteamWoodcutter targetParallel 64 / max 64</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Steam-Powered Apiary Module</td>
+<td><code>steam_elevator_apiary_module</code></td>
+<td>High pressure makes the bees work harder. Union pending.</td>
+<td>SteamApiaryModule CYCLE 6000, WATER 1000, base colony 8</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Stone SuperHeater</td>
+<td><code>stone_superheater</code></td>
+<td>Rocks, but hotter. Much hotter.</td>
+<td>StoneSuperHeater targetParallel 32 / max 32</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Super Blast Smelter</td>
+<td><code>super_blast_smelter</code></td>
+<td>Smelting all things at artificial-sun temperatures.</td>
+<td>CoilWorkableElectricMultipleRecipesMachine coilTemp + 100*(tier-MV)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Superconducting Electromagnetism</td>
+<td><code>superconducting_electromagnetism</code></td>
+<td>Maxwell's equations, now in industrial size.</td>
+<td>WorkableElectricMultipleRecipesMachine: Parallel Hatch, Thread Hatch, laser hatches</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Superconducting Magnetic Presser</td>
+<td><code>superconducting_magnetic_presser</code></td>
+<td>Can easily accelerate coins to Mach 3!</td>
+<td>WorkableElectricMultipleRecipesMachine: Parallel Hatch, Thread Hatch, laser hatches</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Supercritical Steam Turbine</td>
+<td><code>supercritical_steam_turbine</code></td>
+<td>Steam, but it has seen things.</td>
+<td>SupercriticalSteamTurbineMachine V[IV]*2 = 16384; module 2x/+20%/2x wear</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Thermal Power Pump</td>
+<td><code>thermal_power_pump</code></td>
+<td>Turns steam back into water. Circle of life.</td>
+<td>ThermalPowerPumpMachine biome modifier, x3/2 in rain, Nether 0</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Transcendent Plasma Mixer</td>
+<td><code>transcendent_plasma_mixer</code></td>
+<td>Assisting in all your DTPF needs!</td>
+<td>TranscendentPlasmaMixerMachine EU_MULTIPLIER default 10</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Universal Factory</td>
+<td><code>universal_factory</code></td>
+<td>One factory to rule them all.</td>
+<td>registry: 32 recipe types</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Vacuum Drying Furnace</td>
+<td><code>vacuum_drying_furnace</code></td>
+<td>Turns foam back into dust. Magic, but with vacuum.</td>
+<td>VacuumDryingFurnaceMachine: Dehydrator 2^floor(coil/900), Vacuum Drying serial</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Void Fluid Drilling Rig</td>
+<td><code>void_fluid_drilling_rig</code></td>
+<td>The well ran dry. The void did not.</td>
+<td>VoidFluidDrillConfig minimumTier EV, remote upgrade</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Void Miner SteamGate Aged</td>
+<td><code>void_miner_steam_gate_aged</code></td>
+<td>Mining a dimension made entirely of steam. Don't ask.</td>
+<td>GTNABalance.VoidMinerSteamGateBalance 2/2.0/1.5, 3/3.0/2.0, 5/5.0/4.0</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2026 Raishxn — Licensed under LGPLv3
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GTInfinityAscension/GregTech-Nexus-Addon" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/d3qHufwRxb" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.expand", "navigation.indexes", "navigation.footer", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.tabs.link", "toc.follow", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
