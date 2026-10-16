@@ -5,6 +5,9 @@
 ### Dependencies
 - GTNA now requires [GTIA Lib](https://github.com/GTInfinityAscension/GTIA-Lib) 0.4.0 or newer. `Int128`, `BlockPosLongSet` and `BlockPosHashing` moved there (`com.gtinfinityascension.gtialib.data`); addons that imported them from GTNA must update the import.
 
+### Fixed
+- 0.6.0 failed to load on clients without JEI (EMI-only packs): a debug command named a JEI type in a class every client loads. The JEI part is now its own class, registered only with JEI installed, and a unit test fails if a JEI type appears outside JEI-only classes.
+
 ### Performance
 - Single-block machines no longer build a list of their covers several times per tick to look for the infinity covers. With 2,000 working LV Electric Furnaces a server tick drops from 8.37 ms to 3.74 ms (−55 %): the six sides are read once per machine per tick for both infinity covers.
 

@@ -277,23 +277,13 @@ public final class PreviewBenchCommand {
             return 1;
         }));
         // /gtna_preview_open <machine id>: opens the JEI page of the multiblock (what players see), for timing.
-        event.getDispatcher().register(Commands.literal("gtna_preview_open").then(Commands
-                .argument("id", com.mojang.brigadier.arguments.StringArgumentType.word()).executes(ctx -> {
-                    var id = com.raishxn.gtna.GTNACORE.id(com.mojang.brigadier.arguments.StringArgumentType
-                            .getString(ctx, "id"));
-                    var item = net.minecraftforge.registries.ForgeRegistries.ITEMS.getValue(id);
-                    var runtime = com.raishxn.gtna.integration.jei.EyeOfHarmonyJEIPlugin.runtime;
-                    if (item == null || runtime == null) return 0;
-                    long t0 = System.nanoTime();
-                    var focus = runtime.getJeiHelpers().getFocusFactory().createFocus(
-                            mezz.jei.api.recipe.RecipeIngredientRole.OUTPUT,
-                            mezz.jei.api.constants.VanillaTypes.ITEM_STACK,
-                            new net.minecraft.world.item.ItemStack(item));
-                    runtime.getRecipesGui().show(focus);
-                    GTNACORE.LOGGER.info("[GTNA perf] JEI page for {} opened in {} ms", id,
-                            (System.nanoTime() - t0) / 1_000_000);
-                    return 1;
-                })));
+        // EN: The JEI code lives in JeiPreviewOpen and is registered only with JEI installed; a JEI type referenced in
+        // this class made the whole mod fail to load on clients without JEI (EMI-only packs).
+        // PT: O código do JEI fica em JeiPreviewOpen e só é registrado com o JEI instalado; um tipo do JEI nesta classe
+        // impedia o mod inteiro de carregar em clientes sem JEI (packs só com EMI).
+        // ZH: JEI 相关代码放在 JeiPreviewOpen 中，仅在安装 JEI 时注册；此类中引用 JEI 类型会导致没有 JEI 的客户端（仅 EMI
+        // 的整合包）整个模组加载失败。
+        if (net.minecraftforge.fml.ModList.get().isLoaded("jei")) JeiPreviewOpen.register(event);
         // /gtna_star_preview [hole]: a free-standing Stellar Chamber star 40 blocks ahead, to look at the render.
         event.getDispatcher().register(Commands.literal("gtna_star_preview").executes(ctx -> starPreview(false))
                 .then(Commands.literal("hole").executes(ctx -> starPreview(true)))
