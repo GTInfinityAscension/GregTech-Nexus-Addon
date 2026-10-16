@@ -4,10 +4,10 @@
     Este documento descreve **como testamos** o GTNA, quais classes de bug cada camada pega (com
     exemplos reais que já custaram iteração) e o que adotamos — por ideia, não por dependência — de
     frameworks de QA da comunidade (GTNH/Horizon-QA). O estado corrente e as pendências ficam no
-    `CONTINUITY_LEDGER.md`; aqui fica o *método*.
+    `docs/STATE.md`; aqui fica o *método*.
 
 !!! warning "Este documento é a estratégia, não o estado"
-    Contagem de testes, gates verdes e pendências ficam no `CONTINUITY_LEDGER.md`.
+    Contagem de testes, gates verdes e pendências ficam no `docs/STATE.md`.
 
 ---
 
@@ -127,6 +127,6 @@ conceitos do GT5-Unofficial (`helper.gtnh()`, EU, manutenção, time-warp).
 
 ## Referências
 
-- Estado/pendências: `CONTINUITY_LEDGER.md`
+- Estado/pendências: `docs/STATE.md`
 - Auditoria técnica: `docs/roadmap/technical-audit-pattern-buffer.md`
 - Horizon-QA: <https://github.com/GTNewHorizons/Horizon-QA>

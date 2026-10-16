@@ -3,7 +3,7 @@
 !!! info "Propósito"
     Convenção única para tooltips de controllers, máquinas, hatches, blocos e itens do GTNA,
     adaptada do estilo do GTOCore ao GTCEu 7.5.3. O estado corrente e as pendências ficam no
-    `CONTINUITY_LEDGER.md`; aqui fica o *método*.
+    `docs/STATE.md`; aqui fica o *método*.
 
 ## Multiblocos: convenção atual (G-0240 em diante)
 
