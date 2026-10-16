@@ -9,6 +9,7 @@
 - 0.6.0 failed to load on clients without JEI (EMI-only packs): a debug command named a JEI type in a class every client loads. The JEI part is now its own class, registered only with JEI installed, and a unit test fails if a JEI type appears outside JEI-only classes.
 
 ### Performance
+- Multiblock preview shapes are cached with a soft reference: EMI builds the shapes of every multiblock when it reloads, and keeping them all made clients with little memory run out of it; the JVM now drops them under memory pressure and rebuilds them on demand.
 - Single-block machines no longer build a list of their covers several times per tick to look for the infinity covers. With 2,000 working LV Electric Furnaces a server tick drops from 8.37 ms to 3.74 ms (−55 %): the six sides are read once per machine per tick for both infinity covers.
 
 ## [0.6.0] - 2026-10-16
