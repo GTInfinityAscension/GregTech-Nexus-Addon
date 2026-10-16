@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Performance
+- Single-block machines no longer build a list of their covers several times per tick to look for the infinity covers. With 2,000 working LV Electric Furnaces a server tick drops from 8.37 ms to 3.94 ms (−53 %).
+
 ## [0.6.0] - 2026-10-16
 
 ### Original multiblocks: endgame role

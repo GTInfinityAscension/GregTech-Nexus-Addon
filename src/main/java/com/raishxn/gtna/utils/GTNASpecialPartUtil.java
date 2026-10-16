@@ -16,6 +16,8 @@ import com.gregtechceu.gtceu.api.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.api.recipe.content.Content;
 import com.gregtechceu.gtceu.api.recipe.content.ContentModifier;
 
+import net.minecraft.core.Direction;
+
 import com.raishxn.gtna.api.machine.feature.GTNANoConsumeFluidPart;
 import com.raishxn.gtna.api.machine.feature.GTNANoConsumeItemPart;
 import com.raishxn.gtna.api.machine.feature.GTNAOutputBoostFluidPart;
@@ -33,6 +35,7 @@ public final class GTNASpecialPartUtil {
 
     private static final int SINGLEBLOCK_OUTPUT_MULTIPLIER = 10;
     private static final int SINGLEBLOCK_DURATION_DIVISOR = 5;
+    private static final Direction[] SIDES = Direction.values();
 
     private static MetaMachine getMetaMachine(IRecipeCapabilityHolder holder) {
         return holder instanceof MetaMachine metaMachine ? metaMachine : null;
@@ -47,8 +50,15 @@ public final class GTNASpecialPartUtil {
         if (machine == null) {
             return false;
         }
-        for (CoverBehavior cover : machine.getCoverContainer().getCovers()) {
-            if (coverClass.isInstance(cover)) {
+        // EN: Runs several times per tick on every machine; GTCEu's getCovers() builds a stream and a list each call
+        // (40% of machine tick time with 2000 furnaces), so the six sides are read directly.
+        // PT: Roda várias vezes por tick em toda máquina; o getCovers() do GTCEu monta stream e lista a cada chamada
+        // (40% do tick das máquinas com 2000 fornos), então os seis lados são lidos direto.
+        // ZH: 每台机器每 tick 会调用多次；GTCEu 的 getCovers() 每次都创建 stream 和列表（2000 台熔炉时占机器 tick 的
+        // 40%），因此直接读取六个面。
+        var covers = machine.getCoverContainer();
+        for (Direction side : SIDES) {
+            if (coverClass.isInstance(covers.getCoverAtSide(side))) {
                 return true;
             }
         }
