@@ -2,7 +2,7 @@
 
 Short, current snapshot for anyone (person or AI session) starting work on GTNA. Keep it under ~150 lines: replace outdated lines instead of appending. History lives in git commits and `CHANGELOG.md`; the old `CONTINUITY_LEDGER.md` was retired on 2026-10-16 and is still in git history (last commit with it: `75269ab`).
 
-Updated: 2026-10-16 · version **0.6.0** · Minecraft 1.20.1, Forge 47, GTCEu 7.5.3.
+Updated: 2026-10-16 · version **0.6.0** (+ unreleased fixes on `main`) · Minecraft 1.20.1, Forge 47, GTCEu 7.5.3, requires **GTIA Lib 0.4.0+**.
 
 ## What exists
 
@@ -25,6 +25,7 @@ Updated: 2026-10-16 · version **0.6.0** · Minecraft 1.20.1, Forge 47, GTCEu 7.
 
 ## Rules that cost us before
 
+- **Never name a JEI type outside JEI-only classes** (`integration/jei/`, mixins, `JeiPreviewOpen`): EMI-only clients fail to load the whole mod. `JeiIsolationContractTest` enforces it.
 - **Never reference `net.minecraft.client.*` from common code**, not even inside a lambda: the dedicated server rejects the class and the whole mod fails to load. Use an `@OnlyIn(Dist.CLIENT)` class reached through `DistExecutor`.
 - **UI layout needs one source of truth for geometry and a test for it** (pattern: `PatternBufferLayout` + `PatternBufferLayoutTest`). LDLib only checks `isVisible()`, so a widget placed outside the page is still drawn over the frame.
 - **Own hatches need `modelProperty(IS_FORMED)`**, or GTCEu never swaps the hull for the casing texture.
@@ -53,6 +54,9 @@ Updated: 2026-10-16 · version **0.6.0** · Minecraft 1.20.1, Forge 47, GTCEu 7.
 | `data/GTNALangProvider.java` | ~2,400 |
 
 ## Open items
+
+- 10 recipe errors at load (`Tried to set ... stack that doesn't exist`, e.g. `gtna:space_drone_mk2` with Duranium `wireGtQuadruple`, `gtna:rare_earth` small Gadolinium dust); present in the 0.6.0 release too.
+- Next release must say: requires GTIA Lib; fixes the client crash without JEI; single-block cover check 8.37 → 3.74 ms/tick with 2,000 furnaces.
 
 - DTPF Convergence and the ISA Mill tiers (roadmap phases A and B).
 - Phases D–G of the port list (large GTO systems, GTNH-only, TST/GTNL/123Tech, GTLAdditions).
