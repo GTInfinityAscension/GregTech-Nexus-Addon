@@ -1,9 +1,9 @@
 site_name: GregTech Nexus Addon
-site_url: https://raishxn.github.io/GregTech-Nexus-Addon/
+site_url: https://gtinfinityascension.github.io/GregTech-Nexus-Addon/
 site_description: "The Nexus of Steam & Steel — Documentation for GregTech Nexus Addon"
 site_author: Raishxn
-repo_url: https://github.com/Raishxn/GregTech-Nexus-Addon
-repo_name: Raishxn/GregTech-Nexus-Addon
+repo_url: https://github.com/GTInfinityAscension/GregTech-Nexus-Addon
+repo_name: GTInfinityAscension/GregTech-Nexus-Addon
 copyright: "Copyright &copy; 2024-2026 Raishxn — Licensed under LGPLv3"
 
 theme:
@@ -125,7 +125,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Raishxn/GregTech-Nexus-Addon
+      link: https://github.com/GTInfinityAscension/GregTech-Nexus-Addon
     - icon: fontawesome/brands/discord
       link: https://discord.gg/d3qHufwRxb
   alternate:

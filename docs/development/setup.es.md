@@ -5,7 +5,7 @@
 - Git
 
 ## Pasos
-1. Clona el repositorio: `git clone https://github.com/Raishxn/GregTech-Nexus-Addon.git`
+1. Clona el repositorio: `git clone https://github.com/GTInfinityAscension/GregTech-Nexus-Addon.git`
 2. Importa como proyecto Gradle en IntelliJ
 3. Sincroniza: `./gradlew build`
 4. Ejecuta el cliente: `./gradlew runClient`
