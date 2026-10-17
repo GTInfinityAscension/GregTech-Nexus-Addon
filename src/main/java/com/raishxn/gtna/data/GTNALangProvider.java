@@ -1446,7 +1446,7 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.bec.condensate.eternity", "Eternity");
         add("gtna.condensate_generator", "Condensate Entanglement");
         add("gtna.condensate_assembler", "Condensate Assembly");
-        add("gtna.recipe.bec_nanite_tiers", "Nanite tiers: %s");
+        add("gtna.recipe.bec_nanite_tier", "Nanite tier: %s");
         add("gtna.bec.gui.none", "None");
         add("gtna.bec.gui.operation", "Operation");
         add("gtna.bec.gui.analog", "Analog");

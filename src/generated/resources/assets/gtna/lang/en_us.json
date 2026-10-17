@@ -3997,7 +3997,7 @@
   "gtna.random_void_mining": "Random Void Mining",
   "gtna.rare_earth_centrifugal": "Rare Earth Centrifugal",
   "gtna.reaction_furnace": "Reaction Furnace",
-  "gtna.recipe.bec_nanite_tiers": "Nanite tiers: %s",
+  "gtna.recipe.bec_nanite_tier": "Nanite tier: %s",
   "gtna.recipe.component_assembly.tier": "Casing Tier: %s",
   "gtna.recipe.condition.compact_only": "Requires: CHPR\nCompact HyperPressure Reactor",
   "gtna.recipe.condition.restricted_items_disabled": "Disabled by Journey mode or Self Restraint",

@@ -30,6 +30,7 @@
     "kubejs.DataGeneratorMixin"
   ],
   "client": [
+    "client.SlotWidgetTooltipAccessor",
     "client.PatternPreviewAirMixin",
     "client.PatternPreviewTimingMixin",
     "client.ClientLevelUniversiumMixin",

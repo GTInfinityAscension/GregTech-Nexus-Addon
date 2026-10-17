@@ -4236,7 +4236,7 @@
   "material.gtna.boundless_cosmic_solder": "无垠宇宙焊料",
   "gtna.condensate_generator": "凝聚态纠缠",
   "gtna.condensate_assembler": "凝聚态组装",
-  "gtna.recipe.bec_nanite_tiers": "纳米蜂群等级：%s",
+  "gtna.recipe.bec_nanite_tier": "纳米蜂群等级：%s",
   "gtna.bec.gui.none": "无",
   "gtna.bec.gui.operation": "运算",
   "gtna.bec.gui.analog": "模拟",

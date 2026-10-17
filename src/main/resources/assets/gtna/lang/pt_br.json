@@ -2707,7 +2707,7 @@
   "material.gtna.boundless_cosmic_solder": "Solda Cósmica Ilimitada",
   "gtna.condensate_generator": "Emaranhamento de Condensado",
   "gtna.condensate_assembler": "Montagem com Condensado",
-  "gtna.recipe.bec_nanite_tiers": "Tiers de nanite: %s",
+  "gtna.recipe.bec_nanite_tier": "Tier de nanite: %s",
   "gtna.bec.gui.none": "Nenhum",
   "gtna.bec.gui.operation": "Operação",
   "gtna.bec.gui.analog": "Analógico",

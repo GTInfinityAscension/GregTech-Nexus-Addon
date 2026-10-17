@@ -436,28 +436,10 @@ public class GTNARecipeType {
     public static final GTRecipeType CONDENSATE_ASSEMBLER_RECIPES = register("condensate_assembler",
             com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
             .setMaxIOSize(16, 1, 6, 0).setEUIO(IO.IN)
-            // EN: 3 GTCEu lines + the voltage row; without the extra height the nanite line fell below the panel.
-            // PT: 3 linhas do GTCEu + a linha de voltagem; sem a altura extra a linha de nanites caía fora do painel.
-            // ZH: GTCEu 的 3 行加电压行；不增加高度时纳米蜂群行会超出面板。
-            .setMaxTooltips(5)
-            .addDataInfo(data -> {
-                int[] tiers = com.raishxn.gtna.common.machine.multiblock.electric.bec.BECIONodeMachine.nanitesOf(data);
-                if (tiers.length == 0) return "";
-                // EN: Run-length ("5x2 3x3") so 16 slots fit the EMI panel width.
-                // PT: Agrupado ("5x2 3x3") para 16 slots caberem na largura do painel do EMI.
-                // ZH: 合并连续值（"5x2 3x3"），使 16 个槽位适配 EMI 面板宽度。
-                StringBuilder text = new StringBuilder();
-                for (int i = 0; i < tiers.length;) {
-                    int j = i;
-                    while (j < tiers.length && tiers[j] == tiers[i]) j++;
-                    var tier = com.raishxn.gtna.api.bec.NaniteTier.byOrdinal(tiers[i]);
-                    if (!text.isEmpty()) text.append(' ');
-                    text.append(tier == null ? "?" : tier.tier);
-                    if (j - i > 1) text.append('x').append(j - i);
-                    i = j;
-                }
-                return LocalizationUtils.format("gtna.recipe.bec_nanite_tiers", text.toString());
-            })
+            // EN: The nanite tier goes on each item slot's tooltip; a text line with 16 tiers overflowed the EMI page.
+            // PT: O tier de nanite vai no tooltip de cada slot; uma linha com 16 tiers estourava a página do EMI.
+            // ZH: 纳米蜂群等级显示在每个物品槽的提示中；16 个等级的文字行会超出 EMI 页面。
+            .setUiBuilder((recipe, group) -> com.raishxn.gtna.client.CondensateNaniteSlots.attach(recipe, group))
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT).setSound(GTSoundEntries.ASSEMBLER);
 
     /** GTO {@code miner_module} (Space Elevator): drones mine asteroid ores. */
