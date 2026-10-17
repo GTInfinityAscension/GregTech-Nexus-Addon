@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [0.6.1] - 2026-10-17
+
+### Compatibility
+- GTNA needs GTCEu 7.5.3 or newer; with an older GTCEu, Forge now stops with a missing-dependency message. The crash in [#1](https://github.com/GTInfinityAscension/GregTech-Nexus-Addon/issues/1) (`NoSuchFieldError: CLUSTER_MAX_HARVESTABLES` with GTNA 0.1.0 and GTCEu 7.4.1) came from that old pairing; update both mods.
+
 ### Dependencies
 - GTNA now requires [GTIA Lib](https://github.com/GTInfinityAscension/GTIA-Lib) 0.5.0 or newer. The multiblock module registry moved there (`com.gtinfinityascension.gtialib.module.ModuleRegistry`); `GTNASubPatterns` keeps working and forwards to it. `Int128`, `BlockPosLongSet` and `BlockPosHashing` moved there (`com.gtinfinityascension.gtialib.data`); addons that imported them from GTNA must update the import.
 
