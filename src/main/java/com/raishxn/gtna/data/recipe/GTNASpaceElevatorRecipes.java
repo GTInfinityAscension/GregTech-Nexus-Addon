@@ -134,6 +134,15 @@ public final class GTNASpaceElevatorRecipes {
         return new FluidStack[] { RocketFuel.getFluid(10000), new FluidStack(adAstraFuel, 6000) };
     }
 
+    // EN: Without Ad Astra (dev runClient) the research falls back to the module connector instead of crashing.
+    // PT: Sem o Ad Astra (runClient de dev) a pesquisa usa o conector de módulo em vez de travar.
+    // ZH: 未安装 Ad Astra（开发客户端）时，研究物品改用模块连接器，避免崩溃。
+    private static ItemStack researchItem() {
+        Item rocket = ForgeRegistries.ITEMS.getValue(new ResourceLocation("ad_astra", "tier_4_rocket"));
+        return rocket == null || rocket == net.minecraft.world.item.Items.AIR ? GTNABlocks.MODULE_CONNECTOR.asStack() :
+                new ItemStack(rocket);
+    }
+
     private record Ore(int amount, Material material) {}
 
     private static Ore ore(int amount, Material material) {
@@ -247,8 +256,7 @@ public final class GTNASpaceElevatorRecipes {
                 .inputFluids(Naquadria.getFluid(4096))
                 .outputItems(GTNAMegaMachines.SPACE_ELEVATOR.asStack())
                 .EUt(491520).duration(1600)
-                .stationResearch(r -> r.researchStack(new ItemStack(ForgeRegistries.ITEMS.getValue(
-                        new ResourceLocation("ad_astra", "tier_4_rocket")))).CWUt(64).EUt(491520))
+                .stationResearch(r -> r.researchStack(researchItem()).CWUt(64).EUt(491520))
                 .save(provider);
         // GTO assembler_module: Pikyonium -> Neutronium; Artherium-Tin -> Naquadah Alloy; research on the AL.
         GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("mega/assembler_module"))
