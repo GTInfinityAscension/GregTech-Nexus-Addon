@@ -442,7 +442,7 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.eoh.structure.ports",
                 "Exactly 1 ME item input bus, 2 ME fluid input hatches, 1 ME item output bus and 1 ME fluid output hatch. No stocking, crafting buffers, dual or energy hatches.");
         add("gtna.eoh.structure.tiers", "Field tiers: Compression %1$s/9 · Acceleration %2$s/9 · Stabilisation %3$s/9");
-        add("gtna.eoh.structure.component", "Eye of Harmony structure component. Crafting is not available yet.");
+        add("gtna.eoh.structure.component", "Eye of Harmony structure component.");
         add("gtna.eoh.field_tier", "Field Tier: %s / 9");
         add("gtna.eoh.field.compression", "Sets the supported planet tier; higher fields reduce processing time.");
         add("gtna.eoh.field.acceleration", "Accelerates time at the cost of recipe success chance.");
@@ -1446,7 +1446,7 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.bec.condensate.eternity", "Eternity");
         add("gtna.condensate_generator", "Condensate Entanglement");
         add("gtna.condensate_assembler", "Condensate Assembly");
-        add("gtna.recipe.bec_nanite_tiers", "Nanite tier per item slot: %s");
+        add("gtna.recipe.bec_nanite_tiers", "Nanite tiers: %s");
         add("gtna.bec.gui.none", "None");
         add("gtna.bec.gui.operation", "Operation");
         add("gtna.bec.gui.analog", "Analog");

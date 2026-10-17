@@ -5,8 +5,6 @@ import com.gregtechceu.gtceu.api.item.ComponentItem;
 import com.gregtechceu.gtceu.common.item.CoverPlaceBehavior;
 import com.gregtechceu.gtceu.common.item.TooltipBehavior;
 
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
 import com.raishxn.gtna.GTNACORE;
@@ -269,9 +267,6 @@ public class GTNAItems {
                 .item("primitive_mans_spacetime_distortion_device", ComponentItem::create)
                 .lang("Primitive Man's SpaceTime Distortion Device")
                 .properties(stack -> stack.stacksTo(64))
-                .onRegister(attach(new TooltipBehavior(lines -> lines.add(
-                        Component.translatable("item.gtna.primitive_mans_spacetime_distortion_device.tooltip")
-                                .withStyle(ChatFormatting.GRAY)))))
                 .model((ctx, provider) -> provider.generated(ctx,
                         GTNACORE.id("item/primitive_mans_spacetime_distortion_device")))
                 .register();
@@ -434,9 +429,10 @@ public class GTNAItems {
         DEBUG_ENERGY_COVER = REGISTRATE.item("debug_energy_cover", ComponentItem::create)
                 .lang("Debug Energy Cover")
                 .properties(stack -> stack.stacksTo(64))
-                .onRegister(attach(new CoverPlaceBehavior(GTNACovers.DEBUG_ENERGY_COVER),
-                        new TooltipBehavior(lines -> lines.add(
-                                Component.translatable("item.gtna.debug_energy_cover.tooltip")))))
+                // EN: No TooltipBehavior: GTCEu's TooltipsHandler already shows "<item>.tooltip" (it was shown twice).
+                // PT: Sem TooltipBehavior: o TooltipsHandler do GTCEu já mostra "<item>.tooltip" (aparecia duas vezes).
+                // ZH: 不加 TooltipBehavior：GTCEu 的 TooltipsHandler 已显示 "<item>.tooltip"（之前会重复）。
+                .onRegister(attach(new CoverPlaceBehavior(GTNACovers.DEBUG_ENERGY_COVER)))
                 .model((ctx, provider) -> provider.generated(ctx, GTCEu.id("item/energy_detector_cover")))
                 .register();
 

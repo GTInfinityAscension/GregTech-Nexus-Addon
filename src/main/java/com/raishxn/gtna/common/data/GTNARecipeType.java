@@ -439,11 +439,18 @@ public class GTNARecipeType {
             .addDataInfo(data -> {
                 int[] tiers = com.raishxn.gtna.common.machine.multiblock.electric.bec.BECIONodeMachine.nanitesOf(data);
                 if (tiers.length == 0) return "";
+                // EN: Run-length ("5x2 3x3") so 16 slots fit the EMI panel width.
+                // PT: Agrupado ("5x2 3x3") para 16 slots caberem na largura do painel do EMI.
+                // ZH: 合并连续值（"5x2 3x3"），使 16 个槽位适配 EMI 面板宽度。
                 StringBuilder text = new StringBuilder();
-                for (int t : tiers) {
-                    var tier = com.raishxn.gtna.api.bec.NaniteTier.byOrdinal(t);
+                for (int i = 0; i < tiers.length;) {
+                    int j = i;
+                    while (j < tiers.length && tiers[j] == tiers[i]) j++;
+                    var tier = com.raishxn.gtna.api.bec.NaniteTier.byOrdinal(tiers[i]);
                     if (!text.isEmpty()) text.append(' ');
                     text.append(tier == null ? "?" : tier.tier);
+                    if (j - i > 1) text.append('x').append(j - i);
+                    i = j;
                 }
                 return LocalizationUtils.format("gtna.recipe.bec_nanite_tiers", text.toString());
             })

@@ -114,11 +114,16 @@ public final class ItemEffectRenderer extends RenderType {
     /** Called with the icon's pose (model space 0..1) just before the icon is drawn. */
     public static void renderBehind(ItemStack stack, ItemDisplayContext context, BakedModel model, PoseStack pose,
                                     MultiBufferSource buffers, int overlay) {
-        if (context != ItemDisplayContext.GUI) return;
+        if (context == ItemDisplayContext.HEAD || context == ItemDisplayContext.NONE) return;
+        boolean gui = context == ItemDisplayContext.GUI;
         for (var effect : effects(stack, model)) {
             if (effect.type() != ItemEffect.Type.HALO || !enabled(effect.type())) continue;
-            renderHalo(effect, pose, buffers);
-            if (effect.pulse()) renderPulse(stack, model, pose, buffers, overlay);
+            // EN: In the world (hand, ground, frame) the flat item spans z 7.5..8.5 px, so the halo sits just behind
+            // it.
+            // PT: No mundo (mão, chão, moldura) o item plano ocupa z 7,5..8,5 px; o halo fica logo atrás dele.
+            // ZH: 在世界中（手持、掉落、展示框）平面物品位于 z 7.5..8.5 像素，光环放在其正后方。
+            renderHalo(effect, pose, buffers, gui ? 0 : 7.4f / 16f);
+            if (gui && effect.pulse()) renderPulse(stack, model, pose, buffers, overlay);
         }
     }
 
@@ -167,7 +172,7 @@ public final class ItemEffectRenderer extends RenderType {
      * RenderBlender's halo: a flat quad behind the item, {@code size} pixels wider on every side, tinted with the
      * ARGB colour.
      */
-    private static void renderHalo(ItemEffect effect, PoseStack pose, MultiBufferSource buffers) {
+    private static void renderHalo(ItemEffect effect, PoseStack pose, MultiBufferSource buffers, float z) {
         var sprite = sprite(effect.texture() == null ? ItemEffect.DEFAULT_HALO : effect.texture());
         int color = effect.color() == 0 ? 0xFFFFFFFF : effect.color();
         float spread = effect.size() / 16f, min = -spread, max = 1 + spread;
@@ -178,7 +183,7 @@ public final class ItemEffectRenderer extends RenderType {
         float[][] v = { { max, max, sprite.getU1(), sprite.getV0() }, { min, max, sprite.getU0(), sprite.getV0() },
                 { min, min, sprite.getU0(), sprite.getV1() }, { max, min, sprite.getU1(), sprite.getV1() } };
         for (float[] q : v)
-            out.vertex(matrix, q[0], q[1], 0).color(r, g, b, a).uv(q[2], q[3])
+            out.vertex(matrix, q[0], q[1], z).color(r, g, b, a).uv(q[2], q[3])
                     .overlayCoords(OverlayTexture.NO_OVERLAY).uv2(FULL_BRIGHT).normal(normal, 0, 0, 1).endVertex();
     }
 
