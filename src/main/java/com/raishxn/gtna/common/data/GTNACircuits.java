@@ -13,7 +13,7 @@ import static com.raishxn.gtna.api.registry.GTNARegistry.REGISTRATE;
 /**
  * GTNH Optical and Exotic circuit families (G-0202), the "basic" circuits above GTCEu's UHV Wetware Mainframe.
  * GTNH tiers converted to GTCEu (UMV → UXV). Textures from Modernity-GTNH ({@code gt.metaitem.03} 154–157,
- * 166–169). The higher Cosmic/Transcendent families are left to the modpack.
+ * 166–169), Cosmic and Temporally Transcendent 170–176 (GTNH UMV → UXV, UXV → OpV).
  */
 public final class GTNACircuits {
 
@@ -33,6 +33,21 @@ public final class GTNACircuits {
             CustomTags.UIV_CIRCUITS);
     public static final ItemEntry<Item> EXOTIC_MAINFRAME = circuit("exotic_mainframe", "Exotic Mainframe",
             CustomTags.UXV_CIRCUITS);
+
+    public static final ItemEntry<Item> COSMIC_PROCESSOR = circuit("cosmic_processor", "Cosmic Processor",
+            CustomTags.UEV_CIRCUITS);
+    public static final ItemEntry<Item> COSMIC_ASSEMBLY = circuit("cosmic_assembly", "Cosmic Assembly",
+            CustomTags.UIV_CIRCUITS);
+    public static final ItemEntry<Item> COSMIC_COMPUTER = circuit("cosmic_computer", "Cosmic Supercomputer",
+            CustomTags.UXV_CIRCUITS);
+    public static final ItemEntry<Item> COSMIC_MAINFRAME = circuit("cosmic_mainframe", "Cosmic Mainframe",
+            CustomTags.OpV_CIRCUITS);
+    public static final ItemEntry<Item> TRANSCENDENT_PROCESSOR = circuit("transcendent_processor",
+            "Temporally Transcendent Processor", CustomTags.UXV_CIRCUITS);
+    public static final ItemEntry<Item> TRANSCENDENT_ASSEMBLY = circuit("transcendent_assembly",
+            "Temporally Transcendent Assembly", CustomTags.OpV_CIRCUITS);
+    public static final ItemEntry<Item> TRANSCENDENT_COMPUTER = circuit("transcendent_computer",
+            "Temporally Transcendent Supercomputer", CustomTags.MAX_CIRCUITS);
 
     private GTNACircuits() {}
 

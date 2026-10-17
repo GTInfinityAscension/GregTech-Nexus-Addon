@@ -134,13 +134,28 @@ public final class GTNAHighTierComponentRecipes {
                 GTMaterials.RutheniumTriniumAmericiumNeutronate, GTNAMaterials.Indalloy140);
         family(provider, "exotic", exo, GTValues.UHV, GTItems.WETWARE_CIRCUIT_BOARD.get(), CelestialTungsten,
                 GTMaterials.RutheniumTriniumAmericiumNeutronate, GTNAMaterials.Indalloy140);
+        var cosmic = new com.tterrag.registrate.util.entry.ItemEntry<?>[] {
+                com.raishxn.gtna.common.data.GTNACircuits.COSMIC_PROCESSOR,
+                com.raishxn.gtna.common.data.GTNACircuits.COSMIC_ASSEMBLY,
+                com.raishxn.gtna.common.data.GTNACircuits.COSMIC_COMPUTER,
+                com.raishxn.gtna.common.data.GTNACircuits.COSMIC_MAINFRAME };
+        // EN: Temporally Transcendent has no mainframe in GTNH; its supercomputer is the MAX circuit.
+        // PT: O Temporally Transcendent não tem mainframe no GTNH; o supercomputador é o circuito MAX.
+        // ZH: 时间超越系列在 GTNH 中没有主机；其超级计算机即 MAX 级电路。
+        var transcendent = new com.tterrag.registrate.util.entry.ItemEntry<?>[] {
+                com.raishxn.gtna.common.data.GTNACircuits.TRANSCENDENT_PROCESSOR,
+                com.raishxn.gtna.common.data.GTNACircuits.TRANSCENDENT_ASSEMBLY,
+                com.raishxn.gtna.common.data.GTNACircuits.TRANSCENDENT_COMPUTER };
+        family(provider, "cosmic", cosmic, GTValues.UEV, GTItems.WETWARE_CIRCUIT_BOARD.get(), TranscendentMetal,
+                GTMaterials.RutheniumTriniumAmericiumNeutronate, GTNAMaterials.Indalloy140);
+        family(provider, "transcendent", transcendent, GTValues.UXV, GTItems.WETWARE_CIRCUIT_BOARD.get(), Shirabon,
+                GTMaterials.RutheniumTriniumAmericiumNeutronate, GTNAMaterials.Indalloy140);
     }
 
     private static void family(Consumer<FinishedRecipe> provider, String name,
                                com.tterrag.registrate.util.entry.ItemEntry<?>[] items, int baseTier, Item board,
                                Material metal, Material wire, Material solder) {
-        Item processor = items[0].get(), assembly = items[1].get(), computer = items[2].get(),
-                mainframe = items[3].get();
+        Item processor = items[0].get(), assembly = items[1].get(), computer = items[2].get();
         GTRecipeTypes.CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder(GTNACORE.id("high_tier/" + name + "_processor"))
                 .inputItems(new ItemStack(board)).inputItems(GTItems.HIGHLY_ADVANCED_SOC.get())
                 .inputItems(new ItemStack(GTItems.ADVANCED_SMD_TRANSISTOR.get(), 16))
@@ -169,6 +184,7 @@ public final class GTNAHighTierComponentRecipes {
                 .duration(600).EUt(GTValues.VA[baseTier + 1]).cleanroom(
                         com.gregtechceu.gtceu.api.machine.multiblock.CleanroomType.CLEANROOM)
                 .save(provider);
+        if (items.length < 4) return;
         long eut = GTValues.VA[baseTier + 2];
         GTRecipeTypes.ASSEMBLY_LINE_RECIPES.recipeBuilder(GTNACORE.id("high_tier/" + name + "_mainframe"))
                 .inputItems(TagPrefix.frameGt, metal, 2).inputItems(new ItemStack(computer, 2))
@@ -179,7 +195,7 @@ public final class GTNAHighTierComponentRecipes {
                 .inputItems(new ItemStack(GTItems.ADVANCED_SMD_INDUCTOR.get(), 64))
                 .inputItems(TagPrefix.wireGtDouble, wire, 16).inputItems(TagPrefix.plateDense, metal, 4)
                 .inputFluids(solder.getFluid(144 * 16)).inputFluids(GTMaterials.Naquadria.getFluid(144 * 8))
-                .outputItems(new ItemStack(mainframe)).duration(1200).EUt(eut)
+                .outputItems(new ItemStack(items[3].get())).duration(1200).EUt(eut)
                 .stationResearch(b -> b.researchStack(new ItemStack(computer)).CWUt(64).EUt(eut))
                 .save(provider);
     }

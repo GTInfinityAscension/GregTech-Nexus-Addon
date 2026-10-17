@@ -19,6 +19,35 @@ public class MaterialAdd {
                 Gadolinium }) {
             if (!material.hasProperty(PropertyKey.DUST)) material.setProperty(PropertyKey.DUST, new DustProperty());
         }
+        // EN: Forms the BEC / Eye of Harmony / Godforge recipes ask for; without them EMI showed empty slots.
+        // PT: Formas pedidas pelas receitas de BEC / Eye of Harmony / Godforge; sem elas o EMI mostrava slots vazios.
+        // ZH: BEC / 和谐之眼 / 神之锻炉配方所需的形态；缺失时 EMI 显示空槽位。
+        if (!Praseodymium.hasProperty(PropertyKey.DUST)) Praseodymium.setProperty(PropertyKey.DUST, new DustProperty());
+        for (var material : new com.gregtechceu.gtceu.api.data.chemical.material.Material[] {
+                Rhenium, Seaborgium, Germanium }) {
+            if (!material.hasProperty(PropertyKey.DUST)) material.setProperty(PropertyKey.DUST, new DustProperty());
+            if (!material.hasProperty(PropertyKey.INGOT))
+                material.setProperty(PropertyKey.INGOT, new IngotProperty());
+            material.addFlags(GENERATE_PLATE);
+        }
+        Seaborgium.addFlags(GENERATE_DENSE);
+        Germanium.addFlags(GENERATE_DENSE);
+        Neutronium.addFlags(GENERATE_DENSE, GENERATE_RING, GENERATE_SMALL_GEAR, GENERATE_SPRING, GENERATE_FINE_WIRE,
+                GTNAMaterialFlags.GENERATE_SUPERDENSE);
+        Tritanium.addFlags(GENERATE_DENSE);
+        Osmiridium.addFlags(GENERATE_DENSE);
+        Flerovium.addFlags(GENERATE_DENSE);
+        Duranium.addFlags(GENERATE_DENSE);
+        NaquadahEnriched.addFlags(GENERATE_FRAME);
+        VanadiumSteel.addFlags(GENERATE_FRAME);
+        Trinium.addFlags(GENERATE_FINE_WIRE);
+        Titanium.addFlags(GENERATE_FINE_WIRE);
+        RutheniumTriniumAmericiumNeutronate.addFlags(GENERATE_FINE_WIRE);
+        Graphene.addFlags(GENERATE_FINE_WIRE);
+        HastelloyC276.addFlags(GENERATE_ROTOR);
+        TitaniumTungstenCarbide.addFlags(GENERATE_GEAR);
+        if (GodforgeChainMaterials.AdvancedNitinol != null)
+            GodforgeChainMaterials.AdvancedNitinol.addFlags(GTNAMaterialFlags.GENERATE_SUPERDENSE);
         Bronze.addFlags(GENERATE_SPRING_SMALL, GENERATE_SPRING);
         Beryllium.addFlags(GENERATE_ROD, GENERATE_FRAME);
         // GTOCore's Cold Ice Freezer auxiliary tower is framed in Naquadah; GTCEu 7.5.3 does not
