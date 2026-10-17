@@ -121,7 +121,7 @@ public class MaterialBuilder {
                 .iconSet(GodforgeIconSets.DARK_STEEL)
                 .components(Iron, 1, Coal, 1, Obsidian, 1)
                 .blastTemp(1450, LOW, GTValues.VA[GTValues.MV], 600)
-                .flags(GENERATE_PLATE, GENERATE_GEAR, DISABLE_DECOMPOSITION)
+                .flags(GENERATE_PLATE, GENERATE_GEAR, GENERATE_FRAME, DISABLE_DECOMPOSITION)
                 .buildAndRegister().setFormula("FeCOb");
 
         EndSteel = new Material.Builder(GTNACORE.id("end_steel"))

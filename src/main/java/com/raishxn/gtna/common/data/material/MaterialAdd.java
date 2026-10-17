@@ -30,6 +30,7 @@ public class MaterialAdd {
                 material.setProperty(PropertyKey.INGOT, new IngotProperty());
             material.addFlags(GENERATE_PLATE);
         }
+        Rhenium.addFlags(GENERATE_FOIL, GENERATE_FRAME);
         Seaborgium.addFlags(GENERATE_DENSE);
         Germanium.addFlags(GENERATE_DENSE);
         Neutronium.addFlags(GENERATE_DENSE, GENERATE_RING, GENERATE_SMALL_GEAR, GENERATE_SPRING, GENERATE_FINE_WIRE,

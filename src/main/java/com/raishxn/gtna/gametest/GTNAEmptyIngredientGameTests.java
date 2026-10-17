@@ -15,7 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Fails when a GTNA recipe has an item input that resolves to nothing (missing item or empty tag): EMI shows it as
+ * Fails when any GT recipe (GTNA writes some under the gtceu namespace) has an item input that resolves to nothing
+ * (missing item or empty tag): EMI shows it as
  * an empty slot and the recipe can never run. The full list goes to {@code gtna-empty-ingredients.txt}.
  */
 @PrefixGameTestTemplate(false)
@@ -28,7 +29,7 @@ public final class GTNAEmptyIngredientGameTests {
     public static void noEmptyItemInputs(GameTestHelper helper) {
         List<String> broken = new ArrayList<>();
         for (var recipe : helper.getLevel().getServer().getRecipeManager().getRecipes()) {
-            if (!(recipe instanceof GTRecipe gt) || !"gtna".equals(gt.getId().getNamespace())) continue;
+            if (!(recipe instanceof GTRecipe gt)) continue;
             var inputs = gt.getInputContents(ItemRecipeCapability.CAP);
             for (int i = 0; i < inputs.size(); i++) {
                 var stacks = ItemRecipeCapability.CAP.of(inputs.get(i).content).getItems();

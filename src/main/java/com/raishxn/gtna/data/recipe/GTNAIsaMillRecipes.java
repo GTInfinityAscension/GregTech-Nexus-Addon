@@ -193,6 +193,10 @@ public final class GTNAIsaMillRecipes {
      */
     private static void milledOre(Consumer<FinishedRecipe> provider, String id, Material material, int ballTier,
                                   int outputCount, int duration) {
+        // EN: Skip materials without an ore form in this pack (Enriched Naquadah ore is GTO-only).
+        // PT: Pula materiais sem minério neste pack (o minério de Naquadah Enriquecido só existe no GTO).
+        // ZH: 跳过本整合包中没有矿石形态的材料（富集硅岩矿仅存在于 GTO）。
+        if (!material.hasProperty(com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey.ORE)) return;
         GTNARecipeType.ISA_MILL_RECIPES.recipeBuilder(id)
                 .circuitMeta(ballTier == 2 ? 10 : 1)
                 .inputItems(TagPrefix.ore, material)
@@ -210,6 +214,10 @@ public final class GTNAIsaMillRecipes {
      */
     private static void milledRawOre(Consumer<FinishedRecipe> provider, String id, Material material, int ballTier,
                                      int outputCount, int duration) {
+        // EN: Skip materials without an ore form in this pack (Enriched Naquadah ore is GTO-only).
+        // PT: Pula materiais sem minério neste pack (o minério de Naquadah Enriquecido só existe no GTO).
+        // ZH: 跳过本整合包中没有矿石形态的材料（富集硅岩矿仅存在于 GTO）。
+        if (!material.hasProperty(com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey.ORE)) return;
         GTNARecipeType.ISA_MILL_RECIPES.recipeBuilder(id)
                 .circuitMeta(ballTier == 2 ? 10 : 1)
                 .inputItems(TagPrefix.rawOre, material, 16)

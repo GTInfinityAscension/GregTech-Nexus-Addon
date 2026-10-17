@@ -4894,10 +4894,10 @@ public final class GTNAMachineGameTests {
                 "restoring the pipe must let the ISA Mill form again: " +
                         patternError(helper, state, controllerPos));
 
-        // QA A6: exactly the 48 ported ISA Mill recipes.
+        // QA A6: the 48 ported ISA Mill recipes minus the 4 Enriched Naquadah ones (no such ore in this pack).
         var recipes = helper.getLevel().getRecipeManager().getAllRecipesFor(GTNARecipeType.ISA_MILL_RECIPES);
-        helper.assertTrue(recipes.size() == 48,
-                "the ISA Mill must load GTOCore's 48 recipes, found " + recipes.size());
+        helper.assertTrue(recipes.size() == 44,
+                "the ISA Mill must load GTOCore's 44 usable recipes, found " + recipes.size());
         // The ported Inconel-625 material must stay obtainable through GTCEu's automatic alloy blast.
         var alloyBlast = helper.getLevel().getRecipeManager().getAllRecipesFor(GCYMRecipeTypes.ALLOY_BLAST_RECIPES);
         helper.assertTrue(alloyBlast.stream().anyMatch(recipe -> recipe.id.getPath().endsWith("inconel_625")),
