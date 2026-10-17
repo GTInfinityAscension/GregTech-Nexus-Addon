@@ -436,6 +436,10 @@ public class GTNARecipeType {
     public static final GTRecipeType CONDENSATE_ASSEMBLER_RECIPES = register("condensate_assembler",
             com.gregtechceu.gtceu.common.data.GTRecipeTypes.MULTIBLOCK)
             .setMaxIOSize(16, 1, 6, 0).setEUIO(IO.IN)
+            // EN: 3 GTCEu lines + the voltage row; without the extra height the nanite line fell below the panel.
+            // PT: 3 linhas do GTCEu + a linha de voltagem; sem a altura extra a linha de nanites caía fora do painel.
+            // ZH: GTCEu 的 3 行加电压行；不增加高度时纳米蜂群行会超出面板。
+            .setMaxTooltips(5)
             .addDataInfo(data -> {
                 int[] tiers = com.raishxn.gtna.common.machine.multiblock.electric.bec.BECIONodeMachine.nanitesOf(data);
                 if (tiers.length == 0) return "";
