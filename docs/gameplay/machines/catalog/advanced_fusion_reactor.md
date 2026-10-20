@@ -1,44 +1,48 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Reator de Fusão Avançado MK-I
+# Advanced Fusion Reactor MK-I
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Reator de Fusão Avançado MK-I](../../../assets/machines/advanced_fusion_reactor.webp){ loading=lazy }
+*It simulates the eternal light.*
+
+![Advanced Fusion Reactor MK-I](../../../assets/machines/advanced_fusion_reactor.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Fusion Reactor |
-| **Tamanho** | 39 × 17 × 39 |
-| **Blocos** | 6.459 |
+| **Machine type** | Fusion Reactor |
+| **Category** | Electric processing |
+| **Recipe types** | Fusion Reactor |
+| **Size** | 39 × 17 × 39 |
+| **Blocks** | 6,459 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Ele simula a luz eterna. energia aumentam a capacidade de calor e um módulo de overclock libera hatches especiais.
+modules raise its heat capacity, an overclock module unlocks special hatches.
 
-- Tipo de Máquina: Reator de Fusão
-- Um reator de fusão modular: módulos de alta
-- Cada módulo de alta energia dobra o calor
-- Módulo de overclock: Overclock e Thread Hatches
-- Armazenamento: 160M EU antes dos módulos
-- Até 4 módulos de alta energia, em ordem
-- Só um módulo de overclock
-- Em conflito, instale os de alta energia primeiro
+- A modular fusion reactor: high-energy
+- Each high-energy module doubles heat capacity
+- Overclock module: Overclock and Thread Hatches
+- Energy storage: 160M EU before modules
+- Up to 4 high-energy modules, in order
+- Only one overclock module
+- On conflict, install high-energy modules first
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Fusion Machine Casing | 1.534 |
-| Invólucro Mecânico de PBI Resistente à Radiação | 1.012 |
-| Bloco de Base Reforçada | 940 |
+| Fusion Machine Casing | 1,534 |
+| Pbi Radiation Resistant Mechanical Enclosure | 1,012 |
+| Strengthen The Base Block | 940 |
 | Nonconducting Casing | 819 |
-| Bobina Supercondutora Aprimorada | 584 |
-| Carcaça de Reator de Fissão | 584 |
-| Concreto de Alta Resistência | 396 |
+| Improved Superconductor Coil | 584 |
+| Fission Reactor Casing | 584 |
+| High Strength Concrete | 396 |
 | Naquadah Alloy Frame | 237 |
 | Tungsten Frame | 164 |
 | Fusion Glass | 80 |
@@ -46,6 +50,6 @@ Ele simula a luz eterna. energia aumentam a capacidade de calor e um módulo de 
 | IV 4,096A Laser Target Hatch | 16 |
 | ULV Input Hatch | 16 |
 | ULV Output Hatch | 16 |
-| Reator de Fusão Avançado MK-I | 1 |
+| Advanced Fusion Reactor MK-I | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

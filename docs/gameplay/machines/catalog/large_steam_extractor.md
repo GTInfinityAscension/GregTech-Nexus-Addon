@@ -1,40 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Grande Extrator a Vapor
+# Large Steam Extractor
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Extrator a Vapor](../../../assets/machines/large_steam_extractor.webp){ loading=lazy }
+*Squeezes the juice out of things that never had juice.*
+
+![Large Steam Extractor](../../../assets/machines/large_steam_extractor.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Extractor |
-| **Tamanho** | 5 × 5 × 5 |
-| **Blocos** | 100 |
+| **Machine type** | Extractor |
+| **Category** | Steam and primitive |
+| **Recipe types** | Extractor |
+| **Size** | 5 × 5 × 5 |
+| **Blocks** | 100 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Espreme suco de coisas que nunca tiveram suco. Um extrator a vapor compacto de estrutura compartilhada para extração em massa.
+A compact steam extractor with a shared frame for bulk extraction.
 
-- Tipo de Máquina: Extrator
-- Velocidade ~1,75x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 48
+- ~1.75x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 48
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 62 |
 | Bronze Gearbox Casing | 15 |
 | Bronze Frame | 13 |
 | Bronze Pipe Casing | 6 |
-| Grande Extrator a Vapor | 1 |
-| Barramento de Saída a Vapor com Boost de Saída | 1 |
+| Large Steam Extractor | 1 |
+| Steam Output Bus | 1 |
 | Steam Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

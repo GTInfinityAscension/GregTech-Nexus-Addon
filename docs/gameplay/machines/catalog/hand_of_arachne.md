@@ -1,46 +1,50 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Mão de Aracne
+# Hand Of Arachne
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Mão de Aracne](../../../assets/machines/hand_of_arachne.webp){ loading=lazy }
+*Eight arms, zero tangles. Arachne would be jealous.*
+
+![Hand Of Arachne](../../../assets/machines/hand_of_arachne.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Tear |
-| **Tamanho** | 41 × 9 × 9 |
-| **Blocos** | 1.351 |
+| **Machine type** | Loom |
+| **Category** | Electric processing |
+| **Recipe types** | Loom |
+| **Size** | 41 × 9 × 9 |
+| **Blocks** | 1,351 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Oito braços, nenhum nó. Aracne teria inveja. Um tear gigante que tece fibras e cabos mais rápido que qualquer aranha.
+A giant loom that weaves fibres and cables faster than any spider.
 
-- Tipo de Máquina: Tear
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Paralelos definidos pelo Parallel Hatch
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Parallel set by the Parallel Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Máquina de Pikyônio | 344 |
+| Pikyonium Machine Casing | 344 |
 | Tungsten Frame | 264 |
 | Heat Proof Invar Machine Casing | 176 |
-| Unidade Avançada de Linha de Montagem | 160 |
-| Casing Mecanico de Hastelloy N Resistente a Oxidacao | 136 |
+| Advanced Assembly Line Unit | 160 |
+| Oxidation Resistant Hastelloy N Mechanical Casing | 136 |
 | Laminated Glass | 132 |
-| Carcaça de Contenção de Pressão | 91 |
-| Caixa de Engrenagens de Amprósio | 37 |
+| Pressure Containment Casing | 91 |
+| Amprosium Gearbox | 37 |
 | Assembly Line Grating | 6 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
-| Mão de Aracne | 1 |
+| Hand Of Arachne | 1 |
 | ULV Output Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

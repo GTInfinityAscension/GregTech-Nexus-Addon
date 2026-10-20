@@ -1,41 +1,45 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Grande Martelo de Forja a Vapor
+# Large Steam Hammer
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Martelo de Forja a Vapor](../../../assets/machines/large_steam_hammer.webp){ loading=lazy }
+*Stop. Hammer time.*
+
+![Large Steam Hammer](../../../assets/machines/large_steam_hammer.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Forge Hammer |
-| **Tamanho** | 7 × 13 × 7 |
-| **Blocos** | 316 |
+| **Machine type** | Forge Hammer |
+| **Category** | Steam and primitive |
+| **Recipe types** | Forge Hammer |
+| **Size** | 7 × 13 × 7 |
+| **Blocks** | 316 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Para tudo. É hora do martelo. Um martelo de forja a vapor pesado para forjar em alto volume.
+A heavy steam forge hammer for high-throughput forging.
 
-- Tipo de Máquina: Martelo de Forja
-- Velocidade 2x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 64
+- 2x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 64
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 166 |
 | Block of Iron | 46 |
 | Bronze Frame | 44 |
 | Bronze Gearbox Casing | 28 |
 | Glass | 28 |
-| Barramento de Saída a Vapor com Boost de Saída | 1 |
+| Steam Output Bus | 1 |
 | Steam Input Bus | 1 |
-| Grande Martelo de Forja a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Large Steam Hammer | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

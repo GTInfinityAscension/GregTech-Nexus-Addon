@@ -1,34 +1,38 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo Triturador de Entidades a Vapor II
+# Steam Entity Crusher Module II
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo Triturador de Entidades a Vapor II](../../../assets/machines/steam_elevator_entity_crusher_module_ii.webp){ loading=lazy }
+*Faster crushing. The mobs did not vote for this.*
+
+![Steam Entity Crusher Module II](../../../assets/machines/steam_elevator_entity_crusher_module_ii.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Moagem mais rápida. Os mobs não votaram nisso. Processa o mob de um spawner nos seus drops com vapor escaldante.
+Processes the mob from a spawner into its drops with scalding steam.
 
-- Tipo de Máquina: Módulo do Elevador
-- 2% de chance de dobrar, +0,5% por spawner
-- Ciclo: 200 ticks, chance máxima de 34%
-- Não aceita overclock
+- 2% double-output chance, +0.5% per spawner
+- Cycle: 200 ticks, chance capped at 34%
+- Cannot be overclocked
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo Triturador de Entidades a Vapor II | 1 |
+| Steam Entity Crusher Module II | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

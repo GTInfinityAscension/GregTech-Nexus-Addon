@@ -6,7 +6,7 @@ Updated: 2026-10-16 · version **0.6.0** (+ unreleased fixes on `main`) · Minec
 
 ## What exists
 
-- **168 multiblocks.** Ports from GTO, GTL, GTNL and GTNH plus GTNA originals. Progress of the requested ports: [roadmap](roadmap/index.en.md) (46/86, by phase A–G). Only machines from the author's list are ported, from the exact source mod ([lista-do-autor](roadmap/lista-do-autor.md)).
+- **168 multiblocks.** Ports from GTO, GTL, GTNL and GTNH plus GTNA originals. Progress of the requested ports: [roadmap](roadmap/index.md) (46/86, by phase A–G). Only machines from the author's list are ported, from the exact source mod ([lista-do-autor](roadmap/lista-do-autor.md)).
 - **Endgame:** Eye of Harmony, Forge of Gods (Godforge chain), Nano Forge T1–T4, Bose-Einstein Condensate network, Plasma Forge, Space Elevator with modules, Dyson Sphere.
 - **Originals:** Kinetic Orbital Lance, Stellar Containment Chamber, Antimatter Collider Ring and Dimensional Rift Gate are in game and under test; the Pressurized Water Reactor (IV) is designed.
 - **Systems:** Nexus energy network (128-bit wireless energy, configurable losses), wireless steam network, ME Pattern Buffers (multi-mode, configurable capacity), module system (sub-patterns that unlock capacity or recipe types), Thread/Parallel/Overclock hatches, electric Void Miner and void fluid drilling, Steam Elevator with modules, research engine (used by GTIA only if enabled).

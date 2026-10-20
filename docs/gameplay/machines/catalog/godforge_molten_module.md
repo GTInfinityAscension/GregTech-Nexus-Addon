@@ -1,40 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Núcleo de Fusão Helioflux
+# Helioflux Melting Core
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Núcleo de Fusão Helioflux](../../../assets/machines/godforge_molten_module.webp){ loading=lazy }
+*Skip the ingot. Go straight to soup.*
+
+![Helioflux Melting Core](../../../assets/machines/godforge_molten_module.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Núcleo de Fusão Helioflux |
-| **Tamanho** | 7 × 7 × 13 |
-| **Blocos** | 89 |
+| **Machine type** | Blast Smelter |
+| **Category** | Endgame systems |
+| **Recipe types** | Helioflux Melting Core |
+| **Size** | 7 × 7 × 13 |
+| **Blocks** | 89 |
+| **Origin** | GT: New Horizons |
 
-## Descrição
+## Description
 
-Pule o lingote. Vá direto para a sopa. direto na forma líquida.
+straight into their liquid form.
 
-- Tipo de Máquina: Fundidora a Alto-Forno
-- O segundo módulo da Godforge: derrete materiais
-- Especializado em paralelos
-- Sai sólido se o material não tiver forma líquida
-- Precisa fazer parte de uma Godforge
+- The second Godforge module: melts materials
+- Specialized in parallel processing
+- Outputs solids if no liquid form exists
+- Must be part of a Godforge to work
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Blindagem Estelar Reforçada por Singularidade | 36 |
-| Carcaça de Confinamento Magnético Transcendentalmente Amplificado | 21 |
-| Carcaça Estrutural Ilimitada Gravitacionalmente Isolada | 20 |
-| Conduíte Harmônico de Transmissão de Fônons | 5 |
-| Carcaça de Guia de Matéria Celestial | 5 |
-| Núcleo de Fusão Helioflux | 1 |
-| Carcaça de Sifão de Energia Estelar | 1 |
+| Singularity Reinforced Stellar Shielding Casing | 36 |
+| Transcendentally Amplified Magnetic Confinement Casing | 21 |
+| Boundless Gravitationally Severed Structure Casing | 20 |
+| Harmonic Phonon Transmission Conduit | 5 |
+| Celestial Matter Guidance Casing | 5 |
+| Helioflux Melting Core | 1 |
+| Stellar Energy Siphon Casing | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

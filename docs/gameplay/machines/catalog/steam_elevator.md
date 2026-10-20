@@ -1,32 +1,36 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Elevador a Vapor
+# Steam Elevator
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Elevador a Vapor](../../../assets/machines/steam_elevator.webp){ loading=lazy }
+*Going up? Please hold on to your top hat.*
+
+![Steam Elevator](../../../assets/machines/steam_elevator.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 35 × 43 × 35 |
-| **Blocos** | 2.698 |
+| **Machine type** | Modular Elevator |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 35 × 43 × 35 |
+| **Blocks** | 2,698 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Subindo? Por favor, segure a cartola. Um elevador modular a vapor que abriga módulos utilitários e te lança para outros planetas.
+A modular steam-powered elevator that hosts utility modules and launches you to other planets.
 
-- Tipo de Máquina: Elevador Modular
-- Partir: abre a seleção de planetas do Ad Astra
-- Até 12 encaixes de módulo
-- Os módulos só funcionam encaixados
+- Set out: opens the Ad Astra planet selection
+- Up to 12 module slots
+- Modules only work while attached
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Stone Bricks | 800 |
 | Solid Machine Casing | 742 |
@@ -36,6 +40,6 @@ Subindo? Por favor, segure a cartola. Um elevador modular a vapor que abriga mó
 | Steel Frame | 67 |
 | Steel Reinforced Wood | 16 |
 | Steel Firebox Casing | 15 |
-| Elevador a Vapor | 1 |
+| Steam Elevator | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

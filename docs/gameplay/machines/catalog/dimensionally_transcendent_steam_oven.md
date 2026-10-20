@@ -1,38 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
 # Dimensionally Transcendent Steam Oven
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
+
+*Preheat to 350 degrees. Then add infinity.*
 
 ![Dimensionally Transcendent Steam Oven](../../../assets/machines/dimensionally_transcendent_steam_oven.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Electric Furnace |
-| **Tamanho** | 33 × 24 × 27 |
-| **Blocos** | 4.413 |
+| **Machine type** | Furnace |
+| **Category** | Steam and primitive |
+| **Recipe types** | Electric Furnace |
+| **Size** | 33 × 24 × 27 |
+| **Blocks** | 4,413 |
+| **Origin** | GregTech Leisure |
 
-## Descrição
+## Description
 
-Preaqueça a 180 graus. Depois adicione infinito. Um forno a vapor levado muito além dos limites sensatos da engenharia térmica.
+A steam oven pushed far beyond sane thermal engineering limits.
 
-- Tipo de Máquina: Fornalha
-- Velocidade 100x maior que uma fornalha
-- 2 threads: duas receitas de fornalha ao mesmo tempo
-- Paralelos: até 524.288
+- 100x speed vs. a furnace
+- 2 threads: two furnace recipes at once
+- Parallel: up to 524,288
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Stone Bricks | 1.691 |
-| Deepslate | 1.608 |
+| Stone Bricks | 1,691 |
+| Deepslate | 1,608 |
 | Bricks | 972 |
 | Steam Machine Casing | 140 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 | Dimensionally Transcendent Steam Oven | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

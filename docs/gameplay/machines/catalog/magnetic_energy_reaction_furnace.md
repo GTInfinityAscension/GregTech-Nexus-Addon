@@ -1,54 +1,58 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Forno de Reação por Energia Magnética
+# Magnetic Energy Reaction Furnace
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Forno de Reação por Energia Magnética](../../../assets/machines/magnetic_energy_reaction_furnace.webp){ loading=lazy }
+*Smells like ozone. Fresh, but dangerous.*
+
+![Magnetic Energy Reaction Furnace](../../../assets/machines/magnetic_energy_reaction_furnace.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Arc Furnace |
-| **Tamanho** | 33 × 14 × 15 |
-| **Blocos** | 2.265 |
+| **Machine type** | Arc Furnace |
+| **Category** | Electric processing |
+| **Recipe types** | Arc Furnace |
+| **Size** | 33 × 14 × 15 |
+| **Blocks** | 2,265 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Cheira a ozônio. Fresco, mas perigoso. Arcos de plasma presos por campos magnéticos criam e reciclam matéria em calor estelar.
+Plasma arcs held by strong magnetic fields create and recycle matter at stellar heat.
 
-- Tipo de Máquina: Forno a Arco
-- Paralelos 2x a cada 900K de bobina
-- Thread Hatch: várias receitas ao mesmo tempo
-- Usa o limite do Parallel Hatch se for maior
+- Parallel 2x every 900K of coils
+- Thread Hatch: several recipes at once
+- Uses the Parallel Hatch limit if higher
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça Mecânica de Lafium | 886 |
+| Lafium Mechanical Casing | 886 |
 | Fusion Glass | 236 |
-| Concreto de Alta Resistência | 210 |
+| High Strength Concrete | 210 |
 | Cupronickel Coil Block | 184 |
 | Palladium Substation Casing | 176 |
 | Electrolytic Cell | 105 |
 | Nonconducting Casing | 99 |
-| Carcaça de Confinamento Magnético Transcendentalmente Amplificado | 80 |
-| Magnetic Neodymium Block | 80 |
-| Casing Magtech | 48 |
+| Transcendentally Amplified Magnetic Confinement Casing | 80 |
+| Block of Magnetic Neodymium | 80 |
+| Magtech Casing | 48 |
 | Neutronium Frame | 45 |
 | Tungstensteel Turbine Casing | 44 |
 | Empty Tier III Capacitor | 38 |
-| Carcaça de Tubo de Amprósio | 19 |
-| Dispositivo de Contenção | 8 |
-| Forno de Reação por Energia Magnética | 1 |
+| Amprosium Pipe Casing | 19 |
+| Restraint Device | 8 |
+| Magnetic Energy Reaction Furnace | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Output Bus | 1 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

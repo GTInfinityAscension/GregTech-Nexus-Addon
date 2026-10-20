@@ -1,37 +1,40 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
 # Dimensionally Transcendent Dirt Forge
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
+
+*Someone looked at the DTPF and thought: what if dirt?*
 
 ![Dimensionally Transcendent Dirt Forge](../../../assets/machines/dimensionally_transcendent_dirt_forge.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Primitive Blast Furnace |
-| **Tamanho** | 33 × 24 × 27 |
-| **Blocos** | 4.413 |
+| **Machine type** | Primitive Blast Furnace |
+| **Category** | Steam and primitive |
+| **Recipe types** | Primitive Blast Furnace |
+| **Size** | 33 × 24 × 27 |
+| **Blocks** | 4,413 |
+| **Origin** | GregTech Leisure |
 
-## Descrição
+## Description
 
-Uma carcaça de forja primitiva absurda reaproveitada para produção gigantesca de alto-forno primitivo.
+An absurd primitive forge shell repurposed for massive primitive blast throughput.
 
-- Tipo de Máquina: Alto-Forno Primitivo
-- Alguém olhou para a DTPF e pensou: e se fosse terra?
-- Toda receita termina em 1 tick
-- Paralelos: até 524.288
+- Every recipe finishes in 1 tick
+- Parallel: up to 524,288
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Stone Bricks | 1.691 |
-| Dirt | 1.608 |
+| Stone Bricks | 1,691 |
+| Dirt | 1,608 |
 | Bricks | 972 |
 | Firebricks | 141 |
 | Dimensionally Transcendent Dirt Forge | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

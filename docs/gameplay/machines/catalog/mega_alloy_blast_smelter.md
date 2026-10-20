@@ -1,33 +1,37 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Forja de Liga Metálica Gigante
+# Mega Alloy Blast Smelter
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Forja de Liga Metálica Gigante](../../../assets/machines/mega_alloy_blast_smelter.webp){ loading=lazy }
+*The Alloy Blast Smelter, but it went to the gym.*
+
+![Mega Alloy Blast Smelter](../../../assets/machines/mega_alloy_blast_smelter.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Alloy Blast Smelter |
-| **Tamanho** | 11 × 18 × 11 |
-| **Blocos** | 1.086 |
+| **Machine type** | Alloy Blast Smelter |
+| **Category** | Electric processing |
+| **Recipe types** | Alloy Blast Smelter |
+| **Size** | 11 × 18 × 11 |
+| **Blocks** | 1,086 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-A Alloy Blast Smelter, só que foi para a academia. Roda receitas da Alloy Blast Smelter numa carcaça com bobinas e um Parallel Hatch.
+Runs Alloy Blast Smelter recipes in a coiled shell with a Parallel Hatch.
 
-- Tipo de Máquina: Fundidora de Ligas a Alto-Forno
-- Custo de EU 0,8x
-- Duração da receita 0,6x
-- Paralelos definidos pelo Parallel Hatch
-- As bobinas precisam da temperatura da receita
+- 0.8x EU cost
+- 0.6x recipe duration
+- Parallel set by the Parallel Hatch
+- Coils must meet the recipe temperature
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | High Temperature Smelting Casing | 306 |
 | Tempered Glass | 264 |
@@ -38,9 +42,9 @@ A Alloy Blast Smelter, só que foi para a academia. Roda receitas da Alloy Blast
 | Tungstensteel Firebox Casing | 24 |
 | Extreme Engine Intake Casing | 20 |
 | Tungstensteel Pipe Casing | 15 |
-| Auto Maintenance Hatch | 1 |
-| Forja de Liga Metálica Gigante | 1 |
-| Tungsten Steel Frame | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Mega Alloy Blast Smelter | 1 |
+| Tungstensteel Frame | 1 |
 | Elite Parallel Control Hatch | 1 |
 | Muffler Hatch IV | 1 |
 | ULV Energy Hatch | 1 |
@@ -48,4 +52,4 @@ A Alloy Blast Smelter, só que foi para a academia. Roda receitas da Alloy Blast
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

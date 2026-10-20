@@ -1,39 +1,43 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Módulo de Montagem
+# Assembler Module
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo de Montagem](../../../assets/machines/assembler_module.webp){ loading=lazy }
+*Plug it into a Space Elevator and look up.*
+
+![Assembler Module](../../../assets/machines/assembler_module.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Montagem Espacial |
-| **Tamanho** | 1 × 5 × 3 |
-| **Blocos** | 15 |
+| **Machine type** | Space Assembly |
+| **Category** | Endgame systems |
+| **Recipe types** | Space Assembly |
+| **Size** | 1 × 5 × 3 |
+| **Blocks** | 15 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Conecte num Elevador Espacial e olhe para cima. Monta peças em órbita, onde a gravidade zero ajuda as menores tolerâncias.
+Assembles parts in orbit, where zero gravity helps the tiniest tolerances.
 
-- Tipo de Máquina: Montagem Espacial
-- Paralelos: 4^(MK do Power Module - 1)
-- Só funciona com o Elevador Espacial rodando
+- Parallel: 4^(Power Module MK - 1)
+- Works only while its Space Elevator runs
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça Mecânica de Elevador Espacial | 7 |
-| Base de Módulo do Elevador Espacial | 2 |
-| Conector de Módulo do Elevador Espacial | 1 |
+| Space Elevator Mechanical Casing | 7 |
+| Space Elevator Module Base | 2 |
+| Module Connector | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
-| Módulo de Montagem | 1 |
+| Assembler Module | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

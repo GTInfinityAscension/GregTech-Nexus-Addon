@@ -1,47 +1,51 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Mega Destilaria
+# Mega Distillery
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Mega Destilaria](../../../assets/machines/mega_distillery.webp){ loading=lazy }
+*Every fraction of the barrel, accounted for.*
+
+![Mega Distillery](../../../assets/machines/mega_distillery.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Distillery, Distillation Tower, Evaporação |
-| **Tamanho** | 31 × 52 × 31 |
-| **Blocos** | 9.485 |
+| **Machine type** | Distillery, Distillation |
+| **Category** | Electric processing |
+| **Recipe types** | Distillery, Distillation Tower, Evaporation |
+| **Size** | 31 × 52 × 31 |
+| **Blocks** | 9,485 |
+| **Origin** | GregTech Leisure |
 
-## Descrição
+## Description
 
-Cada fração do barril, contabilizada. Roda receitas de Destilaria, Torre de Destilação e Evaporação em escala de megafábrica.
+Runs Distillery, Distillation Tower and Evaporation recipes at megafactory scale.
 
-- Tipo de Máquina: Destilaria, Destilação
-- Saídas da destilação vão para qualquer hatch
-- Thread Hatch: várias receitas ao mesmo tempo
-- Paralelos definidos pelo Parallel Hatch
+- Distillation outputs go to any fluid hatch
+- Thread Hatch: several recipes at once
+- Parallel set by the Parallel Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Clean Stainless Steel Casing | 5.351 |
-| Watertight Casing | 3.092 |
+| Clean Stainless Steel Casing | 5,351 |
+| Watertight Casing | 3,092 |
 | Trinium Frame | 544 |
-| Carcaça Hermética UEV | 292 |
+| UEV Hermetic Casing | 292 |
 | Tritanium Coil Block | 196 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Mega Destilaria | 1 |
-| Auto Maintenance Hatch | 1 |
+| Mega Distillery | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
-| ZPM Hatch de Threads | 1 |
+| ZPM Thread Hatch | 1 |
 | IV 4,096A Laser Target Hatch | 1 |
 | Elite Parallel Control Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

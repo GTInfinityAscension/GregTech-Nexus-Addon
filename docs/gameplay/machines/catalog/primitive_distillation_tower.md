@@ -1,36 +1,40 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Torre de Destilação Primitiva
+# Primitive Distillation Tower
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Torre de Destilação Primitiva](../../../assets/machines/primitive_distillation_tower.webp){ loading=lazy }
+*Moonshine technology, scaled up for oil.*
+
+![Primitive Distillation Tower](../../../assets/machines/primitive_distillation_tower.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Distillation Tower |
-| **Tamanho** | 3 × 7 × 3 |
-| **Blocos** | 58 |
+| **Machine type** | Distillation Tower |
+| **Category** | Steam and primitive |
+| **Recipe types** | Distillation Tower |
+| **Size** | 3 × 7 × 3 |
+| **Blocks** | 58 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Tecnologia de alambique, aumentada para petróleo. Uma torre de destilação primitiva a vapor para separar óleo e fluidos no início do jogo.
+A primitive steam distillation tower for early oil and fluid separation.
 
-- Tipo de Máquina: Torre de Destilação
-- Usa só 75% do vapor normal
-- Uma saída de fluido por camada da torre
+- Uses only 75% of the normal steam
+- One fluid output per tower layer
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Steel Machine Casing | 43 |
 | Steel Firebox Casing | 7 |
 | LV Output Hatch | 6 |
-| Torre de Destilação Primitiva | 1 |
+| Primitive Distillation Tower | 1 |
 | Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

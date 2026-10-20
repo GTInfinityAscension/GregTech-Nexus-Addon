@@ -1,45 +1,49 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Forja dos Deuses
+# Forge of the Gods
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Forja dos Deuses](../../../assets/machines/forge_of_gods.webp){ loading=lazy }
+*Also known as Godforge or Gorge for short.*
+
+![Forge of the Gods](../../../assets/machines/forge_of_gods.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 127 × 29 × 187 |
-| **Blocos** | 7.561 |
+| **Machine type** | Stellar Forge |
+| **Category** | Endgame systems |
+| **Recipe types** | None |
+| **Size** | 127 × 29 × 187 |
+| **Blocks** | 7,561 |
+| **Origin** | GT: New Horizons |
 
-## Descrição
+## Description
 
-Também conhecida como Godforge, ou Gorge para os íntimos. Uma estrutura colossal que aproveita o calor, a gravidade e o giro de uma estrela de nêutrons estabilizada para processar materiais.
+A massive structure harnessing the heat, gravity and spin of a stabilized neutron star for material processing.
 
-- Tipo de Máquina: Forja Estelar
-- Grande árvore de upgrades: módulos, calor, velocidade
-- Clique no logo do controlador para o guia completo
-- 8 encaixes de módulo, até 16 com upgrades
-- Upgrades exigem marcos de progresso e/ou materiais
-- Todo o EU dos módulos vem da energia wireless
+- Extensive upgrade tree: modules, heat, speed
+- Click the controller logo for the full guide
+- 8 module slots, up to 16 with upgrades
+- Upgrades require milestones and/or materials
+- All module EU comes from wireless energy
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Confinamento Magnético Transcendentalmente Amplificado | 3.949 |
-| Carcaça de Blindagem Estelar Reforçada por Singularidade | 2.816 |
-| Modulador de Fluxo de Gráviton Remoto | 345 |
-| Carcaça de Guia de Matéria Celestial | 272 |
-| Carcaça Estrutural Ilimitada Gravitacionalmente Isolada | 130 |
-| Carcaça de Sifão de Energia Estelar | 36 |
-| Lente Gravitacional Espacialmente Transcendente | 9 |
+| Transcendentally Amplified Magnetic Confinement Casing | 3,949 |
+| Singularity Reinforced Stellar Shielding Casing | 2,816 |
+| Remote Graviton Flow Modulator | 345 |
+| Celestial Matter Guidance Casing | 272 |
+| Boundless Gravitationally Severed Structure Casing | 130 |
+| Stellar Energy Siphon Casing | 36 |
+| Spatially Transcendent Gravitational Lens | 9 |
 | ULV Input Hatch | 1 |
-| Forja dos Deuses | 1 |
+| Forge of the Gods | 1 |
 | ULV Input Bus | 1 |
 | ULV Output Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

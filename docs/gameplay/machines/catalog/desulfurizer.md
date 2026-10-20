@@ -1,34 +1,38 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Dessulfurizador
+# Desulfurizer
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Dessulfurizador](../../../assets/machines/desulfurizer.webp){ loading=lazy }
+*Sulfur out, clean fuel in. The air says thanks.*
+
+![Desulfurizer](../../../assets/machines/desulfurizer.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Dessulfurização |
-| **Tamanho** | 12 × 6 × 6 |
-| **Blocos** | 270 |
+| **Machine type** | Desulfurizer |
+| **Category** | Electric processing |
+| **Recipe types** | Desulfurizer |
+| **Size** | 12 × 6 × 6 |
+| **Blocks** | 270 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Sai o enxofre, fica o combustível limpo. O ar agradece. Remove o enxofre de combustíveis e gases sulfurosos, prontos para o refino.
+Strips sulfur from sulfuric fuels and gases, leaving them ready for refining.
 
-- Tipo de Máquina: Dessulfurizador
-- Extensão opcional libera Thread, Overclock,
-- Accelerate, Parallel e Laser Hatches
-- Paralelos 2x a cada 900K de temperatura da bobina
-- Usa o limite do Parallel Hatch se for maior
-- A extensão precisa de um Muffler Hatch
+- Optional extension unlocks Thread, Overclock,
+- Accelerate, Parallel and Laser Hatches
+- Parallel 2x for each 900K of coil temperature
+- Uses the Parallel Hatch limit if higher
+- The extension needs a Muffler Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Heat Proof Invar Machine Casing | 99 |
 | Solid Machine Casing | 76 |
@@ -38,10 +42,10 @@ Sai o enxofre, fica o combustível limpo. O ar agradece. Remove o enxofre de com
 | Hermetic Casing II | 6 |
 | Bronze Pipe Casing | 5 |
 | ULV Output Bus | 1 |
-| Dessulfurizador | 1 |
-| Auto Maintenance Hatch | 1 |
+| Desulfurizer | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

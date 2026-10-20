@@ -47,7 +47,8 @@
 /* ===== Feature Cards ===== */
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 60rem;
   gap: 1rem;
   margin: 1.5rem 0;
 }
@@ -187,4 +188,11 @@
   .feature-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===== Home lead paragraph ===== */
+.md-typeset .lead {
+  font-size: 1.1rem;
+  max-width: 46rem;
+  color: var(--md-default-fg-color--light);
 }

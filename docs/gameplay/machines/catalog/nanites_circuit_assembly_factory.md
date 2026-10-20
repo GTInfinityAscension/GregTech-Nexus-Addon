@@ -1,48 +1,52 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Fábrica de Montagem de Circuitos por Nanites
+# Nanites Circuit Assembly Factory
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Fábrica de Montagem de Circuitos por Nanites](../../../assets/machines/nanites_circuit_assembly_factory.webp){ loading=lazy }
+*No furnace roar, no robot arms. Just nanites.*
+
+![Nanites Circuit Assembly Factory](../../../assets/machines/nanites_circuit_assembly_factory.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Circuit Assembler |
-| **Tamanho** | 29 × 10 × 13 |
-| **Blocos** | 1.291 |
+| **Machine type** | Circuit Assembler |
+| **Category** | Electric processing |
+| **Recipe types** | Circuit Assembler |
+| **Size** | 29 × 10 × 13 |
+| **Blocks** | 1,291 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Sem rugido de fornalha, sem braço robótico. Só nanitas. Roda receitas de Montadora de Circuitos em escala de megafábrica.
+Runs Circuit Assembler recipes at megafactory scale.
 
-- Tipo de Máquina: Montadora de Circuitos
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Paralelos definidos pelo Parallel Hatch
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Parallel set by the Parallel Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Invólucro de Liga de Naquadah | 578 |
-| Carcaça de Máquina de Pikyônio | 372 |
+| Naquadah Alloy Casing | 578 |
+| Pikyonium Machine Casing | 372 |
 | Hastelloy N Frame | 68 |
 | Hastelloy X Frame | 68 |
-| Invólucro de Injeção Dimensional | 44 |
-| Carcaça de Tubo de Amprósio | 43 |
+| Dimension Injection Casing | 44 |
+| Amprosium Pipe Casing | 43 |
 | Fusion Glass | 36 |
 | Trinium Frame | 36 |
-| Carcaça da Linha de Montagem de Circuitos | 22 |
-| Hipernúcleo | 18 |
+| Circuit Assembly Line Machine Casing | 22 |
+| Hyper Core | 18 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Fábrica de Montagem de Circuitos por Nanites | 1 |
+| Nanites Circuit Assembly Factory | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

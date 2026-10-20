@@ -1,44 +1,48 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Incubadora
+# Incubator
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Incubadora](../../../assets/machines/incubator.webp){ loading=lazy }
+*Growing ore veins in a petri dish. Science!*
+
+![Incubator](../../../assets/machines/incubator.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Incubadora |
-| **Tamanho** | 5 × 5 × 5 |
-| **Blocos** | 98 |
+| **Machine type** | Incubator |
+| **Category** | Electric processing |
+| **Recipe types** | Incubator |
+| **Size** | 5 × 5 × 5 |
+| **Blocks** | 98 |
+| **Origin** | GregTech Leisure |
 
-## Descrição
+## Description
 
-Cultivando veios de minério numa placa de Petri. Ciência! Cultiva essências de veio a partir de sementes e amostras de minério usando dados do mundo.
+Cultivates vein essences from seeds and ore samples using scanned world data.
 
-- Tipo de Máquina: Incubadora
-- Dados do mundo e do planeta são reutilizáveis
-- O overclock encurta o tempo de cultura
-- 10.000 mB de Biomassa e Leite por cultura
-- Produz 64 essências por cultura
-- Precisa de Biomassa e Leite em toda cultura
+- World and planet data is reusable
+- Overclock shortens the culture time
+- 10,000 mB Biomass and Milk per culture
+- Produces 64 essences per culture
+- Needs Biomass and Milk every culture
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Plascrete | 50 |
 | Cleanroom Glass | 32 |
-| Filter Casing | 9 |
+| Sterilizing Filter Casing | 9 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
-| Incubadora | 1 |
+| Incubator | 1 |
 | ULV Output Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

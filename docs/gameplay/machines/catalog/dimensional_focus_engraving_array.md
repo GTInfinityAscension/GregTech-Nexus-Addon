@@ -1,48 +1,52 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Matriz de Gravação de Foco Dimensional
+# Dimensional Focus Engraving Array
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Matriz de Gravação de Foco Dimensional](../../../assets/machines/dimensional_focus_engraving_array.webp){ loading=lazy }
+*Focuses a laser through a fold in space. Precision, now in 4D.*
+
+![Dimensional Focus Engraving Array](../../../assets/machines/dimensional_focus_engraving_array.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Gravação de Foco Dimensional |
-| **Tamanho** | 89 × 89 × 89 |
-| **Blocos** | 10.054 |
+| **Machine type** | Engraver |
+| **Category** | Electric processing |
+| **Recipe types** | Dimensional Focus Engraving Array |
+| **Size** | 89 × 89 × 89 |
+| **Blocks** | 10,054 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Foca o laser por uma dobra no espaço. Precisão, agora em 4D. Grava com lasers focados dimensionalmente para wafers e chips do endgame.
+Engraves with dimensionally focused lasers for endgame wafers and chips.
 
-- Tipo de Máquina: Gravadora
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Paralelos 2x a cada 900K de temperatura da bobina
-- Usa o limite do Parallel Hatch se for maior
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Parallel 2x for each 900K of coil temperature
+- Uses the Parallel Hatch limit if higher
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Cupronickel Coil Block | 3.312 |
-| Laser-Safe Engraving Casing | 3.193 |
-| Invólucro de Injeção Dimensional | 1.821 |
+| Cupronickel Coil Block | 3,312 |
+| Laser-Safe Engraving Casing | 3,193 |
+| Dimension Injection Casing | 1,821 |
 | Fusion Glass | 976 |
-| Bobina Molecular | 462 |
-| Bobina Supercondutora Aprimorada | 144 |
-| Gerador de Campo de Contenção | 96 |
-| Invólucro Dimensionalmente Transcendente | 43 |
+| Molecular Coil | 462 |
+| Improved Superconductor Coil | 144 |
+| Containment Field Generator | 96 |
+| Dimensionally Transcendent Casing | 43 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Hatch | 1 |
-| Matriz de Gravação de Foco Dimensional | 1 |
+| Dimensional Focus Engraving Array | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

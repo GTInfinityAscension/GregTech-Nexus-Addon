@@ -1,41 +1,45 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Grande Torno a Vapor
+# Large Steam Lathe
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Torno a Vapor](../../../assets/machines/large_steam_lathe.webp){ loading=lazy }
+*Turning rods since before electricity was cool.*
+
+![Large Steam Lathe](../../../assets/machines/large_steam_lathe.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Lathe |
-| **Tamanho** | 7 × 4 × 5 |
-| **Blocos** | 89 |
+| **Machine type** | Lathe |
+| **Category** | Steam and primitive |
+| **Recipe types** | Lathe |
+| **Size** | 7 × 4 × 5 |
+| **Blocks** | 89 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Torneando barras desde antes da eletricidade virar moda. Um torno a vapor para tornear barras e parafusos em massa.
+A steam lathe for bulk turning of rods and bolts.
 
-- Tipo de Máquina: Torno
-- Velocidade 2x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 16
+- 2x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 16
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 30 |
-| Casing Industrial a Vapor | 27 |
+| Industrial Steam Casing | 27 |
 | Bronze Frame | 13 |
 | Bronze Pipe Casing | 6 |
 | Glass | 6 |
 | Block of Iron | 3 |
 | Bronze Gearbox Casing | 2 |
-| Grande Torno a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Large Steam Lathe | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

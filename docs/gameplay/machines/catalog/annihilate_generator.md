@@ -1,46 +1,49 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Power generation
 ---
 
-# Estrela Artificial
+# Artificial Star
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Estrela Artificial](../../../assets/machines/annihilate_generator.webp){ loading=lazy }
+*Let there be light. Lots of it.*
+
+![Artificial Star](../../../assets/machines/annihilate_generator.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Gerador de Aniquilação |
-| **Tamanho** | 121 × 112 × 109 |
-| **Blocos** | 37.144 |
-| **Gerador** | ✓ |
+| **Machine type** | Annihilation Generator |
+| **Category** | Power generation |
+| **Recipe types** | Annihilation Generator |
+| **Size** | 121 × 112 × 109 |
+| **Blocks** | 37,144 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Faça-se a luz. Muita luz. Uma estrela artificial que gera energia com receitas de aniquilação.
+An artificial star that generates power from annihilation recipes.
 
-- Tipo de Máquina: Gerador de Aniquilação
-- Overclock perfeito: duração /4 por tier
-- Saída por Laser ou até 16 Dynamo Hatches
+- Perfect overclock: duration /4 per tier
+- Outputs through Laser or up to 16 Dynamo Hatches
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Invólucro Hipermecânico | 17.604 |
-| Invólucro de Liga de Naquadah | 11.539 |
-| Invólucro de Constrição de Campo Graviton | 2.839 |
-| Invólucro Receptor Dyson | 1.336 |
-| Invólucro Constrito de Rênio Degenerado | 1.021 |
-| Núcleo de Aniquilação | 977 |
-| Invólucro de Controle Dyson | 628 |
-| Invólucro Oco | 555 |
+| Hyper Mechanical Casing | 17,604 |
+| Naquadah Alloy Casing | 11,539 |
+| Graviton Field Constraint Casing | 2,839 |
+| Dyson Receiver Casing | 1,336 |
+| Degenerate Rhenium Constrained Casing | 1,021 |
+| Annihilate Core | 977 |
+| Dyson Control Casing | 628 |
+| Hollow Casing | 555 |
 | Fusion Glass | 253 |
-| Toroide de Controle Dyson | 213 |
-| Vidro Energético Reforçado com Rênio | 152 |
+| Dyson Control Toroid | 213 |
+| Rhenium Reinforced Energy Glass | 152 |
 | High Power Casing | 25 |
-| Estrela Artificial | 1 |
+| Artificial Star | 1 |
 | ULV Dynamo Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

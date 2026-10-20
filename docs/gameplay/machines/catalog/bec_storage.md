@@ -1,44 +1,48 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Campo de Contenção de Condensado de Bose-Einstein
+# Bose-Einstein Condensate Containment Field
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Campo de Contenção de Condensado de Bose-Einstein](../../../assets/machines/bec_storage.webp){ loading=lazy }
+*Hold still. Very still.*
+
+![Bose-Einstein Condensate Containment Field](../../../assets/machines/bec_storage.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 45 × 17 × 45 |
-| **Blocos** | 5.333 |
+| **Machine type** | BEC Storage |
+| **Category** | Endgame systems |
+| **Recipe types** | None |
+| **Size** | 45 × 17 × 45 |
+| **Blocks** | 5,333 |
+| **Origin** | GT: New Horizons |
 
-## Descrição
+## Description
 
-Fique parado. Bem parado. Guarda condensado para a rede; ajuste a força do campo nos parâmetros.
+Stores condensate for the network; set the field strength in the parameters.
 
-- Tipo de Máquina: Armazenamento BEC
-- O condensado injetado se divide pela capacidade dos campos
-- 1 de força guarda 1 mB e custa 1 EU/t
-- Cheio demais: mantém 9/10 de cada condensado por segundo
-- Destrói tudo se ficar sem energia ou for desligado
+- Injected condensate splits by capacity between fields
+- 1 field strength holds 1 mB and costs 1 EU/t
+- Overfilled: keeps 9/10 of each condensate per second
+- Voids everything if it loses power or is switched off
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Guia de Ondas Eletromagnético | 1.236 |
-| Conduto de Plasma Preservador de Coerência | 1.045 |
-| Carcaça de Indução de Conflito | 896 |
-| Carcaça de Imposição da Paz | 568 |
-| Bobina Guia de Condensado | 508 |
-| Manipulador da Constante de Estrutura Fina | 442 |
-| Carcaça Eletromagneticamente Isolada | 343 |
-| Bobina Transformadora de Condensado | 292 |
-| Campo de Contenção de Condensado de Bose-Einstein | 1 |
+| Electromagnetic Waveguide | 1,236 |
+| Coherence Preserving Plasma Conduit | 1,045 |
+| Conflict Inducement Casing | 896 |
+| Peace Enforcement Casing | 568 |
+| Condensate Guidance Coil | 508 |
+| Fine Structure Constant Manipulator | 442 |
+| Electromagnetically Isolated Casing | 343 |
+| Condensate Transformative Coil | 292 |
+| Bose-Einstein Condensate Containment Field | 1 |
 | ULV Energy Hatch | 1 |
-| Hatch de Condensado de Bose-Einstein | 1 |
+| Bose-Einstein Condensate Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

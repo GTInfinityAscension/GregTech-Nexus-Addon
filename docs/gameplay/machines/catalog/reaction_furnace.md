@@ -1,43 +1,47 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Forno de Reação
+# Reaction Furnace
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Forno de Reação](../../../assets/machines/reaction_furnace.webp){ loading=lazy }
+*Hot enough to make chemistry happen whether it wants to or not.*
+
+![Reaction Furnace](../../../assets/machines/reaction_furnace.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Forno de Reação |
-| **Tamanho** | 5 × 5 × 5 |
-| **Blocos** | 100 |
+| **Machine type** | Reaction Furnace |
+| **Category** | Electric processing |
+| **Recipe types** | Reaction Furnace |
+| **Size** | 5 × 5 × 5 |
+| **Blocks** | 100 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Quente o bastante para a química acontecer, queira ou não. Faz reações de alta temperatura; as bobinas definem o calor, como num alto-forno.
+Runs high-temperature reactions; the coils set how hot it gets, like a blast furnace.
 
-- Tipo de Máquina: Forno de Reação
-- O módulo libera Parallel e Accelerate Hatches
-- A bobina precisa atingir a temperatura da receita
+- The module unlocks Parallel and Accelerate Hatches
+- Coil temperature must reach the recipe's
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 54 |
 | Steel Frame | 16 |
 | Cupronickel Coil Block | 14 |
 | Steel Pipe Casing | 8 |
-| Forno de Reação | 1 |
+| Reaction Furnace | 1 |
 | Muffler Hatch IV | 1 |
 | ULV Input Bus | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,32 +1,36 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Grande Craqueador
+# Large Cracker
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Craqueador](../../../assets/machines/large_cracker.webp){ loading=lazy }
+*Cracking hydrocarbons like it's a Sunday crossword.*
+
+![Large Cracker](../../../assets/machines/large_cracker.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Cracker |
-| **Tamanho** | 9 × 7 × 13 |
-| **Blocos** | 486 |
+| **Machine type** | Cracker |
+| **Category** | Electric processing |
+| **Recipe types** | Cracker |
+| **Size** | 9 × 7 × 13 |
+| **Blocks** | 486 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Craqueando hidrocarbonetos como palavras cruzadas de domingo. Roda receitas do Craqueador em massa com bobinas e um Parallel Hatch.
+Runs Cracker recipes in bulk with heating coils and a Parallel Hatch.
 
-- Tipo de Máquina: Craqueador
-- Cada tier de bobina acima de Cupronickel: -10% EU
-- Paralelos definidos pelo Parallel Hatch
-- Até 10% do EU com bobinas Eternal
+- Each coil tier above Cupronickel: -10% EU
+- Parallel set by the Parallel Hatch
+- Down to 10% EU with Eternal coils
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Clean Stainless Steel Casing | 219 |
 | Tempered Glass | 176 |
@@ -34,9 +38,9 @@ Craqueando hidrocarbonetos como palavras cruzadas de domingo. Roda receitas do C
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
-| Grande Craqueador | 1 |
-| Auto Maintenance Hatch | 1 |
+| Large Cracker | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Elite Parallel Control Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

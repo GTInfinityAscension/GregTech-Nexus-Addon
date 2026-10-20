@@ -1,41 +1,45 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Processador de Minério Integrado Avançado
+# Advanced Integrated Ore Processor
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Processador de Minério Integrado Avançado](../../../assets/machines/advanced_integrated_ore_processor.webp){ loading=lazy }
+*Why process one ore when you can process all of them?*
+
+![Advanced Integrated Ore Processor](../../../assets/machines/advanced_integrated_ore_processor.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Processamento Integrado de Minério |
-| **Tamanho** | 15 × 12 × 32 |
-| **Blocos** | 2.689 |
+| **Machine type** | Integrated Ore Processing |
+| **Category** | Electric processing |
+| **Recipe types** | Integrated Ore Processing |
+| **Size** | 15 × 12 × 32 |
+| **Blocks** | 2,689 |
+| **Origin** | GregTech Leisure |
 
-## Descrição
+## Description
 
-Por que processar um minério se dá para processar todos? Processamento de minério completo num passo, rodando várias receitas diferentes ao mesmo tempo.
+Complete ore processing in one step, running several different recipes at once.
 
-- Tipo de Máquina: Processamento Integrado de Minério
-- Roda várias receitas diferentes ao mesmo tempo
-- Paralelos máx.: 2.147.483.647
-- Só aceita Energy Hatches Laser
+- Runs multiple different recipes at once
+- Max parallel: 2,147,483,647
+- Only accepts Laser Energy Hatches
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Robust Tungstensteel Machine Casing | 1.325 |
+| Robust Tungstensteel Machine Casing | 1,325 |
 | Tungstensteel Gearbox Casing | 512 |
 | Tungstensteel Pipe Casing | 259 |
-| Hsss Frame | 256 |
+| HSS-S Frame | 256 |
 | Sturdy HSS-E Machine Casing | 140 |
 | Assembly Line Grating | 128 |
 | Borosilicate Glass | 36 |
-| Dispositivo de Contenção | 32 |
-| Processador de Minério Integrado Avançado | 1 |
+| Restraint Device | 32 |
+| Advanced Integrated Ore Processor | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

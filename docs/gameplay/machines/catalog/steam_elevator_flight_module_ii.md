@@ -1,34 +1,38 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo de Voo a Vapor II
+# Steam Flight Module II
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo de Voo a Vapor II](../../../assets/machines/steam_elevator_flight_module_ii.webp){ loading=lazy }
+*Twice the range, twice the bragging rights.*
+
+![Steam Flight Module II](../../../assets/machines/steam_elevator_flight_module_ii.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-O dobro do alcance, o dobro da ostentação. Consome vapor para dar voo criativo aos jogadores dentro do alcance.
+Consumes steam to grant creative flight to players inside its range.
 
-- Tipo de Máquina: Módulo do Elevador
-- O voo é removido ao sair do alcance
-- Alcance: 128 blocos
-- Só funciona encaixado num Steam Elevator
+- Flight is removed when you leave the range
+- Range: 128 blocks
+- Only works attached to a Steam Elevator
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo de Voo a Vapor II | 1 |
+| Steam Flight Module II | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

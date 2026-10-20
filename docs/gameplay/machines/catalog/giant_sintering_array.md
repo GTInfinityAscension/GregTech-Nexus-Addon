@@ -1,53 +1,57 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Matriz de Sinterização Gigante
+# Giant Sintering Array
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Matriz de Sinterização Gigante](../../../assets/machines/giant_sintering_array.webp){ loading=lazy }
+*Powder in, solid out. No melting allowed, only patience.*
+
+![Giant Sintering Array](../../../assets/machines/giant_sintering_array.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Forno de Sinterização |
-| **Tamanho** | 13 × 11 × 31 |
-| **Blocos** | 2.351 |
+| **Machine type** | Sintering Furnace |
+| **Category** | Electric processing |
+| **Recipe types** | Sintering Furnace |
+| **Size** | 13 × 11 × 31 |
+| **Blocks** | 2,351 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Pó entra, sólido sai. Nada de derreter, só paciência. Funde pós em blocos densos abaixo do ponto de fusão, como na sinterização real.
+Fuses powders into dense blocks below their melting point, like real sintering.
 
-- Tipo de Máquina: Forno de Sinterização
-- Paralelos: o maior entre 4^tier do vidro
-- e o limite do Parallel Hatch
-- Thread Hatch: várias receitas ao mesmo tempo
-- A bobina precisa atingir a temperatura da receita
-- Todos os vidros precisam ser do mesmo tier
+- Parallel: the higher of 4^glass tier
+- and the Parallel Hatch limit
+- Thread Hatch: several recipes at once
+- Coil temperature must reach the recipe's
+- All glass blocks must be the same tier
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | High Temperature Smelting Casing | 678 |
-| Invólucro de Liga de Naquadah | 447 |
-| Carcaça de Blaze | 288 |
+| Naquadah Alloy Casing | 447 |
+| Blaze Casing | 288 |
 | Cupronickel Coil Block | 224 |
-| Bloco Mecânico Cerâmico de Óxido de Cobalto Condutor Térmico de Alta Resistência | 144 |
+| Cobalt Oxide Ceramic Strong Thermally Conductive Mechanical Block | 144 |
 | Assembly Line Grating | 144 |
-| Carcaça de Contenção de Pressão | 120 |
-| Barrier | 108 |
-| Carcaça de Aquecedor de Plasma | 64 |
-| Carcaça de Tubulação de Irídio | 62 |
+| Pressure Containment Casing | 120 |
+| Enriched Naquadah Frame | 108 |
+| Plasma Heater Casing | 64 |
+| Iridium Pipe Casing | 62 |
 | Tempered Glass | 54 |
-| Carcaça de Caixa de Engrenagens de Irídio | 6 |
+| Iridium Gearbox | 6 |
 | Muffler Hatch IV | 6 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
-| Matriz de Sinterização Gigante | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Giant Sintering Array | 1 |
 | ULV Input Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

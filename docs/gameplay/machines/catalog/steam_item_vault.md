@@ -1,37 +1,41 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Cofre de Itens a Vapor
+# Steam Item Vault
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Cofre de Itens a Vapor](../../../assets/machines/steam_item_vault.webp){ loading=lazy }
+*A Victorian warehouse. Dragons not included.*
+
+![Steam Item Vault](../../../assets/machines/steam_item_vault.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 7 × 11 × 7 |
-| **Blocos** | 490 |
+| **Machine type** | Item Storage |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 7 × 11 × 7 |
+| **Blocks** | 490 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Um armazém vitoriano. Dragões não inclusos. Um armazenamento enorme da era do vapor, acessado pelos barramentos de itens da estrutura.
+A very large item storage for the steam era, accessed through the structure's item buses.
 
-- Tipo de Máquina: Armazenamento de Itens
-- Guarda até 16.384.000 itens
-- 256 tipos de item, 64.000 de cada
+- Holds up to 16,384,000 items
+- 256 item types, 64,000 each
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Vibration Safe Casing | 219 |
 | Hyper Pressure Breel Casing | 125 |
 | Glass | 120 |
 | Steel Frame | 24 |
-| Cofre de Itens a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Item Vault | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

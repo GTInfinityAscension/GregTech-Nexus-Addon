@@ -1,35 +1,39 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo de Reprodução de Abelhas a Vapor
+# Steam Bee Breeding Module
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo de Reprodução de Abelhas a Vapor](../../../assets/machines/steam_elevator_bee_breeding_module.webp){ loading=lazy }
+*Let the bees feel the scorching love.*
+
+![Steam Bee Breeding Module](../../../assets/machines/steam_elevator_bee_breeding_module.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Deixe as abelhas sentirem o amor escaldante. Coloque uma abelha rainha no controlador e ela produz princesas aos poucos.
+Place a queen bee in the controller and it slowly produces princesses.
 
-- Tipo de Máquina: Módulo do Elevador
-- Cria novas princesas automaticamente
-- 128 petiscos de mel por operação
-- Ciclo: 10 min
-- Precisa do Productive Bees
+- Breeds new princesses automatically
+- 128 honey treats per operation
+- Cycle: 10 min
+- Requires Productive Bees
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo de Reprodução de Abelhas a Vapor | 1 |
+| Steam Bee Breeding Module | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

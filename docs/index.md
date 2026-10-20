@@ -6,52 +6,61 @@ hide:
 
 # GregTech Nexus Addon
 
-<p style="font-size:1.1rem;max-width:720px">Multiblocos, mecânicas de endgame e automação para o GregTech CEu Modern 1.20.1.</p>
+<p class="lead">An addon for GregTech CEu Modern on Minecraft 1.20.1: a steam age that is a real factory tier, wireless steam and EU, AE2 automation, and 168 multiblocks from the steam age to the end of the game.</p>
+
+[Install](getting-started/installation.md){ .md-button .md-button--primary } [Browse the multiblocks](gameplay/machines/catalog/index.md){ .md-button }
 
 <div class="feature-grid" markdown>
 
 <div class="feature-card" markdown>
-### 🏗️ 164 multiblocos
-Ports fiéis do GTNH, GTO, GTL, GTNL e TST, cada um com estrutura, mecânica e texturas originais. Todos têm página com render, tooltip e lista de blocos.
+### Steam age
+Large steam machines with parallel, primitive machines that need no energy, hydraulic parts and a Steam Elevator.
 
-[:octicons-arrow-right-24: Catálogo](gameplay/machines/catalog/index.md)
+[:octicons-arrow-right-24: Steam age](gameplay/machines/steam-age.md)
 </div>
+
 <div class="feature-card" markdown>
-### 🌌 Sistemas de endgame
-Forja dos Deuses, Olho da Harmonia, Condensado de Bose-Einstein, Elevador Espacial, Nano Forge e Esfera de Dyson, com todas as fórmulas.
+### No pipes, no cables
+One steam pool and one EU balance per player, reachable from anywhere.
 
-[:octicons-arrow-right-24: Sistemas](gameplay/systems/forge-of-gods.md)
+[:octicons-arrow-right-24: Wireless steam](gameplay/systems/wireless-steam-network.md) · [Nexus energy](gameplay/systems/nexus-energy-network.md)
 </div>
+
 <div class="feature-card" markdown>
-### 📡 Energia wireless
-Rede Nexus de EU e rede wireless de vapor: sem cabos entre geradores e máquinas.
+### AE2 automation
+Pattern Buffers that hold patterns, circuits, catalysts and machine modes for any multiblock.
 
-[:octicons-arrow-right-24: Nexus Flux Matrix](gameplay/systems/nexus-flux-matrix.md)
+[:octicons-arrow-right-24: ME Pattern Buffers](gameplay/systems/pattern-buffers.md)
 </div>
+
 <div class="feature-card" markdown>
-### 🧵 Hatches especiais
-Thread, Accelerate, Overclock, Advanced Parallel, Huge Steam Bus e os hatches dos sistemas de endgame.
+### 168 multiblocks
+Ports from GT: Not Leisure, GregTech Odyssey, GregTech Leisure, GT: New Horizons and Twist Space Technology, plus GTNA originals. Every one has a page.
 
-[:octicons-arrow-right-24: Hatches](gameplay/parts/index.md)
+[:octicons-arrow-right-24: Catalog](gameplay/machines/catalog/index.md)
 </div>
+
 <div class="feature-card" markdown>
-### 🔌 API KubeJS
-Tipos de receita, módulos auxiliares, planetas do Olho da Harmonia e efeitos de item, tudo por script.
+### Endgame
+Forge of the Gods, Eye of Harmony, Bose-Einstein Condensate, Space Elevator, Nano Forge and Dyson Sphere, with every formula.
 
-[:octicons-arrow-right-24: API KubeJS](development/api/kubejs.md)
+[:octicons-arrow-right-24: Systems](gameplay/systems/index.md)
 </div>
+
 <div class="feature-card" markdown>
-### 📋 Roadmap
-O que já foi portado, o que está em andamento e os multiblocos originais em desenvolvimento.
+### For modpacks
+KubeJS bindings, auxiliary modules for any multiblock, balance files and a research engine.
 
-[:octicons-arrow-right-24: Roadmap](roadmap/index.md)
+[:octicons-arrow-right-24: KubeJS API](development/api/kubejs.md)
 </div>
 
 </div>
 
-## Comece por aqui
+## Start here
 
-- [Instalação](getting-started/installation.md)
-- [Primeiros passos](getting-started/first-steps.md)
-- [Perguntas frequentes](getting-started/faq.md)
-- [Novidades](changelog.md)
+- [Installation](getting-started/installation.md): what to install, and in which versions.
+- [First steps](getting-started/first-steps.md): when each part of GTNA shows up.
+- [Configuration](getting-started/configuration.md): every option and balance file.
+- [FAQ](getting-started/faq.md) and [changelog](changelog.md).
+
+GTNA is free software (LGPLv3), with ported assets under their own licences; see the [credits](https://github.com/GTInfinityAscension/GregTech-Nexus-Addon/blob/main/THIRD_PARTY_NOTICES.md). Questions and reports: [GitHub issues](https://github.com/GTInfinityAscension/GregTech-Nexus-Addon/issues) or [Discord](https://discord.gg/TW5vugknk5). This wiki is available in English, Português and 简体中文; [help translate it](development/translating.md).

@@ -1,18 +1,20 @@
-# :books: Motor de Pesquisa
+# Research engine
 
-Uma árvore de pesquisa guiada por dados que outros sistemas podem consultar. O modpack descreve os **nós** em JSON; o time **libera** cada nó ao obter um item; o nó pode então **bloquear receitas de máquina** ou ligar **flags** lidas por outros códigos. O GTNA traz só o motor. Os nós pertencem ao modpack.
+A data-driven research tree that other systems can read. A modpack describes **nodes** in JSON; a team **unlocks** them by obtaining an item; a node can then **gate machine recipes** or switch **flags** that other code reads. GTNA ships the engine only. The nodes belong to the modpack.
 
-## Para jogadores
+## For players
 
-- Aperte **K** (rebindável) para abrir a árvore de pesquisa. Os nós ficam agrupados por tier e linhas ligam cada nó aos pré-requisitos. Verde é liberado, amarelo é o próximo que você pode liberar e cinza é bloqueado. Passe o mouse num nó para ver o que ele pede e o que libera.
-- Um nó libera sozinho quando os pré-requisitos estão cumpridos e você tem o item pedido (fabricar, pegar ou sair de uma máquina, tudo conta). Basta um colega do time ter o item.
-- Uma receita bloqueada mostra no EMI uma linha vermelha **Pesquisa: <nó>** (verde depois de liberada), e a máquina que não pode rodá-la avisa *Requer pesquisa: <nó>*.
+- Press **K** (rebindable) to open the research tree. Nodes are grouped by tier; lines connect a node to its prerequisites. Green is unlocked, yellow is the next one you can unlock, grey is locked. Hover a node for what it needs and what it unlocks.
+- A node unlocks by itself once its prerequisites are met and you hold the item it asks for (crafting, picking up or machine output all count). One teammate holding it is enough for the whole team.
+- A gated recipe shows a red **Research: <node>** line in EMI (green once unlocked), and a machine that cannot run it says *Requires research: <node>*.
 
-O progresso pertence ao **time FTB** efetivo do jogador, ou ao próprio jogador se não houver time, a mesma regra das descobertas de fluidos.
+Progress belongs to the player's effective **FTB Team**, or to the player when there is none, the same rule as fluid discoveries.
 
-## Para autores de pack
+Packs without research nodes can turn the whole tree off with `gameplay.researchTree: false` in `config/gtna.yaml`.
 
-Coloque um arquivo JSON por nó em `data/<namespace>/gtna_research/`. O id do nó é o caminho do arquivo: `data/gtia/gtna_research/lv/aluminium.json` é `gtia:lv/aluminium`.
+## For pack authors
+
+Put one JSON file per node in `data/<namespace>/gtna_research/`. The node id is the file path: `data/gtia/gtna_research/lv/aluminium.json` is `gtia:lv/aluminium`.
 
 ```json
 {
@@ -23,41 +25,42 @@ Coloque um arquivo JSON por nó em `data/<namespace>/gtna_research/`. O id do n�
   "grants": [
     { "type": "recipe_condition", "recipes": ["gtceu:electric_blast_furnace/blast_aluminium"] },
     { "type": "flag", "id": "gtia:aluminium" }
-  ]
+  ],
+  "quest": "optional text, not used by the engine"
 }
 ```
 
-| Campo | Significado |
+| Field | Meaning |
 |---|---|
-| `tier` | Grupo de colunas na árvore, 1 ou mais. Padrão 1. |
-| `icon` | Item mostrado na árvore. Padrão: o item do gatilho. |
-| `prerequisites` | Ids de nós que precisam estar liberados antes. |
-| `trigger` | `obtain_item` (libera quando o time tem o item) ou `manual` (só comandos e quests). Padrão `manual`. |
-| `requires_mods` | Lista opcional de ids de mods. Se algum faltar, o nó é ignorado sem erro, para o pack poder trazer nós de mods opcionais. Não faça outros nós dependerem dele. |
-| `grants` | `recipe_condition` bloqueia os ids de receita listados até o nó ser liberado. `flag` liga um interruptor lido por `KnowledgeService.hasFlag`. |
+| `tier` | Column group in the tree, 1 or higher. Default 1. |
+| `icon` | Item shown in the tree. Defaults to the trigger item. |
+| `prerequisites` | Node ids that must be unlocked first. |
+| `trigger` | `obtain_item` (unlocks when the team holds the item) or `manual` (commands and quests only). Default `manual`. |
+| `requires_mods` | Optional list of mod ids. If any is missing the node is skipped silently, so a pack can ship nodes for optional mods. Do not make other nodes depend on it. |
+| `grants` | `recipe_condition` blocks the listed recipe ids until the node is unlocked. `flag` sets a switch read by `KnowledgeService.hasFlag`. |
 
-Regras do carregador: um nó com pré-requisito desconhecido, ciclo de pré-requisitos ou tier abaixo de 1 é **descartado e registrado no log**, junto com tudo que depende dele. Um campo presente mas inválido derruba o nó inteiro, em vez de usar um padrão em silêncio.
+Rules the loader enforces: a node with an unknown prerequisite, a prerequisite cycle or a tier below 1 is **dropped and logged**, together with everything that depends on it. A field that is present but invalid fails the whole node, instead of silently using a default.
 
-Escolha itens de gatilho que o jogador alcança **sem** o gate do próprio nó, ou o nó nunca libera. Um bom gatilho é a máquina ou o ingrediente que mostra que o jogador está pronto.
+Choose trigger items the player can reach **without** the node's own gate, or the node can never unlock. A good trigger is the machine or ingredient that shows the player is ready.
 
-Os nomes vêm de chaves de idioma: `gtna.research.node.<namespace>.<caminho com pontos>` (no exemplo, `gtna.research.node.gtia.lv.aluminium`), com uma chave `.desc` opcional para o tooltip. Sem chave, aparece o id.
+Names come from lang keys: `gtna.research.node.<namespace>.<path with dots>` (for the example, `gtna.research.node.gtia.lv.aluminium`), with an optional `.desc` key for the tooltip. Without a key, the id is shown.
 
-Uma receita com gate só roda para um dono cujo time tenha o nó. Receitas de bancada, do AE2 e padrões não são cobertas.
+A recipe with a gate runs only for an owner whose team holds the node. Crafting-table, AE2 and pattern recipes are not covered.
 
-## Comandos
+## Commands
 
-| Comando | Quem | Efeito |
+| Command | Who | Effect |
 |---|---|---|
-| `/gtna research list [jogador]` | qualquer um (os outros exigem op) | Nós liberados e bloqueados. |
-| `/gtna research info <nó>` | qualquer um | Tier e pré-requisitos. |
-| `/gtna research unlock <jogador> <nó> [force]` | op | Libera um nó; `force` libera toda a cadeia de pré-requisitos. |
-| `/gtna research reset <jogador>` | op | Limpa o progresso do time do jogador. |
+| `/gtna research list [player]` | anyone (others need op) | Unlocked and locked nodes. |
+| `/gtna research info <node>` | anyone | Tier and prerequisites. |
+| `/gtna research unlock <player> <node> [force]` | op | Unlock a node; `force` unlocks its whole prerequisite chain. |
+| `/gtna research reset <player>` | op | Clear the player's team progress. |
 
-## Para desenvolvedores
+## For developers
 
-- `KnowledgeService`: `isUnlocked`, `unlock`, `hasFlag`, `recipeAllowed`, `reset`. Lado do servidor.
-- `KnowledgeUnlockedEvent` é publicado no barramento do Forge quando um escopo libera um nó pela primeira vez.
-- FTB Quests: a tarefa **Research node** (`gtna:research_node`) conclui quando o nó é liberado. Só é registrada se o FTB Quests estiver instalado.
-- O servidor envia o grafo e os nós liberados do jogador ao cliente no login, após `/reload` e quando o progresso muda.
+- `KnowledgeService`: `isUnlocked`, `unlock`, `hasFlag`, `recipeAllowed`, `reset`. Server side.
+- `KnowledgeUnlockedEvent` is posted on the Forge bus when a scope newly unlocks a node.
+- FTB Quests: the **Research node** task type (`gtna:research_node`) completes when the node is unlocked. It is registered only when FTB Quests is installed.
+- The server sends the graph and the player's unlocked nodes to the client on login, after `/reload` and when progress changes.
 
-Há um datapack de exemplo em `examples/datapack`.
+An example datapack is in `examples/datapack`.

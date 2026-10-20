@@ -1,34 +1,38 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo Broca de Óleo a Vapor II
+# Steam Oil Drill Module II
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo Broca de Óleo a Vapor II](../../../assets/machines/steam_elevator_oil_drill_module_ii.webp){ loading=lazy }
+*There will be oil. Twice as much.*
+
+![Steam Oil Drill Module II](../../../assets/machines/steam_elevator_oil_drill_module_ii.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Haverá petróleo. O dobro. Bombeia fluidos subterrâneos aleatórios da dimensão atual usando vapor.
+Pumps random underground fluids of the current dimension with steam.
 
-- Tipo de Máquina: Módulo do Elevador
-- Até 2 tipos de fluido por ciclo
-- Rendimento base: 500 L, ciclo de 600 ticks
-- Só funciona encaixado num Steam Elevator
+- Up to 2 fluid types per cycle
+- Base yield: 500 L, cycle 600 ticks
+- Only works attached to a Steam Elevator
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo Broca de Óleo a Vapor II | 1 |
+| Steam Oil Drill Module II | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

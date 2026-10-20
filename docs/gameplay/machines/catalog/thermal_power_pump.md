@@ -1,43 +1,47 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Bomba Termal
+# Thermal Power Pump
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Bomba Termal](../../../assets/machines/thermal_power_pump.webp){ loading=lazy }
+*Turns steam back into water. Circle of life.*
+
+![Thermal Power Pump](../../../assets/machines/thermal_power_pump.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 3 × 3 × 8 |
-| **Blocos** | 71 |
+| **Machine type** | Water Pump |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 3 × 3 × 8 |
+| **Blocks** | 71 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Transforma vapor de volta em água. O ciclo da vida. Condensa vapor em água de acordo com o bioma ao redor.
+Condenses steam into water based on the surrounding biome.
 
-- Tipo de Máquina: Bomba de Água
-- A chuva aumenta a produção em 50%
-- Oceanos e rios produzem mais
-- A produção depende do bioma
-- Não produz nada no Nether
+- Rain boosts output by 50%
+- Oceans and rivers produce the most
+- Output depends on the biome
+- Produces nothing in the Nether
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Casing de Madeira Reforçada com Latão | 25 |
+| Brass Reinforced Wooden Casing | 25 |
 | Bronze Reinforced Wood | 17 |
 | Steam Machine Casing | 12 |
 | Bronze Pipe Casing | 5 |
 | Treated Wood Frame | 4 |
 | Bronze Gearbox Casing | 4 |
 | ULV Output Hatch | 1 |
-| Bomba Termal | 1 |
-| Auto Maintenance Hatch | 1 |
+| Thermal Power Pump | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,55 +1,59 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Estação Eletroquímica Gigante
+# Giant Electrochemical Workstation
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Estação Eletroquímica Gigante](../../../assets/machines/giant_electrochemical_workstation.webp){ loading=lazy }
+*Enough current to split water, salt and your patience.*
+
+![Giant Electrochemical Workstation](../../../assets/machines/giant_electrochemical_workstation.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Electrolyzer |
-| **Tamanho** | 45 × 13 × 15 |
-| **Blocos** | 3.430 |
+| **Machine type** | Electrolyzer |
+| **Category** | Electric processing |
+| **Recipe types** | Electrolyzer |
+| **Size** | 45 × 13 × 15 |
+| **Blocks** | 3,430 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Corrente que separa água, sal e a sua paciência. Um salão de eletrólise gigante com células aquecidas e tubulação anticorrosão.
+A giant electrolysis hall with heated cells and corrosion-proof piping.
 
-- Tipo de Máquina: Eletrolisador
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Monta em qualquer direção
-- Paralelos 2x a cada 900K de temperatura da bobina
-- Usa o limite do Parallel Hatch se for maior
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Builds in any direction
+- Parallel 2x for each 900K of coil temperature
+- Uses the Parallel Hatch limit if higher
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Nonconducting Casing | 1.240 |
-| Carcaça Mecânica de Elevador Espacial | 445 |
-| Carcaça de Tubulação Resistente à Corrosão Química | 338 |
-| Bloco Mecânico Anticorrosão de Cerâmica de Óxido de Cálcio | 240 |
+| Nonconducting Casing | 1,240 |
+| Space Elevator Mechanical Casing | 445 |
+| Chemical Corrosion Resistant Pipe Casing | 338 |
+| Calcium Oxide Ceramic Anti Metal Corrosion Mechanical Block | 240 |
 | PTFE Pipe Casing | 230 |
-| Invólucro Hipermecânico | 200 |
+| Hyper Mechanical Casing | 200 |
 | Polytetrafluoroethylene Frame | 160 |
-| Carcaça de Tubulação de Irídio | 138 |
+| Iridium Pipe Casing | 138 |
 | Electrolytic Cell | 112 |
 | Hermetic Casing IX | 96 |
 | Cupronickel Coil Block | 80 |
-| Carcaça Estável de Neutrônio | 64 |
+| Neutronium Stable Casing | 64 |
 | Hastelloy N Frame | 60 |
 | Fusion Glass | 20 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Estação Eletroquímica Gigante | 1 |
+| Giant Electrochemical Workstation | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

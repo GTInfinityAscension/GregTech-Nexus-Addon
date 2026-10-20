@@ -1,45 +1,49 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - GTNA originals (WIP)
 ---
 
-# Câmara de Contenção Estelar
+# Stellar Containment Chamber
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Câmara de Contenção Estelar](../../../assets/machines/stellar_containment_chamber.webp){ loading=lazy }
+*It spins seven hundred times a second. Do not touch.*
+
+![Stellar Containment Chamber](../../../assets/machines/stellar_containment_chamber.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 93 × 93 × 93 |
-| **Blocos** | 21.823 |
+| **Machine type** | Stellar Containment |
+| **Category** | GTNA originals (WIP) |
+| **Recipe types** | None |
+| **Size** | 93 × 93 × 93 |
+| **Blocks** | 21,823 |
+| **Origin** | — |
 
-## Descrição
+## Description
 
-Gira setecentas vezes por segundo. Não encoste. Mantém uma estrela de nêutrons presa em bandas de campo e extrai a energia da rotação para a rede Nexus.
+Holds a neutron star in field bands and extracts the energy of its spin into the Nexus network.
 
-- Tipo de Máquina: Contenção Estelar
-- Saída de até 2^59 EU/t como estrela de nêutrons
-- Modo buraco negro: até 2^62 EU/t da ergosfera
-- Alimentar massa acelera a estrela (pulsar reciclado)
-- Tremores decifram a estrela e liberam tiers de banda
-- Acima de 2,2 M☉ ela colapsa num buraco negro
-- Girar abaixo do período de Kepler despedaça a estrela
-- Bandas sem energia num tremor danificam a contenção
+- Output up to 2^59 EU/t as a neutron star
+- Black hole mode: up to 2^62 EU/t from the ergosphere
+- Feeding mass spins the star up (recycled pulsar)
+- Starquakes decode the star and unlock band tiers
+- Above 2,2 M☉ it collapses into a black hole
+- Spinning below the Kepler period tears the star apart
+- Unpowered bands during a quake damage containment
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Vidro de Campo de Plasma | 15.773 |
-| Carcaça Estável de Neutrônio | 4.428 |
-| Núcleo de Matéria Degenerada | 1.419 |
-| Carcaça de Liga de Naquadah Radiante | 198 |
-| Sonda Sísmica | 1 |
+| Plasma Field Glass | 15,773 |
+| Neutronium Stable Casing | 4,428 |
+| Degenerate Matter Core | 1,419 |
+| Radiant Naquadah Alloy Casing | 198 |
+| Seismic Probe | 1 |
 | ULV Input Hatch | 1 |
-| Câmara de Contenção Estelar | 1 |
-| Injetor de Massa | 1 |
+| Stellar Containment Chamber | 1 |
+| Mass Injector | 1 |
 | ULV Output Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

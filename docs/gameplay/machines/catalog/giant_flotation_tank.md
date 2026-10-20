@@ -1,51 +1,55 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Tanque de Flotação Gigante
+# Giant Flotation Tank
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Tanque de Flotação Gigante](../../../assets/machines/giant_flotation_tank.webp){ loading=lazy }
+*Billions of bubbles, each one a tiny elevator for ore.*
+
+![Giant Flotation Tank](../../../assets/machines/giant_flotation_tank.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Beneficiamento por Flotação |
-| **Tamanho** | 27 × 8 × 74 |
-| **Blocos** | 6.625 |
+| **Machine type** | Flotating Beneficiation |
+| **Category** | Electric processing |
+| **Recipe types** | Flotating Beneficiation |
+| **Size** | 27 × 8 × 74 |
+| **Blocks** | 6,625 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Bilhões de bolhas, cada uma um elevadorzinho de minério. Um santuário de flotação que separa partículas de minério com bolhas em escala de megafábrica.
+A mineral flotation sanctuary that sorts ore particles with bubbles at megafactory scale.
 
-- Tipo de Máquina: Beneficiamento por Flotação
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Paralelos definidos pelo Parallel Hatch
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Parallel set by the Parallel Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Corrosion Proof Casing | 1.644 |
-| Carcaça de Hastelloy N 75 | 1.627 |
-| Carcaça de Tratamento de Água de Naquadah Estabilizada | 924 |
-| Bloco Mecânico Anticorrosão de Cerâmica de Óxido de Cálcio | 591 |
-| Célula de Flotação | 480 |
+| Corrosion Proof Casing | 1,644 |
+| Hastelloy N 75 Casing | 1,627 |
+| Stabilized Naquadah Water Plant Casing | 924 |
+| Calcium Oxide Ceramic Anti Metal Corrosion Mechanical Block | 591 |
+| Flotation Cell | 480 |
 | Watertight Steel Frame | 324 |
-| Tubulação de Hastelloy N 75 | 288 |
-| Carcaça de Bronze-Alumínio | 245 |
-| Tubulação de Inconel-625 | 147 |
-| Caixa de Engrenagens de Hastelloy N 75 | 122 |
+| Hastelloy N 75 Pipe | 288 |
+| Aluminium Bronze Casing | 245 |
+| Inconel-625 Pipe | 147 |
+| Hastelloy N 75 Gearbox | 122 |
 | Maraging Steel 300 Frame | 116 |
 | Barrier | 105 |
-| Carcaça de Tubo de Amprósio | 6 |
+| Amprosium Pipe Casing | 6 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Tanque de Flotação Gigante | 1 |
+| Giant Flotation Tank | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

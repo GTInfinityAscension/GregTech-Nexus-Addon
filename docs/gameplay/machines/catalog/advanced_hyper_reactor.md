@@ -1,45 +1,48 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Power generation
 ---
 
-# Reator Hyper Avançado
+# Advanced Hyper Reactor
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Reator Hyper Avançado](../../../assets/machines/advanced_hyper_reactor.webp){ loading=lazy }
+*The Hyper Reactor, after a long talk with an echo.*
+
+![Advanced Hyper Reactor](../../../assets/machines/advanced_hyper_reactor.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Reator Hyper Avançado |
-| **Tamanho** | 35 × 19 × 36 |
-| **Blocos** | 2.720 |
-| **Gerador** | ✓ |
+| **Machine type** | Generator |
+| **Category** | Power generation |
+| **Recipe types** | Advanced Hyper Reactor |
+| **Size** | 35 × 19 × 36 |
+| **Blocks** | 2,720 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-O Hyper Reactor, depois de uma longa conversa com um eco. Queima combustíveis hyper concentrados; os reforços podem ser definidos por receita.
+Burns concentrated hyper fuels; its boosters can be set per recipe.
 
-- Tipo de Máquina: Gerador
-- Dynamo Hatch ou Laser Source Hatch
-- Plasma de reforço: 16x paralelos por padrão
-- O plasma de reforço é consumido antes do ciclo reforçado
-- Reforço e combustível definidos por receita (pack/KubeJS)
+- Dynamo or Laser Source Hatch
+- Booster plasma: 16x parallel by default
+- Booster plasma is consumed once before a boosted run
+- Booster and fuel are set per recipe (pack/KubeJS)
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Invólucro Dimensionalmente Transcendente | 880 |
-| Carcaça Mecânica Hyper Reforçada | 774 |
-| Invólucro Constrito de Rênio Degenerado | 489 |
-| Hipernúcleo | 278 |
-| Carcaça de Eco | 144 |
+| Dimensionally Transcendent Casing | 880 |
+| Enhance Hyper Mechanical Casing | 774 |
+| Degenerate Rhenium Constrained Casing | 489 |
+| Hyper Core | 278 |
+| Echo Casing | 144 |
 | Naquadria Frame | 108 |
-| Gerador de Campo de Contenção | 32 |
-| Carcaça de Ponte Dimensional | 12 |
+| Containment Field Generator | 32 |
+| Dimensional Bridge Casing | 12 |
 | ULV Input Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
-| Reator Hyper Avançado | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Advanced Hyper Reactor | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

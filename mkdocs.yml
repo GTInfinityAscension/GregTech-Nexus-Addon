@@ -1,97 +1,124 @@
 site_name: GregTech Nexus Addon
 site_url: https://gtinfinityascension.github.io/GregTech-Nexus-Addon/
-site_description: "The Nexus of Steam & Steel — Documentation for GregTech Nexus Addon"
+site_description: "Player and pack-author documentation for GregTech Nexus Addon (GTNA), a GregTech CEu Modern addon for Minecraft 1.20.1."
 site_author: Raishxn
 repo_url: https://github.com/GTInfinityAscension/GregTech-Nexus-Addon
 repo_name: GTInfinityAscension/GregTech-Nexus-Addon
-copyright: "Copyright &copy; 2024-2026 Raishxn — Licensed under LGPLv3"
+edit_uri: edit/main/docs/
+copyright: "Copyright &copy; 2024-2026 Raishxn and contributors · LGPLv3 code; see Credits for asset licenses"
 
 theme:
   name: material
-  language: pt
+  language: en
   palette:
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: deep purple
       accent: purple
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
-    - scheme: default
+        name: Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: deep purple
       accent: purple
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
+        name: Dark mode
   features:
-    - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.top
-    - navigation.expand
+    - navigation.sections
     - navigation.indexes
+    - navigation.top
     - navigation.footer
     - search.highlight
     - search.suggest
     - search.share
     - content.code.copy
+    - content.action.edit
     - content.tabs.link
     - toc.follow
-    - announce.dismiss
   icon:
     repo: fontawesome/brands/github
   logo: assets/logo.png
   favicon: assets/favicon.png
+
+# EN: Working notes stay in the repo but are not published: they are internal and written in mixed languages.
+# PT: As notas de trabalho ficam no repo, mas não viram página: são internas e escritas em várias línguas.
+# ZH: 工作笔记保留在仓库中但不发布:它们是内部文档,语言混杂。
+exclude_docs: |
+  STATE.md
+  curseforge-*.md
+  prd/
+  fixes/
+  reports/
+  style/
+  update-notes/
+  visualization/
+  structures/
+  development/pattern-buffer-task-manager.md
+  roadmap/*
+  !roadmap/index*.md
+  !roadmap/design/
+  roadmap/design/proposals/
+  config-examples/
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
+not_in_nav: |
+  roadmap/design/*.md
+  gameplay/machines/catalog/*.md
 
 plugins:
   - search
   - tags
   - i18n:
       docs_structure: suffix
-      default_language: pt
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
       languages:
-        - locale: pt
-          default: true
-          name: Português
-          build: true
         - locale: en
           name: English
+          default: true
           build: true
-          nav_translations:
-            🏠 Início: 🏠 Home
-            🎮 Gameplay: 🎮 Gameplay
-            🔧 Desenvolvimento: 🔧 Development
-            📋 Roadmap: 📋 Roadmap
-            Eras: Eras
-            Máquinas: Machines
-            "Hatches & Partes": "Hatches & Parts"
-            Materiais: Materials
-            Sistemas: Systems
-            Dicas: Tips
-            "Era Vapor & Aço": "Steam & Steel Era"
-            "Multiblocos Elétricos": "Electric Multiblocks"
-            "Sem Eletricidade": "No Electricity"
-            "Void Miner": "Void Miner"
-            "Catálogo": "Catalog"
-            "Sistemas": "Systems"
-            "🧪 Originais (WIP)": "🧪 Originals (WIP)"
-        - locale: es
-          name: Español
+        - locale: pt
+          name: Português (Brasil)
           build: true
+          site_description: "Documentação para jogadores e autores de modpack do GregTech Nexus Addon (GTNA), addon do GregTech CEu Modern para Minecraft 1.20.1."
           nav_translations:
-            🏠 Início: 🏠 Inicio
-            🎮 Gameplay: 🎮 Jugabilidad
-            🔧 Desenvolvimento: 🔧 Desarrollo
-            📋 Roadmap: 📋 Hoja de Ruta
-            Eras: Eras
-            Máquinas: Máquinas
-            "Hatches & Partes": "Hatches y Partes"
-            Materiais: Materiales
-            Sistemas: Sistemas
-            Dicas: Consejos
-            "Era Vapor & Aço": "Era Vapor y Acero"
-            "Multiblocos Elétricos": "Multibloques Eléctricos"
-            "Sem Eletricidade": "Sin Electricidad"
-            "Void Miner": "Void Miner"
+            Home: Início
+            Getting started: Primeiros passos
+            Machines: Máquinas
+            Catalog: Catálogo
+            Systems: Sistemas
+            Endgame: Fim de jogo
+            Hatches and parts: Hatches e partes
+            Materials: Materiais
+            Pack authors: Autores de modpack
+            Java API: API Java
+            Contribute: Contribuir
+        - locale: zh
+          name: 简体中文
+          build: true
+          site_description: "GregTech Nexus Addon(GTNA)的玩家与整合包作者文档。GTNA 是 Minecraft 1.20.1 上 GregTech CEu Modern 的附属模组。"
+          nav_translations:
+            Home: 首页
+            Getting started: 入门
+            Machines: 机器
+            Catalog: 图鉴
+            Systems: 系统
+            Endgame: 终局
+            Hatches and parts: 仓室与部件
+            Materials: 材料
+            Pack authors: 整合包作者
+            Java API: Java API
+            Contribute: 参与贡献
 
 markdown_extensions:
   - admonition
@@ -113,7 +140,9 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
   - attr_list
   - md_in_html
   - tables
@@ -127,98 +156,65 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/GTInfinityAscension/GregTech-Nexus-Addon
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/d3qHufwRxb
-  alternate:
-    - name: Português
-      link: /
-      lang: pt
-    - name: English
-      link: /en/
-      lang: en
-    - name: Español
-      link: /es/
-      lang: es
-  status:
-    new: Recém-adicionado
-    wip: Em desenvolvimento
+      link: https://discord.gg/TW5vugknk5
 
 extra_css:
   - assets/css/custom.css
 
+# EN: Page titles come from each page's first heading, so every language shows its own title.
+# PT: O título de cada página vem do primeiro cabeçalho dela, então cada idioma mostra o seu.
+# ZH: 页面标题取自各页面的第一个标题,因此每种语言显示自己的标题。
 nav:
-  - 🏠 Início:
+  - Home:
     - index.md
-    - getting-started/installation.md
-    - getting-started/first-steps.md
-    - getting-started/faq.md
+    - Getting started:
+      - getting-started/installation.md
+      - getting-started/first-steps.md
+      - getting-started/configuration.md
+      - getting-started/faq.md
     - changelog.md
-  - 🎮 Gameplay:
-    - gameplay/index.md
-    - Eras:
-      - gameplay/eras/overview.md
-      - gameplay/eras/steam-and-steel.md
-    - Máquinas:
-      - gameplay/machines/index.md
-      - "Catálogo": gameplay/machines/catalog/index.md
-      - "Era Vapor & Aço":
-        - gameplay/machines/steam/large-steam-furnace.md
-        - gameplay/machines/steam/large-steam-crusher.md
-        - gameplay/machines/steam/large-steam-alloy-smelter.md
-        - gameplay/machines/steam/large-steam-solar-boiler.md
-        - gameplay/machines/steam/steam-cobbler.md
-        - gameplay/machines/steam/stone-superheater.md
-        - gameplay/machines/steam/steam-manufacturer.md
-        - gameplay/machines/steam/steam-woodcutter.md
-        - gameplay/machines/steam/void-miner.md
-      - "Multiblocos Elétricos":
-        - gameplay/machines/electric/industrial-slaughterhouse.md
-      - "Sem Eletricidade":
-        - gameplay/machines/noenergy/infernal-coke-oven.md
-        - gameplay/machines/noenergy/hyper-pressure-reactor.md
-        - gameplay/machines/noenergy/leap-forward-blast-furnace.md
-    - Sistemas:
+  - Machines:
+    - gameplay/machines/index.md
+    - Catalog: gameplay/machines/catalog/index.md
+    - gameplay/machines/steam-age.md
+    - gameplay/machines/industrial-slaughterhouse.md
+    - gameplay/machines/originals.md
+  - Systems:
+    - gameplay/systems/index.md
+    - gameplay/systems/wireless-steam-network.md
+    - gameplay/systems/nexus-energy-network.md
+    - gameplay/systems/pattern-buffers.md
+    - gameplay/systems/modules.md
+    - gameplay/systems/void-mining.md
+    - gameplay/systems/hydraulic-system.md
+    - gameplay/systems/research-engine.md
+    - gameplay/systems/item-effects.md
+    - Endgame:
       - gameplay/systems/forge-of-gods.md
       - gameplay/systems/eye-of-harmony.md
       - gameplay/systems/bec.md
       - gameplay/systems/space-elevator.md
       - gameplay/systems/nano-forge.md
       - gameplay/systems/dyson-sphere.md
-      - gameplay/systems/nexus-flux-matrix.md
-      - gameplay/systems/wireless-steam-network.md
-      - gameplay/systems/research-engine.md
-      - gameplay/systems/hydraulic-system.md
-      - gameplay/systems/item-effects.md
-    - Hatches & Partes:
-      - gameplay/parts/index.md
-      - gameplay/parts/wireless-steam-hatches.md
-      - gameplay/parts/thread-hatch.md
-      - gameplay/parts/accelerate-hatch.md
-      - gameplay/parts/overclock-hatch.md
-      - gameplay/parts/advanced-parallel-hatch.md
-      - gameplay/parts/huge-steam-bus.md
-    - Materiais:
-      - gameplay/materials/index.md
-      - gameplay/materials/alloys.md
-      - gameplay/materials/elements.md
-      - gameplay/materials/fluids.md
-    - Dicas:
-      - gameplay/tips/optimization.md
-      - gameplay/tips/ae2-integration.md
-  - 🧪 Originais (WIP):
-    - roadmap/design/reator-pwr.md
-    - roadmap/design/lanca-cinetica-orbital.md
-    - roadmap/design/portao-de-fenda.md
-    - roadmap/design/anel-colisor.md
-    - roadmap/design/camara-estelar.md
-  - 🔧 Desenvolvimento:
-    - development/index.md
-    - development/setup.md
-    - development/architecture.md
-    - API:
+  - Hatches and parts:
+    - gameplay/parts/index.md
+    - gameplay/parts/huge-steam-bus.md
+    - gameplay/parts/thread-hatch.md
+    - gameplay/parts/accelerate-hatch.md
+    - gameplay/parts/overclock-hatch.md
+    - gameplay/parts/advanced-parallel-hatch.md
+  - Materials:
+    - gameplay/materials/index.md
+  - Pack authors:
+    - development/api/kubejs.md
+    - Java API:
       - development/api/overview.md
-      - development/api/kubejs.md
       - development/api/machines.md
       - development/api/materials.md
+  - Contribute:
+    - development/index.md
+    - development/translating.md
+    - development/setup.md
+    - development/architecture.md
     - development/contributing.md
-  - 📋 Roadmap:
     - roadmap/index.md

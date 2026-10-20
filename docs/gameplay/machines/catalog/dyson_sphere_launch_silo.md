@@ -1,62 +1,66 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Silo de Lançamento da Esfera de Dyson
+# Dyson Sphere Launch Silo
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Silo de Lançamento da Esfera de Dyson](../../../assets/machines/dyson_sphere_launch_silo.webp){ loading=lazy }
+*One module at a time, until the sun is wearing a coat.*
+
+![Dyson Sphere Launch Silo](../../../assets/machines/dyson_sphere_launch_silo.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Esfera de Dyson |
-| **Tamanho** | 70 × 61 × 52 |
-| **Blocos** | 16.964 |
+| **Machine type** | Dyson Sphere |
+| **Category** | Endgame systems |
+| **Recipe types** | Dyson Sphere |
+| **Size** | 70 × 61 × 52 |
+| **Blocks** | 16,964 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Um módulo por vez, até o sol estar de casaco. Lança módulos do enxame na órbita do planeta onde está.
+Launches swarm modules into orbit of the planet it stands on.
 
-- Tipo de Máquina: Esfera de Dyson
-- Cada lançamento soma um módulo ou repara o enxame
-- O tempo cresce com a distância do planeta
-- Só na superfície de um planeta, não em órbita
+- Each launch adds a module, or repairs a damaged swarm
+- Launch time grows with the planet's distance
+- Only on a planet's surface, not in orbit
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Estrutura de Suporte do Elevador Espacial | 7.826 |
-| Concreto de Alta Resistência | 1.866 |
-| Carcaça Molecular | 1.460 |
-| Invólucro Dimensionalmente Transcendente | 1.425 |
-| Carcaça Mecânica Hyper Reforçada | 1.330 |
-| Estrutura de Suporte Interno do Elevador Espacial | 745 |
-| Invólucro de Injeção Dimensional | 495 |
-| Módulo de Energia do Elevador Espacial MK V | 372 |
-| Ímã Supercondutor de Lançamento Dyson | 295 |
+| Space Elevator Support | 7,826 |
+| High Strength Concrete | 1,866 |
+| Molecular Casing | 1,460 |
+| Dimensionally Transcendent Casing | 1,425 |
+| Enhance Hyper Mechanical Casing | 1,330 |
+| Space Elevator Internal Support | 745 |
+| Dimension Injection Casing | 495 |
+| Space Elevator Power Module 5 | 372 |
+| Dyson Deployment Magnet | 295 |
 | Trinium Frame | 250 |
-| Invólucro de Constrição de Campo Graviton | 247 |
-| Invólucro de Controle Dyson | 144 |
-| Toroide de Controle Dyson | 116 |
+| Graviton Field Constraint Casing | 247 |
+| Dyson Control Casing | 144 |
+| Dyson Control Toroid | 116 |
 | Naquadah Alloy Frame | 74 |
 | Palladium Substation Casing | 69 |
-| Carcaça de Fusão MK V | 68 |
-| Carcaça da Base de Lançamento Dyson | 44 |
-| Carcaça de Estrutura Espacial Reforçada | 33 |
-| Unidade de Montagem Espaço-Temporal | 32 |
-| Invólucro Constrito de Rênio Degenerado | 21 |
+| Fusion Casing Mk5 | 68 |
+| Dyson Deployment Casing | 44 |
+| Reinforced Spatial Structure Casing | 33 |
+| Spacetime Assembly Line Unit | 32 |
+| Degenerate Rhenium Constrained Casing | 21 |
 | Neutronium Frame | 16 |
-| Gerador de Campo de Contenção | 12 |
-| Invólucro Oco | 8 |
-| Núcleo de Lançamento Dyson | 7 |
-| Tubulação Acelerada | 4 |
+| Containment Field Generator | 12 |
+| Hollow Casing | 8 |
+| Dyson Deployment Core | 7 |
+| Accelerated Pipeline | 4 |
 | Computation Data Reception Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Silo de Lançamento da Esfera de Dyson | 1 |
+| Dyson Sphere Launch Silo | 1 |
 | ULV Input Bus | 1 |
-| Carcaça de Emissor Ultravioleta de Alta Energia | 1 |
+| High Energy Ultraviolet Emitter Casing | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

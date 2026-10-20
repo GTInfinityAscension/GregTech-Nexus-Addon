@@ -1,52 +1,56 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Receptor de Sonda Espacial
+# Space Probe Receiver
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Receptor de Sonda Espacial](../../../assets/machines/space_probe_surface_reception.webp){ loading=lazy }
+*Listens to the cosmos and bottles what it hears.*
+
+![Space Probe Receiver](../../../assets/machines/space_probe_surface_reception.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Recepção de Sonda Espacial |
-| **Tamanho** | 37 × 30 × 38 |
-| **Blocos** | 2.853 |
+| **Machine type** | Space Probe Receiver |
+| **Category** | Electric processing |
+| **Recipe types** | Space Probe Surface Reception |
+| **Size** | 37 × 30 × 38 |
+| **Blocks** | 2,853 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Escuta o cosmos e engarrafa o que ouve. Capta partículas cósmicas com uma antena voltada para o céu aberto, longe de planetas.
+Catches cosmic particles with a dish pointed at the open sky, far above any planet.
 
-- Tipo de Máquina: Receptor de Sonda Espacial
-- Funciona em qualquer dimensão espacial do Ad Astra
-- Overclock perfeito
-- Para quando o céu acima da antena é coberto
-- Precisa de um Computation Data Hatch
+- Works in any space dimension of Ad Astra
+- Perfect overclock
+- Stops when the sky above the dish is covered
+- Needs a Computation Data Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Invólucro Receptor Dyson | 816 |
-| Carcaça Resistente a Alta Pressão | 446 |
-| Invólucro Hipermecânico | 384 |
+| Dyson Receiver Casing | 816 |
+| High Pressure Resistant Casing | 446 |
+| Hyper Mechanical Casing | 384 |
 | Atomic Casing | 334 |
 | Neutronium Frame | 317 |
-| Carcaça de Planta Reforçada com Naquadah | 178 |
-| Carcaça Anticongelante à Prova de Calor | 117 |
-| Carcaça Estável de Neutrônio | 92 |
+| Naquadah Reinforced Plant Casing | 178 |
+| Antifreeze Heatproof Machine Casing | 117 |
+| Neutronium Stable Casing | 92 |
 | High Power Casing | 57 |
 | Heat Vent | 56 |
-| Hipernúcleo | 28 |
+| Hyper Core | 28 |
 | Tritanium Frame | 15 |
-| Carcaça Ativa de Amprósio | 7 |
-| Auto Maintenance Hatch | 1 |
+| Amprosium Active Casing | 7 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
-| Receptor de Sonda Espacial | 1 |
+| Space Probe Receiver | 1 |
 | ULV Output Hatch | 1 |
 | Computation Data Reception Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

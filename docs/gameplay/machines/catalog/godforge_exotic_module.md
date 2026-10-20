@@ -1,41 +1,45 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Exotizador de Heliofusão
+# Heliofusion Exoticizer
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Exotizador de Heliofusão](../../../assets/machines/godforge_exotic_module.webp){ loading=lazy }
+*Breaking the building blocks of reality, responsibly.*
+
+![Heliofusion Exoticizer](../../../assets/machines/godforge_exotic_module.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 7 × 7 × 13 |
-| **Blocos** | 89 |
+| **Machine type** | Exotic Matter Producer |
+| **Category** | Endgame systems |
+| **Recipe types** | None |
+| **Size** | 7 × 7 × 13 |
+| **Blocks** | 89 |
+| **Origin** | GT: New Horizons |
 
-## Descrição
+## Description
 
-Quebrando os tijolos da realidade, com responsabilidade. misturas exóticas como Plasma de Quarks e Glúons e Magmatter.
+apart into exotic mixtures like Quark-Gluon Plasma and Magmatter.
 
-- Tipo de Máquina: Produtor de Matéria Exótica
-- O último módulo da Godforge: quebra a matéria em
-- Especializado em materiais únicos
-- Plasma de Quarks e Glúons já vem liberado
-- Magmatter precisa da Godforge totalmente melhorada
-- Precisa fazer parte de uma Godforge
+- The final Godforge module: breaks matter
+- Specialized in unique materials
+- Quark-Gluon Plasma is available right away
+- Magmatter needs a fully upgraded Godforge
+- Must be part of a Godforge to work
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Blindagem Estelar Reforçada por Singularidade | 36 |
-| Carcaça de Confinamento Magnético Transcendentalmente Amplificado | 21 |
-| Carcaça Estrutural Ilimitada Gravitacionalmente Isolada | 20 |
-| Conduíte Harmônico de Transmissão de Fônons | 5 |
-| Carcaça de Guia de Matéria Celestial | 5 |
-| Exotizador de Heliofusão | 1 |
-| Carcaça de Sifão de Energia Estelar | 1 |
+| Singularity Reinforced Stellar Shielding Casing | 36 |
+| Transcendentally Amplified Magnetic Confinement Casing | 21 |
+| Boundless Gravitationally Severed Structure Casing | 20 |
+| Harmonic Phonon Transmission Conduit | 5 |
+| Celestial Matter Guidance Casing | 5 |
+| Heliofusion Exoticizer | 1 |
+| Stellar Energy Siphon Casing | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

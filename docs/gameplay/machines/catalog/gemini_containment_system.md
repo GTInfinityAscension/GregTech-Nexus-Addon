@@ -1,58 +1,62 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Sistema de Contenção Gêmeos
+# Gemini Containment System
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Sistema de Contenção Gêmeos](../../../assets/machines/gemini_containment_system.webp){ loading=lazy }
+*Packs and unpacks at once. Pauli would approve.*
+
+![Gemini Containment System](../../../assets/machines/gemini_containment_system.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Packer |
-| **Tamanho** | 15 × 29 × 32 |
-| **Blocos** | 6.875 |
+| **Machine type** | Packer |
+| **Category** | Electric processing |
+| **Recipe types** | Packer |
+| **Size** | 15 × 29 × 32 |
+| **Blocks** | 6,875 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Empacota e desempacota de uma vez. Pauli aprovaria. Duas linhas de empacotamento que lacram e abrem itens como cargas espelhadas.
+Twin packaging lines that seal and unseal items like mirrored charges.
 
-- Tipo de Máquina: Empacotadora
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Paralelos 2x a cada 900K de temperatura da bobina
-- Usa o limite do Parallel Hatch se for maior
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Parallel 2x for each 900K of coil temperature
+- Uses the Parallel Hatch limit if higher
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Casing Mecanico de Hastelloy N Resistente a Oxidacao | 2.368 |
-| Vidro Industrial sem Moldura | 1.004 |
-| Invólucro Mecânico Resistente ao Desgaste de PEEK | 609 |
-| Carcaça Mecânica de Engenharia | 560 |
-| Carcaça de Irídio | 430 |
+| Oxidation Resistant Hastelloy N Mechanical Casing | 2,368 |
+| Industrial Frameless Glass | 1,004 |
+| Peek Wear Resistant Mechanical Housing | 609 |
+| Engineering Mechanical Casing | 560 |
+| Iridium Casing | 430 |
 | Cupronickel Coil Block | 424 |
 | Vibration-Safe Casing | 296 |
-| Carcaça de Laser | 192 |
-| Bloco Mecânico de Cerâmica de Nitreto de Titânio Resistente a Impacto | 160 |
+| Laser Casing | 192 |
+| Titanium Nitride Ceramic Impact-Resistant Mechanical Block | 160 |
 | White Lamp | 144 |
 | Black Steel Frame | 131 |
-| Gerador de Campo de Contenção | 96 |
-| Caixa de Engrenagens de Amprósio | 88 |
-| Caixa de Engrenagens de Inconel-625 | 88 |
-| Carcaça Mecânica de Plástico ABS Verde | 48 |
-| Carcaça Mecânica de Plástico ABS Vermelha | 48 |
-| Carcaça da Linha de Montagem de Circuitos | 46 |
+| Containment Field Generator | 96 |
+| Amprosium Gearbox | 88 |
+| Inconel-625 Gearbox | 88 |
+| Green ABS Plastic Mechanical Casing | 48 |
+| Red ABS Plastic Mechanical Casing | 48 |
+| Circuit Assembly Line Machine Casing | 46 |
 | Titanium Gearbox Casing | 46 |
-| Unidade Avançada de Linha de Montagem | 46 |
+| Advanced Assembly Line Unit | 46 |
 | Tungstensteel Gearbox Casing | 46 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
-| Sistema de Contenção Gêmeos | 1 |
+| Gemini Containment System | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

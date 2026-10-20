@@ -1,44 +1,47 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Power generation
 ---
 
-# Turbina de Vapor Supercrítica
+# Supercritical Steam Turbine
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Turbina de Vapor Supercrítica](../../../assets/machines/supercritical_steam_turbine.webp){ loading=lazy }
+*Steam, but it has seen things.*
+
+![Supercritical Steam Turbine](../../../assets/machines/supercritical_steam_turbine.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Turbina a Vapor Supercrítico |
-| **Tamanho** | 4 × 3 × 3 |
-| **Blocos** | 36 |
-| **Gerador** | ✓ |
+| **Machine type** | Supercritical Steam Turbine |
+| **Category** | Power generation |
+| **Recipe types** | Supercritical Steam Turbine |
+| **Size** | 4 × 3 × 3 |
+| **Blocks** | 36 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Vapor, só que já viu coisas. Uma turbina IV que expande vapor supercrítico por um rotor e gera EU.
+An IV turbine that expands supercritical steam through a rotor into EU.
 
-- Tipo de Máquina: Turbina a Vapor Supercrítico
-- Cada tier de rotor acima de IV: +10% efic., 2x EU/t
-- Módulo: velocidade 2x, +20% de eficiência
-- Produção base: 16.384 EU/t
-- O Modo Alta Velocidade soma com o módulo
-- O módulo dobra o desgaste do rotor
+- Each rotor tier above IV: +10% eff., 2x EU/t
+- Module: 2x speed, +20% efficiency
+- Base output: 16,384 EU/t
+- High-Speed Mode stacks with the module
+- The module doubles rotor wear
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Turbina Supercrítica | 27 |
+| Supercritical Turbine Casing | 27 |
 | Tungstensteel Gearbox Casing | 2 |
 | ULV Dynamo Hatch | 1 |
 | ULV Output Hatch | 1 |
 | Muffler Hatch IV | 1 |
 | ULV Input Hatch | 1 |
-| Turbina de Vapor Supercrítica | 1 |
-| Auto Maintenance Hatch | 1 |
+| Supercritical Steam Turbine | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | IV Rotor Holder | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

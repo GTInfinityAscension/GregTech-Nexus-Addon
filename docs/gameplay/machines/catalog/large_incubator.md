@@ -1,45 +1,49 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Incubadora Grande
+# Large Incubator
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Incubadora Grande](../../../assets/machines/large_incubator.webp){ loading=lazy }
+*A greenhouse for things that are better left in the glass.*
+
+![Large Incubator](../../../assets/machines/large_incubator.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Incubadora |
-| **Tamanho** | 13 × 9 × 13 |
-| **Blocos** | 473 |
+| **Machine type** | Incubator |
+| **Category** | Electric processing |
+| **Recipe types** | Incubator |
+| **Size** | 13 × 9 × 13 |
+| **Blocks** | 473 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Uma estufa para o que é melhor deixar atrás do vidro. Cultiva culturas numa câmara selada e filtrada; o vidro decide até onde ela pode ir.
+Grows cultures in a sealed, filtered chamber; the glass decides how hot it may run.
 
-- Tipo de Máquina: Incubadora
-- Aceita Parallel Hatch
-- Tier de voltagem limitado pelo tier do vidro
-- Receitas podem pedir filtro estéril
-- Todos os vidros precisam ser do mesmo tier
+- Parallel Hatch supported
+- Voltage tier capped by the glass tier
+- Recipes may ask for a sterile filter
+- All glass blocks must be the same tier
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Casing Mecanico de Hastelloy N Resistente a Oxidacao | 242 |
+| Oxidation Resistant Hastelloy N Mechanical Casing | 242 |
 | Tempered Glass | 96 |
 | Plascrete | 85 |
-| Filter Casing | 36 |
+| Sterilizing Filter Casing | 36 |
 | PTFE Pipe Casing | 7 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |
-| Incubadora Grande | 1 |
-| Auto Maintenance Hatch | 1 |
+| Large Incubator | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

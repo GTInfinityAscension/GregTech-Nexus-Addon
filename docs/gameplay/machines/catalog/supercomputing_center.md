@@ -1,68 +1,72 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Energy, AE2 and computation
 ---
 
-# Centro de Supercomputação
+# Supercomputing Center
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Centro de Supercomputação](../../../assets/machines/supercomputing_center.webp){ loading=lazy }
+*Three generations of computers under one roof. Mind the heat.*
+
+![Supercomputing Center](../../../assets/machines/supercomputing_center.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 28 × 59 × 21 |
-| **Blocos** | 12.518 |
+| **Machine type** | Computation |
+| **Category** | Energy, AE2 and computation |
+| **Recipe types** | None |
+| **Size** | 28 × 59 × 21 |
+| **Blocks** | 12,518 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Três gerações de computadores sob o mesmo teto. Cuidado com o calor. GWCA fornecem CWU/t para a rede de pesquisa.
+supply CWU/t to the research network.
 
-- Tipo de Máquina: Computação
-- Um HPCA em tiers: componentes HPCA, NICH ou
-- Três tiers (chave de fenda): HPCA, NICH, GWCA
-- O refrigerante MFPC restaura o multiplicador de CWU/t
-- O tier 1 paga um quarto da manutenção dos componentes
-- Tiers 2-3 precisam de Mainframe Óptico / Exótico
-- CWU/t = soma da computação dos componentes x fator
-- Pouco resfriamento danifica os componentes
-- O tier precisa bater com carcaças, ventilação e vidro
-- Nos tiers maiores, o fator de correção decai com o tempo
-- O MFPC utilizado vira sua forma invalidada
+- A tiered HPCA: HPCA, NICH or GWCA components
+- Three tiers (screwdriver): HPCA, NICH, GWCA
+- MFPC coolant restores the CWU/t multiplier
+- Tier 1 pays a quarter of the components' upkeep
+- Tiers 2-3 need an Optical / Exotic Mainframe
+- CWU/t = sum of component power x correction factor
+- Low cooling damages computing components
+- Tier must match the casings, vents and glass
+- At higher tiers, the correction factor decays over time
+- Used MFPC turns into its invalidated form
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Casco Mecânico Tênsil de Nylon MC | 2.350 |
-| Carcaça de Irídio | 2.231 |
-| Carcaça Mecânica de Plástico ABS Branca | 1.325 |
+| Mc Nylon Tensile Mechanical Shell | 2,350 |
+| Iridium Casing | 2,231 |
+| White ABS Plastic Mechanical Casing | 1,325 |
 | Computer Heat Vent | 980 |
-| Componentes de Resfriamento GWCA | 840 |
+| HPCA Computation Component | 840 |
 | Computer Casing | 728 |
-| Vidro Borossilicato de Tungstênio | 546 |
-| Carcaça Anticongelante à Prova de Calor | 526 |
+| Tungsten Borosilicate Glass | 546 |
+| Antifreeze Heatproof Machine Casing | 526 |
 | Advanced Computer Casing | 468 |
-| Carcaça de Contenção de Pressão | 440 |
-| Bloco Mecânico Cerâmico de Óxido de Cobalto Condutor Térmico de Alta Resistência | 434 |
-| Invólucro de Liga de Naquadah | 347 |
-| Cubo Mecânico Cerâmico de Óxido de Lítio Resistente ao Calor e a Choques | 240 |
+| Pressure Containment Casing | 440 |
+| Cobalt Oxide Ceramic Strong Thermally Conductive Mechanical Block | 434 |
+| Naquadah Alloy Casing | 347 |
+| Lithium Oxide Ceramic Heat Resistant Shock Resistant Mechanical Cube | 240 |
 | Ruridit Frame | 229 |
 | Nonconducting Casing | 221 |
 | Hastelloy N Frame | 174 |
-| Cubo Mecânico Absorvedor de Raios de Cerâmica de Carbonato de Estrôncio | 143 |
+| Strontium Carbonate Ceramic Ray Absorbing Mechanical Cube | 143 |
 | UHV Machine Casing | 112 |
-| Casing Mecanico de Hastelloy N Resistente a Oxidacao | 93 |
+| Oxidation Resistant Hastelloy N Mechanical Casing | 93 |
 | High Power Casing | 54 |
 | Stainless Steel Frame | 27 |
 | Andesite Wall | 2 |
 | Iron Bars | 2 |
-| Centro de Supercomputação | 1 |
+| Supercomputing Center | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

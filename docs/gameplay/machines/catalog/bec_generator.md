@@ -1,45 +1,49 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Aparato de Emaranhamento de Condensado de Bose-Einstein
+# Bose-Einstein Condensate Entanglement Apparatus
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Aparato de Emaranhamento de Condensado de Bose-Einstein](../../../assets/machines/bec_generator.webp){ loading=lazy }
+*One fluid in, one ghost out.*
+
+![Bose-Einstein Condensate Entanglement Apparatus](../../../assets/machines/bec_generator.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Emaranhamento de Condensado |
-| **Tamanho** | 19 × 19 × 34 |
-| **Blocos** | 1.279 |
+| **Machine type** | BEC Generator |
+| **Category** | Endgame systems |
+| **Recipe types** | Condensate Entanglement |
+| **Size** | 19 × 19 × 34 |
+| **Blocks** | 1,279 |
+| **Origin** | GT: New Horizons |
 
-## Descrição
+## Description
 
-Entra fluido, sai um fantasma. Transforma metais fundidos e fluidos em condensado emaranhado; o condensado vai direto para a rede.
+Turns molten metals and fluids into entangled condensate; the condensate goes straight into the network.
 
-- Tipo de Máquina: Gerador BEC
-- Processa todos os fluidos dos hatches de uma vez
-- Os paralelos sobem até o EU/t disponível
-- O ciclo dura o da receita mais lenta
-- Sem espaço na rede, o condensado é destruído
+- Runs every fluid in its hatches at once
+- Parallels fill up to the EU/t available
+- The cycle lasts as long as the slowest recipe
+- Condensate is voided without room in the network
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Indução de Conflito | 236 |
-| Manipulador da Constante de Estrutura Fina | 232 |
-| Conduto de Plasma Preservador de Coerência | 216 |
-| Carcaça de Imposição da Paz | 184 |
-| Carcaça Eletromagneticamente Isolada | 157 |
-| Guia de Ondas Eletromagnético | 148 |
-| Bobina Transformadora de Condensado | 101 |
+| Conflict Inducement Casing | 236 |
+| Fine Structure Constant Manipulator | 232 |
+| Coherence Preserving Plasma Conduit | 216 |
+| Peace Enforcement Casing | 184 |
+| Electromagnetically Isolated Casing | 157 |
+| Electromagnetic Waveguide | 148 |
+| Condensate Transformative Coil | 101 |
 | ULV Energy Hatch | 1 |
 | ULV Input Hatch | 1 |
-| Aparato de Emaranhamento de Condensado de Bose-Einstein | 1 |
-| Hatch de Condensado de Bose-Einstein | 1 |
+| Bose-Einstein Condensate Entanglement Apparatus | 1 |
+| Bose-Einstein Condensate Hatch | 1 |
 | ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

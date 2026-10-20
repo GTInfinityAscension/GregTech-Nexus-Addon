@@ -1,42 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Fabricante a Vapor
+# Steam Manufacturer
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Fabricante a Vapor](../../../assets/machines/steam_manufacturer.webp){ loading=lazy }
+*The assembly line, but every worker is a piston.*
+
+![Steam Manufacturer](../../../assets/machines/steam_manufacturer.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Manufatura Hidráulica |
-| **Tamanho** | 9 × 7 × 7 |
-| **Blocos** | 139 |
+| **Machine type** | Hydraulic Manufacturing |
+| **Category** | Steam and primitive |
+| **Recipe types** | Hydraulic Manufacturing |
+| **Size** | 9 × 7 × 7 |
+| **Blocks** | 139 |
+| **Origin** | GT: Not Leisure |
 
-[Guia completo →](../steam/steam-manufacturer.md)
+## Description
 
-## Descrição
+An advanced hydraulic assembly line that builds the steam era's biggest machines.
 
-A linha de montagem, mas cada operário é um pistão. Uma linha de montagem hidráulica avançada que constrói as maiores máquinas da era do vapor.
+- Crafts the Steam Supercompressor and more
+- Parallel: 16 default, adjustable up to 16
 
-- Tipo de Máquina: Manufatura Hidráulica
-- Fabrica o Supercompressor a Vapor e mais
-- Paralelos: 16 padrão, ajustável até 16
+## Structure
 
-## Estrutura
-
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Breel Plated Casing | 74 |
+| Breel-Plated Casing | 74 |
 | Breel Pipe Casing | 20 |
 | Steel Frame | 16 |
 | Steel Gearbox Casing | 16 |
 | Hydraulic Assembler Casing | 9 |
 | ULV Output Bus | 1 |
-| Fabricante a Vapor | 1 |
+| Steam Manufacturer | 1 |
 | ULV Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

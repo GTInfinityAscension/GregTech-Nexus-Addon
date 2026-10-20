@@ -1,42 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Grande Macerador a Vapor
+# Large Steam Crusher
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Macerador a Vapor](../../../assets/machines/large_steam_crusher.webp){ loading=lazy }
+*Rocks go in, gravel comes out. Nobody asks about the noise.*
+
+![Large Steam Crusher](../../../assets/machines/large_steam_crusher.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Macerator |
-| **Tamanho** | 5 × 6 × 7 |
-| **Blocos** | 154 |
+| **Machine type** | Macerator |
+| **Category** | Steam and primitive |
+| **Recipe types** | Macerator |
+| **Size** | 5 × 6 × 7 |
+| **Blocks** | 154 |
+| **Origin** | GT: Not Leisure |
 
-[Guia completo →](../steam/large-steam-crusher.md)
+## Description
 
-## Descrição
+A steam-driven crushing hall that grinds ores and stone in bulk batches.
 
-Pedra entra, cascalho sai. Ninguém pergunta do barulho. Um salão de trituração a vapor que mói minérios e pedra em lotes enormes.
+- 2x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 128
 
-- Tipo de Máquina: Macerador
-- Velocidade 2x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 128
+## Structure
 
-## Estrutura
-
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 98 |
 | Bronze Frame | 24 |
 | Bronze Gearbox Casing | 14 |
 | Bronze Pipe Casing | 14 |
-| Barramento de Saída a Vapor com Boost de Saída | 1 |
-| Grande Macerador a Vapor | 1 |
+| Steam Output Bus | 1 |
+| Large Steam Crusher | 1 |
 | Steam Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

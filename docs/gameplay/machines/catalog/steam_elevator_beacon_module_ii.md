@@ -1,35 +1,39 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo Farol a Vapor II
+# Steam Elevator Beacon Module II
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo Farol a Vapor II](../../../assets/machines/steam_elevator_beacon_module_ii.webp){ loading=lazy }
+*Buffs for the whole neighborhood.*
+
+![Steam Elevator Beacon Module II](../../../assets/machines/steam_elevator_beacon_module_ii.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Buffs para o bairro inteiro. Espalha efeitos de poção numa área grande; escolha os efeitos na GUI.
+Spreads potion effects over a large area; pick the effects in the GUI.
 
-- Tipo de Máquina: Módulo do Elevador
-- Nível do efeito: II
-- 10 efeitos para escolher
-- Alcance: 128 blocos
-- Só funciona encaixado num Steam Elevator
+- Effect level: II
+- 10 selectable effects
+- Range: 128 blocks
+- Only works attached to a Steam Elevator
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo Farol a Vapor II | 1 |
+| Steam Elevator Beacon Module II | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

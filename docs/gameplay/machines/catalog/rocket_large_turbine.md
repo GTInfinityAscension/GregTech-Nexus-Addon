@@ -1,42 +1,45 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Power generation
 ---
 
-# Turbina Grande de Foguete
+# Rocket Large Turbine
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Turbina Grande de Foguete](../../../assets/machines/rocket_large_turbine.webp){ loading=lazy }
+*Not rocket science. Okay, it is rocket science.*
+
+![Rocket Large Turbine](../../../assets/machines/rocket_large_turbine.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Motor de Foguete |
-| **Tamanho** | 4 × 3 × 3 |
-| **Blocos** | 36 |
-| **Gerador** | ✓ |
+| **Machine type** | Rocket Engine |
+| **Category** | Power generation |
+| **Recipe types** | Rocket Engine |
+| **Size** | 4 × 3 × 3 |
+| **Blocks** | 36 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Não é ciência de foguete. Tá, é ciência de foguete. Uma turbina EV que queima combustível de foguete e transforma a força do rotor em EU.
+An EV turbine that burns rocket fuel and turns rotor power into EU.
 
-- Tipo de Máquina: Motor de Foguete
-- Cada tier de rotor acima de EV: +10% efic., 2x EU/t
-- Módulo do motor: produção 2x, +20% de eficiência
-- Produção base: 5.120 EU/t
-- Modo Alta Velocidade: produção 3x, desgaste 10x
+- Each rotor tier above EV: +10% eff., 2x EU/t
+- Engine module: 2x output, +20% efficiency
+- Base output: 5,120 EU/t
+- High-Speed Mode: 3x output, 10x rotor wear
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Titanium Turbine Casing | 28 |
 | Titanium Gearbox Casing | 2 |
 | ULV Dynamo Hatch | 1 |
 | Muffler Hatch IV | 1 |
 | ULV Input Hatch | 1 |
-| Turbina Grande de Foguete | 1 |
-| Auto Maintenance Hatch | 1 |
+| Rocket Large Turbine | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | IV Rotor Holder | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

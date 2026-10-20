@@ -1,36 +1,40 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Congelador de Gelo Frio
+# Cold Ice Freezer
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Congelador de Gelo Frio](../../../assets/machines/cold_ice_freezer.webp){ loading=lazy }
+*Born from a liquid ice leak. The intern is still missing.*
+
+![Cold Ice Freezer](../../../assets/machines/cold_ice_freezer.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Vacuum Freezer, Condensação por Atomização |
-| **Tamanho** | 5 × 5 × 9 |
-| **Blocos** | 174 |
+| **Machine type** | Vacuum Freezer |
+| **Category** | Electric processing |
+| **Recipe types** | Vacuum Freezer, Atomization Condensation |
+| **Size** | 5 × 5 × 9 |
+| **Blocks** | 174 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Nasceu de um vazamento de gelo líquido. O estagiário segue sumido. Congela receitas de Congelador a Vácuo e Atomização em lotes enormes com Gelo Líquido.
+Freezes Vacuum Freezer and Atomization recipes in huge batches with Liquid Ice.
 
-- Tipo de Máquina: Congelador a Vácuo
-- Duração da receita 0,5x
-- Paralelos: 64
-- Gelo Líquido: 2^(tier-2) x 10 mB/s
-- Consome Gelo Líquido quando cada receita começa
+- 0.5x recipe duration
+- Parallel: 64
+- Liquid Ice: 2^(tier-2) x 10 mB/s
+- Consumes Liquid Ice when each recipe starts
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Frost Proof Aluminium Machine Casing | 75 |
-| Carcaça de Gelo Frio | 48 |
+| Cold Ice Casing | 48 |
 | Aluminium Frame | 24 |
 | Tungstensteel Pipe Casing | 12 |
 | Tempered Glass | 6 |
@@ -38,9 +42,9 @@ Nasceu de um vazamento de gelo líquido. O estagiário segue sumido. Congela rec
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Output Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
-| Congelador de Gelo Frio | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Cold Ice Freezer | 1 |
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

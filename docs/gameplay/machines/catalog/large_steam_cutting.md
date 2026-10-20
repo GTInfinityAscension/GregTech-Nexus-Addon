@@ -1,40 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Grande Máquina de Corte a Vapor
+# Large Steam Cutting Machine
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Máquina de Corte a Vapor](../../../assets/machines/large_steam_cutting.webp){ loading=lazy }
+*Measure twice, cut sixteen times.*
+
+![Large Steam Cutting Machine](../../../assets/machines/large_steam_cutting.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Cutter |
-| **Tamanho** | 9 × 4 × 5 |
-| **Blocos** | 124 |
+| **Machine type** | Cutter |
+| **Category** | Steam and primitive |
+| **Recipe types** | Cutter |
+| **Size** | 9 × 4 × 5 |
+| **Blocks** | 124 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Meça duas vezes, corte dezesseis. Uma cortadora a vapor para placas, parafusos e fatias em massa.
+A steam cutting machine for bulk plates, bolts and slices.
 
-- Tipo de Máquina: Cortadora
-- Velocidade 2x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 16
+- 2x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 16
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 45 |
 | Bronze Frame | 37 |
-| Casing Industrial a Vapor | 28 |
+| Industrial Steam Casing | 28 |
 | Bronze Pipe Casing | 7 |
 | Block of Diamond | 3 |
 | Bronze Gearbox Casing | 2 |
-| Grande Máquina de Corte a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Large Steam Cutting Machine | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

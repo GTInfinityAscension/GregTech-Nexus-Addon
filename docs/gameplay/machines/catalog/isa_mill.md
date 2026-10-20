@@ -1,45 +1,49 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Moinho ISA
+# ISA Mill
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Moinho ISA](../../../assets/machines/isa_mill.webp){ loading=lazy }
+*Despite its green paint, it is not eco-friendly at all.*
+
+![ISA Mill](../../../assets/machines/isa_mill.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Moinho ISA |
-| **Tamanho** | 7 × 3 × 3 |
-| **Blocos** | 63 |
+| **Machine type** | ISA Mill |
+| **Category** | Electric processing |
+| **Recipe types** | ISA Mill |
+| **Size** | 7 × 3 × 3 |
+| **Blocks** | 63 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Apesar da tinta verde, não tem nada de ecológico. Mói a úmido minérios e minérios brutos em produtos Moídos com uma moagem de bolas violenta.
+Wet-grinds ores and raw ores into Milled products with violent ball milling.
 
-- Tipo de Máquina: Moinho ISA
-- Overclock perfeito: duração /4 por tier
-- Paralelos: 2
-- Pedra-sabão: circuito 1; Alumínio: circuito 10
-- Precisa de um Grinding Ball Hatch do tier da receita
-- Toda receita desgasta a bola de moagem
+- Perfect overclock: duration /4 per tier
+- Parallel: 2
+- Soapstone: circuit 1; Aluminium: circuit 10
+- Needs a Grinding Ball Hatch of the recipe tier
+- Every recipe wears the grinding ball down
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Inconel-625 | 42 |
-| Tubulação de Inconel-625 | 8 |
-| Caixa de Engrenagens de Inconel-625 | 5 |
+| Inconel-625 Casing | 42 |
+| Inconel-625 Pipe | 8 |
+| Inconel-625 Gearbox | 5 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | Muffler Hatch IV | 1 |
-| Moinho ISA | 1 |
-| Hatch de Esferas de Moagem | 1 |
+| ISA Mill | 1 |
+| Grinding Ball Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

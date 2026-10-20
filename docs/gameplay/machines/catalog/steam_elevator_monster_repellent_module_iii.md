@@ -1,34 +1,38 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo Repelente de Monstros a Vapor III
+# Steam Monster Repellator Module III
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo Repelente de Monstros a Vapor III](../../../assets/machines/steam_elevator_monster_repellent_module_iii.webp){ loading=lazy }
+*Monsters get the hint and leave on their own.*
+
+![Steam Monster Repellator Module III](../../../assets/machines/steam_elevator_monster_repellent_module_iii.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Os monstros entendem o recado e vão embora sozinhos. Projeta um campo de força que impede o spawn de monstros enquanto a máquina funciona.
+Projects a force field that blocks monster spawns while the machine is running.
 
-- Tipo de Máquina: Módulo do Elevador
-- Base segura, sem precisar de tocha
-- Alcance: 256 blocos
-- Só impede spawns enquanto funciona
+- Safe base, zero torches required
+- Range: 256 blocks
+- Only prevents spawns while running
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo Repelente de Monstros a Vapor III | 1 |
+| Steam Monster Repellator Module III | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

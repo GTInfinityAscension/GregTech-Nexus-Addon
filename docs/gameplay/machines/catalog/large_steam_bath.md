@@ -1,38 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
 # Large Steam Bath
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
+
+*A spa day for ores. No cucumbers provided.*
 
 ![Large Steam Bath](../../../assets/machines/large_steam_bath.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Chemical Bath |
-| **Tamanho** | 7 × 6 × 5 |
-| **Blocos** | 143 |
+| **Machine type** | Chemical Bath |
+| **Category** | Steam and primitive |
+| **Recipe types** | Chemical Bath |
+| **Size** | 7 × 6 × 5 |
+| **Blocks** | 143 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Um dia de spa para minérios. Pepino não incluso. Um grande banho químico a vapor para lavagem em massa no início do jogo.
+A large steam chemical bath for early bulk washing.
 
-- Tipo de Máquina: Banho Químico
-- Velocidade 2x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 64
+- 2x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 64
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 84 |
 | Bronze Pipe Casing | 24 |
 | Glass | 23 |
 | Bronze Frame | 10 |
 | Large Steam Bath | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

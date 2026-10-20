@@ -1,42 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Cortador de Madeira a Vapor
+# Steam Woodcutter
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Cortador de Madeira a Vapor](../../../assets/machines/steam_woodcutter.webp){ loading=lazy }
+*I'm a lumberjack and I'm okay.*
+
+![Steam Woodcutter](../../../assets/machines/steam_woodcutter.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Serralheria |
-| **Tamanho** | 7 × 7 × 7 |
-| **Blocos** | 134 |
+| **Machine type** | Woodcutter |
+| **Category** | Steam and primitive |
+| **Recipe types** | Woodcutter |
+| **Size** | 7 × 7 × 7 |
+| **Blocks** | 134 |
+| **Origin** | GT: Not Leisure |
 
-[Guia completo →](../steam/steam-woodcutter.md)
+## Description
 
-## Descrição
+An industrial tree processor that turns saplings into logs using only steam.
 
-Sou lenhador e tá tudo bem. Um processador de árvores industrial que transforma mudas em toras usando só vapor.
+- Sapling in, logs out, no trees planted
+- Parallel: 64 default, adjustable up to 64
 
-- Tipo de Máquina: Lenhador
-- Muda entra, tora sai, sem plantar árvore
-- Paralelos: 64 padrão, ajustável até 64
+## Structure
 
-## Estrutura
-
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Glass | 60 |
 | Bronze Reinforced Wood | 44 |
 | Iron Reinforced Wood | 12 |
 | Dirt | 9 |
 | Steel Reinforced Wood | 5 |
-| Barramento de Saída a Vapor com Boost de Saída | 1 |
-| Cortador de Madeira a Vapor | 1 |
+| Steam Output Bus | 1 |
+| Steam Woodcutter | 1 |
 | Steam Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

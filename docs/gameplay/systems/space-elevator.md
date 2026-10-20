@@ -1,15 +1,28 @@
-# Elevador Espacial
+# Space Elevator
 
-![](../../assets/machines/space_elevator.webp){ loading=lazy }
+![Space Elevator](../../assets/machines/space_elevator.webp){ loading=lazy }
 
-## Funcionamento
+A cable to orbit that powers up to **12 modules** standing around its base. Ported from GT: New Horizons.
 
-O elevador só alimenta módulos acima de ZPM, com computação (`128 · (tier − ZPM)` CWU/t) e **256 Nanotube Spools** colocados pelo barramento de entrada. Até 12 módulos.
+## Running the elevator
 
-## Power Modules
+- It works only from UHV (above ZPM) and needs computation: `128 · (tier − ZPM)` CWU/t.
+- Feed **256 Nanotube Spools** through its input bus.
+- The **Power Modules** in the structure set every module's parallel: `4^(MK − 1)`. All Power Modules must be the same MK (I to V). The MK also decides which Assembler Module recipes can run.
 
-O MK (I–V) dos Power Modules define o paralelo de todos os módulos: `4^(MK − 1)`, e quais receitas do Módulo de Montagem podem rodar. Todos precisam ser do mesmo MK.
+| Power Module | Module parallel |
+|---|---:|
+| MK I | 1 |
+| MK II | 4 |
+| MK III | 16 |
+| MK IV | 64 |
+| MK V | 256 |
 
-## Módulos
+## Modules
 
-**Montagem:** monta peças em órbita. **Coleta de Recursos:** drones minerando 20 misturas de asteroide e coletando 11 gases, com drones MK I–VI e combustível de foguete.
+| Module | What it does |
+|---|---|
+| [Assembler Module](../machines/catalog/assembler_module.md) | assembles parts in orbit |
+| [Resource Collection Module](../machines/catalog/resource_collection_module.md) | sends drones to mine 20 asteroid ore mixes and collect 11 gases, with MK I to VI drones and rocket fuel |
+
+Modules work only while their Space Elevator runs.

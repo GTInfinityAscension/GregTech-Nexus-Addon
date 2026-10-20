@@ -1,43 +1,45 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Matadouro Industrial
+# Industrial Slaughterhouse
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Matadouro Industrial](../../../assets/machines/industrial_slaughterhouse.webp){ loading=lazy }
+*No mobs were harmed in this tooltip. Many were in the machine.*
+
+![Industrial Slaughterhouse](../../../assets/machines/industrial_slaughterhouse.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Abatedouro |
-| **Tamanho** | 7 × 10 × 7 |
-| **Blocos** | 436 |
+| **Machine type** | Industrial Slaughter |
+| **Category** | Electric processing |
+| **Recipe types** | Industrial Slaughter |
+| **Size** | 7 × 10 × 7 |
+| **Blocks** | 436 |
+| **Origin** | GregTech Odyssey |
 
-[Guia completo →](../electric/industrial-slaughterhouse.md)
+## Description
 
-## Descrição
+voltage tier, picked by circuit.
 
-Nenhum mob se machucou nesta tooltip. Muitos na máquina. o tier de voltagem, escolhidos por circuito.
+- Virtual mob processing: drops scale with
+- Bosses x3 drops/tier, Dragon x5 drops/tier
+- Circuit 1 passive, 2 hostile, 3 boss, 4 dragon
+- Base tiers: LV / MV / ZPM / UHV
+- EU/t: 1,000 / 2,560 / 32k / 120k per circuit
 
-- Tipo de Máquina: Abate Industrial
-- Processamento virtual de mobs: os drops crescem com
-- Chefes x3 drops/tier, Dragão x5 drops/tier
-- Circuito 1 passivo, 2 hostil, 3 chefe, 4 dragão
-- Tiers base: LV / MV / ZPM / UHV
-- EU/t: 1.000 / 2.560 / 32k / 120k por circuito
+## Structure
 
-## Estrutura
-
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 148 |
 | Tempered Glass | 140 |
 | Iron Bars | 96 |
 | Steel Gearbox Casing | 25 |
 | Steel Firebox Casing | 25 |
-| Matadouro Industrial | 1 |
-| Auto Maintenance Hatch | 1 |
+| Industrial Slaughterhouse | 1 |
+| Cleaning Maintenance Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

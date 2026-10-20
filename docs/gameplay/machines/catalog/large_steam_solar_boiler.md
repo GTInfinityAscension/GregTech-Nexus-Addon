@@ -1,34 +1,36 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
 # Large Steam Solar Boiler
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
+
+*Free steam, courtesy of a very large star.*
 
 ![Large Steam Solar Boiler](../../../assets/machines/large_steam_solar_boiler.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 5 × 1 × 5 |
-| **Blocos** | 25 |
+| **Machine type** | Solar Boiler |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 5 × 1 × 5 |
+| **Blocks** | 25 |
+| **Origin** | GregTech Odyssey |
 
-[Guia completo →](../steam/large-steam-solar-boiler.md)
+## Description
 
-## Descrição
+An expandable solar steam field made of solar boiling cells.
 
-Vapor grátis, cortesia de uma estrela bem grande. Um campo solar de vapor expansível feito de células de ebulição solar.
+- Steam output scales with sunlit cells
+- Grows up to 63 blocks sideways, 125 back
+- Cells must stay sunlit to count
 
-- Tipo de Máquina: Caldeira Solar
-- A produção de vapor cresce com as células ao sol
-- Cresce até 63 blocos para o lado, 125 para trás
-- As células precisam ficar ao sol para contar
+## Structure
 
-## Estrutura
-
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Steel Machine Casing | 13 |
 | Solar Boiling Cell | 9 |
@@ -36,4 +38,4 @@ Vapor grátis, cortesia de uma estrela bem grande. Um campo solar de vapor expan
 | Large Steam Solar Boiler | 1 |
 | LV Output Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

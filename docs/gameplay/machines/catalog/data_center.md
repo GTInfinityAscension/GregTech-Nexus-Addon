@@ -1,52 +1,56 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Energy, AE2 and computation
 ---
 
-# Centro de Dados
+# Data Center
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Centro de Dados](../../../assets/machines/data_center.webp){ loading=lazy }
+*Every research note, cooled by NICH and served at the speed of light.*
+
+![Data Center](../../../assets/machines/data_center.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 15 × 9 × 15 |
-| **Blocos** | 1.583 |
+| **Machine type** | Data Bank |
+| **Category** | Energy, AE2 and computation |
+| **Recipe types** | None |
+| **Size** | 15 × 9 × 15 |
+| **Blocks** | 1,583 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Toda anotação de pesquisa, resfriada por NICH, à velocidade da luz. Um Banco de Dados grande que compartilha dados de pesquisa com Assembly Lines por cabo óptico.
+A large Data Bank that shares research data with Assembly Lines over optical cables.
 
-- Tipo de Máquina: Banco de Dados
-- Muitos Optical Data Hatches
-- Encadeia com outros Bancos de Dados
-- Até 16 hatches de transmissão e 4 de recepção
-- Data/Optical Hatches: 1.920 EU/t cada, normalmente
-- Precisa de Componentes de Resfriamento NICH nas paredes
-- Com recepção óptica: 30.720 EU/t por hatch de dados
+- Many Optical Data Hatches
+- Chains with other Data Banks
+- Up to 16 transmission and 4 reception hatches
+- Data/Optical Hatches: 1,920 EU/t each normally
+- Needs NICH Cooling Components in its walls
+- With optical reception: 30,720 EU/t per data hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Computer Casing | 438 |
 | Advanced Computer Casing | 222 |
-| Carcaça de Irídio | 151 |
+| Iridium Casing | 151 |
 | Basic Data Access Hatch | 144 |
-| Bloco Mecânico Cerâmico de Óxido de Cobalto Condutor Térmico de Alta Resistência | 142 |
+| Cobalt Oxide Ceramic Strong Thermally Conductive Mechanical Block | 142 |
 | High Power Casing | 122 |
-| Componentes de Resfriamento NICH | 112 |
+| NICH Cooling Components | 112 |
 | Naquadria Frame | 98 |
-| Vidro Revestido de Amprósio Permeável a Elétrons | 60 |
-| Carcaça de Tubulação Resistente à Corrosão Química | 48 |
+| Electron Permeable Amprosium Coated Glass | 60 |
+| Chemical Corrosion Resistant Pipe Casing | 48 |
 | Electrolytic Cell | 24 |
-| Carcaça de Tubulação de Irídio | 16 |
+| Iridium Pipe Casing | 16 |
 | ULV Energy Hatch | 2 |
 | Optical Data Transmission Hatch | 1 |
 | Optical Data Reception Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
-| Centro de Dados | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Data Center | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,38 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Peneiradora a Vapor
+# Large Steam Sifter
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Peneiradora a Vapor](../../../assets/machines/large_steam_sifter.webp){ loading=lazy }
+*Panning for gems, minus the river and the tetanus.*
+
+![Large Steam Sifter](../../../assets/machines/large_steam_sifter.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Sifter |
-| **Tamanho** | 5 × 7 × 5 |
-| **Blocos** | 131 |
+| **Machine type** | Sifter |
+| **Category** | Steam and primitive |
+| **Recipe types** | Sifter |
+| **Size** | 5 × 7 × 5 |
+| **Blocks** | 131 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Garimpo de gemas, sem o rio e sem o tétano. Uma peneira a vapor que sacode minérios triturados atrás de gemas e pós em massa.
+A steam sifter that shakes crushed ores for gems and dusts in bulk.
 
-- Tipo de Máquina: Peneira
-- Velocidade 2x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 16
+- 2x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 16
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 96 |
 | Bronze Frame | 12 |
 | Glass | 12 |
 | Bronze Gearbox Casing | 9 |
-| Peneiradora a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Large Steam Sifter | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

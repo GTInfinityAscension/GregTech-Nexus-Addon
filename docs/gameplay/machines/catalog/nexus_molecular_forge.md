@@ -1,46 +1,50 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Energy, AE2 and computation
 ---
 
-# Forja de Montagem Nexus
+# Nexus Assembly Forge
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Forja de Montagem Nexus](../../../assets/machines/nexus_molecular_forge.webp){ loading=lazy }
+*Ingredients? Where we're going, we don't need ingredients.*
+
+![Nexus Assembly Forge](../../../assets/machines/nexus_molecular_forge.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 9 × 11 × 9 |
-| **Blocos** | 367 |
+| **Machine type** | AE2 Mass Crafting |
+| **Category** | Energy, AE2 and computation |
+| **Recipe types** | None |
+| **Size** | 9 × 11 × 9 |
+| **Blocks** | 367 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Ingredientes? Para onde vamos, não precisamos de ingredientes. Uma forja do AE2 ultrarrápida que enfileira pedidos dos Nexus Craft Pattern Hatches e os fabrica em lotes gigantes.
+An ultra-fast AE2 forge that queues jobs from Nexus Craft Pattern Hatches and builds them in giant batches.
 
-- Tipo de Máquina: Crafting em Massa do AE2
-- Toda saída na fila aparece de uma vez
-- Pedidos na fila não usam ingredientes físicos
-- Energia: 1 EU por item fabricado
-- Os paralelos seguem a CPU de crafting do AE2
+- Every queued output materializes at once
+- Queued crafts use no physical ingredients
+- Power: 1 EU per crafted item
+- Parallel follows the AE2 crafting CPU
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | ULV Output Bus | 76 |
-| Casing Mecanico de Hastelloy N Resistente a Oxidacao | 55 |
+| Oxidation Resistant Hastelloy N Mechanical Casing | 55 |
 | Hastelloy N Frame | 50 |
-| Vidro de Borossilicato de Naquadah | 40 |
+| Naquadah Borosilicate Glass | 40 |
 | High Power Casing | 32 |
-| Casing de Maquina de Processo | 24 |
-| Casing Magtech | 20 |
-| Bloco Mecanico Ceramico de Zirconia Resistente a Flexao | 20 |
+| Process Machine Casing | 24 |
+| Magtech Casing | 20 |
+| Zirconia Ceramic High Strength Bending Resistance Mechanical Block | 20 |
 | Assembly Control Casing | 18 |
-| Casing de Controle de Compressor | 18 |
+| Compressor Controller Casing | 18 |
 | Europium Frame | 8 |
-| Casing de Densidade Extrema | 5 |
-| Forja de Montagem Nexus | 1 |
+| Extreme Density Casing | 5 |
+| Nexus Assembly Forge | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,41 +1,45 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Fornalha de Liquefação
+# Liquefaction Furnace
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Fornalha de Liquefação](../../../assets/machines/liquefaction_furnace.webp){ loading=lazy }
+*Everything is a liquid if you heat it enough.*
+
+![Liquefaction Furnace](../../../assets/machines/liquefaction_furnace.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Liquefação |
-| **Tamanho** | 5 × 3 × 5 |
-| **Blocos** | 63 |
+| **Machine type** | Liquefaction |
+| **Category** | Electric processing |
+| **Recipe types** | Liquefaction |
+| **Size** | 5 × 3 × 5 |
+| **Blocks** | 63 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Tudo é líquido se você esquentar o suficiente. Derrete itens em fluidos quando as bobinas chegam à temperatura da receita.
+Melts items into fluids once the coils reach the recipe temperature.
 
-- Tipo de Máquina: Liquefação
-- Torre de extensão: Parallel e Accelerate Hatches
-- As bobinas precisam da temperatura da receita
+- Extension tower: Parallel and Accelerate Hatches
+- Coils must meet the recipe temperature
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Heat Proof Invar Machine Casing | 32 |
 | Cupronickel Coil Block | 16 |
 | Solid Machine Casing | 8 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Energy Hatch | 1 |
-| Fornalha de Liquefação | 1 |
+| Liquefaction Furnace | 1 |
 | Steel Pipe Casing | 1 |
 | Muffler Hatch IV | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

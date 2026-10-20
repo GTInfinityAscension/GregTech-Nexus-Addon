@@ -1,47 +1,51 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Cubo de Mudança de Fase
+# Phase Change Cube
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Cubo de Mudança de Fase](../../../assets/machines/phase_change_cube.webp){ loading=lazy }
+*Six faces, six phase changes. A Rubik's Cube for matter.*
+
+![Phase Change Cube](../../../assets/machines/phase_change_cube.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Extractor, Fluid Solidifier |
-| **Tamanho** | 19 × 19 × 19 |
-| **Blocos** | 2.547 |
+| **Machine type** | Extractor, Fluid Solidifier |
+| **Category** | Electric processing |
+| **Recipe types** | Extractor, Fluid Solidifier |
+| **Size** | 19 × 19 × 19 |
+| **Blocks** | 2,547 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Seis faces, seis mudanças de fase. Um cubo mágico da matéria. Derrete sólidos em fluidos e congela de volta, remodelando os estados da matéria.
+Melts solids into fluids and freezes them back, reshaping states of matter.
 
-- Tipo de Máquina: Extrator, Solidificador de Fluidos
-- Paralelos 2x a cada 900K de bobina
-- Thread Hatch: várias receitas ao mesmo tempo
-- Usa o limite do Parallel Hatch se for maior
+- Parallel 2x every 900K of coils
+- Thread Hatch: several recipes at once
+- Uses the Parallel Hatch limit if higher
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Planta Reforçada com Naquadah | 960 |
-| Hastelloy C 276 Frame | 536 |
-| Carcaça Molecular | 410 |
+| Naquadah Reinforced Plant Casing | 960 |
+| Hastelloy C-276 Frame | 536 |
+| Molecular Casing | 410 |
 | Fusion Glass | 240 |
 | Cupronickel Coil Block | 188 |
-| Gerador de Campo de Contenção | 96 |
-| Carcaça Ativa de Amprósio | 72 |
+| Containment Field Generator | 96 |
+| Amprosium Active Casing | 72 |
 | High Power Casing | 38 |
 | ULV Input Hatch | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
-| Cubo de Mudança de Fase | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Phase Change Cube | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Output Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

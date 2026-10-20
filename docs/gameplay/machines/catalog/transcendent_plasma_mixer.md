@@ -1,40 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Misturador de Plasma Transcendente
+# Transcendent Plasma Mixer
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Misturador de Plasma Transcendente](../../../assets/machines/transcendent_plasma_mixer.webp){ loading=lazy }
+*Assisting in all your DTPF needs!*
+
+![Transcendent Plasma Mixer](../../../assets/machines/transcendent_plasma_mixer.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Misturador de Plasma Transcendente |
-| **Tamanho** | 5 × 7 × 5 |
-| **Blocos** | 102 |
+| **Machine type** | Transcendent Mixer, TPM |
+| **Category** | Endgame systems |
+| **Recipe types** | Transcendent Plasma Mixer |
+| **Size** | 5 × 7 × 5 |
+| **Blocks** | 102 |
+| **Origin** | GT: New Horizons |
 
-## Descrição
+## Description
 
-Atendendo todas as necessidades da sua DTPF! Mistura os plasmas exóticos que alimentam a Forja de Plasma, escalado por um Parallel Hatch.
+Mixes the exotic plasmas that feed the Plasma Forge, scaled with a Parallel Hatch.
 
-- Tipo de Máquina: Misturador Transcendente, TPM
-- Todas as entradas escalam com paralelos, o tempo não
-- Custo por paralelo: 10 x EU/t x duração
-- Energia só de redes wireless
-- O EU é pago quando a receita começa
+- All inputs scale with parallel, time does not
+- Cost per parallel: 10 x EU/t x duration
+- Power only from wireless networks
+- EU is paid when the recipe starts
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Invólucro Dimensionalmente Transcendente | 48 |
-| Invólucro de Injeção Dimensional | 33 |
-| Carcaça de Ponte Dimensional | 16 |
+| Dimensionally Transcendent Casing | 48 |
+| Dimension Injection Casing | 33 |
+| Dimensional Bridge Casing | 16 |
 | ULV Input Hatch | 2 |
-| Misturador de Plasma Transcendente | 1 |
+| Transcendent Plasma Mixer | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

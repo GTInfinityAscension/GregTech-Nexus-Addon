@@ -1,38 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Processador de Minério Integrado
+# Integrated Ore Processor
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Processador de Minério Integrado](../../../assets/machines/integrated_ore_processor.webp){ loading=lazy }
+*The entire ore processing line, in one box.*
+
+![Integrated Ore Processor](../../../assets/machines/integrated_ore_processor.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Processamento Integrado de Minério |
-| **Tamanho** | 11 × 12 × 6 |
-| **Blocos** | 344 |
+| **Machine type** | Integrated Ore Processing |
+| **Category** | Electric processing |
+| **Recipe types** | Integrated Ore Processing |
+| **Size** | 11 × 12 × 6 |
+| **Blocks** | 344 |
+| **Origin** | GregTech Leisure |
 
-## Descrição
+## Description
 
-A linha inteira de processamento de minério, numa caixa. Processamento de minério completo num passo; o circuito escolhe uma de sete rotas.
+Complete ore processing in one step; the circuit picks one of seven routes.
 
-- Tipo de Máquina: Processamento Integrado de Minério
-- Mói, lava, banha, peneira e centrifuga de uma vez
-- Circuito 1: Triturar -> Triturar -> Centrifugar
-- Circuito 2: Triturar -> Lavar -> Térmica -> Triturar
-- Circuito 3: Triturar -> Lavar -> Triturar -> Centrifugar
-- Circuito 4: Triturar -> Lavar -> Peneirar -> Centrifugar
-- Circuito 5: Triturar -> Banho -> Térmica -> Triturar
-- Circuito 6: Triturar -> Banho -> Triturar -> Centrifugar
-- Circuito 7: Triturar -> Banho -> Peneirar -> Centrifugar
-- Paralelos vêm dos Parallel Control Hatches
+- Grind, wash, bath, sift and spin in one go
+- Circuit 1: Crush -> Crush -> Centrifuge
+- Circuit 2: Crush -> Wash -> Thermal -> Crush
+- Circuit 3: Crush -> Wash -> Crush -> Centrifuge
+- Circuit 4: Crush -> Wash -> Sift -> Centrifuge
+- Circuit 5: Crush -> Bath -> Thermal -> Crush
+- Circuit 6: Crush -> Bath -> Crush -> Centrifuge
+- Circuit 7: Crush -> Bath -> Sift -> Centrifuge
+- Parallel comes from Parallel Control Hatches
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Sturdy HSS-E Machine Casing | 128 |
 | Clean Stainless Steel Casing | 93 |
@@ -42,12 +46,12 @@ A linha inteira de processamento de minério, numa caixa. Processamento de miné
 | Tungstensteel Gearbox Casing | 16 |
 | ULV Output Bus | 1 |
 | Elite Parallel Control Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
-| Processador de Minério Integrado | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Integrated Ore Processor | 1 |
 | ULV Energy Hatch | 1 |
 | Muffler Hatch ZPM | 1 |
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |
-| ZPM Hatch de Threads | 1 |
+| ZPM Thread Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

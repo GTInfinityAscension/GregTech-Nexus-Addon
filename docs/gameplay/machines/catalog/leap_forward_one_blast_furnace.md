@@ -1,34 +1,38 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Alto-Forno Um Salto Adiante
+# Leap Forward One Blast Furnace
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Alto-Forno Um Salto Adiante](../../../assets/machines/leap_forward_one_blast_furnace.webp){ loading=lazy }
+*A great leap forward in primitive technology.*
+
+![Leap Forward One Blast Furnace](../../../assets/machines/leap_forward_one_blast_furnace.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Primitive Blast Furnace |
-| **Tamanho** | 15 × 13 × 15 |
-| **Blocos** | 823 |
+| **Machine type** | Primitive Blast Furnace |
+| **Category** | Steam and primitive |
+| **Recipe types** | Primitive Blast Furnace |
+| **Size** | 15 × 13 × 15 |
+| **Blocks** | 823 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Um grande salto adiante na tecnologia primitiva. extra dobra os paralelos, mas deixa o ciclo mais lento.
+extra layer doubles the parallel, but slows the cycle down.
 
-- Tipo de Máquina: Alto-Forno Primitivo
-- Um alto-forno primitivo que cresce: cada camada
-- Os paralelos dobram a cada camada extra
-- Paralelos máx.: 32.000
-- Ciclo: 20 s +20 s por camada extra
-- Estrutura mais alta = ciclo mais lento
+- A primitive blast furnace that grows: every
+- Parallel doubles with each extra layer
+- Max parallel: 32,000
+- Cycle: 20 s +20 s per extra layer
+- Taller structure = slower cycle
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Stone Bricks | 383 |
 | Firebricks | 329 |
@@ -37,6 +41,6 @@ Um grande salto adiante na tecnologia primitiva. extra dobra os paralelos, mas d
 | Solid Steel Machine Casing | 16 |
 | ULV Input Bus | 1 |
 | ULV Output Bus | 1 |
-| Alto-Forno Um Salto Adiante | 1 |
+| Leap Forward One Blast Furnace | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

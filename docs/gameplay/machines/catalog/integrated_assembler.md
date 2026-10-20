@@ -1,56 +1,60 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Montadora Integrada
+# Integrated Assembler
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Montadora Integrada](../../../assets/machines/integrated_assembler.webp){ loading=lazy }
+*Make complexity simple, make impossible routine.*
+
+![Integrated Assembler](../../../assets/machines/integrated_assembler.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Assembler |
-| **Tamanho** | 48 × 13 × 19 |
-| **Blocos** | 4.704 |
+| **Machine type** | Assembler |
+| **Category** | Electric processing |
+| **Recipe types** | Assembler |
+| **Size** | 48 × 13 × 19 |
+| **Blocks** | 4,704 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Torne o complexo simples e o impossível rotina. Uma linha de montagem hiperespacial que constrói de chips a motores.
+A hyperspatial assembly line that builds anything from chips to engines.
 
-- Tipo de Máquina: Montadora
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Paralelos definidos pelo Parallel Hatch
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Parallel set by the Parallel Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Irídio | 1.314 |
-| Casing Mecanico de Hastelloy N Resistente a Oxidacao | 1.073 |
-| Invólucro de Liga de Naquadah | 459 |
+| Iridium Casing | 1,314 |
+| Oxidation Resistant Hastelloy N Mechanical Casing | 1,073 |
+| Naquadah Alloy Casing | 459 |
 | Nonconducting Casing | 428 |
 | Filter Casing | 329 |
-| Hsla Steel Frame | 301 |
+| HSLA Steel Frame | 301 |
 | Cleanroom Glass | 256 |
 | Stainless Steel Frame | 198 |
-| Caixa de Engrenagens de Amprósio | 79 |
-| Carcaça de Tubo de Amprósio | 64 |
+| Amprosium Gearbox | 79 |
+| Amprosium Pipe Casing | 64 |
 | White Lamp | 40 |
-| Unidade de Montagem Espaço-Temporal | 37 |
-| Unidade Avançada de Linha de Montagem | 32 |
+| Spacetime Assembly Line Unit | 37 |
+| Advanced Assembly Line Unit | 32 |
 | Iron Bars | 26 |
 | Hermetic Casing IX | 24 |
 | Assembly Control Casing | 24 |
-| Carcaça da Linha de Montagem de Circuitos | 12 |
-| Casing de Maquina de Processo | 2 |
-| Auto Maintenance Hatch | 1 |
+| Circuit Assembly Line Machine Casing | 12 |
+| Process Machine Casing | 2 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |
-| Montadora Integrada | 1 |
+| Integrated Assembler | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,32 +1,36 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Extrusora a Vapor
+# Large Steam Extruder
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Extrusora a Vapor](../../../assets/machines/large_steam_extruder.webp){ loading=lazy }
+*Like a pasta maker, but for metal and regret.*
+
+![Large Steam Extruder](../../../assets/machines/large_steam_extruder.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Extruder |
-| **Tamanho** | 5 × 8 × 5 |
-| **Blocos** | 156 |
+| **Machine type** | Extruder |
+| **Category** | Steam and primitive |
+| **Recipe types** | Extruder |
+| **Size** | 5 × 8 × 5 |
+| **Blocks** | 156 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Tipo máquina de macarrão, só que de metal e arrependimento. Uma extrusora a vapor que empurra metal por moldes em massa.
+A steam extruder that pushes metal through shaped dies in bulk.
 
-- Tipo de Máquina: Extrusora
-- Velocidade 2x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 16
+- 2x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 16
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 65 |
 | Glass | 36 |
@@ -34,7 +38,7 @@ Tipo máquina de macarrão, só que de metal e arrependimento. Uma extrusora a v
 | Bronze Frame | 14 |
 | Bronze Pipe Casing | 10 |
 | Bronze Gearbox Casing | 4 |
-| Extrusora a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Large Steam Extruder | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,39 +1,43 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Fornalha de Pedra Primitiva
+# Primitive Stone Furnace
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Fornalha de Pedra Primitiva](../../../assets/machines/primitive_stone_furnace.webp){ loading=lazy }
+*Carved by hand, powered by nothing, judged by no one.*
+
+![Primitive Stone Furnace](../../../assets/machines/primitive_stone_furnace.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Electric Furnace |
-| **Tamanho** | 3 × 3 × 3 |
-| **Blocos** | 26 |
+| **Machine type** | Furnace |
+| **Category** | Steam and primitive |
+| **Recipe types** | Electric Furnace |
+| **Size** | 3 × 3 × 3 |
+| **Blocks** | 26 |
+| **Origin** | GTLSupb |
 
-## Descrição
+## Description
 
-Esculpida à mão, movida a nada, julgada por ninguém. Uma fornalha primitiva esculpida em pedra que funde como uma fornalha, sem energia.
+A primitive furnace carved from stone that smelts like a furnace with no energy.
 
-- Tipo de Máquina: Fornalha
-- Toda receita termina em 1 tick
-- Roda todas as receitas de fornalha juntas, sem limite
-- Paralelos e threads: praticamente ilimitados
+- Every recipe finishes in 1 tick
+- Runs every furnace recipe at once, unlimited
+- Parallel and threads: effectively unlimited
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Stone | 20 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Fornalha de Pedra Primitiva | 1 |
+| Primitive Stone Furnace | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Output Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

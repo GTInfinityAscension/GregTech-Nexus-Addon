@@ -1,38 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
 # Large Steam Storage Tank
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
+
+*Hot air, stored responsibly.*
 
 ![Large Steam Storage Tank](../../../assets/machines/large_steam_storage_tank.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 5 × 7 × 5 |
-| **Blocos** | 163 |
+| **Machine type** | Steam Storage |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 5 × 7 × 5 |
+| **Blocks** | 163 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Ar quente, guardado com responsabilidade. Um reservatório de vapor industrial que segura o vapor das caldeiras para a fábrica toda.
+An industrial steam reservoir that buffers your boilers for the whole factory.
 
-- Tipo de Máquina: Armazenamento de Vapor
-- Suaviza os picos de produção das caldeiras
-- Capacidade: 120.000.000 mB de Vapor
-- Guarda apenas Vapor
+- Smooths out boiler output spikes
+- Capacity: 120,000,000 mB of Steam
+- Stores Steam only
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Industrial Steam Casing | 89 |
-| Casing de Madeira Reforçada com Latão | 47 |
+| Brass Reinforced Wooden Casing | 47 |
 | Bronze Pipe Casing | 14 |
 | Glass | 6 |
 | Bronze Frame | 6 |
 | Large Steam Storage Tank | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

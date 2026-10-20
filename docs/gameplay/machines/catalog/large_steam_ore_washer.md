@@ -1,41 +1,45 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Grande Lavador de Minério a Vapor
+# Large Steam Ore Washer
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Lavador de Minério a Vapor](../../../assets/machines/large_steam_ore_washer.webp){ loading=lazy }
+*The cleanest ores in the Bronze Age. Mom would be proud.*
+
+![Large Steam Ore Washer](../../../assets/machines/large_steam_ore_washer.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Ore Washer |
-| **Tamanho** | 5 × 6 × 9 |
-| **Blocos** | 164 |
+| **Machine type** | Ore Washer |
+| **Category** | Steam and primitive |
+| **Recipe types** | Ore Washer |
+| **Size** | 5 × 6 × 9 |
+| **Blocks** | 164 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Os minérios mais limpos da Idade do Bronze. A mãe ficaria orgulhosa. Uma grande bacia de lavagem a vapor que enxágua minérios triturados às centenas.
+A large steam washing basin that rinses crushed ores by the hundreds.
 
-- Tipo de Máquina: Lavador de Minério
-- Velocidade 5x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 96
+- 5x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 96
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 101 |
 | Bronze Frame | 24 |
 | Glass | 18 |
 | Bronze Pipe Casing | 16 |
 | ULV Input Hatch | 1 |
-| Barramento de Saída a Vapor com Boost de Saída | 1 |
-| Grande Lavador de Minério a Vapor | 1 |
+| Steam Output Bus | 1 |
+| Large Steam Ore Washer | 1 |
 | Steam Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

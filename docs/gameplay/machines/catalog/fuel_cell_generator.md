@@ -1,62 +1,66 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Power generation
 ---
 
-# Gerador de Célula a Combustível
+# Fuel Cell Generator
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Gerador de Célula a Combustível](../../../assets/machines/fuel_cell_generator.webp){ loading=lazy }
+*A battery that drinks fuel and remembers how tired it is.*
+
+![Fuel Cell Generator](../../../assets/machines/fuel_cell_generator.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Absorção de Energia da Célula a Combustível, Transferência de Energia da Célula a Combustível, Liberação de Energia da Célula a Combustível |
-| **Tamanho** | 11 × 11 × 27 |
-| **Blocos** | 1.567 |
+| **Machine type** | Fuel Cell |
+| **Category** | Power generation |
+| **Recipe types** | Fuel Cell Energy Absorption, Fuel Cell Energy Transfer, Fuel Cell Energy Release |
+| **Size** | 11 × 11 × 27 |
+| **Blocks** | 1,567 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Uma bateria que bebe combustível e lembra do próprio cansaço. Carrega eletrólitos redox com combustível, move carga entre eles e os descarrega em EU.
+Charges redox-flow electrolytes with fuel, moves charge between them and discharges them as EU.
 
-- Tipo de Máquina: Célula a Combustível
-- Três modos: absorção, transferência, liberação
-- Eletrodos de membrana melhores elevam a eficiência
-- Liberação: até 50 paralelos
-- Recuperação em repouso: 600 mB/t de Água Destilada
-- Recupera 15% da eficiência perdida por tick
-- Transferência inverte os estados de carga das entradas
-- Cada ciclo de liberação tem 0,35% de chance de gastar a membrana
-- Absorção exige volumes iguais de anólito e católito
-- Transferir energia tem perdas definidas pela receita
-- A eficiência de absorção decai por ciclo, conforme a membrana
+- Three modes: absorption, transfer, release
+- Better membrane electrodes raise the efficiency
+- Release: up to 50 parallel
+- Idle recovery: 600 mB/t Distilled Water
+- Recovers 15% of lost efficiency per tick
+- Transfer swaps the inputs' charge states
+- Each release run has a 0.35% chance to use up the membrane
+- Absorption needs equal anolyte and catholyte amounts
+- Energy transfer loses efficiency according to the recipe
+- Absorption efficiency decays per run, based on the membrane
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Contenção de Pressão | 372 |
+| Pressure Containment Casing | 372 |
 | Palladium Substation Casing | 240 |
-| Carcaça de Irídio | 210 |
+| Iridium Casing | 210 |
 | Chemically Inert PTFE Machine Casing | 150 |
-| Casing Mecanico de Hastelloy N Resistente a Oxidacao | 86 |
-| Carcaça de Tubulação de Irídio | 72 |
-| Hssg Frame | 60 |
-| Carcaça de Floculação | 56 |
+| Oxidation Resistant Hastelloy N Mechanical Casing | 86 |
+| Iridium Pipe Casing | 72 |
+| HSS-G Frame | 60 |
+| Flocculation Casing | 56 |
 | Molybdenum Disilicide Coil Block | 56 |
 | Empty Tier II Capacitor | 54 |
-| Bloco Mecânico Anticorrosão de Cerâmica de Óxido de Cálcio | 49 |
+| Calcium Oxide Ceramic Anti Metal Corrosion Mechanical Block | 49 |
 | Electrolytic Cell | 38 |
-| Carcaça de Tubulação Resistente à Corrosão Química | 36 |
+| Chemical Corrosion Resistant Pipe Casing | 36 |
 | Filter Casing | 29 |
-| Bloco Mecânico Cerâmico de Óxido de Cobalto Condutor Térmico de Alta Resistência | 24 |
+| Cobalt Oxide Ceramic Strong Thermally Conductive Mechanical Block | 24 |
 | Fusion Glass | 24 |
 | ULV Input Hatch | 4 |
 | ULV Output Hatch | 2 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
-| Gerador de Célula a Combustível | 1 |
+| Fuel Cell Generator | 1 |
 | ULV Dynamo Hatch | 1 |
 | ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

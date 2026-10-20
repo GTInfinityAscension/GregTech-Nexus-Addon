@@ -1,35 +1,39 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo Apiário a Vapor
+# Steam-Powered Apiary Module
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo Apiário a Vapor](../../../assets/machines/steam_elevator_apiary_module.webp){ loading=lazy }
+*High pressure makes the bees work harder. Union pending.*
+
+![Steam-Powered Apiary Module](../../../assets/machines/steam_elevator_apiary_module.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Alta pressão faz as abelhas trabalharem mais. Sindicato em formação. Um apiário a vapor onde as abelhas transformam favos em produtos e mel.
+A steam-powered apiary where bees turn combs into products and honey.
 
-- Tipo de Máquina: Módulo do Elevador
-- Transforma cria em favo e mel
-- Colônia base: 8, ciclo fixo de 300 s
-- Água: 1.000 mB por ciclo
-- Só funciona encaixado num Steam Elevator
+- Turns brood into comb and honey
+- Base colony: 8, fixed cycle 300 s
+- Water: 1,000 mB per cycle
+- Only works attached to a Steam Elevator
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo Apiário a Vapor | 1 |
+| Steam-Powered Apiary Module | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

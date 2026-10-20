@@ -1,46 +1,50 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Alto-Forno de Blaze
+# Blaze Blast Furnace
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Alto-Forno de Blaze](../../../assets/machines/blaze_blast_furnace.webp){ loading=lazy }
+*An intern kept a blaze spawner in here. It worked.*
+
+![Blaze Blast Furnace](../../../assets/machines/blaze_blast_furnace.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Electric Blast Furnace |
-| **Tamanho** | 7 × 6 × 7 |
-| **Blocos** | 150 |
+| **Machine type** | Electric Blast Furnace |
+| **Category** | Electric processing |
+| **Recipe types** | Electric Blast Furnace |
+| **Size** | 7 × 6 × 7 |
+| **Blocks** | 150 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Um estagiário deixou um spawner de blaze aqui dentro. Funcionou. Roda receitas do Alto-Forno Elétrico em lotes enormes, acelerado por Blaze derretido.
+Runs Electric Blast Furnace recipes in huge batches, accelerated by molten Blaze.
 
-- Tipo de Máquina: Alto-Forno Elétrico
-- Duração da receita 0,5x
-- Paralelos: 64
-- Blaze Líquido: 2^(tier-2) x 10 mB/s
-- Consome Blaze Líquido quando cada receita começa
+- 0.5x recipe duration
+- Parallel: 64
+- Liquid Blaze: 2^(tier-2) x 10 mB/s
+- Consumes Liquid Blaze when each recipe starts
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | High Temperature Smelting Casing | 66 |
-| Carcaça de Blaze | 37 |
+| Blaze Casing | 37 |
 | Cupronickel Coil Block | 24 |
 | Tungstensteel Pipe Casing | 9 |
 | Heat Vent | 6 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
-| Alto-Forno de Blaze | 1 |
+| Blaze Blast Furnace | 1 |
 | ULV Output Bus | 1 |
 | Muffler Hatch IV | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

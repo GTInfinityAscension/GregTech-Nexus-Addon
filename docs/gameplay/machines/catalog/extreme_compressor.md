@@ -1,54 +1,58 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Compressor Extremo
+# Extreme Compressor
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Compressor Extremo](../../../assets/machines/extreme_compressor.webp){ loading=lazy }
+*Megaton press. Even the hardest metal learns manners.*
+
+![Extreme Compressor](../../../assets/machines/extreme_compressor.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Compressor |
-| **Tamanho** | 17 × 16 × 43 |
-| **Blocos** | 4.304 |
+| **Machine type** | Compressor |
+| **Category** | Electric processing |
+| **Recipe types** | Compressor |
+| **Size** | 17 × 16 × 43 |
+| **Blocks** | 4,304 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Prensa de megatons. Até o metal mais duro aprende modos. Um sistema hidráulico de escala planetária que comprime lingotes, pó e placas em formas densas.
+A planetary-grade hydraulic system that squeezes ingots, dust and plates into denser forms.
 
-- Tipo de Máquina: Compressor
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Paralelos definidos pelo Parallel Hatch
-- Precisa de um Muffler Hatch
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Parallel set by the Parallel Hatch
+- Needs a Muffler Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Contenção de Pressão | 879 |
-| Carcaça de Irídio | 724 |
+| Pressure Containment Casing | 879 |
+| Iridium Casing | 724 |
 | Stress Proof Casing | 718 |
-| Carcaça Resistente a Alta Pressão | 663 |
-| Invólucro de Liga de Naquadah | 252 |
-| Incoloy Ma 956 Frame | 232 |
-| Tubulação de Inconel-625 | 165 |
-| Carcaça de Caixa de Engrenagens de Irídio | 148 |
-| Carcaça de Tubulação de Irídio | 145 |
+| High Pressure Resistant Casing | 663 |
+| Naquadah Alloy Casing | 252 |
+| Incoloy MA-956 Frame | 232 |
+| Inconel-625 Pipe | 165 |
+| Iridium Gearbox | 148 |
+| Iridium Pipe Casing | 145 |
 | Tungstensteel Pipe Casing | 100 |
-| Carcaça de Tubo de Alta Pressão | 86 |
-| Tungsten Steel Frame | 72 |
-| Carcaça de Tubulação Resistente à Corrosão Química | 64 |
+| High Pressure Pipe Casing | 86 |
+| Tungstensteel Frame | 72 |
+| Chemical Corrosion Resistant Pipe Casing | 64 |
 | Hermetic Casing VIII | 36 |
-| Eixo de Suporte de Alta Resistência | 10 |
+| High Strength Support Spindle | 10 |
 | Muffler Hatch IV | 5 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
-| Compressor Extremo | 1 |
-| Auto Maintenance Hatch | 1 |
+| Extreme Compressor | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,40 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Grande Fundição de Ligas a Vapor
+# Large Steam Alloy Smelter
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Fundição de Ligas a Vapor](../../../assets/machines/large_steam_alloy_smelter.webp){ loading=lazy }
+*Bronze Age metallurgy, now with industrial ambition.*
+
+![Large Steam Alloy Smelter](../../../assets/machines/large_steam_alloy_smelter.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Alloy Smelter |
-| **Tamanho** | 3 × 4 × 3 |
-| **Blocos** | 31 |
+| **Machine type** | Alloy Smelter |
+| **Category** | Steam and primitive |
+| **Recipe types** | Alloy Smelter |
+| **Size** | 3 × 4 × 3 |
+| **Blocks** | 31 |
+| **Origin** | GT: Not Leisure |
 
-[Guia completo →](../steam/large-steam-alloy-smelter.md)
+## Description
 
-## Descrição
+A high-pressure steam chamber that fuses metals into alloys by the stack.
 
-Metalurgia da Idade do Bronze, agora com ambição industrial. Uma câmara de vapor de alta pressão que funde metais em ligas aos montes.
+- ~1.75x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 64
 
-- Tipo de Máquina: Fundidora de Ligas
-- Velocidade ~1,75x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 64
+## Structure
 
-## Estrutura
-
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 18 |
 | Bronze Firebox Casing | 9 |
-| Barramento de Saída a Vapor com Boost de Saída | 1 |
-| Grande Fundição de Ligas a Vapor | 1 |
+| Steam Output Bus | 1 |
+| Large Steam Alloy Smelter | 1 |
 | Steam Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

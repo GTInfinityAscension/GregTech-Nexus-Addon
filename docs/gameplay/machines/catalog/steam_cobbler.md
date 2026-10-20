@@ -1,34 +1,35 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Gerador de Pedregulho a Vapor
+# Steam Cobbler
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Gerador de Pedregulho a Vapor](../../../assets/machines/steam_cobbler.webp){ loading=lazy }
+*Infinite cobblestone: the oldest trick in the book, now industrial.*
+
+![Steam Cobbler](../../../assets/machines/steam_cobbler.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Rock Breaker |
-| **Tamanho** | 11 × 6 × 11 |
-| **Blocos** | 284 |
+| **Machine type** | Rock Breaker |
+| **Category** | Steam and primitive |
+| **Recipe types** | Rock Breaker |
+| **Size** | 11 × 6 × 11 |
+| **Blocks** | 284 |
+| **Origin** | GT: Not Leisure |
 
-[Guia completo →](../steam/steam-cobbler.md)
+## Description
 
-## Descrição
+An advanced steam rock generator that makes different stones by programmed circuit.
 
-Um gerador de rochas a vapor avançado que faz pedras diferentes pelo circuito programado.
+- Circuit selects the stone type
+- Parallel: 16 default, adjustable up to 16
 
-- Tipo de Máquina: Quebrador de Rochas
-- Pedregulho infinito: o truque mais velho do livro, agora industrial.
-- O circuito escolhe o tipo de pedra
-- Paralelos: 16 padrão, ajustável até 16
+## Structure
 
-## Estrutura
-
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 152 |
 | Magma Block | 42 |
@@ -36,10 +37,10 @@ Um gerador de rochas a vapor avançado que faz pedras diferentes pelo circuito p
 | Bronze Pipe Casing | 25 |
 | Cobblestone | 12 |
 | Block of Iron | 8 |
-| Gerador de Pedregulho a Vapor | 1 |
+| Steam Cobbler | 1 |
 | ULV Output Bus | 1 |
-| Barramento de Saída a Vapor com Boost de Saída | 1 |
+| Steam Output Bus | 1 |
 | ULV Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

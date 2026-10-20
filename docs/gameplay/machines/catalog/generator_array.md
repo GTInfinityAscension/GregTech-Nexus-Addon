@@ -1,42 +1,45 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Power generation
 ---
 
-# Matriz de Geradores
+# Generator Array
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Matriz de Geradores](../../../assets/machines/generator_array.webp){ loading=lazy }
+*Four generators walk into a bar. Only one bill.*
+
+![Generator Array](../../../assets/machines/generator_array.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Steam Turbine, Gas Turbine, Combustion Generator |
-| **Tamanho** | 3 × 3 × 3 |
-| **Blocos** | 26 |
-| **Gerador** | ✓ |
+| **Machine type** | Generator Array |
+| **Category** | Power generation |
+| **Recipe types** | Steam Turbine, Gas Turbine, Combustion Generator |
+| **Size** | 3 × 3 × 3 |
+| **Blocks** | 26 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Quatro geradores entram num bar. Uma conta só. Roda até quatro geradores iguais do GTCEu com as receitas normais de combustível.
+Runs up to four matching GTCEu generators with their normal fuel recipes.
 
-- Tipo de Máquina: Matriz de Geradores
-- Produção 1,3x por gerador instalado
-- Saída wireless para a Flux Matrix do dono
-- Até 4 geradores do mesmo tipo e tier
+- Output 1.3x per installed generator
+- Wireless output to the owner's Flux Matrix
+- Up to 4 generators of one type and tier
 - Steam Turbine, Gas Turbine, Combustion Gen.
-- O consumo de combustível cresce com a produção
-- A saída wireless perde 5%
+- Fuel use scales with output
+- Wireless output loses 5%
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 14 |
 | Tempered Glass | 8 |
-| Auto Maintenance Hatch | 1 |
-| Matriz de Geradores | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Generator Array | 1 |
 | ULV Dynamo Hatch | 1 |
 | ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

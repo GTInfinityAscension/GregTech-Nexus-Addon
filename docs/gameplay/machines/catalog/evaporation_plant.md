@@ -1,37 +1,41 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Planta de Evaporação
+# Evaporation Plant
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Planta de Evaporação](../../../assets/machines/evaporation_plant.webp){ loading=lazy }
+*Patience, salt and a very tall tower.*
+
+![Evaporation Plant](../../../assets/machines/evaporation_plant.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Evaporação |
-| **Tamanho** | 3 × 8 × 3 |
-| **Blocos** | 62 |
+| **Machine type** | Evaporation |
+| **Category** | Electric processing |
+| **Recipe types** | Evaporation |
+| **Size** | 3 × 8 × 3 |
+| **Blocks** | 62 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Paciência, sal e uma torre bem alta. Evapora salmoura e outros fluidos numa torre alta com até cinco estágios.
+Evaporates brine and other fluids in a tall tower with up to five stages.
 
-- Tipo de Máquina: Evaporação
-- Aceita Parallel e Accelerate Hatches
-- Até 5 estágios, uma saída de fluido cada
-- Um Parallel Hatch IV dá 4 paralelos
+- Accepts Parallel and Accelerate Hatches
+- Up to 5 tower stages, one fluid output each
+- An IV Parallel Hatch gives 4 parallel
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Evaporação Inoxidável | 55 |
+| Stainless Evaporation Casing | 55 |
 | Aluminium Frame | 4 |
 | ULV Input Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Planta de Evaporação | 1 |
+| Evaporation Plant | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

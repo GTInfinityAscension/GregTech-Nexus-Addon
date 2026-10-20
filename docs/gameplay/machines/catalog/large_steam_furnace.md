@@ -1,43 +1,45 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Grande Fornalha a Vapor
+# Large Steam Furnace
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Fornalha a Vapor](../../../assets/machines/large_steam_furnace.webp){ loading=lazy }
+*Do not attempt to bake cookies inside. They will vaporize.*
+
+![Large Steam Furnace](../../../assets/machines/large_steam_furnace.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Electric Furnace |
-| **Tamanho** | 7 × 8 × 8 |
-| **Blocos** | 260 |
+| **Machine type** | Furnace |
+| **Category** | Steam and primitive |
+| **Recipe types** | Electric Furnace |
+| **Size** | 7 × 8 × 8 |
+| **Blocks** | 260 |
+| **Origin** | GT: Not Leisure |
 
-[Guia completo →](../steam/large-steam-furnace.md)
+## Description
 
-## Descrição
+An industrial-grade steam smelting facility that cooks entire stockpiles at once.
 
-Não tente assar biscoitos aqui dentro. Eles evaporam. Uma instalação industrial de fundição a vapor que cozinha estoques inteiros de uma vez.
+- 10x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 128
 
-- Tipo de Máquina: Fornalha
-- Velocidade 10x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 128
+## Structure
 
-## Estrutura
-
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Casing Industrial a Vapor | 87 |
+| Industrial Steam Casing | 87 |
 | Steam Machine Casing | 84 |
 | Bronze Pipe Casing | 32 |
 | Bronze Frame | 31 |
 | Bronze Firebox Casing | 22 |
-| Barramento de Saída a Vapor com Boost de Saída | 1 |
-| Grande Fornalha a Vapor | 1 |
+| Steam Output Bus | 1 |
+| Large Steam Furnace | 1 |
 | Steam Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

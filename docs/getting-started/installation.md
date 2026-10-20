@@ -1,29 +1,32 @@
-# Instalação
+# Installation
 
-## Requisitos
+## Requirements
 
-| Mod | Versão | Obrigatório |
+| Mod | Version | |
 |---|---|---|
-| Minecraft | 1.20.1 | sim |
-| Forge | 47.4.1 ou mais novo | sim |
-| GregTech CEu Modern | 7.5.3 ou mais novo | sim |
-| LDLib | a que acompanha o GTCEu | sim (vem com o GTCEu) |
-| Ad Astra | 1.15.20 ou mais novo | não: planetas, Elevador a Vapor, Olho da Harmonia fora do Overworld |
-| Stargate Journey | 0.6.44 ou mais novo | não: integração de portais |
-| KubeJS | 2001.6.5 | não: scripts (veja a API KubeJS) |
-| Applied Energistics 2 | 15.x | não: Pattern Buffer, hatches ME, automação |
-| JEI ou EMI | qualquer recente | não: receitas e estruturas |
+| Minecraft | 1.20.1 | required |
+| Forge | 47.4.1 or newer | required |
+| [GregTech CEu Modern](https://www.curseforge.com/minecraft/mc-mods/gregtechceu-modern) | 7.5.3 or newer | required; Forge stops with a message if it is older |
+| [GTIA Lib](https://github.com/GTInfinityAscension/GTIA-Lib) | 0.5.0 or newer | required since GTNA 0.6.1 |
+| [Applied Energistics 2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2) | for 1.20.1 (tested with 15.4.10) | required: the ME parts are always registered |
+| JEI or EMI | any recent | optional, strongly recommended: recipes and structure previews |
+| KubeJS | 2001.6.5 | optional: [scripting API](../development/api/kubejs.md) |
+| Ad Astra | 1.15.20 or newer | optional: planets for the Steam Elevator, the Eye of Harmony and the planetary void mining programs |
+| FTB Teams / FTB Quests | — | optional: team progress for research and fluid discoveries, research quest task |
+| Productive Bees | — | optional: the Steam Elevator Bee Breeding module |
+| Jade | — | optional: wireless steam hatch details |
 
-!!! info "RenderBlender não é mais necessário"
-    Até a 0.5.5 os efeitos dos ícones de material dependiam do RenderBlender. Desde a 0.5.6 o GTNA tem render próprio.
+GTCEu needs its own dependencies (such as LDLib); install the versions its download page asks for. RenderBlender is **not** needed since GTNA 0.5.6.
 
-## Passo a passo
+## Steps
 
-1. Instale Forge 47.4.1 ou mais novo para o Minecraft 1.20.1.
-2. Coloque o GTCEu Modern e o GTNA na pasta `mods`.
-3. Adicione os opcionais que quiser.
-4. Abra o jogo uma vez para gerar `config/gtna.json`.
+1. Install Forge 47.4.1 or newer for Minecraft 1.20.1.
+2. Put GTCEu, GTIA Lib, Applied Energistics 2 and GTNA in the `mods` folder.
+3. Add the optional mods you want.
+4. Start the game once. GTNA writes `config/gtna.yaml` and the balance files in `config/gtna/balance/` (see [Configuration](configuration.md)).
 
-## Configuração
+Downloads: [GitHub releases](https://github.com/GTInfinityAscension/GregTech-Nexus-Addon/releases). Developers can also get release jars from the [organisation's Maven](https://gtinfinityascension.github.io/maven/).
 
-O arquivo `config/gtna.json` tem seções de gameplay, cliente, máquinas, itens restritos, vapor wireless e liga/desliga por máquina e por hatch. Todas as opções têm nome e comentário em português e inglês no menu de configuração do jogo.
+## Servers
+
+GTNA runs on dedicated servers. Install the same mods on the server and on every client; client-only options (HUDs, item effects) stay in each player's `config/gtna.yaml`.

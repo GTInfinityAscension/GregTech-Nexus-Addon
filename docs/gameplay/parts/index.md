@@ -1,43 +1,38 @@
-# 🔩 Hatches & Partes / Parts
+# Hatches and parts
 
-O GTNA adiciona diversas hatches especializadas que expandem as capacidades dos multiblocos.
+GTNA's multiblock parts. Each one works only in structures that accept it: in JEI/EMI, hover a hatch position of the structure preview to see which parts fit there.
 
-## Tabela Rápida
+## Speed and parallel
 
-| Hatch | Tiers | Efeito | Tipo |
-|-------|-------|--------|------|
-| [Wireless Steam Input](wireless-steam-hatches.md) | Bronze, Steel | Recebe vapor sem fio | Vapor |
-| [Wireless Steam Output](wireless-steam-hatches.md) | Bronze, Steel | Envia vapor sem fio | Vapor |
-| [Huge Steam Input Bus](huge-steam-bus.md) | ULV | Bus com mais slots | Itens |
-| [Huge Steam Output Bus](huge-steam-bus.md) | ULV | Bus com mais slots | Itens |
-| [Thread Hatch](thread-hatch.md) | ZPM → MAX | Receitas diferentes simultâneas | Processamento |
-| [Accelerate Hatch](accelerate-hatch.md) | LV → MAX | Reduz duração das receitas | Velocidade |
-| [Overclock Hatch](overclock-hatch.md) | UV → MAX | Multiplicador de overclock | Velocidade |
-| [Advanced Parallel](advanced-parallel-hatch.md) | UHV → OpV | Paralelos massivos (1K→262K) | Escalabilidade |
+| Part | Tiers | What it does |
+|---|---|---|
+| [Accelerate Hatch](accelerate-hatch.md) | LV–MAX | shortens every recipe, on top of the normal overclock |
+| [Overclock Hatch](overclock-hatch.md) | UV–MAX | makes each overclock step cut more time |
+| [Thread Hatch](thread-hatch.md) | ZPM–MAX | runs different recipes at the same time |
+| [Parallel Control Hatch (UHV+)](advanced-parallel-hatch.md) | UHV–OpV | 1,024 to 262,144 parallel |
 
----
+The three adjustable hatches have a small UI: open them to lower their effect when a recipe should run slower.
 
-## Como Funcionam Juntas
+## Steam
 
-Quando múltiplas hatches são instaladas no mesmo multiblocko, seus efeitos se **combinam**:
+| Part | What it does |
+|---|---|
+| Wireless Steam Input / Output Hatch | steam without pipes, see the [wireless steam network](../systems/wireless-steam-network.md) |
+| [Huge Steam Input / Output Bus](huge-steam-bus.md) | steam item buses with 54 slots |
 
-```
-Duração Final = Duração Base
-  × Fator GT Overclock (reducão automática pelo GT)
-  × Fator Accelerate Hatch (redução baseada em tier)
-  × Fator Overclock Hatch (multiplicador de velocidade)
+## AE2 and energy
 
-Threads ativos = 1 + Thread Hatch (receitas diferentes em paralelo)
-Paralelos por Thread = Advanced Parallel / Threads
-```
+Pattern Buffers, the Pattern Buffer Proxy, the ME Export Buffer and the storage access hatches are on the [ME Pattern Buffers](../systems/pattern-buffers.md) page. Wireless energy and dynamo hatches are on the [Nexus energy network](../systems/nexus-energy-network.md) page.
 
-!!! example "Exemplo Combinado"
-    **Máquina EV** com receita LV (200 ticks base):
-    
-    - GT Overclock: 200 → 50 ticks (2 níveis de OC)
-    - Accelerate Hatch HV: 50 × 0.44 = 22 ticks
-    - Overclock Hatch UV: 22 × 0.55 = 12 ticks
-    - Thread Hatch UV (+3): 4 receitas diferentes simultâneas
-    - Advanced Parallel UHV (1024): 256 paralelos por thread
-    
-    **Resultado**: 4 receitas × 256 paralelos = 1024 operações em 12 ticks!
+## Restricted parts {#restricted-parts}
+
+These parts break normal balance. They exist for creative building, testing and packs that want them:
+
+| Part | Tiers | What it does |
+|---|---|---|
+| Infinite Input Bus / Hatch | LV–MAX | compatible multiblocks read the items or fluids inside without consuming them |
+| Output Boost Hatch, Item Bus and Fluid Hatch | LV–MAX | multiply recipe outputs: 25× up to MV, then 50×, 100×, 250×… up to 250,000× at MAX |
+| Infinite Steam Input Bus | — | the steam version of the Infinite Input Bus |
+| Output Boost Steam Output Bus | — | multiplies a steam multiblock's item outputs |
+
+Each group can be turned off, hidden from JEI or stripped of its recipes in `config/gtna/balance/restricted_items.json`; see [Configuration](../../getting-started/configuration.md#restricted-items). Creative-only debug parts, without recipes, also exist for testing.

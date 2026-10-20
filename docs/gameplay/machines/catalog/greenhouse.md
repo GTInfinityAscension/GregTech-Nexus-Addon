@@ -1,40 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Estufa
+# Greenhouse
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Estufa](../../../assets/machines/greenhouse.webp){ loading=lazy }
+*Photosynthesis as a service.*
+
+![Greenhouse](../../../assets/machines/greenhouse.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Estufa |
-| **Tamanho** | 5 × 5 × 5 |
-| **Blocos** | 87 |
+| **Machine type** | Greenhouse |
+| **Category** | Electric processing |
+| **Recipe types** | Greenhouse |
+| **Size** | 5 × 5 × 5 |
+| **Blocks** | 87 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Fotossíntese como serviço. Cultiva plantas a partir de uma semente ou muda guardada, água e fertilizante opcional.
+Grows crops from a kept seed or plant, water and optional fertilizer.
 
-- Tipo de Máquina: Estufa
-- A semente ou muda nunca é consumida
-- Precisa de luz do sol; fica lenta sem ela
+- The seed or plant is never consumed
+- Needs sunlight; slows down without it
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | ULV Machine Casing | 63 |
 | Mud | 9 |
 | Tempered Glass | 9 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Auto Maintenance Hatch | 1 |
-| Estufa | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Greenhouse | 1 |
 | ULV Input Bus | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

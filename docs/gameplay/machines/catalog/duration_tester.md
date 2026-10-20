@@ -1,39 +1,43 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Developer tools
 ---
 
-# Testador de Duração
+# Duration Tester
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Testador de Duração](../../../assets/machines/duration_tester.webp){ loading=lazy }
+*If you are reading this, you found the dev room.*
+
+![Duration Tester](../../../assets/machines/duration_tester.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Assembler, Circuit Assembler |
-| **Tamanho** | 3 × 3 × 3 |
-| **Blocos** | 26 |
+| **Machine type** | Developer Tool |
+| **Category** | Developer tools |
+| **Recipe types** | Assembler, Circuit Assembler |
+| **Size** | 3 × 3 × 3 |
+| **Blocks** | 26 |
+| **Origin** | — |
 
-## Descrição
+## Description
 
-Se você está lendo isto, achou a sala dos devs. Uma máquina de teste para Duration e Accelerate Hatches; não é para o survival.
+A test machine for Duration and Accelerate Hatches; not meant for survival.
 
-- Tipo de Máquina: Ferramenta de Desenvolvimento
-- Roda receitas de Montadora e Montadora de Circuitos
-- Aceita Thread e Overclock Hatches
-- Uso apenas de desenvolvimento
+- Runs Assembler and Circuit Assembler recipes
+- Accepts Thread and Overclock Hatches
+- Development use only
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 20 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
-| Testador de Duração | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Duration Tester | 1 |
 | ULV Input Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

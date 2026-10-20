@@ -1,40 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Módulo de Coleta de Recursos
+# Resource Collection Module
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo de Coleta de Recursos](../../../assets/machines/resource_collection_module.webp){ loading=lazy }
+*Asteroid mining, minus the movie heroics.*
+
+![Resource Collection Module](../../../assets/machines/resource_collection_module.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Mineração Espacial, Perfuração Espacial |
-| **Tamanho** | 1 × 5 × 3 |
-| **Blocos** | 15 |
+| **Machine type** | Space Miner, Space Drilling |
+| **Category** | Endgame systems |
+| **Recipe types** | Space Miner, Space Drilling |
+| **Size** | 1 × 5 × 3 |
+| **Blocks** | 15 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Mineração de asteroides, sem o heroísmo de filme. Envia drones espaciais para minerar asteroides e coletar gases.
+Sends space drones to mine asteroids and collect gases.
 
-- Tipo de Máquina: Mineração Espacial, Perfuração Espacial
-- Paralelos: 4^(MK do Power Module - 1)
-- Só funciona com o Elevador Espacial rodando
+- Parallel: 4^(Power Module MK - 1)
+- Works only while its Space Elevator runs
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça Mecânica de Elevador Espacial | 6 |
-| Base de Módulo do Elevador Espacial | 2 |
-| Conector de Módulo do Elevador Espacial | 1 |
+| Space Elevator Mechanical Casing | 6 |
+| Space Elevator Module Base | 2 |
+| Module Connector | 1 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
-| Módulo de Coleta de Recursos | 1 |
+| Resource Collection Module | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -4,10 +4,10 @@
   <p><strong>The Nexus of Steam & Steel</strong></p>
   <p>
     <a href="https://github.com/raishxn/GregTech-Nexus-Addon/releases">Releases</a> ·
-    <a href="./docs/roadmap/index.en.md">Roadmap &amp; TODO</a> ·
-    <a href="./docs/roadmap/index.en.md">Roadmap & TODO</a> ·
+    <a href="https://gtinfinityascension.github.io/GregTech-Nexus-Addon/">Wiki</a> ·
+    <a href="https://gtinfinityascension.github.io/GregTech-Nexus-Addon/roadmap/">Roadmap</a> ·
     <a href="./THIRD_PARTY_NOTICES.md">Credits and permissions</a> ·
-    <a href="https://discord.gg/d3qHufwRxb">Discord</a>
+    <a href="https://discord.gg/TW5vugknk5">Discord</a>
   </p>
 </div>
 
@@ -39,7 +39,7 @@ recorded in [Third-Party Notices](THIRD_PARTY_NOTICES.md).
 - **Nexus Structure Terminal:** previews and builds multiblocks and their registered modules.
 - **AE2 integration:** ME Pattern Buffers with multiple recipe modes and larger processing systems.
 
-The [public roadmap and TODO](docs/roadmap/index.en.md) tracks implemented systems, current
+The [public roadmap](https://gtinfinityascension.github.io/GregTech-Nexus-Addon/roadmap/) tracks implemented systems, current
 in-game validation and upcoming priorities. Features under development may change before a release.
 
 ## Version and dependencies

@@ -1,35 +1,39 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
 # Dimensionally Transcendent Steam Boiler
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
+
+*Bends spacetime to boil water. Priorities.*
 
 ![Dimensionally Transcendent Steam Boiler](../../../assets/machines/dimensionally_transcendent_steam_boiler.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Large Boiler |
-| **Tamanho** | 33 × 24 × 27 |
-| **Blocos** | 4.413 |
+| **Machine type** | Large Boiler |
+| **Category** | Steam and primitive |
+| **Recipe types** | Large Boiler |
+| **Size** | 33 × 24 × 27 |
+| **Blocks** | 4,413 |
+| **Origin** | GregTech Leisure |
 
-## Descrição
+## Description
 
-Dobra o espaço-tempo para ferver água. Prioridades. Uma caldeira absurda de fim de jogo que dobra o espaço dimensional em produção de vapor.
+An absurd late-game boiler that bends dimensional space into steam throughput.
 
-- Tipo de Máquina: Caldeira Grande
-- Produção: 4.096.000 L de vapor por ciclo
+- Output: 4,096,000 L of steam per cycle
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Robust Tungstensteel Machine Casing | 1.742 |
-| Molybdenum Disilicide Coil Block | 1.608 |
+| Robust Tungstensteel Machine Casing | 1,742 |
+| Molybdenum Disilicide Coil Block | 1,608 |
 | Heat Proof Invar Machine Casing | 972 |
 | Tungstensteel Pipe Casing | 90 |
 | Dimensionally Transcendent Steam Boiler | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

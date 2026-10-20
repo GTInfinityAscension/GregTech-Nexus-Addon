@@ -1,70 +1,74 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Homogeneizador Kerr-Newman
+# Kerr Newman Homogenizer
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Homogeneizador Kerr-Newman](../../../assets/machines/kerr_newman_homogenizer.webp){ loading=lazy }
+*A charged, spinning black hole. Stirs better than any spoon.*
+
+![Kerr Newman Homogenizer](../../../assets/machines/kerr_newman_homogenizer.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Mixer |
-| **Tamanho** | 83 × 36 × 83 |
-| **Blocos** | 15.638 |
+| **Machine type** | Mixer |
+| **Category** | Electric processing |
+| **Recipe types** | Mixer |
+| **Size** | 83 × 36 × 83 |
+| **Blocks** | 15,638 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Um buraco negro carregado e girando. Mexe melhor que qualquer colher. Mistura na borda de uma singularidade em rotação, várias receitas ao mesmo tempo.
+Mixes at the edge of a rotating singularity, several recipes at the same time.
 
-- Tipo de Máquina: Misturador
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Parallel Hatch e hatches de laser
+- Thread Hatch: several recipes at once
+- Parallel Hatch and laser hatches supported
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Invólucro Hipermecânico | 2.220 |
-| Carcaça de Contenção de Pressão | 2.016 |
-| Carcaça de Irídio | 1.200 |
-| Acelerador Blindado | 1.136 |
+| Hyper Mechanical Casing | 2,220 |
+| Pressure Containment Casing | 2,016 |
+| Iridium Casing | 1,200 |
+| Shielded Accelerator | 1,136 |
 | Atomic Casing | 896 |
-| Bloco Mecanico Ceramico de Zirconia Resistente a Flexao | 668 |
-| Invólucro Mecânico Anticorrosão de PPS | 608 |
-| Bobina de Fusão Avançada | 566 |
-| Eixo de Suporte de Alta Resistência | 544 |
-| Carcaça de Fusão MK IV | 528 |
-| Invólucro de Injeção Dimensional | 522 |
-| Carcaça Mecânica Hyper Reforçada | 512 |
-| Carcaça de Bobina de Confinamento Eletromagnético do Acelerador UHV | 512 |
-| Carcaça Absorvedora de Radiação | 472 |
+| Zirconia Ceramic High Strength Bending Resistance Mechanical Block | 668 |
+| Pps Corrosion Resistant Mechanical Housing | 608 |
+| Advanced Fusion Coil | 566 |
+| High Strength Support Spindle | 544 |
+| Fusion Casing Mk4 | 528 |
+| Dimension Injection Casing | 522 |
+| Enhance Hyper Mechanical Casing | 512 |
+| Accelerator Electromagnetic Coil Constraint Casing Uhv | 512 |
+| Radiation Absorbent Casing | 472 |
 | Hastelloy N Frame | 468 |
-| Carcaça de Estabilização Gravitacional | 386 |
-| Casing de Densidade Extrema | 320 |
-| Carcaça de Tubo de Alta Pressão | 288 |
+| Gravity Stabilization Casing | 386 |
+| Extreme Density Casing | 320 |
+| High Pressure Pipe Casing | 288 |
 | Naquadah Alloy Frame | 272 |
-| Vidro Quântico | 256 |
-| Carcaça Mecânica Bioativa | 224 |
-| Vidro Industrial sem Moldura | 187 |
-| Carcaça de Tubulação Selada de Óleo e Gás | 172 |
-| Carcaça de Aquecedor de Plasma | 168 |
-| Caixa de Engrenagens de Amprósio | 112 |
-| Carcaça Ativa de Amprósio | 104 |
-| Invólucro Oco | 102 |
+| Quantum Glass | 256 |
+| Bioactive Mechanical Casing | 224 |
+| Industrial Frameless Glass | 187 |
+| Oil Gas Transportation Pipe Casing | 172 |
+| Plasma Heater Casing | 168 |
+| Amprosium Gearbox | 112 |
+| Amprosium Active Casing | 104 |
+| Hollow Casing | 102 |
 | Tungsten Carbide Frame | 64 |
-| Carcaça de Tubo de Amprósio | 56 |
+| Amprosium Pipe Casing | 56 |
 | Trinium Frame | 32 |
-| Carcaça de Estrutura Espacial Reforçada | 10 |
-| Gerador de Campo de Contenção | 10 |
+| Reinforced Spatial Structure Casing | 10 |
+| Containment Field Generator | 10 |
 | ULV Output Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
-| Homogeneizador Kerr-Newman | 1 |
+| Kerr Newman Homogenizer | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

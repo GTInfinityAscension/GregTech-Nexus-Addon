@@ -1,33 +1,37 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Energy, AE2 and computation
 ---
 
 # Nexus Flux Matrix
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
+
+*Infinite power, if you can afford the batteries.*
 
 ![Nexus Flux Matrix](../../../assets/machines/nexus_flux_matrix.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 7 × 4 × 7 |
-| **Blocos** | 146 |
+| **Machine type** | Wireless Energy Storage |
+| **Category** | Energy, AE2 and computation |
+| **Recipe types** | None |
+| **Size** | 7 × 4 × 7 |
+| **Blocks** | 146 |
+| **Origin** | — |
 
-## Descrição
+## Description
 
-Energia infinita, se você puder pagar as baterias. Um armazenamento enorme de energia wireless que alimenta uma rede global acessível de qualquer lugar.
+A massive wireless energy storage that feeds a global network reachable from anywhere.
 
-- Tipo de Máquina: Armazenamento de Energia Wireless
-- 750 capacitores MAX: armazenamento e
-- transferência ilimitados
-- Eficiência e transferência crescem com o tier
-- A energia depositada fica como seu saldo
+- 750 MAX capacitors: unlimited storage and
+- transfer
+- Efficiency and transfer scale with capacitor tier
+- Deposited energy stays as your balance
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 103 |
 | Borosilicate Glass | 40 |
@@ -35,4 +39,4 @@ Energia infinita, se você puder pagar as baterias. Um armazenamento enorme de e
 | ULV Energy Hatch | 1 |
 | Nexus Flux Matrix | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

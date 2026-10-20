@@ -1,34 +1,38 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo Broca de Óleo a Vapor III
+# Steam Oil Drill Module III
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo Broca de Óleo a Vapor III](../../../assets/machines/steam_elevator_oil_drill_module_iii.webp){ loading=lazy }
+*I drink your milkshake. All of it.*
+
+![Steam Oil Drill Module III](../../../assets/machines/steam_elevator_oil_drill_module_iii.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Eu bebo o seu milkshake. Inteirinho. Bombeia fluidos subterrâneos aleatórios da dimensão atual usando vapor.
+Pumps random underground fluids of the current dimension with steam.
 
-- Tipo de Máquina: Módulo do Elevador
-- Até 3 tipos de fluido por ciclo
-- Rendimento base: 1.000 L, ciclo de 400 ticks
-- Só funciona encaixado num Steam Elevator
+- Up to 3 fluid types per cycle
+- Base yield: 1,000 L, cycle 400 ticks
+- Only works attached to a Steam Elevator
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo Broca de Óleo a Vapor III | 1 |
+| Steam Oil Drill Module III | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

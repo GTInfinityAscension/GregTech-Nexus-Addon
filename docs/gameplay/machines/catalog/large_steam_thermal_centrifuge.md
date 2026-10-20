@@ -1,39 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
 # Large Steam Thermal Centrifuge
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
+
+*Spinning and roasting: the ore's worst day.*
 
 ![Large Steam Thermal Centrifuge](../../../assets/machines/large_steam_thermal_centrifuge.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Thermal Centrifuge |
-| **Tamanho** | 7 × 5 × 7 |
-| **Blocos** | 145 |
+| **Machine type** | Thermal Centrifuge |
+| **Category** | Steam and primitive |
+| **Recipe types** | Thermal Centrifuge |
+| **Size** | 7 × 5 × 7 |
+| **Blocks** | 145 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Uma centrífuga térmica aquecida por fornalha para processamento pesado de minério a vapor.
+A firebox-heated thermal centrifuge for heavy steam ore processing.
 
-- Tipo de Máquina: Centrífuga Térmica
-- Girando e assando: o pior dia da vida do minério.
-- Velocidade 2x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 64
+- 2x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 64
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 95 |
 | Bronze Firebox Casing | 33 |
 | Bronze Frame | 12 |
 | Bronze Pipe Casing | 3 |
 | Large Steam Thermal Centrifuge | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

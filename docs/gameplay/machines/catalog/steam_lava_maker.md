@@ -1,37 +1,41 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Gerador de Lava a Vapor
+# Steam Lava Maker
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Gerador de Lava a Vapor](../../../assets/machines/steam_lava_maker.webp){ loading=lazy }
+*Turning the floor into lava, professionally.*
+
+![Steam Lava Maker](../../../assets/machines/steam_lava_maker.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Fabricante de Lava |
-| **Tamanho** | 3 × 5 × 3 |
-| **Blocos** | 45 |
+| **Machine type** | Lava Maker |
+| **Category** | Steam and primitive |
+| **Recipe types** | Lava Maker |
+| **Size** | 3 × 5 × 3 |
+| **Blocks** | 45 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Transformando o chão em lava, profissionalmente. Derrete pedra em lava usando vapor no lugar de EU.
+Melts stone into lava using steam instead of EU.
 
-- Tipo de Máquina: Fabricante de Lava
-- 1 s por bloco de pedra
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: 16 padrão, ajustável até 16
+- 1 s per stone block
+- High pressure: 2x speed, 2x steam
+- Parallel: 16 default, adjustable up to 16
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Stronze Wrapped Casing | 28 |
+| Stronze-Wrapped Casing | 28 |
 | Glass | 12 |
 | Lava | 3 |
-| Gerador de Lava a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Lava Maker | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

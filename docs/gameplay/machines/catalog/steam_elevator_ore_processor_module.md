@@ -1,36 +1,40 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo Processador de Minério a Vapor
+# Steam Ore Processing Module
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo Processador de Minério a Vapor](../../../assets/machines/steam_elevator_ore_processor_module.webp){ loading=lazy }
+*The whole ore line in one box. Steam-powered, of course.*
+
+![Steam Ore Processing Module](../../../assets/machines/steam_elevator_ore_processor_module.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Processamento Integrado de Minério |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Integrated Ore Processing |
+| **Category** | Steam and primitive |
+| **Recipe types** | Integrated Ore Processing |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-A linha de minério inteira numa caixa. A vapor, claro. Faz todo o processamento de minério num passo; o circuito escolhe a rota de processamento.
+Does all ore processing in one step; the circuit picks the processing route.
 
-- Tipo de Máquina: Processamento Integrado de Minério
-- O circuito dobra paralelos e consumo de vapor
-- Chave de fenda: troca o modo; agachado: descarta pedra
-- Paralelos: 8 x multiplicador do circuito
-- Vapor: 128 mB/t x multiplicador do circuito
-- Rotas de lavagem também precisam do fluido delas
+- Circuit doubles parallel and steam use
+- Screwdriver: switch mode; sneak: void stone
+- Parallel: 8 x circuit multiplier
+- Steam: 128 mB/t x circuit multiplier
+- Washing routes also need their fluid
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo Processador de Minério a Vapor | 1 |
+| Steam Ore Processing Module | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,32 +1,36 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Estufa Grande
+# Large Greenhouse
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Estufa Grande](../../../assets/machines/large_greenhouse.webp){ loading=lazy }
+*Who needs the sun? We have lamps and ambition.*
+
+![Large Greenhouse](../../../assets/machines/large_greenhouse.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Estufa, Simulador de Crescimento de Árvores |
-| **Tamanho** | 9 × 10 × 9 |
-| **Blocos** | 516 |
+| **Machine type** | Greenhouse, Tree Growth |
+| **Category** | Electric processing |
+| **Recipe types** | Greenhouse, Tree Growth Simulator |
+| **Size** | 9 × 10 × 9 |
+| **Blocks** | 516 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Quem precisa de sol? Temos lâmpadas e ambição. Cultiva plantas e árvores em dois modos de receita selecionáveis.
+Grows crops and trees in two selectable recipe modes.
 
-- Tipo de Máquina: Estufa, Crescimento de Árvores
-- Funciona sem luz do sol
-- Aceita um Parallel Hatch
-- Escolha o modo árvore ou planta no controlador
+- Works without sunlight
+- Accepts a Parallel Hatch
+- Pick tree or crop mode at the controller
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Clean Stainless Steel Casing | 194 |
 | Tempered Glass | 144 |
@@ -34,12 +38,12 @@ Quem precisa de sol? Temos lâmpadas e ambição. Cultiva plantas e árvores em 
 | Assembly Line Grating | 49 |
 | Stainless Steel Frame | 37 |
 | PTFE Pipe Casing | 36 |
-| Estufa Grande | 1 |
+| Large Greenhouse | 1 |
 | Elite Parallel Control Hatch | 1 |
 | ULV Input Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,35 +1,39 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo Farol a Vapor I
+# Steam Elevator Beacon Module I
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo Farol a Vapor I](../../../assets/machines/steam_elevator_beacon_module_i.webp){ loading=lazy }
+*A beacon, but it runs on tea-kettle energy.*
+
+![Steam Elevator Beacon Module I](../../../assets/machines/steam_elevator_beacon_module_i.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Um sinalizador, mas movido a energia de chaleira. Espalha efeitos de poção numa área grande; escolha os efeitos na GUI.
+Spreads potion effects over a large area; pick the effects in the GUI.
 
-- Tipo de Máquina: Módulo do Elevador
-- Nível do efeito: I
-- 10 efeitos para escolher
-- Alcance: 64 blocos
-- Só funciona encaixado num Steam Elevator
+- Effect level: I
+- 10 selectable effects
+- Range: 64 blocks
+- Only works attached to a Steam Elevator
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo Farol a Vapor I | 1 |
+| Steam Elevator Beacon Module I | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

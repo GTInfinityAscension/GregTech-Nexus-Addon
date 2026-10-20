@@ -1,42 +1,46 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Célula de Flotação Industrial
+# Industrial Flotation Cell
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Célula de Flotação Industrial](../../../assets/machines/industrial_flotation_cell.webp){ loading=lazy }
+*Smells like essential balm. Fewer mosquitoes, too.*
+
+![Industrial Flotation Cell](../../../assets/machines/industrial_flotation_cell.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Beneficiamento por Flotação |
-| **Tamanho** | 7 × 9 × 7 |
-| **Blocos** | 133 |
+| **Machine type** | Flotating Beneficiation |
+| **Category** | Electric processing |
+| **Recipe types** | Flotating Beneficiation |
+| **Size** | 7 × 9 × 7 |
+| **Blocks** | 133 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Cheira a pomada. E tem menos mosquito. Faz flotação de minério Moído com etilxantato e terebintina, gerando a espuma de minério.
+Froth-floats Milled ore with ethylxanthate and turpentine into a matching ore foam.
 
-- Tipo de Máquina: Beneficiamento por Flotação
-- Overclock perfeito: duração /4 por tier
-- Paralelos definidos pelo Parallel Control Hatch
-- Precisa de minério Moído, etilxantato e terebintina
+- Perfect overclock: duration /4 per tier
+- Parallel set by the Parallel Control Hatch
+- Needs Milled ore, ethylxanthate and turpentine
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Hastelloy N 75 | 60 |
-| Célula de Flotação | 48 |
-| Caixa de Engrenagens de Hastelloy N 75 | 13 |
-| Tubulação de Hastelloy N 75 | 6 |
+| Hastelloy N 75 Casing | 60 |
+| Flotation Cell | 48 |
+| Hastelloy N 75 Gearbox | 13 |
+| Hastelloy N 75 Pipe | 6 |
 | ULV Output Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
-| Célula de Flotação Industrial | 1 |
+| Industrial Flotation Cell | 1 |
 | ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

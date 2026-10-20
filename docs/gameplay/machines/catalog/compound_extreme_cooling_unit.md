@@ -1,55 +1,59 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Unidade Composta de Resfriamento Extremo
+# Compound Extreme Cooling Unit
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Unidade Composta de Resfriamento Extremo](../../../assets/machines/compound_extreme_cooling_unit.webp){ loading=lazy }
+*Freezes, atomizes and condenses plasma. Bring a coat.*
+
+![Compound Extreme Cooling Unit](../../../assets/machines/compound_extreme_cooling_unit.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Vacuum Freezer, Condensação por Atomização, Condensador de Plasma |
-| **Tamanho** | 31 × 9 × 13 |
-| **Blocos** | 2.071 |
+| **Machine type** | Vacuum Freezer |
+| **Category** | Electric processing |
+| **Recipe types** | Vacuum Freezer, Atomization Condensation, Plasma Condenser |
+| **Size** | 31 × 9 × 13 |
+| **Blocks** | 2,071 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Congela, atomiza e condensa plasma. Leve um casaco. atomização e condensação de plasma.
+and plasma condensation.
 
-- Tipo de Máquina: Congelador a Vácuo
-- Três resfriadores em um: congelamento a vácuo,
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Monta em qualquer direção
-- Paralelos definidos pelo Parallel Hatch
-- O Condensador de Plasma precisa da estrutura de plasma
+- Three coolers in one: vacuum freezing, atomization
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Builds in any direction
+- Parallel set by the Parallel Hatch
+- Plasma Condenser needs the larger plasma structure
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Frost Proof Aluminium Machine Casing | 1.236 |
-| Carcaça Anticongelante à Prova de Calor | 230 |
+| Frost Proof Aluminium Machine Casing | 1,236 |
+| Antifreeze Heatproof Machine Casing | 230 |
 | Tungstensteel Pipe Casing | 208 |
 | Neutronium Frame | 88 |
 | High Power Casing | 80 |
-| Invólucro Oco | 56 |
-| Carcaça de Tubo de Amprósio | 40 |
+| Hollow Casing | 56 |
+| Amprosium Pipe Casing | 40 |
 | Fusion Glass | 36 |
 | Watertight Steel Frame | 32 |
 | Filter Casing | 20 |
 | Tempered Glass | 20 |
-| Carcaça de Laser | 10 |
-| Carcaça de Resfriamento a Laser | 8 |
+| Laser Casing | 10 |
+| Laser Cooling Casing | 8 |
 | ULV Energy Hatch | 1 |
 | ULV Output Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
-| Unidade Composta de Resfriamento Extremo | 1 |
+| Compound Extreme Cooling Unit | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

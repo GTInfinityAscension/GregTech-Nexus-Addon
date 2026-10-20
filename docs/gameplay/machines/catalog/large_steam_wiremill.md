@@ -1,38 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Trefiladora a Vapor
+# Large Steam Wiremill
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Trefiladora a Vapor](../../../assets/machines/large_steam_wiremill.webp){ loading=lazy }
+*Thin is in. Very, very thin.*
+
+![Large Steam Wiremill](../../../assets/machines/large_steam_wiremill.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Wiremill |
-| **Tamanho** | 6 × 5 × 5 |
-| **Blocos** | 96 |
+| **Machine type** | Wiremill |
+| **Category** | Steam and primitive |
+| **Recipe types** | Wiremill |
+| **Size** | 6 × 5 × 5 |
+| **Blocks** | 96 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Fino está na moda. Muito, muito fino. Uma trefiladora a vapor que puxa lingotes em fios em massa.
+A steam wiremill that draws ingots into wires in bulk.
 
-- Tipo de Máquina: Trefiladora
-- Velocidade 2x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 16
+- 2x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 16
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 67 |
 | Bronze Frame | 18 |
 | Bronze Pipe Casing | 6 |
 | Glass | 3 |
-| Trefiladora a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Large Steam Wiremill | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

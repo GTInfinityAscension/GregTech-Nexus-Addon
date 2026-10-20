@@ -1,49 +1,53 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Fábrica de PCB
+# Pcb Factory
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Fábrica de PCB](../../../assets/machines/pcb_factory.webp){ loading=lazy }
+*Prints boards by the thousand. The etchant smells like progress.*
+
+![Pcb Factory](../../../assets/machines/pcb_factory.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Fábrica de PCB |
-| **Tamanho** | 13 × 16 × 14 |
-| **Blocos** | 1.018 |
+| **Machine type** | PCB Factory |
+| **Category** | Electric processing |
+| **Recipe types** | PCB Factory |
+| **Size** | 13 × 16 × 14 |
+| **Blocks** | 1,018 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Imprime placas aos milhares. O corrosivo cheira a progresso. Grava placas de circuito em massa; estruturas maiores liberam placas de tier mais alto.
+Etches printed circuit boards in bulk; bigger structures unlock higher-tier boards.
 
-- Tipo de Máquina: Fábrica de PCB
-- Três tiers de estrutura (chave de fenda no controlador)
-- Aceita Laser Hatches
-- Tier 1: até 30.719 EU/t; tier 2: até 491.519 EU/t
-- Paralelos definidos pelo Parallel Hatch
+- Three structure tiers (screwdriver on the controller)
+- Accepts Laser Hatches
+- Tier 1: up to 30,719 EU/t; tier 2: up to 491,519 EU/t
+- Parallel set by the Parallel Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Cerâmica de Carbeto de Boro Resistente à Radiação | 330 |
-| Carcaça de Contenção de Pressão | 200 |
+| Boron Carbide Radiation Resistant Casing | 330 |
+| Pressure Containment Casing | 200 |
 | Tempered Glass | 182 |
 | Maraging Steel 300 Frame | 115 |
-| Carcaça de Irídio | 68 |
-| Cubo Mecânico Absorvedor de Raios de Cerâmica de Carbonato de Estrôncio | 32 |
+| Iridium Casing | 68 |
+| Strontium Carbonate Ceramic Ray Absorbing Mechanical Cube | 32 |
 | Europium Frame | 30 |
 | Hermetic Casing VII | 29 |
-| Casing Magtech | 14 |
-| Invólucro Mecânico Anticorrosão de PPS | 12 |
-| Auto Maintenance Hatch | 1 |
+| Magtech Casing | 14 |
+| Pps Corrosion Resistant Mechanical Housing | 12 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
-| Fábrica de PCB | 1 |
+| Pcb Factory | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

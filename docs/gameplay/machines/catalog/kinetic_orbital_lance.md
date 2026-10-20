@@ -1,52 +1,56 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - GTNA originals (WIP)
 ---
 
-# Lança Cinética Orbital
+# Kinetic Orbital Lance
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Lança Cinética Orbital](../../../assets/machines/kinetic_orbital_lance.webp){ loading=lazy }
+*Asteroid mining, the loud way.*
+
+![Kinetic Orbital Lance](../../../assets/machines/kinetic_orbital_lance.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 142 × 130 × 242 |
-| **Blocos** | 171.556 |
+| **Machine type** | Orbital Mining |
+| **Category** | GTNA originals (WIP) |
+| **Recipe types** | None |
+| **Size** | 142 × 130 × 242 |
+| **Blocks** | 171,491 |
+| **Origin** | — |
 
-## Descrição
+## Description
 
-Mineração de asteroides, do jeito barulhento. Dispara projéteis contra luas e asteroides com um banco de capacitores e recolhe os fragmentos em cápsulas.
+Fires projectiles at moons and asteroids from a capacitor bank and recovers the fragments in capsules.
 
-- Tipo de Máquina: Mineração Orbital
-- Levante cada corpo para abrir o mapa orbital
-- Monte trilhos, refrigeração e sensores na bancada
-- Energia do tiro: ½ m v² do banco inteiro
-- Regime do impacto: fragmenta, funde, vaporiza
-- Cápsulas voltam depois do tempo de viagem
-- Revestimento gasto falha o tiro
-- Cano quente desvia a mira
+- Survey each body to open the orbital map
+- Fit rails, coolers and sensors on the barrel bench
+- Shot energy: ½ m v² from the whole bank
+- Impact regime: fragment, melt, vaporise
+- Capsules return after the travel time
+- A worn liner misfires
+- A hot barrel drifts off target
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Clean Stainless Steel Casing | 101.575 |
-| Carcaça de Liga de Naquadah Radiante | 52.147 |
-| Tungstensteel Pipe Casing | 7.963 |
-| Chemically Inert PTFE Machine Casing | 7.044 |
-| Núcleo de Lançamento Dyson | 803 |
+| Clean Stainless Steel Casing | 101,520 |
+| Radiant Naquadah Alloy Casing | 52,143 |
+| Tungstensteel Pipe Casing | 7,963 |
+| Chemically Inert PTFE Machine Casing | 7,043 |
+| Dyson Deployment Core | 802 |
 | Heat Vent | 759 |
-| Carcaça Estável de Neutrônio | 620 |
-| Carcaça Molecular | 418 |
-| Carcaça de Aquecedor de Plasma | 172 |
-| Solid Machine Casing | 49 |
-| Hatch de Cartucho de Alvo | 1 |
-| Hatch de Revestimento do Cano | 1 |
-| Lança Cinética Orbital | 1 |
+| Neutronium Stable Casing | 620 |
+| Molecular Casing | 418 |
+| Plasma Heater Casing | 172 |
+| Solid Machine Casing | 45 |
+| Target Cartridge Hatch | 1 |
+| Barrel Liner Hatch | 1 |
+| Kinetic Orbital Lance | 1 |
 | Computation Data Reception Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

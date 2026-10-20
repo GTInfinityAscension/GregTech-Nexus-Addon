@@ -1,47 +1,50 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Power generation
 ---
 
-# Reator Hyper
+# Hyper Reactor
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Reator Hyper](../../../assets/machines/hyper_reactor.webp){ loading=lazy }
+*Burns hyper fuel. Do not ask what is hyper about it.*
+
+![Hyper Reactor](../../../assets/machines/hyper_reactor.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Reator Hyper |
-| **Tamanho** | 27 × 21 × 21 |
-| **Blocos** | 1.794 |
-| **Gerador** | ✓ |
+| **Machine type** | Generator |
+| **Category** | Power generation |
+| **Recipe types** | Hyper Reactor |
+| **Size** | 27 × 21 × 21 |
+| **Blocks** | 1,794 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Queima combustível hyper. Não pergunte o que ele tem de hyper. Transforma combustíveis hyper em montanhas de EU; um plasma de reforço multiplica cada ciclo.
+Turns hyper fuels into huge amounts of EU; a booster plasma multiplies each run.
 
-- Tipo de Máquina: Gerador
-- Monta em qualquer direção
-- Dynamo Hatch ou Laser Source Hatch
-- Plasma de reforço: 16x paralelos por padrão
-- O plasma de reforço é consumido antes do ciclo reforçado
-- Reforço e combustível definidos por receita (pack/KubeJS)
+- Builds in any direction
+- Dynamo or Laser Source Hatch
+- Booster plasma: 16x parallel by default
+- Booster plasma is consumed once before a boosted run
+- Booster and fuel are set per recipe (pack/KubeJS)
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça Molecular | 674 |
-| Carcaça Mecânica Hyper Reforçada | 599 |
-| Carcaça de Máquina de Pikyônio | 400 |
+| Molecular Casing | 674 |
+| Enhance Hyper Mechanical Casing | 599 |
+| Pikyonium Machine Casing | 400 |
 | Neutronium Frame | 44 |
 | Fusion Glass | 30 |
 | High Power Casing | 24 |
-| Gerador de Campo de Contenção | 8 |
-| Hipernúcleo | 7 |
-| Carcaça de Tubo de Amprósio | 4 |
+| Containment Field Generator | 8 |
+| Hyper Core | 7 |
+| Amprosium Pipe Casing | 4 |
 | ULV Input Hatch | 2 |
-| Reator Hyper | 1 |
-| Auto Maintenance Hatch | 1 |
+| Hyper Reactor | 1 |
+| Cleaning Maintenance Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

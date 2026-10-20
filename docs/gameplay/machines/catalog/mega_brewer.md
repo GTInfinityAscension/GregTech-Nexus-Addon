@@ -1,50 +1,54 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Mega Cervejaria
+# Mega Brewer
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Mega Cervejaria](../../../assets/machines/mega_brewer.webp){ loading=lazy }
+*Thousand-ton brewing. The whole workshop smells great.*
+
+![Mega Brewer](../../../assets/machines/mega_brewer.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Brewery, Fermenter |
-| **Tamanho** | 28 × 22 × 15 |
-| **Blocos** | 2.390 |
+| **Machine type** | Brewery, Fermenter |
+| **Category** | Electric processing |
+| **Recipe types** | Brewery, Fermenter |
+| **Size** | 28 × 22 × 15 |
+| **Blocks** | 2,390 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Cervejaria de mil toneladas. A oficina inteira cheira bem. Fermenta e produz bebidas em escala industrial em tanques gigantes com controle de temperatura.
+Brews and ferments at industrial scale in giant temperature-controlled tanks.
 
-- Tipo de Máquina: Cervejaria, Fermentador
-- Paralelos 2x a cada 900K de bobina
-- Thread Hatch: várias receitas ao mesmo tempo
-- Usa o limite do Parallel Hatch se for maior
+- Parallel 2x every 900K of coils
+- Thread Hatch: several recipes at once
+- Uses the Parallel Hatch limit if higher
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça Anticongelante à Prova de Calor | 1.065 |
+| Antifreeze Heatproof Machine Casing | 1,065 |
 | Cupronickel Coil Block | 216 |
 | Corrosion Proof Casing | 189 |
 | Chemically Inert PTFE Machine Casing | 185 |
-| Invólucro de Injeção Dimensional | 184 |
-| Carcaça de Irídio | 165 |
+| Dimension Injection Casing | 184 |
+| Iridium Casing | 165 |
 | Hastelloy N Frame | 152 |
-| Carcaça de Tubo de Amprósio | 83 |
-| Carcaça Hermética UEV | 72 |
-| Gerador de Campo de Contenção | 60 |
-| Carcaça de Tubulação Resistente à Corrosão Química | 12 |
+| Amprosium Pipe Casing | 83 |
+| UEV Hermetic Casing | 72 |
+| Containment Field Generator | 60 |
+| Chemical Corrosion Resistant Pipe Casing | 12 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Mega Cervejaria | 1 |
+| Mega Brewer | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

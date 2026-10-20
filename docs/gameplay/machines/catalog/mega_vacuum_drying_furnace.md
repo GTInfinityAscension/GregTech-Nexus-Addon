@@ -1,40 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Mega Forno de Secagem a Vácuo
+# Mega Vacuum Drying Furnace
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Mega Forno de Secagem a Vácuo](../../../assets/machines/mega_vacuum_drying_furnace.webp){ loading=lazy }
+*Zero oxidation, zero contamination, zero patience needed.*
+
+![Mega Vacuum Drying Furnace](../../../assets/machines/mega_vacuum_drying_furnace.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Secagem a Vácuo |
-| **Tamanho** | 19 × 14 × 27 |
-| **Blocos** | 2.691 |
+| **Machine type** | Vacuum Drying |
+| **Category** | Electric processing |
+| **Recipe types** | Vacuum Drying |
+| **Size** | 19 × 14 × 27 |
+| **Blocks** | 2,691 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Zero oxidação, zero contaminação, zero paciência necessária. Seca espumas de minério em pós puros no vácuo em escala de megafábrica.
+Dries ore foams into pure dusts in vacuum at megafactory scale.
 
-- Tipo de Máquina: Secagem a Vácuo
-- Paralelos 2x a cada 900K de bobina
-- Thread Hatch: várias receitas ao mesmo tempo
-- Usa o limite do Parallel Hatch se for maior
-- As bobinas precisam da temperatura da receita
+- Parallel 2x every 900K of coils
+- Thread Hatch: several recipes at once
+- Uses the Parallel Hatch limit if higher
+- Coils must meet the recipe temperature
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Clean Stainless Steel Casing | 1.172 |
-| Carcaça de Irídio | 584 |
+| Clean Stainless Steel Casing | 1,172 |
+| Iridium Casing | 584 |
 | Cupronickel Coil Block | 224 |
-| Carcaça de Contenção de Pressão | 169 |
-| Carcaça de Aço Vermelho | 168 |
-| Carcaça de Tubo de Alta Pressão | 132 |
+| Pressure Containment Casing | 169 |
+| Red Steel Casing | 168 |
+| High Pressure Pipe Casing | 132 |
 | Tungstensteel Pipe Casing | 88 |
 | Computer Casing | 60 |
 | Tungsten Frame | 23 |
@@ -46,9 +50,9 @@ Zero oxidação, zero contaminação, zero paciência necessária. Seca espumas 
 | Tungstensteel Gearbox Casing | 3 |
 | ULV Energy Hatch | 1 |
 | ULV Input Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
-| Mega Forno de Secagem a Vácuo | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Mega Vacuum Drying Furnace | 1 |
 | ULV Output Bus | 1 |
 | ULV Output Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

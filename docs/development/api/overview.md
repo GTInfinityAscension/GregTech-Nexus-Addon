@@ -1,18 +1,51 @@
-# Visão geral da API
+# Java API
 
-Pacotes públicos em `com.raishxn.gtna.api`. Addons podem depender deles; scripts usam a [API KubeJS](kubejs.md).
+For addons written in Java. Modpacks usually only need the [KubeJS API](kubejs.md).
 
-| Pacote | Principais tipos | Para quê |
+## Depending on GTNA
+
+Release jars are on the organisation's Maven:
+
+```groovy
+repositories {
+    maven { url = 'https://gtinfinityascension.github.io/maven/' }
+}
+
+dependencies {
+    modImplementation("com.raishxn.gtna:gtna:<version>")
+    modImplementation("com.gtinfinityascension:gtialib:<version>")
+}
+```
+
+GTNA also needs GTCEu 7.5.3+ and Applied Energistics 2 on the classpath. See [Installation](../../getting-started/installation.md) for the runtime versions.
+
+## Public packages
+
+Everything under `com.raishxn.gtna.api` is meant for addons. Classes outside `api` can change without notice.
+
+| Package | Main types | What for |
 |---|---|---|
-| `api.machine` | IThreadModifierMachine, ParallelMachine, GTNAMultipleRecipesLogic, feature/godforge (GodforgeMath), feature/eyeofharmony (EyeOfHarmonyMath) | interfaces e cálculos das máquinas; as fórmulas da wiki saem daqui |
-| `api.pattern` | GTNAPredicates, GTNASubPatterns, leitores .mbs | padrões de estrutura, módulos auxiliares, leitura de estruturas do GTO |
-| `api.registry` | GTNARegistry (REGISTRATE) | registro de blocos, itens e máquinas |
-| `api.capability` | capabilities de rede e de hatch | energia wireless, vapor, condensado |
-| `api.bec` | rede de condensado | tipos de condensado e transporte do BEC |
-| `api.steam` | rede wireless de vapor | saldo, fluxo e hatches |
-| `api.render` | ItemEffect, ItemEffectOverrides | efeitos de ícone (halo, borda, shaders) |
-| `api.data / api.item` | dados persistentes e itens com comportamento | — |
+| `api.machine.multiblock` | `GTNAPartAbility`, `GTNASubPatterns`, `ISubPatternMachine`, `IGTNAModuleHost`, `ParallelMachine` | hatch abilities, auxiliary modules, parallel |
+| `api.machine` | `IThreadModifierMachine`, `IZeroEnergyMachine` | machine behaviour interfaces |
+| `api.machine.feature` | `AccelerateHatchMath`, `OverclockHatchMath`, `godforge.GodforgeMath`, `eyeofharmony.EyeOfHarmonyMath`, pattern buffer mode interfaces | the formulas behind the hatches and endgame systems; the wiki tables come from here |
+| `api.capability` | `WirelessEnergyManager`, `SteamWirelessNetworkManager` | read and change a player's Nexus EU and steam balance |
+| `api.steam` | `GTNASteamBalance` | scale the parallel and duration of every GTNA steam multiblock from one provider |
+| `api.bec` | `BECNetwork`, `CondensateType`, `NaniteTier` | the Bose-Einstein Condensate network |
+| `api.render` | `ItemEffect`, `ItemEffectOverrides` | item icon effects |
+| `api.registry` | `GTNARegistry` | GTNA's Registrate instance |
 
-## Hatches especiais
+## Part abilities
 
-Use `GTNAPartAbility.THREAD_HATCH`, `ACCELERATE_HATCH`, `OVERCLOCK_HATCH` e `OUTPUT_BOOST_HATCH` em `Predicates.abilities(...)`. Máquinas com Thread Hatch implementam `IThreadModifierMachine`.
+`GTNAPartAbility` holds GTNA's own slots. The common ones:
+
+| Ability | Hatch |
+|---|---|
+| `THREAD_HATCH` | Thread Hatch; the machine also needs `IThreadModifierMachine` (for example `WorkableElectricMultipleRecipesMachine`) |
+| `ACCELERATE_HATCH` | Accelerate Hatch |
+| `OVERCLOCK_HATCH` | Overclock Hatch |
+| `OUTPUT_BOOST_HATCH` | Output Boost Hatch |
+| `STEAM_EXPORT_FLUIDS` | Wireless Steam Output Hatch |
+
+The rest (`BEC_HATCH`, `LINE_OF_SIGHT_HATCH`, `TUNING_HATCH`…) belong to specific GTNA machines.
+
+The module registry moved to GTIA Lib in 0.6.1 (`com.gtinfinityascension.gtialib.module.ModuleRegistry`); `GTNASubPatterns` still works and forwards to it. `Int128` and the block-position helpers moved to `com.gtinfinityascension.gtialib.data`.

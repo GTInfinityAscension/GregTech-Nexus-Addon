@@ -1,42 +1,46 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Minerador do Vazio Elétrico
+# Electric Void Miner
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Minerador do Vazio Elétrico](../../../assets/machines/electric_void_miner.webp){ loading=lazy }
+*Mining nothing and getting everything. Physics is optional.*
+
+![Electric Void Miner](../../../assets/machines/electric_void_miner.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Mineração Precisa do Vazio, Mineração Aleatória do Vazio |
-| **Tamanho** | 3 × 3 × 3 |
-| **Blocos** | 27 |
+| **Machine type** | Void Mining |
+| **Category** | Electric processing |
+| **Recipe types** | Precise Void Mining, Random Void Mining |
+| **Size** | 3 × 3 × 3 |
+| **Blocks** | 27 |
+| **Origin** | GregTech Leisure |
 
-## Descrição
+## Description
 
-Minerando o nada e recebendo tudo. A física é opcional. Minera programas de veio de Minérios Brutos usando energia e Fluido de Perfuração.
+Mines vein programs for Raw Ores using energy and Drilling Fluid.
 
-- Tipo de Máquina: Mineração do Vazio
-- Modo preciso: escolha o veio com uma essência
-- Modo aleatório: sem essência, pool ZPM completo
-- Circuito 1 = básicos EV, circuito 2 = veios LuV/ZPM
-- A partir do IV, um Parallel Control Hatch dá paralelos
-- Precisa de Fluido de Perfuração em toda operação
-- O tier EV não tem paralelos
+- Precise mode: pick a vein with an essence
+- Random mode: no essence, full ZPM pool
+- Circuit 1 = EV basics, circuit 2 = LuV/ZPM veins
+- From IV, a Parallel Control Hatch adds parallel
+- Needs Drilling Fluid every operation
+- EV tier has no parallel
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Stable Titanium Machine Casing | 21 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Minerador do Vazio Elétrico | 1 |
+| Electric Void Miner | 1 |
 | Titanium Frame | 1 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,35 +1,39 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo de Estufa a Vapor
+# Steam Greenhouse Planting Module
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo de Estufa a Vapor](../../../assets/machines/steam_elevator_greenhouse_module.webp){ loading=lazy }
+*The farmer's secret to fortune.*
+
+![Steam Greenhouse Planting Module](../../../assets/machines/steam_elevator_greenhouse_module.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-O segredo do fazendeiro para a fortuna. Faz crescer as plantações em volta do elevador com vapor e água, sem fertilizante.
+Grows the crops around the elevator with steam and water, no fertilizer needed.
 
-- Tipo de Máquina: Módulo do Elevador
-- Faz crescer até 16 plantas por ciclo
-- 16.000 mB de água por ciclo, 60 s cada
-- Alcance: 16 blocos
-- Não aceita overclock
+- Grows up to 16 crops per cycle
+- 16,000 mB water per cycle, 60 s each
+- Range: 16 blocks
+- Cannot be overclocked
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo de Estufa a Vapor | 1 |
+| Steam Greenhouse Planting Module | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

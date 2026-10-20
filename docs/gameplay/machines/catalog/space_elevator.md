@@ -1,46 +1,50 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Elevador Espacial
+# Space Elevator
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Elevador Espacial](../../../assets/machines/space_elevator.webp){ loading=lazy }
+*A very long elevator. Mind the doors on the way up.*
+
+![Space Elevator](../../../assets/machines/space_elevator.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 35 × 43 × 35 |
-| **Blocos** | 2.658 |
+| **Machine type** | Space Elevator |
+| **Category** | Endgame systems |
+| **Recipe types** | None |
+| **Size** | 35 × 43 × 35 |
+| **Blocks** | 2,658 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Um elevador bem comprido. Cuidado com as portas na subida. Um cabo até a órbita que alimenta os módulos nos seus doze slots de módulo.
+A cable to orbit that powers the modules standing in its twelve module slots.
 
-- Tipo de Máquina: Elevador Espacial
-- O MK do Power Module define os paralelos dos módulos
-- Só funciona acima de ZPM, com computação
-- Precisa de Nanotube Spools pelo input bus
-- Todos os Power Modules precisam ser do mesmo MK
+- Power Module MK sets the modules' parallel
+- Runs only above ZPM, with computation
+- Needs Nanotube Spools fed through its input bus
+- All Power Modules must be the same MK
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Concreto de Alta Resistência | 855 |
-| Estrutura de Suporte do Elevador Espacial | 620 |
-| Carcaça Mecânica de Elevador Espacial | 589 |
-| Estrutura de Suporte Interno do Elevador Espacial | 348 |
-| Módulo de Energia do Elevador Espacial MK I | 160 |
+| High Strength Concrete | 855 |
+| Space Elevator Support | 620 |
+| Space Elevator Mechanical Casing | 589 |
+| Space Elevator Internal Support | 348 |
+| Space Elevator Power Module 1 | 160 |
 | Neutronium Frame | 56 |
-| Base de Módulo do Elevador Espacial | 24 |
-| Conector de Módulo do Elevador Espacial | 1 |
+| Space Elevator Module Base | 24 |
+| Module Connector | 1 |
 | ULV Input Bus | 1 |
-| Núcleo de Energia do Elevador Espacial | 1 |
+| Space Elevator Power Core | 1 |
 | ULV Energy Hatch | 1 |
-| Elevador Espacial | 1 |
+| Space Elevator | 1 |
 | Computation Data Reception Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

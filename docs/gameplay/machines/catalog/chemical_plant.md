@@ -1,43 +1,47 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Fábrica Química
+# Chemical Plant
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Fábrica Química](../../../assets/machines/chemical_plant.webp){ loading=lazy }
+*The chairman poses with a microscope. Nobody is fooled.*
+
+![Chemical Plant](../../../assets/machines/chemical_plant.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Large Chemical Reactor |
-| **Tamanho** | 5 × 5 × 5 |
-| **Blocos** | 101 |
+| **Machine type** | Large Chemical Reactor |
+| **Category** | Electric processing |
+| **Recipe types** | Large Chemical Reactor |
+| **Size** | 5 × 5 × 5 |
+| **Blocks** | 101 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-O presidente posa com um microscópio. Ninguém cai nessa. Roda receitas do Reator Químico Grande em massa com bobinas e um Parallel Hatch.
+Runs Large Chemical Reactor recipes in bulk with heating coils and a Parallel Hatch.
 
-- Tipo de Máquina: Reator Químico Grande
-- Overclock perfeito: duração /4 por tier
-- Cada tier de bobina acima de Cupronickel: -5% EU e tempo
-- Paralelos definidos pelo Parallel Control Hatch
+- Perfect overclock: duration /4 per tier
+- Each coil tier above Cupronickel: -5% EU and time
+- Parallel set by the Parallel Control Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Chemically Inert PTFE Machine Casing | 66 |
 | Cupronickel Coil Block | 15 |
 | PTFE Pipe Casing | 12 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Energy Hatch | 1 |
-| Fábrica Química | 1 |
+| Chemical Plant | 1 |
 | ULV Input Hatch | 1 |
 | Elite Parallel Control Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,34 +1,38 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo Broca de Óleo a Vapor I
+# Steam Oil Drill Module I
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo Broca de Óleo a Vapor I](../../../assets/machines/steam_elevator_oil_drill_module_i.webp){ loading=lazy }
+*Black gold, Texas tea, steam-pumped.*
+
+![Steam Oil Drill Module I](../../../assets/machines/steam_elevator_oil_drill_module_i.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Ouro negro, chá do Texas, bombeado a vapor. Bombeia fluidos subterrâneos aleatórios da dimensão atual usando vapor.
+Pumps random underground fluids of the current dimension with steam.
 
-- Tipo de Máquina: Módulo do Elevador
-- Até 1 tipo de fluido por ciclo
-- Rendimento base: 250 L, ciclo de 1.200 ticks
-- Só funciona encaixado num Steam Elevator
+- Up to 1 fluid type per cycle
+- Base yield: 250 L, cycle 1,200 ticks
+- Only works attached to a Steam Elevator
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo Broca de Óleo a Vapor I | 1 |
+| Steam Oil Drill Module I | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

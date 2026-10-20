@@ -1,41 +1,45 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Grande Compressor a Vapor
+# Large Steam Compressor
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Compressor a Vapor](../../../assets/machines/large_steam_compressor.webp){ loading=lazy }
+*Under pressure, everything becomes a plate eventually.*
+
+![Large Steam Compressor](../../../assets/machines/large_steam_compressor.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Compressor |
-| **Tamanho** | 7 × 7 × 7 |
-| **Blocos** | 196 |
+| **Machine type** | Compressor |
+| **Category** | Steam and primitive |
+| **Recipe types** | Compressor |
+| **Size** | 7 × 7 × 7 |
+| **Blocks** | 196 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Sob pressão, tudo vira placa uma hora. Um compressor a vapor de alto volume para processar material em massa.
+A high-throughput steam compressor for bulk material processing.
 
-- Tipo de Máquina: Compressor
-- Velocidade 2,5x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 48
+- 2.5x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 48
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 102 |
 | Glass | 36 |
 | Bronze Gearbox Casing | 24 |
 | Block of Iron | 18 |
 | Bronze Frame | 12 |
-| Barramento de Saída a Vapor com Boost de Saída | 1 |
+| Steam Output Bus | 1 |
 | Steam Input Bus | 1 |
-| Grande Compressor a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Large Steam Compressor | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

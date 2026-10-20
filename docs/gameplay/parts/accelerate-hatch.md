@@ -1,66 +1,38 @@
-# ⚡ Accelerate Hatch
+# Accelerate Hatch
 
-> *"O tempo é a moeda mais valiosa. Esta hatch economiza ambos."*
+Shortens every recipe of the multiblock, on top of the normal overclock. Ported from GregTech Odyssey.
 
-## O que é
+| | |
+|---|---|
+| **Tiers** | LV to MAX |
+| **Fits** | electric multiblocks (GTCEu and GTNA) whose structure accepts it, and the [auxiliary modules](../systems/modules.md) that add it |
+| **Per machine** | one |
 
-A **Accelerate Hatch** reduz a duração de TODAS as receitas em um multiblocko. Quanto mais avançado o tier, maior a redução.
+## Duration
 
-## Tiers Disponíveis
+The value is the duration left, in percent of the original:
 
-| Tier | Redução Mín. (%) | Fórmula |
-|------|-------------------|---------|
-| <span class="tier-badge tier-lv">LV</span> | 50% da duração original | `50 - 2×(1-1) = 50%` |
-| <span class="tier-badge tier-mv">MV</span> | 48% | `50 - 2×(2-1) = 48%` |
-| <span class="tier-badge tier-hv">HV</span> | 46% | `50 - 2×(3-1) = 46%` |
-| <span class="tier-badge tier-ev">EV</span> | 44% | `50 - 2×(4-1) = 44%` |
-| <span class="tier-badge tier-iv">IV</span> | 42% | `50 - 2×(5-1) = 42%` |
-| <span class="tier-badge tier-luv">LuV</span> | 40% | `50 - 2×(6-1) = 40%` |
-| <span class="tier-badge tier-zpm">ZPM</span> | 38% | `50 - 2×(7-1) = 38%` |
-| <span class="tier-badge tier-uv">UV</span> | 36% | `50 - 2×(8-1) = 36%` |
-| UHV | 34% | `50 - 2×(9-1) = 34%` |
-| UEV | 32% | `50 - 2×(10-1) = 32%` |
-| UIV | 30% | `50 - 2×(11-1) = 30%` |
-| UXV | 28% | `50 - 2×(12-1) = 28%` |
-| OpV | 26% | `50 - 2×(13-1) = 26%` |
-| MAX | 24% | `50 - 2×(14-1) = 24%` |
+| Hatch | Duration | Hatch | Duration |
+|---|---:|---|---:|
+| LV | 50% | UV | 36% |
+| MV | 48% | UHV | 34% |
+| HV | 46% | UEV | 32% |
+| EV | 44% | UIV | 30% |
+| IV | 42% | UXV | 28% |
+| LuV | 40% | OpV | 26% |
+| ZPM | 38% | MAX | 24% |
 
-> Equivalente à fórmula do GTOCore (`52 - 2×tier`): o valor é a porcentagem **mínima** da duração
-> (sem penalidade); o mínimo absoluto é 1% e o máximo 100% (config `accelerateHatch`).
+The formula is `50 − 2 · (tier − 1)` percent. You can raise the value in the hatch UI, up to 100% (no effect).
 
-## Mecânica Detalhada
+## Penalty
 
-### Fórmula Base
-```
-Duração_Reduzida = Duração_Base × (Porcentagem / 100)
-```
+For each tier the **recipe** is above the hatch, add 20 points. A low-tier recipe in a high-tier machine is never penalised.
 
-### Penalidade de Tier
-A penalidade segue a **receita**, não a máquina (igual ao GTOCore): uma hatch de tier alto numa
-máquina de tier alto **não** é punida por processar receitas de tier baixo. Só há penalidade quando o
-tier da **receita** é maior que o tier da hatch:
-```
-Porcentagem_com_Penalidade = Porcentagem_Base + max(0, Tier_Receita - Tier_Hatch) × 20
-Máximo: 100% (sem efeito)
-```
+!!! example
+    An HV hatch (46%) running an EV recipe: 46% + 20% = 66%. A 100-tick recipe takes 66 ticks.
 
-!!! example "Exemplo"
-    **Accelerate Hatch HV** processando uma receita **EV**:
-    
-    - Base: 46%
-    - TierDiff: EV(4) - HV(3) = 1
-    - Com penalidade: 46% + (1 × 20) = 66%
-    - Receita de 100 ticks → 66 ticks
+The final value stays between 1% and 100%. Values are in `config/gtna/balance/hatches.json` (`accelerateHatch`), and the EU cost multiplier is `machines.accelerateHatchEnergyCost` in `config/gtna.yaml` (default 1.5).
 
-!!! warning "Cuidado"
-    Usar uma Accelerate Hatch com tier muito abaixo do tier das receitas quase não dará efeito. Recomendamos hatches do mesmo tier ou superior.
+## With other hatches
 
-## Compatibilidade
-
-Funciona em **qualquer multiblocko elétrico** que aceite a ability `ACCELERATE_HATCH` (todos os
-multiblocos elétricos do GTCEu/GTNA a recebem via `autoAbilities`), tanto pela lógica multi-receita
-quanto pelo mixin global de `RecipeLogic`. O efeito é aplicado **uma única vez** por receita.
-
-!!! note "Paridade com o GTOCore"
-    A penalidade usa o tier **pré-overclock** da receita (`recipeTier - hatchTier`), exatamente como o
-    GTOCore. O tier da máquina não entra na conta.
+Everything multiplies: `duration = base × overclock steps × accelerate`. See the [Overclock Hatch](overclock-hatch.md) for an example.

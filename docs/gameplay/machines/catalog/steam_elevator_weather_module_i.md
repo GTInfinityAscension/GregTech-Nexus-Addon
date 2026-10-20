@@ -1,35 +1,39 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo Climático a Vapor I
+# Steam Weather Module I
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo Climático a Vapor I](../../../assets/machines/steam_elevator_weather_module_i.webp){ loading=lazy }
+*Rain dance, but with pipes.*
+
+![Steam Weather Module I](../../../assets/machines/steam_elevator_weather_module_i.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Dança da chuva, só que com canos. Queima vapor para mudar o clima para limpo, chuva ou tempestade pelo circuito do controlador.
+Burns steam to switch the weather to clear, rain or thunder by controller circuit.
 
-- Tipo de Máquina: Módulo do Elevador
-- O clima dura 1 h
-- Custo: 1.000.000 mB de vapor por troca
-- Circuito 1: limpo, 2: chuva, 3: tempestade
-- Só funciona encaixado num Steam Elevator
+- Weather lasts 1 h
+- Cost: 1,000,000 mB steam per change
+- Circuit 1: clear, 2: rain, 3: thunder
+- Only works attached to a Steam Elevator
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo Climático a Vapor I | 1 |
+| Steam Weather Module I | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

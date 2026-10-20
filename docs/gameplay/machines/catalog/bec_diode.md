@@ -1,46 +1,50 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Portão de Maxwell de Condensado de Bose-Einstein
+# Bose-Einstein Condensate Maxwell Gate
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Portão de Maxwell de Condensado de Bose-Einstein](../../../assets/machines/bec_diode.webp){ loading=lazy }
+*Maxwell's Demon's big brother.*
+
+![Bose-Einstein Condensate Maxwell Gate](../../../assets/machines/bec_diode.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 17 × 11 × 11 |
-| **Blocos** | 620 |
+| **Machine type** | BEC Maxwell Gate |
+| **Category** | Endgame systems |
+| **Recipe types** | None |
+| **Size** | 17 × 11 × 11 |
+| **Blocks** | 620 |
+| **Origin** | GT: New Horizons |
 
-## Descrição
+## Description
 
-O irmão mais velho do Demônio de Maxwell. o condensado do lado de entrada chega ao lado de saída.
+the input side's condensate reaches the output side.
 
-- Tipo de Máquina: Portão de Maxwell BEC
-- Deixa o condensado passar em um sentido:
-- Filtros por tipo de condensado nos parâmetros
-- Hatches de fluido definem os filtros
-- Gasta 1A UIV enquanto ativo
-- Bloqueia a rede enquanto desligado
+- Lets condensate flow one way:
+- Filters per condensate type in the parameters
+- Fluid input hatches set the filters
+- Uses 1A UIV while active
+- Blocks the network while switched off
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Conduto de Plasma Preservador de Coerência | 148 |
-| Carcaça de Indução de Conflito | 92 |
-| Carcaça Eletromagneticamente Isolada | 89 |
-| Manipulador da Constante de Estrutura Fina | 85 |
-| Guia de Ondas Eletromagnético | 70 |
-| Carcaça de Imposição da Paz | 68 |
-| Bobina Transformadora de Condensado | 40 |
-| Bobina Guia de Condensado | 24 |
-| Hatch de Condensado de Bose-Einstein | 1 |
+| Coherence Preserving Plasma Conduit | 148 |
+| Conflict Inducement Casing | 92 |
+| Electromagnetically Isolated Casing | 89 |
+| Fine Structure Constant Manipulator | 85 |
+| Electromagnetic Waveguide | 70 |
+| Peace Enforcement Casing | 68 |
+| Condensate Transformative Coil | 40 |
+| Condensate Guidance Coil | 24 |
+| Bose-Einstein Condensate Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Portão de Maxwell de Condensado de Bose-Einstein | 1 |
+| Bose-Einstein Condensate Maxwell Gate | 1 |
 | ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,49 +1,53 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Energy, AE2 and computation
 ---
 
 # Nexus ME Hypercore
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
+
+*Can it run Crysis? It can craft it.*
 
 ![Nexus ME Hypercore](../../../assets/machines/nexus_me_hypercore.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 44 × 22 × 44 |
-| **Blocos** | 7.736 |
+| **Machine type** | ME Crafting Computer |
+| **Category** | Energy, AE2 and computation |
+| **Recipe types** | None |
+| **Size** | 44 × 22 × 44 |
+| **Blocks** | 7,736 |
+| **Origin** | — |
 
-## Descrição
+## Description
 
-Roda Crysis? Ele fabrica o Crysis. Uma rede de computadores ME de 44x22x44 em volta de um núcleo de vidro laminado; cada módulo vira parte de uma CPU de crafting compartilhada.
+A 44x22x44 ME computer lattice around a laminated-glass core; every module becomes part of one shared crafting CPU.
 
-- Tipo de Máquina: Computador de Crafting ME
-- Encha tudo com tier IV: Modo Transcendente
-- Transcendente: armazenamento e CPUs ilimitados
-- Núcleo: até 320 módulos ou Crafting Units do AE2
-- Threads por módulo: 4 / 16 / 128 / 1.024
-- Precisa de exatamente uma Crafting CPU Interface
+- Fill all slots with tier IV: Transcendent Mode
+- Transcendent: unlimited storage and CPUs
+- Core: up to 320 modules or AE2 Crafting Units
+- Threads per module: 4 / 16 / 128 / 1,024
+- Needs exactly one Crafting CPU Interface
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Concreto de Alta Resistência | 1.752 |
-| Palladium Substation Casing | 1.536 |
+| High Strength Concrete | 1,752 |
+| Palladium Substation Casing | 1,536 |
 | Laminated Glass | 798 |
 | Nonconducting Casing | 692 |
 | Stainless Steel Frame | 616 |
 | Laser-Safe Engraving Casing | 480 |
 | Black Steel Frame | 400 |
-| Módulo de Crafting Matrix T1 | 320 |
+| T1 Matrix Crafting Module | 320 |
 | Molybdenum Disilicide Coil Block | 280 |
 | Extreme Engine Intake Casing | 256 |
-| Bloco Mecânico Cerâmico de Óxido de Cobalto Condutor Térmico de Alta Resistência | 256 |
+| Cobalt Oxide Ceramic Strong Thermally Conductive Mechanical Block | 256 |
 | High Power Casing | 240 |
 | Filter Casing | 108 |
-| Interface de CPU de Crafting | 1 |
+| Crafting CPU Interface | 1 |
 | Nexus ME Hypercore | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

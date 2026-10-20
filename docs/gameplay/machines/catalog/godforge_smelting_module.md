@@ -1,40 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Forja de Energia Heliofulgor
+# Helioflare Power Forge
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Forja de Energia Heliofulgor](../../../assets/machines/godforge_smelting_module.webp){ loading=lazy }
+*Smelting, but the furnace is a neutron star.*
+
+![Helioflare Power Forge](../../../assets/machines/godforge_smelting_module.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Electric Blast Furnace, Electric Furnace |
-| **Tamanho** | 7 × 7 × 13 |
-| **Blocos** | 89 |
+| **Machine type** | Blast Furnace, Furnace |
+| **Category** | Endgame systems |
+| **Recipe types** | Electric Blast Furnace, Electric Furnace |
+| **Size** | 7 × 7 × 13 |
+| **Blocks** | 89 |
+| **Origin** | GT: New Horizons |
 
-## Descrição
+## Description
 
-Fundição, só que a fornalha é uma estrela de nêutrons. fornalha ou alto-forno em calor extremo.
+furnace or blast furnace at extreme heat.
 
-- Tipo de Máquina: Alto-Forno, Fornalha
-- O primeiro módulo da Godforge: funde como uma
-- Especializado em velocidade e calor alto
-- Escolha o modo fornalha ou alto-forno na GUI
-- Precisa fazer parte de uma Godforge
+- The first Godforge module: smelts like a
+- Specialized in speed and high heat levels
+- Pick furnace or blast mode in the GUI
+- Must be part of a Godforge to work
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Blindagem Estelar Reforçada por Singularidade | 36 |
-| Carcaça de Confinamento Magnético Transcendentalmente Amplificado | 21 |
-| Carcaça Estrutural Ilimitada Gravitacionalmente Isolada | 20 |
-| Bloco de Bobina de Hypogen | 5 |
-| Carcaça de Guia de Matéria Celestial | 5 |
-| Forja de Energia Heliofulgor | 1 |
-| Carcaça de Sifão de Energia Estelar | 1 |
+| Singularity Reinforced Stellar Shielding Casing | 36 |
+| Transcendentally Amplified Magnetic Confinement Casing | 21 |
+| Boundless Gravitationally Severed Structure Casing | 20 |
+| Hypogen Coil Block | 5 |
+| Celestial Matter Guidance Casing | 5 |
+| Helioflare Power Forge | 1 |
+| Stellar Energy Siphon Casing | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,42 +1,46 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Centrífuga de Terras Raras
+# Rare Earth Centrifugal
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Centrífuga de Terras Raras](../../../assets/machines/rare_earth_centrifugal.webp){ loading=lazy }
+*Spins rare earths until every lanthanide finds its jar.*
+
+![Rare Earth Centrifugal](../../../assets/machines/rare_earth_centrifugal.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Centrífuga de Terras Raras |
-| **Tamanho** | 5 × 5 × 5 |
-| **Blocos** | 117 |
+| **Machine type** | Centrifuge |
+| **Category** | Electric processing |
+| **Recipe types** | Rare Earth Centrifugal |
+| **Size** | 5 × 5 × 5 |
+| **Blocks** | 117 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Gira as terras raras até cada lantanídeo achar o seu pote. Separa concentrados de terras raras nos seus elementos de uma vez.
+Splits rare earth concentrates into their elements in one spin.
 
-- Tipo de Máquina: Centrífuga
-- Monta em qualquer direção
-- Paralelos definidos pelo Parallel Hatch
+- Builds in any direction
+- Parallel set by the Parallel Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Sturdy HSS-E Machine Casing | 82 |
 | Tungstensteel Gearbox Casing | 24 |
-| Carcaça de Tubo de Amprósio | 3 |
+| Amprosium Pipe Casing | 3 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
-| Centrífuga de Terras Raras | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Rare Earth Centrifugal | 1 |
 | ULV Output Bus | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
 | Elite Parallel Control Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

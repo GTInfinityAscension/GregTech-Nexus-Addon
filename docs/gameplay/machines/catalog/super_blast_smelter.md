@@ -1,37 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Super Fundidora
+# Super Blast Smelter
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Super Fundidora](../../../assets/machines/super_blast_smelter.webp){ loading=lazy }
+*Smelting all things at artificial-sun temperatures.*
+
+![Super Blast Smelter](../../../assets/machines/super_blast_smelter.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Electric Blast Furnace, Alloy Blast Smelter |
-| **Tamanho** | 24 × 43 × 23 |
-| **Blocos** | 6.908 |
+| **Machine type** | Blast Furnace, Alloy Blast |
+| **Category** | Electric processing |
+| **Recipe types** | Electric Blast Furnace, Alloy Blast Smelter |
+| **Size** | 24 × 43 × 23 |
+| **Blocks** | 6,908 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Fundindo tudo em temperaturas de sol artificial. Funde e cria ligas no calor de núcleo de estrela: receitas do Alto-Forno Elétrico e da Alloy Blast Smelter.
+Electric Blast Furnace and Alloy Blast Smelter recipes.
 
-- Tipo de Máquina: Alto-Forno, Alto-Forno de Ligas
-- +100K de calor por tier de voltagem acima de MV
-- Thread Hatch: várias receitas ao mesmo tempo
-- Paralelos definidos pelo Parallel Hatch
-- As bobinas precisam da temperatura da receita
+- Smelts and alloys at star-core heat:
+- +100K heat per voltage tier above MV
+- Thread Hatch: several recipes at once
+- Parallel set by the Parallel Hatch
+- Coils must meet the recipe temperature
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| High Temperature Smelting Casing | 3.567 |
+| High Temperature Smelting Casing | 3,567 |
 | Cupronickel Coil Block | 888 |
-| Invólucro de Liga de Naquadah | 276 |
+| Naquadah Alloy Casing | 276 |
 | Tungstensteel Pipe Casing | 274 |
 | Heat Vent | 268 |
 | Bronze Firebox Casing | 225 |
@@ -46,14 +51,14 @@ Fundindo tudo em temperaturas de sol artificial. Funde e cria ligas no calor de 
 | Extreme Engine Intake Casing | 52 |
 | Naquadah Frame | 48 |
 | PTFE Pipe Casing | 29 |
-| Carcaça de Tubo de Amprósio | 25 |
+| Amprosium Pipe Casing | 25 |
 | Muffler Hatch IV | 5 |
-| Super Fundidora | 1 |
+| Super Blast Smelter | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

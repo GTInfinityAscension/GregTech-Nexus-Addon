@@ -1,38 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Reator de Hiperpressão Compacto
+# Compact Hyper Pressure Reactor
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Reator de Hiperpressão Compacto](../../../assets/machines/compact_hyper_pressure_reactor.webp){ loading=lazy }
+*All the pressure, a fraction of the footprint.*
+
+![Compact Hyper Pressure Reactor](../../../assets/machines/compact_hyper_pressure_reactor.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Reator de Alta Pressão |
-| **Tamanho** | 47 × 7 × 47 |
-| **Blocos** | 2.480 |
+| **Machine type** | High Pressure Reactor |
+| **Category** | Steam and primitive |
+| **Recipe types** | Hyper Pressure Reactor |
+| **Size** | 47 × 7 × 47 |
+| **Blocks** | 2,480 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Toda a pressão, numa fração do espaço. Um processador de fluidos de densidade extrema que faz Vapor Supercrítico Denso a partir de recursos básicos.
+An extreme-density fluid processor that makes Dense Supercritical Steam from basic resources.
 
-- Tipo de Máquina: Reator de Alta Pressão
-- Não precisa de Energia nem de Vapor
-- Paralelos: até 512
+- Needs no Energy or Steam
+- Parallel: up to 512
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Vibration Safe Casing | 1.700 |
+| Vibration Safe Casing | 1,700 |
 | Steam Compact Pipe Casing | 560 |
 | Steel Frame | 128 |
 | Borosilicate Glass | 87 |
 | ULV Output Hatch | 2 |
 | ULV Input Hatch | 2 |
-| Reator de Hiperpressão Compacto | 1 |
+| Compact Hyper Pressure Reactor | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

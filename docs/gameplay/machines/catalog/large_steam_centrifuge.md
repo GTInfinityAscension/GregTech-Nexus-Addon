@@ -1,32 +1,36 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
 # Large Steam Centrifuge
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
+
+*Round and round it goes, where it stops, everyone knows.*
 
 ![Large Steam Centrifuge](../../../assets/machines/large_steam_centrifuge.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Centrifuge |
-| **Tamanho** | 7 × 10 × 7 |
-| **Blocos** | 252 |
+| **Machine type** | Centrifuge |
+| **Category** | Steam and primitive |
+| **Recipe types** | Centrifuge |
+| **Size** | 7 × 10 × 7 |
+| **Blocks** | 252 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Roda, roda, roda, e todo mundo sabe onde para. Uma centrífuga a vapor reforçada de alto volume com suporte a fluidos.
+A reinforced high-throughput steam centrifuge with fluid support.
 
-- Tipo de Máquina: Centrífuga
-- Velocidade 2x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 64
+- 2x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 64
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 137 |
 | Bronze Pipe Casing | 32 |
@@ -34,6 +38,6 @@ Roda, roda, roda, e todo mundo sabe onde para. Uma centrífuga a vapor reforçad
 | Bronze Frame | 28 |
 | Bronze Gearbox Casing | 25 |
 | Large Steam Centrifuge | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

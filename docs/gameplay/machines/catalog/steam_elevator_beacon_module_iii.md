@@ -1,35 +1,39 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Módulo Farol a Vapor III
+# Steam Elevator Beacon Module III
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Módulo Farol a Vapor III](../../../assets/machines/steam_elevator_beacon_module_iii.webp){ loading=lazy }
+*Elite beacon. The Wither wishes it were this cool.*
+
+![Steam Elevator Beacon Module III](../../../assets/machines/steam_elevator_beacon_module_iii.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 1 × 5 × 2 |
-| **Blocos** | 10 |
+| **Machine type** | Elevator Module |
+| **Category** | Steam and primitive |
+| **Recipe types** | None |
+| **Size** | 1 × 5 × 2 |
+| **Blocks** | 10 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Sinalizador de elite. O Wither queria ser legal assim. Espalha efeitos de poção numa área grande; escolha os efeitos na GUI.
+Spreads potion effects over a large area; pick the effects in the GUI.
 
-- Tipo de Máquina: Módulo do Elevador
-- Nível do efeito: III
-- 10 efeitos para escolher
-- Alcance: 256 blocos
-- Só funciona encaixado num Steam Elevator
+- Effect level: III
+- 10 selectable effects
+- Range: 256 blocks
+- Only works attached to a Steam Elevator
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Solid Machine Casing | 9 |
-| Módulo Farol a Vapor III | 1 |
+| Steam Elevator Beacon Module III | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

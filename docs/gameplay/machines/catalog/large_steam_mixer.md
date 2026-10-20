@@ -1,40 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
 # Large Steam Mixer
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
+
+*Shaken, not stirred. Actually, both.*
 
 ![Large Steam Mixer](../../../assets/machines/large_steam_mixer.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Mixer |
-| **Tamanho** | 7 × 7 × 7 |
-| **Blocos** | 243 |
+| **Machine type** | Mixer |
+| **Category** | Steam and primitive |
+| **Recipe types** | Mixer |
+| **Size** | 7 × 7 × 7 |
+| **Blocks** | 243 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Batido, não mexido. Na verdade, os dois. Uma câmara de mistura a vapor em massa para pós e fluidos.
+A bulk steam mixing chamber for dusts and fluids.
 
-- Tipo de Máquina: Misturador
-- Velocidade 2x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 64
+- 2x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 64
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 80 |
 | Glass | 40 |
-| Casing Industrial a Vapor | 40 |
+| Industrial Steam Casing | 40 |
 | Bronze Firebox Casing | 32 |
 | Bronze Gearbox Casing | 25 |
 | Bronze Pipe Casing | 24 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Wireless Steam Input Hatch | 1 |
 | Large Steam Mixer | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,42 +1,46 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Campo de Pesca
+# Fishing Ground
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Campo de Pesca](../../../assets/machines/fishing_ground.webp){ loading=lazy }
+*Like eating fish? The whole office does now.*
+
+![Fishing Ground](../../../assets/machines/fishing_ground.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Campo de Pesca |
-| **Tamanho** | 13 × 4 × 13 |
-| **Blocos** | 340 |
+| **Machine type** | Fishing Ground |
+| **Category** | Electric processing |
+| **Recipe types** | Fishing Ground |
+| **Size** | 13 × 4 × 13 |
+| **Blocks** | 340 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Gosta de peixe? O escritório inteiro gosta agora. sozinha com isca numa estrutura cheia de água.
+automatically with bait in a water-filled structure.
 
-- Tipo de Máquina: Área de Pesca
-- A fazenda de pesca inteligente AFFL-200: pesca
-- O circuito escolhe o tipo de pesca
-- Circuito 1 aleatório, 2 peixe, 3 lixo, 4 tesouro
-- Precisa de isca para pescar
+- The AFFL-200 smart fishing farm: fishes
+- Circuit picks the catch type
+- Circuit 1 random, 2 fish, 3 junk, 4 treasure
+- Needs bait to fish
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Bronze-Alumínio | 221 |
+| Aluminium Bronze Casing | 221 |
 | Water | 88 |
 | Stainless Steel Frame | 19 |
 | Steel Pipe Casing | 7 |
 | ULV Energy Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Bus | 1 |
-| Campo de Pesca | 1 |
+| Fishing Ground | 1 |
 | ULV Output Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

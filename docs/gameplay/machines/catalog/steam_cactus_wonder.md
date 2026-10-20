@@ -1,33 +1,37 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Maravilha dos Cactos
+# Cactus Wonder
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Maravilha dos Cactos](../../../assets/machines/steam_cactus_wonder.webp){ loading=lazy }
+*Who needs a boiler when you have a desert?*
+
+![Cactus Wonder](../../../assets/machines/steam_cactus_wonder.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Maravilha do Cacto |
-| **Tamanho** | 9 × 11 × 9 |
-| **Blocos** | 341 |
+| **Machine type** | Steam Generator |
+| **Category** | Steam and primitive |
+| **Recipe types** | Cactus Wonder |
+| **Size** | 9 × 11 × 9 |
+| **Blocks** | 341 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Quem precisa de caldeira quando se tem um deserto? Queima combustíveis de carbono da era dos cactos e devolve o valor deles em vapor.
+Burns cactus-era carbon fuels and returns their value as steam.
 
-- Tipo de Máquina: Gerador de Vapor
-- Carvão / Carvão Vegetal: 8.000 mB de vapor
-- Bloco de Carvão: 90.000 mB de vapor
-- Um combustível por ciclo de 1 s
-- Precisa de cactos adultos no chão de areia
+- Coal / Charcoal: 8,000 mB steam each
+- Coal Block: 90,000 mB steam
+- One fuel item per 1 s cycle
+- Needs fully grown cacti on the sand floor
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Bronze Firebox Casing | 127 |
 | Glass | 71 |
@@ -35,6 +39,6 @@ Quem precisa de caldeira quando se tem um deserto? Queima combustíveis de carbo
 | Bronze Frame | 44 |
 | Bronze Pipe Casing | 18 |
 | Sand | 16 |
-| Maravilha dos Cactos | 1 |
+| Cactus Wonder | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

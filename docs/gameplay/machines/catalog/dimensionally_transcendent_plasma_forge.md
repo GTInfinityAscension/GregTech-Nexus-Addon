@@ -1,43 +1,47 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Forja de Plasma Dimensionalmente Transcendente
+# Dimensionally Transcendent Plasma Forge
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Forja de Plasma Dimensionalmente Transcendente](../../../assets/machines/dimensionally_transcendent_plasma_forge.webp){ loading=lazy }
+*Transcending dimensional boundaries since 2015.*
+
+![Dimensionally Transcendent Plasma Forge](../../../assets/machines/dimensionally_transcendent_plasma_forge.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Forja de Plasma |
-| **Tamanho** | 33 × 24 × 33 |
-| **Blocos** | 5.627 |
+| **Machine type** | Plasma Forge, DTPF |
+| **Category** | Endgame systems |
+| **Recipe types** | Plasma Forge |
+| **Size** | 33 × 24 × 33 |
+| **Blocks** | 5,627 |
+| **Origin** | GT: New Horizons |
 
-## Descrição
+## Description
 
-Transcendendo fronteiras dimensionais desde 2015. Uma forja que rompe fronteiras dimensionais aos poucos e gasta menos combustível quanto mais tempo funciona.
+A forge that slowly breaches dimensional boundaries, burning less fuel the longer it runs.
 
-- Tipo de Máquina: Forja de Plasma, DTPF
-- Até 50% menos combustível após 8 h funcionando
-- No mínimo 1.250 Dimensional Injection Casings
-- Até 2 hatches de energia ou 1 laser
-- Parada: o desconto cai 100x mais rápido
+- Up to 50% less fuel after 8 h of runtime
+- At least 1,250 Dimensional Injection Casings
+- Up to 2 energy hatches or 1 laser
+- Idle: the discount decays 100x faster
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Invólucro Dimensionalmente Transcendente | 2.121 |
-| Cupronickel Coil Block | 2.112 |
-| Invólucro de Injeção Dimensional | 1.268 |
-| Carcaça de Ponte Dimensional | 120 |
+| Dimensionally Transcendent Casing | 2,121 |
+| Cupronickel Coil Block | 2,112 |
+| Dimension Injection Casing | 1,268 |
+| Dimensional Bridge Casing | 120 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
-| Forja de Plasma Dimensionalmente Transcendente | 1 |
+| Dimensionally Transcendent Plasma Forge | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

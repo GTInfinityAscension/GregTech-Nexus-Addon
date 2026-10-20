@@ -1,47 +1,51 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Nó de Teleporte de Condensado de Bose-Einstein
+# Bose-Einstein Condensate Teleportation Node
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Nó de Teleporte de Condensado de Bose-Einstein](../../../assets/machines/bec_io_node.webp){ loading=lazy }
+*Items in, items out, physics optional.*
+
+![Bose-Einstein Condensate Teleportation Node](../../../assets/machines/bec_io_node.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Montagem com Condensado |
-| **Tamanho** | 7 × 23 × 13 |
-| **Blocos** | 430 |
+| **Machine type** | BEC Teleportation Node |
+| **Category** | Endgame systems |
+| **Recipe types** | Condensate Assembly |
+| **Size** | 7 × 23 × 13 |
+| **Blocks** | 430 |
+| **Origin** | GT: New Horizons |
 
-## Descrição
+## Description
 
-Entram itens, saem itens, física opcional. Fabrica receitas de Montagem com Condensado com seus barramentos; cada slot de item pede um tier de nanite por vez.
+Crafts Condensate Assembly recipes with its buses; each item slot needs a nanite tier in turn.
 
-- Tipo de Máquina: Nó de Teleporte BEC
-- Nanites extras aceleram linearmente
-- Paralelos mínimo/máximo e divisor de velocidade nos parâmetros
-- Nanites de tier maior atrasam em 2^(fornecido - exigido)
-- O condensado pode chegar a qualquer momento antes do fim
-- Sem overclock
-- Faltando condensado no fim, a receita falha
+- Extra nanites speed crafting linearly
+- Min/max parallels and a speed divisor in the parameters
+- Higher-tier nanites slow it by 2^(provided - required)
+- Condensate may arrive at any time before the end
+- No overclock
+- Missing condensate at the end fails the recipe
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Conduto de Plasma Preservador de Coerência | 94 |
-| Carcaça de Indução de Conflito | 88 |
-| Guia de Ondas Eletromagnético | 56 |
-| Carcaça Eletromagneticamente Isolada | 48 |
-| Manipulador da Constante de Estrutura Fina | 44 |
-| Bobina Transformadora de Condensado | 44 |
-| Carcaça de Imposição da Paz | 32 |
-| Bobina Guia de Condensado | 20 |
+| Coherence Preserving Plasma Conduit | 94 |
+| Conflict Inducement Casing | 88 |
+| Electromagnetic Waveguide | 56 |
+| Electromagnetically Isolated Casing | 48 |
+| Fine Structure Constant Manipulator | 44 |
+| Condensate Transformative Coil | 44 |
+| Peace Enforcement Casing | 32 |
+| Condensate Guidance Coil | 20 |
 | ULV Input Bus | 1 |
-| Nó de Teleporte de Condensado de Bose-Einstein | 1 |
-| Hatch Conector de Linha de Visão | 1 |
+| Bose-Einstein Condensate Teleportation Node | 1 |
+| Line-Of-Sight Connector Hatch | 1 |
 | ULV Output Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,38 +1,41 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Forno de Tijolos
+# Brick Kiln
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Forno de Tijolos](../../../assets/machines/brick_kiln.webp){ loading=lazy }
+*Bricks: the original building block.*
+
+![Brick Kiln](../../../assets/machines/brick_kiln.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Queima de Tijolos |
-| **Tamanho** | 5 × 4 × 7 |
-| **Blocos** | 88 |
+| **Machine type** | Brick Firing |
+| **Category** | Steam and primitive |
+| **Recipe types** | Brick Firing |
+| **Size** | 5 × 4 × 7 |
+| **Blocks** | 88 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Queima tijolos e cerâmicas a partir de argila compactada e carvão.
+Fires bricks and ceramics from compressed clay and coal.
 
-- Tipo de Máquina: Queima de Tijolos
-- Tijolos: o bloco de construção original.
-- Funciona sem hatch de energia
+- Runs without an energy hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Bricks | 57 |
 | Firebricks | 16 |
 | Stone Bricks | 11 |
 | ULV Input Hatch | 1 |
-| Forno de Tijolos | 1 |
+| Brick Kiln | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

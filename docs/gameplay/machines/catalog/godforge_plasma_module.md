@@ -1,40 +1,44 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Endgame systems
 ---
 
-# Fabricador de Plasma Heliotérmico
+# Heliothermal Plasma Fabricator
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Fabricador de Plasma Heliotérmico](../../../assets/machines/godforge_plasma_module.webp){ loading=lazy }
+*Ionize first, ask questions never.*
+
+![Heliothermal Plasma Fabricator](../../../assets/machines/godforge_plasma_module.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Plasma da Forja dos Deuses |
-| **Tamanho** | 7 × 7 × 13 |
-| **Blocos** | 89 |
+| **Machine type** | Plasma Fabricator |
+| **Category** | Endgame systems |
+| **Recipe types** | Godforge Plasma |
+| **Size** | 7 × 7 × 13 |
+| **Blocks** | 89 |
+| **Origin** | GT: New Horizons |
 
-## Descrição
+## Description
 
-Ionize primeiro, pergunte nunca. até virarem plasma.
+with heat until they become plasma.
 
-- Tipo de Máquina: Fabricador de Plasma
-- O terceiro módulo da Godforge: aquece materiais
-- Especializado em eficiência de energia e overclock
-- Alguns plasmas precisam de upgrades da forja
-- Precisa fazer parte de uma Godforge
+- The third Godforge module: infuses materials
+- Specialized in energy and overclock efficiency
+- Some plasmas need forge upgrades
+- Must be part of a Godforge to work
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Blindagem Estelar Reforçada por Singularidade | 36 |
-| Carcaça de Confinamento Magnético Transcendentalmente Amplificado | 21 |
-| Carcaça Estrutural Ilimitada Gravitacionalmente Isolada | 20 |
-| Conduíte Harmônico de Transmissão de Fônons | 5 |
-| Carcaça de Guia de Matéria Celestial | 5 |
-| Fabricador de Plasma Heliotérmico | 1 |
-| Carcaça de Sifão de Energia Estelar | 1 |
+| Singularity Reinforced Stellar Shielding Casing | 36 |
+| Transcendentally Amplified Magnetic Confinement Casing | 21 |
+| Boundless Gravitationally Severed Structure Casing | 20 |
+| Harmonic Phonon Transmission Conduit | 5 |
+| Celestial Matter Guidance Casing | 5 |
+| Heliothermal Plasma Fabricator | 1 |
+| Stellar Energy Siphon Casing | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

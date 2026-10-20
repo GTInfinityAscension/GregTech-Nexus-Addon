@@ -1,53 +1,57 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Envasadora Matricial por Fluxo de Partículas
+# Particle Stream Matrix Filling Machine
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Envasadora Matricial por Fluxo de Partículas](../../../assets/machines/particle_stream_matrix_filling_machine.webp){ loading=lazy }
+*Even photons and sound waves fit in a can now.*
+
+![Particle Stream Matrix Filling Machine](../../../assets/machines/particle_stream_matrix_filling_machine.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Canner |
-| **Tamanho** | 15 × 46 × 15 |
-| **Blocos** | 3.141 |
+| **Machine type** | Canner |
+| **Category** | Electric processing |
+| **Recipe types** | Canner |
+| **Size** | 15 × 46 × 15 |
+| **Blocks** | 3,141 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Até fótons e ondas sonoras cabem numa lata agora. Injeta fluxos de partículas em recipientes com perda zero em escala de megafábrica.
+Injects particle streams into containers with zero loss at megafactory scale.
 
-- Tipo de Máquina: Enlatadora
-- Paralelos 2x a cada 900K de bobina
-- Thread Hatch: várias receitas ao mesmo tempo
-- Usa o limite do Parallel Hatch se for maior
+- Parallel 2x every 900K of coils
+- Thread Hatch: several recipes at once
+- Uses the Parallel Hatch limit if higher
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Contenção de Pressão | 672 |
-| Vidro Revestido de Amprósio Permeável a Elétrons | 544 |
-| Carcaça Mecânica de Lafium | 430 |
-| Bloco de Base Reforçada | 337 |
+| Pressure Containment Casing | 672 |
+| Electron Permeable Amprosium Coated Glass | 544 |
+| Lafium Mechanical Casing | 430 |
+| Strengthen The Base Block | 337 |
 | Stress Proof Casing | 317 |
-| Carcaça de Tubo de Amprósio | 184 |
+| Amprosium Pipe Casing | 184 |
 | Fusion Glass | 156 |
 | Trinaquadalloy Frame | 127 |
 | Cupronickel Coil Block | 118 |
-| Tubo de Alta Velocidade | 76 |
+| Speeding Pipe | 76 |
 | Electrolytic Cell | 68 |
-| Carcaça Resistente a Alta Pressão | 61 |
-| Carcaça Multifuncional | 24 |
+| High Pressure Resistant Casing | 61 |
+| Multi Functional Casing | 24 |
 | Black Steel Frame | 20 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
-| Envasadora Matricial por Fluxo de Partículas | 1 |
+| Particle Stream Matrix Filling Machine | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

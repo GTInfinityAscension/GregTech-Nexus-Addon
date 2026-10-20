@@ -1,42 +1,46 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Fábrica Universal
+# Universal Factory
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Fábrica Universal](../../../assets/machines/universal_factory.webp){ loading=lazy }
+*One factory to rule them all.*
+
+![Universal Factory](../../../assets/machines/universal_factory.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Bender, Compressor, Forge Hammer, Cutter, Extruder, Lathe, Wiremill, Forming Press, Polarizer, Laser Engraver, Fluid Solidifier, Assembler, Arc Furnace, Circuit Assembler, Canner, Centrifuge, Thermal Centrifuge, Electrolyzer, Sifter, Macerator, Extractor, Chemical Reactor, Mixer, Chemical Bath, Ore Washer, Large Chemical Reactor, Packer, Distillery, Autoclave, Fluid Heater, Brewery, Fermenter |
-| **Tamanho** | 3 × 3 × 3 |
-| **Blocos** | 27 |
+| **Machine type** | Universal Factory |
+| **Category** | Electric processing |
+| **Recipe types** | Bender, Compressor, Forge Hammer, Cutter, Extruder, Lathe, Wiremill, Forming Press, Polarizer, Laser Engraver, Fluid Solidifier, Assembler, Arc Furnace, Circuit Assembler, Canner, Centrifuge, Thermal Centrifuge, Electrolyzer, Sifter, Macerator, Extractor, Chemical Reactor, Mixer, Chemical Bath, Ore Washer, Large Chemical Reactor, Packer, Distillery, Autoclave, Fluid Heater, Brewery, Fermenter |
+| **Size** | 3 × 3 × 3 |
+| **Blocks** | 27 |
+| **Origin** | GTLSupb |
 
-## Descrição
+## Description
 
-Uma fábrica para a todos governar. Processa várias receitas diferentes ao mesmo tempo com paralelos e threads entre receitas.
+Processes many different recipes at once with cross-recipe parallel and threads.
 
-- Tipo de Máquina: Fábrica Universal
-- Roda 32 tipos de receita numa máquina só
-- Modo legado: aquecimento térmico e batch
-- Threads e paralelos seguem o modo e o tier
-- Hatches especiais precisam ser ativados na config
+- Runs 32 recipe types in one machine
+- Legacy mode: thermal warmup and batch
+- Threads and parallel follow balance mode and tier
+- Special hatches must be enabled in the config
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça da Fábrica Universal | 19 |
+| Universal Factory Casing | 19 |
 | ULV Output Bus | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
-| Fábrica Universal | 1 |
+| Universal Factory | 1 |
 | Steel Frame | 1 |
 | ULV Output Hatch | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

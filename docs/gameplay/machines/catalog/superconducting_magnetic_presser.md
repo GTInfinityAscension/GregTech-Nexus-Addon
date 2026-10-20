@@ -1,54 +1,58 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Prensa Magnética Supercondutora
+# Superconducting Magnetic Presser
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Prensa Magnética Supercondutora](../../../assets/machines/superconducting_magnetic_presser.webp){ loading=lazy }
+*Can easily accelerate coins to Mach 3!*
+
+![Superconducting Magnetic Presser](../../../assets/machines/superconducting_magnetic_presser.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Forming Press |
-| **Tamanho** | 38 × 7 × 17 |
-| **Blocos** | 2.653 |
+| **Machine type** | Forming Press |
+| **Category** | Electric processing |
+| **Recipe types** | Forming Press |
+| **Size** | 38 × 7 × 17 |
+| **Blocks** | 2,653 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Acelera moedas a Mach 3 com facilidade! Molda metal com força eletromagnética nível railgun.
+Shapes metal with railgun-grade electromagnetic force.
 
-- Tipo de Máquina: Prensa de Moldagem
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Paralelos definidos pelo Parallel Hatch
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Parallel set by the Parallel Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Irídio | 1.270 |
-| Invólucro de Liga de Naquadah | 376 |
-| Casing Mecanico de Hastelloy N Resistente a Oxidacao | 175 |
-| Vidro Borossilicato de Amprósio | 140 |
-| Carcaça Estável de Neutrônio | 115 |
-| Carcaça de Planta Reforçada com Naquadah | 105 |
-| Invólucro de Injeção Dimensional | 96 |
+| Iridium Casing | 1,270 |
+| Naquadah Alloy Casing | 376 |
+| Oxidation Resistant Hastelloy N Mechanical Casing | 175 |
+| Amprosium Borosilicate Glass | 140 |
+| Neutronium Stable Casing | 115 |
+| Naquadah Reinforced Plant Casing | 105 |
+| Dimension Injection Casing | 96 |
 | Superconducting Coil Block | 96 |
-| Hastelloy C 276 Frame | 74 |
-| Carcaça Molecular | 44 |
-| Carcaça Ativa de Amprósio | 44 |
+| Hastelloy C-276 Frame | 74 |
+| Molecular Casing | 44 |
+| Amprosium Active Casing | 44 |
 | Electrolytic Cell | 28 |
-| Gerador de Campo de Contenção | 26 |
+| Containment Field Generator | 26 |
 | Filter Casing | 26 |
 | Heat Vent | 16 |
-| Neutronium Block | 9 |
+| Block of Neutronium | 9 |
 | Naquadria Frame | 8 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
-| Prensa Magnética Supercondutora | 1 |
+| Superconducting Magnetic Presser | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

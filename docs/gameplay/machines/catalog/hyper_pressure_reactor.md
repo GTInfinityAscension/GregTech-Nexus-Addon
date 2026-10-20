@@ -1,40 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Reator de Hiperpressão
+# Hyper Pressure Reactor
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Reator de Hiperpressão](../../../assets/machines/hyper_pressure_reactor.webp){ loading=lazy }
+*Pressure makes diamonds. It also makes this.*
+
+![Hyper Pressure Reactor](../../../assets/machines/hyper_pressure_reactor.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Reator de Alta Pressão |
-| **Tamanho** | 15 × 3 × 15 |
-| **Blocos** | 160 |
+| **Machine type** | High Pressure Reactor |
+| **Category** | Steam and primitive |
+| **Recipe types** | Hyper Pressure Reactor |
+| **Size** | 15 × 3 × 15 |
+| **Blocks** | 160 |
+| **Origin** | GT: Not Leisure |
 
-[Guia completo →](../noenergy/hyper-pressure-reactor.md)
+## Description
 
-## Descrição
+A pressure-based fluid reaction chamber that runs on pure logic.
 
-Pressão faz diamantes. Também faz isto. Uma câmara de reação de fluidos por pressão que funciona com pura lógica.
+- Needs no Energy or Steam
+- Parallel: 1
+- The Compact version has 512 parallel
 
-- Tipo de Máquina: Reator de Alta Pressão
-- Não precisa de Energia nem de Vapor
-- Paralelos: 1
-- A versão Compacta tem 512 paralelos
+## Structure
 
-## Estrutura
-
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Hyper Pressure Breel Casing | 78 |
 | Borosilicate Glass | 45 |
 | Breel Pipe Casing | 32 |
 | ULV Output Hatch | 2 |
 | ULV Input Hatch | 2 |
-| Reator de Hiperpressão | 1 |
+| Hyper Pressure Reactor | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

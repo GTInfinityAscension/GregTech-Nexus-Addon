@@ -1,48 +1,52 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - GTNA originals (WIP)
 ---
 
-# Portão de Fenda Dimensional
+# Dimensional Rift Gate
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Portão de Fenda Dimensional](../../../assets/machines/dimensional_rift_gate.webp){ loading=lazy }
+*Every seed is somewhere. Most of them bite.*
+
+![Dimensional Rift Gate](../../../assets/machines/dimensional_rift_gate.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 126 × 126 × 54 |
-| **Blocos** | 23.024 |
+| **Machine type** | Rift Opening |
+| **Category** | GTNA originals (WIP) |
+| **Recipe types** | None |
+| **Size** | 126 × 126 × 54 |
+| **Blocks** | 23,024 |
+| **Origin** | — |
 
-## Descrição
+## Description
 
-Toda semente leva a algum lugar. A maioria morde. Abre fendas para dimensões por semente; ajuste frequência, fase e amplitude até a fenda segurar.
+Opens rifts to seeded dimensions; tune frequency, phase and amplitude until the rift holds.
 
-- Tipo de Máquina: Abertura de Fendas
-- Cada bioma solta seus próprios recursos
-- Harmônicos gravados formam acordes que moldam a fenda
-- Ressonância R em três eixos de sintonia
-- SpaceTime mantém a fenda estável
-- Âncoras de profundidade sobem a saída em D^1,5
-- Estabilidade em 0 colapsa a fenda
-- Acordes dissonantes descem mais fundo e custam mais
+- Each biome drops its own resources
+- Recorded harmonics form chords that shape the rift
+- Resonance R from three tuning axes
+- SpaceTime keeps the rift stable
+- Depth anchors raise the output by D^1,5
+- Stability at 0 collapses the rift
+- Dissonant chords dig deeper but cost more
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Invólucro Dimensionalmente Transcendente | 7.924 |
-| Carcaça de Estrutura Espacial Reforçada | 7.270 |
-| Fusion Coil Block | 3.715 |
-| Invólucro de Injeção Dimensional | 2.880 |
-| Gerador de Campo de Estabilização Rudimentar | 918 |
-| Bobina de Fusão Comprimida Avançada | 240 |
+| Dimensionally Transcendent Casing | 7,924 |
+| Reinforced Spatial Structure Casing | 7,270 |
+| Fusion Coil Block | 3,715 |
+| Dimension Injection Casing | 2,880 |
+| Crude Stabilisation Field Generator | 918 |
+| Advanced Compressed Fusion Coil | 240 |
 | Solid Machine Casing | 72 |
-| ULV Input Bus | 1 |
-| Portão de Fenda Dimensional | 1 |
-| ULV Input Hatch | 1 |
-| Hatch de Sintonia da Fenda | 1 |
+| Rift Tuning Hatch | 1 |
 | ULV Output Bus | 1 |
+| Dimensional Rift Gate | 1 |
+| ULV Input Bus | 1 |
+| ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

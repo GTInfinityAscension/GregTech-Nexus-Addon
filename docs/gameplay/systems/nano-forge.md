@@ -1,11 +1,27 @@
 # Nano Forge
 
-![](../../assets/machines/nano_forge.webp){ loading=lazy }
+![Nano Forge](../../assets/machines/nano_forge.webp){ loading=lazy }
+
+Builds nanites with huge amounts of power. Ported from GT: New Horizons.
 
 ## Tiers
 
-A nanita num barramento de entrada define o tier e **nunca é consumida**: Carbono T1, Neutrônio T2, Transcendente T3, MagMatter T4. Cada tier muda a estrutura. Overclock perfeito em receitas de tier menor.
+The nanite in any input bus sets the forge's tier and **is never consumed**. Each tier also needs a bigger structure; the extra parts are [auxiliary modules](modules.md), so JEI/EMI shows each tier as its own preview page.
+
+| Tier | Nanite in the bus |
+|---|---|
+| 1 | Carbon Nanites |
+| 2 | Neutronium Nanites |
+| 3 | Transcendent Metal Nanites |
+| 4 | MagMatter Nanites |
+
+Recipes below the forge's tier get **perfect overclock**.
 
 ## Tier 4: MagMatter
 
-Com uma nanita igual à saída da receita no barramento, a forja drena **todo** o MagMatter fundido dos hatches. Paralelo = `MagMatter / (288 / 2^(4 − tier da receita))`; duração × `0,9999^paralelo`.
+With a nanite equal to the recipe's output in the bus, the forge drains **all** molten MagMatter in its hatches and turns it into parallel:
+
+```
+parallel = MagMatter / (288 / 2^(4 − recipe tier))
+duration × 0.9999^parallel
+```

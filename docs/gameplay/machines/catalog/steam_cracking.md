@@ -1,36 +1,40 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Craqueador a Vapor
+# Steam Cracker
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Craqueador a Vapor](../../../assets/machines/steam_cracking.webp){ loading=lazy }
+*Petrochemistry, Victorian edition.*
+
+![Steam Cracker](../../../assets/machines/steam_cracking.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Cracker |
-| **Tamanho** | 7 × 4 × 4 |
-| **Blocos** | 92 |
+| **Machine type** | Cracker |
+| **Category** | Steam and primitive |
+| **Recipe types** | Cracker |
+| **Size** | 7 × 4 × 4 |
+| **Blocks** | 92 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Petroquímica, edição vitoriana. Um craqueador a vapor que quebra termicamente hidrocarbonetos sulfurosos com as receitas normais de craqueamento (circuitos 1-3).
+A steam cracker that thermally cracks sulfuric hydrocarbons with the regular cracking recipes (circuits 1-3).
 
-- Tipo de Máquina: Craqueador
-- Alta pressão dobra os paralelos
-- Paralelos: 8 bronze / 16 aço
+- High pressure doubles the parallel
+- Parallel: 8 bronze / 16 steel
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 73 |
 | Bronze Firebox Casing | 16 |
-| Auto Maintenance Hatch | 1 |
-| Craqueador a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Steam Cracker | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,37 +1,41 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Grande Prensa de Conformação a Vapor
+# Large Steam Forming Press
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Prensa de Conformação a Vapor](../../../assets/machines/large_steam_forming_press.webp){ loading=lazy }
+*Pressing matters, one stamp at a time.*
+
+![Large Steam Forming Press](../../../assets/machines/large_steam_forming_press.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Forming Press |
-| **Tamanho** | 5 × 3 × 5 |
-| **Blocos** | 58 |
+| **Machine type** | Forming Press |
+| **Category** | Steam and primitive |
+| **Recipe types** | Forming Press |
+| **Size** | 5 × 3 × 5 |
+| **Blocks** | 58 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Assuntos prementes, uma prensada de cada vez. Uma prensa a vapor para moldes, lentes e peças prensadas em massa.
+A steam forming press for molds, lenses and pressed parts in bulk.
 
-- Tipo de Máquina: Prensa de Moldagem
-- Velocidade 2,5x maior que a singleblock
-- Alta pressão: 2x velocidade, 2x vapor
-- Paralelos: até 32
+- 2.5x speed vs. singleblock
+- High pressure: 2x speed, 2x steam
+- Parallel: up to 32
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Steam Machine Casing | 48 |
 | Bronze Gearbox Casing | 4 |
 | Bronze Pipe Casing | 4 |
-| Grande Prensa de Conformação a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Large Steam Forming Press | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

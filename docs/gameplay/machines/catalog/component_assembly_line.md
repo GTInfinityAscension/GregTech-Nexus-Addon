@@ -1,64 +1,68 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Linha de Montagem de Componentes
+# Component Assembly Line
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Linha de Montagem de Componentes](../../../assets/machines/component_assembly_line.webp){ loading=lazy }
+*Industry's closest approximation to divine creation.*
+
+![Component Assembly Line](../../../assets/machines/component_assembly_line.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Montagem de Componentes |
-| **Tamanho** | 31 × 15 × 47 |
-| **Blocos** | 10.699 |
+| **Machine type** | Component Assembly |
+| **Category** | Electric processing |
+| **Recipe types** | Component Assembly |
+| **Size** | 31 × 15 × 47 |
+| **Blocks** | 10,699 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-O mais perto que a indústria chegou da criação divina. Roda lotes de montagem de componentes como uma linha por tier de casing com um Parallel Hatch.
+Runs component assembly batches as a tier-cased line with a Parallel Hatch.
 
-- Tipo de Máquina: Montagem de Componentes
-- Paralelos definidos pelo Parallel Hatch
-- O tier do casing limita quais receitas começam
-- Todos os casings de montagem precisam do mesmo tier
+- Parallel set by the Parallel Hatch
+- Casing tier limits which recipes can start
+- All assembly casings must share one tier
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Irídio | 3.184 |
-| Invólucro de Liga de Naquadah | 1.376 |
-| Nonconducting Casing | 1.014 |
-| Casing Mecanico de Hastelloy N Resistente a Oxidacao | 862 |
-| Carcaça Mecânica de Processamento de Precisão | 564 |
-| Bloco Mecânico de Cerâmica de Nitreto de Titânio Resistente a Impacto | 464 |
+| Iridium Casing | 3,184 |
+| Naquadah Alloy Casing | 1,376 |
+| Nonconducting Casing | 1,014 |
+| Oxidation Resistant Hastelloy N Mechanical Casing | 862 |
+| Precision Processing Mechanical Casing | 564 |
+| Titanium Nitride Ceramic Impact-Resistant Mechanical Block | 464 |
 | Cleanroom Glass | 428 |
-| Carcaça de Cerâmica de Carbeto de Boro Resistente à Radiação | 414 |
+| Boron Carbide Radiation Resistant Casing | 414 |
 | Hastelloy N Frame | 364 |
-| Carcaça de Tubulação Resistente à Corrosão Química | 262 |
-| Carcaça de Contenção de Pressão | 244 |
+| Chemical Corrosion Resistant Pipe Casing | 262 |
+| Pressure Containment Casing | 244 |
 | Filter Casing | 208 |
-| Hsla Steel Frame | 200 |
+| HSLA Steel Frame | 200 |
 | PTFE Pipe Casing | 178 |
-| Bloco Mecanico Ceramico de Zirconia Resistente a Flexao | 130 |
-| Carcaça da Linha de Montagem de Circuitos | 116 |
+| Zirconia Ceramic High Strength Bending Resistance Mechanical Block | 130 |
+| Circuit Assembly Line Machine Casing | 116 |
 | Hermetic Casing VI | 96 |
-| Unidade Avançada de Linha de Montagem | 96 |
+| Advanced Assembly Line Unit | 96 |
 | Naquadria Frame | 90 |
 | Extreme Engine Intake Casing | 80 |
 | Assembly Control Casing | 78 |
 | White Lamp | 65 |
-| Carcaça Molecular | 64 |
-| Carcaça de Linha de Montagem de Componentes LV | 63 |
-| Unidade de Montagem Espaço-Temporal | 33 |
+| Molecular Casing | 64 |
+| LV Component Assembly Line Casing | 63 |
+| Spacetime Assembly Line Unit | 33 |
 | Electrolytic Cell | 20 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Output Bus | 1 |
-| Linha de Montagem de Componentes | 1 |
+| Component Assembly Line | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Input Bus | 1 |
 | ULV Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

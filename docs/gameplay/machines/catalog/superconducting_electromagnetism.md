@@ -1,43 +1,47 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Fábrica Eletromagnética Supercondutora
+# Superconducting Electromagnetism
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Fábrica Eletromagnética Supercondutora](../../../assets/machines/superconducting_electromagnetism.webp){ loading=lazy }
+*Maxwell's equations, now in industrial size.*
+
+![Superconducting Electromagnetism](../../../assets/machines/superconducting_electromagnetism.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Polarizer, Electromagnetic Separator |
-| **Tamanho** | 15 × 21 × 15 |
-| **Blocos** | 1.629 |
+| **Machine type** | Polarizer, EM Separator |
+| **Category** | Electric processing |
+| **Recipe types** | Polarizer, Electromagnetic Separator |
+| **Size** | 15 × 21 × 15 |
+| **Blocks** | 1,629 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-As equações de Maxwell, agora em tamanho industrial. Polariza e separa magneticamente num campo supercondutor de resistência zero.
+Polarizes and magnetically separates in a zero-resistance superconducting field.
 
-- Tipo de Máquina: Polarizador, Separador EM
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Paralelos definidos pelo Parallel Hatch
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Parallel set by the Parallel Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça Mecânica de Lafium | 745 |
+| Lafium Mechanical Casing | 745 |
 | Tempered Glass | 364 |
-| Bobina Supercondutora Aprimorada | 316 |
+| Improved Superconductor Coil | 316 |
 | Electrolytic Cell | 156 |
 | Molybdenum Disilicide Coil Block | 24 |
-| Tubulação Acelerada | 19 |
+| Accelerated Pipeline | 19 |
 | ULV Output Bus | 1 |
-| Fábrica Eletromagnética Supercondutora | 1 |
+| Superconducting Electromagnetism | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

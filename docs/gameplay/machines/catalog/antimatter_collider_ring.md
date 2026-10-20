@@ -1,51 +1,56 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - GTNA originals (WIP)
 ---
 
-# Anel Colisor de Antimatéria
+# Antimatter Collider Ring
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Anel Colisor de Antimatéria](../../../assets/machines/antimatter_collider_ring.webp){ loading=lazy }
+*Two beams, one ring, zero room for error.*
+
+![Antimatter Collider Ring](../../../assets/machines/antimatter_collider_ring.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Nenhum |
-| **Tamanho** | 137 × 127 × 155 |
-| **Blocos** | 14.418 |
+| **Machine type** | Particle Collider |
+| **Category** | GTNA originals (WIP) |
+| **Recipe types** | None |
+| **Size** | 137 × 127 × 155 |
+| **Blocks** | 14,418 |
+| **Origin** | — |
 
-## Descrição
+## Description
 
-Dois feixes, um anel, nenhuma margem de erro. Acelera feixes contrarrotativos pelos boosters até o anel principal e os colide em partículas exóticas.
+Accelerates counter-rotating beams through boosters into the main ring and collides them for exotic particles.
 
-- Tipo de Máquina: Colisor de Partículas
-- Descubra partículas com 5σ para rendimento cheio
-- Propostas liberam ímãs e armadilhas melhores
-- Energia do feixe: p = 0,3 · B · ρ
-- Hélio líquido resfria os ímãs supercondutores
-- Antiprótons enchem armadilhas de Penning (EU wireless)
-- Sem hélio, os ímãs sofrem quench
-- Armadilhas sem energia aniquilam a antimatéria
+- Discover particles with 5σ significance for full yield
+- Proposals unlock stronger magnets and traps
+- Beam energy: p = 0,3 · B · ρ
+- Liquid helium cools the superconducting magnets
+- Antiprotons fill Penning traps (wireless EU)
+- Missing helium quenches the magnets
+- Unpowered traps annihilate their antimatter
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Sincronização de Campo de Precisão | 7.556 |
-| Vidro Borossilicato de HSS-S | 3.235 |
-| Eixo de Suporte de Alta Resistência | 1.367 |
-| Vidro de Blindagem de Nanites | 928 |
-| Carcaça Molecular | 672 |
-| Carcaça de Aquecedor de Plasma | 252 |
+| Precision Field Sync Casing | 7,555 |
+| Hsss Borosilicate Glass | 3,235 |
+| High Strength Support Spindle | 1,367 |
+| Nanite Shielding Glass | 928 |
+| Molecular Casing | 672 |
+| Plasma Heater Casing | 252 |
 | Fusion Glass | 162 |
-| Vidro Borossilicato de Neutrônio Cósmico | 137 |
+| Cosmic Neutronium Borosilicate Glass | 137 |
 | Clean Stainless Steel Casing | 68 |
-| Casing Magtech | 36 |
-| Descarte de Feixe | 1 |
-| ULV Input Hatch | 1 |
-| Anel Colisor de Antimatéria | 1 |
-| Hatch de Detector de Colisões | 1 |
+| Magtech Casing | 36 |
 | ULV Output Bus | 1 |
+| ULV Input Hatch | 1 |
+| Collision Detector Hatch | 1 |
+| Antimatter Collider Ring | 1 |
+| Beam Dump | 1 |
+| ULV Input Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

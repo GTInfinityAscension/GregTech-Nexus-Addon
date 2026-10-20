@@ -1,31 +1,35 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Grande Forno de Pirólise
+# Large Pyrolyse Oven
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Grande Forno de Pirólise](../../../assets/machines/large_pyrolyse_oven.webp){ loading=lazy }
+*Wood goes in, chemistry comes out, smoke goes everywhere.*
+
+![Large Pyrolyse Oven](../../../assets/machines/large_pyrolyse_oven.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Pyrolyse Oven |
-| **Tamanho** | 13 × 6 × 5 |
-| **Blocos** | 272 |
+| **Machine type** | Pyrolyse Oven |
+| **Category** | Electric processing |
+| **Recipe types** | Pyrolyse Oven |
+| **Size** | 13 × 6 × 5 |
+| **Blocks** | 272 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Madeira entra, química sai, fumaça vai para todo lado. Roda receitas do Forno de Pirólise em massa com um Parallel Hatch.
+Runs Pyrolyse Oven recipes in bulk with a Parallel Hatch.
 
-- Tipo de Máquina: Forno de Pirólise
-- A velocidade cresce com o tier da bobina
-- Paralelos definidos pelo Parallel Hatch
+- Speed scales with the heating coil tier
+- Parallel set by the Parallel Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
 | Clean Stainless Steel Casing | 121 |
 | Stainless Steel Frame | 48 |
@@ -33,12 +37,12 @@ Madeira entra, química sai, fumaça vai para todo lado. Roda receitas do Forno 
 | Heat Proof Invar Machine Casing | 30 |
 | Cupronickel Coil Block | 28 |
 | Muffler Hatch IV | 2 |
-| Grande Forno de Pirólise | 1 |
+| Large Pyrolyse Oven | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
+| Cleaning Maintenance Hatch | 1 |
 | ULV Energy Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

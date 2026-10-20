@@ -1,56 +1,60 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Electric processing
 ---
 
-# Corte por Fio de Neutrônio
+# Neutronium Wire Cutting
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Corte por Fio de Neutrônio](../../../assets/machines/neutronium_wire_cutting.webp){ loading=lazy }
+*Neutron star matter cuts like butter. Earth stuff? Air.*
+
+![Neutronium Wire Cutting](../../../assets/machines/neutronium_wire_cutting.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Cutter |
-| **Tamanho** | 31 × 14 × 15 |
-| **Blocos** | 2.824 |
+| **Machine type** | Cutter |
+| **Category** | Electric processing |
+| **Recipe types** | Cutter |
+| **Size** | 31 × 14 × 15 |
+| **Blocks** | 2,824 |
+| **Origin** | GregTech Odyssey |
 
-## Descrição
+## Description
 
-Matéria de estrela de nêutrons corta como manteiga. Coisa da Terra? Ar. Corta com fios de matéria degenerada com precisão atômica.
+Cuts with neutron-degenerate threads at atomic precision.
 
-- Tipo de Máquina: Cortadora
-- Thread Hatch: várias receitas ao mesmo tempo
-- Aceita Laser Hatches
-- Paralelos definidos pelo Parallel Hatch
+- Thread Hatch: several recipes at once
+- Accepts Laser Hatches
+- Parallel set by the Parallel Hatch
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Carcaça de Planta Reforçada com Naquadah | 1.033 |
+| Naquadah Reinforced Plant Casing | 1,033 |
 | Tempered Glass | 324 |
-| Carcaça de Irídio | 256 |
+| Iridium Casing | 256 |
 | Stainless Turbine Casing | 216 |
-| Carcaça Resistente a Alta Pressão | 188 |
+| High Pressure Resistant Casing | 188 |
 | High Power Casing | 154 |
 | Hastelloy N Frame | 116 |
-| Caixa de Engrenagens de Amprósio | 112 |
-| Carcaça de Contenção de Pressão | 88 |
-| Carcaça Ativa de Amprósio | 80 |
+| Amprosium Gearbox | 112 |
+| Pressure Containment Casing | 88 |
+| Amprosium Active Casing | 80 |
 | Filter Casing | 70 |
-| Carcaça Mecânica de Processamento de Precisão | 38 |
+| Precision Processing Mechanical Casing | 38 |
 | Neutronium Frame | 38 |
-| Carcaça de Tubo de Amprósio | 38 |
-| Gerador de Campo de Contenção | 25 |
+| Amprosium Pipe Casing | 38 |
+| Containment Field Generator | 25 |
 | Heat Vent | 18 |
-| Casing de Densidade Extrema | 16 |
+| Extreme Density Casing | 16 |
 | Fusion Glass | 8 |
 | ULV Input Bus | 1 |
-| Auto Maintenance Hatch | 1 |
-| Corte por Fio de Neutrônio | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Neutronium Wire Cutting | 1 |
 | ULV Input Hatch | 1 |
 | ULV Energy Hatch | 1 |
 | ULV Output Bus | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>

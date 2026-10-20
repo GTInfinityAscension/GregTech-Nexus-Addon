@@ -1,38 +1,42 @@
 ---
 tags:
-  - Catálogo de multiblocos
+  - Steam and primitive
 ---
 
-# Supercompressor a Vapor
+# Steam Supercompressor
 
-<!-- Página gerada a partir do código do mod; a estrutura é a menor variante. -->
+<!-- Generated from the mod code; the structure shown is the smallest variant. -->
 
-![Supercompressor a Vapor](../../../assets/machines/steam_mega_compressor.webp){ loading=lazy }
+*Diamonds are made under pressure. So is this machine.*
+
+![Steam Supercompressor](../../../assets/machines/steam_mega_compressor.webp){ loading=lazy }
 
 | | |
 |---|---|
-| **Tipos de receita** | Compressor |
-| **Tamanho** | 35 × 33 × 35 |
-| **Blocos** | 4.868 |
+| **Machine type** | Compressor |
+| **Category** | Steam and primitive |
+| **Recipe types** | Compressor |
+| **Size** | 35 × 33 × 35 |
+| **Blocks** | 4,868 |
+| **Origin** | GT: Not Leisure |
 
-## Descrição
+## Description
 
-Diamantes nascem sob pressão. Esta máquina também. Um supercompressor em que jatos impossíveis de vapor esmagam o material até tomar forma.
+A supercompressor where impossible jets of steam crush material into shape.
 
-- Tipo de Máquina: Compressor
-- Velocidade 2x maior que a singleblock
-- Paralelos: até 256
-- Fabricado com 64 Large Steam Compressors
+- 2x speed vs. singleblock
+- Parallel: up to 256
+- Crafted from 64 Large Steam Compressors
 
-## Estrutura
+## Structure
 
-| Bloco | Qtd. |
+| Block | Qty |
 |---|---:|
-| Steam Machine Casing | 4.657 |
+| Steam Machine Casing | 4,657 |
 | Bronze Frame | 144 |
 | Glass | 64 |
-| Supercompressor a Vapor | 1 |
-| Auto Maintenance Hatch | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Supercompressor | 1 |
+| Cleaning Maintenance Hatch | 1 |
+| Wireless Steam Input Hatch | 1 |
 
-<small>Página gerada a partir do código do mod; a estrutura é a menor variante.</small>
+<small>Generated from the mod code; the structure shown is the smallest variant.</small>
