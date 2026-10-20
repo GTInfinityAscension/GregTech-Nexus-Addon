@@ -1,0 +1,3528 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação para jogadores e autores de modpack do GregTech Nexus Addon (GTNA), addon do GregTech CEu Modern para Minecraft 1.20.1.">
+      
+      
+        <meta name="author" content="Raishxn">
+      
+      
+        <link rel="canonical" href="https://gtinfinityascension.github.io/GregTech-Nexus-Addon/pt/gameplay/materials/">
+      
+      
+        <link rel="prev" href="../parts/advanced-parallel-hatch/">
+      
+      
+        <link rel="next" href="../../development/api/kubejs/">
+      
+      
+        
+          <link rel="alternate" href="../../../gameplay/materials/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="pt">
+        
+          <link rel="alternate" href="../../../zh/gameplay/materials/" hreflang="zh">
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Materiais - GregTech Nexus Addon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#materiais" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../" title="GregTech Nexus Addon" class="md-header__button md-logo" aria-label="GregTech Nexus Addon" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GregTech Nexus Addon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Materiais
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Selecione o idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../gameplay/materials/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="pt" class="md-select__link">
+              Português (Brasil)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../zh/gameplay/materials/" hreflang="zh" class="md-select__link">
+              简体中文
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartilhar" aria-label="Compartilhar" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/GTInfinityAscension/GregTech-Nexus-Addon" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GTInfinityAscension/GregTech-Nexus-Addon
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Início
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../machines/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Máquinas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../systems/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sistemas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../parts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Hatches e partes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Materiais
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../development/api/kubejs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Autores de modpack
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../development/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Contribuir
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="GregTech Nexus Addon" class="md-nav__button md-logo" aria-label="GregTech Nexus Addon" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    GregTech Nexus Addon
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/GTInfinityAscension/GregTech-Nexus-Addon" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GTInfinityAscension/GregTech-Nexus-Addon
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Início
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primeiros passos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Primeiros passos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalação
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primeiros passos no jogo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuração
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Perguntas frequentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Novidades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../machines/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Máquinas
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Máquinas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machines/catalog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Catálogo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machines/steam-age/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Era do vapor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machines/industrial-slaughterhouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matadouro Industrial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machines/naquadah-reactors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reatores de naquadah
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiblocos originais
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Multiblocos originais
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machines/originals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiblocos originais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machines/originals/kinetic-orbital-lance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lança Cinética Orbital
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machines/originals/dimensional-rift-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portão de Fenda Dimensional
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machines/originals/antimatter-collider-ring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anel Colisor de Antimatéria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machines/originals/stellar-containment-chamber/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Câmara de Contenção Estelar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistemas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/wireless-steam-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rede de vapor sem fio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/nexus-energy-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rede de energia Nexus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/pattern-buffers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ME Pattern Buffers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Módulos e o Structure Terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/void-mining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mineração do vazio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/hydraulic-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Componentes hidráulicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/research-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motor de pesquisa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/item-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Efeitos de item
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fim de jogo
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fim de jogo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/forge-of-gods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forja dos Deuses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/eye-of-harmony/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Olho da Harmonia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/bec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Condensado de Bose-Einstein
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/space-elevator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elevador Espacial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/nano-forge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nano Forge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/dyson-sphere/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esfera de Dyson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../parts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hatches e partes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hatches e partes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parts/huge-steam-bus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Barramentos Grandes a Vapor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parts/thread-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hatch de Threads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parts/accelerate-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hatch de Aceleração
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parts/overclock-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hatch de Overclock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parts/advanced-parallel-hatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hatch de Controle de Paralelismo (UHV+)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Materiais
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Materiais
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autores de modpack
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Autores de modpack
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/api/kubejs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API KubeJS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Java
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Java
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/api/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/api/machines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API de máquinas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/api/materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API de materiais
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../development/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribuir
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contribuir
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/translating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traduzir
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ambiente de desenvolvimento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitetura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contribuir com código
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/pressurized-water-reactor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reator de Água Pressurizada (planejado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#materiais-da-era-do-vapor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materiais da era do vapor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todos-os-materiais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Todos os materiais
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/GTInfinityAscension/GregTech-Nexus-Addon/edit/main/docs/gameplay/materials/index.pt.md" title="Editar esta página" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="materiais">Materiais<a class="headerlink" href="#materiais" title="Permanent link">&para;</a></h1>
+<p>O GTNA registra <strong>187 materiais</strong> como materiais do GTCEu no namespace <code>gtna</code>. Os itens, blocos e fluidos deles funcionam como qualquer material do GTCEu, e o JEI/EMI mostra todas as formas e receitas.</p>
+<h2 id="materiais-da-era-do-vapor">Materiais da era do vapor<a class="headerlink" href="#materiais-da-era-do-vapor" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Feito de</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stronze</td>
+<td>1 Bronze + 2 Aço</td>
+<td>alto-forno a 1.123 K; casings e canos das máquinas a vapor</td>
+</tr>
+<tr>
+<td>Breel</td>
+<td>2 Bronze + 1 Aço</td>
+<td>sem alto-forno: misturado à mão e fundido, como no GT: Not Leisure</td>
+</tr>
+<tr>
+<td>Composto de Argila</td>
+<td>Sílex + Argila + Pedra</td>
+<td>placas e engrenagens das primeiras peças hidráulicas</td>
+</tr>
+<tr>
+<td>Vapor Comprimido</td>
+<td>vapor</td>
+<td>vapor sólido para receitas da era do vapor</td>
+</tr>
+</tbody>
+</table>
+<p>Os vapores supercríticos que aceleram o <a href="../systems/void-mining/">Portão a Vapor Envelhecido do Minerador do Vazio</a> também são fluidos do GTNA.</p>
+<p>Os materiais de fim de jogo (Espaço-Tempo, Universium, Magmatéria, Matéria de Anã Branca e Negra…) têm ícones animados; veja <a href="../systems/item-effects/">Efeitos de item</a>.</p>
+<h2 id="todos-os-materiais">Todos os materiais<a class="headerlink" href="#todos-os-materiais" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ABS</td>
+<td><code>gtna:abs</code></td>
+</tr>
+<tr>
+<td>Acrilonitrila</td>
+<td><code>gtna:acrylonitrile</code></td>
+</tr>
+<tr>
+<td>Aguarrás</td>
+<td><code>gtna:turpentine</code></td>
+</tr>
+<tr>
+<td>Aguarrás Craqueada a Vapor</td>
+<td><code>gtna:steam_cracked_turpentine</code></td>
+</tr>
+<tr>
+<td>Aguarrás Lixiviada</td>
+<td><code>gtna:leached_turpentine</code></td>
+</tr>
+<tr>
+<td>Antimatéria Abissal</td>
+<td><code>gtna:abyssal_antimatter</code></td>
+</tr>
+<tr>
+<td>Axônio</td>
+<td><code>gtna:axonium</code></td>
+</tr>
+<tr>
+<td>Aço do End</td>
+<td><code>gtna:end_steel</code></td>
+</tr>
+<tr>
+<td>Aço Eglin</td>
+<td><code>gtna:eglin_steel</code></td>
+</tr>
+<tr>
+<td>Aço MAR-M 200</td>
+<td><code>gtna:mar_m_200_steel</code></td>
+</tr>
+<tr>
+<td>Aço Sombrio</td>
+<td><code>gtna:dark_steel</code></td>
+</tr>
+<tr>
+<td>Base de Supercondutor UIV</td>
+<td><code>gtna:superconductor_uiv_base</code></td>
+</tr>
+<tr>
+<td>Base de Supercondutor UMV</td>
+<td><code>gtna:superconductor_umv_base</code></td>
+</tr>
+<tr>
+<td>Bedrockium</td>
+<td><code>gtna:bedrockium</code></td>
+</tr>
+<tr>
+<td>Breel</td>
+<td><code>gtna:breel</code></td>
+</tr>
+<tr>
+<td>Bronze de Alumínio</td>
+<td><code>gtna:aluminium_bronze</code></td>
+</tr>
+<tr>
+<td>Carbeto de Boro</td>
+<td><code>gtna:boron_carbide</code></td>
+</tr>
+<tr>
+<td>Catalisador Bruto Dimensionalmente Transcendente</td>
+<td><code>gtna:dimensionally_transcendent_crude_catalyst</code></td>
+</tr>
+<tr>
+<td>Catalisador de Separação Atômica</td>
+<td><code>gtna:atomic_separation_catalyst</code></td>
+</tr>
+<tr>
+<td>Catalisador Estelar Dimensionalmente Transcendente</td>
+<td><code>gtna:dimensionally_transcendent_stellar_catalyst</code></td>
+</tr>
+<tr>
+<td>Catalisador Exótico Dimensionalmente Transcendente</td>
+<td><code>gtna:dimensionally_transcendent_exotic_catalyst</code></td>
+</tr>
+<tr>
+<td>Catalisador Prosaico Dimensionalmente Transcendente</td>
+<td><code>gtna:dimensionally_transcendent_prosaic_catalyst</code></td>
+</tr>
+<tr>
+<td>Catalisador Resplandecente Dimensionalmente Transcendente</td>
+<td><code>gtna:dimensionally_transcendent_resplendent_catalyst</code></td>
+</tr>
+<tr>
+<td>Cerâmica de Carbeto de Boro</td>
+<td><code>gtna:boron_carbide_ceramics</code></td>
+</tr>
+<tr>
+<td>Cerâmica de Nitreto de Titânio</td>
+<td><code>gtna:titanium_nitride_ceramic</code></td>
+</tr>
+<tr>
+<td>Cerâmica de Zircônia</td>
+<td><code>gtna:zirconia_ceramic</code></td>
+</tr>
+<tr>
+<td>Churitsu</td>
+<td><code>gtna:churitsu</code></td>
+</tr>
+<tr>
+<td>Cinza do Vazio</td>
+<td><code>gtna:void_ash</code></td>
+</tr>
+<tr>
+<td>Cobre Hexafásico</td>
+<td><code>gtna:six_phased_copper</code></td>
+</tr>
+<tr>
+<td>Combustível de Naquadah</td>
+<td><code>gtna:naquadah_fuel</code></td>
+</tr>
+<tr>
+<td>Combustível de Naquadah Enriquecido</td>
+<td><code>gtna:enriched_naquadah_fuel</code></td>
+</tr>
+<tr>
+<td>Composto de Argila</td>
+<td><code>gtna:clay_compound</code></td>
+</tr>
+<tr>
+<td>Compósito Autoumidificante de Nanofissuras Reguladas</td>
+<td><code>gtna:nanocrack_regulated_self_humidifying_composite_material</code></td>
+</tr>
+<tr>
+<td>Compósito de Fibra de Carbono e Sulfeto de Polifenileno</td>
+<td><code>gtna:carbon_fiber_polyphenylene_sulfide_composite</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Bedrockium</td>
+<td><code>gtna:entangled_bedrockium</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Espacialmente Ampliado</td>
+<td><code>gtna:entangled_space</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Espaço-Tempo</td>
+<td><code>gtna:entangled_spacetime</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Eternity</td>
+<td><code>gtna:entangled_eternity</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Hypogen</td>
+<td><code>gtna:entangled_hypogen</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Infinity</td>
+<td><code>gtna:entangled_infinity</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de MagMatter</td>
+<td><code>gtna:entangled_magmatter</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Meio de Transferência de Fônons sem Perdas</td>
+<td><code>gtna:entangled_phononmedium</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Metal Transcendente</td>
+<td><code>gtna:entangled_transcendentmetal</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de MHDCSM</td>
+<td><code>gtna:entangled_mhdcsm</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Neutrônio</td>
+<td><code>gtna:entangled_neutronium</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Neutrônio Cósmico</td>
+<td><code>gtna:entangled_cosmicneutronium</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Plasma de Quarks e Glúons Degenerado</td>
+<td><code>gtna:entangled_quarkgluonplasma</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Rico em Táquions</td>
+<td><code>gtna:entangled_time</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Solda Cósmica</td>
+<td><code>gtna:entangled_cosmicsolder</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Superfluido Desl. Dimensionalmente</td>
+<td><code>gtna:entangled_dimshiftedsuperfluid</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Tungstênio Celestial</td>
+<td><code>gtna:entangled_celestialtungsten</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Universium</td>
+<td><code>gtna:entangled_universium</code></td>
+</tr>
+<tr>
+<td>Condensado de Bose-Einstein Emaranhado de Vidro Cromático</td>
+<td><code>gtna:entangled_chromaticglass</code></td>
+</tr>
+<tr>
+<td>Copolímero de Ácido Perfluorossulfônico-PTFE</td>
+<td><code>gtna:perfluorosulfonic_acid_polytetrafluoroethylene_copolymer</code></td>
+</tr>
+<tr>
+<td>Creon</td>
+<td><code>gtna:creon</code></td>
+</tr>
+<tr>
+<td>Cristal de Magnetar</td>
+<td><code>gtna:magnetar_crystal</code></td>
+</tr>
+<tr>
+<td>Cronomercúrio</td>
+<td><code>gtna:chronomercury</code></td>
+</tr>
+<tr>
+<td>Dilítio</td>
+<td><code>gtna:dilithium</code></td>
+</tr>
+<tr>
+<td>Dissulfeto de Carbono</td>
+<td><code>gtna:carbon_disulfide</code></td>
+</tr>
+<tr>
+<td>Dracônio</td>
+<td><code>gtna:draconium</code></td>
+</tr>
+<tr>
+<td>Dracônio Desperto</td>
+<td><code>gtna:awakened_draconium</code></td>
+</tr>
+<tr>
+<td>DTCC Excitado</td>
+<td><code>gtna:excited_dtcc</code></td>
+</tr>
+<tr>
+<td>DTEC Excitado</td>
+<td><code>gtna:excited_dtec</code></td>
+</tr>
+<tr>
+<td>DTPC Excitado</td>
+<td><code>gtna:excited_dtpc</code></td>
+</tr>
+<tr>
+<td>DTRC Excitado</td>
+<td><code>gtna:excited_dtrc</code></td>
+</tr>
+<tr>
+<td>DTSC Excitado</td>
+<td><code>gtna:excited_dtsc</code></td>
+</tr>
+<tr>
+<td>Echoite</td>
+<td><code>gtna:echoite</code></td>
+</tr>
+<tr>
+<td>Espaço-Tempo</td>
+<td><code>gtna:space_time</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Almandina</td>
+<td><code>gtna:almandine_front</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Calcopirita</td>
+<td><code>gtna:chalcopyrite_front</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Esfalerita</td>
+<td><code>gtna:sphalerite_front</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Espessartina</td>
+<td><code>gtna:spessartine_front</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Grossulária</td>
+<td><code>gtna:grossular_front</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Monazita</td>
+<td><code>gtna:monazite_front</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Naquadah Enriquecido</td>
+<td><code>gtna:enriched_naquadah_front</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Níquel</td>
+<td><code>gtna:nickel_front</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Pentlandita</td>
+<td><code>gtna:pentlandite_front</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Piropo</td>
+<td><code>gtna:pyrope_front</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Platina</td>
+<td><code>gtna:platinum_front</code></td>
+</tr>
+<tr>
+<td>Espuma de Minério de Redstone</td>
+<td><code>gtna:redstone_front</code></td>
+</tr>
+<tr>
+<td>Estelite</td>
+<td><code>gtna:stellite</code></td>
+</tr>
+<tr>
+<td>Eternidade</td>
+<td><code>gtna:eternity</code></td>
+</tr>
+<tr>
+<td>Etilato de Potássio</td>
+<td><code>gtna:potassium_ethylate</code></td>
+</tr>
+<tr>
+<td>Etilato de Sódio</td>
+<td><code>gtna:sodium_ethylate</code></td>
+</tr>
+<tr>
+<td>Etilxantato de Potássio</td>
+<td><code>gtna:potassium_ethylxanthate</code></td>
+</tr>
+<tr>
+<td>Etilxantato de Sódio</td>
+<td><code>gtna:sodium_ethylxanthate</code></td>
+</tr>
+<tr>
+<td>Exaustão Ácida de Bromo</td>
+<td><code>gtna:acidic_bromine_exhaust</code></td>
+</tr>
+<tr>
+<td>Exo-Halkonite</td>
+<td><code>gtna:exo_halkonite</code></td>
+</tr>
+<tr>
+<td>Fall King</td>
+<td><code>gtna:fall_king</code></td>
+</tr>
+<tr>
+<td>Ferro-Cromo</td>
+<td><code>gtna:iron_chromium</code></td>
+</tr>
+<tr>
+<td>Fluido Espacialmente Expandido</td>
+<td><code>gtna:spatial_fluid</code></td>
+</tr>
+<tr>
+<td>Fluido Temporal Rico em Táquions</td>
+<td><code>gtna:temporal_fluid</code></td>
+</tr>
+<tr>
+<td>Forjacor</td>
+<td><code>gtna:forgecore</code></td>
+</tr>
+<tr>
+<td>Fragmento de Gráviton</td>
+<td><code>gtna:graviton_shard</code></td>
+</tr>
+<tr>
+<td>Hastelloy N</td>
+<td><code>gtna:hastelloy_n</code></td>
+</tr>
+<tr>
+<td>Hastelloy N 75</td>
+<td><code>gtna:hastelloy_n_75</code></td>
+</tr>
+<tr>
+<td>Hypogen</td>
+<td><code>gtna:hypogen</code></td>
+</tr>
+<tr>
+<td>Ichorium</td>
+<td><code>gtna:ichorium</code></td>
+</tr>
+<tr>
+<td>Inconel-625</td>
+<td><code>gtna:inconel_625</code></td>
+</tr>
+<tr>
+<td>Inconel-792</td>
+<td><code>gtna:inconel_792</code></td>
+</tr>
+<tr>
+<td>Indalloy 140</td>
+<td><code>gtna:indalloy_140</code></td>
+</tr>
+<tr>
+<td>Infinito</td>
+<td><code>gtna:infinity</code></td>
+</tr>
+<tr>
+<td>Iodeto de Hidrogênio</td>
+<td><code>gtna:hydrogen_iodide</code></td>
+</tr>
+<tr>
+<td>Iodeto de Zinco</td>
+<td><code>gtna:zinc_iodide</code></td>
+</tr>
+<tr>
+<td>Lama Vermelha</td>
+<td><code>gtna:red_mud</code></td>
+</tr>
+<tr>
+<td>Lama Vermelha Neutralizada</td>
+<td><code>gtna:neutralised_red_mud</code></td>
+</tr>
+<tr>
+<td>Liga de Heusler de Platina-Manganês-Antimônio</td>
+<td><code>gtna:platinum_manganese_antimony_heusler_alloy</code></td>
+</tr>
+<tr>
+<td>Liga Estelar</td>
+<td><code>gtna:stellar_alloy</code></td>
+</tr>
+<tr>
+<td>Magmatéria</td>
+<td><code>gtna:magmatter</code></td>
+</tr>
+<tr>
+<td>Magneto-Ressonático</td>
+<td><code>gtna:magneto_resonatic</code></td>
+</tr>
+<tr>
+<td>Magnetário</td>
+<td><code>gtna:magnetarium</code></td>
+</tr>
+<tr>
+<td>Matéria Bariônica Estável</td>
+<td><code>gtna:stable_baryonic_matter</code></td>
+</tr>
+<tr>
+<td>Matéria de Anã Branca</td>
+<td><code>gtna:white_dwarf_matter</code></td>
+</tr>
+<tr>
+<td>Matéria de Anã Negra</td>
+<td><code>gtna:black_dwarf_matter</code></td>
+</tr>
+<tr>
+<td>Matéria de Núcleo Degenerado</td>
+<td><code>gtna:degenerate_core_matter</code></td>
+</tr>
+<tr>
+<td>Matéria do Caos</td>
+<td><code>gtna:chaos_matter</code></td>
+</tr>
+<tr>
+<td>Matéria Estelar Magneto-hidrodinamicamente Confinada</td>
+<td><code>gtna:magnetohydrodynamically_constrained_star_matter</code></td>
+</tr>
+<tr>
+<td>Matéria Primordial</td>
+<td><code>gtna:primordial_matter</code></td>
+</tr>
+<tr>
+<td>Meio de Fônons</td>
+<td><code>gtna:phonon_medium</code></td>
+</tr>
+<tr>
+<td>Mellion</td>
+<td><code>gtna:mellion</code></td>
+</tr>
+<tr>
+<td>Metal de Dragão</td>
+<td><code>gtna:dragon_metal</code></td>
+</tr>
+<tr>
+<td>Metal Transcendente</td>
+<td><code>gtna:transcendent_metal</code></td>
+</tr>
+<tr>
+<td>MFPC Básico</td>
+<td><code>gtna:basic_mfpc</code></td>
+</tr>
+<tr>
+<td>MFPC Básico Esgotado</td>
+<td><code>gtna:invalidation_basic_mfpc</code></td>
+</tr>
+<tr>
+<td>MFPC em Cascata</td>
+<td><code>gtna:cascade_mfpc</code></td>
+</tr>
+<tr>
+<td>MFPC em Cascata Esgotado</td>
+<td><code>gtna:invalidation_cascade_mfpc</code></td>
+</tr>
+<tr>
+<td>Mistura Condensada de Plasma Estelar Bruto</td>
+<td><code>gtna:raw_star_matter</code></td>
+</tr>
+<tr>
+<td>Molécula Orgânica</td>
+<td><code>gtna:organic_molecule</code></td>
+</tr>
+<tr>
+<td>Nano-Superliga Odyssey</td>
+<td><code>gtna:odyssey_nano_superalloy</code></td>
+</tr>
+<tr>
+<td>Neutrônio Cósmico</td>
+<td><code>gtna:cosmic_neutronium</code></td>
+</tr>
+<tr>
+<td>Nexium</td>
+<td><code>gtna:nexium</code></td>
+</tr>
+<tr>
+<td>Nitinol 60</td>
+<td><code>gtna:nitinol_60</code></td>
+</tr>
+<tr>
+<td>Nitinol Avançado</td>
+<td><code>gtna:advanced_nitinol</code></td>
+</tr>
+<tr>
+<td>Oganessônio Metaestável</td>
+<td><code>gtna:metastable_oganesson</code></td>
+</tr>
+<tr>
+<td>Orundum</td>
+<td><code>gtna:orundum</code></td>
+</tr>
+<tr>
+<td>Plasma Degenerado de Quarks e Glúons</td>
+<td><code>gtna:quark_gluon_plasma</code></td>
+</tr>
+<tr>
+<td>Poliestireno</td>
+<td><code>gtna:polystyrene</code></td>
+</tr>
+<tr>
+<td>Prismatium</td>
+<td><code>gtna:prismatium</code></td>
+</tr>
+<tr>
+<td>PTFE Reforçado com CeOx-Polidopamina</td>
+<td><code>gtna:ce_ox_poly_dopamine_reinforced_polytetrafluoroethylene</code></td>
+</tr>
+<tr>
+<td>Quantum</td>
+<td><code>gtna:quantum</code></td>
+</tr>
+<tr>
+<td>Radox Pesado</td>
+<td><code>gtna:heavy_radox</code></td>
+</tr>
+<tr>
+<td>Resíduo Dimensionalmente Transcendente</td>
+<td><code>gtna:dimensionally_transcendent_residue</code></td>
+</tr>
+<tr>
+<td>Resíduo Precursor</td>
+<td><code>gtna:precursor_residue</code></td>
+</tr>
+<tr>
+<td>Rhugnor</td>
+<td><code>gtna:rhugnor</code></td>
+</tr>
+<tr>
+<td>Salmoura Bruta</td>
+<td><code>gtna:raw_brine</code></td>
+</tr>
+<tr>
+<td>Salmoura Desbromada</td>
+<td><code>gtna:debrominated_brine</code></td>
+</tr>
+<tr>
+<td>Salmoura Quente</td>
+<td><code>gtna:hot_brine</code></td>
+</tr>
+<tr>
+<td>Salmoura Quente Alcalina Desbromada</td>
+<td><code>gtna:hot_alkaline_debrominated_brine</code></td>
+</tr>
+<tr>
+<td>Salmoura Quente Clorada e Bromada</td>
+<td><code>gtna:hot_chlorinated_brominated_brine</code></td>
+</tr>
+<tr>
+<td>Salmoura Quente Desbromada</td>
+<td><code>gtna:hot_debrominated_brine</code></td>
+</tr>
+<tr>
+<td>Shijima</td>
+<td><code>gtna:shijima</code></td>
+</tr>
+<tr>
+<td>Shirabon</td>
+<td><code>gtna:shirabon</code></td>
+</tr>
+<tr>
+<td>Solda Cósmica Ilimitada</td>
+<td><code>gtna:boundless_cosmic_solder</code></td>
+</tr>
+<tr>
+<td>Solda Cósmica Inativa</td>
+<td><code>gtna:inactive_cosmic_solder</code></td>
+</tr>
+<tr>
+<td>Solda Viva Mutante</td>
+<td><code>gtna:mutated_living_solder</code></td>
+</tr>
+<tr>
+<td>Solução Concentrada de Bromo</td>
+<td><code>gtna:concentrated_bromine_solution</code></td>
+</tr>
+<tr>
+<td>Solução de Cristal de Fônons</td>
+<td><code>gtna:phonon_crystal_solution</code></td>
+</tr>
+<tr>
+<td>Solução Ácida de Bromo</td>
+<td><code>gtna:acidic_bromine_solution</code></td>
+</tr>
+<tr>
+<td>Stronze</td>
+<td><code>gtna:stronze</code></td>
+</tr>
+<tr>
+<td>Sulfonato de Poliolefina Poroso</td>
+<td><code>gtna:polous_polyolefin_sulfonate</code></td>
+</tr>
+<tr>
+<td>Supercondutor UIV</td>
+<td><code>gtna:superconductor_uiv</code></td>
+</tr>
+<tr>
+<td>Supercondutor UMV</td>
+<td><code>gtna:superconductor_umv</code></td>
+</tr>
+<tr>
+<td>Superfluido Dimensionalmente Deslocado</td>
+<td><code>gtna:dimensionally_shifted_superfluid</code></td>
+</tr>
+<tr>
+<td>Tairitsu</td>
+<td><code>gtna:tairitsu</code></td>
+</tr>
+<tr>
+<td>Tanmolyium</td>
+<td><code>gtna:tanmolyium</code></td>
+</tr>
+<tr>
+<td>Tantalloy-61</td>
+<td><code>gtna:tantalloy_61</code></td>
+</tr>
+<tr>
+<td>Tengam Bruto</td>
+<td><code>gtna:tengam_raw</code></td>
+</tr>
+<tr>
+<td>Tengam Purificado</td>
+<td><code>gtna:tengam_purified</code></td>
+</tr>
+<tr>
+<td>Tengam Sintonizado</td>
+<td><code>gtna:tengam_attuned</code></td>
+</tr>
+<tr>
+<td>Titânio Astral</td>
+<td><code>gtna:astral_titanium</code></td>
+</tr>
+<tr>
+<td>Tolina Primordial</td>
+<td><code>gtna:primordial_tholin</code></td>
+</tr>
+<tr>
+<td>Trinaquadalloy</td>
+<td><code>gtna:trinaquadalloy</code></td>
+</tr>
+<tr>
+<td>Tungstênio Celestial</td>
+<td><code>gtna:celestial_tungsten</code></td>
+</tr>
+<tr>
+<td>Universium</td>
+<td><code>gtna:universium</code></td>
+</tr>
+<tr>
+<td>Vanádio Total</td>
+<td><code>gtna:all_vanadium</code></td>
+</tr>
+<tr>
+<td>Vapor Comprimido</td>
+<td><code>gtna:compressed_steam</code></td>
+</tr>
+<tr>
+<td>Vapor de Cloro Bromado</td>
+<td><code>gtna:brominated_chlorine_vapor</code></td>
+</tr>
+<tr>
+<td>Vapor Insanamente Supercrítico</td>
+<td><code>gtna:insanely_supercritical_steam</code></td>
+</tr>
+<tr>
+<td>Vapor Superaquecido</td>
+<td><code>gtna:super_heated_steam</code></td>
+</tr>
+<tr>
+<td>Vapor Supercrítico Denso</td>
+<td><code>gtna:dense_supercritical_steam</code></td>
+</tr>
+<tr>
+<td>Vidro Cronomático</td>
+<td><code>gtna:chronomatic_glass</code></td>
+</tr>
+<tr>
+<td>Vivisporo</td>
+<td><code>gtna:vivispore</code></td>
+</tr>
+<tr>
+<td>Íon de Antimatéria</td>
+<td><code>gtna:antimatter_ion</code></td>
+</tr>
+<tr>
+<td>Íon Supercondutor</td>
+<td><code>gtna:superconducting_ion</code></td>
+</tr>
+<tr>
+<td>Óxido de Cobalto</td>
+<td><code>gtna:cobalt_oxide</code></td>
+</tr>
+<tr>
+<td>Óxido de Lítio</td>
+<td><code>gtna:lithium_oxide</code></td>
+</tr>
+<tr>
+<td>Óxido de Zircônio</td>
+<td><code>gtna:zirconium_oxide</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar ao topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../parts/advanced-parallel-hatch/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Hatch de Controle de Paralelismo (UHV+)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Hatch de Controle de Paralelismo (UHV+)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../development/api/kubejs/" class="md-footer__link md-footer__link--next" aria-label="Próximo: API KubeJS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                API KubeJS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2026 Raishxn and contributors · LGPLv3 code; see Credits for asset licenses
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/GTInfinityAscension/GregTech-Nexus-Addon" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/TW5vugknk5" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.action.edit", "content.tabs.link", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../assets/js/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
