@@ -37,6 +37,6 @@ A firebox-heated thermal centrifuge for heavy steam ore processing.
 | Bronze Frame | 12 |
 | Bronze Pipe Casing | 3 |
 | Large Steam Thermal Centrifuge | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -49,6 +49,6 @@ Collects the power of the planet's Dyson swarm and sends it out as a laser.
 | Computation Data Reception Hatch | 1 |
 | Dyson Sphere Receiving Station | 1 |
 | ULV Input Hatch | 1 |
-| IV 1,024A Laser Source Hatch | 1 |
+| IV 256A Laser Source Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

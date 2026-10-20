@@ -1,6 +1,6 @@
 # Catálogo de multiblocos
 
-Todos os 168 multiblocos do GTNA, gerados a partir do código e dos arquivos de idioma do mod. Cada página tem imagem, a descrição do jogo e a lista de blocos da menor estrutura válida. No jogo, o JEI/EMI mostra cada estrutura camada por camada e o projetor holográfico a constrói.
+Todos os 170 multiblocos do GTNA, gerados a partir do código e dos arquivos de idioma do mod. Cada página tem imagem, a descrição do jogo e a lista de blocos da menor estrutura válida. No jogo, o JEI/EMI mostra cada estrutura camada por camada e o projetor holográfico a constrói.
 
 ## Vapor e primitivos (66) {#steam}
 
@@ -141,13 +141,15 @@ Todos os 168 multiblocos do GTNA, gerados a partir do código e dos arquivos de 
 | [Usina de Gravação a Laser](engraving_laser_plant.md) | Gravador a Laser, Precisão | 21×12×22 | GregTech Odyssey |
 | [Void Fluid Drilling Rig](void_fluid_drilling_rig.md) | Perfuração de Fluidos do Vazio | 3×7×3 | GregTech Leisure |
 
-## Geração de energia (8) {#power}
+## Geração de energia (10) {#power}
 
 | Máquina | Tipo | Tamanho | Origem |
 |---|---|---|---|
 | [Estação Receptora da Esfera de Dyson](dyson_sphere_receiving_station.md) | Gerador | 29×26×29 | GregTech Odyssey |
 | [Estrela Artificial](annihilate_generator.md) | Gerador de Aniquilação | 121×112×109 | GregTech Odyssey |
 | [Gerador de Célula a Combustível](fuel_cell_generator.md) | Célula a Combustível | 11×11×27 | GregTech Odyssey |
+| [Grande Reator de Naquadah](large_naquadah_reactor.md) | Gerador | 25×25×9 | GregTech Odyssey |
+| [Hiper-Reator de Naquadah](naquadah_hyper_reactor.md) | Gerador | 96×38×24 | Original do GTNA |
 | [Matriz de Geradores](generator_array.md) | Matriz de Geradores | 3×3×3 | GregTech Odyssey |
 | [Reator Hyper](hyper_reactor.md) | Gerador | 27×21×21 | GregTech Odyssey |
 | [Reator Hyper Avançado](advanced_hyper_reactor.md) | Gerador | 35×19×36 | GregTech Odyssey |

@@ -36,6 +36,6 @@ Derrete pedra em lava usando vapor no lugar de EU.
 | Glass | 12 |
 | Lava | 3 |
 | Gerador de Lava a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

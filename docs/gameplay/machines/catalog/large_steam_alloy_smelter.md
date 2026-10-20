@@ -34,9 +34,9 @@ A high-pressure steam chamber that fuses metals into alloys by the stack.
 |---|---:|
 | Steam Machine Casing | 18 |
 | Bronze Firebox Casing | 9 |
-| Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Large Steam Alloy Smelter | 1 |
 | Steam Input Bus | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -39,6 +39,6 @@ Uma cortadora a vapor para placas, parafusos e fatias em massa.
 | Block of Diamond | 3 |
 | Bronze Gearbox Casing | 2 |
 | Grande Máquina de Corte a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

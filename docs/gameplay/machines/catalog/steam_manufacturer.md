@@ -39,6 +39,6 @@ An advanced hydraulic assembly line that builds the steam era's biggest machines
 | ULV Output Bus | 1 |
 | Steam Manufacturer | 1 |
 | ULV Input Bus | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

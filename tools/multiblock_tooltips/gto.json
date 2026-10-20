@@ -2532,5 +2532,43 @@
       ],
       "con": []
     }
+  },
+  "large_naquadah_reactor": {
+    "type": "Generator",
+    "flavor": "Naquadah in, gigawatts out. The neighbours moved away.",
+    "desc": [
+      "Burns *naquadah fuels* with hydrogen or a",
+      "plasma for steady UHV power."
+    ],
+    "pro": [
+      "Builds in any direction",
+      "Dynamo or Laser Source Hatch"
+    ],
+    "num": [
+      "Fuel + Hydrogen: *2,097,152* EU/t",
+      "Fuel + plasma: *524,288* EU/t for 32x as long"
+    ],
+    "con": [
+      "Up to 3 Fluid Input Hatches"
+    ],
+    "pt": {
+      "type": "Gerador",
+      "flavor": "Entra naquadah, sai gigawatt. Os vizinhos se mudaram.",
+      "desc": [
+        "Queima *combustíveis de naquadah* com hidrogênio",
+        "ou um plasma para energia UHV constante."
+      ],
+      "pro": [
+        "Monta em qualquer direção",
+        "Dynamo Hatch ou Laser Source Hatch"
+      ],
+      "num": [
+        "Combustível + Hidrogênio: *2.097.152* EU/t",
+        "Combustível + plasma: *524.288* EU/t por 32x mais tempo"
+      ],
+      "con": [
+        "Até 3 Fluid Input Hatches"
+      ]
+    }
   }
 }

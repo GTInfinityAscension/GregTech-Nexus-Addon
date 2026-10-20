@@ -39,6 +39,6 @@ Uma linha de montagem hidráulica avançada que constrói as maiores máquinas d
 | ULV Output Bus | 1 |
 | Fabricante a Vapor | 1 |
 | ULV Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

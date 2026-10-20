@@ -37,6 +37,6 @@ Uma dobradora a vapor que transforma lingotes em placas e folhas em massa.
 | Bronze Pipe Casing | 3 |
 | Bronze Gearbox Casing | 2 |
 | Máquina de Dobra a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

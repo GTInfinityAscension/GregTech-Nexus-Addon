@@ -904,6 +904,19 @@ public final class GTNAMultiblockTooltipText {
                 "§b▸ Recipes may ask for a §esterile filter§b",
                 "§c▸ All glass blocks must be the same tier",
         });
+        ENGLISH.put("large_naquadah_reactor", new String[] {
+                "Machine Type: §eGenerator",
+                "§7§oNaquadah in, gigawatts out. The neighbours moved away.",
+                "§b§m                                                        ",
+                "§7Burns §6naquadah fuels§7 with hydrogen or a",
+                "§7plasma for steady UHV power.",
+                "§b§m                                                        ",
+                "§a▸ Builds in any direction",
+                "§a▸ Dynamo or Laser Source Hatch",
+                "§b▸ Fuel + Hydrogen: §e2,097,152§b EU/t",
+                "§b▸ Fuel + plasma: §e524,288§b EU/t for 32x as long",
+                "§c▸ Up to 3 Fluid Input Hatches",
+        });
         ENGLISH.put("large_pyrolyse_oven", new String[] {
                 "Machine Type: §ePyrolyse Oven",
                 "§7§oWood goes in, chemistry comes out, smoke goes everywhere.",
@@ -1285,6 +1298,20 @@ public final class GTNAMultiblockTooltipText {
                 "§b▸ MagMatter §eT4§b: molten MagMatter adds parallels",
                 "§b▸ Keep the tier nanite in an §einput bus§b",
                 "§c▸ Each tier needs structural changes",
+        });
+        ENGLISH.put("naquadah_hyper_reactor", new String[] {
+                "Machine Type: §eGenerator",
+                "§7§oFour suns in a bottle. Do not shake.",
+                "§b§m                                                        ",
+                "§7The best naquadah reactor: burns the same",
+                "§7§6naquadah fuels§7 as the Large one, at UEV.",
+                "§b§m                                                        ",
+                "§a▸ Dynamo or Laser Source Hatch",
+                "§a▸ Hatches go in the ring around the controller",
+                "§b▸ Fuel + Hydrogen: §e8,388,608§b EU/t, 4x EU per mB",
+                "§b▸ Oxygen plasma booster: §e8x§b parallel",
+                "§b▸ Nitrogen plasma booster: §e16x§b parallel",
+                "§c▸ Booster plasma is used once per boosted run",
         });
         ENGLISH.put("neutronium_wire_cutting", new String[] {
                 "Machine Type: §eCutter",

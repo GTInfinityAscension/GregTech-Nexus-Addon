@@ -1030,5 +1030,45 @@
         "Bloqueia a rede enquanto desligado"
       ]
     }
+  },
+  "naquadah_hyper_reactor": {
+    "type": "Generator",
+    "flavor": "Four suns in a bottle. Do not shake.",
+    "desc": [
+      "The best naquadah reactor: burns the same",
+      "*naquadah fuels* as the Large one, at UEV."
+    ],
+    "pro": [
+      "Dynamo or Laser Source Hatch",
+      "Hatches go in the ring around the controller"
+    ],
+    "num": [
+      "Fuel + Hydrogen: *8,388,608* EU/t, 4x EU per mB",
+      "Oxygen plasma booster: *8x* parallel",
+      "Nitrogen plasma booster: *16x* parallel"
+    ],
+    "con": [
+      "Booster plasma is used once per boosted run"
+    ],
+    "pt": {
+      "type": "Gerador",
+      "flavor": "Quatro sóis numa garrafa. Não agite.",
+      "desc": [
+        "O melhor reator de naquadah: queima os mesmos",
+        "*combustíveis de naquadah* do Large, em UEV."
+      ],
+      "pro": [
+        "Dynamo Hatch ou Laser Source Hatch",
+        "Hatches no anel em volta do controlador"
+      ],
+      "num": [
+        "Combustível + Hidrogênio: *8.388.608* EU/t, 4x EU por mB",
+        "Reforço de plasma de oxigênio: *8x* paralelos",
+        "Reforço de plasma de nitrogênio: *16x* paralelos"
+      ],
+      "con": [
+        "O plasma de reforço é gasto uma vez por ciclo reforçado"
+      ]
+    }
   }
 }

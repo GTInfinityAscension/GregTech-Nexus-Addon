@@ -37,9 +37,9 @@ An industrial-grade steam smelting facility that cooks entire stockpiles at once
 | Bronze Pipe Casing | 32 |
 | Bronze Frame | 31 |
 | Bronze Firebox Casing | 22 |
-| Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Large Steam Furnace | 1 |
 | Steam Input Bus | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

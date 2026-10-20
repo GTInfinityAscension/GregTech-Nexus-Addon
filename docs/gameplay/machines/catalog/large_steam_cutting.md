@@ -39,6 +39,6 @@ A steam cutting machine for bulk plates, bolts and slices.
 | Block of Diamond | 3 |
 | Bronze Gearbox Casing | 2 |
 | Large Steam Cutting Machine | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

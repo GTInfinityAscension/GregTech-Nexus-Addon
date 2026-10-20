@@ -6,7 +6,7 @@ hide:
 
 # GregTech Nexus Addon
 
-<p class="lead">An addon for GregTech CEu Modern on Minecraft 1.20.1: a steam age that is a real factory tier, wireless steam and EU, AE2 automation, and 168 multiblocks from the steam age to the end of the game.</p>
+<p class="lead">An addon for GregTech CEu Modern on Minecraft 1.20.1: a steam age that is a real factory tier, wireless steam and EU, AE2 automation, and 170 multiblocks from the steam age to the end of the game.</p>
 
 [Install](getting-started/installation.md){ .md-button .md-button--primary } [Browse the multiblocks](gameplay/machines/catalog/index.md){ .md-button }
 
@@ -34,7 +34,7 @@ Pattern Buffers that hold patterns, circuits, catalysts and machine modes for an
 </div>
 
 <div class="feature-card" markdown>
-### 168 multiblocks
+### 170 multiblocks
 Ports from GT: Not Leisure, GregTech Odyssey, GregTech Leisure, GT: New Horizons and Twist Space Technology, plus GTNA originals. Every one has a page.
 
 [:octicons-arrow-right-24: Catalog](gameplay/machines/catalog/index.md)

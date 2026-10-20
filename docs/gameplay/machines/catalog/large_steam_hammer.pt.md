@@ -37,9 +37,9 @@ Um martelo de forja a vapor pesado para forjar em alto volume.
 | Bronze Frame | 44 |
 | Bronze Gearbox Casing | 28 |
 | Glass | 28 |
-| Steam Output Bus | 1 |
+| Barramento de Saída a Vapor com Boost de Saída | 1 |
 | Steam Input Bus | 1 |
 | Grande Martelo de Forja a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

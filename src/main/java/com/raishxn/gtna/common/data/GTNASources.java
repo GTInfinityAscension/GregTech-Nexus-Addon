@@ -168,6 +168,8 @@ public final class GTNASources {
             Map.entry("compound_extreme_cooling_unit", GTO),
             Map.entry("hyper_reactor", GTO),
             Map.entry("advanced_hyper_reactor", GTO),
+            Map.entry("large_naquadah_reactor", GTO),
+            Map.entry("naquadah_hyper_reactor", GTNA),
             Map.entry("fuel_cell_generator", GTO),
             Map.entry("supercomputing_center", GTO),
             Map.entry("data_center", GTO),

@@ -35,6 +35,6 @@ A steam cracker that thermally cracks sulfuric hydrocarbons with the regular cra
 | Bronze Firebox Casing | 16 |
 | Cleaning Maintenance Hatch | 1 |
 | Steam Cracker | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

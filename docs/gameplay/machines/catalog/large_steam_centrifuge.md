@@ -38,6 +38,6 @@ A reinforced high-throughput steam centrifuge with fluid support.
 | Bronze Frame | 28 |
 | Bronze Gearbox Casing | 25 |
 | Large Steam Centrifuge | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -40,7 +40,7 @@ Extrai recursos brutos das Dimensões de e Carvão brutos.
 | Breel Plated Casing | 100 |
 | Steel Frame | 56 |
 | Portão a Vapor Envelhecido do Minerador do Vazio | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |

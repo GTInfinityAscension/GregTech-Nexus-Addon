@@ -36,6 +36,6 @@ Um armazenamento enorme da era do vapor, acessado pelos barramentos de itens da 
 | Glass | 120 |
 | Steel Frame | 24 |
 | Cofre de Itens a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

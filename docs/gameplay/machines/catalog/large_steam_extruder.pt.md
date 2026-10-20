@@ -39,6 +39,6 @@ Uma extrusora a vapor que empurra metal por moldes em massa.
 | Bronze Pipe Casing | 10 |
 | Bronze Gearbox Casing | 4 |
 | Extrusora a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

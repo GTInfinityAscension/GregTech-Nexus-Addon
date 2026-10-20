@@ -49,6 +49,6 @@ Coleta a energia do enxame de Dyson do planeta e a envia como laser.
 | Computation Data Reception Hatch | 1 |
 | Estação Receptora da Esfera de Dyson | 1 |
 | ULV Input Hatch | 1 |
-| IV 1,024A Laser Source Hatch | 1 |
+| IV 256A Laser Source Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

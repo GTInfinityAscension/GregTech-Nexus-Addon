@@ -16,5 +16,5 @@ O GTNA segue os tiers do GregTech. Esta é, mais ou menos, a ordem em que o cont
 - **Leia o tooltip do controlador.** Toda máquina do GTNA diz o que faz, o paralelo e as manias dela; a última linha diz de que mod ela veio.
 - **Veja a estrutura no JEI/EMI** antes de construir. Passe o mouse numa posição para ver quais blocos e hatches cabem ali.
 - **Deixe o terminal construir.** O [Terminal de Estruturas Nexus](../gameplay/systems/modules.md#nexus-structure-terminal) coloca as estruturas grandes para você.
-- **Consulte o catálogo** quando encontrar uma máquina nova: [168 páginas](../gameplay/machines/catalog/index.md) com listas de blocos.
+- **Consulte o catálogo** quando encontrar uma máquina nova: [170 páginas](../gameplay/machines/catalog/index.md) com listas de blocos.
 - **Use as redes sem fio cedo.** Vapor e EU sem canos nem cabos poupam muita construção.

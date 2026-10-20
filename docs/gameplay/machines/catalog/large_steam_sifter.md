@@ -37,6 +37,6 @@ A steam sifter that shakes crushed ores for gems and dusts in bulk.
 | Glass | 12 |
 | Bronze Gearbox Casing | 9 |
 | Large Steam Sifter | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -37,6 +37,6 @@ Uma centrífuga térmica aquecida por fornalha para processamento pesado de min�
 | Bronze Frame | 12 |
 | Bronze Pipe Casing | 3 |
 | Large Steam Thermal Centrifuge | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

@@ -1,6 +1,6 @@
 # Multiblock catalog
 
-All 168 GTNA multiblocks, generated from the mod code and its language files. Each page has a render, the in-game description and the block list of the smallest valid structure. In game, JEI/EMI shows every structure layer by layer and the hologram projector builds it.
+All 170 GTNA multiblocks, generated from the mod code and its language files. Each page has a render, the in-game description and the block list of the smallest valid structure. In game, JEI/EMI shows every structure layer by layer and the hologram projector builds it.
 
 ## Steam and primitive (66) {#steam}
 
@@ -141,7 +141,7 @@ All 168 GTNA multiblocks, generated from the mod code and its language files. Ea
 | [Vacuum Drying Furnace](vacuum_drying_furnace.md) | Vacuum Drying, Dehydrator | 3×5×3 | GregTech Odyssey |
 | [Void Fluid Drilling Rig](void_fluid_drilling_rig.md) | Void Fluid Drilling | 3×7×3 | GregTech Leisure |
 
-## Power generation (8) {#power}
+## Power generation (10) {#power}
 
 | Machine | Type | Size | Origin |
 |---|---|---|---|
@@ -151,6 +151,8 @@ All 168 GTNA multiblocks, generated from the mod code and its language files. Ea
 | [Fuel Cell Generator](fuel_cell_generator.md) | Fuel Cell | 11×11×27 | GregTech Odyssey |
 | [Generator Array](generator_array.md) | Generator Array | 3×3×3 | GregTech Odyssey |
 | [Hyper Reactor](hyper_reactor.md) | Generator | 27×21×21 | GregTech Odyssey |
+| [Large Naquadah Reactor](large_naquadah_reactor.md) | Generator | 25×25×9 | GregTech Odyssey |
+| [Naquadah Hyper Reactor](naquadah_hyper_reactor.md) | Generator | 96×38×24 | GTNA original |
 | [Rocket Large Turbine](rocket_large_turbine.md) | Rocket Engine | 4×3×3 | GregTech Odyssey |
 | [Supercritical Steam Turbine](supercritical_steam_turbine.md) | Supercritical Steam Turbine | 4×3×3 | GregTech Odyssey |
 

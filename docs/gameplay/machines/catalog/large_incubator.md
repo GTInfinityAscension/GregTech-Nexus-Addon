@@ -36,7 +36,7 @@ Grows cultures in a sealed, filtered chamber; the glass decides how hot it may r
 | Oxidation Resistant Hastelloy N Mechanical Casing | 242 |
 | Tempered Glass | 96 |
 | Plascrete | 85 |
-| Sterilizing Filter Casing | 36 |
+| Filter Casing | 36 |
 | PTFE Pipe Casing | 7 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |

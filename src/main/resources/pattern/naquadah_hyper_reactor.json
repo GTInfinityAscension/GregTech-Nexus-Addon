@@ -1,0 +1,21 @@
+{
+ "letters": {
+  "A": "gtna:hyper_mechanical_casing",
+  "F": "gtceu:naquadah_alloy_frame",
+  "G": "gtna:naquadah_borosilicate_glass",
+  "B": "hatch"
+ },
+ "counts": {
+  "B": 60,
+  "A": 9610,
+  "G": 1298,
+  "F": 1300,
+  "~": 1
+ },
+ "center": null,
+ "size": [
+  24,
+  38,
+  96
+ ]
+}

@@ -37,6 +37,6 @@ Melts stone with extreme heat for the steam era's hottest recipes.
 | ULV Output Hatch | 1 |
 | Stone SuperHeater | 1 |
 | ULV Input Bus | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

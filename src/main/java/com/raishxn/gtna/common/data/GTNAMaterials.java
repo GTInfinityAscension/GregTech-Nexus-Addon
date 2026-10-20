@@ -118,6 +118,7 @@ public class GTNAMaterials {
         com.raishxn.gtna.common.data.material.FuelCellMaterials.init();
         com.raishxn.gtna.common.data.material.ResearchMaterials.init();
         com.raishxn.gtna.common.data.material.OriginalsMaterials.init();
+        com.raishxn.gtna.common.data.material.NaquadahFuelMaterials.init();
         MaterialAdd.init();
     }
 }

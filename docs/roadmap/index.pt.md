@@ -1,6 +1,6 @@
 # Roadmap
 
-O GTNA tem hoje **168 multiblocos** registrados. Esta página mostra o andamento dos ports pedidos e dos multiblocos originais. Ela é gerada a partir dos documentos de trabalho do projeto, então acompanha o código.
+O GTNA tem hoje **170 multiblocos** registrados. Esta página mostra o andamento dos ports pedidos e dos multiblocos originais. Ela é gerada a partir dos documentos de trabalho do projeto, então acompanha o código.
 
 ## Progresso geral dos ports
 

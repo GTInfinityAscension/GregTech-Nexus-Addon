@@ -39,8 +39,8 @@ Um gerador de rochas a vapor avançado que faz pedras diferentes pelo circuito p
 | Block of Iron | 8 |
 | Gerador de Pedregulho a Vapor | 1 |
 | ULV Output Bus | 1 |
-| Steam Output Bus | 1 |
+| Barramento de Saída a Vapor com Boost de Saída | 1 |
 | ULV Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

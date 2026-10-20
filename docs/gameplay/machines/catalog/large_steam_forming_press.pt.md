@@ -36,6 +36,6 @@ Uma prensa a vapor para moldes, lentes e peças prensadas em massa.
 | Bronze Gearbox Casing | 4 |
 | Bronze Pipe Casing | 4 |
 | Grande Prensa de Conformação a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

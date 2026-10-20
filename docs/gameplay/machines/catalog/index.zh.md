@@ -1,6 +1,6 @@
 # 多方块图鉴
 
-GTNA 全部 168 个多方块，由模组代码和语言文件生成。每页包含渲染图、游戏内说明以及最小有效结构的方块清单。游戏中可在 JEI/EMI 逐层查看结构，并用全息投影仪自动搭建。
+GTNA 全部 170 个多方块，由模组代码和语言文件生成。每页包含渲染图、游戏内说明以及最小有效结构的方块清单。游戏中可在 JEI/EMI 逐层查看结构，并用全息投影仪自动搭建。
 
 ## 蒸汽与原始（66） {#steam}
 
@@ -141,15 +141,17 @@ GTNA 全部 168 个多方块，由模组代码和语言文件生成。每页包�
 | [集成矿石处理厂](integrated_ore_processor.md) | 集成矿石处理 | 11×12×6 | GregTech Leisure |
 | [高能激光车床](high_energy_laser_lathe.md) | 车床 | 33×16×17 | GregTech Odyssey |
 
-## 发电（8） {#power}
+## 发电（10） {#power}
 
 | 机器 | 类型 | 尺寸 | 来源 |
 |---|---|---|---|
 | [人造恒星](annihilate_generator.md) | 湮灭发电机 | 121×112×109 | GregTech Odyssey |
 | [发电阵列](generator_array.md) | 发电机阵列 | 3×3×3 | GregTech Odyssey |
 | [大型火箭引擎涡轮](rocket_large_turbine.md) | 火箭引擎 | 4×3×3 | GregTech Odyssey |
+| [大型硅岩反应堆](large_naquadah_reactor.md) | 发电机 | 25×25×9 | GregTech Odyssey |
 | [戴森球接收站](dyson_sphere_receiving_station.md) | 发电机 | 29×26×29 | GregTech Odyssey |
 | [燃料电池发电机](fuel_cell_generator.md) | 燃料电池 | 11×11×27 | GregTech Odyssey |
+| [硅岩超能反应堆](naquadah_hyper_reactor.md) | 发电机 | 96×38×24 | GTNA 原创 |
 | [超临界蒸汽涡轮](supercritical_steam_turbine.md) | 超临界蒸汽涡轮 | 4×3×3 | GregTech Odyssey |
 | [超能反应堆](hyper_reactor.md) | 发电机 | 27×21×21 | GregTech Odyssey |
 | [进阶超能反应堆](advanced_hyper_reactor.md) | 发电机 | 35×19×36 | GregTech Odyssey |

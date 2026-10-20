@@ -37,8 +37,8 @@ A compact steam extractor with a shared frame for bulk extraction.
 | Bronze Frame | 13 |
 | Bronze Pipe Casing | 6 |
 | Large Steam Extractor | 1 |
-| Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Steam Input Bus | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

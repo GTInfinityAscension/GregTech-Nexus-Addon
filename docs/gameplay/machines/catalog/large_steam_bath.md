@@ -37,6 +37,6 @@ A large steam chemical bath for early bulk washing.
 | Glass | 23 |
 | Bronze Frame | 10 |
 | Large Steam Bath | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -1,6 +1,6 @@
 # Materials
 
-GTNA registers **185 materials** as GTCEu materials in the `gtna` namespace. Their items, blocks and fluids work like any GTCEu material, and JEI/EMI shows every form and recipe.
+GTNA registers **187 materials** as GTCEu materials in the `gtna` namespace. Their items, blocks and fluids work like any GTCEu material, and JEI/EMI shows every form and recipe.
 
 ## Steam-age materials
 
@@ -75,6 +75,7 @@ Endgame materials (SpaceTime, Universium, MagMatter, White and Black Dwarf Matte
 | Eglin Steel | `gtna:eglin_steel` |
 | End Steel | `gtna:end_steel` |
 | Enriched Naquadah Front | `gtna:enriched_naquadah_front` |
+| Enriched Naquadah Fuel | `gtna:enriched_naquadah_fuel` |
 | Entangled Bedrockium | `gtna:entangled_bedrockium` |
 | Entangled Celestialtungsten | `gtna:entangled_celestialtungsten` |
 | Entangled Chromaticglass | `gtna:entangled_chromaticglass` |
@@ -137,6 +138,7 @@ Endgame materials (SpaceTime, Universium, MagMatter, White and Black Dwarf Matte
 | Monazite Front | `gtna:monazite_front` |
 | Mutated Living Solder | `gtna:mutated_living_solder` |
 | Nanocrack Regulated Self Humidifying Composite Material | `gtna:nanocrack_regulated_self_humidifying_composite_material` |
+| Naquadah Fuel | `gtna:naquadah_fuel` |
 | Neutralised Red Mud | `gtna:neutralised_red_mud` |
 | Nexium | `gtna:nexium` |
 | Nickel Front | `gtna:nickel_front` |

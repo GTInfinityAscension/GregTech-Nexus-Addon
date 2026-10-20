@@ -40,7 +40,7 @@ Harvests raw resources from the Steam Cobalt and Coal.
 | Breel-Plated Casing | 100 |
 | Steel Frame | 56 |
 | Void Miner SteamGate Aged | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |

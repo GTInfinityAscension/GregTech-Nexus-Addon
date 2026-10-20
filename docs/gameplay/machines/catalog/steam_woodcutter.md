@@ -36,9 +36,9 @@ An industrial tree processor that turns saplings into logs using only steam.
 | Iron Reinforced Wood | 12 |
 | Dirt | 9 |
 | Steel Reinforced Wood | 5 |
-| Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Steam Woodcutter | 1 |
 | Steam Input Bus | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

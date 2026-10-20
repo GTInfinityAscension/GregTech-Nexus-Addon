@@ -37,6 +37,6 @@ A supercompressor where impossible jets of steam crush material into shape.
 | Glass | 64 |
 | Steam Supercompressor | 1 |
 | Cleaning Maintenance Hatch | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

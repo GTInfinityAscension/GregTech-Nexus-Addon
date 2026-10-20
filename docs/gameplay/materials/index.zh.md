@@ -1,6 +1,6 @@
 # 材料
 
-GTNA 在 `gtna` 命名空间中注册了 **185 种材料**，它们都是 GTCEu 材料。其物品、方块和流体与任何 GTCEu 材料一样使用，JEI/EMI 会显示所有形态和配方。
+GTNA 在 `gtna` 命名空间中注册了 **187 种材料**，它们都是 GTCEu 材料。其物品、方块和流体与任何 GTCEu 材料一样使用，JEI/EMI 会显示所有形态和配方。
 
 ## 蒸汽时代材料
 
@@ -68,6 +68,7 @@ GTNA 在 `gtna` 命名空间中注册了 **185 种材料**，它们都是 GTCEu 
 | 奥德赛纳米超合金 | `gtna:odyssey_nano_superalloy` |
 | 宇宙中子素 | `gtna:cosmic_neutronium` |
 | 宇宙素 | `gtna:universium` |
+| 富集硅岩燃料 | `gtna:enriched_naquadah_fuel` |
 | 富集硅岩矿石泡沫 | `gtna:enriched_naquadah_front` |
 | 对立 | `gtna:tairitsu` |
 | 布雷尔合金 | `gtna:breel` |
@@ -118,6 +119,7 @@ GTNA 在 `gtna` 命名空间中注册了 **185 种材料**，它们都是 GTCEu 
 | 玄钢 | `gtna:dark_steel` |
 | 疯狂超临界蒸汽 | `gtna:insanely_supercritical_steam` |
 | 白矮星物质 | `gtna:white_dwarf_matter` |
+| 硅岩燃料 | `gtna:naquadah_fuel` |
 | 碘化氢 | `gtna:hydrogen_iodide` |
 | 碳化凯金硅岩合金 | `gtna:trinaquadalloy` |
 | 碳化硼 | `gtna:boron_carbide` |

@@ -6,7 +6,7 @@ hide:
 
 # GregTech Nexus Addon
 
-<p class="lead">Minecraft 1.20.1 上 GregTech CEu Modern 的附属模组：把蒸汽时代变成真正的工厂阶段，提供无线蒸汽与无线 EU、AE2 自动化，以及从蒸汽时代到终局的 168 个多方块。</p>
+<p class="lead">Minecraft 1.20.1 上 GregTech CEu Modern 的附属模组：把蒸汽时代变成真正的工厂阶段，提供无线蒸汽与无线 EU、AE2 自动化，以及从蒸汽时代到终局的 170 个多方块。</p>
 
 [安装](getting-started/installation.md){ .md-button .md-button--primary } [浏览多方块](gameplay/machines/catalog/index.md){ .md-button }
 
@@ -34,7 +34,7 @@ hide:
 </div>
 
 <div class="feature-card" markdown>
-### 168 个多方块
+### 170 个多方块
 移植自 GT: Not Leisure、GregTech Odyssey、GregTech Leisure、GT: New Horizons 和 Twist Space Technology，另有 GTNA 原创机器。每个都有专页。
 
 [:octicons-arrow-right-24: 图鉴](gameplay/machines/catalog/index.md)

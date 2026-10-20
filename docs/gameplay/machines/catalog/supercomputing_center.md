@@ -43,7 +43,7 @@ supply CWU/t to the research network.
 | Iridium Casing | 2,231 |
 | White ABS Plastic Mechanical Casing | 1,325 |
 | Computer Heat Vent | 980 |
-| HPCA Computation Component | 840 |
+| HPCA Bridge Component | 840 |
 | Computer Casing | 728 |
 | Tungsten Borosilicate Glass | 546 |
 | Antifreeze Heatproof Machine Casing | 526 |

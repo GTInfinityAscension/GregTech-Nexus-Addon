@@ -37,6 +37,6 @@ Um grande banho químico a vapor para lavagem em massa no início do jogo.
 | Glass | 23 |
 | Bronze Frame | 10 |
 | Large Steam Bath | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

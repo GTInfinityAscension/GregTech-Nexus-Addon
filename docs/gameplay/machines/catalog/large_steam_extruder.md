@@ -39,6 +39,6 @@ A steam extruder that pushes metal through shaped dies in bulk.
 | Bronze Pipe Casing | 10 |
 | Bronze Gearbox Casing | 4 |
 | Large Steam Extruder | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

@@ -38,6 +38,6 @@ Uma centrífuga a vapor reforçada de alto volume com suporte a fluidos.
 | Bronze Frame | 28 |
 | Bronze Gearbox Casing | 25 |
 | Large Steam Centrifuge | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

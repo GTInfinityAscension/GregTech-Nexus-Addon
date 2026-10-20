@@ -38,7 +38,7 @@ A coke oven that gets faster the longer it runs, and grows stronger every 10 min
 | Nether Bricks | 26 |
 | Breel-Plated Casing | 16 |
 | ULV Output Hatch | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 | Infernal Coke Oven | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |

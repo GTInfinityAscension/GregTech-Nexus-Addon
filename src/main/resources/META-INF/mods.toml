@@ -48,11 +48,13 @@ GregTech Nexus Addon - a GTCEu Modern addon: wireless steam/energy networks, thr
         versionRange = "[1.15.20,)"
         ordering = "AFTER"
         side = "BOTH"
-    # Soft dependency: only the space multiblock content uses Stargate Journey.
+    # EN: Required: the ME parts (Pattern Buffers, ME Storage hatches) are always registered and import AE2 classes.
+    # PT: Obrigatório: as peças ME (Pattern Buffers, hatches do ME Storage) são sempre registradas e importam classes do AE2.
+    # ZH: 必需：ME 部件（样板总成、ME 存储仓）始终注册并引用 AE2 类。
     [[dependencies.${mod_id}]]
-        modId = "sgjourney"
-        mandatory = false
-        versionRange = "[0.6.44,)"
+        modId = "ae2"
+        mandatory = true
+        versionRange = "[15.0.0,)"
         ordering = "AFTER"
         side = "BOTH"
     [[dependencies.${mod_id}]]

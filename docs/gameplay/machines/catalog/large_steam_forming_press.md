@@ -36,6 +36,6 @@ A steam forming press for molds, lenses and pressed parts in bulk.
 | Bronze Gearbox Casing | 4 |
 | Bronze Pipe Casing | 4 |
 | Large Steam Forming Press | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

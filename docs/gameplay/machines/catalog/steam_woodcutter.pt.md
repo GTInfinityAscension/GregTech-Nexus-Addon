@@ -36,9 +36,9 @@ Um processador de árvores industrial que transforma mudas em toras usando só v
 | Iron Reinforced Wood | 12 |
 | Dirt | 9 |
 | Steel Reinforced Wood | 5 |
-| Steam Output Bus | 1 |
+| Barramento de Saída a Vapor com Boost de Saída | 1 |
 | Cortador de Madeira a Vapor | 1 |
 | Steam Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

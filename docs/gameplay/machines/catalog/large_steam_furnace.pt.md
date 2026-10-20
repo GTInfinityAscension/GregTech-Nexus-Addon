@@ -37,9 +37,9 @@ Uma instalação industrial de fundição a vapor que cozinha estoques inteiros 
 | Bronze Pipe Casing | 32 |
 | Bronze Frame | 31 |
 | Bronze Firebox Casing | 22 |
-| Steam Output Bus | 1 |
+| Barramento de Saída a Vapor com Boost de Saída | 1 |
 | Grande Fornalha a Vapor | 1 |
 | Steam Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

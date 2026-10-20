@@ -38,7 +38,7 @@ A bulk steam mixing chamber for dusts and fluids.
 | Bronze Firebox Casing | 32 |
 | Bronze Gearbox Casing | 25 |
 | Bronze Pipe Casing | 24 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 | Large Steam Mixer | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

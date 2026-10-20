@@ -37,6 +37,6 @@ A steam wiremill that draws ingots into wires in bulk.
 | Bronze Pipe Casing | 6 |
 | Glass | 3 |
 | Large Steam Wiremill | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

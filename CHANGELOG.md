@@ -2,6 +2,20 @@
 
 ## [Unreleased]
 
+### New multiblocks: the naquadah reactor ladder
+- **Large Naquadah Reactor** (from GregTech Odyssey): burns Naquadah Fuel or Enriched Naquadah Fuel with hydrogen at 2,097,152 EU/t (UHV), or with oxygen or nitrogen plasma at 524,288 EU/t for 32 times as long. Up to 3 fluid input hatches; dynamo or laser source hatch.
+- **Naquadah Hyper Reactor** (GTNA original, 96 × 38 × 24): the best naquadah reactor. Same fuels at UEV, four times the EU per mB. Oxygen plasma gives 8x parallel, nitrogen plasma 16x (40 mB per boosted run). Hatches go in the ring around the controller.
+- New fluids **Naquadah Fuel** and **Enriched Naquadah Fuel**, with default Large Chemical Reactor recipes at UV; modpacks can replace them by id.
+- New block **Extreme Strength Tritanium Casing** (GregTech Odyssey texture).
+
+### Fixed
+- `mods.toml` now declares Applied Energistics 2 as required: GTNA never loaded without it, and Forge now says so instead of crashing. The unused Stargate Journey entry is gone.
+- The Thread Hatch tooltip no longer says it only works in the Duration Tester and KubeJS machines; it names machines that use it.
+- The Forge of the Gods TCT upgrade text now describes the formula the code uses (SA ×3 in the Melting Core and in the Power Forge with DoP, ×2 elsewhere).
+
+### Documentation
+- The wiki is rebuilt in English, Portuguese and Simplified Chinese, checked against the code; the language switcher no longer leaves the site (#4). A Translating page explains how to add a language.
+
 ## [0.6.1] - 2026-10-17
 
 ### Compatibility

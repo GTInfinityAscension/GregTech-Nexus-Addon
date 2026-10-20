@@ -36,9 +36,9 @@ Um salão de trituração a vapor que mói minérios e pedra em lotes enormes.
 | Bronze Frame | 24 |
 | Bronze Gearbox Casing | 14 |
 | Bronze Pipe Casing | 14 |
-| Steam Output Bus | 1 |
+| Barramento de Saída a Vapor com Boost de Saída | 1 |
 | Grande Macerador a Vapor | 1 |
 | Steam Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

@@ -37,8 +37,8 @@ A steam-era circuit line that targets one input bus to lock it to that output.
 | Steam Machine Casing | 80 |
 | Bronze Pipe Casing | 8 |
 | Steam Assembly Block | 8 |
-| Wireless Steam Input Hatch | 1 |
-| Steam Output Bus | 1 |
+| Steam Input Hatch | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Large Steam Circuit Assembler | 1 |
 | Steam Input Bus | 1 |
 

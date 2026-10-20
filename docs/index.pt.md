@@ -6,7 +6,7 @@ hide:
 
 # GregTech Nexus Addon
 
-<p class="lead">Um addon do GregTech CEu Modern para Minecraft 1.20.1: uma era do vapor que é um tier de fábrica de verdade, vapor e EU sem fio, automação com AE2 e 168 multiblocos da era do vapor até o fim do jogo.</p>
+<p class="lead">Um addon do GregTech CEu Modern para Minecraft 1.20.1: uma era do vapor que é um tier de fábrica de verdade, vapor e EU sem fio, automação com AE2 e 170 multiblocos da era do vapor até o fim do jogo.</p>
 
 [Instalar](getting-started/installation.md){ .md-button .md-button--primary } [Ver os multiblocos](gameplay/machines/catalog/index.md){ .md-button }
 
@@ -34,7 +34,7 @@ Pattern Buffers que guardam patterns, circuitos, catalisadores e modos de máqui
 </div>
 
 <div class="feature-card" markdown>
-### 168 multiblocos
+### 170 multiblocos
 Ports do GT: Not Leisure, GregTech Odyssey, GregTech Leisure, GT: New Horizons e Twist Space Technology, mais os originais do GTNA. Todos têm página.
 
 [:octicons-arrow-right-24: Catálogo](gameplay/machines/catalog/index.md)

@@ -40,6 +40,6 @@ A steam lathe for bulk turning of rods and bolts.
 | Block of Iron | 3 |
 | Bronze Gearbox Casing | 2 |
 | Large Steam Lathe | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

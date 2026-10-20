@@ -36,7 +36,7 @@ A steam oven pushed far beyond sane thermal engineering limits.
 | Deepslate | 1,608 |
 | Bricks | 972 |
 | Steam Machine Casing | 140 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 | Dimensionally Transcendent Steam Oven | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

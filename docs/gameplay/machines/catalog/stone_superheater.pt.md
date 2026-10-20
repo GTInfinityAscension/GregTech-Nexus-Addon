@@ -37,6 +37,6 @@ Derrete pedra com calor extremo para as receitas mais quentes da era do vapor.
 | ULV Output Hatch | 1 |
 | Superaquecedor de Pedra | 1 |
 | ULV Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

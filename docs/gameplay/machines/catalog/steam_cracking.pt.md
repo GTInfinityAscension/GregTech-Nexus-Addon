@@ -35,6 +35,6 @@ Um craqueador a vapor que quebra termicamente hidrocarbonetos sulfurosos com as 
 | Bronze Firebox Casing | 16 |
 | Cleaning Maintenance Hatch | 1 |
 | Craqueador a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

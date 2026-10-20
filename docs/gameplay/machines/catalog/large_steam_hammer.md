@@ -37,9 +37,9 @@ A heavy steam forge hammer for high-throughput forging.
 | Bronze Frame | 44 |
 | Bronze Gearbox Casing | 28 |
 | Glass | 28 |
-| Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Steam Input Bus | 1 |
 | Large Steam Hammer | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

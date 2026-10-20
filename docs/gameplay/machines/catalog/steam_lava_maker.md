@@ -36,6 +36,6 @@ Melts stone into lava using steam instead of EU.
 | Glass | 12 |
 | Lava | 3 |
 | Steam Lava Maker | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

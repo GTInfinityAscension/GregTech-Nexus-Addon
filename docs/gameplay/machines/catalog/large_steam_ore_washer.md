@@ -37,9 +37,9 @@ A large steam washing basin that rinses crushed ores by the hundreds.
 | Glass | 18 |
 | Bronze Pipe Casing | 16 |
 | ULV Input Hatch | 1 |
-| Steam Output Bus | 1 |
+| Output Boost Steam Output Bus | 1 |
 | Large Steam Ore Washer | 1 |
 | Steam Input Bus | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

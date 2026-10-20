@@ -37,6 +37,6 @@ Um supercompressor em que jatos impossíveis de vapor esmagam o material até to
 | Glass | 64 |
 | Supercompressor a Vapor | 1 |
 | Cleaning Maintenance Hatch | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

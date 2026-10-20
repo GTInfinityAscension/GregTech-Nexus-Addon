@@ -36,6 +36,6 @@ A very large item storage for the steam era, accessed through the structure's it
 | Glass | 120 |
 | Steel Frame | 24 |
 | Steam Item Vault | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>

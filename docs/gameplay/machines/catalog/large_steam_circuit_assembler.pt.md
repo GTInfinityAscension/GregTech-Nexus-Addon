@@ -37,8 +37,8 @@ Uma linha de circuitos da era do vapor focada em barramento de entrada para trav
 | Steam Machine Casing | 80 |
 | Bronze Pipe Casing | 8 |
 | Bloco de Montagem a Vapor | 8 |
-| Hatch de Entrada de Vapor Wireless | 1 |
-| Steam Output Bus | 1 |
+| Steam Input Hatch | 1 |
+| Barramento de Saída a Vapor com Boost de Saída | 1 |
 | Large Steam Circuit Assembler | 1 |
 | Steam Input Bus | 1 |
 

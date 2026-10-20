@@ -162,6 +162,7 @@ public class CommonProxy {
 
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> event) {
         GTNARecipeType.init();
+        com.raishxn.gtna.common.data.GTNANaquadahRecipeTypes.init();
     }
 
     private void registerRecipeConditions(GTCEuAPI.RegisterEvent<ResourceLocation, RecipeConditionType<?>> event) {
@@ -180,6 +181,7 @@ public class CommonProxy {
         com.raishxn.gtna.common.data.GTNANanoForge.init();
         com.raishxn.gtna.common.data.GTNABEC.init();
         com.raishxn.gtna.common.data.GTNAOriginals.init();
+        com.raishxn.gtna.common.data.GTNANaquadahReactors.init();
         com.raishxn.gtna.common.data.GTNAGodforgeComponents.init();
         com.raishxn.gtna.common.data.GTNACircuits.init();
         GTNAEnergyHatches.init();

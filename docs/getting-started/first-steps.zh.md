@@ -16,5 +16,5 @@ GTNA 遵循 GregTech 的电压等级。下表大致是其内容出现的顺序�
 - **阅读控制器提示。**每台 GTNA 机器都会说明用途、并行和特殊规则；最后一行注明它移植自哪个模组。
 - **建造前先在 JEI/EMI 中查看结构。**把鼠标悬停在某个位置上，即可看到可放置的方块和仓室。
 - **让终端帮你建造。**[Nexus结构终端](../gameplay/systems/modules.md#nexus-structure-terminal)可以替你放置大型结构。
-- **遇到新机器就查图鉴：**[168 个页面](../gameplay/machines/catalog/index.md)，附方块清单。
+- **遇到新机器就查图鉴：**[170 个页面](../gameplay/machines/catalog/index.md)，附方块清单。
 - **尽早使用无线网络。**无需管道和导线的蒸汽与 EU 可以省去大量搭建工作。

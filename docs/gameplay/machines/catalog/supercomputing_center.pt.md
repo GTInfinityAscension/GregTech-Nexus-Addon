@@ -43,7 +43,7 @@ GWCA fornecem CWU/t para a rede de pesquisa.
 | Carcaça de Irídio | 2.231 |
 | Carcaça Mecânica de Plástico ABS Branca | 1.325 |
 | Computer Heat Vent | 980 |
-| HPCA Computation Component | 840 |
+| HPCA Bridge Component | 840 |
 | Computer Casing | 728 |
 | Vidro Borossilicato de Tungstênio | 546 |
 | Carcaça Anticongelante à Prova de Calor | 526 |

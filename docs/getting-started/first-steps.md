@@ -16,5 +16,5 @@ GTNA follows GregTech's tiers. This is roughly the order in which its content sh
 - **Read the controller tooltip.** Every GTNA machine says what it does, its parallel and its quirks; the last line names the mod it was ported from.
 - **Look at the structure in JEI/EMI** before building. Hover a position to see which blocks and hatches fit there.
 - **Let the terminal build it.** The [Nexus Structure Terminal](../gameplay/systems/modules.md#nexus-structure-terminal) places big structures for you.
-- **Check the catalog** when you meet a new machine: [168 pages](../gameplay/machines/catalog/index.md) with block lists.
+- **Check the catalog** when you meet a new machine: [170 pages](../gameplay/machines/catalog/index.md) with block lists.
 - **Use the wireless networks early.** Steam and EU without pipes or cables save a lot of building.

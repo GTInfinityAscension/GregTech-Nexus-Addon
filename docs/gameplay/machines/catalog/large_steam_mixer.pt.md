@@ -38,7 +38,7 @@ Uma câmara de mistura a vapor em massa para pós e fluidos.
 | Bronze Firebox Casing | 32 |
 | Bronze Gearbox Casing | 25 |
 | Bronze Pipe Casing | 24 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 | Large Steam Mixer | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

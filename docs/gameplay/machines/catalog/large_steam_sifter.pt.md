@@ -37,6 +37,6 @@ Uma peneira a vapor que sacode minérios triturados atrás de gemas e pós em ma
 | Glass | 12 |
 | Bronze Gearbox Casing | 9 |
 | Peneiradora a Vapor | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

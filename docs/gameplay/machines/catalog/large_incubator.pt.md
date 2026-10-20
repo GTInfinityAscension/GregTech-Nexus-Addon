@@ -36,7 +36,7 @@ Cultiva culturas numa câmara selada e filtrada; o vidro decide até onde ela po
 | Casing Mecanico de Hastelloy N Resistente a Oxidacao | 242 |
 | Tempered Glass | 96 |
 | Plascrete | 85 |
-| Sterilizing Filter Casing | 36 |
+| Filter Casing | 36 |
 | PTFE Pipe Casing | 7 |
 | ULV Output Hatch | 1 |
 | ULV Input Bus | 1 |

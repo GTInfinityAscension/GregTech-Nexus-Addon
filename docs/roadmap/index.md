@@ -1,6 +1,6 @@
 # Roadmap
 
-GTNA currently registers **168 multiblocks**. This page shows the progress of the requested ports and of the original multiblocks. It is generated from the project working documents, so it follows the code.
+GTNA currently registers **170 multiblocks**. This page shows the progress of the requested ports and of the original multiblocks. It is generated from the project working documents, so it follows the code.
 
 ## Overall port progress
 

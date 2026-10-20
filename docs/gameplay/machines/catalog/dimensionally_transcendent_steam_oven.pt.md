@@ -36,7 +36,7 @@ Um forno a vapor levado muito além dos limites sensatos da engenharia térmica.
 | Deepslate | 1.608 |
 | Bricks | 972 |
 | Steam Machine Casing | 140 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 | Dimensionally Transcendent Steam Oven | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

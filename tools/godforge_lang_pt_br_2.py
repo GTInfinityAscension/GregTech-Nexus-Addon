@@ -12,7 +12,7 @@ PT = {
 "gtna.godforge.upgrade.text.10": "Adiciona um multiplicador x2 ao paralelo máximo.",
 "gtna.godforge.upgrade.text.11": "Desbloqueia o módulo Exotizador Heliofusão e a criação de plasma de quarks e glúons. Neste ponto o módulo não é afetado por nenhum outro multiplicador ou bônus de outras melhorias.",
 "gtna.godforge.upgrade.text.12": "Melhora a fórmula de conversão consumo de combustível -> calor. Fórmula melhorada: Calor da Forja de Energia = log_1,12(Unidades de Combustível Estelar/s) * 1000 + 12601, Calor do Núcleo de Fusão = log_1,18(Unidades de Combustível Estelar/s) * 1000 + 12601",
-"gtna.godforge.upgrade.text.13": "Melhora a fórmula do SA para: Multiplicador = 1 + (Unidades de Combustível Estelar/s) / 5",
+"gtna.godforge.upgrade.text.13": "Multiplica o bônus do SA por 3 no Núcleo de Fusão Helioflux (e na Forja de Energia Heliofulgor com DoP) e por 2 nos outros módulos.",
 "gtna.godforge.upgrade.text.14": "Permite que o fator de OC escale com o calor atual. Forjas de Energia e Núcleos de Fusão ganham um fator de OC fixo de 2,15. Fator de OC do Fabricador de Plasma = 4 - 25000 / Calor",
 "gtna.godforge.upgrade.text.15": "Permite que o Fabricador de Plasma Heliotérmico processe plasmas de múltiplas etapas. A restrição de tier continua valendo.",
 "gtna.godforge.upgrade.text.16": "Permite que a Forja de Energia Helioflare receba todos os benefícios do caminho de melhorias do Núcleo de Fusão Helioflux.",

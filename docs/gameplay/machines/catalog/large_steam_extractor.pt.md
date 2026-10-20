@@ -37,8 +37,8 @@ Um extrator a vapor compacto de estrutura compartilhada para extração em massa
 | Bronze Frame | 13 |
 | Bronze Pipe Casing | 6 |
 | Grande Extrator a Vapor | 1 |
-| Steam Output Bus | 1 |
+| Barramento de Saída a Vapor com Boost de Saída | 1 |
 | Steam Input Bus | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Gerada a partir do código do mod; a estrutura mostrada é a menor variante.</small>

@@ -38,7 +38,7 @@ Um forno de coque que acelera quanto mais tempo trabalha, e fica mais forte a ca
 | Nether Bricks | 26 |
 | Breel Plated Casing | 16 |
 | ULV Output Hatch | 1 |
-| Hatch de Entrada de Vapor Wireless | 1 |
+| Steam Input Hatch | 1 |
 | Forno de Coque Infernal | 1 |
 | ULV Input Hatch | 1 |
 | ULV Output Bus | 1 |

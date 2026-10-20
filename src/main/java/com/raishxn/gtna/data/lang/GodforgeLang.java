@@ -163,7 +163,7 @@ public final class GodforgeLang {
         provider.add("gtna.godforge.upgrade.text.12",
                 "Improves the fuel consumption -> heat conversion formula. Improved formula: Power Forge Heat = log_1.12(Stellar Fuel Units/sec) * 1000 + 12601, Melting Core Heat = log1.18(Stellar Fuel Units/sec) * 1000 + 12601");
         provider.add("gtna.godforge.upgrade.text.13",
-                "Improves the formula of SA to: Multiplier = 1 + (Stellar Fuel Units/sec) / 5");
+                "Multiplies the SA bonus by 3 in the Helioflux Melting Core (and in the Helioflare Power Forge with DoP), and by 2 in the other modules.");
         provider.add("gtna.godforge.upgrade.text.14",
                 "Allows the OC factor to scale with current heat. Power Forges and Melting Cores gain a static OC factor of 2.15. Plasma fabricator OC factor = 4 - 25000 / Heat ");
         provider.add("gtna.godforge.upgrade.text.15",

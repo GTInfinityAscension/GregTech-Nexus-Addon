@@ -636,7 +636,7 @@ public class GTNALangProvider extends LanguageProvider {
                 "§6Main Function:§r §7Provides §b+%s§7 threads so the machine can process different recipes at the same time.");
         add("gtna.machine.thread_hatch.range", "§7Adjustable in the hatch UI: §b0..%s§7.");
         add("gtna.machine.thread_hatch.requires",
-                "§7Requires a machine on the multiple-recipes base (currently the Duration Tester and KubeJS machines).");
+                "§7Works in machines on the multiple-recipes base, such as the Industrial Slaughterhouse, the Integrated Ore Processors and the Mega Distillery, and in KubeJS machines.");
 
         // Overclock Hatch
         add("gtna.machine.overclock_hatch.main_function",
@@ -1528,6 +1528,8 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.atomization_condensation", "Atomization Condensation");
         add("gtna.plasma_condenser", "Plasma Condenser");
         add("gtna.hyper_reactor", "Hyper Reactor");
+        add("gtna.large_naquadah_reactor", "Large Naquadah Reactor");
+        add("gtna.naquadah_hyper_reactor", "Naquadah Hyper Reactor");
         add("gtna.fuel_cell_energy_absorption", "Fuel Cell Energy Absorption");
         add("gtna.data_analysis", "Data Analysis");
         add("gtna.data_integration", "Data Integration");

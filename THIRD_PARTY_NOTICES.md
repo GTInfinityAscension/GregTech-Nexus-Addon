@@ -127,6 +127,9 @@ Hypercore multiblock itself is original to GTNA and has no source attribution in
   materials are adapted from GTOCore at commit `dc4824d`; the `about_computer` textures (computer casings, vents and
   component overlays), the `tungsten_borosilicate_glass` / `taranium_borosilicate_glass` textures and the
   `overlay_neutron_sensor` hatch overlay are from GTOCore (CC BY-NC-SA 4.0).
+- `large_naquadah_reactor` (structure, fuels and controller recipe), the Naquadah Fuel and Enriched Naquadah Fuel
+  materials and their recipe inputs are adapted from GTOCore at commit `dc4824d`; the
+  `extreme_strength_tritanium_casing` texture and its connected sheet are from GTOCore (CC BY-NC-SA 4.0).
 - G-0250: `data_center` and `analysis_and_research_center` (structures, behavior and recipe types) are adapted from
   GTOCore at commit `dc4824d`.
 - The Blaze and Cold Ice two-layer casings, including the emissive `_bloom` overlays and their

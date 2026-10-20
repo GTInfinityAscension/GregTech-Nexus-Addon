@@ -36,7 +36,7 @@ Cultiva essências de veio a partir de sementes e amostras de minério usando da
 |---|---:|
 | Plascrete | 50 |
 | Cleanroom Glass | 32 |
-| Sterilizing Filter Casing | 9 |
+| Filter Casing | 9 |
 | ULV Output Hatch | 1 |
 | ULV Input Hatch | 1 |
 | Incubadora | 1 |

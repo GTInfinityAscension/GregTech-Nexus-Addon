@@ -1,12 +1,12 @@
 # Máquinas
 
-O GTNA registra **168 multiblocos**. Cada um tem uma página no [catálogo](catalog/index.md), gerada a partir do código do mod: imagem da estrutura, a descrição do jogo, os tipos de receita e a lista de blocos.
+O GTNA registra **170 multiblocos**. Cada um tem uma página no [catálogo](catalog/index.md), gerada a partir do código do mod: imagem da estrutura, a descrição do jogo, os tipos de receita e a lista de blocos.
 
 | Categoria | Quantidade | Comece por |
 |---|---:|---|
 | Vapor e primitivos | 66 | [Era do vapor](steam-age.md) |
 | Processamento elétrico | 63 | o [catálogo](catalog/index.md#processing) e o [Matadouro Industrial](industrial-slaughterhouse.md) |
-| Geração de energia | 8 | [Rede de energia Nexus](../systems/nexus-energy-network.md) |
+| Geração de energia | 10 | [Rede de energia Nexus](../systems/nexus-energy-network.md) |
 | Energia, AE2 e computação | 6 | [ME Pattern Buffers](../systems/pattern-buffers.md) |
 | Sistemas de fim de jogo | 20 | [Forja dos Deuses](../systems/forge-of-gods.md), [Olho da Harmonia](../systems/eye-of-harmony.md) |
 | Originais do GTNA | 4 | [Multiblocos originais](originals.md) |
@@ -17,7 +17,7 @@ O GTNA registra **168 multiblocos**. Cada um tem uma página no [catálogo](cata
 A maioria das máquinas é port, com crédito no jogo (última linha do tooltip) e em cada página do catálogo:
 
 - **GT: Not Leisure** (54): as máquinas a vapor grandes e muitas estruturas da era do vapor.
-- **GregTech Odyssey** (81) e **GregTech Leisure** (9): a maioria dos multiblocos elétricos e de fim de jogo, incluindo o Olho da Harmonia e a Esfera de Dyson.
+- **GregTech Odyssey** (82) e **GregTech Leisure** (9): a maioria dos multiblocos elétricos e de fim de jogo, incluindo o Olho da Harmonia e a Esfera de Dyson.
 - **GT: New Horizons** (14): Forja dos Deuses, Condensado de Bose-Einstein, Nano Forge, Elevador Espacial.
 - **Twist Space Technology:** Eye of Wood.
 - **Originais do GTNA:** os quatro [multiblocos originais](originals.md) e vários sistemas.

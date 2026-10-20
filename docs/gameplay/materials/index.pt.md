@@ -1,6 +1,6 @@
 # Materiais
 
-O GTNA registra **185 materiais** como materiais do GTCEu no namespace `gtna`. Os itens, blocos e fluidos deles funcionam como qualquer material do GTCEu, e o JEI/EMI mostra todas as formas e receitas.
+O GTNA registra **187 materiais** como materiais do GTCEu no namespace `gtna`. Os itens, blocos e fluidos deles funcionam como qualquer material do GTCEu, e o JEI/EMI mostra todas as formas e receitas.
 
 ## Materiais da era do vapor
 
@@ -48,6 +48,8 @@ Os materiais de fim de jogo (Espaço-Tempo, Universium, Magmatéria, Matéria de
 | Churitsu | `gtna:churitsu` |
 | Cinza do Vazio | `gtna:void_ash` |
 | Cobre Hexafásico | `gtna:six_phased_copper` |
+| Combustível de Naquadah | `gtna:naquadah_fuel` |
+| Combustível de Naquadah Enriquecido | `gtna:enriched_naquadah_fuel` |
 | Composto de Argila | `gtna:clay_compound` |
 | Compósito Autoumidificante de Nanofissuras Reguladas | `gtna:nanocrack_regulated_self_humidifying_composite_material` |
 | Compósito de Fibra de Carbono e Sulfeto de Polifenileno | `gtna:carbon_fiber_polyphenylene_sulfide_composite` |

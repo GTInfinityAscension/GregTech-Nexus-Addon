@@ -37,6 +37,6 @@ A steam bending machine that turns ingots into plates and foils in bulk.
 | Bronze Pipe Casing | 3 |
 | Bronze Gearbox Casing | 2 |
 | Large Steam Bending Machine | 1 |
-| Wireless Steam Input Hatch | 1 |
+| Steam Input Hatch | 1 |
 
 <small>Generated from the mod code; the structure shown is the smallest variant.</small>
