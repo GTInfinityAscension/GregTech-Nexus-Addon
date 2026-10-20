@@ -250,6 +250,8 @@ public final class PreviewBenchCommand {
         // /gtna_dev_endgame [collapse]: puts the last dev-built original right before its endgame step (G-0270).
         event.getDispatcher().register(Commands.literal("gtna_dev_endgame").executes(ctx -> devEndgame(false))
                 .then(Commands.literal("collapse").executes(ctx -> devEndgame(true))));
+        // /gtna_dev_showcase: a plausible mid-game state of the last dev-built original, for wiki screenshots.
+        event.getDispatcher().register(Commands.literal("gtna_dev_showcase").executes(ctx -> devShowcase()));
         // /gtna_dev_wireless: prints the player's Nexus network energy (to see what a machine draws).
         event.getDispatcher().register(Commands.literal("gtna_dev_wireless").executes(ctx -> {
             var mc = net.minecraft.client.Minecraft.getInstance();
@@ -320,6 +322,43 @@ public final class PreviewBenchCommand {
      * deepen. Chamber: magnetar field at 600 s with the crust about to quake, or with {@code collapse} a mass past
      * the TOV limit.
      */
+    private static int devShowcase() {
+        var server = net.minecraft.client.Minecraft.getInstance().getSingleplayerServer();
+        if (server == null || lastBuilt == null) return 0;
+        server.execute(() -> {
+            var m = com.gregtechceu.gtceu.api.machine.MetaMachine.getMachine(server.overworld(), lastBuilt);
+            if (m instanceof com.raishxn.gtna.common.machine.multiblock.originals.LanceMachine l) {
+                for (var b : com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body.values())
+                    if (b != com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body.NEXUS_1)
+                        l.core().recovered[b.ordinal()] = b.surveyMass * 10;
+                l.debugShowcase(com.raishxn.gtna.api.machine.feature.lance.LanceCore.Body.PSYCHE);
+            } else if (m instanceof com.raishxn.gtna.common.machine.multiblock.originals.RiftGateMachine r) {
+                r.debugShowcase();
+            } else if (m instanceof com.raishxn.gtna.common.machine.multiblock.originals.ColliderRingMachine c) {
+                var core = c.core();
+                var done = com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Proposal.LEPTON_COLLIDER;
+                for (var p : com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Proposal.values()) {
+                    if (p == done) break;
+                    core.proposalsDone[p.ordinal()] = true;
+                }
+                core.activeProposal = done;
+                core.magnetTier = 2;
+                core.bunches = 1000;
+                core.beamSizeMicron = 16;
+                core.mode = com.raishxn.gtna.api.machine.feature.collider.ColliderCore.Mode.PHYSICS;
+                double[] fb = { 400, 400, 400, 400, 9, 200, 200, 900, 100, 0 };
+                System.arraycopy(fb, 0, core.integrated, 0, fb.length);
+            } else if (m instanceof com.raishxn.gtna.common.machine.multiblock.originals.StellarChamberMachine st) {
+                st.debugFillCore();
+                var core = st.core();
+                core.period = 0.009;
+                core.fedMass = 0.1;
+                core.mass = 1.45;
+            }
+        });
+        return 1;
+    }
+
     private static int devEndgame(boolean collapse) {
         var server = net.minecraft.client.Minecraft.getInstance().getSingleplayerServer();
         if (server == null || lastBuilt == null) return 0;

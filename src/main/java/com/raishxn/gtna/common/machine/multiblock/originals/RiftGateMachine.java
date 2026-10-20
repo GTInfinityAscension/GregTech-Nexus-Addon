@@ -175,6 +175,28 @@ public class RiftGateMachine extends OriginalMachine {
         return view;
     }
 
+    /** Development: an open Forge World rift close to its optimum, with recorded harmonics and an atlas. */
+    public void debugShowcase() {
+        long seed = 1;
+        while (RiftCore.biome(seed) != RiftCore.Biome.FORGE_WORLD) seed++;
+        core.open(seed);
+        double[] o = RiftCore.optimum(seed);
+        core.frequency = Math.round(o[0] + 9);
+        core.phase = Math.round(o[1] - 6);
+        core.amplitude = Math.round(o[2] + 3);
+        core.probes = 3;
+        core.depth = 4;
+        core.stability = 85;
+        for (var h : new RiftCore.Harmonic[] { RiftCore.Harmonic.FIFTH, RiftCore.Harmonic.FOURTH,
+                RiftCore.Harmonic.MINOR_SIXTH, RiftCore.Harmonic.TRITONE })
+            core.collected[h.ordinal()] = true;
+        core.score.clear();
+        core.score.add(RiftCore.Harmonic.FIFTH);
+        core.score.add(RiftCore.Harmonic.MINOR_SIXTH);
+        for (long s = seed + 1, n = 0; n < 9; s += 7919, n++) core.atlas.add(new long[] { s, 1 + n % 5, 400 + n * 60 });
+        sync();
+    }
+
     private void sync() {
         // view: frequency, phase, amplitude, closeness x3, depth, max depth, SpaceTime L/s, seed (as bits)
         view = new double[] { core.frequency, core.phase, core.amplitude, core.open ? core.axisCloseness(0) : 0,

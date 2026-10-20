@@ -10,16 +10,16 @@ Coloque um circuito programado no barramento de entrada:
 
 | Circuito | Modo | Mobs | A partir de | EU/t | Multiplicador de drops |
 |:---:|---|---|---|---:|---|
-| 1 | Passivo | galinha, vaca, porco, ovelha, coelho, cavalo, cabra | LV | 1.000 | `2^(tier − LV)` |
-| 2 | Hostil | zumbi, esqueleto, creeper, aranha, enderman, bruxa, blaze | MV | 2.560 | `2^(tier − MV)` |
-| 3 | Chefes | warden, wither, guardião ancião | ZPM | 32.000 | `3^(tier − ZPM)` |
-| 4 | Dragão | 1 Ovo do Dragão, 4 Bafo do Dragão, 1 Cabeça de Dragão | UHV | 120.000 | `5^(tier − UHV)` |
+| 1 | Passivo | galinha, vaca, porco, ovelha, coelho, cavalo, cabra | LV | 1.000 | $2^{\,\text{tier} - \text{LV}}$ |
+| 2 | Hostil | zumbi, esqueleto, creeper, aranha, enderman, bruxa, blaze | MV | 2.560 | $2^{\,\text{tier} - \text{MV}}$ |
+| 3 | Chefes | warden, wither, guardião ancião | ZPM | 32.000 | $3^{\,\text{tier} - \text{ZPM}}$ |
+| 4 | Dragão | 1 Ovo do Dragão, 4 Bafo do Dragão, 1 Cabeça de Dragão | UHV | 120.000 | $5^{\,\text{tier} - \text{UHV}}$ |
 
 Cada operação dura 40 ticks. O tier é o tier de energia da máquina. Abaixo do tier inicial do modo a máquina não produz nada.
 
 ## Quanto ela dá
 
-Cada operação se repete `max(1, (tier − 2) × 8)` vezes: uma vez em LV e MV, 8 em HV, 16 em EV, 24 em IV e assim por diante. Cada repetição escolhe um mob aleatório do grupo, sorteia a loot table dele e multiplica cada drop pelo multiplicador do modo.
+Cada operação se repete $\max(1,\ (\text{tier} - 2) \times 8)$ vezes: uma vez em LV e MV, 8 em HV, 16 em EV, 24 em IV e assim por diante. Cada repetição escolhe um mob aleatório do grupo, sorteia a loot table dele e multiplica cada drop pelo multiplicador do modo, **até um stack** por drop.
 
 | Tier | Repetições | Passivo | Hostil | Chefes | Dragão |
 |---|---:|---:|---:|---:|---:|

@@ -33,14 +33,16 @@ Limite de módulos: 8, 12 com o anel 2 (CD), 16 com o anel 3 (EE). Passar do lim
 
 ## Combustível
 
-A estrela é acesa com Combustível Estelar no barramento de entrada. Custo de partida: `f · 25 · 1,2^f` itens. O fator de consumo `f` vai até 5 sem upgrades. O controlador drena combustível a cada 5 s (×2 com a bateria carregando).
+A estrela é acesa com Combustível Estelar no barramento de entrada. Custo de partida: $f \cdot 25 \cdot 1{,}2^{f}$ itens. O fator de consumo $f$ vai até 5 sem upgrades. O controlador drena combustível a cada 5 s (×2 com a bateria carregando).
 
-```
-DTR (resíduo)        f · 300 · 1,15^f      (×0,8 com STEM)
-Plasma estelar       f · 2 · 1,08^f        (×0,8 com STEM)
-MCSM                 f / 25
-calor                12601 + log₁,₅(f) · 1000   (base 1,12 / 1,18 com SEFCP)
-```
+$$
+\begin{aligned}
+\text{DTR (resíduo)} &= f \cdot 300 \cdot 1{,}15^{f} && (\times 0{,}8 \text{ com STEM}) \\
+\text{Plasma estelar} &= f \cdot 2 \cdot 1{,}08^{f} && (\times 0{,}8 \text{ com STEM}) \\
+\text{MCSM} &= f / 25 \\
+\text{calor} &= 12601 + 1000 \cdot \log_{1{,}5} f && (\text{base } 1{,}12 / 1{,}18 \text{ com SEFCP})
+\end{aligned}
+$$
 
 | f | Calor base (K) | Partida (itens) | DTR/s | DTR/s com STEM | Plasma estelar/s | MCSM/s |
 |---|---|---|---|---|---|---|
@@ -55,21 +57,25 @@ calor                12601 + log₁,₅(f) · 1000   (base 1,12 / 1,18 com SEFCP
 | 43 | 21.877 | 2.730.247 | 5.255.292 | 4.204.234 | 2.354 | 1,72 |
 | 70 | 23.079 | 6,11e8 | 3,72e8 | 2,98e8 | 30.605 | 2,80 |
 
-Fatores máximos com TSE: resíduo 70 (72 com STEM), plasma estelar 181 (184 com STEM), MCSM sem limite. Acima de 43 o fator efetivo do SA cresce devagar: `43 + (f − 43)^0,4`.
+Fatores máximos com TSE: resíduo 70 (72 com STEM), plasma estelar 181 (184 com STEM), MCSM sem limite. Acima de 43 o fator efetivo do SA cresce devagar: $43 + (f - 43)^{0{,}4}$.
 
 ## Calor e teto de bônus
 
-Os bônus de calor valem até o teto: 15.000 K, ou 30.000 K com CNTI. Com NDPE, acima de 30.000 K o calor conta comprimido: `30000 + (calor − 30000)^e`, com e = 0,85 no Power Forge e 0,8 nos demais.
+Os bônus de calor valem até o teto: 15.000 K, ou 30.000 K com CNTI. Com NDPE, acima de 30.000 K o calor conta comprimido: $30000 + (\text{calor} - 30000)^{e}$, com e = 0,85 no Power Forge e 0,8 nos demais.
 
 ## Paralelo
 
-```
-paralelo = base · CTCDD(×2) · SA · EPEC · PoS
-SA    = 1 + f_efetivo / 15          (TCT: ×3 no Melting Core e no Power Forge com DoP, ×2 nos outros)
-EPEC  = 1 + calor / 15000           (Melting Core e Power Forge com DoP) ou 1 + calor / 25000
-PoS   = 1 + upgrades / 5            (Melting Core e Power Forge com DoP) ou 1 + upgrades / 8
-Exoticizer: raiz quadrada do total com PA, senão 1
-```
+$$
+\begin{aligned}
+\text{paralelo} &= \text{base} \cdot \text{CTCDD}(\times 2) \cdot \text{SA} \cdot \text{EPEC} \cdot \text{PoS} \\
+\text{SA} &= 1 + f_{\text{ef}} / 15 && (\text{TCT: } \times 3 \text{ no Melting Core e no Power Forge com DoP, } \times 2 \text{ nos outros}) \\
+\text{EPEC} &= 1 + \text{calor} / 15000 && (\text{Melting Core e Power Forge com DoP; senão } 1 + \text{calor}/25000) \\
+\text{PoS} &= 1 + \text{upgrades} / 5 && (\text{Melting Core e Power Forge com DoP; senão } 1 + \text{upgrades}/8)
+\end{aligned}
+$$
+
+Exoticizer: raiz quadrada do total com PA, senão 1.
+
 
 | f | f ef. | SA | SA + TCT (Melting Core) |
 |---|---|---|---|
@@ -84,14 +90,16 @@ A wiki do GTNH mostra só as versões /15000 e /5. O código usa divisores maior
 
 ## Velocidade e energia
 
-```
-IGCC   tempo × calor^−0,01
-DoR    tempo ÷ paralelo^0,02 (plasma) ou ^0,012 (outros)
-REC    desconto = (1 − 1,05^(−0,05 · bateria máx)) / 20
-IMKG   desconto pela carga: 1 − (−0,6·(c − 0,5)² + 0,15) no plasma, ×2/3 nos outros
-GISS   voltagem += unidades de combustível/s · 1e8 EU/t
-NGMS   voltagem × 4 por anel ativo (aplicado por último)
-```
+$$
+\begin{aligned}
+\text{IGCC:}\quad & t \times \text{calor}^{-0{,}01} \\
+\text{DoR:}\quad & t \div \text{paralelo}^{0{,}02} \text{ (plasma) ou } \text{paralelo}^{0{,}012} \text{ (outros)} \\
+\text{REC:}\quad & \text{desconto} = \frac{1 - 1{,}05^{-0{,}05 \cdot \text{bateria máx}}}{20} \\
+\text{IMKG:}\quad & \text{desconto pela carga} = 1 - \left(-0{,}6\,(c - 0{,}5)^2 + 0{,}15\right) \text{ no plasma, } \times \tfrac{2}{3} \text{ nos outros} \\
+\text{GISS:}\quad & V \mathrel{+}= \text{unidades de combustível/s} \cdot 10^{8}\ \text{EU/t} \\
+\text{NGMS:}\quad & V \times 4 \text{ por anel ativo (aplicado por último)}
+\end{aligned}
+$$
 
 ## Marcos
 
@@ -114,12 +122,12 @@ Comprados com fragmentos de gráviton. Linha azul: basta um pré-requisito; linh
 | Tag | Custo | Pré-requisito | Efeito |
 |---|---|---|---|
 | START | 0 | — | 8 módulos, anel 1, Power Forge, 2 bi EU/t, teto 15.000 K |
-| IGCC | 1 | START | tempo × calor^−0,01 |
+| IGCC | 1 | START | $t \times \text{calor}^{-0{,}01}$ |
 | STEM | 1 | IGCC | combustível × 0,8 |
 | CFCE | 1 | IGCC | fator máximo × 1,2 |
-| GISS | 1 | STEM | voltagem += combustível/s · 1e8 |
+| GISS | 1 | STEM | $V \mathrel{+}= \text{combustível/s} \cdot 10^{8}$ |
 | FDIM | 1 | STEM, CFCE | libera o Melting Core |
-| SA | 1 | CFCE | paralelo × (1 + f/15) |
+| SA | 1 | CFCE | paralelo $\times (1 + f/15)$ |
 | GPCI | 2 | FDIM | libera o Plasma Fabricator (T3, um passo) |
 | REC | 2 | GISS + GPCI | bateria configurável e desconto |
 | GEM | 2 | GPCI | fator máximo += upgrades ativos |
@@ -131,11 +139,11 @@ Comprados com fragmentos de gráviton. Linha azul: basta um pré-requisito; linh
 | TPTP | 4 | GGEBE | plasmas de vários passos |
 | CNTI | 3 | SEFCP | teto 30.000 K |
 | DOP | 4 | CNTI | Power Forge ganha os bônus do Melting Core |
-| EPEC | 3 | TCT | paralelo × (1 + calor/15000 ou /25000) |
+| EPEC | 3 | TCT | paralelo $\times (1 + \text{calor}/15000)$ ou $/25000$ |
 | IMKG | 3 | GGEBE | desconto pela carga da bateria |
 | NDPE | 3 | CNTI | calor comprimido acima de 30.000 K |
-| POS | 3 | EPEC | paralelo × (1 + upgrades/5 ou /8) |
-| DOR | 3 | IMKG | tempo ÷ paralelo^0,02 |
+| POS | 3 | EPEC | paralelo $\times (1 + \text{upgrades}/5)$ ou $/8$ |
+| DOR | 3 | IMKG | $t \div \text{paralelo}^{0{,}02}$ |
 | NGMS | 4 | NDPE, POS, DOR | voltagem × 4 por anel |
 | SEDS | 5 | NGMS | plasmas até T5 |
 | PA | 6 | SEDS | o Exoticizer recebe os bônus (raiz quadrada) |

@@ -53,15 +53,15 @@ for m in re.finditer(r'^### (3\.\d) (.+?)\n(.*?)(?=^### |^## |\Z)', RM, re.S | r
 
 n_machines = len(json.load(open(DUMP))) if os.path.exists(DUMP) else 0
 
-ORIGINALS = [  # (en, pt, zh) name, tier, (en, pt, zh) stage, spec page (Portuguese)
+ORIGINALS = [  # (en, pt, zh) name, tier, (en, pt, zh) stage, page
     (('Pressurized Water Reactor', 'Reator de Água Pressurizada', '压水反应堆'), 'IV',
-     ('design done, implementation starting', 'design fechado, implementação começando', '设计完成，开始实现'), 'design/reator-pwr.md'),
-    (('Kinetic Orbital Lance', 'Lança Cinética Orbital', '动能轨道长矛'), 'UEV', None, 'design/lanca-cinetica-orbital.md'),
-    (('Dimensional Rift Gate', 'Portão de Fenda Dimensional', '维度裂隙之门'), 'UIV', None, 'design/portao-de-fenda.md'),
-    (('Antimatter Collider Ring', 'Anel Colisor de Antimatéria', '反物质对撞环'), 'UIV', None, 'design/anel-colisor.md'),
-    (('Stellar Containment Chamber', 'Câmara de Contenção Estelar', '恒星约束舱'), 'MAX', None, 'design/camara-estelar.md'),
+     ('design approved, code not started', 'design aprovado, código não começou', '设计已批准，代码尚未开始'), 'pressurized-water-reactor.md', 'planned'),
+    (('Kinetic Orbital Lance', 'Lança Cinética Orbital', '动能轨道长矛'), 'UEV', None, '../gameplay/machines/originals/kinetic-orbital-lance.md', 'done'),
+    (('Dimensional Rift Gate', 'Portão de Fenda Dimensional', '维度裂隙之门'), 'UIV', None, '../gameplay/machines/originals/dimensional-rift-gate.md', 'done'),
+    (('Antimatter Collider Ring', 'Anel Colisor de Antimatéria', '反物质对撞环'), 'UIV', None, '../gameplay/machines/originals/antimatter-collider-ring.md', 'done'),
+    (('Stellar Containment Chamber', 'Câmara de Contenção Estelar', '恒星约束舱'), 'MAX', None, '../gameplay/machines/originals/stellar-containment-chamber.md', 'done'),
 ]
-IN_GAME = ('in game, under test (WIP)', 'no jogo, em teste (WIP)', '已在游戏中，测试中（WIP）')
+IN_GAME = ('in the game', 'no jogo', '已在游戏中')
 PHASES = {  # roadmap section number -> phase title (en, pt, zh)
     '3.1': ('Phase A: required, and mechanics of existing endgame', 'Fase A: necessário e mecânicas do endgame existente', 'A 阶段：必需项与现有终局机制'),
     '3.2': ('Phase B: cheap and high value (GTO/GTL, few missing blocks)', 'Fase B: barato e de alto valor (GTO/GTL, poucos blocos faltando)', 'B 阶段：成本低、价值高（GTO/GTL，缺少的方块很少）'),
@@ -77,11 +77,11 @@ TXT = {
               'GTNA 目前注册了 **{n} 个多方块**。本页展示所需移植项目以及原创多方块的进度，由项目工作文档生成，与代码保持同步。'),
     'overall': ('Overall port progress', 'Progresso geral dos ports', '移植总进度'),
     'phase': ('Phase', 'Fase', '阶段'), 'progress': ('Progress', 'Progresso', '进度'), 'done': ('Done', 'Feitos', '完成'),
-    'orig': ('Original multiblocks (in development)', 'Multiblocos originais (em desenvolvimento)', '原创多方块（开发中）'),
-    'orig_txt': ('Machines made for GTNA, with no equivalent in another mod. Each has a spec sheet (in Portuguese) with formulas, its own progression and an animated render.',
-                 'Máquinas criadas para o GTNA, sem equivalente em outro mod. Cada uma tem ficha técnica com fórmulas, progressão própria e render animado.',
-                 '为 GTNA 设计、其他模组中没有对应机器的多方块。每台都有一份技术说明（葡萄牙语），包含公式、独立进度和动画渲染。'),
-    'machine': ('Machine', 'Máquina', '机器'), 'status': ('Status', 'Estado', '状态'), 'spec': ('Spec', 'Ficha', '说明'), 'open': ('open', 'abrir', '打开'),
+    'orig': ('Original multiblocks', 'Multiblocos originais', '原创多方块'),
+    'orig_txt': ('Machines made for GTNA, with no equivalent in another mod. Each page has the formulas, the progression and the screens.',
+                 'Máquinas criadas para o GTNA, sem equivalente em outro mod. Cada página traz as fórmulas, a progressão e as telas.',
+                 '为 GTNA 设计、其他模组中没有对应机器的多方块。每个页面都包含公式、进度与界面。'),
+    'machine': ('Machine', 'Máquina', '机器'), 'status': ('Status', 'Estado', '状态'), 'spec': ('Page', 'Página', '页面'), 'open': ('open', 'abrir', '打开'),
     'source': ('Source', 'Fonte', '来源'), 'ported': ('ported', 'portado', '已移植'), 'pending': ('pending', 'pendente', '待移植'),
     'how': ('How it works', 'Como funciona', '规则'),
     'how_txt': ('- Only machines the author asked for are ported, from the named source (GTO, GTL, GTNL, TST, GTNH).\n- Each port brings its original structure, mechanics and textures, with KubeJS support.\n- Default recipes are a baseline; balance belongs to the modpack.',
@@ -111,8 +111,9 @@ def page(i):
     L.append(f'## {T("orig")}\n')
     L.append(T('orig_txt') + '\n')
     L.append(f'| {T("machine")} | Tier | {T("status")} | {T("spec")} |\n|---|---|---|---|')
-    for names, tier, stage, spec in ORIGINALS:
-        L.append(f'| {names[i]} | {tier} | :material-progress-wrench: {(stage or IN_GAME)[i]} | [{T("open")}]({spec}) |')
+    for names, tier, stage, spec, state in ORIGINALS:
+        icon = ':material-check-circle:' if state == 'done' else ':material-progress-clock:'
+        L.append(f'| {names[i]} | {tier} | {icon} {(stage or IN_GAME)[i]} | [{T("open")}]({spec}) |')
     L.append('')
     for code, raw, rows in phases:
         d = sum(x for *_, x in rows)

@@ -8,6 +8,12 @@
 - New fluids **Naquadah Fuel** and **Enriched Naquadah Fuel**, with default Large Chemical Reactor recipes at UV; modpacks can replace them by id.
 - New block **Extreme Strength Tritanium Casing** (GregTech Odyssey texture).
 
+### Kinetic Orbital Lance screen
+- The target is drawn as itself (craters, Psyche's metal glint, Europa's cracks, Arrokoth's two lobes, Nexus-1's lattice) and orbits on the display; the slug crosses the firing arc after a shot and the impact flashes; returning capsules travel back along the arc.
+- The orbital map moves: bodies orbit at Kepler-like speeds, the Sun pulses, a marching line points at the target, the selected body has a turning ring, and clicks pick the body where it is drawn. Labels no longer overlap or run under the card. The card shows the body, the bodies to survey first when it is locked, and the correct capsule time (it showed the old linear formula).
+- The display shows time to a full bank, the time to the next capsule landing, and says when Nexus-1 needs Magnetarium ingots. Over-budget mass or heat turns red on the bench, and lit rails pulse.
+- The field manual no longer says heavier slugs carry more or that the bank grows with rings.
+
 ### Fixed
 - `mods.toml` now declares Applied Energistics 2 as required: GTNA never loaded without it, and Forge now says so instead of crashing. The unused Stargate Journey entry is gone.
 - The Thread Hatch tooltip no longer says it only works in the Duration Tester and KubeJS machines; it names machines that use it.
@@ -15,6 +21,8 @@
 
 ### Documentation
 - The wiki is rebuilt in English, Portuguese and Simplified Chinese, checked against the code; the language switcher no longer leaves the site (#4). A Translating page explains how to add a language.
+- Formulas on the wiki are typeset with LaTeX (MathJax).
+- New wiki pages, in the three languages: one per original multiblock (Kinetic Orbital Lance, Dimensional Rift Gate, Antimatter Collider Ring, Stellar Containment Chamber) with formulas, tables computed from the code, current screens and known issues; the naquadah reactors; the planned Pressurized Water Reactor. The old Portuguese-only design sheets are no longer published.
 
 ## [0.6.1] - 2026-10-17
 

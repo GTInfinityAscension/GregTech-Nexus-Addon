@@ -15,7 +15,7 @@ import java.util.Deque;
 /**
  * Development aid for driving a test client without the keyboard: every line of {@code gtna_dev_commands.txt} in the
  * game directory runs as a chat command, one per second; {@code close} closes the open screen, {@code inv} opens the
- * inventory, {@code shot <name>}
+ * inventory, {@code lang <code>} switches the language, {@code mouse <x> <y>} moves the cursor, {@code shot <name>}
  * saves a screenshot, {@code wait <s>} pauses. Only outside production.
  */
 public final class DevCommandFile {
@@ -57,7 +57,17 @@ public final class DevCommandFile {
         else if (line.equals("inv"))
             mc.setScreen(new net.minecraft.client.gui.screens.inventory.InventoryScreen(mc.player));
         else if (line.startsWith("wait ")) cooldown = 20 * Integer.parseInt(line.substring(5).trim());
-        else if (line.startsWith("shot ")) Screenshot.grab(mc.gameDirectory, line.substring(5).trim() + ".png",
+        else if (line.startsWith("lang ")) {
+            // Wiki screenshots in every language without restarting the client.
+            mc.options.languageCode = line.substring(5).trim();
+            mc.getLanguageManager().setSelected(mc.options.languageCode);
+            mc.reloadResourcePacks();
+            cooldown = 200;
+        } else if (line.startsWith("mouse ")) {
+            String[] xy = line.substring(6).trim().split(" ");
+            org.lwjgl.glfw.GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), Double.parseDouble(xy[0]),
+                    Double.parseDouble(xy[1]));
+        } else if (line.startsWith("shot ")) Screenshot.grab(mc.gameDirectory, line.substring(5).trim() + ".png",
                 mc.getMainRenderTarget(), msg -> {});
         else mc.player.connection.sendCommand(line.startsWith("/") ? line.substring(1) : line);
     }

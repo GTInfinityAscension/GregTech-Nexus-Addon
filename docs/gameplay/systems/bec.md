@@ -21,7 +21,7 @@ The machines are linked by **BEC Conduits**. Dye conduits to split one network i
 The Teleportation Node crafts **Condensate Assembly** recipes:
 
 - Each item slot asks for one nanite tier at a time.
-- Extra nanites speed the craft up linearly. Higher-tier nanites than required slow it down by `2^(supplied − required)`.
+- Extra nanites speed the craft up linearly. Higher-tier nanites than required slow it down by $2^{\,\text{supplied} - \text{required}}$.
 - Condensate may arrive any time before the end of the craft. If it is still missing at the end, the craft fails.
 - More than 3 condensate types the recipe did not ask for also fail the craft.
 - No overclock. Minimum and maximum parallel and a speed divisor are set in the node's parameters.

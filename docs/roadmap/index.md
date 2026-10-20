@@ -16,17 +16,17 @@ GTNA currently registers **170 multiblocks**. This page shows the progress of th
 | Phase F: TST, GTNL and 123Tech with no GTO/GTL version | `░░░░░░░░░░░░░░░░░░░░` | 0/10 |
 | Phase G: GTLAdditions | `░░░░░░░░░░░░░░░░░░░░` | 0/10 |
 
-## Original multiblocks (in development)
+## Original multiblocks
 
-Machines made for GTNA, with no equivalent in another mod. Each has a spec sheet (in Portuguese) with formulas, its own progression and an animated render.
+Machines made for GTNA, with no equivalent in another mod. Each page has the formulas, the progression and the screens.
 
-| Machine | Tier | Status | Spec |
+| Machine | Tier | Status | Page |
 |---|---|---|---|
-| Pressurized Water Reactor | IV | :material-progress-wrench: design done, implementation starting | [open](design/reator-pwr.md) |
-| Kinetic Orbital Lance | UEV | :material-progress-wrench: in game, under test (WIP) | [open](design/lanca-cinetica-orbital.md) |
-| Dimensional Rift Gate | UIV | :material-progress-wrench: in game, under test (WIP) | [open](design/portao-de-fenda.md) |
-| Antimatter Collider Ring | UIV | :material-progress-wrench: in game, under test (WIP) | [open](design/anel-colisor.md) |
-| Stellar Containment Chamber | MAX | :material-progress-wrench: in game, under test (WIP) | [open](design/camara-estelar.md) |
+| Pressurized Water Reactor | IV | :material-progress-clock: design approved, code not started | [open](pressurized-water-reactor.md) |
+| Kinetic Orbital Lance | UEV | :material-check-circle: in the game | [open](../gameplay/machines/originals/kinetic-orbital-lance.md) |
+| Dimensional Rift Gate | UIV | :material-check-circle: in the game | [open](../gameplay/machines/originals/dimensional-rift-gate.md) |
+| Antimatter Collider Ring | UIV | :material-check-circle: in the game | [open](../gameplay/machines/originals/antimatter-collider-ring.md) |
+| Stellar Containment Chamber | MAX | :material-check-circle: in the game | [open](../gameplay/machines/originals/stellar-containment-chamber.md) |
 
 ??? note "Phase A: required, and mechanics of existing endgame — 3/4"
     | Machine | Source | Status |

@@ -4480,8 +4480,8 @@
   "gtna.originals.info.kinetic_orbital_lance.build.2": "成型后，炮身（炮塔环以上的部分）被吸入控制器并以转向目标的动画显示。",
   "gtna.originals.info.kinetic_orbital_lance.power": "电容组与发射",
   "gtna.originals.info.kinetic_orbital_lance.power.1": "电容组以最高 2^36 EU/t 从 Nexus 网络充电。开启自动发射时，充满后每发射击释放整组能量。",
-  "gtna.originals.info.kinetic_orbital_lance.power.2": "电容组 = 4e12·2^(环数 − 1) EU",
-  "gtna.originals.info.kinetic_orbital_lance.power.3": "弹丸：硅岩合金、凯金、中子素、宇宙中子素或白矮星物质的锭。越重的弹丸越慢，但携带更多能量。",
+  "gtna.originals.info.kinetic_orbital_lance.power.2": "电容组 = 4e12 EU（一个电容环）",
+  "gtna.originals.info.kinetic_orbital_lance.power.3": "弹丸：硅岩合金、凯金、中子素、宇宙中子素、白矮星物质或磁星合金的锭。任何弹丸都能击穿除 Nexus-1 以外的所有天体，Nexus-1 只能被磁星合金击穿。",
   "gtna.originals.info.kinetic_orbital_lance.power.4": "v = sqrt(2·η·E / m)；回收质量 ∝ 0.2·η·E / 硬度 × 返回舱 × 精度",
   "gtna.originals.info.kinetic_orbital_lance.targets": "目标与瞄准",
   "gtna.originals.info.kinetic_orbital_lance.targets.1": "从月球开始。前置天体勘测达到 100%（回收其特征质量）后才能瞄准下一个天体。目标弹匣仓中的弹匣决定目标，并逐发轮换。",
@@ -4930,5 +4930,8 @@
   "gtna.large_naquadah_reactor": "大型硅岩反应堆",
   "gtna.naquadah_hyper_reactor": "硅岩超能反应堆",
   "material.gtna.naquadah_fuel": "硅岩燃料",
-  "material.gtna.enriched_naquadah_fuel": "富集硅岩燃料"
+  "material.gtna.enriched_naquadah_fuel": "富集硅岩燃料",
+  "gtna.ui.o.needs_magnetar": "Nexus-1 需要磁星合金锭",
+  "gtna.ui.o.needs_survey": "需勘测至 100%：",
+  "gtna.ui.o.next_capsule": "下一个"
 }

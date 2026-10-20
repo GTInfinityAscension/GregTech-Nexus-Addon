@@ -21,7 +21,7 @@ As máquinas se ligam por **Condutos de Condensado de Bose-Einstein**. Pinte os 
 O Nó de Teleporte fabrica receitas de **Montagem com Condensado**:
 
 - Cada slot de item pede um tier de nanite por vez.
-- Nanites extras aceleram de forma linear. Nanites de tier maior que o pedido atrasam em `2^(fornecido − exigido)`.
+- Nanites extras aceleram de forma linear. Nanites de tier maior que o pedido atrasam em $2^{\,\text{fornecido} - \text{exigido}}$.
 - O condensado pode chegar a qualquer momento antes do fim. Se ainda faltar no fim, a fabricação falha.
 - Mais de 3 tipos de condensado que a receita não pediu também fazem a fabricação falhar.
 - Sem overclock. Paralelo mínimo e máximo e um divisor de velocidade ficam nos parâmetros do nó.

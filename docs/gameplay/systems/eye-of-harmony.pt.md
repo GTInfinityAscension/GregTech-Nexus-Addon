@@ -14,13 +14,15 @@ O Olho da Harmonia simula um universo em miniatura e extrai os minérios de um p
 
 O item de planeta no slot do controlador escolhe o programa. Os produtos vêm dos veios de minério do GTCEu registrados naquela dimensão. Packs adicionam planetas pelo KubeJS (`GTNAStartupEvents.eyeOfHarmony`). Planetas além das dimensões do Minecraft precisam do Ad Astra.
 
-```
-duração base = 18000 s · 1,4^tier
-gás de cada (H e He) = 1e9 · (tier + 1) mB
-chance base = 1 − 0,05 · tier
-retorno = custo · (0,6 + tier/10)
-custo = plasmas + ticks · (2^19 + 1e11) EU
-```
+$$
+\begin{aligned}
+\text{duração base} &= 18000\ \text{s} \cdot 1{,}4^{\text{tier}} \\
+\text{gás de cada (H e He)} &= 10^{9} \cdot (\text{tier} + 1)\ \text{mB} \\
+\text{chance base} &= 1 - 0{,}05 \cdot \text{tier} \\
+\text{retorno} &= \text{custo} \cdot (0{,}6 + \text{tier}/10) \\
+\text{custo} &= \text{plasmas} + \text{ticks} \cdot (2^{19} + 10^{11})\ \text{EU}
+\end{aligned}
+$$
 
 | Planeta | Tier | Duração base | H e He (mB) | Chance base | Custo sem plasmas (EU) |
 |---|---|---|---|---|---|
@@ -32,16 +34,18 @@ custo = plasmas + ticks · (2^19 + 1e11) EU
 
 ## Campos e circuito
 
-Três campos de tier 0 a 8 (compressão `c`, aceleração `a`, estabilização `s`) e um circuito `k` de 0 a 24:
+Três campos de tier 0 a 8 (compressão $c$, aceleração $a$, estabilização $s$) e um circuito $k$ de 0 a 24:
 
-```
-duração = max(T · 2^−a · 0,97^(c − r) · 2^−k, 1)          r = compressão mínima do programa
-custo de partida = custo · 4^k
-retorno = retorno_base · (1 − (8 − s) · 0,05)            não sobe com o circuito
-chance = chance_base − 0,0925·a + 0,05·s − penalidades de gás
-rendimento = 1 − 0,05·s − penalidades de gás
-penalidade de gás = 1 − exp(−(30 · (guardado/necessário − 1))²)
-```
+$$
+\begin{aligned}
+\text{duração} &= \max\!\left(T \cdot 2^{-a} \cdot 0{,}97^{\,c - r} \cdot 2^{-k},\ 1\right) && r = \text{compressão mínima do programa} \\
+\text{custo de partida} &= \text{custo} \cdot 4^{k} \\
+\text{retorno} &= \text{retorno base} \cdot \left(1 - (8 - s) \cdot 0{,}05\right) && \text{não sobe com o circuito} \\
+\text{chance} &= \text{chance base} - 0{,}0925\,a + 0{,}05\,s - \text{penalidades de gás} \\
+\text{rendimento} &= 1 - 0{,}05\,s - \text{penalidades de gás} \\
+\text{penalidade de gás} &= 1 - \exp\!\left(-\left(30 \cdot \left(\tfrac{\text{guardado}}{\text{necessário}} - 1\right)\right)^{2}\right)
+\end{aligned}
+$$
 
 | a / s | Chance (Overworld) | Rendimento | Tempo |
 |---|---|---|---|
@@ -57,8 +61,8 @@ O gás em excesso também reduz chance e rendimento: guardar 10% a mais já cust
 
 ## Falha e pity
 
-- A falha também devolve o EU de retorno e gera SpaceTime: `chance · 14400 · 2^(tier + 1)` mB.
-- Falhas seguidas **nas mesmas condições** acumulam pity: soma `(1 − chance) · chance` a cada falha. Mudar campos ou circuito zera.
+- A falha também devolve o EU de retorno e gera SpaceTime: $\text{chance} \cdot 14400 \cdot 2^{\text{tier} + 1}$ mB.
+- Falhas seguidas **nas mesmas condições** acumulam pity: soma $(1 - \text{chance}) \cdot \text{chance}$ a cada falha. Mudar campos ou circuito zera.
 - O resultado é sorteado na partida e salvo: quebrar o controlador ou recarregar o mundo não muda o resultado.
 
 ## Dicas

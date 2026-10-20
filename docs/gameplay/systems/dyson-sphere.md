@@ -11,9 +11,7 @@ Two multiblocks build a swarm of collectors around a planet's star and turn it i
 
 ## Formulas
 
-```
-EU/t = V[MAX] · modules · (50 − max(0, damage − 60)) / 50
-```
+$$\text{EU/t} = V_{\text{MAX}} \cdot \text{modules} \cdot \frac{50 - \max(0,\ \text{damage} - 60)}{50}$$
 
 - Each station cycle adds 1 damage to the swarm. Above 99 damage the swarm loses a module.
 - A launch while damage is above 60 **repairs** the swarm instead of adding a module.

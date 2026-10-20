@@ -16,17 +16,17 @@ GTNA 目前注册了 **170 个多方块**。本页展示所需移植项目以及
 | F 阶段：GTO/GTL 中没有版本的 TST、GTNL 与 123Tech 机器 | `░░░░░░░░░░░░░░░░░░░░` | 0/10 |
 | G 阶段：GTLAdditions | `░░░░░░░░░░░░░░░░░░░░` | 0/10 |
 
-## 原创多方块（开发中）
+## 原创多方块
 
-为 GTNA 设计、其他模组中没有对应机器的多方块。每台都有一份技术说明（葡萄牙语），包含公式、独立进度和动画渲染。
+为 GTNA 设计、其他模组中没有对应机器的多方块。每个页面都包含公式、进度与界面。
 
-| 机器 | Tier | 状态 | 说明 |
+| 机器 | Tier | 状态 | 页面 |
 |---|---|---|---|
-| 压水反应堆 | IV | :material-progress-wrench: 设计完成，开始实现 | [打开](design/reator-pwr.md) |
-| 动能轨道长矛 | UEV | :material-progress-wrench: 已在游戏中，测试中（WIP） | [打开](design/lanca-cinetica-orbital.md) |
-| 维度裂隙之门 | UIV | :material-progress-wrench: 已在游戏中，测试中（WIP） | [打开](design/portao-de-fenda.md) |
-| 反物质对撞环 | UIV | :material-progress-wrench: 已在游戏中，测试中（WIP） | [打开](design/anel-colisor.md) |
-| 恒星约束舱 | MAX | :material-progress-wrench: 已在游戏中，测试中（WIP） | [打开](design/camara-estelar.md) |
+| 压水反应堆 | IV | :material-progress-clock: 设计已批准，代码尚未开始 | [打开](pressurized-water-reactor.md) |
+| 动能轨道长矛 | UEV | :material-check-circle: 已在游戏中 | [打开](../gameplay/machines/originals/kinetic-orbital-lance.md) |
+| 维度裂隙之门 | UIV | :material-check-circle: 已在游戏中 | [打开](../gameplay/machines/originals/dimensional-rift-gate.md) |
+| 反物质对撞环 | UIV | :material-check-circle: 已在游戏中 | [打开](../gameplay/machines/originals/antimatter-collider-ring.md) |
+| 恒星约束舱 | MAX | :material-check-circle: 已在游戏中 | [打开](../gameplay/machines/originals/stellar-containment-chamber.md) |
 
 ??? note "A 阶段：必需项与现有终局机制 — 3/4"
     | 机器 | 来源 | 状态 |

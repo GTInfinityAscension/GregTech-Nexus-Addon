@@ -21,7 +21,9 @@ Receitas abaixo do tier da forja ganham **overclock perfeito**.
 
 Com uma nanite igual à saída da receita no barramento, a forja drena **todo** o MagMatter fundido dos hatches e transforma em paralelo:
 
-```
-paralelo = MagMatter / (288 / 2^(4 − tier da receita))
-duração × 0,9999^paralelo
-```
+$$
+\begin{aligned}
+\text{paralelo} &= \frac{\text{MagMatter}}{288 / 2^{\,4 - \text{tier da receita}}} \\
+\text{duração} &\times 0{,}9999^{\text{paralelo}}
+\end{aligned}
+$$

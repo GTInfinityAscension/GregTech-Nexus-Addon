@@ -1,4 +1,4 @@
-"""Full-width punctuation for Simplified Chinese wiki pages, outside code and links.
+"""Full-width punctuation for Simplified Chinese wiki pages, outside code, LaTeX and links.
 
     python3 tools/wiki/zh_punct.py docs/**/*.zh.md
 """
@@ -6,7 +6,7 @@ import re
 import sys
 
 CJK = r'[㐀-鿿　-〿＀-￯]'
-SKIP = re.compile(r'(```.*?```|`[^`\n]*`|\]\([^)]*\)|<[^>\n]*>|\{[^}\n]*\}|https?://\S+)', re.S)
+SKIP = re.compile(r'(```.*?```|\$\$.*?\$\$|\$[^$\n]+\$|`[^`\n]*`|\]\([^)]*\)|<[^>\n]*>|\{[^}\n]*\}|https?://\S+)', re.S)
 
 
 def fix(text):

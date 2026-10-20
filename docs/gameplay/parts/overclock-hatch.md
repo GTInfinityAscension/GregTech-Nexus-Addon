@@ -18,9 +18,11 @@ The UV hatch equals the standard overclock, so the gain starts at UHV. You can l
 
 A 200-tick recipe overclocked twice, with an EV Accelerate Hatch (44%) and a UHV Overclock Hatch:
 
-```
-200 ÷ 3 ÷ 3 = 22.2 ticks      (two overclock steps with divisor 3)
-22.2 × 0.44 = 9.8 ticks       (Accelerate Hatch)
-```
+$$
+\begin{aligned}
+200 \div 3 \div 3 &= 22.2\ \text{ticks} && \text{(two overclock steps with divisor 3)} \\
+22.2 \times 0.44 &= 9.8\ \text{ticks} && \text{(Accelerate Hatch)}
+\end{aligned}
+$$
 
-Without the Overclock Hatch the same recipe takes `200 ÷ 2 ÷ 2 × 0.44 = 22` ticks.
+Without the Overclock Hatch the same recipe takes $200 \div 2 \div 2 \times 0.44 = 22$ ticks.

@@ -21,7 +21,9 @@ Recipes below the forge's tier get **perfect overclock**.
 
 With a nanite equal to the recipe's output in the bus, the forge drains **all** molten MagMatter in its hatches and turns it into parallel:
 
-```
-parallel = MagMatter / (288 / 2^(4 − recipe tier))
-duration × 0.9999^parallel
-```
+$$
+\begin{aligned}
+\text{parallel} &= \frac{\text{MagMatter}}{288 / 2^{\,4 - \text{recipe tier}}} \\
+\text{duration} &\times 0.9999^{\text{parallel}}
+\end{aligned}
+$$

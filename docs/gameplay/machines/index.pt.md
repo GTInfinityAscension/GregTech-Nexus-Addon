@@ -6,7 +6,7 @@ O GTNA registra **170 multiblocos**. Cada um tem uma página no [catálogo](cata
 |---|---:|---|
 | Vapor e primitivos | 66 | [Era do vapor](steam-age.md) |
 | Processamento elétrico | 63 | o [catálogo](catalog/index.md#processing) e o [Matadouro Industrial](industrial-slaughterhouse.md) |
-| Geração de energia | 10 | [Rede de energia Nexus](../systems/nexus-energy-network.md) |
+| Geração de energia | 10 | [Reatores de naquadah](naquadah-reactors.md), [Rede de energia Nexus](../systems/nexus-energy-network.md) |
 | Energia, AE2 e computação | 6 | [ME Pattern Buffers](../systems/pattern-buffers.md) |
 | Sistemas de fim de jogo | 20 | [Forja dos Deuses](../systems/forge-of-gods.md), [Olho da Harmonia](../systems/eye-of-harmony.md) |
 | Originais do GTNA | 4 | [Multiblocos originais](originals.md) |

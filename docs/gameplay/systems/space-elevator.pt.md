@@ -6,9 +6,9 @@ Um cabo até a órbita que alimenta até **12 módulos** em volta da base. Trazi
 
 ## Fazendo o elevador funcionar
 
-- Só funciona a partir de UHV (acima de ZPM) e precisa de computação: `128 · (tier − ZPM)` CWU/t.
+- Só funciona a partir de UHV (acima de ZPM) e precisa de computação: $128 \cdot (\text{tier} - \text{ZPM})$ CWU/t.
 - Coloque **256 Carretéis de Nanotubos** pelo barramento de entrada.
-- Os **Módulos de Energia** da estrutura definem o paralelo de todos os módulos: `4^(MK − 1)`. Todos precisam ser do mesmo MK (I a V). O MK também decide quais receitas do Módulo de Montagem podem rodar.
+- Os **Módulos de Energia** da estrutura definem o paralelo de todos os módulos: $4^{\,\text{MK} - 1}$. Todos precisam ser do mesmo MK (I a V). O MK também decide quais receitas do Módulo de Montagem podem rodar.
 
 | Módulo de Energia | Paralelo dos módulos |
 |---|---:|

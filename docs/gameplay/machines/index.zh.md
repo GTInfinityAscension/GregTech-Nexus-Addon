@@ -6,7 +6,7 @@ GTNA 共注册 **170 个多方块**。每个都在[图鉴](catalog/index.md)中�
 |---|---:|---|
 | 蒸汽与原始 | 66 | [蒸汽时代](steam-age.md) |
 | 电力加工 | 63 | [图鉴](catalog/index.md#processing)和[工业屠宰场](industrial-slaughterhouse.md) |
-| 发电 | 10 | [Nexus 能量网络](../systems/nexus-energy-network.md) |
+| 发电 | 10 | [硅岩反应堆](naquadah-reactors.md)、[Nexus 能量网络](../systems/nexus-energy-network.md) |
 | 能量、AE2 与算力 | 6 | [ME 样板总成](../systems/pattern-buffers.md) |
 | 终局系统 | 20 | [诸神之锻炉](../systems/forge-of-gods.md)、[鸿蒙之眼](../systems/eye-of-harmony.md) |
 | GTNA 原创 | 4 | [原创多方块](originals.md) |

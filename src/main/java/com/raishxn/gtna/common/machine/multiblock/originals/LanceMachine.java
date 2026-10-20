@@ -181,6 +181,17 @@ public class LanceMachine extends OriginalMachine
         captured = false;
     }
 
+    /** Development: aims at {@code b} and fits a sample bench, for screenshots. */
+    public void debugShowcase(Body b) {
+        target = b.ordinal();
+        core.fitted.clear();
+        for (int i = 0; i < 4; i++) core.fitted.add(LanceCore.Component.RAIL_SUPERCONDUCTOR);
+        core.fitted.add(LanceCore.Component.COOLING_HELIUM);
+        core.fitted.add(LanceCore.Component.SENSOR_TELESCOPE);
+        core.fitted.add(LanceCore.Component.CAPSULE_ABLATIVE);
+        syncBench();
+    }
+
     /** Development: fires a neutronium slug at the current target with a full bank, as a real shot. */
     public void debugFire() {
         core.bankCharge = core.bankCapacity();
@@ -203,8 +214,9 @@ public class LanceMachine extends OriginalMachine
     }
 
     private void syncBench() {
-        // view: bank, capacity, barrel K, liner wear, efficiency, accuracy, capsules, auto, loaded slug, surveys...
-        var v = new double[9 + Body.values().length];
+        // view: bank, capacity, barrel K, liner wear, efficiency, accuracy, capsules, auto, loaded slug, surveys...,
+        // seconds to the next capsule landing (-1 with none in flight)
+        var v = new double[10 + Body.values().length];
         v[0] = core.bankCharge;
         v[1] = core.bankCapacity();
         v[2] = core.barrelTemperature;
@@ -216,6 +228,7 @@ public class LanceMachine extends OriginalMachine
         Projectile loaded = getLevel() != null && !getLevel().isClientSide ? loadedProjectile(target()) : null;
         v[8] = loaded == null ? -1 : loaded.ordinal();
         for (var b : Body.values()) v[9 + b.ordinal()] = core.survey(b);
+        v[9 + Body.values().length] = capsules.stream().mapToDouble(c -> c[2]).min().orElse(-1);
         view = v;
         syncedBench = new double[] { core.totalMass(), core.massBudget(), core.totalHeat(), core.heatBudget(),
                 core.inductance() };

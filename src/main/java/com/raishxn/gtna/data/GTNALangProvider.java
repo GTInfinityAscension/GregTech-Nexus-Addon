@@ -1878,9 +1878,9 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.originals.info.kinetic_orbital_lance.power", "Bank and firing");
         add("gtna.originals.info.kinetic_orbital_lance.power.1",
                 "The bank charges from the Nexus network at up to 2^36 EU/t. With auto-fire on, a shot fires the whole bank as soon as it is full.");
-        add("gtna.originals.info.kinetic_orbital_lance.power.2", "Bank = 4e12·2^(rings − 1) EU");
+        add("gtna.originals.info.kinetic_orbital_lance.power.2", "Bank = 4e12 EU (one capacitor ring)");
         add("gtna.originals.info.kinetic_orbital_lance.power.3",
-                "Projectiles: ingots of naquadah alloy, trinium, neutronium, cosmic neutronium or white dwarf matter. Heavier projectiles are slower but carry more.");
+                "Projectiles: ingots of naquadah alloy, trinium, neutronium, cosmic neutronium, white dwarf matter or magnetarium. Any of them breaks every body except Nexus-1, which only breaks under magnetarium.");
         add("gtna.originals.info.kinetic_orbital_lance.power.4",
                 "v = sqrt(2·η·E / m); recovered mass ∝ 0.2·η·E / hardness × capsule × accuracy");
         add("gtna.originals.info.kinetic_orbital_lance.targets", "Targets and aim");
@@ -2016,6 +2016,9 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.ui.o.ms_pulsar", "Millisecond pulsar");
         add("gtna.ui.o.no_probe", "No Seismic Probe: quakes are not decoded");
         add("gtna.ui.o.no_slug", "No slug in the input bus");
+        add("gtna.ui.o.needs_magnetar", "Nexus-1 needs Magnetarium ingots");
+        add("gtna.ui.o.needs_survey", "Survey to 100%:");
+        add("gtna.ui.o.next_capsule", "next in");
         add("gtna.ui.o.note", "Harmonic");
         add("gtna.ui.o.open", "OPEN");
         add("gtna.ui.o.output", "Output");

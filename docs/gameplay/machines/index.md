@@ -6,7 +6,7 @@ GTNA registers **170 multiblocks**. Every one has a page in the [catalog](catalo
 |---|---:|---|
 | Steam and primitive | 66 | [Steam age](steam-age.md) |
 | Electric processing | 63 | the [catalog](catalog/index.md#processing) and the [Industrial Slaughterhouse](industrial-slaughterhouse.md) |
-| Power generation | 10 | [Nexus energy network](../systems/nexus-energy-network.md) |
+| Power generation | 10 | [Naquadah reactors](naquadah-reactors.md), [Nexus energy network](../systems/nexus-energy-network.md) |
 | Energy, AE2 and computation | 6 | [ME Pattern Buffers](../systems/pattern-buffers.md) |
 | Endgame systems | 20 | [Forge of the Gods](../systems/forge-of-gods.md), [Eye of Harmony](../systems/eye-of-harmony.md) |
 | GTNA originals | 4 | [Original multiblocks](originals.md) |

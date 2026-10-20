@@ -11,9 +11,7 @@ Dois multiblocos montam um enxame de coletores em volta da estrela de um planeta
 
 ## Fórmulas
 
-```
-EU/t = V[MAX] · módulos · (50 − max(0, dano − 60)) / 50
-```
+$$\text{EU/t} = V_{\text{MAX}} \cdot \text{módulos} \cdot \frac{50 - \max(0,\ \text{dano} - 60)}{50}$$
 
 - Cada ciclo da estação soma 1 de dano ao enxame. Acima de 99 de dano o enxame perde um módulo.
 - Um lançamento com dano acima de 60 **repara** o enxame em vez de somar um módulo.

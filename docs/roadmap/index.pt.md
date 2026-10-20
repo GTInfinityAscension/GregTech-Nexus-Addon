@@ -16,17 +16,17 @@ O GTNA tem hoje **170 multiblocos** registrados. Esta página mostra o andamento
 | Fase F: TST, GTNL e 123Tech sem versão no GTO/GTL | `░░░░░░░░░░░░░░░░░░░░` | 0/10 |
 | Fase G: GTLAdditions | `░░░░░░░░░░░░░░░░░░░░` | 0/10 |
 
-## Multiblocos originais (em desenvolvimento)
+## Multiblocos originais
 
-Máquinas criadas para o GTNA, sem equivalente em outro mod. Cada uma tem ficha técnica com fórmulas, progressão própria e render animado.
+Máquinas criadas para o GTNA, sem equivalente em outro mod. Cada página traz as fórmulas, a progressão e as telas.
 
-| Máquina | Tier | Estado | Ficha |
+| Máquina | Tier | Estado | Página |
 |---|---|---|---|
-| Reator de Água Pressurizada | IV | :material-progress-wrench: design fechado, implementação começando | [abrir](design/reator-pwr.md) |
-| Lança Cinética Orbital | UEV | :material-progress-wrench: no jogo, em teste (WIP) | [abrir](design/lanca-cinetica-orbital.md) |
-| Portão de Fenda Dimensional | UIV | :material-progress-wrench: no jogo, em teste (WIP) | [abrir](design/portao-de-fenda.md) |
-| Anel Colisor de Antimatéria | UIV | :material-progress-wrench: no jogo, em teste (WIP) | [abrir](design/anel-colisor.md) |
-| Câmara de Contenção Estelar | MAX | :material-progress-wrench: no jogo, em teste (WIP) | [abrir](design/camara-estelar.md) |
+| Reator de Água Pressurizada | IV | :material-progress-clock: design aprovado, código não começou | [abrir](pressurized-water-reactor.md) |
+| Lança Cinética Orbital | UEV | :material-check-circle: no jogo | [abrir](../gameplay/machines/originals/kinetic-orbital-lance.md) |
+| Portão de Fenda Dimensional | UIV | :material-check-circle: no jogo | [abrir](../gameplay/machines/originals/dimensional-rift-gate.md) |
+| Anel Colisor de Antimatéria | UIV | :material-check-circle: no jogo | [abrir](../gameplay/machines/originals/antimatter-collider-ring.md) |
+| Câmara de Contenção Estelar | MAX | :material-check-circle: no jogo | [abrir](../gameplay/machines/originals/stellar-containment-chamber.md) |
 
 ??? note "Fase A: necessário e mecânicas do endgame existente — 3/4"
     | Máquina | Fonte | Estado |

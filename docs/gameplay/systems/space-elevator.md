@@ -6,9 +6,9 @@ A cable to orbit that powers up to **12 modules** standing around its base. Port
 
 ## Running the elevator
 
-- It works only from UHV (above ZPM) and needs computation: `128 · (tier − ZPM)` CWU/t.
+- It works only from UHV (above ZPM) and needs computation: $128 \cdot (\text{tier} - \text{ZPM})$ CWU/t.
 - Feed **256 Nanotube Spools** through its input bus.
-- The **Power Modules** in the structure set every module's parallel: `4^(MK − 1)`. All Power Modules must be the same MK (I to V). The MK also decides which Assembler Module recipes can run.
+- The **Power Modules** in the structure set every module's parallel: $4^{\,\text{MK} - 1}$. All Power Modules must be the same MK (I to V). The MK also decides which Assembler Module recipes can run.
 
 | Power Module | Module parallel |
 |---|---:|

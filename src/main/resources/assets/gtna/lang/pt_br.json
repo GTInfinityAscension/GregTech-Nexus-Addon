@@ -4547,8 +4547,8 @@
   "gtna.originals.info.kinetic_orbital_lance.build.2": "Com a estrutura formada, o canhão (tudo acima do anel da torre) entra no controlador e é desenhado girando para o alvo.",
   "gtna.originals.info.kinetic_orbital_lance.power": "Banco e disparo",
   "gtna.originals.info.kinetic_orbital_lance.power.1": "O banco carrega da rede Nexus a até 2^36 EU/t. Com o disparo automático ligado, cada tiro descarrega o banco inteiro assim que ele enche.",
-  "gtna.originals.info.kinetic_orbital_lance.power.2": "Banco = 4e12·2^(anéis − 1) EU",
-  "gtna.originals.info.kinetic_orbital_lance.power.3": "Projéteis: lingotes de liga de naquadah, trínio, neutrônio, neutrônio cósmico ou matéria de anã branca. Projéteis mais pesados são mais lentos, mas levam mais.",
+  "gtna.originals.info.kinetic_orbital_lance.power.2": "Banco = 4e12 EU (um anel de capacitores)",
+  "gtna.originals.info.kinetic_orbital_lance.power.3": "Projéteis: lingotes de liga de naquadah, trínio, neutrônio, neutrônio cósmico, matéria de anã branca ou magnetário. Qualquer um quebra todos os corpos menos Nexus-1, que só quebra com magnetário.",
   "gtna.originals.info.kinetic_orbital_lance.power.4": "v = sqrt(2·η·E / m); massa recuperada ∝ 0,2·η·E / dureza × cápsula × precisão",
   "gtna.originals.info.kinetic_orbital_lance.targets": "Alvos e mira",
   "gtna.originals.info.kinetic_orbital_lance.targets.1": "Comece pela Lua. Um corpo vira alvo quando os corpos anteriores estão 100% pesquisados (recupere a massa característica deles). Cartuchos no Target Cartridge Hatch escolhem o alvo e se revezam a cada tiro.",
@@ -4945,5 +4945,8 @@
   "gtna.large_naquadah_reactor": "Grande Reator de Naquadah",
   "gtna.naquadah_hyper_reactor": "Hiper-Reator de Naquadah",
   "material.gtna.naquadah_fuel": "Combustível de Naquadah",
-  "material.gtna.enriched_naquadah_fuel": "Combustível de Naquadah Enriquecido"
+  "material.gtna.enriched_naquadah_fuel": "Combustível de Naquadah Enriquecido",
+  "gtna.ui.o.needs_magnetar": "Nexus-1 pede lingotes de Magnetário",
+  "gtna.ui.o.needs_survey": "Levante a 100%:",
+  "gtna.ui.o.next_capsule": "próxima em"
 }

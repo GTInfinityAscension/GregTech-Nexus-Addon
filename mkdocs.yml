@@ -60,8 +60,7 @@ exclude_docs: |
   development/pattern-buffer-task-manager.md
   roadmap/*
   !roadmap/index*.md
-  !roadmap/design/
-  roadmap/design/proposals/
+  !roadmap/pressurized-water-reactor*.md
   config-examples/
 
 validation:
@@ -71,7 +70,6 @@ validation:
   anchors: warn
 
 not_in_nav: |
-  roadmap/design/*.md
   gameplay/machines/catalog/*.md
 
 plugins:
@@ -103,6 +101,7 @@ plugins:
             Pack authors: Autores de modpack
             Java API: API Java
             Contribute: Contribuir
+            Original multiblocks: Multiblocos originais
         - locale: zh
           name: 简体中文
           build: true
@@ -119,6 +118,7 @@ plugins:
             Pack authors: 整合包作者
             Java API: Java API
             Contribute: 参与贡献
+            Original multiblocks: 原创多方块
 
 markdown_extensions:
   - admonition
@@ -150,6 +150,8 @@ markdown_extensions:
   - def_list
   - toc:
       permalink: true
+  - pymdownx.arithmatex:
+      generic: true
 
 extra:
   social:
@@ -160,6 +162,13 @@ extra:
 
 extra_css:
   - assets/css/custom.css
+
+# EN: Formulas are LaTeX ($...$ inline, $$...$$ display), rendered by MathJax.
+# PT: Fórmulas em LaTeX ($...$ na linha, $$...$$ em bloco), renderizadas pelo MathJax.
+# ZH: 公式使用 LaTeX（行内 $...$，独立 $$...$$），由 MathJax 渲染。
+extra_javascript:
+  - assets/js/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
 
 # EN: Page titles come from each page's first heading, so every language shows its own title.
 # PT: O título de cada página vem do primeiro cabeçalho dela, então cada idioma mostra o seu.
@@ -178,7 +187,13 @@ nav:
     - Catalog: gameplay/machines/catalog/index.md
     - gameplay/machines/steam-age.md
     - gameplay/machines/industrial-slaughterhouse.md
-    - gameplay/machines/originals.md
+    - gameplay/machines/naquadah-reactors.md
+    - Original multiblocks:
+      - gameplay/machines/originals.md
+      - gameplay/machines/originals/kinetic-orbital-lance.md
+      - gameplay/machines/originals/dimensional-rift-gate.md
+      - gameplay/machines/originals/antimatter-collider-ring.md
+      - gameplay/machines/originals/stellar-containment-chamber.md
   - Systems:
     - gameplay/systems/index.md
     - gameplay/systems/wireless-steam-network.md
@@ -218,3 +233,4 @@ nav:
     - development/architecture.md
     - development/contributing.md
     - roadmap/index.md
+    - roadmap/pressurized-water-reactor.md

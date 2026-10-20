@@ -14,13 +14,15 @@ The Eye of Harmony simulates a miniature universe and extracts the ores of a who
 
 The planet item in the controller slot picks the program. Products come from the GTCEu ore veins registered in that dimension. Packs add planets through KubeJS (`GTNAStartupEvents.eyeOfHarmony`). Planets beyond the Minecraft dimensions need Ad Astra.
 
-```
-base duration = 18000 s · 1.4^tier
-each gas (H and He) = 1e9 · (tier + 1) mB
-base chance = 1 − 0.05 · tier
-return = cost · (0.6 + tier/10)
-cost = plasmas + ticks · (2^19 + 1e11) EU
-```
+$$
+\begin{aligned}
+\text{base duration} &= 18000\ \text{s} \cdot 1.4^{\text{tier}} \\
+\text{each gas (H and He)} &= 10^{9} \cdot (\text{tier} + 1)\ \text{mB} \\
+\text{base chance} &= 1 - 0.05 \cdot \text{tier} \\
+\text{return} &= \text{cost} \cdot (0.6 + \text{tier}/10) \\
+\text{cost} &= \text{plasmas} + \text{ticks} \cdot (2^{19} + 10^{11})\ \text{EU}
+\end{aligned}
+$$
 
 | Planet | Tier | Base duration | H and He (mB) | Base chance | Cost without plasmas (EU) |
 |---|---|---|---|---|---|
@@ -32,16 +34,18 @@ cost = plasmas + ticks · (2^19 + 1e11) EU
 
 ## Fields and circuit
 
-Three fields of tier 0 to 8 (compression `c`, acceleration `a`, stabilisation `s`) and a circuit `k` from 0 to 24:
+Three fields of tier 0 to 8 (compression $c$, acceleration $a$, stabilisation $s$) and a circuit $k$ from 0 to 24:
 
-```
-duration = max(T · 2^−a · 0.97^(c − r) · 2^−k, 1)          r = program minimum compression
-startup cost = cost · 4^k
-return = base return · (1 − (8 − s) · 0.05)                does not scale with the circuit
-chance = base chance − 0.0925·a + 0.05·s − gas penalties
-yield = 1 − 0.05·s − gas penalties
-gas penalty = 1 − exp(−(30 · (stored/required − 1))²)
-```
+$$
+\begin{aligned}
+\text{duration} &= \max\!\left(T \cdot 2^{-a} \cdot 0.97^{\,c - r} \cdot 2^{-k},\ 1\right) && r = \text{program minimum compression} \\
+\text{startup cost} &= \text{cost} \cdot 4^{k} \\
+\text{return} &= \text{base return} \cdot \left(1 - (8 - s) \cdot 0.05\right) && \text{does not scale with the circuit} \\
+\text{chance} &= \text{base chance} - 0.0925\,a + 0.05\,s - \text{gas penalties} \\
+\text{yield} &= 1 - 0.05\,s - \text{gas penalties} \\
+\text{gas penalty} &= 1 - \exp\!\left(-\left(30 \cdot \left(\tfrac{\text{stored}}{\text{required}} - 1\right)\right)^{2}\right)
+\end{aligned}
+$$
 
 | a / s | Chance (Overworld) | Yield | Time |
 |---|---|---|---|
@@ -57,8 +61,8 @@ Excess gas also reduces chance and yield: storing 10% more already costs 99.99% 
 
 ## Failure and pity
 
-- A failure still returns the EU and produces SpaceTime: `chance · 14400 · 2^(tier + 1)` mB.
-- Consecutive failures **under the same conditions** build pity: `(1 − chance) · chance` per failure. Changing fields or circuit resets it.
+- A failure still returns the EU and produces SpaceTime: $\text{chance} \cdot 14400 \cdot 2^{\text{tier} + 1}$ mB.
+- Consecutive failures **under the same conditions** build pity: $(1 - \text{chance}) \cdot \text{chance}$ per failure. Changing fields or circuit resets it.
 - The result is rolled at startup and saved: breaking the controller or reloading the world does not change it.
 
 ## Tips

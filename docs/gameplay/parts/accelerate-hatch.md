@@ -22,7 +22,7 @@ The value is the duration left, in percent of the original:
 | LuV | 40% | OpV | 26% |
 | ZPM | 38% | MAX | 24% |
 
-The formula is `50 − 2 · (tier − 1)` percent. You can raise the value in the hatch UI, up to 100% (no effect).
+The formula is $50 - 2 \cdot (\text{tier} - 1)$ percent. You can raise the value in the hatch UI, up to 100% (no effect).
 
 ## Penalty
 
@@ -35,4 +35,4 @@ The final value stays between 1% and 100%. Values are in `config/gtna/balance/ha
 
 ## With other hatches
 
-Everything multiplies: `duration = base × overclock steps × accelerate`. See the [Overclock Hatch](overclock-hatch.md) for an example.
+Everything multiplies: $\text{duration} = \text{base} \times \text{overclock steps} \times \text{accelerate}$. See the [Overclock Hatch](overclock-hatch.md) for an example.

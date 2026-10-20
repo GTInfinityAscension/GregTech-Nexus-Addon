@@ -33,14 +33,16 @@ Module limit: 8, 12 with ring 2 (CD), 16 with ring 3 (EE). Going over the limit 
 
 ## Fuel
 
-The star is lit with Stellar Fuel in the input bus. Startup cost: `f · 25 · 1.2^f` items. The consumption factor `f` goes up to 5 without upgrades. The controller drains fuel every 5 s (×2 while the battery charges).
+The star is lit with Stellar Fuel in the input bus. Startup cost: $f \cdot 25 \cdot 1.2^{f}$ items. The consumption factor $f$ goes up to 5 without upgrades. The controller drains fuel every 5 s (×2 while the battery charges).
 
-```
-DTR (residue)        f · 300 · 1.15^f      (×0.8 with STEM)
-Stellar plasma       f · 2 · 1.08^f        (×0.8 with STEM)
-MCSM                 f / 25
-heat                 12601 + log₁.₅(f) · 1000   (base 1.12 / 1.18 with SEFCP)
-```
+$$
+\begin{aligned}
+\text{DTR (residue)} &= f \cdot 300 \cdot 1.15^{f} && (\times 0.8 \text{ with STEM}) \\
+\text{Stellar plasma} &= f \cdot 2 \cdot 1.08^{f} && (\times 0.8 \text{ with STEM}) \\
+\text{MCSM} &= f / 25 \\
+\text{heat} &= 12601 + 1000 \cdot \log_{1.5} f && (\text{base } 1.12 / 1.18 \text{ with SEFCP})
+\end{aligned}
+$$
 
 | f | Base heat (K) | Startup (items) | DTR/s | DTR/s with STEM | Stellar plasma/s | MCSM/s |
 |---|---|---|---|---|---|---|
@@ -55,21 +57,25 @@ heat                 12601 + log₁.₅(f) · 1000   (base 1.12 / 1.18 with SEFC
 | 43 | 21,877 | 2,730,247 | 5,255,292 | 4,204,234 | 2,354 | 1.72 |
 | 70 | 23,079 | 6.11e8 | 3.72e8 | 2.98e8 | 30,605 | 2.80 |
 
-Max factors with TSE: residue 70 (72 with STEM), stellar plasma 181 (184 with STEM), MCSM uncapped. Above 43 the effective SA factor grows slowly: `43 + (f − 43)^0.4`.
+Max factors with TSE: residue 70 (72 with STEM), stellar plasma 181 (184 with STEM), MCSM uncapped. Above 43 the effective SA factor grows slowly: $43 + (f - 43)^{0.4}$.
 
 ## Heat and bonus cap
 
-Heat bonuses apply up to the cap: 15,000 K, or 30,000 K with CNTI. With NDPE, heat above 30,000 K counts compressed: `30000 + (heat − 30000)^e`, with e = 0.85 for the Power Forge and 0.8 for the others.
+Heat bonuses apply up to the cap: 15,000 K, or 30,000 K with CNTI. With NDPE, heat above 30,000 K counts compressed: $30000 + (\text{heat} - 30000)^{e}$, with e = 0.85 for the Power Forge and 0.8 for the others.
 
 ## Parallel
 
-```
-parallel = base · CTCDD(×2) · SA · EPEC · PoS
-SA    = 1 + f_effective / 15        (TCT: ×3 on Melting Core and on Power Forge with DoP, ×2 otherwise)
-EPEC  = 1 + heat / 15000            (Melting Core, Power Forge with DoP) or 1 + heat / 25000
-PoS   = 1 + upgrades / 5            (Melting Core, Power Forge with DoP) or 1 + upgrades / 8
-Exoticizer: square root of the total with PA, otherwise 1
-```
+$$
+\begin{aligned}
+\text{parallel} &= \text{base} \cdot \text{CTCDD}(\times 2) \cdot \text{SA} \cdot \text{EPEC} \cdot \text{PoS} \\
+\text{SA} &= 1 + f_{\text{eff}} / 15 && (\text{TCT: } \times 3 \text{ on Melting Core and Power Forge with DoP, } \times 2 \text{ otherwise}) \\
+\text{EPEC} &= 1 + \text{heat} / 15000 && (\text{Melting Core, Power Forge with DoP; otherwise } 1 + \text{heat}/25000) \\
+\text{PoS} &= 1 + \text{upgrades} / 5 && (\text{Melting Core, Power Forge with DoP; otherwise } 1 + \text{upgrades}/8)
+\end{aligned}
+$$
+
+Exoticizer: square root of the total with PA, otherwise 1.
+
 
 | f | f eff. | SA | SA + TCT (Melting Core) |
 |---|---|---|---|
@@ -84,14 +90,16 @@ The GTNH wiki only shows the /15000 and /5 versions. The code uses larger diviso
 
 ## Speed and energy
 
-```
-IGCC   time × heat^−0.01
-DoR    time ÷ parallel^0.02 (plasma) or ^0.012 (others)
-REC    discount = (1 − 1.05^(−0.05 · max battery)) / 20
-IMKG   charge discount: 1 − (−0.6·(c − 0.5)² + 0.15) on plasma, ×2/3 on the others
-GISS   voltage += fuel units/s · 1e8 EU/t
-NGMS   voltage × 4 per active ring (applied last)
-```
+$$
+\begin{aligned}
+\text{IGCC:}\quad & t \times \text{heat}^{-0.01} \\
+\text{DoR:}\quad & t \div \text{parallel}^{0.02} \text{ (plasma) or } \text{parallel}^{0.012} \text{ (others)} \\
+\text{REC:}\quad & \text{discount} = \frac{1 - 1.05^{-0.05 \cdot \text{max battery}}}{20} \\
+\text{IMKG:}\quad & \text{charge discount} = 1 - \left(-0.6\,(c - 0.5)^2 + 0.15\right) \text{ on plasma, } \times \tfrac{2}{3} \text{ on the others} \\
+\text{GISS:}\quad & V \mathrel{+}= \text{fuel units/s} \cdot 10^{8}\ \text{EU/t} \\
+\text{NGMS:}\quad & V \times 4 \text{ per active ring (applied last)}
+\end{aligned}
+$$
 
 ## Milestones
 
@@ -114,12 +122,12 @@ Bought with graviton shards. Blue line: one prerequisite is enough; red line: al
 | Tag | Cost | Requires | Effect |
 |---|---|---|---|
 | START | 0 | — | 8 modules, ring 1, Power Forge, 2 bn EU/t, 15,000 K cap |
-| IGCC | 1 | START | time × heat^−0.01 |
+| IGCC | 1 | START | $t \times \text{heat}^{-0.01}$ |
 | STEM | 1 | IGCC | fuel × 0.8 |
 | CFCE | 1 | IGCC | max factor × 1.2 |
-| GISS | 1 | STEM | voltage += fuel/s · 1e8 |
+| GISS | 1 | STEM | $V \mathrel{+}= \text{fuel/s} \cdot 10^{8}$ |
 | FDIM | 1 | STEM, CFCE | unlocks Melting Core |
-| SA | 1 | CFCE | parallel × (1 + f/15) |
+| SA | 1 | CFCE | parallel $\times (1 + f/15)$ |
 | GPCI | 2 | FDIM | unlocks Plasma Fabricator (T3, single step) |
 | REC | 2 | GISS + GPCI | configurable battery and discount |
 | GEM | 2 | GPCI | max factor += active upgrades |
@@ -131,11 +139,11 @@ Bought with graviton shards. Blue line: one prerequisite is enough; red line: al
 | TPTP | 4 | GGEBE | multi-step plasmas |
 | CNTI | 3 | SEFCP | 30,000 K cap |
 | DOP | 4 | CNTI | Power Forge gets Melting Core bonuses |
-| EPEC | 3 | TCT | parallel × (1 + heat/15000 or /25000) |
+| EPEC | 3 | TCT | parallel $\times (1 + \text{heat}/15000)$ or $/25000$ |
 | IMKG | 3 | GGEBE | battery-charge discount |
 | NDPE | 3 | CNTI | compressed heat above 30,000 K |
-| POS | 3 | EPEC | parallel × (1 + upgrades/5 or /8) |
-| DOR | 3 | IMKG | time ÷ parallel^0.02 |
+| POS | 3 | EPEC | parallel $\times (1 + \text{upgrades}/5)$ or $/8$ |
+| DOR | 3 | IMKG | $t \div \text{parallel}^{0.02}$ |
 | NGMS | 4 | NDPE, POS, DOR | voltage × 4 per ring |
 | SEDS | 5 | NGMS | plasmas up to T5 |
 | PA | 6 | SEDS | Exoticizer gets the bonuses (square root) |

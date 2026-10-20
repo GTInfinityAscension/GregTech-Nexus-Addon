@@ -10,16 +10,16 @@ Put a programmed circuit in the input bus:
 
 | Circuit | Mode | Mobs | From | EU/t | Drop multiplier |
 |:---:|---|---|---|---:|---|
-| 1 | Passive | chicken, cow, pig, sheep, rabbit, horse, goat | LV | 1,000 | `2^(tier − LV)` |
-| 2 | Hostile | zombie, skeleton, creeper, spider, enderman, witch, blaze | MV | 2,560 | `2^(tier − MV)` |
-| 3 | Bosses | warden, wither, elder guardian | ZPM | 32,000 | `3^(tier − ZPM)` |
-| 4 | Dragon | 1 Dragon Egg, 4 Dragon's Breath, 1 Dragon Head | UHV | 120,000 | `5^(tier − UHV)` |
+| 1 | Passive | chicken, cow, pig, sheep, rabbit, horse, goat | LV | 1,000 | $2^{\,\text{tier} - \text{LV}}$ |
+| 2 | Hostile | zombie, skeleton, creeper, spider, enderman, witch, blaze | MV | 2,560 | $2^{\,\text{tier} - \text{MV}}$ |
+| 3 | Bosses | warden, wither, elder guardian | ZPM | 32,000 | $3^{\,\text{tier} - \text{ZPM}}$ |
+| 4 | Dragon | 1 Dragon Egg, 4 Dragon's Breath, 1 Dragon Head | UHV | 120,000 | $5^{\,\text{tier} - \text{UHV}}$ |
 
 Each run lasts 40 ticks. The tier is the machine's energy tier. Below the mode's starting tier the machine produces nothing.
 
 ## How much it drops
 
-Each run repeats `max(1, (tier − 2) × 8)` times: once at LV and MV, 8 at HV, 16 at EV, 24 at IV and so on. Every repeat picks a random mob of the group, rolls its loot table and multiplies each drop by the mode's multiplier, **capped at one stack** per drop.
+Each run repeats $\max(1,\ (\text{tier} - 2) \times 8)$ times: once at LV and MV, 8 at HV, 16 at EV, 24 at IV and so on. Every repeat picks a random mob of the group, rolls its loot table and multiplies each drop by the mode's multiplier, **capped at one stack** per drop.
 
 | Tier | Repeats | Passive | Hostile | Bosses | Dragon |
 |---|---:|---:|---:|---:|---:|
