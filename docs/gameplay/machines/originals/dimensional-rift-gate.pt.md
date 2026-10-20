@@ -71,27 +71,29 @@ $S$ é a estabilidade (0–100), $D$ a profundidade, $P$ os pilones ativos (4 na
 
 ## Harmônicos
 
-Manter R ≥ 0,9 por 30 s grava o harmônico da seed. Clique nos harmônicos gravados para carregar até 5 no acorde: acordes consonantes (oitava, quinta) são estáveis; dissonantes (trítono, segunda menor) cavam mais fundo mas gastam mais SpaceTime.
+Manter R ≥ 0,9 por 30 s grava o harmônico da seed. Clique nos harmônicos gravados para carregar até 5 no acorde: acordes consonantes (oitava, quinta) são estáveis; dissonantes (trítono, segunda menor) cavam mais fundo mas gastam mais SpaceTime. Cada harmônico gravado aumenta a profundidade máxima em 5 (base 5).
 
 Manter R ≥ 0,98 por um minuto pode dar uma Rift Singularity. Estabilidade 0 colapsa a fenda; R abaixo de 0,2 por 10 s a inverte (−10 de estabilidade). Abas laterais: Sismógrafo e Atlas.
 
 $$
 \begin{aligned}
 \text{c}(p\!:\!q) &= \frac{1}{\log_2 (p\,q)} \qquad C = \overline{\text{c}} \ (\text{média do acorde; 0,3 sem acorde}) \\
-D_{\max} &= \left\lfloor 5 \cdot \max\!\left(0{,}5,\ 1 + 3\,(0{,}3 - C)\right) \right\rfloor
+D_{\max} &= \left\lfloor (5 + 5\,h) \cdot \max\!\left(0{,}5,\ 1 + 3\,(0{,}3 - C)\right) \right\rfloor
 \end{aligned}
 $$
 
+$h$ é o número de harmônicos gravados. A tabela usa os cinco harmônicos dos biomas de superfície ($h = 5$, base 30).
+
 | Intervalo | Razão | Consonância | Fator de λ (sozinho) | Profundidade máx. (sozinho) | Gravado em |
 |---|---|---|---|---|---|
-| Oitava | 2:1 | 1 | 0,3 | 2 | nenhum bioma dá |
-| Quinta | 3:2 | 0,39 | 0,91 | 3 | Planície cristalina |
-| Quarta | 4:3 | 0,28 | 1,02 | 5 | Floresta de esporos |
-| Terça maior | 5:4 | 0,23 | 1,07 | 6 | Oceano de mercúrio |
-| Sexta menor | 8:5 | 0,19 | 1,11 | 6 | Mundo-forja |
-| Sétima menor | 9:5 | 0,18 | 1,12 | 6 | Relíquia de civilização |
-| Trítono | 45:32 | 0,1 | 1,2 | 8 | Abismo de antimatéria |
-| Segunda menor | 16:15 | 0,13 | 1,17 | 7 | Vazio |
+| Oitava | 2:1 | 1 | 0,3 | 15 | nenhum bioma dá |
+| Quinta | 3:2 | 0,39 | 0,91 | 22 | Planície cristalina |
+| Quarta | 4:3 | 0,28 | 1,02 | 31 | Floresta de esporos |
+| Terça maior | 5:4 | 0,23 | 1,07 | 36 | Oceano de mercúrio |
+| Sexta menor | 8:5 | 0,19 | 1,11 | 40 | Mundo-forja |
+| Sétima menor | 9:5 | 0,18 | 1,12 | 40 | Relíquia de civilização |
+| Trítono | 45:32 | 0,1 | 1,2 | 48 | Abismo de antimatéria |
+| Segunda menor | 16:15 | 0,13 | 1,17 | 45 | Vazio |
 
 ## Endgame
 
@@ -119,8 +121,22 @@ O X-Nexus vem do Anel Colisor de Antimatéria; a Câmara Estelar precisa do seu 
 
 !!! bug "Problemas conhecidos"
 
-    - A profundidade máxima começa em 5 e ainda nada a aumenta; o acorde mais dissonante chega a 8. Por isso Relíquia de Civilização (profundidade 20) e Vazio (40) não rendem nada, e **Resíduo Precursor** e **Cinza do Vazio** não podem ser obtidos nesta versão.
     - Os núcleos de pilone ainda não existem: a estrutura sempre conta 4 pilones ativos.
 
     Outros problemas: [issue tracker](https://github.com/GTInfinityAscension/GregTech-Nexus-Addon/issues).
 
+## Telas
+
+Telas do jogo na versão atual, em português.
+
+=== "Tela principal"
+
+    ![Tela principal](../../../assets/originals/dimensional_rift_gate_main_pt.webp){ loading=lazy }
+
+=== "Acorde e harmônicos"
+
+    ![Acorde e harmônicos](../../../assets/originals/dimensional_rift_gate_chord_pt.webp){ loading=lazy }
+
+=== "Atlas"
+
+    ![Atlas](../../../assets/originals/dimensional_rift_gate_atlas_pt.webp){ loading=lazy }

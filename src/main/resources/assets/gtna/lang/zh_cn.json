@@ -4455,7 +4455,7 @@
   "gtna.originals.info.antimatter_collider_ring.modes.2": "物理：积分亮度提高每种粒子的显著性并推进当前提案。",
   "gtna.originals.info.antimatter_collider_ring.modes.3": "束流能量 p = 0.3·B·ρ（B 为磁场，ρ = 3 km）；粒子需要质心能量高于其阈值",
   "gtna.originals.info.antimatter_collider_ring.proposals": "委员会提案",
-  "gtna.originals.info.antimatter_collider_ring.proposals.1": "依次为：Nb3Sn 磁体、顶点探测器、随机冷却、低温彭宁阱、REBCO 磁体、轻子对撞机、重离子、中子素磁体、超越标准模型。每个提案解锁更强的磁体、阱或模式。",
+  "gtna.originals.info.antimatter_collider_ring.proposals.1": "依次为：Nb3Sn 磁体、顶点探测器、随机冷却、低温彭宁阱、REBCO 磁体、轻子对撞机、重离子、中子素磁体、超越标准模型。每个提案解锁更强的磁体、阱或模式。轻子对撞机解锁 e+e- 按钮：电子束能量上限为 100 GeV，但计数翻倍。",
   "gtna.originals.info.antimatter_collider_ring.proposals.2": "若未支付彭宁阱维持能量，储存的反质子会湮灭并损坏环。侧边标签页：标准模型面板和委员会。",
   "gtna.originals.info.dimensional_rift_gate.overview": "概述",
   "gtna.originals.info.dimensional_rift_gate.overview.1": "向由种子决定的维度打开裂隙并从中获取资源。调节频率、相位和振幅以接近种子的隐藏最优值，从而提高共振。",
@@ -4471,7 +4471,7 @@
   "gtna.originals.info.dimensional_rift_gate.tuning.3": "每秒产出 ∝ R²·D^1.5·S/100，产出该生物群系材料的粉",
   "gtna.originals.info.dimensional_rift_gate.tuning.4": "深度锚使裂隙加深一层，直到最大深度。遗迹和虚空生物群系分别从深度 20 和 40 起才有产出。",
   "gtna.originals.info.dimensional_rift_gate.harmonics": "谐波",
-  "gtna.originals.info.dimensional_rift_gate.harmonics.1": "保持 R ≥ 0.9 达 30 秒会记录该种子的谐波。点击已记录的谐波最多装入 5 个组成和弦：协和和弦（八度、五度）更稳定；不协和和弦（三全音、小二度）挖得更深但消耗更多时空。",
+  "gtna.originals.info.dimensional_rift_gate.harmonics.1": "保持 R ≥ 0.9 达 30 秒会记录该种子的谐波。点击已记录的谐波最多装入 5 个组成和弦：协和和弦（八度、五度）更稳定；不协和和弦（三全音、小二度）挖得更深但消耗更多时空。每记录一个谐波，最大深度增加 5（基础为 5）。",
   "gtna.originals.info.dimensional_rift_gate.harmonics.2": "保持 R ≥ 0.98 一分钟可能获得裂隙奇点。稳定度为 0 时裂隙坍缩；R 低于 0.2 持续 10 秒会反转（−10 稳定度）。侧边标签页：地震仪和图集。",
   "gtna.originals.info.kinetic_orbital_lance.overview": "概述",
   "gtna.originals.info.kinetic_orbital_lance.overview.1": "用电容器组向卫星和小行星发射弹丸，并用返回舱回收碎片，碎片以该天体材料的粉形式送达。",
@@ -4933,5 +4933,7 @@
   "material.gtna.enriched_naquadah_fuel": "富集硅岩燃料",
   "gtna.ui.o.needs_magnetar": "Nexus-1 需要磁星合金锭",
   "gtna.ui.o.needs_survey": "需勘测至 100%：",
-  "gtna.ui.o.next_capsule": "下一个"
+  "gtna.ui.o.next_capsule": "下一个",
+  "gtna.ui.o.electrons": "e+e-",
+  "gtna.ui.o.electrons.tip": "电子束：干净的碰撞计为两倍，束流能量上限 100 GeV。由 e+e- 提案解锁"
 }

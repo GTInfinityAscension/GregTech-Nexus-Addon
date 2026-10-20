@@ -91,12 +91,14 @@ The committee grants one proposal at a time, in this order. Physics runs advance
 | 3 | Stochastic cooling | 20 fb⁻¹ | 1,000 bunches |
 | 4 | Cryogenic Penning | 10¹³ antiprotons stored or 40 fb⁻¹ | trap tier 3, helium × 0.6 |
 | 5 | REBCO magnet | W and Z at 5σ | magnet REBCO (20 T) |
-| 6 | e+e- collisions | bottom at 5σ | electron beams |
+| 6 | e+e- collisions | bottom at 5σ | e+e− button (electron beams) |
 | 7 | Heavy ions | top at 5σ | heavy ions: X-Nexus can be produced |
 | 8 | Neutronium magnet | Higgs at 5σ + 1024 fine Nexium wire | magnet Neutronium (45 T) |
 | 9 | Beyond the Standard Model | X-Nexus at 3σ | magnet Infinity (120 T) |
 
 If the trap upkeep is not paid the stored antiprotons annihilate and damage the ring. Side tabs: Standard Model board and Committee.
+
+**Electron beams.** After the e+e− proposal the e+e− button switches the ring to electron beams. Synchrotron light caps them at 100 GeV per beam (like LEP): $E_{\text{cm}} \le 200$ GeV, so W, Z, charm and bottom are reachable but not the Higgs or the top. Clean collisions count twice in physics runs. Switch back to protons for the heavier particles.
 
 ## Endgame
 
@@ -105,12 +107,6 @@ Exclusive: antiproton cells go into the Cosmic Neutronium and Infinity fuel rods
 Needs: the Neutronium Magnet proposal only closes with 1024 fine Nexium wire in the input buses; the wire is wound into the tier-4 dipoles when it closes.
 
 Nexium comes from the Kinetic Orbital Lance (Nexus-1); the Rift Gate needs your X-Nexus to go past depth 40.
-
-!!! bug "Known issues"
-
-    - After the **e+e− collisions** proposal the ring runs electron beams and the synchrotron load quenches the magnets every second, so the ring stops for good. Until this is fixed, switch to production mode once the REBCO magnet is done: heavy ions, the neutronium magnet, X-Nexus and the last proposal cannot be reached in this version.
-
-    Report anything else on the [issue tracker](https://github.com/GTInfinityAscension/GregTech-Nexus-Addon/issues).
 
 ## Screens
 

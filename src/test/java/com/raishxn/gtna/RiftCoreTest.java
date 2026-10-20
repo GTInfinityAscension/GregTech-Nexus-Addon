@@ -45,6 +45,15 @@ public final class RiftCoreTest {
         gate.score.add(Harmonic.MINOR_SECOND);
         gate.maxDepth = 40;
         check(gate.effectiveMaxDepth() > 40, "dissonant chord reaches deeper");
+        var fresh = new RiftCore();
+        for (var h : new Harmonic[] { Harmonic.FIFTH, Harmonic.FOURTH, Harmonic.MAJOR_THIRD, Harmonic.MINOR_SIXTH,
+                Harmonic.TRITONE })
+            fresh.collected[h.ordinal()] = true;
+        fresh.score.add(Harmonic.FIFTH);
+        check(fresh.effectiveMaxDepth() >= 20, "surface harmonics open the Relic (depth 20)");
+        fresh.score.clear();
+        fresh.score.add(Harmonic.TRITONE);
+        check(fresh.effectiveMaxDepth() >= 40, "the tritone with surface harmonics opens the Void (depth 40)");
     }
 
     private static void stability() {

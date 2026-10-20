@@ -91,12 +91,14 @@ O comitê aprova uma proposta por vez, nesta ordem. As corridas de física avan�
 | 3 | Resfriamento estocástico | 20 fb⁻¹ | 1.000 pacotes |
 | 4 | Penning criogênica | 10¹³ antiprótons guardados ou 40 fb⁻¹ | armadilha tier 3, hélio × 0,6 |
 | 5 | Ímã REBCO | W e Z em 5σ | ímã REBCO (20 T) |
-| 6 | Colisão e+e- | bottom em 5σ | feixes de elétrons |
+| 6 | Colisão e+e- | bottom em 5σ | botão e+e− (feixes de elétrons) |
 | 7 | Íons pesados | top em 5σ | íons pesados: X-Nexus pode ser produzido |
 | 8 | Ímã de neutrônio | Higgs em 5σ + 1024 fios finos de Nexium | ímã de Neutrônio (45 T) |
 | 9 | Além do Modelo Padrão | X-Nexus em 3σ | ímã Infinity (120 T) |
 
 Se a manutenção das armadilhas não for paga, os antiprótons guardados aniquilam e danificam o anel. Abas laterais: quadro do Modelo Padrão e Comitê.
+
+**Feixes de elétrons.** Depois da proposta e+e− o botão e+e− troca o anel para feixes de elétrons. A luz síncrotron limita cada feixe a 100 GeV (como no LEP): $E_{\text{cm}} \le 200$ GeV, então W, Z, charm e bottom são alcançáveis, mas Higgs e top não. As colisões limpas contam em dobro nas corridas de física. Volte aos prótons para as partículas mais pesadas.
 
 ## Endgame
 
@@ -105,12 +107,6 @@ Exclusivo: células de antipróton entram nas barras Cosmic Neutronium e Infinit
 Precisa de: a proposta Ímã de Neutrônio só fecha com 1024 fios finos de Nexium nos barramentos de entrada; o fio é enrolado nos dipolos nível 4 quando ela fecha.
 
 O Nexium vem da Lança Cinética Orbital (Nexus-1); a Fenda precisa do seu X-Nexus para passar da profundidade 40.
-
-!!! bug "Problemas conhecidos"
-
-    - Depois da proposta **colisões e+e−** o anel passa a feixes de elétrons e a carga de síncrotron faz quench nos ímãs a cada segundo: o anel para de vez. Até a correção, passe para o modo produção quando o ímã REBCO estiver pronto. Íons pesados, ímã de neutrônio, X-Nexus e a última proposta não são alcançáveis nesta versão.
-
-    Outros problemas: [issue tracker](https://github.com/GTInfinityAscension/GregTech-Nexus-Addon/issues).
 
 ## Telas
 

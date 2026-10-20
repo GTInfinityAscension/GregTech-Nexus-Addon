@@ -4522,7 +4522,7 @@
   "gtna.originals.info.antimatter_collider_ring.modes.2": "Física: a luminosidade integrada aumenta a significância de cada partícula e avança a proposta ativa.",
   "gtna.originals.info.antimatter_collider_ring.modes.3": "Energia do feixe p = 0,3·B·ρ (B campo do ímã, ρ = 3 km); cada partícula precisa de E_cm acima do limiar",
   "gtna.originals.info.antimatter_collider_ring.proposals": "Propostas do comitê",
-  "gtna.originals.info.antimatter_collider_ring.proposals.1": "Em ordem: ímã Nb3Sn, detector de vértice, resfriamento estocástico, armadilhas de Penning criogênicas, ímã REBCO, colisor de léptons, íons pesados, ímã de neutrônio, além do Modelo Padrão. Cada uma libera ímãs, armadilhas ou modos mais fortes.",
+  "gtna.originals.info.antimatter_collider_ring.proposals.1": "Em ordem: ímã Nb3Sn, detector de vértice, resfriamento estocástico, armadilhas de Penning criogênicas, ímã REBCO, colisor de léptons, íons pesados, ímã de neutrônio, além do Modelo Padrão. Cada uma libera ímãs, armadilhas ou modos mais fortes. O colisor de léptons libera o botão e+e-: feixes de elétrons param em 100 GeV, mas contam em dobro.",
   "gtna.originals.info.antimatter_collider_ring.proposals.2": "Se a manutenção das armadilhas não for paga, os antiprótons guardados aniquilam e danificam o anel. Abas laterais: quadro do Modelo Padrão e Comitê.",
   "gtna.originals.info.dimensional_rift_gate.overview": "Visão geral",
   "gtna.originals.info.dimensional_rift_gate.overview.1": "Abre uma fenda para uma dimensão sorteada por seed e extrai recursos dela. Ajuste frequência, fase e amplitude em direção ao ótimo escondido da seed para aumentar a ressonância.",
@@ -4538,7 +4538,7 @@
   "gtna.originals.info.dimensional_rift_gate.tuning.3": "Saída por segundo ∝ R²·D^1,5·S/100, em pós dos materiais do bioma",
   "gtna.originals.info.dimensional_rift_gate.tuning.4": "Uma Depth Anchor aprofunda a fenda em um, até a profundidade máxima. Os biomas Relíquia e Vazio só produzem a partir da profundidade 20 e 40.",
   "gtna.originals.info.dimensional_rift_gate.harmonics": "Harmônicos",
-  "gtna.originals.info.dimensional_rift_gate.harmonics.1": "Manter R ≥ 0,9 por 30 s grava o harmônico da seed. Clique nos harmônicos gravados para carregar até 5 no acorde: acordes consonantes (oitava, quinta) são estáveis; dissonantes (trítono, segunda menor) cavam mais fundo mas gastam mais SpaceTime.",
+  "gtna.originals.info.dimensional_rift_gate.harmonics.1": "Manter R ≥ 0,9 por 30 s grava o harmônico da seed. Clique nos harmônicos gravados para carregar até 5 no acorde: acordes consonantes (oitava, quinta) são estáveis; dissonantes (trítono, segunda menor) cavam mais fundo mas gastam mais SpaceTime. Cada harmônico gravado aumenta a profundidade máxima em 5 (base 5).",
   "gtna.originals.info.dimensional_rift_gate.harmonics.2": "Manter R ≥ 0,98 por um minuto pode dar uma Rift Singularity. Estabilidade 0 colapsa a fenda; R abaixo de 0,2 por 10 s a inverte (−10 de estabilidade). Abas laterais: Sismógrafo e Atlas.",
   "gtna.originals.info.kinetic_orbital_lance.overview": "Visão geral",
   "gtna.originals.info.kinetic_orbital_lance.overview.1": "Dispara projéteis de um banco de capacitores contra luas e asteroides e recupera os fragmentos em cápsulas de retorno, que chegam como pós dos materiais do corpo.",
@@ -4948,5 +4948,7 @@
   "material.gtna.enriched_naquadah_fuel": "Combustível de Naquadah Enriquecido",
   "gtna.ui.o.needs_magnetar": "Nexus-1 pede lingotes de Magnetário",
   "gtna.ui.o.needs_survey": "Levante a 100%:",
-  "gtna.ui.o.next_capsule": "próxima em"
+  "gtna.ui.o.next_capsule": "próxima em",
+  "gtna.ui.o.electrons": "e+e-",
+  "gtna.ui.o.electrons.tip": "Feixes de elétrons: colisões limpas contam em dobro, feixes limitados a 100 GeV. Liberado pela proposta e+e-"
 }

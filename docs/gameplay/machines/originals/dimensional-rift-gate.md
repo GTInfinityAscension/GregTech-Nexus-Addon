@@ -71,27 +71,29 @@ $S$ is the stability (0–100), $D$ the depth, $P$ the active pylons (4 in the c
 
 ## Harmonics
 
-Holding R ≥ 0.9 for 30 s records the seed's harmonic. Click recorded harmonics to load up to 5 in the chord: consonant chords (octave, fifth) are stable; dissonant chords (tritone, minor second) dig deeper but cost more SpaceTime.
+Holding R ≥ 0.9 for 30 s records the seed's harmonic. Click recorded harmonics to load up to 5 in the chord: consonant chords (octave, fifth) are stable; dissonant chords (tritone, minor second) dig deeper but cost more SpaceTime. Each recorded harmonic raises the maximum depth by 5 (base 5).
 
 Holding R ≥ 0.98 for a minute can give a Rift Singularity. Stability at 0 collapses the rift; R under 0.2 for 10 s inverts it (−10 stability). Side tabs: Seismograph and Atlas.
 
 $$
 \begin{aligned}
 \text{c}(p\!:\!q) &= \frac{1}{\log_2 (p\,q)} \qquad C = \overline{\text{c}} \ (\text{mean of the chord; 0.3 with no chord}) \\
-D_{\max} &= \left\lfloor 5 \cdot \max\!\left(0.5,\ 1 + 3\,(0.3 - C)\right) \right\rfloor
+D_{\max} &= \left\lfloor (5 + 5\,h) \cdot \max\!\left(0.5,\ 1 + 3\,(0.3 - C)\right) \right\rfloor
 \end{aligned}
 $$
 
+$h$ is the number of recorded harmonics. The table uses the five harmonics of the surface biomes ($h = 5$, base 30).
+
 | Interval | Ratio | Consonance | λ factor (alone) | Max depth (alone) | Recorded in |
 |---|---|---|---|---|---|
-| Octave | 2:1 | 1 | 0.3 | 2 | not dropped by any biome |
-| Fifth | 3:2 | 0.39 | 0.91 | 3 | Crystal plains |
-| Fourth | 4:3 | 0.28 | 1.02 | 5 | Spore forest |
-| Major third | 5:4 | 0.23 | 1.07 | 6 | Mercury ocean |
-| Minor sixth | 8:5 | 0.19 | 1.11 | 6 | Forge world |
-| Minor seventh | 9:5 | 0.18 | 1.12 | 6 | Civilisation relic |
-| Tritone | 45:32 | 0.1 | 1.2 | 8 | Antimatter abyss |
-| Minor second | 16:15 | 0.13 | 1.17 | 7 | Void |
+| Octave | 2:1 | 1 | 0.3 | 15 | not dropped by any biome |
+| Fifth | 3:2 | 0.39 | 0.91 | 22 | Crystal plains |
+| Fourth | 4:3 | 0.28 | 1.02 | 31 | Spore forest |
+| Major third | 5:4 | 0.23 | 1.07 | 36 | Mercury ocean |
+| Minor sixth | 8:5 | 0.19 | 1.11 | 40 | Forge world |
+| Minor seventh | 9:5 | 0.18 | 1.12 | 40 | Civilisation relic |
+| Tritone | 45:32 | 0.1 | 1.2 | 48 | Antimatter abyss |
+| Minor second | 16:15 | 0.13 | 1.17 | 45 | Void |
 
 ## Endgame
 
@@ -119,8 +121,22 @@ X-Nexus comes from the Antimatter Collider Ring; the Stellar Chamber needs your 
 
 !!! bug "Known issues"
 
-    - The maximum depth starts at 5 and nothing raises it yet; the most dissonant chord reaches 8. Civilisation Relic (depth 20) and Void (depth 40) therefore yield nothing, so **Precursor Residue** and **Void Ash** cannot be obtained in this version.
     - Pylon cores are not in the game: the structure always counts 4 active pylons.
 
     Report anything else on the [issue tracker](https://github.com/GTInfinityAscension/GregTech-Nexus-Addon/issues).
 
+## Screens
+
+In-game screens of the current version, in English.
+
+=== "Main screen"
+
+    ![Main screen](../../../assets/originals/dimensional_rift_gate_main_en.webp){ loading=lazy }
+
+=== "Chord and harmonics"
+
+    ![Chord and harmonics](../../../assets/originals/dimensional_rift_gate_chord_en.webp){ loading=lazy }
+
+=== "Atlas"
+
+    ![Atlas](../../../assets/originals/dimensional_rift_gate_atlas_en.webp){ loading=lazy }

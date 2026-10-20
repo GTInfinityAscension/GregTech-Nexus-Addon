@@ -45,8 +45,13 @@ public class LanceMachine extends OriginalMachine
     public static final double MUZZLE_UP = 98, MUZZLE_BACK = 195;
     /** Bank charge rate from the network, EU per second. */
     public static final double CHARGE_PER_SECOND = Math.pow(2, 36) * 20;
-    /** CWU/t asked from the optical computation hatch for the aim. */
-    public static final int AIM_CWUT = 16000;
+    // EN: CWU/t asked from the optical computation hatch for the aim. At UEV a Supercomputing Center network gives far
+    // more than 16 000; up to 2^20 the aim keeps improving (error ∝ 1/sqrt(CWU)), so far bodies reward big networks.
+    // PT: CWU/t pedidos ao hatch de computação para a mira. No UEV uma rede de Supercomputing Center dá muito mais que
+    // 16 000; até 2^20 a mira continua melhorando (erro ∝ 1/sqrt(CWU)), então corpos distantes premiam redes grandes.
+    // ZH: 向光学计算仓请求的瞄准算力（CWU/t）。在 UEV 阶段超级计算中心网络远超 16 000；到 2^20 为止瞄准持续改善
+    // （误差 ∝ 1/sqrt(CWU)），因此远处天体奖励大型网络。
+    public static final int AIM_CWUT = 1 << 20;
 
     private final LanceCore core = new LanceCore();
     /** Return capsules in flight: {body, kg, seconds left}. */

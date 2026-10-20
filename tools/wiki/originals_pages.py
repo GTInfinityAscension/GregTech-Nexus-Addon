@@ -177,7 +177,7 @@ COMPONENTS = [  # id, slot, value, mass t, heat, unlocked by
 ]
 BANK = 4e12            # LanceCore.bankCapacity() with one capacitor ring
 CHARGE_EUT = 2 ** 36   # LanceMachine.CHARGE_PER_SECOND / 20
-AIM_CWU = 16000        # LanceMachine.AIM_CWUT
+AIM_CWU = 1 << 20      # LanceMachine.AIM_CWUT
 COOL_EU_S = 2 ** 34 * 20
 
 
@@ -195,7 +195,7 @@ def lance(lang):
         (T(lang, 'Size', 'Tamanho', '尺寸'), '242 × 130 × 142'),
         (T(lang, 'Energy', 'Energia', '能量'), T(lang, "owner's Nexus network, up to $2^{36}$ EU/t into the bank",
                                                    'rede Nexus do dono, até $2^{36}$ EU/t para o banco', '所有者的 Nexus 网络，最高 $2^{36}$ EU/t 充入电容组')),
-        (T(lang, 'Computation', 'Computação', '算力'), T(lang, f'up to {num(AIM_CWU, lang)} CWU/t (aim)', f'até {num(AIM_CWU, lang)} CWU/t (mira)', f'最多 {AIM_CWU} CWU/t（瞄准）')),
+        (T(lang, 'Computation', 'Computação', '算力'), T(lang, 'up to $2^{20}$ CWU/t (aim)', 'até $2^{20}$ CWU/t (mira)', '最多 $2^{20}$ CWU/t（瞄准）')),
         (T(lang, 'Controller', 'Controlador', '控制器'), T(lang, 'Assembly Line (UEV), research on the UEV Electric Piston',
                                                          'Linha de Montagem (UEV), pesquisa no Pistão Elétrico UEV', '装配线（UEV），研究 UEV 电动活塞')),
         (T(lang, 'Blocks', 'Blocos', '方块'), f'[{T(lang, "catalog page", "página do catálogo", "图鉴页面")}](../catalog/{m}.md)'),
@@ -245,9 +245,9 @@ A &= \max\!\left(0,\ 1 - \frac{d\,\theta}{5000\ \text{m}}\right)
 \end{aligned}
 $$
 """ % T(lang, 'survey, 99\\% counts as complete', 'levantamento; 99\\% conta como completo', '勘测度，99\\% 视为完成'))
-    L.append(T(lang, '$M$ is the mass recovered from the body, $u$ the aim factor of the sensor (1 without one), $T$ the barrel temperature (K) and $d$ the distance. The Lance asks the computation hatch for 16,000 CWU/t at most.',
-               '$M$ é a massa recuperada do corpo, $u$ o fator de mira do sensor (1 sem sensor), $T$ a temperatura do cano (K) e $d$ a distância. A Lança pede no máximo 16.000 CWU/t ao hatch de computação.',
-               '$M$ 为从该天体回收的质量，$u$ 为传感器的瞄准系数（无传感器时为 1），$T$ 为炮管温度（K），$d$ 为距离。长矛最多向算力仓请求 16,000 CWU/t。') + '\n')
+    L.append(T(lang, '$M$ is the mass recovered from the body, $u$ the aim factor of the sensor (1 without one), $T$ the barrel temperature (K) and $d$ the distance. The Lance asks the computation hatch for up to $2^{20}$ (1,048,576) CWU/t; a bigger network aims better.',
+               '$M$ é a massa recuperada do corpo, $u$ o fator de mira do sensor (1 sem sensor), $T$ a temperatura do cano (K) e $d$ a distância. A Lança pede até $2^{20}$ (1.048.576) CWU/t ao hatch de computação; rede maior mira melhor.',
+               '$M$ 为从该天体回收的质量，$u$ 为传感器的瞄准系数（无传感器时为 1），$T$ 为炮管温度（K），$d$ 为距离。长矛最多向算力仓请求 $2^{20}$（1,048,576）CWU/t；网络越大瞄准越准。') + '\n')
     rows = []
     for b, d, h, mc, parents, mats in BODIES:
         frag = 0.2 * 0.35 * BANK * 1000 / (h * 1e6)
@@ -260,9 +260,9 @@ $$
     L.append(table([T(lang, 'Body', 'Corpo', '天体'), T(lang, 'Distance (Mm)', 'Distância (Mm)', '距离 (Mm)'), 'H (MJ/kg)', '$M_{car}$ (kg)',
                     T(lang, 'Capsule', 'Cápsula', '返回舱'), T(lang, 'Needs 100% of', 'Precisa de 100% em', '前置（100%）'),
                     T(lang, 'Materials', 'Materiais', '材料'), T(lang, 'Accuracy*', 'Precisão*', '精度*'), T(lang, 'Shots to 100%*', 'Tiros até 100%*', '勘测满所需射击数*')], rows))
-    L.append(T(lang, '\\* No bench components ($\\eta = 0.35$, $r = 0.6$, $u = 1$), 16,000 CWU/t, cold barrel.',
-               '\\* Sem componentes na bancada ($\\eta = 0{,}35$, $r = 0{,}6$, $u = 1$), 16.000 CWU/t, cano frio.',
-               '\\* 无工作台部件（$\\eta = 0.35$，$r = 0.6$，$u = 1$），16,000 CWU/t，炮管冷却。') + '\n')
+    L.append(T(lang, '\\* No bench components ($\\eta = 0.35$, $r = 0.6$, $u = 1$), $2^{20}$ CWU/t, cold barrel.',
+               '\\* Sem componentes na bancada ($\\eta = 0{,}35$, $r = 0{,}6$, $u = 1$), $2^{20}$ CWU/t, cano frio.',
+               '\\* 无工作台部件（$\\eta = 0.35$，$r = 0.6$，$u = 1$），$2^{20}$ CWU/t，炮管冷却。') + '\n')
 
     # Bench
     L.append(heading(lang, m, 'bench'))
@@ -388,14 +388,17 @@ $$
     L.append(r"""$$
 \begin{aligned}
 \text{c}(p\!:\!q) &= \frac{1}{\log_2 (p\,q)} \qquad C = \overline{\text{c}} \ (\text{%s}) \\
-D_{\max} &= \left\lfloor 5 \cdot \max\!\left(0.5,\ 1 + 3\,(0.3 - C)\right) \right\rfloor
+D_{\max} &= \left\lfloor (5 + 5\,h) \cdot \max\!\left(0.5,\ 1 + 3\,(0.3 - C)\right) \right\rfloor
 \end{aligned}
 $$
 """.replace('0.5', T(lang, '0.5', '0{,}5', '0.5')).replace('0.3', T(lang, '0.3', '0{,}3', '0.3')) % T(lang, 'mean of the chord; 0.3 with no chord', 'média do acorde; 0,3 sem acorde', '和弦平均值；无和弦时为 0.3'))
+    L.append(T(lang, '$h$ is the number of recorded harmonics. The table uses the five harmonics of the surface biomes ($h = 5$, base 30).',
+               '$h$ é o número de harmônicos gravados. A tabela usa os cinco harmônicos dos biomas de superfície ($h = 5$, base 30).',
+               '$h$ 为已记录的谐波数量。下表按地表生物群系的五个谐波计算（$h = 5$，基础 30）。') + '\n')
     rows = []
     for h, p, q, src in HARMONICS:
         c = consonance(p, q)
-        rows.append((HARM_NAMES[h][i], f'{p}:{q}', num(c, lang), num(1.3 - c, lang), int(5 * max(0.5, 1 + 3 * (0.3 - c))),
+        rows.append((HARM_NAMES[h][i], f'{p}:{q}', num(c, lang), num(1.3 - c, lang), int(30 * max(0.5, 1 + 3 * (0.3 - c))),
                      tr(lang, f'gtna.machine.dimensional_rift_gate.biome.{src}') if src else T(lang, 'not dropped by any biome', 'nenhum bioma dá', '没有生物群系产出')))
     L.append(table([T(lang, 'Interval', 'Intervalo', '音程'), T(lang, 'Ratio', 'Razão', '比例'), T(lang, 'Consonance', 'Consonância', '协和度'),
                     T(lang, 'λ factor (alone)', 'Fator de λ (sozinho)', 'λ 系数（单独）'), T(lang, 'Max depth (alone)', 'Profundidade máx. (sozinho)', '最大深度（单独）'),
@@ -413,9 +416,6 @@ $$
                     for b, w, d, mt in BIOMES]))
     L.append(manual(lang, m, 'endgame'))
     L.append(issues(lang, [
-        T(lang, 'The maximum depth starts at 5 and nothing raises it yet; the most dissonant chord reaches 8. Civilisation Relic (depth 20) and Void (depth 40) therefore yield nothing, so **Precursor Residue** and **Void Ash** cannot be obtained in this version.',
-          'A profundidade máxima começa em 5 e ainda nada a aumenta; o acorde mais dissonante chega a 8. Por isso Relíquia de Civilização (profundidade 20) e Vazio (40) não rendem nada, e **Resíduo Precursor** e **Cinza do Vazio** não podem ser obtidos nesta versão.',
-          '最大深度从 5 开始，目前没有任何方式提高；最不协和的和弦也只能到 8。因此文明遗迹（深度 20）和虚空（深度 40）不会产出，本版本无法获得**先驱者残留物**和**虚空灰烬**。'),
         T(lang, 'Pylon cores are not in the game: the structure always counts 4 active pylons.', 'Os núcleos de pilone ainda não existem: a estrutura sempre conta 4 pilones ativos.', '塔架核心尚未加入：结构始终按 4 个激活塔架计算。'),
     ]))
     L.append(screens(lang, m, ['chord', 'atlas']))
@@ -434,7 +434,7 @@ PROPOSALS = [
     ('stochastic_cooling', ('20 fb⁻¹', '20 fb⁻¹', '20 fb⁻¹'), ('1,000 bunches', '1.000 pacotes', '1,000 个束团')),
     ('cryo_penning', ('10¹³ antiprotons stored or 40 fb⁻¹', '10¹³ antiprótons guardados ou 40 fb⁻¹', '储存 10¹³ 反质子或 40 fb⁻¹'), ('trap tier 3, helium × 0.6', 'armadilha tier 3, hélio × 0,6', '陷阱等级 3，氦 × 0.6')),
     ('rebco_magnet', ('W and Z at 5σ', 'W e Z em 5σ', 'W 与 Z 达到 5σ'), ('magnet REBCO (20 T)', 'ímã REBCO (20 T)', 'REBCO 磁体（20 T）')),
-    ('lepton_collider', ('bottom at 5σ', 'bottom em 5σ', 'bottom 达到 5σ'), ('electron beams', 'feixes de elétrons', '电子束')),
+    ('lepton_collider', ('bottom at 5σ', 'bottom em 5σ', 'bottom 达到 5σ'), ('e+e− button (electron beams)', 'botão e+e− (feixes de elétrons)', 'e+e− 按钮（电子束）')),
     ('heavy_ions', ('top at 5σ', 'top em 5σ', 'top 达到 5σ'), ('heavy ions: X-Nexus can be produced', 'íons pesados: X-Nexus pode ser produzido', '重离子：可产生 X-Nexus')),
     ('neutronium_magnet', ('Higgs at 5σ + 1024 fine Nexium wire', 'Higgs em 5σ + 1024 fios finos de Nexium', 'Higgs 达到 5σ + 1024 根奈克斯金属细线'), ('magnet Neutronium (45 T)', 'ímã de Neutrônio (45 T)', '中子素磁体（45 T）')),
     ('beyond_standard_model', ('X-Nexus at 3σ', 'X-Nexus em 3σ', 'X-Nexus 达到 3σ'), ('magnet Infinity (120 T)', 'ímã Infinity (120 T)', '无尽磁体（120 T）')),
@@ -518,13 +518,11 @@ $$
     L.append(table(['#', T(lang, 'Proposal', 'Proposta', '提案'), T(lang, 'Needs', 'Pede', '要求'), T(lang, 'Gives', 'Dá', '奖励')],
                    [(k + 1, tr(lang, f'gtna.machine.antimatter_collider_ring.proposal.{p}'), need[i], give[i]) for k, (p, need, give) in enumerate(PROPOSALS)]))
     L.append(manual(lang, m, 'proposals', skip=(1,)))
+    L.append(T(lang, '**Electron beams.** After the e+e− proposal the e+e− button switches the ring to electron beams. Synchrotron light caps them at 100 GeV per beam (like LEP): $E_{\\text{cm}} \\le 200$ GeV, so W, Z, charm and bottom are reachable but not the Higgs or the top. Clean collisions count twice in physics runs. Switch back to protons for the heavier particles.',
+               '**Feixes de elétrons.** Depois da proposta e+e− o botão e+e− troca o anel para feixes de elétrons. A luz síncrotron limita cada feixe a 100 GeV (como no LEP): $E_{\\text{cm}} \\le 200$ GeV, então W, Z, charm e bottom são alcançáveis, mas Higgs e top não. As colisões limpas contam em dobro nas corridas de física. Volte aos prótons para as partículas mais pesadas.',
+               '**电子束。**完成 e+e− 提案后，e+e− 按钮可将环切换为电子束。同步辐射将每束能量限制在 100 GeV（与 LEP 相同）：$E_{\\text{cm}} \\le 200$ GeV，因此可产生 W、Z、粲与底夸克，但无法产生希格斯与顶夸克。物理运行中干净的碰撞计为两倍。需要更重的粒子时切回质子束。') + '\n')
     L.append(heading(lang, m, 'endgame'))
     L.append(manual(lang, m, 'endgame'))
-    L.append(issues(lang, [
-        T(lang, 'After the **e+e− collisions** proposal the ring runs electron beams and the synchrotron load quenches the magnets every second, so the ring stops for good. Until this is fixed, switch to production mode once the REBCO magnet is done: heavy ions, the neutronium magnet, X-Nexus and the last proposal cannot be reached in this version.',
-          'Depois da proposta **colisões e+e−** o anel passa a feixes de elétrons e a carga de síncrotron faz quench nos ímãs a cada segundo: o anel para de vez. Até a correção, passe para o modo produção quando o ímã REBCO estiver pronto. Íons pesados, ímã de neutrônio, X-Nexus e a última proposta não são alcançáveis nesta versão.',
-          '完成 **e+e− 对撞**提案后，环会改为电子束，同步辐射负载每秒都会导致磁体失超，环将永久停机。修复前，请在 REBCO 磁体完成后切换到生产模式。本版本无法达到重离子、中子素磁体、X-Nexus 以及最后一个提案。'),
-    ]))
     L.append(screens(lang, m, ['model', 'board']))
     return '\n'.join(L)
 

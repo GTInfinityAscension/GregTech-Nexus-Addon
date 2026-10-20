@@ -14,6 +14,11 @@
 - The display shows time to a full bank, the time to the next capsule landing, and says when Nexus-1 needs Magnetarium ingots. Over-budget mass or heat turns red on the bench, and lit rails pulse.
 - The field manual no longer says heavier slugs carry more or that the bank grows with rings.
 
+### Original multiblocks: progression fixes
+- **Dimensional Rift Gate:** every recorded harmonic raises the maximum depth by 5 (base 5). With the five surface harmonics a consonant chord reaches the Civilisation Relic (depth 20) and the tritone the Void (depth 40), so Precursor Residue and Void Ash can be obtained; the depth was stuck at 8 before.
+- **Antimatter Collider Ring:** the e+e- proposal no longer locks the ring into electron beams that quenched every second. It unlocks an e+e- button: electron beams stop at 100 GeV per beam (like LEP), count twice in physics runs, and protons come back with one click. Heavy ions, the neutronium magnet and X-Nexus are reachable again.
+- **Kinetic Orbital Lance:** the aim asks for up to 2^20 CWU/t instead of 16,000, so a Supercomputing Center network keeps improving the accuracy on far bodies.
+
 ### Fixed
 - `mods.toml` now declares Applied Energistics 2 as required: GTNA never loaded without it, and Forge now says so instead of crashing. The unused Stargate Journey entry is gone.
 - The Thread Hatch tooltip no longer says it only works in the Duration Tester and KubeJS machines; it names machines that use it.

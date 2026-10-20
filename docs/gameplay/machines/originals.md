@@ -18,9 +18,6 @@ The four feed each other and the endgame: their products go into the Forge of th
 - Stellar Chamber → **Magnetar Crystal** → Magnetarium → Lance.
 - Collider → **X-Nexus** → Rift Gate (anchors past depth 40) and the Forge of the Gods.
 
-!!! bug "Known issues"
-    In this version the Rift Gate cannot go deeper than 8 (no Precursor Residue or Void Ash) and the Collider stops after the e+e− proposal (no X-Nexus). Details on each page.
-
 ## Coming next
 
 The **Pressurized Water Reactor** (IV) is designed; [planned page](../../roadmap/pressurized-water-reactor.md).

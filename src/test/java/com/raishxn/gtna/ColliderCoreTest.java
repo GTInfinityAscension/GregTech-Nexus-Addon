@@ -16,6 +16,7 @@ public final class ColliderCoreTest {
         penning();
         proposals();
         nexiumDipoles();
+        electrons();
         persistence();
         System.out.println("[ColliderCoreTest] all cases passed");
     }
@@ -72,6 +73,24 @@ public final class ColliderCoreTest {
         copy.unpack(ring.pack());
         check(copy.magnetTier == 2 && copy.integrated[Particle.HIGGS.ordinal()] == 123 &&
                 copy.proposalsDone[Proposal.VERTEX_DETECTOR.ordinal()], "state survives save");
+    }
+
+    private static void electrons() {
+        var ring = new ColliderCore();
+        ring.magnetTier = 2;
+        ring.proposalsDone[ColliderCore.Proposal.LEPTON_COLLIDER.ordinal()] = true;
+        check(ring.electronsUnlocked() && !ring.electronMode, "e+e- proposal unlocks electron beams, off by default");
+        ring.electronMode = true;
+        ring.mode = ColliderCore.Mode.PHYSICS;
+        ring.activeProposal = null;
+        boolean quenched = false;
+        for (int i = 0; i < 60; i++) quenched |= ring.step(1, true).quench;
+        check(!quenched && ring.centreOfMassGeV() <= 200, "electron beams run at 100 GeV without quenching");
+        check(ring.integrated[ColliderCore.Particle.Z_BOSON.ordinal()] > 0 &&
+                ring.integrated[ColliderCore.Particle.HIGGS.ordinal()] == 0, "Z reachable, Higgs above the e+e- cap");
+        ring.electronMode = false;
+        for (int i = 0; i < 25; i++) ring.step(1, true);
+        check(ring.centreOfMassGeV() > 200, "proton beams ramp past the electron cap again");
     }
 
     private static void near(double v, double e, double rel, String what) {

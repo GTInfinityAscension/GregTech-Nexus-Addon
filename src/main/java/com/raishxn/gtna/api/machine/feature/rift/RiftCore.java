@@ -146,8 +146,20 @@ public final class RiftCore {
         return LAMBDA0 * (1.3 - chordConsonance());
     }
 
+    // EN: Every recorded harmonic opens 5 more depth levels. With the five harmonics of the surface biomes the base is
+    // 30: a consonant chord reaches the Relic (20) and the tritone alone reaches the Void (40).
+    // PT: Cada harmônico gravado libera mais 5 níveis. Com os cinco harmônicos dos biomas de superfície a base é 30:
+    // um acorde consonante chega à Relíquia (20) e o trítono sozinho chega ao Vazio (40).
+    // ZH: 每记录一个谐波，深度上限增加 5。收集地表生物群系的五个谐波后基础深度为 30：协和和弦可到达遗迹（20），
+    // 单独的三全音可到达虚空（40）。
+    public int baseMaxDepth() {
+        int recorded = 0;
+        for (boolean c : collected) if (c) recorded++;
+        return Math.max(maxDepth, 5 + 5 * recorded);
+    }
+
     public int effectiveMaxDepth() {
-        return (int) Math.max(1, maxDepth * Math.max(0.5, 1 + 3 * (0.3 - chordConsonance())));
+        return (int) Math.max(1, baseMaxDepth() * Math.max(0.5, 1 + 3 * (0.3 - chordConsonance())));
     }
 
     /** Exotic matter (L/s) needed to hold stability at the current resonance and depth. */

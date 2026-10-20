@@ -17,6 +17,10 @@ public final class ColliderCore {
     public static final double GAME_LUMINOSITY = 1e5;               // fb^-1 per second = L * 1e-39 * this
     public static final double[] MAGNET_FIELD = { 8.3, 12, 20, 45, 120 };
     public static final String[] MAGNET_NAMES = { "NbTi", "Nb3Sn", "REBCO", "neutronium", "infinity" };
+    // EN: Electron beams radiate their energy away (synchrotron light grows as E^4): like LEP, they stop at 100 GeV.
+    // PT: Feixes de elétrons perdem energia irradiando (a luz síncrotron cresce com E^4): como no LEP, param em 100 GeV.
+    // ZH: 电子束会辐射掉能量（同步辐射随 E^4 增长）：与 LEP 相同，束流能量上限为 100 GeV。
+    public static final double ELECTRON_BEAM_GEV = 100, SYNCHROTRON_LIMIT_GEV = 104.5;
 
     /** Particles in discovery order: name, threshold E_cm (GeV), signal / sqrt(background) per sqrt(fb^-1). */
     public enum Particle {
@@ -92,7 +96,13 @@ public final class ColliderCore {
     /** Current centre-of-mass energy in GeV (counter-rotating beams of equal energy). */
     public double centreOfMassGeV() {
         double ramp = Math.min(1, rampSeconds / 20.0);
-        return 2 * (150 + (maxBeamEnergyTeV() * 1000 - 150) * ramp);
+        double ecm = 2 * (150 + (maxBeamEnergyTeV() * 1000 - 150) * ramp);
+        return electronMode ? Math.min(ecm, 2 * ELECTRON_BEAM_GEV) : ecm;
+    }
+
+    /** Electron beams are unlocked by the e+e- proposal and switched on and off by the player. */
+    public boolean electronsUnlocked() {
+        return proposalsDone[Proposal.LEPTON_COLLIDER.ordinal()];
     }
 
     /** Luminosity in cm^-2 s^-1: f_rev n_b N^2 / (4 pi sigma^2). */
@@ -129,8 +139,7 @@ public final class ColliderCore {
     /** Synchrotron radiation load relative to the cryo capacity (dominant only for electron beams). */
     public double synchrotronLoad() {
         double e = centreOfMassGeV() / 2;
-        double gammaRatio = electronMode ? e / 0.000511 : e / 0.938;
-        return Math.pow(gammaRatio / 1e5, 4) * (electronMode ? 1 : 1e-12);
+        return electronMode ? Math.pow(e / SYNCHROTRON_LIMIT_GEV, 4) : Math.pow(e / 0.938 / 1e5, 4) * 1e-12;
     }
 
     // ------------------------------------------------------------------ one second
@@ -173,7 +182,8 @@ public final class ColliderCore {
         for (Particle p : Particle.values()) {
             if (ecm < p.thresholdGeV) continue;
             if (p == Particle.X_NEXUS && !proposalsDone[Proposal.HEAVY_IONS.ordinal()]) continue;
-            if (mode == Mode.PHYSICS) integrated[p.ordinal()] += fb;
+            // Electron collisions are clean: no proton debris, twice the useful luminosity below the beam cap.
+            if (mode == Mode.PHYSICS) integrated[p.ordinal()] += electronMode ? 2 * fb : fb;
             else out.produced[p.ordinal()] = fb * 1e3 * yieldOf(p) / (1 + p.ordinal());
         }
         if (mode == Mode.PRODUCTION) {
@@ -213,7 +223,7 @@ public final class ColliderCore {
             case STOCHASTIC_COOLING -> bunches = Math.max(bunches, 1000);
             case CRYO_PENNING -> trapTier = Math.max(trapTier, 3);
             case REBCO_MAGNET -> magnetTier = Math.max(magnetTier, 2);
-            case LEPTON_COLLIDER -> electronMode = true;
+            case LEPTON_COLLIDER -> {}
             case HEAVY_IONS -> heavyIonMode = true;
             case NEUTRONIUM_MAGNET -> magnetTier = Math.max(magnetTier, 3);
             case BEYOND_STANDARD_MODEL -> magnetTier = 4;

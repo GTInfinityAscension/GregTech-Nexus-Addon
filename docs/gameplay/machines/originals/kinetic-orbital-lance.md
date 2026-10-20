@@ -9,7 +9,7 @@ Fires projectiles from a capacitor bank at moons and asteroids and recovers the 
 | **Tier** | UEV |
 | **Size** | 242 × 130 × 142 |
 | **Energy** | owner's Nexus network, up to $2^{36}$ EU/t into the bank |
-| **Computation** | up to 16,000 CWU/t (aim) |
+| **Computation** | up to $2^{20}$ CWU/t (aim) |
 | **Controller** | Assembly Line (UEV), research on the UEV Electric Piston |
 | **Blocks** | [catalog page](../catalog/kinetic_orbital_lance.md) |
 
@@ -65,20 +65,20 @@ A &= \max\!\left(0,\ 1 - \frac{d\,\theta}{5000\ \text{m}}\right)
 \end{aligned}
 $$
 
-$M$ is the mass recovered from the body, $u$ the aim factor of the sensor (1 without one), $T$ the barrel temperature (K) and $d$ the distance. The Lance asks the computation hatch for 16,000 CWU/t at most.
+$M$ is the mass recovered from the body, $u$ the aim factor of the sensor (1 without one), $T$ the barrel temperature (K) and $d$ the distance. The Lance asks the computation hatch for up to $2^{20}$ (1,048,576) CWU/t; a bigger network aims better.
 
 | Body | Distance (Mm) | H (MJ/kg) | $M_{car}$ (kg) | Capsule | Needs 100% of | Materials | Accuracy* | Shots to 100%* |
 |---|---|---|---|---|---|---|---|---|
 | Moon | 384 | 2 | $1.00 \times 10^{6}$ | 65 s | — | Iron, Titanium, Aluminium, Helium 3 | 1 | 1 |
 | Phobos | 78 | 1.2 | $2.00 \times 10^{6}$ | 28 s | Moon | Carbon, Nickel, Iron | 1 | 1 |
-| Vesta | 170,000 | 3.5 | $8.00 \times 10^{6}$ | 244 s | Phobos | Iron, Magnesium, Chromium, Platinum | 0.99 | 1 |
-| Ceres | 410,000 | 1.5 | $8.00 \times 10^{6}$ | 270 s | Phobos | Magnesium, Sodium, Ammonia | 0.98 | 1 |
-| Psyche | 370,000 | 6 | $5.00 \times 10^{7}$ | 267 s | Vesta | Iron, Nickel, Iridium, Osmium, Gold | 0.98 | 9 |
-| Europa | 630,000 | 2.8 | $5.00 \times 10^{7}$ | 283 s | Ceres | Magnesium, Sulfur, Deuterium | 0.97 | 4 |
-| Arrokoth | $6.60 \times 10^{6}$ | 0.9 | $2.00 \times 10^{8}$ | 354 s | Europa | Primordial Tholin, Nitrogen, Methane, Carbon | 0.67 | 8 |
-| Nexus-1 | $7.50 \times 10^{6}$ | 9.5 | $1.00 \times 10^{9}$ | 358 s | Psyche, Arrokoth | Nexium, Naquadah, Neutronium, Space Time | 0.62 | 417 |
+| Vesta | 170,000 | 3.5 | $8.00 \times 10^{6}$ | 244 s | Phobos | Iron, Magnesium, Chromium, Platinum | 1 | 1 |
+| Ceres | 410,000 | 1.5 | $8.00 \times 10^{6}$ | 270 s | Phobos | Magnesium, Sodium, Ammonia | 1 | 1 |
+| Psyche | 370,000 | 6 | $5.00 \times 10^{7}$ | 267 s | Vesta | Iron, Nickel, Iridium, Osmium, Gold | 1 | 9 |
+| Europa | 630,000 | 2.8 | $5.00 \times 10^{7}$ | 283 s | Ceres | Magnesium, Sulfur, Deuterium | 1 | 4 |
+| Arrokoth | $6.60 \times 10^{6}$ | 0.9 | $2.00 \times 10^{8}$ | 354 s | Europa | Primordial Tholin, Nitrogen, Methane, Carbon | 0.96 | 6 |
+| Nexus-1 | $7.50 \times 10^{6}$ | 9.5 | $1.00 \times 10^{9}$ | 358 s | Psyche, Arrokoth | Nexium, Naquadah, Neutronium, Space Time | 0.95 | 274 |
 
-\* No bench components ($\eta = 0.35$, $r = 0.6$, $u = 1$), 16,000 CWU/t, cold barrel.
+\* No bench components ($\eta = 0.35$, $r = 0.6$, $u = 1$), $2^{20}$ CWU/t, cold barrel.
 
 ## Barrel bench and wear
 

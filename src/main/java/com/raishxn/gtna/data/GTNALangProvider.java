@@ -1746,7 +1746,7 @@ public class GTNALangProvider extends LanguageProvider {
                 "Beam energy p = 0.3·B·ρ (B magnet field, ρ = 3 km); a particle needs E_cm above its threshold");
         add("gtna.originals.info.antimatter_collider_ring.proposals", "Committee proposals");
         add("gtna.originals.info.antimatter_collider_ring.proposals.1",
-                "In order: Nb3Sn magnet, vertex detector, stochastic cooling, cryogenic Penning traps, REBCO magnet, lepton collider, heavy ions, neutronium magnet, beyond the Standard Model. Each one unlocks stronger magnets, traps or modes.");
+                "In order: Nb3Sn magnet, vertex detector, stochastic cooling, cryogenic Penning traps, REBCO magnet, lepton collider, heavy ions, neutronium magnet, beyond the Standard Model. Each one unlocks stronger magnets, traps or modes. The lepton collider unlocks the e+e- button: electron beams stop at 100 GeV but count twice.");
         add("gtna.originals.info.antimatter_collider_ring.proposals.2",
                 "If the trap upkeep is not paid the stored antiprotons annihilate and damage the ring. Side tabs: Standard Model board and Committee.");
         add("gtna.originals.info.dimensional_rift_gate.overview", "Overview");
@@ -1772,7 +1772,7 @@ public class GTNALangProvider extends LanguageProvider {
                 "A Depth Anchor deepens the rift by one, up to the maximum depth. Relic and Void biomes only yield from depth 20 and 40.");
         add("gtna.originals.info.dimensional_rift_gate.harmonics", "Harmonics");
         add("gtna.originals.info.dimensional_rift_gate.harmonics.1",
-                "Holding R ≥ 0.9 for 30 s records the seed's harmonic. Click recorded harmonics to load up to 5 in the chord: consonant chords (octave, fifth) are stable; dissonant chords (tritone, minor second) dig deeper but cost more SpaceTime.");
+                "Holding R ≥ 0.9 for 30 s records the seed's harmonic. Click recorded harmonics to load up to 5 in the chord: consonant chords (octave, fifth) are stable; dissonant chords (tritone, minor second) dig deeper but cost more SpaceTime. Each recorded harmonic raises the maximum depth by 5 (base 5).");
         add("gtna.originals.info.dimensional_rift_gate.harmonics.2",
                 "Holding R ≥ 0.98 for a minute can give a Rift Singularity. Stability at 0 collapses the rift; R under 0.2 for 10 s inverts it (−10 stability). Side tabs: Seismograph and Atlas.");
         add("gtna.originals.info.kinetic_orbital_lance.endgame",
@@ -1939,6 +1939,9 @@ public class GTNALangProvider extends LanguageProvider {
         add("gtna.ui.o.committee.tip", "Beam-time committee");
         add("gtna.ui.o.traps", "Traps");
         add("gtna.ui.o.traps.tip", "Penning traps");
+        add("gtna.ui.o.electrons", "e+e-");
+        add("gtna.ui.o.electrons.tip",
+                "Electron beams: clean collisions count twice, beams capped at 100 GeV. Unlocked by the e+e- proposal");
         add("gtna.ui.o.cryo", "Cryo");
         add("gtna.ui.o.cryo.tip", "Lit while the helium supply is full");
         add("gtna.ui.o.ring", "Ring");

@@ -32,7 +32,7 @@ public final class ColliderScreen {
         root.addWidget(gridButton(T, 1, "atom", "model", () -> "model".equals(nav.open), c -> nav.toggle("model")));
         root.addWidget(gridButton(T, 2, "list", "committee", () -> "board".equals(nav.open),
                 c -> nav.toggle("board")));
-        root.addWidget(gridButton(T, 3, "ring", "traps", () -> false, c -> {}));
+        root.addWidget(gridButton(T, 3, "swap", "electrons", () -> v(m, 7) > 0, click -> act(m, "electrons", click)));
         root.addWidget(gridButton(T, 4, "snow", "cryo", () -> v(m, 0) >= 0.999, c -> {}));
         root.addWidget(gridButton(T, 5, "orbit", "ring", m::isCaptured, c -> {}));
         root.addWidget(gridButton(T, 6, "info", "info", () -> "manual".equals(nav.open), c -> nav.toggle("manual")));

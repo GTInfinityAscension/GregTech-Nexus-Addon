@@ -223,10 +223,12 @@ public class ColliderRingMachine extends OriginalMachine {
         syncedProposalsDone = done;
         syncedProposal = core.activeProposal == null ? -1 : core.activeProposal.ordinal();
         syncedProposalProgress = core.proposalProgress;
-        // view: helium level, antiprotons, trap capacity, quench seconds, beam dump, detector, ramp seconds
+        // view: helium level, antiprotons, trap capacity, quench seconds, beam dump, detector, ramp seconds,
+        // electron beams on, electron beams unlocked
         view = new double[] { core.heliumLevel, core.antiprotons, core.trapCapacity(), core.quenchCooldown,
                 hatch(OriginalHatchPartMachine.Kind.BEAM_DUMP) != null ? 1 : 0,
-                hatch(OriginalHatchPartMachine.Kind.DETECTOR) != null ? 1 : 0, core.rampSeconds };
+                hatch(OriginalHatchPartMachine.Kind.DETECTOR) != null ? 1 : 0, core.rampSeconds,
+                core.electronMode ? 1 : 0, core.electronsUnlocked() ? 1 : 0 };
     }
 
     // ------------------------------------------------------------------ GUI
@@ -260,7 +262,12 @@ public class ColliderRingMachine extends OriginalMachine {
 
     @Override
     public void handleDisplayClick(String data, ClickData click) {
-        if (click.isRemote || !"mode".equals(data)) return;
+        if (click.isRemote) return;
+        if ("electrons".equals(data)) {
+            if (core.electronsUnlocked()) core.electronMode = !core.electronMode;
+            return;
+        }
+        if (!"mode".equals(data)) return;
         core.mode = core.mode == ColliderCore.Mode.PHYSICS ? ColliderCore.Mode.PRODUCTION : ColliderCore.Mode.PHYSICS;
         syncedMode = core.mode.ordinal();
     }

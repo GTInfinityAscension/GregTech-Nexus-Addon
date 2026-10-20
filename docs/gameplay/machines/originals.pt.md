@@ -18,9 +18,6 @@ As quatro alimentam umas às outras e o fim de jogo: os produtos delas entram na
 - Câmara Estelar → **Cristal de Magnetar** → Magnetário → Lança.
 - Colisor → **X-Nexus** → Portão de Fenda (âncoras depois da profundidade 40) e Forja dos Deuses.
 
-!!! bug "Problemas conhecidos"
-    Nesta versão o Portão de Fenda não passa da profundidade 8 (sem Resíduo Precursor nem Cinza do Vazio) e o Colisor para depois da proposta e+e− (sem X-Nexus). Detalhes em cada página.
-
 ## Em seguida
 
 O **Reator de Água Pressurizada** (IV) está projetado; veja a [página do planejamento](../../roadmap/pressurized-water-reactor.md).

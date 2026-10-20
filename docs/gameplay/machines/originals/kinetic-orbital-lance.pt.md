@@ -9,7 +9,7 @@ Dispara projéteis de um banco de capacitores contra luas e asteroides e recuper
 | **Tier** | UEV |
 | **Tamanho** | 242 × 130 × 142 |
 | **Energia** | rede Nexus do dono, até $2^{36}$ EU/t para o banco |
-| **Computação** | até 16.000 CWU/t (mira) |
+| **Computação** | até $2^{20}$ CWU/t (mira) |
 | **Controlador** | Linha de Montagem (UEV), pesquisa no Pistão Elétrico UEV |
 | **Blocos** | [página do catálogo](../catalog/kinetic_orbital_lance.md) |
 
@@ -65,20 +65,20 @@ A &= \max\!\left(0,\ 1 - \frac{d\,\theta}{5000\ \text{m}}\right)
 \end{aligned}
 $$
 
-$M$ é a massa recuperada do corpo, $u$ o fator de mira do sensor (1 sem sensor), $T$ a temperatura do cano (K) e $d$ a distância. A Lança pede no máximo 16.000 CWU/t ao hatch de computação.
+$M$ é a massa recuperada do corpo, $u$ o fator de mira do sensor (1 sem sensor), $T$ a temperatura do cano (K) e $d$ a distância. A Lança pede até $2^{20}$ (1.048.576) CWU/t ao hatch de computação; rede maior mira melhor.
 
 | Corpo | Distância (Mm) | H (MJ/kg) | $M_{car}$ (kg) | Cápsula | Precisa de 100% em | Materiais | Precisão* | Tiros até 100%* |
 |---|---|---|---|---|---|---|---|---|
 | Lua | 384 | 2 | $1{,}00 \times 10^{6}$ | 65 s | — | Ferro, Titânio, Alumínio, Hélio-3 | 1 | 1 |
 | Fobos | 78 | 1,2 | $2{,}00 \times 10^{6}$ | 28 s | Lua | Carbono, Níquel, Ferro | 1 | 1 |
-| Vesta | 170.000 | 3,5 | $8{,}00 \times 10^{6}$ | 244 s | Fobos | Ferro, Magnésio, Cromo, Platina | 0,99 | 1 |
-| Ceres | 410.000 | 1,5 | $8{,}00 \times 10^{6}$ | 270 s | Fobos | Magnésio, Sódio, Amônia | 0,98 | 1 |
-| Psique | 370.000 | 6 | $5{,}00 \times 10^{7}$ | 267 s | Vesta | Ferro, Níquel, Irídio, Ósmio, Ouro | 0,98 | 9 |
-| Europa | 630.000 | 2,8 | $5{,}00 \times 10^{7}$ | 283 s | Ceres | Magnésio, Enxofre, Deutério | 0,97 | 4 |
-| Arrokoth | $6{,}60 \times 10^{6}$ | 0,9 | $2{,}00 \times 10^{8}$ | 354 s | Europa | Tolina Primordial, Nitrogênio, Metano, Carbono | 0,67 | 8 |
-| Nexus-1 | $7{,}50 \times 10^{6}$ | 9,5 | $1{,}00 \times 10^{9}$ | 358 s | Psique, Arrokoth | Nexium, Naquadah, Neutrônio, Espaço-Tempo | 0,62 | 417 |
+| Vesta | 170.000 | 3,5 | $8{,}00 \times 10^{6}$ | 244 s | Fobos | Ferro, Magnésio, Cromo, Platina | 1 | 1 |
+| Ceres | 410.000 | 1,5 | $8{,}00 \times 10^{6}$ | 270 s | Fobos | Magnésio, Sódio, Amônia | 1 | 1 |
+| Psique | 370.000 | 6 | $5{,}00 \times 10^{7}$ | 267 s | Vesta | Ferro, Níquel, Irídio, Ósmio, Ouro | 1 | 9 |
+| Europa | 630.000 | 2,8 | $5{,}00 \times 10^{7}$ | 283 s | Ceres | Magnésio, Enxofre, Deutério | 1 | 4 |
+| Arrokoth | $6{,}60 \times 10^{6}$ | 0,9 | $2{,}00 \times 10^{8}$ | 354 s | Europa | Tolina Primordial, Nitrogênio, Metano, Carbono | 0,96 | 6 |
+| Nexus-1 | $7{,}50 \times 10^{6}$ | 9,5 | $1{,}00 \times 10^{9}$ | 358 s | Psique, Arrokoth | Nexium, Naquadah, Neutrônio, Espaço-Tempo | 0,95 | 274 |
 
-\* Sem componentes na bancada ($\eta = 0{,}35$, $r = 0{,}6$, $u = 1$), 16.000 CWU/t, cano frio.
+\* Sem componentes na bancada ($\eta = 0{,}35$, $r = 0{,}6$, $u = 1$), $2^{20}$ CWU/t, cano frio.
 
 ## Bancada e desgaste
 
