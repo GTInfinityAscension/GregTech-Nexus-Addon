@@ -224,10 +224,11 @@ def generate_bg_variation_1_accelerator(w=512, h=512):
     
     d.text((peak_x - 38, box_y + 6), "BÓSON DE HIGGS (125 GeV)", fill=(255, 215, 80, 255), font=FONT_MICRO)
     d.text((26, box_y + 6), "EVENTOS / 1.25 GeV", fill=(160, 170, 190, 220), font=FONT_MICRO)
-    d.text((hist_right - 140, box_y + 6), "SIGNIFICÂNCIA: 5.2σ [DESCOBERTA]", fill=(80, 255, 140, 255), font=FONT_MICRO)
+    d.text((hist_right - 110, box_y + 6), "SINAL: 5.2σ [OK]", fill=(80, 255, 140, 255), font=FONT_MICRO)
     d.text((hist_left, hist_base + 6), "100 GeV", fill=(120, 130, 150, 220), font=FONT_MICRO)
     d.text((peak_x - 12, hist_base + 6), "125 GeV", fill=(255, 215, 80, 255), font=FONT_MICRO)
     d.text((hist_right - 40, hist_base + 6), "160 GeV", fill=(120, 130, 150, 220), font=FONT_MICRO)
+
 
     # 6. Deluxe Frame with Gold Corner Brackets
     for b in range(6):
@@ -551,8 +552,9 @@ def compose_preview_collider(bg_img, title, palette_desc):
     pbar_q = generate_progressbar(panel_w - 20, 12, 0.84, 'quench')
     canvas.paste(pbar_q, (panel_x + 10, panel_y + 196), pbar_q)
     
-    d.text((panel_x + 10, panel_y + 220), "STATUS: HIGGS DESCOBERTO (5.2σ)", fill=(80, 255, 140, 255), font=FONT_PANEL)
-    d.text((panel_x + 10, panel_y + 236), "Armadilha Penning: 4.0e12 p̄", fill=(160, 220, 255, 255), font=FONT_TEXT)
+    d.text((panel_x + 10, panel_y + 218), "STATUS: HIGGS (5.2σ)", fill=(80, 255, 140, 255), font=FONT_PANEL)
+    d.text((panel_x + 10, panel_y + 234), "Armadilha: 4.0e12 p̄", fill=(160, 220, 255, 255), font=FONT_TEXT)
+
     
     # Buttons
     btn_n = generate_button('cosmic', 'normal', 74, 28)

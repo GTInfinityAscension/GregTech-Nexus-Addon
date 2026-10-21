@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>GTNA — Painel de Avaliação de Áudio dos Multiblocos Exclusivos</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent-glow: rgba(88, 166, 255, 0.25);
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --text-bright: #f0f6fc;
+      --success: #3fb950;
+      --warning: #d29922;
+      --danger: #f85149;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      padding: 2.5rem 1.5rem;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+    }
+    h1 {
+      font-size: 2rem;
+      color: var(--text-bright);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .badge-dev {
+      font-size: 0.75rem;
+      background: rgba(210, 153, 34, 0.2);
+      color: var(--warning);
+      border: 1px solid var(--warning);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    p.subtitle {
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+    .info-box {
+      background: rgba(88, 166, 255, 0.08);
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .machine-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .machine-card:hover {
+      border-color: #58a6ff66;
+    }
+    .card-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.02);
+    }
+    .card-title {
+      font-size: 1.25rem;
+      color: var(--text-bright);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .tier-badge {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-weight: bold;
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: var(--accent);
+    }
+    .card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .sound-row {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .sound-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .sound-name {
+      font-weight: 600;
+      color: var(--text-bright);
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sound-type {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .type-loop {
+      background: rgba(63, 185, 80, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(63, 185, 80, 0.4);
+    }
+    .type-sfx {
+      background: rgba(248, 81, 73, 0.15);
+      color: var(--danger);
+      border: 1px solid rgba(248, 81, 73, 0.4);
+    }
+    .sound-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .sound-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+    audio {
+      width: 100%;
+      height: 38px;
+      border-radius: 6px;
+      outline: none;
+    }
+    .loop-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .loop-toggle input[type="checkbox"] {
+      cursor: pointer;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>
+        GTNA — Áudios dos 4 Multiblocos Exclusivos
+        <span class="badge-dev">Ambiente de Avaliação</span>
+      </h1>
+      <p class="subtitle">
+        Ouça, teste a emenda dos loops contínuos e avalie a identidade sonora antes da integração ao mod.
+      </p>
+    </header>
+
+    <div class="info-box">
+      <strong>Instruções de Avaliação:</strong>
+      <ul style="margin-left: 1.25rem; margin-top: 0.5rem;">
+        <li>Todos os áudios foram sintetizados em <strong>44.1 kHz Mono</strong> (padrão exigido pelo OpenAL do Minecraft para espacialização e atenuação 3D por distância).</li>
+        <li>Para os sons marcados como <strong>LOOP</strong>, marque a caixa <em>"Loop contínuo"</em> para testar a suavidade da emenda sem estalos ou interrupções de volume.</li>
+        <li>Nenhum arquivo de código ou registro do mod foi modificado ainda.</li>
+      </ul>
+    </div>
+
+    <div class="grid">
+
+      <!-- 1. ANEL COLISOR DE ANTIMATÉRIA -->
+      <div class="machine-card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>⚛️ Anel Colisor de Antimatéria</span>
+            <span class="tier-badge">UIV</span>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Antimatter Collider Ring</span>
+        </div>
+        <div class="card-body">
+          <div class="sound-row">
+            <div class="sound-meta">
+              <span class="sound-name">collider_loop.ogg <span class="sound-type type-loop">Loop (8.0s)</span></span>
+              <label class="loop-toggle">
+                <input type="checkbox" checked onchange="toggleLoop('audio-collider-loop', this.checked)">
+                Loop contínuo
+              </label>
+            </div>
+            <p class="sound-desc">
+              <strong>Operação Contínua:</strong> Zumbido profundo de 48 Hz dos ímãs supercondutores (síncrotron), ritmo pulsante a 15.9 Hz da circulação de pacotes de partículas, zumbido ultra-agudo de 720 Hz das cavidades de aceleração de RF e fluxo pressurizado de hélio líquido.
+            </p>
+            <div class="sound-controls">
+              <audio id="audio-collider-loop" controls loop src="collider_loop.ogg"></audio>
+            </div>
+          </div>
+
+          <div class="sound-row">
+            <div class="sound-meta">
+              <span class="sound-name">collider_quench.ogg <span class="sound-type type-sfx">SFX (3.2s)</span></span>
+            </div>
+            <p class="sound-desc">
+              <strong>Falha de Ímã / Quench & Beam Dump:</strong> Arco de descarga magnética inicial, rápida queda de frequência do campo em colapso e escape violento do gás de hélio pelas válvulas de alívio criogênico.
+            </p>
+            <div class="sound-controls">
+              <audio id="audio-collider-quench" controls src="collider_quench.ogg"></audio>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. CÂMARA DE CONTENÇÃO ESTELAR -->
+      <div class="machine-card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>⭐ Câmara de Contenção Estelar</span>
+            <span class="tier-badge">MAX</span>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Stellar Containment Chamber</span>
+        </div>
+        <div class="card-body">
+          <div class="sound-row">
+            <div class="sound-meta">
+              <span class="sound-name">stellar_pulsar_loop.ogg <span class="sound-type type-loop">Loop (8.0s)</span></span>
+              <label class="loop-toggle">
+                <input type="checkbox" checked onchange="toggleLoop('audio-pulsar-loop', this.checked)">
+                Loop contínuo
+              </label>
+            </div>
+            <p class="sound-desc">
+              <strong>Modo Pulsar (Estrela de Nêutrons):</strong> Ronco gravitacional ultra-baixo de 34 Hz, ritmo rápido de varredura dos feixes de pulsar ("efeito farol" cósmico), chiado do plasma do disco de acreção em queda e zumbido de 120 Hz das bandas de contenção de Naquadah Radiante.
+            </p>
+            <div class="sound-controls">
+              <audio id="audio-pulsar-loop" controls loop src="stellar_pulsar_loop.ogg"></audio>
+            </div>
+          </div>
+
+          <div class="sound-row">
+            <div class="sound-meta">
+              <span class="sound-name">stellar_black_hole_loop.ogg <span class="sound-type type-loop">Loop (10.0s)</span></span>
+              <label class="loop-toggle">
+                <input type="checkbox" checked onchange="toggleLoop('audio-bh-loop', this.checked)">
+                Loop contínuo
+              </label>
+            </div>
+            <p class="sound-desc">
+              <strong>Modo Buraco Negro de Kerr:</strong> Drone abissal ineludível de 24 Hz, tensão harmônica dissonante de espaço-tempo encurvado, vento gravitacional da ergosfera (processo de Penrose) e cintilação sutil do anel de fótons.
+            </p>
+            <div class="sound-controls">
+              <audio id="audio-bh-loop" controls loop src="stellar_black_hole_loop.ogg"></audio>
+            </div>
+          </div>
+
+          <div class="sound-row">
+            <div class="sound-meta">
+              <span class="sound-name">stellar_quake.ogg <span class="sound-type type-sfx">SFX (3.8s)</span></span>
+            </div>
+            <p class="sound-desc">
+              <strong>Terremoto Estelar (Starquake):</strong> Ruptura sísmica violenta da crosta degenerada da estrela, vibração ressonante de neutrônio e onda de choque gravitacional profunda reverberando por toda a esfera.
+            </p>
+            <div class="sound-controls">
+              <audio id="audio-quake" controls src="stellar_quake.ogg"></audio>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. PORTÃO DE FENDA DIMENSIONAL -->
+      <div class="machine-card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>🌀 Portão de Fenda Dimensional</span>
+            <span class="tier-badge">UIV</span>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Dimensional Rift Gate</span>
+        </div>
+        <div class="card-body">
+          <div class="sound-row">
+            <div class="sound-meta">
+              <span class="sound-name">rift_loop.ogg <span class="sound-type type-loop">Loop (8.0s)</span></span>
+              <label class="loop-toggle">
+                <input type="checkbox" checked onchange="toggleLoop('audio-rift-loop', this.checked)">
+                Loop contínuo
+              </label>
+            </div>
+            <p class="sound-desc">
+              <strong>Fenda Aberta & Estável:</strong> Acorde harmônico puro e etéreo (A2 / D3 / E3) com coro sutil de sintonização planar, vento cósmico fluindo através do horizonte de eventos e micro-estalos de fissuras no espaço-tempo.
+            </p>
+            <div class="sound-controls">
+              <audio id="audio-rift-loop" controls loop src="rift_loop.ogg"></audio>
+            </div>
+          </div>
+
+          <div class="sound-row">
+            <div class="sound-meta">
+              <span class="sound-name">rift_open.ogg <span class="sound-type type-sfx">SFX (3.5s)</span></span>
+            </div>
+            <p class="sound-desc">
+              <strong>Abertura do Rasgo Dimensional:</strong> Varrer harmônico ascendente acumulando energia de ressonância, seguido por um estrondo de ruptura espacial e expansão inicial do vórtice dimensional.
+            </p>
+            <div class="sound-controls">
+              <audio id="audio-rift-open" controls src="rift_open.ogg"></audio>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. LANÇA CINÉTICA ORBITAL -->
+      <div class="machine-card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>⚡ Lança Cinética Orbital</span>
+            <span class="tier-badge">UEV</span>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">Kinetic Orbital Lance</span>
+        </div>
+        <div class="card-body">
+          <div class="sound-row">
+            <div class="sound-meta">
+              <span class="sound-name">lance_fire.ogg <span class="sound-type type-sfx">SFX (4.5s)</span></span>
+            </div>
+            <p class="sound-desc">
+              <strong>Disparo Cinético Orbital:</strong> Estalo supersônico violento dos trilhos magnéticos (railgun), detonação maciça de deslocamento de ar, impacto cinético brutal e reverberação de trovão de choque se propagando pela atmosfera até o horizonte.
+            </p>
+            <div class="sound-controls">
+              <audio id="audio-lance-fire" controls src="lance_fire.ogg"></audio>
+            </div>
+          </div>
+
+          <div class="sound-row">
+            <div class="sound-meta">
+              <span class="sound-name">lance_charge_loop.ogg <span class="sound-type type-loop">Loop (6.0s)</span></span>
+              <label class="loop-toggle">
+                <input type="checkbox" checked onchange="toggleLoop('audio-lance-charge', this.checked)">
+                Loop contínuo
+              </label>
+            </div>
+            <p class="sound-desc">
+              <strong>Carga dos Bancos de Capacitores:</strong> Zumbido elétrico industrial pesado de 60 Hz pulsando a 1 Hz, indução eletrostática de 960 Hz dos enrolamentos e circulação turbinada do fluido criogênico de resfriamento do cano.
+            </p>
+            <div class="sound-controls">
+              <audio id="audio-lance-charge" controls loop src="lance_charge_loop.ogg"></audio>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      GregTech Nexus Addon (GTNA) — Gerador Procedural de Áudio — Arquivos salvos em <code>tools/audio/evaluation/</code>
+    </footer>
+  </div>
+
+  <script>
+    function toggleLoop(audioId, isLoop) {
+      const el = document.getElementById(audioId);
+      if (el) el.loop = isLoop;
+    }
+  </script>
+</body>
+</html>

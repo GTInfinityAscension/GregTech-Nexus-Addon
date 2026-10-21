@@ -1,0 +1,494 @@
+{
+  "nexium": {
+    "title": "Nexium (Nx)",
+    "machine": "Kinetic Orbital Lance (Nexus-1)",
+    "lore": "Metal supercondutor que preserva o vetor de todo campo magn\u00e9tico ou el\u00e9trico j\u00e1 atravessado.",
+    "primary_form": "ingot",
+    "options": [
+      {
+        "option": 1,
+        "name": "Current Sweep (Varredura de Corrente)",
+        "desc": "Teal met\u00e1lico frio com feixe de corrente cont\u00ednua varrendo em diagonal e fa\u00edscas azuis nas bordas.",
+        "halo_name": "nexium_field",
+        "halo_desc": "Linhas de dipolo magn\u00e9tico em rota\u00e7\u00e3o cont\u00ednua ao redor do item.",
+        "accent": "#167a76",
+        "slot_gif": "nexium/opt1_slot.gif",
+        "icon_gif": "nexium/opt1_icon.gif",
+        "halo_gif": "nexium/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Field Memory (Mem\u00f3ria de Campo)",
+        "desc": "Filme fino iridescente com transi\u00e7\u00e3o espectral suave ondulando na superf\u00edcie do metal.",
+        "halo_name": "nexium_flux_ring",
+        "halo_desc": "An\u00e9is conc\u00eantricos de fluxo magn\u00e9tico que expandem suavemente.",
+        "accent": "#0284c7",
+        "slot_gif": "nexium/opt2_slot.gif",
+        "icon_gif": "nexium/opt2_icon.gif",
+        "halo_gif": "nexium/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Cryo Glint (Cintila\u00e7\u00e3o Criog\u00eanica)",
+        "desc": "Ciano profundo com lentes de difra\u00e7\u00e3o t\u00e9rmicas e 5 estrelas de glint que acendem em cascata.",
+        "halo_name": "nexium_aurora",
+        "halo_desc": "N\u00e9voa de plasma eletrost\u00e1tico pulsante em tom ciano-celeste.",
+        "accent": "#0891b2",
+        "slot_gif": "nexium/opt3_slot.gif",
+        "icon_gif": "nexium/opt3_icon.gif",
+        "halo_gif": "nexium/opt3_halo.gif"
+      }
+    ]
+  },
+  "primordial_tholin": {
+    "title": "Primordial Tholin",
+    "machine": "Kinetic Orbital Lance (Arrokoth)",
+    "lore": "Pol\u00edmeros org\u00e2nicos complexos criados por radia\u00e7\u00e3o solar sobre gelos vol\u00e1teis do Cintur\u00e3o de Kuiper.",
+    "primary_form": "dust",
+    "options": [
+      {
+        "option": 1,
+        "name": "Methane Frost (Gelos de Metano)",
+        "desc": "Crosta vermelho-tijolo escura com micro-cristais de gelo que reluzem em branco-azulado.",
+        "halo_name": "tholin_frost_haze",
+        "halo_desc": "Poeira estelar fria dispersa em micro-part\u00edculas.",
+        "accent": "#a8432a",
+        "slot_gif": "primordial_tholin/opt1_slot.gif",
+        "icon_gif": "primordial_tholin/opt1_icon.gif",
+        "halo_gif": "primordial_tholin/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Polymerizing Veins (Veios em Cadeia)",
+        "desc": "Veios de carbono e nitrog\u00eanio que pulsam em \u00e2mbar profundo simulando fotoqu\u00edmica ativa.",
+        "halo_name": "tholin_amber_corona",
+        "halo_desc": "Corona difusa de calor \u00e2mbar pulsando suavemente.",
+        "accent": "#b45309",
+        "slot_gif": "primordial_tholin/opt2_slot.gif",
+        "icon_gif": "primordial_tholin/opt2_icon.gif",
+        "halo_gif": "primordial_tholin/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Sublimation Jets (Jatos de Sublima\u00e7\u00e3o)",
+        "desc": "Filamentos t\u00eanues de vapor de nitrog\u00eanio e metano subindo verticalmente dos gr\u00e3os.",
+        "halo_name": "tholin_comet_tail",
+        "halo_desc": "Cauda comet\u00e1ria assim\u00e9trica projetada para cima.",
+        "accent": "#e11d48",
+        "slot_gif": "primordial_tholin/opt3_slot.gif",
+        "icon_gif": "primordial_tholin/opt3_icon.gif",
+        "halo_gif": "primordial_tholin/opt3_halo.gif"
+      }
+    ]
+  },
+  "magnetar_crystal": {
+    "title": "Magnetar Crystal",
+    "machine": "Stellar Containment Chamber (Starquake)",
+    "lore": "Gema ferro-cristalina sintetizada sob as for\u00e7as gravitacionais e magn\u00e9ticas de um terremoto estelar.",
+    "primary_form": "gem",
+    "options": [
+      {
+        "option": 1,
+        "name": "Inverted Dipole (Dipolo Invertido)",
+        "desc": "P\u00farpura c\u00f3smico profundo com ondas de choque magn\u00e9ticas que viajam do n\u00facleo para os \u00e1pices.",
+        "halo_name": "magnetar_pulsar",
+        "halo_desc": "Dois jatos relativ\u00edsticos de pulsar girando em 180\u00b0.",
+        "accent": "#6b21a8",
+        "slot_gif": "magnetar_crystal/opt1_slot.gif",
+        "icon_gif": "magnetar_crystal/opt1_icon.gif",
+        "halo_gif": "magnetar_crystal/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Lighthouse Beam (Farol Relativ\u00edstico)",
+        "desc": "Dois feixes de alta energia varrendo a linha de vis\u00e3o do jogador com flash intenso no topo.",
+        "halo_name": "magnetar_relativistic_jets",
+        "halo_desc": "Espirais relativ\u00edsticas projetadas com disco de acre\u00e7\u00e3o.",
+        "accent": "#7e22ce",
+        "slot_gif": "magnetar_crystal/opt2_slot.gif",
+        "icon_gif": "magnetar_crystal/opt2_icon.gif",
+        "halo_gif": "magnetar_crystal/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Starquake Fracture (Fratura de Tens\u00e3o)",
+        "desc": "Trincas de choque cristalino liberando descargas e centelhas violeta de alt\u00edssima tens\u00e3o.",
+        "halo_name": "magnetar_magnetic_cage",
+        "halo_desc": "Gaiola geom\u00e9trica de linhas de for\u00e7a magn\u00e9tica entrela\u00e7adas.",
+        "accent": "#4338ca",
+        "slot_gif": "magnetar_crystal/opt3_slot.gif",
+        "icon_gif": "magnetar_crystal/opt3_icon.gif",
+        "halo_gif": "magnetar_crystal/opt3_halo.gif"
+      }
+    ]
+  },
+  "degenerate_core_matter": {
+    "title": "Degenerate Core Matter (n\u2099)",
+    "machine": "Stellar Containment Chamber (Collapse)",
+    "lore": "Mat\u00e9ria colapsada em densidade nuclear m\u00e1xima, mantida por press\u00e3o de degeneresc\u00eancia de n\u00eautrons.",
+    "primary_form": "dust",
+    "options": [
+      {
+        "option": 1,
+        "name": "Fermi Sea (Mar de Fermi)",
+        "desc": "Branco-chumbo frio com cintila\u00e7\u00e3o qu\u00e2ntica cont\u00ednua e frente de compress\u00e3o esf\u00e9rica.",
+        "halo_name": "degenerate_compression",
+        "halo_desc": "An\u00e9is conc\u00eantricos de luz gravitacional caindo para o centro.",
+        "accent": "#64748b",
+        "slot_gif": "degenerate_core_matter/opt1_slot.gif",
+        "icon_gif": "degenerate_core_matter/opt1_icon.gif",
+        "halo_gif": "degenerate_core_matter/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Einstein Ring (Anel Gravitacional)",
+        "desc": "Lente gravitacional simulada com anel de curvatura de luz respirando ao redor do centro.",
+        "halo_name": "degenerate_graviton_lens",
+        "halo_desc": "Distor\u00e7\u00e3o \u00f3tica com arco estelar curvado no horizonte.",
+        "accent": "#2563eb",
+        "slot_gif": "degenerate_core_matter/opt2_slot.gif",
+        "icon_gif": "degenerate_core_matter/opt2_icon.gif",
+        "halo_gif": "degenerate_core_matter/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Quark Soup (Sopa de Quarks)",
+        "desc": "Cores de carga qu\u00e2ntica orbitando o centro denso e colidindo em flashes brancos.",
+        "halo_name": "degenerate_subatomic_cloud",
+        "halo_desc": "Nuvem de probabilidade qu\u00e2ntica com micro-fa\u00edscas subat\u00f4micas.",
+        "accent": "#4f46e5",
+        "slot_gif": "degenerate_core_matter/opt3_slot.gif",
+        "icon_gif": "degenerate_core_matter/opt3_icon.gif",
+        "halo_gif": "degenerate_core_matter/opt3_halo.gif"
+      }
+    ]
+  },
+  "magnetarium": {
+    "title": "Magnetarium",
+    "machine": "Stellar Containment Chamber & Lance Slug",
+    "lore": "Superliga ferromagn\u00e9tica densa projetada para proj\u00e9teis de canh\u00e3o orbital e armaduras extremas.",
+    "primary_form": "ingot",
+    "options": [
+      {
+        "option": 1,
+        "name": "Lorentz Wave (Ondas de Lorentz)",
+        "desc": "\u00cdndigo met\u00e1lico escuro com faixas de fluxo de for\u00e7a de Lorentz varrendo longitudinalmente.",
+        "halo_name": "magnetarium_dipole_torus",
+        "halo_desc": "Toro magn\u00e9tico fechado oscilando suavemente.",
+        "accent": "#3730a3",
+        "slot_gif": "magnetarium/opt1_slot.gif",
+        "icon_gif": "magnetarium/opt1_icon.gif",
+        "halo_gif": "magnetarium/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Ferrofluid Spikes (Picos Magn\u00e9ticos)",
+        "desc": "Picos espiculados de tens\u00e3o ferromagn\u00e9tica erguendo-se e retraindo nas facetas.",
+        "halo_name": "magnetarium_flux_cage",
+        "halo_desc": "Gaiola geom\u00e9trica de conten\u00e7\u00e3o com linhas de campo magn\u00e9tico.",
+        "accent": "#312e81",
+        "slot_gif": "magnetarium/opt2_slot.gif",
+        "icon_gif": "magnetarium/opt2_icon.gif",
+        "halo_gif": "magnetarium/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Meissner Shield (Blindagem Diamagn\u00e9tica)",
+        "desc": "Bordas em azul el\u00e9trico resplandecente com repuls\u00e3o diamagn\u00e9tica perfeita.",
+        "halo_name": "magnetarium_meissner_field",
+        "halo_desc": "Escudo polar esf\u00e9rico transl\u00facido com reflexo polar.",
+        "accent": "#0369a1",
+        "slot_gif": "magnetarium/opt3_slot.gif",
+        "icon_gif": "magnetarium/opt3_icon.gif",
+        "halo_gif": "magnetarium/opt3_halo.gif"
+      }
+    ]
+  },
+  "prismatium": {
+    "title": "Prismatium",
+    "machine": "Dimensional Rift Gate",
+    "lore": "Cristal hiperdimensional que decomp\u00f5e a radia\u00e7\u00e3o local em dispers\u00e3o crom\u00e1tica perp\u00e9tua.",
+    "primary_form": "gem",
+    "options": [
+      {
+        "option": 1,
+        "name": "Spectral Cycle (Dispers\u00e3o Espectral)",
+        "desc": "Cristal lapidado com ciclo completo de arco-\u00edris refrativo girando pelas facetas internas.",
+        "halo_name": "prismatium_rainbow_corona",
+        "halo_desc": "Coroa iridescente de arco-\u00edris circular em rota\u00e7\u00e3o cont\u00ednua.",
+        "accent": "#0284c7",
+        "slot_gif": "prismatium/opt1_slot.gif",
+        "icon_gif": "prismatium/opt1_icon.gif",
+        "halo_gif": "prismatium/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Caustic Flare (C\u00e1usticas Prism\u00e1ticas)",
+        "desc": "Padr\u00e3o de c\u00e1usticas de alta intensidade convergindo para os v\u00e9rtices do cristal.",
+        "halo_name": "prismatium_caustic_flare",
+        "halo_desc": "Raios de difra\u00e7\u00e3o em cruz com separa\u00e7\u00e3o de cores.",
+        "accent": "#059669",
+        "slot_gif": "prismatium/opt2_slot.gif",
+        "icon_gif": "prismatium/opt2_icon.gif",
+        "halo_gif": "prismatium/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Chirality Waves (Ondas Quirais)",
+        "desc": "Interfer\u00eancia harm\u00f4nica de polariza\u00e7\u00e3o circular esquerda e direita nas facetas.",
+        "halo_name": "prismatium_interference_rings",
+        "halo_desc": "An\u00e9is conc\u00eantricos de interfer\u00eancia de Newton.",
+        "accent": "#db2777",
+        "slot_gif": "prismatium/opt3_slot.gif",
+        "icon_gif": "prismatium/opt3_icon.gif",
+        "halo_gif": "prismatium/opt3_halo.gif"
+      }
+    ]
+  },
+  "chronomercury": {
+    "title": "Chronomercury (Hg\u29d6)",
+    "machine": "Dimensional Rift Gate",
+    "lore": "Metal l\u00edquido de entropia invertida cujas propriedades f\u00edsicas reagem contra o fluxo do tempo.",
+    "primary_form": "dust",
+    "options": [
+      {
+        "option": 1,
+        "name": "Retrograde Sweep (Varredura Retr\u00f3grada)",
+        "desc": "Prata cromada pura com reflexos especulares correndo no sentido anti-hor\u00e1rio (tempo reverso).",
+        "halo_name": "chronomercury_hourglass_vortex",
+        "halo_desc": "Espiral temporal em contra\u00e7\u00e3o cont\u00ednua em dire\u00e7\u00e3o ao centro.",
+        "accent": "#475569",
+        "slot_gif": "chronomercury/opt1_slot.gif",
+        "icon_gif": "chronomercury/opt1_icon.gif",
+        "halo_gif": "chronomercury/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Temporal Ghosting (Ecos Temporais)",
+        "desc": "R\u00e9plicas transl\u00facidas de frames anteriores convergindo e se unificando no corpo do gr\u00e3o.",
+        "halo_name": "chronomercury_dilation_rings",
+        "halo_desc": "An\u00e9is de dilata\u00e7\u00e3o temporal com pulso de atraso de fase.",
+        "accent": "#334155",
+        "slot_gif": "chronomercury/opt2_slot.gif",
+        "icon_gif": "chronomercury/opt2_icon.gif",
+        "halo_gif": "chronomercury/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Tachyon Quicksilver (Merc\u00fario Taqui\u00f4nico)",
+        "desc": "Altern\u00e2ncia r\u00e1pida de fase entre l\u00edquido espelhado e estrias temporais de taqui\u00f5es.",
+        "halo_name": "chronomercury_tachyon_halo",
+        "halo_desc": "Ondula\u00e7\u00f5es taqui\u00f4nicas lineares com distor\u00e7\u00e3o de fase.",
+        "accent": "#70587c",
+        "slot_gif": "chronomercury/opt3_slot.gif",
+        "icon_gif": "chronomercury/opt3_icon.gif",
+        "halo_gif": "chronomercury/opt3_halo.gif"
+      }
+    ]
+  },
+  "forgecore": {
+    "title": "Forgecore",
+    "machine": "Dimensional Rift Gate & Stellar Armour",
+    "lore": "Matriz met\u00e1lica hiper-termonuclear alimentada pelo plasma de forja dimensional.",
+    "primary_form": "ingot",
+    "options": [
+      {
+        "option": 1,
+        "name": "Solar Granulation (Granula\u00e7\u00e3o Solar)",
+        "desc": "Magma incandescente com c\u00e9lulas de convec\u00e7\u00e3o t\u00e9rmica fervendo nas facetas.",
+        "halo_name": "forgecore_coronal_loops",
+        "halo_desc": "Al\u00e7as coronais de plasma que se projetam e reconectam.",
+        "accent": "#ea580c",
+        "slot_gif": "forgecore/opt1_slot.gif",
+        "icon_gif": "forgecore/opt1_icon.gif",
+        "halo_gif": "forgecore/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Thermonuclear Core (Igni\u00e7\u00e3o Nuclear)",
+        "desc": "Pulsa\u00e7\u00e3o radiativa em branco-amarelo vivo emanando de blindagem de a\u00e7o escuro.",
+        "halo_name": "forgecore_heat_shimmer",
+        "halo_desc": "Distor\u00e7\u00e3o t\u00e9rmica por convec\u00e7\u00e3o de ar e calor radiativo.",
+        "accent": "#ca8a04",
+        "slot_gif": "forgecore/opt2_slot.gif",
+        "icon_gif": "forgecore/opt2_icon.gif",
+        "halo_gif": "forgecore/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Crucible Flare (Cadinho de Plasma)",
+        "desc": "Erup\u00e7\u00f5es de fa\u00edscas incandescentes canalizadas pelas ranhuras do metal.",
+        "halo_name": "forgecore_crucible_flare",
+        "halo_desc": "Coroa de chamas de plasma estelar de alta energia.",
+        "accent": "#dc2626",
+        "slot_gif": "forgecore/opt3_slot.gif",
+        "icon_gif": "forgecore/opt3_icon.gif",
+        "halo_gif": "forgecore/opt3_halo.gif"
+      }
+    ]
+  },
+  "vivispore": {
+    "title": "Vivispore",
+    "machine": "Dimensional Rift Gate",
+    "lore": "Esporos xenobiol\u00f3gicos luminescentes colhidos em ecossistemas de micro-gravidade da fenda.",
+    "primary_form": "dust",
+    "options": [
+      {
+        "option": 1,
+        "name": "Mycelial Breath (Respira\u00e7\u00e3o Micelial)",
+        "desc": "Verde musgo alien\u00edgena profundo com filamentos de mic\u00e9lio que respiram ritmicamente.",
+        "halo_name": "vivispore_spore_drift",
+        "halo_desc": "Nuvem viva de micro-esporos fosforescentes flutuando.",
+        "accent": "#4d7c0f",
+        "slot_gif": "vivispore/opt1_slot.gif",
+        "icon_gif": "vivispore/opt1_icon.gif",
+        "halo_gif": "vivispore/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Bio Bloom (Efloresc\u00eancia Simbi\u00f3tica)",
+        "desc": "Centros de fluoresc\u00eancia biol\u00f3gica que acendem em cascata pelos gr\u00e3os.",
+        "halo_name": "vivispore_bio_aura",
+        "halo_desc": "Aura org\u00e2nica ondulante com pulso biol\u00f3gico suave.",
+        "accent": "#15803d",
+        "slot_gif": "vivispore/opt2_slot.gif",
+        "icon_gif": "vivispore/opt2_icon.gif",
+        "halo_gif": "vivispore/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Toxic Phosphor (F\u00f3sforo T\u00f3xico)",
+        "desc": "Bioluminesc\u00eancia verde-lim\u00e3o com estalos qu\u00edmicos r\u00e1pidos e centelhas enzim\u00e1ticas.",
+        "halo_name": "vivispore_toxic_phosphor",
+        "halo_desc": "An\u00e9is de descarga enzim\u00e1tica luminescente.",
+        "accent": "#65a30d",
+        "slot_gif": "vivispore/opt3_slot.gif",
+        "icon_gif": "vivispore/opt3_icon.gif",
+        "halo_gif": "vivispore/opt3_halo.gif"
+      }
+    ]
+  },
+  "abyssal_antimatter": {
+    "title": "Abyssal Antimatter (p\u0304\u0113)",
+    "machine": "Dimensional Rift Gate",
+    "lore": "Antimat\u00e9ria barionicamente est\u00e1vel em v\u00e1cuo abissal, com assinaturas de radia\u00e7\u00e3o gama.",
+    "primary_form": "dust",
+    "options": [
+      {
+        "option": 1,
+        "name": "Vacuum & Gamma (V\u00e1cuo e Raios Gama)",
+        "desc": "Preto-v\u00e1cuo absoluto com micro-flashes pontuais de aniquila\u00e7\u00e3o gama ultravioleta.",
+        "halo_name": "abyssal_hawking_glow",
+        "halo_desc": "Halo de radia\u00e7\u00e3o Hawking em violeta escuro ao redor do v\u00e1cuo.",
+        "accent": "#581c87",
+        "slot_gif": "abyssal_antimatter/opt1_slot.gif",
+        "icon_gif": "abyssal_antimatter/opt1_icon.gif",
+        "halo_gif": "abyssal_antimatter/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Cherenkov Burst (Cascata Cherenkov)",
+        "desc": "Brilho penetrante azul-violeta emitido do n\u00facleo para as extremidades dos gr\u00e3os.",
+        "halo_name": "abyssal_cherenkov_burst",
+        "halo_desc": "Feixes de radia\u00e7\u00e3o Cherenkov com decaimento exponencial.",
+        "accent": "#3730a3",
+        "slot_gif": "abyssal_antimatter/opt2_slot.gif",
+        "icon_gif": "abyssal_antimatter/opt2_icon.gif",
+        "halo_gif": "abyssal_antimatter/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Event Horizon (Horizonte de Eventos)",
+        "desc": "Anel de contorno ultrafino hiperbrilhante contornando uma silhueta de escurid\u00e3o total.",
+        "halo_name": "abyssal_event_horizon",
+        "halo_desc": "Anel hiperbrilhante fino contornando uma sombra escura.",
+        "accent": "#7e22ce",
+        "slot_gif": "abyssal_antimatter/opt3_slot.gif",
+        "icon_gif": "abyssal_antimatter/opt3_icon.gif",
+        "halo_gif": "abyssal_antimatter/opt3_halo.gif"
+      }
+    ]
+  },
+  "precursor_residue": {
+    "title": "Precursor Residue (?)",
+    "machine": "Dimensional Rift Gate",
+    "lore": "Res\u00edduos fossilizados de nano-m\u00e1quinas e circuitos computacionais de civiliza\u00e7\u00f5es precursoras.",
+    "primary_form": "dust",
+    "options": [
+      {
+        "option": 1,
+        "name": "Nano-Bus Traces (Barramento de Circuitos)",
+        "desc": "Bronze dourado ancestral com trilhas l\u00f3gicas de nanocircuitos que acendem em pulso.",
+        "halo_name": "precursor_schematic_grid",
+        "halo_desc": "Grade hologr\u00e1fica sutil de blueprint tecnol\u00f3gico flutuando.",
+        "accent": "#a16207",
+        "slot_gif": "precursor_residue/opt1_slot.gif",
+        "icon_gif": "precursor_residue/opt1_icon.gif",
+        "halo_gif": "precursor_residue/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Runic Decoding (Decodifica\u00e7\u00e3o R\u00fanica)",
+        "desc": "Micro-glifos horizontais que s\u00e3o lidos e iluminados sequencialmente em linhas de dados.",
+        "halo_name": "precursor_glyph_circle",
+        "halo_desc": "Anel de glifos ancestrais em rota\u00e7\u00e3o lenta.",
+        "accent": "#854d0e",
+        "slot_gif": "precursor_residue/opt2_slot.gif",
+        "icon_gif": "precursor_residue/opt2_icon.gif",
+        "halo_gif": "precursor_residue/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Nanite Swarm (Enxame de Nanites)",
+        "desc": "Poeira que se reorganiza periodicamente em micro-matrizes c\u00fabicas ordenadas.",
+        "halo_name": "precursor_nanite_swarm",
+        "halo_desc": "Part\u00edculas c\u00fabicas microsc\u00f3picas orbitando o item.",
+        "accent": "#78350f",
+        "slot_gif": "precursor_residue/opt3_slot.gif",
+        "icon_gif": "precursor_residue/opt3_icon.gif",
+        "halo_gif": "precursor_residue/opt3_halo.gif"
+      }
+    ]
+  },
+  "void_ash": {
+    "title": "Void Ash (\u2205)",
+    "machine": "Dimensional Rift Gate",
+    "lore": "Cinzas entr\u00f3picas sem massa restante, geradas ap\u00f3s a evapora\u00e7\u00e3o completa de anomalias da fenda.",
+    "primary_form": "dust",
+    "options": [
+      {
+        "option": 1,
+        "name": "Cold Cinders (Fuligem Ascendente)",
+        "desc": "Cinza carv\u00e3o fosco absoluto com micro-part\u00edculas subindo lentamente em gravidade zero.",
+        "halo_name": "void_cold_cinder_aura",
+        "halo_desc": "Motas p\u00e1lidas e escuras flutuando em turbul\u00eancia lenta.",
+        "accent": "#1e293b",
+        "slot_gif": "void_ash/opt1_slot.gif",
+        "icon_gif": "void_ash/opt1_icon.gif",
+        "halo_gif": "void_ash/opt1_halo.gif"
+      },
+      {
+        "option": 2,
+        "name": "Entropy Dissolution (Dissolu\u00e7\u00e3o Entr\u00f3pica)",
+        "desc": "Bordas dos gr\u00e3os que se dissolvem no v\u00e1cuo e retornam em oscila\u00e7\u00e3o cont\u00ednua.",
+        "halo_name": "void_entropy_sink",
+        "halo_desc": "Espiral de distor\u00e7\u00e3o de suc\u00e7\u00e3o de luz.",
+        "accent": "#0f172a",
+        "slot_gif": "void_ash/opt2_slot.gif",
+        "icon_gif": "void_ash/opt2_icon.gif",
+        "halo_gif": "void_ash/opt2_halo.gif"
+      },
+      {
+        "option": 3,
+        "name": "Dark Fracture (Fratura de Energia Escura)",
+        "desc": "Fissuras dimensionais que cortam as cinzas com pulsa\u00e7\u00e3o de energia escura fria.",
+        "halo_name": "void_dark_fracture_halo",
+        "halo_desc": "Rachaduras espaciais est\u00e1ticas com pulsa\u00e7\u00e3o de energia escura.",
+        "accent": "#020617",
+        "slot_gif": "void_ash/opt3_slot.gif",
+        "icon_gif": "void_ash/opt3_icon.gif",
+        "halo_gif": "void_ash/opt3_halo.gif"
+      }
+    ]
+  }
+}

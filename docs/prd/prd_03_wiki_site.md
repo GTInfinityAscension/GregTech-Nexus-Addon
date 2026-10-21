@@ -93,7 +93,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/Raishxn/GregTech-Nexus-Addon
     - icon: fontawesome/brands/discord
-      link: https://discord.gg/d3qHufwRxb
+      link: https://discord.gg/TW5vugknk5
 ```
 
 ---
