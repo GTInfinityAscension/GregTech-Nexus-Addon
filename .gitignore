@@ -51,3 +51,6 @@ net/
 
 # mkdocs build output (deployed via gh-deploy workflow)
 site/
+
+__pycache__/
+*.pyc
